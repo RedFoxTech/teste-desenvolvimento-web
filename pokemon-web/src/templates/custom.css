@@ -1,55 +1,48 @@
-img{
+img {
     max-width: 150px;
     max-height: 50px;
     margin-bottom: 11px;
-
 }
-.cabecalho{
+.cabecalho {
     display: flex;
     font-size: 70px;
     justify-content: center;
     width: 100%;
-    
 }
 
-.card{
+.card {
     margin-top: 2rem;
-    height: 324px;
+    height: 350px;
 }
 
-.custom-image{
+.custom-image {
     all: unset;
     max-height: 140px;
 }
 
-@media(max-width: 800px){
-    .cabecalho{
-
+@media (max-width: 800px) {
+    .cabecalho {
         font-size: 40px;
-
-        
     }
 
-    img{
+    img {
         max-width: 120px;
         max-height: 30px;
         margin-bottom: 11px;
-    
     }
 
-    .custom-image{
+    .custom-image {
         all: unset;
         width: 80%;
         margin: auto;
         max-height: 200px;
         min-height: 100px;
     }
-    .card{
+    .card {
         min-height: 400px;
     }
 }
 
-.btn{
+.btn {
     margin-left: 5px;
-    
 }

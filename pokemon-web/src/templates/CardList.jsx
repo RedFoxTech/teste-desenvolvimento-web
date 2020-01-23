@@ -22,9 +22,25 @@ export default props => {
                                 <h5 className="card-title">{pokemon.name}</h5>
                                 <p className="card-text">Atk: {pokemon.atk}</p>
                                 <p className="card-text">Def: {pokemon.def}</p>
-                                <a href="#" className="btn btn-primary">
-                                    Visualizar Pokemon
-                                </a>
+                                <div className="d-flex">
+                                    <a
+                                        href=""
+                                        data-toggle="modal"
+                                        data-target="#modalUpdate"
+                                        className="btn btn-primary"
+                                        onClick={() =>
+                                            props.updatePokemonAtual(pokemon)
+                                        }
+                                    >
+                                        Editar Pokemon
+                                    </a>
+                                    <button
+                                        className="btn btn-danger fa fa-trash-o"
+                                        onClick={() =>
+                                            props.onDelete(pokemon._id)
+                                        }
+                                    ></button>
+                                </div>
                             </div>
                         </div>
                     </div>

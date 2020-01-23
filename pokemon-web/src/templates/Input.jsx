@@ -10,7 +10,7 @@ export default props => {
                     title="pesquisar"
                 />
                 <button
-                    className="btn btn-danger fa fa-plus"
+                    className="btn btn-warning fa fa-plus"
                     title="Cadastrar pokemon"
                     data-toggle="modal"
                     data-target="#modalCadastro"

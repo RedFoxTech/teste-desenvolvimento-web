@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default props => {
+    const { pokemonAtual } = props;
+
     const imgPadrao =
         "https://http2.mlstatic.com/colar-pingente-anime-geek-pokemon-pokebola-pokeball-esfera-D_NQ_NP_928688-MLB28019029999_082018-F.jpg";
+
     const [nome, setNome] = useState("");
     const [pokedex, setPokedex] = useState("");
     const [imagem, setImagem] = useState("");
@@ -17,7 +20,25 @@ export default props => {
     const [def, setDef] = useState("");
     const [sta, setSta] = useState("");
     const [lendario, setLendario] = useState("");
-
+    console.log(nome);
+    useEffect(() => {
+        if (pokemonAtual) {
+            setNome(pokemonAtual.name);
+            setPokedex(pokemonAtual.pokedexNumber);
+            setImagem(pokemonAtual.img);
+            setGeracao(pokemonAtual.generation);
+            setEvolucao(pokemonAtual.evolutionStage);
+            setFamilia(pokemonAtual.FamilyId);
+            setTipo1(pokemonAtual.Type1);
+            setTipo2(pokemonAtual.Type2);
+            setAmbiente1(pokemonAtual.weather1);
+            setAmbiente2(pokemonAtual.weather2);
+            setAtk(pokemonAtual.atk);
+            setDef(pokemonAtual.def);
+            setSta(pokemonAtual.sta);
+            setLendario(pokemonAtual.legendary);
+        }
+    }, [pokemonAtual]);
     const onSubmit = async () => {
         try {
             const body = {
@@ -37,8 +58,8 @@ export default props => {
                 legendary: parseInt(lendario)
             };
             console.log(body);
-            await fetch("http://localhost:3030/pokemons", {
-                method: "POST",
+            await fetch(`http://localhost:3030/pokemons/${pokemonAtual._id}`, {
+                method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(body)
             });
@@ -48,14 +69,12 @@ export default props => {
         }
     };
 
-    const refresh = async () => {};
-
     return (
-        <div className="modal" tabindex="-1" role="dialog" id="modalCadastro">
+        <div className="modal" tabindex="-1" role="dialog" id="modalUpdate">
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h5 className="modal-title">Cadastro</h5>
+                        <h5 className="modal-title">Atualização de pokemon</h5>
                         <button
                             type="button"
                             className="close"
@@ -188,7 +207,7 @@ export default props => {
                             className="btn btn-primary"
                             onClick={onSubmit}
                         >
-                            Cadastrar
+                            Atualizar
                         </button>
                         <button
                             type="button"

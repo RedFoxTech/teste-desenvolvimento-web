@@ -1,32 +1,46 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import CardList from "./CardList";
 import Modal from "./Modal";
+import ModalUpdate from "./ModalUpdate";
 
 const URL = "http://localhost:3030/pokemons";
 
-export default class Card extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            list: ""
-        };
+export default props => {
+    useEffect(() => {
+        refresh();
+    }, []);
 
-        this.refresh();
-    }
+    const [list, setList] = useState([]);
+    const [pokemonAtual, setPokemonAtual] = useState({});
 
-    async refresh() {
+    const refresh = async () => {
         const res = await fetch(URL);
         const data = await res.json();
-        this.setState({ ...this.state, list: data });
-    }
+        setList(data);
+    };
 
-    ASUY;
+    const onDelete = async id => {
+        await fetch(`${URL}/${id}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" }
+        });
+        refresh();
+    };
 
-    render() {
-        return (
-            <React.Fragment>
-                <CardList list={this.state.list} />
-            </React.Fragment>
-        );
-    }
-}
+    const updatePokemonAtual = pokemon => {
+        setPokemonAtual(pokemon);
+        console.log(pokemonAtual);
+    };
+    return (
+        <React.Fragment>
+            <Modal refresh={refresh} />
+            <ModalUpdate pokemonAtual={pokemonAtual} refresh={refresh} />
+            <CardList
+                list={list}
+                onDelete={onDelete}
+                pokemonAtual={pokemonAtual}
+                updatePokemonAtual={updatePokemonAtual}
+            />
+        </React.Fragment>
+    );
+};
