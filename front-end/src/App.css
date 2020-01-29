@@ -4,7 +4,7 @@
 }
 
 .SearchBox{
-  width: 30%;
+  width: 50%;
 }
 
 .FoundPokemons{
@@ -13,4 +13,12 @@
 
 .button-pokemon{
   width: 100%;
+}
+
+.search-add{
+  width: 50%;
+}
+
+.input-group{
+  margin-top: 1px;
 }
