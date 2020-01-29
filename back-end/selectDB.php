@@ -1,12 +1,9 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "pokemons";
+include 'connectDB.php';
 
-$conexao = mysqli_connect($servername, $username, $password, $dbname)or die("Erro");
+$pokemonName = filter_var($_REQUEST["pokemonName"], FILTER_SANITIZE_EMAIL);
 
-$sql = "SELECT * FROM pokemons";
+$sql = "CALL SelectPokemon('$pokemonName')";
 $resultado = mysqli_query($conexao, $sql)or die("Erro");
 
 $jsonArray = array();
