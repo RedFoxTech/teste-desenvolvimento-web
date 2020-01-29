@@ -1,0 +1,16 @@
+.app-logo{
+  height: 100px;
+  width: 100px;;
+}
+
+.SearchBox{
+  width: 30%;
+}
+
+.FoundPokemons{
+  width: 90%;
+}
+
+.button-pokemon{
+  width: 100%;
+}
