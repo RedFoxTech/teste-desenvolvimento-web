@@ -1,0 +1,46 @@
+.app-logo{
+  height: 100px;
+  width: 100px;;
+}
+
+.SearchBox{
+  width: 50%;
+}
+
+.FoundPokemons{
+  width: 90%;
+}
+
+.button-pokemon{
+  width: 100%;
+}
+
+.search-add{
+  width: 70%;
+}
+
+.input-group{
+  margin-top: 1px;
+}
+
+th{
+  background-color: white;
+  position: sticky; 
+  top: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none !important; 
+  margin: 0; 
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+}
+
+@media (max-width: 600px) {
+  .search-add{
+    width: 100%;
+  }
+}
