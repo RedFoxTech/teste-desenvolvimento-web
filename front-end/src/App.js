@@ -205,7 +205,7 @@ class App extends Component {
   }
 
   selectPokemon = () => {
-    fetch('back-end/selectDB.php?pokemonName="' + this.state.value)
+    fetch('back-end/selectDB.php?pokemonName="' + this.state.value, { method: 'POST' })
       .then(response => response.json())
       .then(json => {
         this.setState({ data: json });
@@ -289,7 +289,7 @@ class App extends Component {
   };
 
   deletePokemon = () => {
-    fetch('back-end/deleteDB.php?pokemonId="' + this.state.selectedPokemonId, { method: 'POST' });
+    fetch('back-end/deleteDB.php?id="' + this.state.selectedPokemonId, { method: 'POST' });
     this.setState({
       showModalUpdate: false
     });
@@ -352,7 +352,6 @@ class App extends Component {
           .then(response => response.json())
           .then(json => {
             this.setState({ data: json })
-            console.log(this.state.data);
             this.setState({
               nameU: this.state.data[0].name,
               pokedex_numberU: this.state.data[0].pokedex_number,

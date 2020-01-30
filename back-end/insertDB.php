@@ -31,7 +31,41 @@ $future_evolve = filter_var($_REQUEST["future_evolve"], FILTER_SANITIZE_EMAIL);
 $cp40 = filter_var($_REQUEST["cp40"], FILTER_SANITIZE_EMAIL);
 $cp39 = filter_var($_REQUEST["cp39"], FILTER_SANITIZE_EMAIL);
 
-$sql = "CALL InsertPokemon('$name', '$pokedex_number', '$img_name', '$generation', '$evolution_stage', '$evolved', '$family_id', '$cross_gen', '$type_1', '$type_2', '$weather_1', '$weather_2', '$stat_total', '$atk', '$def', '$sta', '$legendary', '$aquireable', '$spawns', '$regional', '$raidable', '$hatchable', '$shiny', '$nest', '$new', '$non_gettable', '$future_evolve', '$cp40', '$cp39')";
+$sql = "INSERT INTO 
+pokemons(
+name, pokedex_number, img_name, generation, evolution_stage, evolved, family_id, cross_gen, type_1, type_2, weather_1, weather_2, stat_total, atk, def, sta, legendary, aquireable, spawns, regional, raidable, hatchable, shiny, nest, new, non_gettable, future_evolve, cp40, cp39
+)
+VALUES(
+$name, 
+$pokedex_number, 
+$img_name, 
+$generation, 
+$evolution_stage, 
+$evolved, 
+$family_id, 
+$cross_gen, 
+$type_1, 
+$type_2, 
+$weather_1, 
+$weather_2, 
+$stat_total,
+$atk,
+$def,
+$sta,
+$legendary,
+$aquireable,
+$spawns,
+$regional,
+$raidable,
+$hatchable,
+$shiny,
+$nest,
+$new,
+$non_gettable,
+$future_evolve,
+$cp40,
+$cp39
+);";
 $resultado = mysqli_query($conexao, $sql)or die("Erro");
 
 mysqli_close($conexao);

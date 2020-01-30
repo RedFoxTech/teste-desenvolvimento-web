@@ -2,7 +2,7 @@
 
 // $servername = "localhost";
 // $username = "gabrielf_a";
-// $password = "12345";
+// $password = "polades1";
 // $dbname = "gabrielf_a";
 
 $servername = "localhost";

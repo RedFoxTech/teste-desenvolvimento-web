@@ -1,6 +1,6 @@
 {
   "name": "front-end",
-  "homepage": "http://localhost/build/",
+  "homepage": "http://pokemontest.site",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -3,7 +3,7 @@ include 'connectDB.php';
 
 $pokemonName = filter_var($_REQUEST["pokemonName"], FILTER_SANITIZE_EMAIL);
 
-$sql = "CALL SelectPokemon('$pokemonName')";
+$sql = "SELECT * FROM pokemons WHERE name LIKE CONCAT($pokemonName, '%');";
 $resultado = mysqli_query($conexao, $sql)or die("Erro");
 
 $jsonArray = array();
