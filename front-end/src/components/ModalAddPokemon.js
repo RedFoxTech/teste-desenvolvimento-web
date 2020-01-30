@@ -25,7 +25,7 @@ const modalAddPokemon = (props) => {
                     <InputGroup.Prepend>
                       <InputGroup.Text>Pokedex Number</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="pokedex_number"></FormControl>
+                    <FormControl onChange={props.onChange} name="pokedex_number" type="number" min="0"></FormControl>
                   </InputGroup>
                   <InputGroup size="sm">
                     <InputGroup.Prepend>
@@ -37,7 +37,7 @@ const modalAddPokemon = (props) => {
                     <InputGroup.Prepend>
                       <InputGroup.Text>Generation</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="generation"></FormControl>
+                    <FormControl onChange={props.onChange} name="generation" type="number" min="0"></FormControl>
                   </InputGroup>
                   <InputGroup size="sm">
                     <InputGroup.Prepend>
@@ -50,7 +50,7 @@ const modalAddPokemon = (props) => {
                     <InputGroup.Prepend>
                       <InputGroup.Text>Evolved</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="evolved"></FormControl>
+                    <FormControl onChange={props.onChange} name="evolved" type="number" min="0"></FormControl>
                   </InputGroup>
                   <InputGroup size="sm">
                     <InputGroup.Prepend>
@@ -62,7 +62,7 @@ const modalAddPokemon = (props) => {
                     <InputGroup.Prepend>
                       <InputGroup.Text>Cross Gen</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="cross_gen"></FormControl>
+                    <FormControl onChange={props.onChange} name="cross_gen" type="number" min="0"></FormControl>
                   </InputGroup>
                   <InputGroup size="sm">
                     <InputGroup.Prepend>
@@ -92,19 +92,19 @@ const modalAddPokemon = (props) => {
                     <InputGroup.Prepend>
                       <InputGroup.Text>Stat Total</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="stat_total"></FormControl>
+                    <FormControl onChange={props.onChange} name="stat_total" type="number" min="0"></FormControl>
                   </InputGroup>
                   <InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>Atk</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="atk"></FormControl>
+                    <FormControl onChange={props.onChange} name="atk" type="number" min="0"></FormControl>
                   </InputGroup>
                   <InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>Def</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="def"></FormControl>
+                    <FormControl onChange={props.onChange} name="def" type="number" min="0"></FormControl>
                   </InputGroup>
                 </Col>
                 <Col>
@@ -112,72 +112,72 @@ const modalAddPokemon = (props) => {
                     <InputGroup.Prepend>
                       <InputGroup.Text>Sta</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="sta"></FormControl>
+                    <FormControl onChange={props.onChange} name="sta" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>Legendary</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="legendary"></FormControl>
+                    <FormControl onChange={props.onChange} name="legendary" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>Aquireable</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="aquireable"></FormControl>
+                    <FormControl onChange={props.onChange} name="aquireable" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>Spawns</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="spawns"></FormControl>
+                    <FormControl onChange={props.onChange} name="spawns" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>Regional</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="regional"></FormControl>
+                    <FormControl onChange={props.onChange} name="regional" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>Raidable</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="raidable"></FormControl>
+                    <FormControl onChange={props.onChange} name="raidable" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>Hatchable</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="hatchable"></FormControl>
+                    <FormControl onChange={props.onChange} name="hatchable" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>Shiny</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="shiny"></FormControl>
+                    <FormControl onChange={props.onChange} name="shiny" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>Nest</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="nest"></FormControl>
+                    <FormControl onChange={props.onChange} name="nest" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>New</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="new"></FormControl>
+                    <FormControl onChange={props.onChange} name="new" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>Non Gettable</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="non_gettable"></FormControl>
+                    <FormControl onChange={props.onChange} name="non_gettable" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>Future Evolve</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="future_evolve"></FormControl>
+                    <FormControl onChange={props.onChange} name="future_evolve" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>CP 40</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="cp40"></FormControl>
+                    <FormControl onChange={props.onChange} name="cp40" type="number" min="0"></FormControl>
                   </InputGroup><InputGroup size="sm">
                     <InputGroup.Prepend>
                       <InputGroup.Text>CP 39</InputGroup.Text>
                     </InputGroup.Prepend>
-                    <FormControl onChange={props.onChange} name="cp39"></FormControl>
+                    <FormControl onChange={props.onChange} name="cp39" type="number" min="0"></FormControl>
                   </InputGroup>
 
                 </Col>

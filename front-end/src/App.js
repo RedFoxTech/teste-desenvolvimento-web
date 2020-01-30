@@ -98,20 +98,14 @@ class App extends Component {
 
   //Cria tabela com os dados procurados
   handleSubmitSearch = (event) => {
-    fetch('back-end/selectDB.php?pokemonName="' + this.state.value)
-      .then(response => response.json())
-      .then(json => {
-        this.setState({ data: json });
-        console.log(this.state.data);
-        this.createTable();
-      });
+    this.selectPokemon();
     event.preventDefault();
   }
 
   //Cria cabeçalho da tabela
   tableHeader = () => {
     return (
-      <table className="table-sm table-bordered table-hover mx-auto my-4">
+      <table className="table-sm table-bordered table-hover mx-auto my-4 sortable">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -169,7 +163,44 @@ class App extends Component {
     };
 
     return (
-      <ModalUpdatePokemon show={this.state.showModalUpdate} onClickShow={handleShow} onClickClose={handleClose} onClickSave={this.updatePokemon} onClickDelete={this.deletePokemon} onHide={handleClose} onChange={this.changeHandlerUpdateAndAdd} />
+      <ModalUpdatePokemon
+        show={this.state.showModalUpdate}
+        onClickShow={handleShow}
+        onClickClose={handleClose}
+        onClickSave={this.updatePokemon}
+        onClickDelete={this.deletePokemon}
+        onHide={handleClose}
+        onChange={this.changeHandlerUpdateAndAdd}
+        name={this.state.nameU}
+        pokedexNum={this.state.pokedex_numberU}
+        imgName={this.state.img_nameU}
+        generation={this.state.generationU}
+        evolutionStage={this.state.evolution_stageU}
+        evolved={this.state.evolvedU}
+        familyId={this.state.family_idU}
+        crossGen={this.state.cross_genU}
+        type1={this.state.type_1U}
+        type2={this.state.type_2U}
+        weather1={this.state.weather_1U}
+        weather2={this.state.weather_2U}
+        statTotal={this.state.stat_total}
+        atk={this.state.atkU}
+        def={this.state.defU}
+        sta={this.state.staU}
+        legendary={this.state.legendaryU}
+        aquireable={this.state.aquireableU}
+        spawns={this.state.spawnsU}
+        regional={this.state.regionalU}
+        raidable={this.state.raidableU}
+        hatchable={this.state.hatchableU}
+        shiny={this.state.shinyU}
+        nest={this.state.nestU}
+        new={this.state.newU}
+        nonGettable={this.state.non_gettableU}
+        futureEvolve={this.state.future_evolveU}
+        cp40={this.state.cp40U}
+        cp39={this.state.cp39U}
+      />
     );
   }
 
@@ -178,7 +209,6 @@ class App extends Component {
       .then(response => response.json())
       .then(json => {
         this.setState({ data: json });
-        console.log(this.state.data);
         this.createTable();
       });
   }
@@ -318,7 +348,43 @@ class App extends Component {
           showModalUpdate: true,
           selectedPokemonId: eval(id)
         });
-        console.log(eval(id), this.state.selectedPokemonId);
+        fetch('back-end/selectIdDB.php?id="' + eval(id))
+          .then(response => response.json())
+          .then(json => {
+            this.setState({ data: json })
+            console.log(this.state.data);
+            this.setState({
+              nameU: this.state.data[0].name,
+              pokedex_numberU: this.state.data[0].pokedex_number,
+              img_nameU: this.state.data[0].img_name,
+              generationU: this.state.data[0].generation,
+              evolution_stageU: this.state.data[0].evolution_stage,
+              evolvedU: this.state.data[0].evolved,
+              family_idU: this.state.data[0].family_id,
+              cross_genU: this.state.data[0].cross_gen,
+              type_1U: this.state.data[0].type_1,
+              type_2U: this.state.data[0].type_2,
+              weather_1U: this.state.data[0].weather_1,
+              weather_2U: this.state.data[0].weather_2,
+              stat_totalU: this.state.data[0].stat_total,
+              atkU: this.state.data[0].atk,
+              defU: this.state.data[0].def,
+              staU: this.state.data[0].sta,
+              legendaryU: this.state.data[0].legendary,
+              aquireableU: this.state.data[0].aquireable,
+              spawnsU: this.state.data[0].spawns,
+              regionalU: this.state.data[0].regional,
+              raidableU: this.state.data[0].raidable,
+              hatchableU: this.state.data[0].hatchable,
+              shinyU: this.state.data[0].shiny,
+              nestU: this.state.data[0].nest,
+              newU: this.state.data[0].new,
+              non_gettableU: this.state.data[0].non_gettable,
+              future_evolveU: this.state.data[0].future_evolve,
+              cp40U: this.state.data[0].cp40,
+              cp39U: this.state.data[0].cp39
+            })
+          });
       };
 
       let cell = row.insertCell(0);
