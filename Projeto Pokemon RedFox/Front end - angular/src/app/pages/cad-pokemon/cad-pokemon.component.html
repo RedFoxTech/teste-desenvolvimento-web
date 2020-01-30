@@ -1,0 +1,245 @@
+<div class="container">
+    <div class="columns">
+        <div class="tile is-ancestor">
+            <div class="tile is-vertical is-parent">
+                <div class="tile is-child box one">
+                    <form #myForm="ngForm" id="form">
+                        <div class="field"> 
+                            <label class="label">Name</label>
+                            <div class="control">
+                                <input class="input" type="text" name="nomePokemon" [(ngModel)]="pokemon.nomePokemon">
+                            </div>
+                        </div>
+                      
+                        <div class="field">
+                            <div class="columns">
+                                <div class="column">
+                                    <label class="label">Pokedex Number</label>
+                                    <div class="control">
+                                        <input class="input" type="number" name="pokedexNumber" [(ngModel)]="pokemon.pokedexNumber">
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <label class="label">Generation</label>
+                                    <div class="control">
+                                        <input class="input" type="number" name="generation" [(ngModel)]="pokemon.generation">
+                                    </div>
+                                </div>
+                                <div class="column">
+                                    <label class="label">Evolution Stage</label>
+                                    <div class="control">
+                                        <input class="input" type="number" name="evolutionStage" [(ngModel)]="pokemon.evolutionStage">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+                        <div class="field">
+                            <div class="columns">
+                                <div class="column">
+                                <label class="label">Type 1</label>
+                                <div class="select">
+                                    <select name="type1" [(ngModel)]="pokemon.tipoPokemon1">
+                                        <option value="null" >Selecione</option>
+                                        <option value="1">Bug</option>
+                                        <option value="2">Dark</option>
+                                        <option value="3">Dragon</option>
+                                        <option value="4">Electric</option>
+                                        <option value="5">Fairy</option>
+                                        <option value="6">Fighting</option>
+                                        <option value="7">Fire</option>
+                                        <option value="8">flying</option>
+                                        <option value="9">Ghost</option>
+                                        <option value="10">Grass</option>
+                                        <option value="11">Ground</option>
+                                        <option value="12">Ice</option>
+                                        <option value="13">Normal</option>
+                                        <option value="14">Poison</option>
+                                        <option value="15">Psychic</option>
+                                        <option value="16">Rock</option>
+                                        <option value="17">Steel</option>
+                                        <option value="18">Water</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <label class="label">Type 2</label>
+                                <div class="select">
+                                    <select name="type2" [(ngModel)]="pokemon.tipoPokemon2">
+                                        <option value="null" >Selecione</option>
+                                        <option value="1">Bug</option>
+                                        <option value="2">Dark</option>
+                                        <option value="3">Dragon</option>
+                                        <option value="4">Electric</option>
+                                        <option value="5">Fairy</option>
+                                        <option value="6">Fighting</option>
+                                        <option value="7">Fire</option>
+                                        <option value="8">flying</option>
+                                        <option value="9">Ghost</option>
+                                        <option value="10">Grass</option>
+                                        <option value="11">Ground</option>
+                                        <option value="12">Ice</option>
+                                        <option value="13">Normal</option>
+                                        <option value="14">Poison</option>
+                                        <option value="15">Psychic</option>
+                                        <option value="16">Rock</option>
+                                        <option value="17">Steel</option>
+                                        <option value="18">Water</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="column">
+                                <label class="label">Weather</label>
+                                <div class="select">
+                                    <select name="weather" [(ngModel)]="pokemon.clima">
+                                        <option value="null" >Selecione</option>
+                                        <option value="1">Cloudy</option>
+                                        <option value="2">Fog</option>
+                                        <option value="3">Partly Cloudy</option>
+                                        <option value="4">Rainy</option>
+                                        <option value="5">Snwo</option>
+                                        <option value="6">Sunny</option>
+                                        <option value="7">Sunny/clear</option>
+                                        <option value="8">Windy</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <div class="columns">
+                            <div class="column">
+                                <label class="label">ATK</label>
+                                <div class="control">
+                                    <input class="input" type="number" name="ATKPokemon" (keyup)="somarStats()" (click)="somarStats()" [(ngModel)]="pokemon.ATKPokemon">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <label class="label">DEF</label>
+                                <div class="control">
+                                    <input class="input" type="number" name="DEFPokemon" (keyup)="somarStats()" (click)="somarStats()" [(ngModel)]="pokemon.DEFPokemon">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <label class="label">STA</label>
+                                <div class="control">
+                                    <input class="input" type="number" name="STAPokemon" (keyup)="somarStats()" (click)="somarStats()" [(ngModel)]="pokemon.STAPokemon">
+                                </div>
+                            </div>
+                            <div class="column">
+                                <label class="label">Total Stats</label>
+                                <div class="control">
+                                    <input class="input" 
+                                    readonly="readonly" 
+                                    type="number" 
+                                    (click)="somarStats()" 
+                                    (keyup)="somarStats()" 
+                                            name="stats" 
+                                            [(ngModel)]="pokemon.totalStatsPokemon" 
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="field">
+                                <div class="columns">
+                                    <div class="column">
+                                        <label class="label">Legendary</label>
+                                        <div class="select">
+                                            <select name="legendary" [(ngModel)]="pokemon.legendary">
+                                                <option>Selecione</option>  
+                                                <option value="Yes">Yes</option>
+                                                <option value="No">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <label class="label">100% CP @ 40</label>
+                                        <div class="control">
+                                            <input class="input" type="number" name="n100cp_40" [(ngModel)]="pokemon.n100cp_40">
+                                        </div>
+                                    </div>
+                                    <div class="column">
+                                        <label class="label">100% CP @ 39:</label>
+                                        <div class="control">
+                                            <input class="input" type="number" name="n100cp_39" [(ngModel)]="pokemon.n100cp_39" >
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="columns">
+
+                            <div class="column">
+                                <div class="file has-name">
+                                    <label class="file-label">
+                                        <input class="file-input" type="file" name="file" [(ngModel)]="imageFilePath">
+                                        <span class="file-cta">
+                                        <span class="file-icon">
+                                            <i class="fas fa-upload"></i>
+                                        </span>
+                                        <span class="file-label">
+                                            Imagem
+                                        </span>
+                                        </span>
+                                        <span class="file-name" (click)="editFilePath()">
+                                            {{imageFilePath}}
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="column" >
+                                <div class="field is-grouped" style="float: right;">
+                                    <div class="control">
+                                        <button class="button is-success is-link" (click)="cadPokemon()">Cadastrar</button>
+                                    </div>
+                                    <div class="control">
+                                        <button class="button is-danger is-light" (click)="clearForm()" >Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- MODAL DE AVISO SE NAO TIVER IMAGEM -->
+                            
+                            <div class="modal" id="modalImagem">
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                  <section class="modal-card-body" style="text-align: center; border-top-right-radius: 6px; border-top-left-radius: 6px;">
+                                    <p class="title" style="color: #ac5e5e; font-size: 20px;">Insira uma imagem</p>
+                                  </section>
+                                  <footer class="modal-card-foot">
+                                    <button class="button is-danger is-fullwidth" (click)="fecharModal('Imagem')">Ok</button>
+                                  </footer>
+                                </div>
+                              </div>
+
+                            <!-- MODAL DE AVISO SE NAO TIVER IMAGEM -->
+
+
+                            <!-- MODAL DE CADASTRADO COM SUCESSO -->
+                            
+                            <div class="modal" id="modalCadastro">
+                                <div class="modal-background"></div>
+                                <div class="modal-card">
+                                  <section class="modal-card-body" style="text-align: center; border-top-right-radius: 6px; border-top-left-radius: 6px;">
+                                    <img src="https://pngimage.net/wp-content/uploads/2018/06/imagem-pokemon-png-2.png" style="width: 80px;">
+                                    <p class="title" style="color: lawngreen; font-size: 20px;">Cadastrado com Sucesso!</p>
+                                  </section>
+                                  <footer class="modal-card-foot">
+                                    <button class="button is-success is-fullwidth" (click)="fecharModal('Cadastro')">Ok</button>
+                                  </footer>
+                                </div>
+                              </div>
+
+                            <!-- MODAL DE CADASTRADO COM SUCESSO -->
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
