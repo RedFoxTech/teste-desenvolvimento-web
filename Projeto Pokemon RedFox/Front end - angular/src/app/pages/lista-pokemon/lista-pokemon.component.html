@@ -1,0 +1,116 @@
+<div class="container">
+    <div class="columns">
+
+        <!-- Quadrado da Esquerda -->
+        <div class="column">
+
+            <div class="field has-addons">
+                <div class="control has-icons-left has-icons-right">
+                    <input class="input" type="text" (keyup)="searchPokemon()" name="search" [(ngModel)]="paramSearchPokemon" placeholder="Pikachu" >
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
+                <div class="control" style="float: right;">
+                    <a class="button is-info" (click)="limparSearch()">
+                      Refresh
+                    </a>
+                </div>
+            </div>
+
+            <!-- LISTA DE POKEMONS -->
+                <div class="list is-hoverable">
+                    <a class="list-item" *ngFor="let poke of pokemons | paginate: { itemsPerPage: 8, currentPage: paginaAtual }; let i = index" >
+                        <div (click)="abrirPokemon(poke.codPokemon)">
+                            <!-- Foto do pokemon -->
+                            <span class="icon has-text-info">
+                                <img src={{poke.imgDir}}/>
+                            </span>
+                            
+                            <!-- Nome do Pokemon -->
+                            <span class="nomePokemon">
+                                {{poke.nomePokemon}}
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <footer class="footer" style=" padding: 0;">
+                    <pagination-controls  (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo"></pagination-controls>
+                </footer>
+        </div>
+
+        <!-- Quadrado da Direita -->
+        <div class="column">
+
+            <!-- Dados do Pokemon -->
+            <div class="tile is-ancestor">
+                <div class="tile is-vertical is-parent">
+                    <div class="tile is-child box one" >
+                        <div class="columns">
+                            <div class="column is-10" id="dadosPokemon">
+                                <img id="fotoPokemon" src="{{pokemon.imgDir}}"/>
+                                <p class="title">{{pokemon.nomePokemon}}</p>
+                            </div>
+                            <div class="column" >
+                                <div (click)="editarPokemon(pokemon.codPokemon)">
+                                    <span class="icon is-large has-text-success">
+                                        <i class="fas fa-lg fa-pen"></i>
+                                    </span>
+                                </div>
+                                <div (click)="abrirModal('Apagar')">
+                                    <span class="icon is-large has-text-danger">
+                                        <i class="fas fa-lg fa-trash"></i>
+                                    </span>
+                                </div>
+
+
+                                <!-- MODAL CONFIRMAÇÂO DE APAGAR POKEMON -->
+
+                                <div class="modal" id="modalApagar">
+                                    <div class="modal-background"></div>
+                                    <div class="modal-card">
+                                        <section class="modal-card-body" style="text-align: center; border-top-right-radius: 6px; border-top-left-radius: 6px;">
+                                            <p class="title" style="color: #ac5e5e; font-size: 20px;">Tem certeza que deseja apagar {{pokemon.nomePokemon}}</p>
+                                        </section>
+                                        <footer class="modal-card-foot">
+                                            <button class="button is-danger is-fullwidth" (click)="delPokemon(pokemon.codPokemon)">Sim</button>
+                                            <button class="button is-danger is-fullwidth" (click)="fecharModal('Apagar')">Cancelar</button>
+                                        </footer>
+                                    </div>
+                                </div>
+
+                                <!-- MODAL CONFIRMAÇÂO DE APAGAR POKEMON -->
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <br/>
+                    <div class="tile is-vertical box">
+                        <div class="columns">
+                            <div class="column dataPokemon">
+                                <p>Name: <span class="dadoPokemon">{{pokemon.nomePokemon}}</span></p>
+                                <p>Pokedex Number: <span class="dadoPokemon">{{pokemon.pokedexNumber}}</span></p>
+                                <p>Generation: <span class="dadoPokemon">{{pokemon.generation}}</span></p>
+                                <p>Evolution Stage: <span class="dadoPokemon">{{pokemon.evolutionStage}}</span></p>
+                                <p>Type 1: <span class="dadoPokemon">{{pokemon.type1}}</span></p>
+                                <p>Type 2: <span class="dadoPokemon">{{pokemon.type2}}</span></p>
+                                <p>Weather: <span class="dadoPokemon">{{pokemon.clima}}</span></p>
+                            </div>
+                            <div class="column">
+                                <p><span style="color: #87eb4d;">ATK</span>: <span class="dadoPokemon">{{pokemon.ATKPokemon}}</span></p>
+                                <p><span style="color: #4dcceb;">DEF</span>: <span class="dadoPokemon">{{pokemon.DEFPokemon}}</span></p>
+                                <p><span style="color: #eb554d;">STA</span>: <span class="dadoPokemon">{{pokemon.STAPokemon}}</span></p>
+                                <p>Total Stats: <span class="dadoPokemon">{{pokemon.totalStats}}</span></p>
+                                <p>Legendary: <span class="dadoPokemon">{{pokemon.legendary}}</span></p>
+                                <p>100% CP @ 40: <span class="dadoPokemon">{{pokemon.n100cp_40}}</span></p>
+                                <p>100% CP @ 39: <span class="dadoPokemon">{{pokemon.n100cp_39}}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
