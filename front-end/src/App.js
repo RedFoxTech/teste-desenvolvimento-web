@@ -348,7 +348,7 @@ class App extends Component {
           showModalUpdate: true,
           selectedPokemonId: eval(id)
         });
-        fetch('back-end/selectIdDB.php?id="' + eval(id))
+        fetch('back-end/selectIdDB.php?id="' + eval(id), { method: 'POST' })
           .then(response => response.json())
           .then(json => {
             this.setState({ data: json })
