@@ -1,0 +1,28 @@
+table{
+    border: 1px solid;
+    border-collapse: collapse;
+}
+td, th {
+    padding: 5px;
+    text-align: center;
+    font-family: sans-serif;
+    border: 1px solid;
+}
+
+#atk{
+    background-color: rgb(235, 241, 222);
+}
+#def{
+    background-color: rgb(205, 230, 240);
+}
+#sta{
+    background-color: rgb(242, 220, 219);
+}
+
+.filtro {
+    display: block;
+    width: 50%;
+  }
+
+ 
+  
