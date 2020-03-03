@@ -1,19 +1,23 @@
 {
   "name": "teste-desenvolvimento-web",
   "version": "1.0.0",
-  "description": "Olá Dev! Tudo bem?",
-  "main": "app.js",
+  "description": "Teste Eduardo Patriota",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Eduardopatriota/teste-desenvolvimento-web.git"
   },
-  "author": "",
+  "author": "Eduardo Patriota",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Eduardopatriota/teste-desenvolvimento-web/issues"
   },
-  "homepage": "https://github.com/Eduardopatriota/teste-desenvolvimento-web#readme"
+  "homepage": "https://github.com/Eduardopatriota/teste-desenvolvimento-web#readme",
+  "dependencies": {
+    "express": "4.16.3"
+  }
 }

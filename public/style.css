@@ -1,0 +1,42 @@
+table{
+    border: 1px solid;
+    padding: 50px;
+    text-align: center;
+    white-space: nowrap;    
+}
+
+#app{
+
+padding-left: 40px;
+padding-top: 20px;
+
+}
+
+td, th {
+    padding: 5px;
+    text-align: center;
+    font-family: sans-serif;
+    border: 1px solid; 
+        
+}
+tr:hover{
+  background-color:rgb(218, 216, 216);  
+}  
+
+#atk{
+    background-color: rgb(235, 241, 222);
+}
+#def{
+    background-color: rgb(205, 230, 240);
+}
+#sta{
+    background-color: rgb(242, 220, 219);
+}
+
+.filtro {
+    display: block;
+    width: 50%;
+  }
+
+ 
+  

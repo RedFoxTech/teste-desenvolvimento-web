@@ -1,6 +1,7 @@
 table{
     border: 1px solid;
-    border-collapse: collapse;
+    padding: 50px;
+    
 }
 td, th {
     padding: 5px;
@@ -24,5 +25,6 @@ td, th {
     width: 50%;
   }
 
+  
  
   
