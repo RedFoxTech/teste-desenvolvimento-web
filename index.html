@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+
+<head>
+    <meta charset="UTF-8">
+    <script src="/app.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">  
+    
+    
+
+    <title>Tabela Pokemon</title> 
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+          <h1>Teste Eduardo Patriota</h1>      
+        
+        <p>Olá pessoal da RedFox este é meu teste da Tabela Pokemon, confesso que não sabia fazer muitas das coisas que foram pedidas.
+            Porém passei o fim de semana estudando modos para conseguir fazer o teste.<br>
+            Primeiro pensei em como conseguir colocar a tabela online, coloquei ela no google docs e transformei ela em um JSON.
+            Assim consegui consumir ela com VUE JS e listar.<br>
+            Inclui um input de pesquisa usando VUE mas não funcionou perfeitamnete, então fiz com JavaScript puro.
+            
+            <h5>Me desculpem por algumas gambiarras no código, eu não sabia muito de NODE então passei o fim de semana aprendendo para o teste. </h5> 
+            
+            
+            
+        </p>
+     </div>   
+
+     <h2>Tabela Pokemon  <img src="pokemon-redfox.gif" alt="" width="100px"> </h2>
+
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+    
+    </div>
+    
+    <div id="app">
+        <table id="myTable">
+            <tbody>
+                <thead>
+                    <tr class="header">
+                        <th>Row</th>
+                        <th>Name</th>
+                        <th>Pokedex Number</th>
+                        <th>Img name</th>
+                        <th>Generation</th>
+                        <th>Evolution Stage</th>
+                        <th>Evolved</th>
+                        <th>FamilyID</th>
+                        <th>Cross Gen</th>
+                        <th>Type 1</th>
+                        <th>Type 2</th>
+                        <th>Weather 1</th>
+                        <th>Weather 2</th>
+                        <th>STAT TOTAL</th>
+                        <th id="atk">ATK</th>
+                        <th id="def">DEF</th>
+                        <th id="sta">STA</th>
+                        <th>Legendary</th>
+                        <th>Aquireable</th>
+                        <th>Spawns</th>
+                        <th>Regional</th>
+                        <th>Raidable</th>
+                        <th>Hatchable</th>
+                        <th>Shiny</th>
+                        <th>Nest</th>
+                        <th>New</th>
+                        <th>Not-Gettable</th>
+                        <th>Future Evolve</th>
+                        <th>100% CP @ 40</th>
+                        <th>100% CP @ 39</th>
+                    </tr>
+                </thead>
+                <tr v-for="pokemons in tabelaPokemon">
+                    <td> {{pokemons.Row}} </td>
+                    <td>{{pokemons.Name}}</td>
+                    <td>{{pokemons["Pokedex Number"]}}</td>
+                    <td>{{pokemons["Img name"]}}</td>
+                    <td>{{pokemons.Generation}}</td>
+                    <td>{{pokemons["Evolution Stage"]}}</td>
+                    <td>{{pokemons.Evolved}}</td>
+                    <td>{{pokemons.FamilyID}}</td>
+                    <td>{{pokemons["Cross Gen"]}}</td>
+                    <td>{{pokemons["Type 1"]}}</td>
+                    <td>{{pokemons["Type 2"]}}</td>
+                    <td>{{pokemons["Weather 1"]}}</td>
+                    <td>{{pokemons["Weather 2"]}}</td>
+                    <td>{{pokemons["STAT TOTAL"]}}</td>
+                    <td id="atk">{{pokemons.ATK}}</td>
+                    <td id="def">{{pokemons.DEF}}</td>
+                    <td id="sta">{{pokemons.STA}}</td>
+                    <td>{{pokemons.Legendary}}</td>
+                    <td>{{pokemons.Aquireable}}</td>
+                    <td>{{pokemons.Spawns}}</td>
+                    <td>{{pokemons.Regional}}</td>
+                    <td>{{pokemons.Raidable}}</td>
+                    <td>{{pokemons.Hatchable}}</td>
+                    <td>{{pokemons.Shiny}}</td>
+                    <td>{{pokemons.Nest}}</td>
+                    <td>{{pokemons.New}}</td>
+                    <td>{{pokemons["Not-Gettable"]}}</td>
+                    <td>{{pokemons["Future Evolve"]}}</td>
+                    <td>{{pokemons["100% CP @ 40"]}}</td>
+                    <td>{{pokemons["100% CP @ 39"]}}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+        
+    
+      
+    
+
+</body>
+
+</html>
