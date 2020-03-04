@@ -1,14 +1,28 @@
 table{
     border: 1px solid;
     padding: 50px;
-    
+    text-align: center;
+    white-space: nowrap;    
 }
+
+#app{
+
+padding-left: 40px;
+padding-top: 20px;
+
+}
+
 td, th {
     padding: 5px;
     text-align: center;
     font-family: sans-serif;
-    border: 1px solid;
+    border: 1px solid; 
+        
 }
+tr:hover{
+  background-color:rgb(218, 216, 216);  
+}  
+
 
 #atk{
     background-color: rgb(235, 241, 222);
