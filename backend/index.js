@@ -16,6 +16,6 @@ mongoose.connect('mongodb+srv://redfox:redfox@cluster0-pnzvf.mongodb.net/pokemon
 app.use(express.json());
 app.use(routes);
 
-// Porta na qual a aplicação podera ser acessada
+// Porta na qual a aplicação poderá ser acessada
 
 app.listen(3333);
