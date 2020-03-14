@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const PokemonSchema  = new mongoose.Schema({
     row: Number,
-    name: String,
-    pokedex_number: Number,
+    name: {type: String, required: true, trim: true},
+    pokedex_number: [String],
     img_name: String,
     generation: Number,
     evolution_stage: Number,
@@ -12,7 +12,7 @@ const PokemonSchema  = new mongoose.Schema({
     cross_gen: Number,
     type_1: String,
     type_2: String,
-    weather_1: [String],
+    weather_1: String,
     weather_2: String,
     stat_total: Number,
     atk: Number,
