@@ -5,12 +5,16 @@ module.exports = {
     async store (req, res) {
 
         const { row, name } = req.body;
-    
-        const pokemonResponse =  await Pokemon.create({
-            row,
-            name
-        });   
 
-        return res.json(pokemonResponse);
+        let pokemon = await Pokemon.findOne({ name });
+
+        if (!pokemon) {
+            pokemon =  await Pokemon.create({
+                row,
+                name
+            }); 
+        }
+        
+        return res.json(pokemon);
     }
 }
