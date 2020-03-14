@@ -9,7 +9,7 @@ const app = express();
 mongoose.connect('mongodb+srv://redfox:redfox@cluster0-pnzvf.mongodb.net/pokemons?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
-});
+}).catch(error => handleError(error));
 
 // Middleware que analisa as requisições en Json
 
