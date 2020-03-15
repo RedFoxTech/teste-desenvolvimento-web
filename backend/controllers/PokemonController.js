@@ -5,9 +5,16 @@ module.exports = {
     // Controller resposável pela visualização de todos os pokemons
 
     async index (req, res) {
-        const pokemons = await Pokemon.find();
+        const pokemons = await Pokemon.find({}).sort({row: 'asc'});
 
         return res.json(pokemons);
+    },
+
+    async show (req, res) {
+        const row = req.params;
+        const pokemon = await Pokemon.findById({row: Pokemon.row});
+
+        return res.json(pokemon);
     },
 
     // Controller resposável pelo cadastramento de novos pokemons
@@ -27,8 +34,16 @@ module.exports = {
     },
 
     async destroy (req, res) {
-        
-        
-        
+
+        console.log(req.params);
+
+        const pokemon = await Pokemon.findByIdAndDelete(req.params);
+
+        return res.json(pokemon);
+    },
+
+    async update(req, res) {
+        const pokemon = await Pokemon.findByIdAndUpdate(req.params.row);
+        return res.json(pokemon);
     }
 }   
