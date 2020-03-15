@@ -1,0 +1,13 @@
+
+    #banner {
+        background: #CC0000;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    #banner h1 {
+        font-size: 60px;
+        color: #fff;
+    }
