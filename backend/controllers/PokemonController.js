@@ -13,12 +13,22 @@ module.exports = {
     // Controller resposável pelo cadastramento de novos pokemons
 
     async store (req, res) {
-
         const poke = req.body;
+
+        // Convertedo String em Array, e retirando possíveis espaços
+
+        const weatherList = poke.weather_1.split('/').map(weather => weather.trim());
+
+        poke.weather_1 = weatherList;       
         
         const pokemon = await Pokemon.create(poke);
 
-        return res.json(pokemon);
+        return res.json(pokemon)
+    },
+
+    async destroy (req, res) {
+        
+        
         
     }
 }   

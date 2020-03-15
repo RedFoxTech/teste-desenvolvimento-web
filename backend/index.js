@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes');
+const cors = require('cors');
 
 const app = express();
 
@@ -12,7 +13,7 @@ mongoose.connect('mongodb+srv://redfox:redfox@cluster0-pnzvf.mongodb.net/pokemon
 }).catch(error => handleError(error));
 
 // Middleware que analisa as requisições en Json
-
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
