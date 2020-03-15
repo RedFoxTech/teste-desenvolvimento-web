@@ -1,18 +1,15 @@
 import React from 'react';
 
 import PokeCard from './components/PokeCard/index';
-import PokeAdd from './components/PokeAdd/index';
-
-import Header from './Header';
+import Header from './components/PokeHeader/Header';
 
 import './Global.css';
 import './Main.css';
 
 function App() {    
-
     return (
         <div id="app">
-            <Header title="Pokemon RedFox"/>  
+            <Header title="Pokemon RedFox"/> 
 
             <div id="main" className="container">
                 <div className="row">
@@ -37,19 +34,15 @@ function App() {
                                 </div>
                             </div>
                         </div>  
-                            <PokeAdd />
+                            {/* <PokeAdd />
                             <button type="button" className="btn btn-warning">Editar</button>
-                            <button type="button" className="btn btn-danger ml-3">Excluir</button>                     
+                            <button type="button" className="btn btn-danger ml-3">Excluir</button>                      */}
                     </div>                    
                 </div>
             </div>
 
-            <div id="pokemon-card-small" className="container">
-                <div className="row"> 
-
-                    <PokeCard/>                    
-
-                </div>
+            <div id="pokemon-card">
+                <PokeCard/>                 
             </div>
 
         </div>

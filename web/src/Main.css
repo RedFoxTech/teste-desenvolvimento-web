@@ -5,26 +5,3 @@
 .card-big {
     background-color: #fff;
 }
-
-.pokemon-card {
-    text-align: center;
-}
-
-#pokemon-card-small {
-    margin-top: 40px;
-}
-
-#pokemon-card-small .card {
-    border-radius: 10px;
-    background: green;
-    margin-bottom: 20px;
-}
-
-#pokemon-card-small .card img {
-    object-fit: cover;
-    height: 110px;
-}
-
-#pokemon-card-small .card-body {
-    padding: 0 10px 10px;
-}

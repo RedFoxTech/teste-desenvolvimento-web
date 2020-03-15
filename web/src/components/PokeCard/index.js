@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
+import './style.css';
 
-class PokeCard extends React.Component {
+const img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
+
+class PokeCard extends Component {
 	state = {
+		loading: true,
 		pokemons: []
 	};
 
@@ -17,17 +21,22 @@ class PokeCard extends React.Component {
 
 	render() {
 		return (
-			<>						
-				{this.state.pokemons.map(pokemon => (
-					<div className="col-12 col-md-4 col-lg-2" key={pokemon._id}>
-					
-						<p><b>Nome:</b> {pokemon.name}</p>
-						<p><b>Row:</b> {pokemon.row}</p>
-						<p><b>CP_40:</b> {pokemon.CP_40}</p>
-						<p><b>weather_2:</b> {pokemon.weather_2}</p>
-					</div>
-				))}
-			</>
+			<div className="container">
+				<div className="row">					
+					{this.state.pokemons.map(pokemon => (
+						<div className="col-12 col-md-4 col-lg-3 col-xl-2 mb-4" key={pokemon._id}>	
+							<div className="card">
+								<div className="img-card">
+									<img src={img+pokemon.row+'.png'} alt={pokemon.name}></img>
+								</div>	
+								<p>#{pokemon.row}</p>			
+								<p>{pokemon.name}</p>								
+								<p>{pokemon.type_1}</p>								
+							</div>
+						</div>
+					))}
+				</div>	
+			</div>		
 		);
 	}
 }
