@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PokeFilter from '../PokeFilter/index';
 
 import './style.css';
 
@@ -20,10 +21,11 @@ function PokeHeader(props) {
                             <li className="nav-item">
                                 <Link to="/adicionar" className="nav-link" href="/adicionar">Adicionar pokemon</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/teste" className="nav-link" href="/teste">Poke test</Link>
+                            </li>
                         </ul>
-                        <form className="form-inline my-2 my-lg-0">
-                            <input className="form-control mr-sm-2" type="search" placeholder="Pesquisar pokemon" aria-label="Search" />
-                        </form>
+                        <PokeFilter />
                     </div>
                 </div>
             </nav>

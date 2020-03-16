@@ -13,7 +13,7 @@ mongoose.connect('mongodb+srv://redfox:redfox@cluster0-pnzvf.mongodb.net/pokemon
 }).catch(error => handleError(error));
 
 // Middleware que analisa as requisições en Json
-app.use(cors());
+app.use(cors('http://localhost:3000'));
 app.use(express.json());
 app.use(routes);
 

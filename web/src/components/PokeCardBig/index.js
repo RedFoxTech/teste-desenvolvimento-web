@@ -8,7 +8,7 @@ function PokeCardBig() {
         <div className="container">
             <div className="row card-big">
                 <div className="col-2 content-card">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" className="card-img" />
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" className="card-img" alt="imagem-teste" />
                     <PokeButtons />
                 </div>
                 <div className="col-2 content-card">

@@ -6,15 +6,16 @@ import PokeCard from './components/PokeCard/index';
 
 import './Global.css';
 
-function App() {    
+function App() {   
     return (
-        <div id="app">            
-            <PokeHeader title="RedFox Pokemon"/>
+        <div id="app">                     
+
+            <PokeHeader title="RedFox Pokemon" />
 
             <PokeCardBig />
 
-            <PokeCard/> 
-        </div>    
+            <PokeCard />
+        </div>
     );
 }
 

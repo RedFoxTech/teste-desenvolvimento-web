@@ -37,7 +37,7 @@ module.exports = {
 
         console.log(req.params);
 
-        const pokemon = await Pokemon.findByIdAndDelete(req.params);
+        const pokemon = await Pokemon.findByIdAndDelete();
 
         return res.json(pokemon);
     },
