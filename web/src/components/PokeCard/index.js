@@ -21,7 +21,7 @@ class PokeCard extends Component {
 
 	render() {
 		return (
-			<div className="container">
+			<div id="pokemon-card" className="container">
 				<div className="row">					
 					{this.state.pokemons.map(pokemon => (
 						<div className="col-12 col-md-4 col-lg-3 col-xl-2 mb-4" key={pokemon._id}>	
@@ -29,8 +29,8 @@ class PokeCard extends Component {
 								<div className="img-card">
 									<img src={img+pokemon.row+'.png'} alt={pokemon.name}></img>
 								</div>	
-								<p>#{pokemon.row}</p>			
-								<p>{pokemon.name}</p>								
+								<span className="number">#{pokemon.row}</span>			
+								<h4 className="name">{pokemon.name}</h4>								
 								<p>{pokemon.type_1}</p>								
 							</div>
 						</div>

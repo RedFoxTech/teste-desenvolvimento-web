@@ -1,0 +1,13 @@
+.card-big {
+    background-color: #eee;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+    padding: 10px;
+    text-align: center;
+    height: 100%;
+    margin: 25px 0;
+}
+
+.card-big .content-card {
+    text-align: left;
+}
