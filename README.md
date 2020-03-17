@@ -19,29 +19,31 @@ Uma nova aba será aberta em seu navegador com a aplicação em funcionamento. :
 
 ## Banco de dados
 O banco de dados (.xlsx) foi convertido em Json no site https://www.aconvert.com/document/xlsx-to-json/.
+
 Após a conversão, todos os dados foram inseridos em um Cluster da https://cloud.mongodb.com/.
-*Alguns documentos tiveram os nomes alterados para maior facilidade. 
+
+Alguns documentos tiveram os nomes alterados para maior facilidade. 
 
 ## Backend
 O Backend da aplicação foi desenvolvido em Node.Js conforme solicitado.
 
 ### Rotas
-As rotas foram criadas utilizando o Express https://expressjs.com/pt-br/.
+As rotas foram criadas utilizando o Express: https://expressjs.com/pt-br/.
 
 ### Conexão e Models
-As models e a conexão com o banco de dados foram criadas utilizando Mongoose https://mongoosejs.com/.
+A model e a conexão com o banco de dados foram criadas com ajuda do Mongoose: https://mongoosejs.com/.
 
 ## Frontend
 O Frontend da aplicação foi desenvolvido em React e Bootstrap.
 
 ### Api
-A Api está sendo consumida com ajuda do Axios https://github.com/axios/axios.
+A Api está sendo consumida com ajuda do Axios: https://github.com/axios/axios.
 
 ### Rotas
-As rotas estão sendo feitas através do React Router https://reacttraining.com/react-router/.
+As rotas estão sendo feitas através do React Router: https://reacttraining.com/react-router/.
 
 ## Funcionalidades
-A aplicação está listando todos os pokemons do banco de dados na página princial e também é possível adicionar novos pokemons na página 'adicionar'.
+A aplicação está listando todos os pokemons do banco de dados na página inicial. Também é possível adicionar novos pokemons na página 'adicionar'.
 
 ## Obervações
 Este foi realmente um desafio para mim, infelizmente não consegui cumprir todos os requisitos exigidos, mas sei que me esforcei o máximo nesses 5 dias para aprender e entregar o melhor resultado possível. Independente da decisão, esse será um projeto que quero melhorar e adicionar muitas coisas que não tive tempo para fazer.
