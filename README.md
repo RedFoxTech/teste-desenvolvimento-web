@@ -4,15 +4,15 @@ Teste para a vaga de desenvolvedor Web na RedFox Tech!
 
 ## Inicializando o projeto
 Para iniciar a aplicação usar o comando:
-### `git clone -b Kevyn-Oliveira https://github.com/rareirin/teste-desenvolvimento-web.git`
+#### `git clone -b Kevyn-Oliveira https://github.com/rareirin/teste-desenvolvimento-web.git`
 
 
 Iniciar o backend, entre na pasta teste-desenvolvimento-web e use o comando:
-### `npm install && npm start`
+#### `npm install && npm start`
 
 
 Iniciar o frontend, entre na pasta teste-desenvolvimento-web/web e use o comando:
-### `npm install && npm start` 
+#### `npm install && npm start` 
 
 
 Uma nova aba será aberta em seu navegador com a aplicação em funcionamento. :)
