@@ -5,7 +5,7 @@ module.exports = {
     // Controller resposável pela visualização de todos os pokemons
 
     async index (req, res) {
-        const pokemons = await Pokemon.find({}).sort({row: 'asc'});
+        const pokemons = await Pokemon.find({});
 
         return res.json(pokemons);
     },
