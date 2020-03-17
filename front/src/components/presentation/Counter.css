@@ -1,0 +1,18 @@
+.counter {
+	position: relative;
+}
+
+.counter > .value {
+	position: absolute;
+	border-radius: 5rem;
+	height: 1.2rem;
+	width: 1.2rem;
+	top: -2px;
+	right: -2px;
+	background: #e3350d;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 800;
+	font-size: 0.7rem;
+}

@@ -1,0 +1,13 @@
+.label-value {
+	padding: 1rem 0;
+	border-bottom: solid 1px #d8d8d8;
+}
+
+.label-value p {
+	margin: 0;
+	font-weight: 700;
+}
+
+.label-value small {
+	font-style: italic;
+}
