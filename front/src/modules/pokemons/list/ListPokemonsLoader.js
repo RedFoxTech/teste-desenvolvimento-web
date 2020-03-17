@@ -55,7 +55,6 @@ const mapActions = dispatch => ({
 
 	fetchMoreData: (filter, page) => {
 		pokemonsResource.getList({ queryParams: { page, ...prepareFilterParams(filter) } }).then(data => {
-			console.log(data)
 			sd(dispatch, MERGE_POKEMONS_LIST, data)
 		})
 	}

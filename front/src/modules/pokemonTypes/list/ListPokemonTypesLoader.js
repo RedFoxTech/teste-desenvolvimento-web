@@ -8,7 +8,7 @@ import { sd } from '../../../helpers/redux'
 class ListPokemonTypesLoader extends React.Component {
 	componentWillMount() {
 		const { fetchData, types } = this.props
-		if (!types || !types.commercial) {
+		if (!types || !types.length) {
 			fetchData()
 		}
 	}

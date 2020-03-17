@@ -2,29 +2,34 @@ import { IoIosHeart, IoIosHeartEmpty } from 'react-icons/io'
 import { connect } from 'react-redux'
 import React from 'react'
 
-import { TOGGLE_FAVORITE_POKEMON } from '../favorites/favoritePokemons.reducer'
-import { hasObjectWithID } from '../../../helpers/collection'
+import { ADD_FAVORITE_POKEMONS, REMOVE_FAVORITE_POKEMONS } from '../favorites/favoritePokemons.reducer'
 import { sd } from '../../../helpers/redux'
 
-const PokemonFavoriteToggler = ({ pokemon, favorites, toggle }) => {
+const PokemonFavoriteToggler = ({ pokemon, favoritesIDs, addFavorite, removeFavorite }) => {
 	let Icon = IoIosHeartEmpty
+	let action = addFavorite
 
-	if (pokemon && hasObjectWithID(favorites, pokemon.id)) {
+	if (pokemon && favoritesIDs.includes(pokemon.id)) {
+		action = removeFavorite
 		Icon = IoIosHeart
 	}
 
 	return (
-		<a onClick={() => toggle(pokemon)}>
+		<a onClick={() => action(pokemon)}>
 			<Icon color="#e3350d" size="1.5em" />
 		</a>
 	)
 }
 
-const mapState = state => ({ favorites: state.favoritePokemons.list })
+const mapState = state => ({ favoritesIDs: state.favoritePokemons.ids })
 
 const mapAction = d => ({
-	toggle(pokemon) {
-		sd(d, TOGGLE_FAVORITE_POKEMON, pokemon)
+	addFavorite(pokemon) {
+		sd(d, ADD_FAVORITE_POKEMONS, pokemon)
+	},
+
+	removeFavorite(pokemon) {
+		sd(d, REMOVE_FAVORITE_POKEMONS, pokemon)
 	}
 })
 

@@ -2,10 +2,11 @@ import { Button, Form, FormControl, Nav, Navbar } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import { push } from 'react-router-redux'
 import React from 'react'
+
 import { SET_POKEMONS_FILTER_ITEM, FORCE_POKEMONS_REFRESH } from '../pokemons/list/pokemons.reducer'
 import { sd } from './../../helpers/redux'
-
 import Counter from '../../components/presentation/Counter'
+import FavoritePokemonsIDsLoader from '../pokemons/favorites/FavoritePokemonsIDsLoader'
 import Logo from '../../components/shapes/Logo'
 
 class MainMenu extends React.Component {
@@ -31,9 +32,11 @@ class MainMenu extends React.Component {
 					<Nav className="mr-auto">
 						<Nav.Link onClick={() => goTo('/')}>Pokedex</Nav.Link>
 
-						<Counter key={3} value={favoritesCount}>
-							<Nav.Link onClick={() => goTo('/favoritos')}>Favoritos</Nav.Link>
-						</Counter>
+						<FavoritePokemonsIDsLoader>
+							<Counter key={3} value={favoritesCount}>
+								<Nav.Link onClick={() => goTo('/favoritos')}>Favoritos</Nav.Link>
+							</Counter>
+						</FavoritePokemonsIDsLoader>
 					</Nav>
 					<Form inline onSubmit={this.handleSubmit}>
 						<FormControl
@@ -55,13 +58,12 @@ class MainMenu extends React.Component {
 
 const mapState = state => ({
 	filter: state.pokemons.filter,
-	favoritesCount: state.favoritePokemons.list.length
+	favoritesCount: state.favoritePokemons.ids.length
 })
 
 const mapActions = d => ({
 	onChangeSearch(value) {
 		sd(d, SET_POKEMONS_FILTER_ITEM, { field: 'q', value })
-		console.log(value)
 	},
 	refreshPokemonsList() {
 		sd(d, FORCE_POKEMONS_REFRESH)

@@ -8,7 +8,7 @@ var router = express.Router()
 const prepareWhereClause = query => {
 	let where = {}
 
-	const { q, atkMin, atkMax, defMin, defMax, staMin, staMax, legendary, typeID } = query
+	const { q, atkMin, atkMax, defMin, defMax, staMin, staMax, legendary, typeID, withIDs } = query
 
 	if (!!q) {
 		if (isNaN(q)) {
@@ -30,11 +30,15 @@ const prepareWhereClause = query => {
 		where.legendary = legendary
 	}
 
+	if (!!withIDs) {
+		where.id = { [Op.in]: withIDs.split(',').map(Number) }
+	}
+
 	return where
 }
 
 router.get('/', async (req, res) => {
-	const limit = 18
+	const limit = !req.query.withIDs ? 18 : 900
 	const page = (req.query.page || 1) - 1
 	const sort = req.query.sort || 'number'
 

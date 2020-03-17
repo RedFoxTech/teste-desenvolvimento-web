@@ -8,6 +8,5 @@ export const prepareFilterParams = filter => {
 		}
 	})
 
-	console.log('filter', cleanFilter)
 	return cleanFilter
 }
