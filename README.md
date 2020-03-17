@@ -4,38 +4,38 @@ Teste para a vaga de desenvolvedor Web na RedFox Tech!
 
 ## Inicializando o projeto
 Para iniciar a aplicação usar o comando:
-###`git clone -b Kevyn-Oliveira https://github.com/rareirin/teste-desenvolvimento-web.git'`
+### `git clone -b Kevyn-Oliveira https://github.com/rareirin/teste-desenvolvimento-web.git`
 
 Iniciar o backend, entre na pasta teste-desenvolvimento-web e use o comando:
-###`npm install && npm start` 
+### `npm install && npm start`
 
 Iniciar o frontend, entre na pasta teste-desenvolvimento-web/web e use o comando:
-###`npm install && npm start` 
+### `npm install && npm start` 
 
 Uma nova aba será aberta em seu navegador com a aplicação em funcionamento. :)
 
 ## Banco de dados
-O banco de dados (.xlsx) foi convertido em Json no site [https://www.aconvert.com/document/xlsx-to-json/].
-Após a conversão, todos os dados foram inseridos em um Cluster da [https://cloud.mongodb.com/].
+O banco de dados (.xlsx) foi convertido em Json no site https://www.aconvert.com/document/xlsx-to-json/.
+Após a conversão, todos os dados foram inseridos em um Cluster da https://cloud.mongodb.com/.
 *Alguns documentos tiveram os nomes alterados para maior facilidade. 
 
 ## Backend
 O Backend da aplicação foi desenvolvido em Node.Js conforme solicitado.
 
 ### Rotas
-As rotas foram criadas utilizando o Express [https://expressjs.com/pt-br/].
+As rotas foram criadas utilizando o Express https://expressjs.com/pt-br/.
 
 ### Conexão e Models
-As models e a conexão com o banco de dados foram criadas utilizando Mongoose [https://mongoosejs.com/].
+As models e a conexão com o banco de dados foram criadas utilizando Mongoose https://mongoosejs.com/.
 
 ## Frontend
 O Frontend da aplicação foi desenvolvido em React e Bootstrap.
 
 ### Api
-A Api está sendo consumida com ajuda do Axios [https://github.com/axios/axios].
+A Api está sendo consumida com ajuda do Axios https://github.com/axios/axios.
 
 ### Rotas
-As rotas estão sendo feitas através do React Router [https://reacttraining.com/react-router/].
+As rotas estão sendo feitas através do React Router https://reacttraining.com/react-router/.
 
 ## Funcionalidades
 A aplicação está listando todos os pokemons do banco de dados na página princial e também é possível adicionar novos pokemons na página 'adicionar'.
