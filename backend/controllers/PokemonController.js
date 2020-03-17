@@ -10,23 +10,10 @@ module.exports = {
         return res.json(pokemons);
     },
 
-    async show (req, res) {
-        const row = req.params;
-        const pokemon = await Pokemon.findById({row: Pokemon.row});
-
-        return res.json(pokemon);
-    },
-
     // Controller resposável pelo cadastramento de novos pokemons
 
     async store (req, res) {
-        const poke = req.body;
-
-        // Convertedo String em Array, e retirando possíveis espaços
-
-        const weatherList = poke.weather_1.split('/').map(weather => weather.trim());
-
-        poke.weather_1 = weatherList;       
+        const poke = req.body;                
         
         const pokemon = await Pokemon.create(poke);
 

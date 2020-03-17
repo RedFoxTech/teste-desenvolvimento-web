@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import PokeFilter from '../PokeFilter/index';
 
 import './style.css';
 
@@ -25,7 +24,7 @@ function PokeHeader(props) {
                                 <Link to="/teste" className="nav-link" href="/teste">Poke test</Link>
                             </li>
                         </ul>
-                        <PokeFilter />
+                        
                     </div>
                 </div>
             </nav>

@@ -6,9 +6,6 @@ const router = Router();
 // Listar pokemons
 router.get('/pokemons', PokemonController.index); 
 
-// Listar apenas um pokemon
-router.get('/pokemons/:row', PokemonController.show);
-
 // Cadastrar pokemon
 router.post('/pokemons', PokemonController.store); 
 
