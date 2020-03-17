@@ -18,7 +18,9 @@
 	},
 
 	"scripts": {
-		"start": "node index.js"
+		"start": "node index.js",
+		"createDB": "cd src/ && npx sequelize-cli db:create && cd ..",
+		"prepareDB": "cd src/ && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all && cd .."
 	},
 	"devDependencies": {}
 }

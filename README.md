@@ -1,58 +1,46 @@
-# Teste de Desenvolvimento Web
+## Acesso
 
-Olá Dev! Tudo bem?
+Subi o projeto no servidor, mas como usei a versão gratuita do heroku o primeiro acesso pode ficar lento até o servidor "acordar".
+Ao acessar o link, espere 1 minuto e dê refresh na página novamente que vai estar pronto.
+Caso prefira coloque o projeto para rodar no localhost, conforme explicado abaixo
+Acesse o projeto pela url: https://orulo.surge.sh
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+## Notas
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+O armazenamento de pokemons favoritos, está sendo feito no localStorage, por isso ao acessar com outro browser esse valor é perdido. Idealmente deveria ser salvo no user logado, mas como não fiz autenticação no app, deixei no localStorage mesmo.
 
-Agora vamos ao teste!
+## Rodar backend
 
+### `cd back`
 
-## Desafio Pokémon
+Navegue para a pasta back/
 
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
+### `yarn`
 
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
+Instala todas as dependencias
 
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
+### `yarn createDB`
 
+Caso seja a primeira vez rodando, é necessário ter o postgres instalado e configurar o acesso em `back/src/config/config.json`. O comando yarn createDB irá criar um banco com o nome de `pokemon`
 
-## Consigo fazer tudo isso?
+### `yarn prepareDB`
 
-Consegue sim!
+Caso seja a primeira vez rodando, e depois de ter o database criado, esse comando ira fazer as migrations e alimentar a base de dados com o conteúdo do excel.
 
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
+### `yarn start`
 
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+Inicia o servidor na porta 5000
 
+## Rodar frontend
 
-## Por onde começo?
+### `cd back`
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+Em outra janela do terminal navegue para a pasta front/
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
+### `yarn`
 
+Instala todas as dependencias
 
-## E o Layout??
+### `yarn start`
 
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
-
-
-## Regras
-
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
-
-
-## Só isso?
-
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
+Inicia o front end na porta 3000
