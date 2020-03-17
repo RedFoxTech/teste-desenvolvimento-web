@@ -18,8 +18,7 @@
 	},
 
 	"scripts": {
-		"start": "node index.js",
-		"build": "node index.js"
+		"start": "node index.js"
 	},
 	"devDependencies": {}
 }
