@@ -1,6 +1,5 @@
 import 'whatwg-fetch'
 
-import { API_URL } from '../.env'
 import paths from './paths'
 
 const getHeaders = () => {
@@ -9,6 +8,8 @@ const getHeaders = () => {
 		'Content-Type': 'application/json'
 	}
 }
+
+const API_URL = process.env.REACT_APP_API_URL
 
 const getPath = (pathName, urlParams, queryParams) => {
 	let { path } = paths[pathName]
@@ -22,7 +23,6 @@ const getPath = (pathName, urlParams, queryParams) => {
 	for (let key in queryParams) {
 		const value = queryParams[key]
 		queryParamsArray.push(key + '=' + value)
-		console.log(key, value)
 	}
 	if (!!queryParamsArray.length) {
 		path += '?' + queryParamsArray.join('&')
