@@ -21,25 +21,26 @@ const PokemonDetails = ({ pokemon, id }) => {
 
 	return (
 		<div>
-			<Row>
-				<Col md={6}>
-					<Image
-						src="holder.js/100px250"
-						fluid
-						src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${formatTo3Digits(pokemon.number)}.png`}
-					/>
-				</Col>
-				<Col md={6} style={{ marginTop: 68 }}>
-					<small>{pokemon.number}.</small>
+			<ShowPokemonLoader id={id}>
+				<Row>
+					<Col md={6}>
+						<Image
+							src="holder.js/100px250"
+							fluid
+							src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${formatTo3Digits(pokemon.number)}.png`}
+						/>
+					</Col>
+					<Col md={6} style={{ marginTop: 68 }}>
+						<small>{pokemon.number}.</small>
 
-					<h1>{pokemon.name}</h1>
+						<h1>{pokemon.name}</h1>
 
-					<div>
-						<PokemonTypeTag type={pokemon.type1} />
-						<PokemonTypeTag type={pokemon.type2} />
-						<PokemonFavoriteToggler pokemon={pokemon} />
-					</div>
-					<ShowPokemonLoader id={id}>
+						<div>
+							<PokemonTypeTag type={pokemon.type1} />
+							<PokemonTypeTag type={pokemon.type2} />
+							<PokemonFavoriteToggler pokemon={pokemon} />
+						</div>
+
 						<Row>
 							<Col xs={6}>
 								<LabelValue label="Total" value={sumPokemonStats(pokemon)} />
@@ -64,10 +65,9 @@ const PokemonDetails = ({ pokemon, id }) => {
 								</Col>
 							)}
 						</Row>
-					</ShowPokemonLoader>
-				</Col>
-			</Row>
-
+					</Col>
+				</Row>
+			</ShowPokemonLoader>
 			<ShowPokemonFamily familyID={pokemon.familyID} />
 		</div>
 	)
