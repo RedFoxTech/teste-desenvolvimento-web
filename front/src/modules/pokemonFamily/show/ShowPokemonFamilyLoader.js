@@ -1,10 +1,10 @@
+import { Spinner } from 'react-bootstrap'
 import { connect } from 'react-redux'
 import React from 'react'
 
 import { SET_POKEMON_FAMILY_LOADING, SET_POKEMON_FAMILY_SINGLE } from './pokemonFamily.reducer'
 import { pokemonFamiliesResource } from '../../../api/pokemonFamilies/pokemonFamiliesApi'
 import { sd } from '../../../helpers/redux'
-import Text from '../../../components/presentation/Text'
 
 class ListPokemonsLoader extends React.Component {
 	componentWillMount() {
@@ -23,7 +23,7 @@ class ListPokemonsLoader extends React.Component {
 
 	render() {
 		const { isLoading, children } = this.props
-		if (!!isLoading) return <Text>Carregando...</Text>
+		if (!!isLoading) return <Spinner animation="grow" variant="info" />
 		return children
 	}
 }
