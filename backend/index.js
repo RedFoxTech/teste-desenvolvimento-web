@@ -19,4 +19,4 @@ app.use(routes);
 
 // Porta na qual a aplicação poderá ser acessada
 
-app.listen(3333);
+app.listen(process.env.PORT || 3333);
