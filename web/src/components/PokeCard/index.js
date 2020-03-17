@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import api from '../../services/api';
 
-
 import './style.css';
 
 const img = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 
 function PokeCard() {
 
-	const [pokemons, setPokemons] = useState([]);
-	const [filter, setFilter] = useState('');
-	
+	const [pokemons, setPokemons] = useState([]);	
+
 	useEffect(() => {
 		async function loadPokemons() {
 			const res = await api.get('/pokemons');
@@ -20,9 +18,8 @@ function PokeCard() {
 		loadPokemons();
 	}, []);
 
-	return(
-		<div id="pokemon-card" className="container">
-			<input value={filter} onChange={(e) => setFilter(e.target.value)} />			
+	return(	
+		<div id="pokemon-card" className="container">	
 			<div className="row">
 				{pokemons.map(pokemon => (
 					<div className="col-12 col-md-4 col-lg-3 col-xl-2 mb-4" key={pokemon._id}>

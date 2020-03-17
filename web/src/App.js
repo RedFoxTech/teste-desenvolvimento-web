@@ -8,13 +8,12 @@ import './Global.css';
 
 function App() {   
     return (
-        <div id="app">                     
-
-            <PokeHeader title="RedFox Pokemon" />
+        <div id="app">  
+            <PokeHeader/>
 
             <PokeCardBig />
 
-            <PokeCard />
+            <PokeCard title={'oi'} body={'heu'} />
         </div>
     );
 }
