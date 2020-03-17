@@ -4,7 +4,7 @@ Subi o projeto no servidor, mas como usei a versão gratuita do heroku o primeir
 Ao acessar o link, espere 1 minuto e dê refresh na página novamente que vai estar pronto.
 Caso prefira coloque o projeto para rodar no localhost, conforme explicado abaixo.
 
-Acesse o projeto pela url: https://redfox-pokemon.surge.sh/
+Acesse o projeto pela url: https://redfox-pokemon.surge.sh/ (Não testei em outros navegadores, então de preferencia acesse pelo Chrome)
 
 ## Notas
 
