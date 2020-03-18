@@ -9,7 +9,6 @@ import PokemonFavoriteToggler from '../_common/PokemonFavoriteToggler'
 import PokemonTypeTag from '../../pokemonTypes/show/PokemonTypeTag'
 import ShowPokemonFamily from '../../pokemonFamily/show/ShowPokemonFamily'
 import ShowPokemonLoader from './ShowPokemonLoader'
-import Text from '../../../components/presentation/Text'
 
 const PokemonDetails = ({ pokemon, id }) => {
 	if (!pokemon.id)
