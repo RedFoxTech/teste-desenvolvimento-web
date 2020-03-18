@@ -1,0 +1,33 @@
+*,
+* * {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	color: #3a3a3a;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+a {
+	cursor: pointer;
+}
+
+.btn-primary {
+	background-color: #e3350d;
+	border-color: #e3350d;
+}
+.btn-primary:hover {
+	background-color: #e3350d99;
+	border-color: #e3350d99;
+}
+.btn-outline-primary {
+	border-color: #e3350d;
+	color: #e3350d;
+}
+.btn-outline-primary:hover {
+	border-color: #e3350d;
+	background-color: #e3350d;
+	color: white;
+}

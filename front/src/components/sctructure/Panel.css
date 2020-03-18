@@ -1,0 +1,23 @@
+.panel {
+  border-radius: 5px;
+
+  background: #ffffff;
+  box-shadow: 0 0 8px 0 rgba(83, 83, 83, 0.5);
+}
+
+.panel.no-padding {
+  padding: 0;
+}
+
+.panel.overflow-to-top {
+  transform: translateY(-6.75rem);
+}
+
+.panel-content {
+  padding: 1.9375rem;
+}
+
+.panel-header {
+  border-bottom: solid 1px #d8d8d8;
+  padding: 1.6rem;
+}

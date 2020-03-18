@@ -1,0 +1,39 @@
+.header {
+	min-height: 30rem;
+	background-color: #d8d8d8;
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	align-items: center;
+}
+
+.header.full-screen {
+	min-height: 40rem;
+	height: 100vh;
+}
+
+.header .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.header .content {
+	position: relative;
+	z-index: 5;
+	flex: 1;
+}
+
+.header-title-wrapper {
+	padding: 9rem;
+	text-align: center;
+}
+.header-title-wrapper > h1,
+.header-title-wrapper > small {
+	margin: 0;
+}
