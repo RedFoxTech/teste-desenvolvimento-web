@@ -13,7 +13,7 @@ function App() {
 
             <PokeCardBig />
 
-            <PokeCard title={'oi'} body={'heu'} />
+            <PokeCard />
         </div>
     );
 }

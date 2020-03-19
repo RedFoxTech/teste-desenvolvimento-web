@@ -12,17 +12,14 @@ function PokeHeader(props) {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                        <Link to="/" className="navbar-brand" href="/">{props.title}</Link>
+                        <Link to="/" className="navbar-brand" href="/">RedFox Pokemon</Link>
                         <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                             <li className="nav-item active">
                                 <Link to="/" className="nav-link" href="/">Lista de pokemons <span className="sr-only">(current)</span></Link>
                             </li>
                             <li className="nav-item">
                                 <Link to="/adicionar" className="nav-link" href="/adicionar">Adicionar pokemon</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link to="/teste" className="nav-link" href="/teste">Poke test</Link>
-                            </li>
+                            </li>                            
                         </ul>
                         
                     </div>
