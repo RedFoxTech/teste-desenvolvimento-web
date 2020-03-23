@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A64E6E2A-D060-3DF7-2B95-D7EE2A0D9B6C" name="TYPE_POKEMON">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 05:17:14 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_tipo" id="6CAB30CE-9EDF-9EBF-7A5E-1DA03CAE96F5">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 05:17:28 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome_tipo" id="9ACCE4C1-099C-89B1-A85D-1F6FA5493F96">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 05:17:51 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="DF39F40C-1DEC-84F2-0A6E-7FB9DE4E1B1F" name="TIPO_POKEMON PK">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 05:17:47 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6CAB30CE-9EDF-9EBF-7A5E-1DA03CAE96F5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

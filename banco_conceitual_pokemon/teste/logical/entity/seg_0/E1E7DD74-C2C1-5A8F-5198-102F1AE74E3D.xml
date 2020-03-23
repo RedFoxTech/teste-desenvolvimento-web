@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E1E7DD74-C2C1-5A8F-5198-102F1AE74E3D" name="ESPECIE_POKEMON">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 17:08:40 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idEspecie" id="8E4B288F-6286-D1ED-2C0C-EE11B11D0CA2">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 17:10:57 UTC</createdTime>
+<generatorID>90AEE63B-CD23-412E-C239-1B74304ED168</generatorID>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<referedAttribute>E8136D4A-CCAD-346D-4E20-54EA1E412098</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="num_pokedex" id="A8E6FF43-4A6F-72AE-C61E-824E61A710B1">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 17:11:24 UTC</createdTime>
+<generatorID>802FA39A-4BE4-E071-C143-DD7C84763D4C</generatorID>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<referedAttribute>64BE8869-0B7A-4A15-6A71-4189B2F5FEF3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="48BDCDB4-FEA9-977C-9E06-96C7AA76DA62" name="ESPECIE_POKEMON PK">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 17:11:47 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A8E6FF43-4A6F-72AE-C61E-824E61A710B1</attributeRef>
+<attributeRef>8E4B288F-6286-D1ED-2C0C-EE11B11D0CA2</attributeRef>
+<attributeRef>8E4B288F-6286-D1ED-2C0C-EE11B11D0CA2</attributeRef>
+<attributeRef>A8E6FF43-4A6F-72AE-C61E-824E61A710B1</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
