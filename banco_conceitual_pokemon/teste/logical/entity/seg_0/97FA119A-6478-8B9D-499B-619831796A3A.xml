@@ -1,0 +1,170 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="97FA119A-6478-8B9D-499B-619831796A3A" name="TB_POKEMON">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 04:35:35 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="num_pokedex" id="64BE8869-0B7A-4A15-6A71-4189B2F5FEF3">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 04:38:08 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome" id="820C1444-6DD2-05EA-A0F4-D27B1C73E49C">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 04:39:53 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="img_pokemon" id="106F53EB-6A7F-77B0-C773-1FA7E7EC05E9">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 04:40:26 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="geracao" id="406A58F0-1CCB-5973-F9EE-6D2BED13E06E">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 04:44:30 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="evolved" id="410B99AF-F360-8E7A-3417-4CCD1691320B">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 04:53:29 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="estagioEvolucao" id="A96382C1-8FAB-F7DD-9DC8-B2113E43095F">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 05:10:05 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="atk" id="15E91874-3501-6C0E-2ABD-A9BD003C90EE">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 04:56:05 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="def" id="14D39563-4CEE-89EB-7C58-B0FC01B7A5FC">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 04:56:29 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="sta" id="DC6EE44E-A248-350E-C0D9-72BF2A85CFEB">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 04:57:19 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="familiaId" id="76CAB0C3-7A40-1027-DDBA-B80C04C60FED">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 05:09:06 UTC</createdTime>
+<generatorID>01318D37-AD3F-4BC6-3A1C-8B1BA3F46741</generatorID>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>64BE8869-0B7A-4A15-6A71-4189B2F5FEF3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="crossGen" id="0C0BC27F-B6D2-C34A-790C-2EBD1BC3D8E0">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 05:12:07 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT006</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="1CADD26A-985E-E529-D73A-2F24099B06BE" name="TB_POKEMON PK">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 04:38:47 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>64BE8869-0B7A-4A15-6A71-4189B2F5FEF3</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

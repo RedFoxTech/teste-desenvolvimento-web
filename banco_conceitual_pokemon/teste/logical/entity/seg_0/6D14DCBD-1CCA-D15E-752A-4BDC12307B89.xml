@@ -1,0 +1,64 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="6D14DCBD-1CCA-D15E-752A-4BDC12307B89" name="POKEMON_WEATHER">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 17:02:39 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="idWeather" id="2BFA23FE-34C3-ABC7-45A3-B98321293AC5">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 17:04:21 UTC</createdTime>
+<generatorID>58CD4097-21C9-279F-0669-70C356727686</generatorID>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<referedAttribute>12D2AFF0-1696-37D7-CF18-FD345815ED4C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="num_pokedex" id="11542038-42C2-8FD8-2C5F-79CC9CB7C780">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 17:05:01 UTC</createdTime>
+<generatorID>78E545EB-1472-8DF2-EA88-52118113D18A</generatorID>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<referedAttribute>64BE8869-0B7A-4A15-6A71-4189B2F5FEF3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9D28E5ED-CEC6-3D38-1F27-5ECB6591CD2C" name="POKEMON_WEATHER PK">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 17:05:44 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2BFA23FE-34C3-ABC7-45A3-B98321293AC5</attributeRef>
+<attributeRef>11542038-42C2-8FD8-2C5F-79CC9CB7C780</attributeRef>
+<attributeRef>2BFA23FE-34C3-ABC7-45A3-B98321293AC5</attributeRef>
+<attributeRef>11542038-42C2-8FD8-2C5F-79CC9CB7C780</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B63AC49D-259B-7988-38B9-6722719E38E2" name="POKEMONS_TIPO">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 05:19:28 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="num_pokedex" id="87EFD3E7-D890-F7EF-4005-484FDD782C45">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 05:20:32 UTC</createdTime>
+<generatorID>6786AC62-0316-510B-461F-524FB8F915BC</generatorID>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<referedAttribute>64BE8869-0B7A-4A15-6A71-4189B2F5FEF3</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_tipo" id="E93E1F25-5F0A-AF16-7F4E-DC0B0DF1CC77">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 05:22:20 UTC</createdTime>
+<generatorID>DEC5CC46-F0AC-74FD-005C-A32EC9D111F2</generatorID>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<referedAttribute>6CAB30CE-9EDF-9EBF-7A5E-1DA03CAE96F5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B09A968A-8BB6-70E4-9562-B3367D9A3E1B" name="TIPOS_POKEMONS PK">
+<createdBy>User</createdBy>
+<createdTime>2020-03-22 05:22:31 UTC</createdTime>
+<ownerDesignName>teste</ownerDesignName>
+<engineerTo>
+<item key="8A0336C2-F201-C2DD-68A7-847227E432E2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E93E1F25-5F0A-AF16-7F4E-DC0B0DF1CC77</attributeRef>
+<attributeRef>87EFD3E7-D890-F7EF-4005-484FDD782C45</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
