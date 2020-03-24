@@ -1,9 +1,9 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 
-export default function PokeCard() {
+export default function PokeCard({type}) {
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card className="m-2" style={{ width: '18rem' }}>
             <Card.Body>
                 <Card.Title> Type One</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
