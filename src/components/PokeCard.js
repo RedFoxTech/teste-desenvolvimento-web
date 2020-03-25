@@ -10,7 +10,7 @@ export default function PokeCard({pokemonCard}) {
                 <Card.Text>ATK: {pokemonCard.ATK}</Card.Text>
                 <Card.Text>DEF: {pokemonCard.DEF}</Card.Text>
                 <Card.Text>STA: {pokemonCard.STA}</Card.Text>
-                <Card.Link href={`/${pokemonCard.Name}`}>Mais Detalhes</Card.Link>
+                <Card.Link className="btn btn-danger" href={`/pokemon/${pokemonCard.Name}`}>Mais Detalhes</Card.Link>
             </Card.Body>
         </Card>
     )
