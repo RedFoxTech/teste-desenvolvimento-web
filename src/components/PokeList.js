@@ -1,20 +1,28 @@
-import React from 'react'
-import { Container, Row } from 'react-bootstrap'
+import React, { useEffect } from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
+import ListPoke from './ListPoke'
 import PokeCard from './PokeCard'
 
-export default function PokeList({ data }) {
+export default function PokeList({ data, functionFilter, filterTypes, pokemons }) {
+    useEffect(() => {
+        functionFilter()
+    }, [])
 
     return (
-        <Container className="bg-warning" fluid="xs" style={{ height: '90vh' }}>
-            <Row className="p-2 m-0">
-                <Row className="p-5 flex-row justify-content-center" lg={5}>
+        <Container className="bg-warning" fluid="xs" >
+            <Row className="p-2 m-0" >
+                <Col xl={2}>{data.length == 0 ? "Nada a exibir" : data.map((item, index) => {
+                    return <ListPoke filterTypes={filterTypes} title={item} key={index} />
+                })}
+                </Col>
 
-                    {data.length == 0 ? "Nada a exibir" : data[0].map((item, index) => {
-                        return <PokeCard item={item} />
+                <Col className="d-flex flex-wrap" xl={10}>
+                    {pokemons.length == 0 ? "Nada a exibir" : pokemons.map((item, index) => {
+                        return <PokeCard pokemonCard={item} key={index} />
                     })}
-
-                </Row>
+                </Col>
             </Row>
         </Container>
     )
 }
+
