@@ -1,25 +1,53 @@
 import React, { useState } from 'react';
-import { getAllPokes } from './components/API';
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import { filterPokesByTypeOne, getAllPokes } from './components/API';
 import PokeBar from './components/PokeBar';
 import PokeList from './components/PokeList';
+import PokeListWeather from './components/PokeListWeather';
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
+  const [category, setCategory] = useState([]);
   let all = [];
 
-  function getAll() {
-    console.log("foi");
-    getAllPokes().then(pokes => {
-      all = [pokes]
-      setPokemons(all)
-    }).catch(e => alert(e))
+  // function getAll() {
+  //   console.log("foi");
+  //   getAllPokes().then(pokes => {
+  //     all = [pokes]
+  //     setPokemons(all)
+  //   }).catch(e => alert(e))
+  // }
+
+  // Filtrar as categorias Tipo Um dos pokemons
+  function getAllByCatOne() {
+    let category = new Set();
+    getAllPokes().then(pokes => pokes.map((v) => {
+      return category.add(v.typeOne)
+    })).then(() => {
+      setCategory([...category])
+    })
+  }
+
+  function filterTypes(type) {
+    let array = []
+    filterPokesByTypeOne(type)
+      .then(res => res.map((v) => {
+        return array.push(v)
+      })).then(() => {
+        setPokemons(array)
+      })
   }
 
   return (
-    <>
-      <PokeBar getAll={getAll} />
-      <PokeList data={pokemons} />
-    </>
+    <Router>
+      <PokeBar getByTypeCat={<Link to="/">Tipo</Link>} getByWeatherCat={<Link to="/weather">Tempo</Link>} />
+      <Switch>
+        <Route exact path="/">
+          <PokeList filterTypes={filterTypes} functionFilter={getAllByCatOne} data={category} pokemons={pokemons} />
+        </Route>
+        <Route path="/:id" component={PokeListWeather} />
+      </Switch>
+    </Router>
   );
 }
 
