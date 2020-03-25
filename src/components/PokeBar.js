@@ -1,9 +1,7 @@
 import React from 'react'
 import { Nav, Navbar } from 'react-bootstrap'
 
-
-export default function PokeBar({getAll}) {
-
+export default function PokeBar({ getByTypeCat  }) {
     return (
         <>
             <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
@@ -11,10 +9,7 @@ export default function PokeBar({getAll}) {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link href="#" onClick={(e) => {
-                             getAll()
-                        }} >FindByType</Nav.Link>
-                        <Nav.Link href="#">FindByWeather</Nav.Link>
+                        <Nav.Link>{getByTypeCat}</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
