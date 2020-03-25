@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { useParams } from "react-router-dom";
-import { filterByName } from './API'
+import { filterByName } from './API';
 
 export default function PokeListWeather({ match }) {
     const [pageTitle, setPageTitle] = useState("...")
