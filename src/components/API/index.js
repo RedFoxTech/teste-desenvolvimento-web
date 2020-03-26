@@ -1,15 +1,16 @@
+const url = "https://oseiasnascimento.herokuapp.com"
 
-export const getAllPokes = () => fetch('http://localhost:8088/getall')
+export const getAllPokes = () => fetch(`${url}/getall`)
     .then(response => response.json())
     .then((dados) => dados)
     .catch((e) => console.log(e));
 
-export const filterPokesByTypeOne = (typeOne) => fetch(`http://localhost:8088/${typeOne}`)
+export const filterPokesByTypeOne = (typeOne) => fetch(`${url}/${typeOne}`)
     .then(response => response.json())
     .then((dados) => dados)
     .catch((e) => console.log(e));
     
-export const filterByName = (Name) => fetch(`http://localhost:8088/pokemon/${Name}`)
+export const filterByName = (Name) => fetch(`${url}/${Name}`)
     .then(response => response.json())
     .then((dados) => dados)
     .catch((e) => console.log(e));
