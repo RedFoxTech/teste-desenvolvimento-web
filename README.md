@@ -25,5 +25,5 @@ Na pasta API do front-End você pode mudar o endereço do servidor para fazer a 
 ## Observações
 
 Possivelmente há alguns bugs
- - [] 404
- - [] react-router server rendering
+ - [ ] 404
+ - [ ] react-router server rendering
