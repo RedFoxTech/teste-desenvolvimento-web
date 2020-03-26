@@ -19,9 +19,11 @@ Caso queira verificar a API deste projeto, entre neste repositóio: https://gith
 
 A API rodará em http://localhost:8088.
 
-Na pasta API você pode mudar o endereço do servidor para fazer a requisição:
-[src/components/API](src/components/API)
+Na pasta API do front-End você pode mudar o endereço do servidor para fazer a requisição:
+[src/components/API/index.js](src/components/API/index.js). Por enquanto a aplicação está usando os servidores da Heroku.
 
 ## Observações
 
 Possivelmente há alguns bugs
+ - [] 404
+ - [] react-router server rendering
