@@ -1,12 +1,12 @@
 Teste Desenvolvimento Web
 ===
 
-# Introdução
+## Sobre
 O front-end deste projeto foi desenvolvido com [React.Js](https://pt-br.reactjs.org/), [React-Bootstrap](https://react-bootstrap.github.io/), [React-Router](https://reacttraining.com/react-router/web/guides/quick-start).
 
 O backend foi desenvolvido com [Express](https://expressjs.com/pt-br/starter/installing.html), [MongoDB Atlas](https://www.mongodb.com/cloud/atlas), etc.
 
-Você pode vê-la funcionar [Aqui](https://oseiasnascimento.ml/) (Servidor do Google Cloud Platform).
+Você pode vê-la funcionar [Aqui](https://oseiasal.github.io/teste-desenvolvimento-web/).
 
 (Obs.: Caso não seja possível ver a aplicação pelo link acima, siga os procedimentos a seguir: )
 
@@ -25,5 +25,5 @@ Na pasta API do front-End você pode mudar o endereço do servidor para fazer a 
 ## Observações
 
 Possivelmente há alguns bugs
- - [ ] 404
+ - [ ] 404 link direto
  - [ ] react-router server rendering
