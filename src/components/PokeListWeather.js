@@ -21,7 +21,7 @@ export default function PokeListWeather({ match }) {
     }
 
     return (
-        <Container className="bg-warning" fluid="xs" >
+        <Container className="bg-warning" fluid="xs"  style={{height: '90vh'}}>
             <Row className="p-2 m-0" >
                 <Col>
                     <Card>
