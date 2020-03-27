@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 export default function PokeCard({pokemonCard}) {
 
@@ -10,7 +11,7 @@ export default function PokeCard({pokemonCard}) {
                 <Card.Text>ATK: {pokemonCard.ATK}</Card.Text>
                 <Card.Text>DEF: {pokemonCard.DEF}</Card.Text>
                 <Card.Text>STA: {pokemonCard.STA}</Card.Text>
-                <Card.Link className="btn btn-danger" href={`/pokemon/${pokemonCard.Name}`}>Mais Detalhes</Card.Link>
+                <Link className="btn btn-danger" to={`/pokemon/${pokemonCard.Name}`}>Mais Detalhes</Link>
             </Card.Body>
         </Card>
     )
