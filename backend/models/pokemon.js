@@ -1,0 +1,32 @@
+const Sequelize = require("sequelize");
+
+module.exports.pokemonModel = {
+  id: { type: Sequelize.NUMBER, primaryKey: true, autoIncrement: true },
+  name: Sequelize.STRING,
+  pokedexNumber: Sequelize.NUMBER,
+  imageName: Sequelize.STRING,
+  generation: Sequelize.NUMBER,
+  evolutionStage: Sequelize.NUMBER,
+  evolved: Sequelize.BOOLEAN,
+  familyId: Sequelize.NUMBER,
+  crossGen: Sequelize.BOOLEAN,
+  typeIds: Sequelize.ARRAY(Sequelize.NUMBER),
+  weatherIds: Sequelize.ARRAY(Sequelize.NUMBER),
+  totalStats: Sequelize.NUMBER,
+  statAtk: Sequelize.NUMBER,
+  statDef: Sequelize.NUMBER,
+  statSta: Sequelize.NUMBER,
+  legendary: Sequelize.BOOLEAN,
+  aquireable: Sequelize.BOOLEAN,
+  spawns: Sequelize.BOOLEAN,
+  regional: Sequelize.BOOLEAN,
+  raidable: Sequelize.BOOLEAN,
+  hatchable: Sequelize.BOOLEAN,
+  shiny: Sequelize.BOOLEAN,
+  nest: Sequelize.BOOLEAN,
+  new: Sequelize.BOOLEAN,
+  notGettable: Sequelize.BOOLEAN,
+  futureEvolve: Sequelize.BOOLEAN,
+  totalCombatPowerAtFour: Sequelize.NUMBER,
+  totalCombatPowerAtThree: Sequelize.NUMBER
+};
