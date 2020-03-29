@@ -1,7 +1,6 @@
 const Sequelize = require("sequelize");
 
 module.exports.pokemonModel = {
-  id: { type: Sequelize.NUMBER, primaryKey: true, autoIncrement: true },
   name: Sequelize.STRING,
   pokedexNumber: Sequelize.NUMBER,
   imageName: Sequelize.STRING,
@@ -10,8 +9,10 @@ module.exports.pokemonModel = {
   evolved: Sequelize.BOOLEAN,
   familyId: Sequelize.NUMBER,
   crossGen: Sequelize.BOOLEAN,
-  typeIds: Sequelize.ARRAY(Sequelize.NUMBER),
-  weatherIds: Sequelize.ARRAY(Sequelize.NUMBER),
+  typeOne: Sequelize.INTEGER,
+  typeTwo: Sequelize.INTEGER,
+  weatherOne: Sequelize.INTEGER,
+  weatherTwo: Sequelize.INTEGER,
   totalStats: Sequelize.NUMBER,
   statAtk: Sequelize.NUMBER,
   statDef: Sequelize.NUMBER,

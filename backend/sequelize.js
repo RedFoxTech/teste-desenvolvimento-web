@@ -12,7 +12,8 @@ const openConnection = () => {
   return new Promise((resolve, reject) => {
     const connection = new Sequelize({
       dialect: "sqlite",
-      storage: "./database.sqlite"
+      storage: "./database.sqlite",
+      logging: false
     });
 
     connection.authenticate()
@@ -23,11 +24,17 @@ const openConnection = () => {
 module.exports.openConnection = openConnection;
 
 const initializeDatabase = () => {
-  openConnection()
-    .then(connection => {
-      modelMap["pokemon"] = connection.define("pokemon", pokemonModel);
-      modelMap["pokemonType"] = connection.define("pokemonType", pokemonTypeModel);
-      modelMap["weather"] = connection.define("weather", weatherModel);
-    });
+  return new Promise((resolve, reject) => {
+    openConnection()
+      .then(connection => {
+        modelMap["pokemon"] = connection.define("pokemon", pokemonModel);
+        modelMap["pokemonType"] = connection.define("pokemonType", pokemonTypeModel);
+        modelMap["weather"] = connection.define("weather", weatherModel);
+        connection.sync()
+          .then(() => resolve(modelMap))
+          .catch(error => reject(error));
+      })
+      .catch(error => reject(error));
+  });
 };
 module.exports.initializeDatabase = initializeDatabase;
