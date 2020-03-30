@@ -4,13 +4,17 @@ const { pokemonModel } = require("./models/pokemon");
 const { pokemonTypeModel } = require("./models/pokemonType");
 const { weatherModel } = require("./models/weather");
 
+let connection = {};
+const getConnection = () => connection;
+module.exports.getConnection = getConnection;
+
 const modelMap = {};
 const getModelMap = () => modelMap;
 module.exports.getModelMap = getModelMap;
 
 const openConnection = () => {
   return new Promise((resolve, reject) => {
-    const connection = new Sequelize({
+    connection = new Sequelize({
       dialect: "sqlite",
       storage: "./database.sqlite",
       logging: false

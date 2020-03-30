@@ -1,0 +1,33 @@
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over">
+      <div class="sidenav-content">
+        <ul>
+          <li><a routerLink="/">Buscar</a></li>
+        </ul>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <article>
+
+        <nav class="mobile">
+          <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+          <ul><li><a routerLink="/">Início</a></li></ul>
+        </nav>
+      
+        <nav class="desktop">
+          <ul>
+            <li><a routerLink="/">Início</a></li>
+            <li><a routerLink="/">Buscar</a></li>
+          </ul>
+        </nav>
+      
+        <main>
+          <router-outlet></router-outlet>
+        </main>
+      
+      </article>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

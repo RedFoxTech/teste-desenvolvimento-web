@@ -1,5 +1,5 @@
-const { getModelMap } = require("../sequelize");
-const { Op } = require("sequelize");
+const { getConnection, getModelMap } = require("../sequelize");
+const { Op, QueryTypes } = require("sequelize");
 
 const createPokemon = pokemon => {
   return new Promise((resolve, reject) => {
@@ -10,44 +10,125 @@ const createPokemon = pokemon => {
 };
 module.exports.createPokemon = createPokemon;
 
-const getPokemons = () => {
+const getPokemons = (offset = null, limit = null) => {
   return new Promise((resolve, reject) => {
-    getModelMap().pokemon.findAll()
+    // const options = {};
+    // if (offset && limit) {
+    //   options.offset = offset;
+    //   options.limit = limit;
+    //   options.subQuery = false;
+    // }
+
+    let queryStatement =
+      "SELECT id,name,pokedexNumber,imageName,generation,evolutionStage,"
+      + "evolved,familyId,crossGen,"
+      + "(SELECT name FROM pokemonTypes AS ptype WHERE ptype.id = pkmn.typeOne) as typeOne,"
+      + "(SELECT name FROM pokemonTypes AS ptype WHERE ptype.id = pkmn.typeTwo) as typeTwo,"
+      + "(SELECT name FROM weather AS w WHERE w.id = pkmn.weatherOne) as weatherOne,"
+      + "(SELECT name FROM weather AS w WHERE w.id = pkmn.weatherTwo) as weatherTwo,"
+      + "totalStats,statAtk,statDef,statSta,legendary,aquireable,spawns,regional,"
+      + "raidable,hatchable,shiny,nest,new,notGettable,futureEvolve,"
+      + "totalCombatPowerAtFour,totalCombatPowerAtThree "
+      + "FROM pokemons as pkmn";
+    if (offset && limit)
+      queryStatement += ` LIMIT ${offset}, ${limit}`;
+    
+    getConnection().query(queryStatement, { type: QueryTypes.SELECT })
       .then(pokemons => resolve(pokemons))
-      .catch(error => reject(error));
+      .catch(error => reject(error))
+    // getModelMap().pokemon.findAll(options)
+    //   .then(pokemons => resolve(pokemons))
+    //   .catch(error => reject(error));
   });
 };
 module.exports.getPokemons = getPokemons;
 
 const getPokemonById = id => {
   return new Promise((resolve, reject) => {
-    getModelMap().pokemon.findByPk(id)
-      .then(pokemon => resolve(pokemon))
+
+    let queryStatement =
+      "SELECT id,name,pokedexNumber,imageName,generation,evolutionStage,"
+      + "evolved,familyId,crossGen,"
+      + "(SELECT name FROM pokemonTypes AS ptype WHERE ptype.id = pkmn.typeOne) as typeOne,"
+      + "(SELECT name FROM pokemonTypes AS ptype WHERE ptype.id = pkmn.typeTwo) as typeTwo,"
+      + "(SELECT name FROM weather AS w WHERE w.id = pkmn.weatherOne) as weatherOne,"
+      + "(SELECT name FROM weather AS w WHERE w.id = pkmn.weatherTwo) as weatherTwo,"
+      + "totalStats,statAtk,statDef,statSta,legendary,aquireable,spawns,regional,"
+      + "raidable,hatchable,shiny,nest,new,notGettable,futureEvolve,"
+      + "totalCombatPowerAtFour,totalCombatPowerAtThree "
+      + "FROM pokemons as pkmn "
+      + "WHERE pkmn.id = " + id;
+    getConnection().query(queryStatement, { type: QueryTypes.SELECT })
+      .then(pokemons => resolve(pokemons[0]))
       .catch(error => reject(error));
+    // getModelMap().pokemon.findByPk(id)
+    //   .then(pokemon => resolve(pokemon))
+    //   .catch(error => reject(error));
   });
 };
 module.exports.getPokemonById = getPokemonById;
 
 const getPokemonByName = name => {
   return new Promise((resolve, reject) => {
-    getModelMap().pokemon.findAll({
-      where: { name: { [Op.like]: `%${name}%` } }
-    }).then(pokemon => resolve(pokemon))
-    .catch(error => reject(error));
+
+    let queryStatement =
+      "SELECT id,name,pokedexNumber,imageName,generation,evolutionStage,"
+      + "evolved,familyId,crossGen,"
+      + "(SELECT name FROM pokemonTypes AS ptype WHERE ptype.id = pkmn.typeOne) as typeOne,"
+      + "(SELECT name FROM pokemonTypes AS ptype WHERE ptype.id = pkmn.typeTwo) as typeTwo,"
+      + "(SELECT name FROM weather AS w WHERE w.id = pkmn.weatherOne) as weatherOne,"
+      + "(SELECT name FROM weather AS w WHERE w.id = pkmn.weatherTwo) as weatherTwo,"
+      + "totalStats,statAtk,statDef,statSta,legendary,aquireable,spawns,regional,"
+      + "raidable,hatchable,shiny,nest,new,notGettable,futureEvolve,"
+      + "totalCombatPowerAtFour,totalCombatPowerAtThree "
+      + "FROM pokemons as pkmn "
+      + "WHERE pkmn.name LIKE '%" + name + "%'";
+    getConnection().query(queryStatement, { type: QueryTypes.SELECT})
+      .then(pokemons => resolve(pokemons))
+      .catch(error => reject(error));
+    // getModelMap().pokemon.findAll({
+    //   where: { name: { [Op.like]: `%${name}%` } }
+    // }).then(pokemon => resolve(pokemon))
+    // .catch(error => reject(error));
   });
 };
 module.exports.getPokemonByName = getPokemonByName;
 
 const getPokemonByFilters = filters => {
   return new Promise((resolve, reject) => {
-    if (filters.name)
-      filters.name = { [Op.like]: `%${filters.name}%` }
-    if (filters.imageName)
-      filters.imageName = { [Op.like]: `%${filters.imageName}%` }
-    getModelMap().pokemon.findAll({
-      where: filters
-    }).then(pokemon => resolve(pokemon))
-    .catch(error => reject(error));
+    const filterStatements = [];
+    const { name, imageName, ...regularFilters } = filters;
+    if (name)
+      filterStatements.push(`pkmn.name like '%${name}%'`);
+    if (imageName)
+      filterStatements.push(`pkmn.imageName like '%${imageName}%'`);
+    for (let prop in regularFilters)
+      filterStatements.push(`pkmn.${prop} = ${filters[prop]}`);
+
+    let queryStatement =
+      "SELECT id,name,pokedexNumber,imageName,generation,evolutionStage,"
+      + "evolved,familyId,crossGen,"
+      + "(SELECT name FROM pokemonTypes AS ptype WHERE ptype.id = pkmn.typeOne) as typeOne,"
+      + "(SELECT name FROM pokemonTypes AS ptype WHERE ptype.id = pkmn.typeTwo) as typeTwo,"
+      + "(SELECT name FROM weather AS w WHERE w.id = pkmn.weatherOne) as weatherOne,"
+      + "(SELECT name FROM weather AS w WHERE w.id = pkmn.weatherTwo) as weatherTwo,"
+      + "totalStats,statAtk,statDef,statSta,legendary,aquireable,spawns,regional,"
+      + "raidable,hatchable,shiny,nest,new,notGettable,futureEvolve,"
+      + "totalCombatPowerAtFour,totalCombatPowerAtThree "
+      + "FROM pokemons as pkmn "
+      + "WHERE " + filterStatements.join(" AND ");
+    getConnection().query(queryStatement, { type: QueryTypes.SELECT })
+      .then(pokemons => resolve(pokemons))
+      .catch(error => reject(error));
+    
+    // if (filters.name)
+    //   filters.name = { [Op.like]: `%${filters.name}%` }
+    // if (filters.imageName)
+    //   filters.imageName = { [Op.like]: `%${filters.imageName}%` }
+    // getModelMap().pokemon.findAll({
+    //   where: filters
+    // }).then(pokemon => resolve(pokemon))
+    // .catch(error => reject(error));
   });
 };
 module.exports.getPokemonByFilters = getPokemonByFilters;

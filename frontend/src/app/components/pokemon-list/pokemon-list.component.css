@@ -1,0 +1,30 @@
+.panel-title {
+  /* color: rgba(255, 64, 129, 1); */
+  color: rgba(0, 0, 0, 0.85);
+}
+
+p {
+  margin: 5px 0;
+}
+
+div.summary-container {
+  position: relative;
+}
+
+button {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  margin: 8px 0 8px 0;
+}
+
+table {
+  width: 100%;
+}
+
+table tr {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 14px 0;
+}

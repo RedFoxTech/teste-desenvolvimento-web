@@ -39,7 +39,9 @@ module.exports.defineRoutes = app => {
 
   app.get("/pokemons", (req, res) => {
     res.setHeader("Content-Type", "application/json");
-    getPokemons()
+    const offset = req.query.offset;
+    const limit = req.query.limit;
+    getPokemons(offset, limit)
       .then(pokemons => res.send(pokemons))
       .catch(error => res.send(JSON.stringify({ status: "ERROR", reason: error })));
   });
