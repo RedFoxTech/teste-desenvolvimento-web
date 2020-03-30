@@ -22,6 +22,7 @@ const {
   getPokemonById,
   getPokemonByName,
   getPokemonByFilters,
+  getPokemonCount,
   updatePokemon,
   deletePokemon
 } = require("./helpers/pokemonHelper");
@@ -68,6 +69,13 @@ module.exports.defineRoutes = app => {
       .then(pokemon => res.send(pokemon))
       .catch(error => res.send(JSON.stringify({ status: "ERROR", reason: error })));
   });
+
+  app.get("/pokemon/count/", (req, res) => {
+    res.setHeader("Content-Type", "application/json");
+    getPokemonCount()
+      .then(count => res.send(count))
+      .catch(error => res.send(JSON.stringify({ status: "ERROR", reason: error })));
+  })
 
   app.patch("/pokemon/:id", (req, res) => {
     res.setHeader("Content-Type", "application/json");

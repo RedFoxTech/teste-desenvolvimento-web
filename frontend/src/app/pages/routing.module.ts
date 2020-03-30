@@ -1,12 +1,14 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { InicioPage } from "@pages/inicio/inicio.page";
+import { HomePage } from "@pages/home/home.page";
 import { PokemonPage } from "@pages/pokemon/pokemon.page";
+import { NewPage } from "@pages/new/new.page";
 
 const routes: Routes = [
+  { path: "new", component: NewPage },
   { path: "pokemon/:id", component: PokemonPage },
-  { path: "", component: InicioPage }
+  { path: "", component: HomePage }
 ]
 
 @NgModule({

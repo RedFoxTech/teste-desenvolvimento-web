@@ -3,9 +3,8 @@
   <div class="header-container">
     <h1>{{ currentPokemon.name }}</h1>
     <div class="icons-container">
-      <mat-icon *ngIf="!editMode" (click)="editMode = true">edit</mat-icon>
-      <mat-icon *ngIf="editMode" (click)="confirmChanges()">check</mat-icon>
-      <mat-icon (click)="openRemovePokemonDialog()">delete</mat-icon>
+      <mat-icon (click)="confirmCreation()">check</mat-icon>
+      <mat-icon (click)="cancelCreation()">clear</mat-icon>
     </div>
   </div>
   <div class="content-container">

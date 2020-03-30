@@ -133,6 +133,17 @@ const getPokemonByFilters = filters => {
 };
 module.exports.getPokemonByFilters = getPokemonByFilters;
 
+const getPokemonCount = () => {
+  return new Promise((resolve, reject) => {
+    const queryStatement =
+      "SELECT count(id) as count FROM pokemons";
+    getConnection().query(queryStatement, { type: QueryTypes.SELECT })
+      .then(count => resolve(count[0])["count"])
+      .catch(error => reject(error));
+  });
+};
+module.exports.getPokemonCount = getPokemonCount;
+
 const updatePokemon = (id, _pokemon) => {
   return new Promise((resolve, reject) => {
     getModelMap().pokemon.findByPk(id)

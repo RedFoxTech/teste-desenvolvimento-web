@@ -12,6 +12,11 @@ import { Weather } from "@models/weather.model";
 export class PokemonService {
   private baseurl = "http://localhost:81";
   constructor(private httpClient: HttpClient) {}
+
+  public createPokemon(pokemon: Pokemon): Observable<any> {
+    let url = `${this.baseurl}/pokemon`;
+    return this.httpClient.post<any>(url, pokemon);
+  }
   
   public getPokemons(offset?, limit?): Observable<Pokemon[]> {
     let url = `${this.baseurl}/pokemons`;
@@ -28,6 +33,11 @@ export class PokemonService {
   public getPokemonByName(name: string): Observable<Pokemon[]> {
     const url = `${this.baseurl}/pokemon/name/${name}`;
     return this.httpClient.get<Pokemon[]>(url);
+  }
+
+  public getPokemonCount(): Observable<any> {
+    const url = `${this.baseurl}/pokemon/count`;
+    return this.httpClient.get<any>(url);
   }
 
   public updatePokemon(id: number, pokemon: Pokemon): Observable<any> {

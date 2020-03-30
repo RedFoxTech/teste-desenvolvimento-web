@@ -5,11 +5,11 @@ import { Pokemon } from "@models/pokemon.model";
 import { PokemonService } from "@services/pokemon.service";
 
 @Component({
-  selector: "inicio-page",
-  templateUrl: "./inicio.page.html",
-  styleUrls: ["./inicio.page.css"]
+  selector: "home-page",
+  templateUrl: "./home.page.html",
+  styleUrls: ["./home.page.css"]
 })
-export class InicioPage implements OnInit {
+export class HomePage implements OnInit {
   pageLoading: boolean = false;
   pokemonList: Pokemon[] = [];
   currentPageIndex = 0;

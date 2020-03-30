@@ -5,12 +5,13 @@ import { FormsModule } from "@angular/forms";
 
 import { ComponentsModule } from "@components/components.module";
 
-import { InicioPage } from "@pages/inicio/inicio.page";
+import { HomePage } from "@pages/home/home.page";
 import { PokemonPage } from "@pages/pokemon/pokemon.page";
+import { NewPage } from "@pages/new/new.page";
 
 @NgModule({
-  declarations: [ InicioPage, PokemonPage ],
+  declarations: [ HomePage, PokemonPage, NewPage ],
   imports: [ CommonModule, MaterialModule, FormsModule, ComponentsModule ],
-  exports: [ InicioPage, PokemonPage ]
+  exports: [ HomePage, PokemonPage, NewPage ]
 })
 export class PagesModule {}
