@@ -104,9 +104,11 @@ const getPokemonByFilters = filters => {
       filterStatements.push(`pkmn.imageName like '%${imageName}%'`);
     for (let prop in regularFilters)
       filterStatements.push(`pkmn.${prop} = ${filters[prop]}`);
-
+    const conditionStatement = filterStatements.length > 0 ? " WHERE " + filterStatements.join(" AND ") : null
+    
     let queryStatement =
-      "SELECT id,name,pokedexNumber,imageName,generation,evolutionStage,"
+      "WITH rawQuery AS (SELECT * FROM pokemons as pkmn" + conditionStatement + ") "
+      + "SELECT id,name,pokedexNumber,imageName,generation,evolutionStage,"
       + "evolved,familyId,crossGen,"
       + "(SELECT name FROM pokemonTypes AS ptype WHERE ptype.id = pkmn.typeOne) as typeOne,"
       + "(SELECT name FROM pokemonTypes AS ptype WHERE ptype.id = pkmn.typeTwo) as typeTwo,"
@@ -115,20 +117,10 @@ const getPokemonByFilters = filters => {
       + "totalStats,statAtk,statDef,statSta,legendary,aquireable,spawns,regional,"
       + "raidable,hatchable,shiny,nest,new,notGettable,futureEvolve,"
       + "totalCombatPowerAtFour,totalCombatPowerAtThree "
-      + "FROM pokemons as pkmn "
-      + "WHERE " + filterStatements.join(" AND ");
+      + "FROM rawQuery as pkmn"
     getConnection().query(queryStatement, { type: QueryTypes.SELECT })
       .then(pokemons => resolve(pokemons))
       .catch(error => reject(error));
-    
-    // if (filters.name)
-    //   filters.name = { [Op.like]: `%${filters.name}%` }
-    // if (filters.imageName)
-    //   filters.imageName = { [Op.like]: `%${filters.imageName}%` }
-    // getModelMap().pokemon.findAll({
-    //   where: filters
-    // }).then(pokemon => resolve(pokemon))
-    // .catch(error => reject(error));
   });
 };
 module.exports.getPokemonByFilters = getPokemonByFilters;

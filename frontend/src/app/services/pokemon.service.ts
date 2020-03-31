@@ -35,6 +35,18 @@ export class PokemonService {
     return this.httpClient.get<Pokemon[]>(url);
   }
 
+  public getPokemonByFilter(filter: any): Observable<Pokemon[]> {
+    let url = `${this.baseurl}/pokemon/filter/`;
+    if (Object.keys(filter).length > 0) {
+      const filterOptions = [];
+      for (let prop in filter)
+        filterOptions.push(`${prop}=${filter[prop]}`)
+      url = `${url}?${filterOptions.join("&")}`;
+    }
+
+    return this.httpClient.get<Pokemon[]>(url);
+  }
+
   public getPokemonCount(): Observable<any> {
     const url = `${this.baseurl}/pokemon/count`;
     return this.httpClient.get<any>(url);

@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Remove {{ data.name }}</h1>
+<div mat-dialog-content>
+  <p>Confirm to remove {{ data.name }}</p>
+  <p><strong>{{ data.strongDescription }}</strong></p>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="warn" (click)="onConfirm()">OK</button>
+  <button mat-flat-button (click)="onCancel()">Cancel</button>
+</div>

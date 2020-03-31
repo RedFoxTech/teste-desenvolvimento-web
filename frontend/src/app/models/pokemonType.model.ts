@@ -1,6 +1,6 @@
 export interface PokemonType {
-  id: number;
+  id?: number;
   name: string;
-  weakAgainstList: number[],
-  strongAgainstList: number[]
+  weakAgainstList?: number[],
+  strongAgainstList?: number[]
 }

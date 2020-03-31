@@ -8,6 +8,9 @@ import { PokemonListComponent } from "@components/pokemon-list/pokemon-list.comp
 import { DialogPokemonTypesComponent } from "@components/dialog-pokemon-types/dialog-pokemon-types.component";
 import { DialogWeathersComponent } from "@components/dialog-weathers/dialog-weathers.component";
 import { DialogRemovePokemon } from "@components/dialog-remove-pokemon/dialog-remove-pokemon.component";
+import { DialogRemoveGeneric } from "@components/dialog-remove-generic/dialog-remove-generic.component";
+import { DialogAddGeneric } from "@components/dialog-add-generic/dialog-add-generic.component";
+import { DialogAddFilterComponent } from "@components/dialog-add-filter/dialog-add-filter.component";
 import { LoadingBackdropComponent } from "@components/loading-backdrop/loading-backdrop.component";
 
 @NgModule({
@@ -16,6 +19,9 @@ import { LoadingBackdropComponent } from "@components/loading-backdrop/loading-b
     DialogPokemonTypesComponent,
     DialogWeathersComponent,
     DialogRemovePokemon,
+    DialogRemoveGeneric,
+    DialogAddGeneric,
+    DialogAddFilterComponent,
     LoadingBackdropComponent
   ],
   imports: [
@@ -28,6 +34,9 @@ import { LoadingBackdropComponent } from "@components/loading-backdrop/loading-b
     DialogPokemonTypesComponent,
     DialogWeathersComponent,
     DialogRemovePokemon,
+    DialogRemoveGeneric,
+    DialogAddGeneric,
+    DialogAddFilterComponent,
     LoadingBackdropComponent
   ]
 })

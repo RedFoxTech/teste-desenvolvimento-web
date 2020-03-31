@@ -11,6 +11,11 @@ export class WeatherService {
   private baseurl = "http://localhost:81";
   constructor(private httpClient: HttpClient) {}
 
+  public createWeather(weather: Weather): Observable<any> {
+    const url = `${this.baseurl}/weather/`
+    return this.httpClient.post(url, weather);
+  }
+
   public getWeathers(): Observable<Weather[]> {
     const url = `${this.baseurl}/weathers/`;
     return this.httpClient.get<Weather[]>(url);

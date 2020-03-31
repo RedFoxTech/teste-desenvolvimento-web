@@ -116,21 +116,18 @@ const getPokemonData = async (rawData = "") => {
         // console.log("INDEX", index);
         if (index == 8) {
           const type = await getTypeByName(columns[index]);
-          // console.log("Inserting type", type.id);
-          pokemonObject["typeOne"] = type.id;
+          pokemonObject["typeOne"] = type[0].id;
         }
 
         if (index == 9) {
           const type = await getTypeByName(columns[index]);
-          // console.log("Inserting type", type.id);
-          pokemonObject["typeTwo"] = type.id;
+          pokemonObject["typeTwo"] = type[0].id;
         }
 
         if (index == 10) {
           try {
-            // console.log("Weather", columns[index]);
             const weather = await getWeatherByName(columns[index]);
-            pokemonObject["weatherOne"] = weather.id;
+            pokemonObject["weatherOne"] = weather[0].id;
           } catch (error) {
             console.error(error);
           }
@@ -138,9 +135,8 @@ const getPokemonData = async (rawData = "") => {
 
         if (index == 11) {
           try {
-            // console.log("Weather Two", columns[index]);
             const weather = await getWeatherByName(columns[index]);
-            pokemonObject["weatherTwo"] = weather.id;
+            pokemonObject["weatherTwo"] = weather[0].id;
           } catch (error) {
             console.error(error);
           }

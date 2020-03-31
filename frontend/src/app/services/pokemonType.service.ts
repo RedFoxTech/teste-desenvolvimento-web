@@ -11,6 +11,11 @@ export class PokemonTypeService {
   private baseurl = "http://localhost:81";
   constructor(private httpClient: HttpClient) {}
 
+  public createPokemonType(type: PokemonType): Observable<any> {
+    const url = `${this.baseurl}/type/`;
+    return this.httpClient.post(url, type);
+  }
+
   public getPokemonTypes(): Observable<PokemonType[]> {
     const url = `${this.baseurl}/types/`;
     return this.httpClient.get<PokemonType[]>(url);

@@ -14,51 +14,13 @@
       <p><strong>Generation</strong>: {{ pokemon.generation }}</p>
       <button (click)="checkPokemonDetail(pokemon.id)" mat-flat-button color="primary">Check details</button>
     </div>
-    <!-- <p><strong>Future evolve</strong>: {{ parseBoolean(pokemon.futureEvolve) }}</p>
-    <p><strong>Evolution stage</strong>: {{ pokemon.evolutionStage }}</p>
-    <p><strong>Evolved</strong>: {{ parseBoolean(pokemon.evolved) }}</p>
-    <p><strong>Family ID</strong>: {{ pokemon.familyId }}</p>
-    <p><strong>Cross Gen</strong>: {{ parseBoolean(pokemon.crossGen) }}</p>
-    <p><strong>Legendary</strong>: {{ parseBoolean(pokemon.legendary) }}</p>
-    <p><strong>Acquirable</strong>: {{ parseBoolean(pokemon.aquireable) }}</p>
-    <p><strong>Spawns</strong>: {{ parseBoolean(pokemon.spawns) }}</p>
-    <p><strong>Regional</strong>: {{ parseBoolean(pokemon.regional) }}</p>
-    <p><strong>Raidable</strong>: {{ parseBoolean(pokemon.raidable) }}</p>
-    <p><strong>Hatchable</strong>: {{ parseBoolean(pokemon.hatchable) }}</p>
-    <p><strong>Shiny</strong>: {{ parseBoolean(pokemon.shiny) }}</p>
-    <p><strong>Nest</strong>: {{ parseBoolean(pokemon.nest) }}</p>
-    <p><strong>New</strong>: {{ parseBoolean(pokemon.new) }}</p>
-    <p><strong>Not gettable</strong>: {{ parseBoolean(pokemon.notGettable) }}</p> -->
     <table>
-      <tr>
-        <td>Total stats</td>
-        <td>{{ pokemon.totalStats }}</td>
-      </tr>
-
-      <tr>
-        <td>Atk</td>
-        <td>{{ pokemon.statAtk }}</td>
-      </tr>
-
-      <tr>
-        <td>Def</td>
-        <td>{{ pokemon.statDef }}</td>
-      </tr>
-
-      <tr>
-        <td>Sta</td>
-        <td>{{ pokemon.statSta }}</td>
-      </tr>
-
-      <tr>
-        <td>100% CP @ 40</td>
-        <td>{{ pokemon.totalCombatPowerAtFour }}</td>
-      </tr>
-
-      <tr>
-        <td>100% CP @ 39</td>
-        <td>{{ pokemon.totalCombatPowerAtThree }}</td>
-      </tr>
+      <tr><td>Total stats</td><td>{{ pokemon.totalStats }}</td></tr>
+      <tr><td>Atk</td><td>{{ pokemon.statAtk }}</td></tr>
+      <tr><td>Def</td><td>{{ pokemon.statDef }}</td></tr>
+      <tr><td>Sta</td><td>{{ pokemon.statSta }}</td></tr>
+      <tr><td>100% CP @ 40</td><td>{{ pokemon.totalCombatPowerAtFour }}</td></tr>
+      <tr><td>100% CP @ 39</td><td>{{ pokemon.totalCombatPowerAtThree }}</td></tr>
     </table>
 
   </mat-expansion-panel>

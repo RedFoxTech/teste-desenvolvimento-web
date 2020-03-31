@@ -1,0 +1,20 @@
+<h1 mat-dialog-title>Choose filters</h1>
+<div mat-dialog-content>
+  <p>Choose one or more filters</p>
+  <div class="filter-list">
+    <mat-checkbox
+      [ngModel]="allOptions"
+      (ngModelChange)="onSelectAll($event)"
+    >All filters</mat-checkbox>
+    <mat-checkbox
+      *ngFor="let filter of currentOptions"
+      [(ngModel)]="filter.selected"
+    >
+      {{ filter.label }}
+    </mat-checkbox>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="primary" (click)="onConfirm()">OK</button>
+  <button mat-flat-button (click)="onCancel()">Cancel</button>
+</div>

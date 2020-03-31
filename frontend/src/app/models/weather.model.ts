@@ -1,4 +1,4 @@
 export interface Weather {
-  id: number;
+  id?: number;
   name: string;
 }

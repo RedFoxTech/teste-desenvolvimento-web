@@ -38,10 +38,15 @@ div.sidenav-content ul li a { text-decoration: none; color: #fff; cursor: pointe
     box-sizing: border-box;
   }
 
+  div.sidenav-content ul {
+    display: grid;
+    grid-template-columns: 100%;
+    row-gap: 20px;
+  }
+
   div.sidenav-content ul li a {
     font-size: 1rem;
     color: rgba(0, 0, 0, 0.85);
-    font-weight: bold;
   }
 }
 
@@ -67,7 +72,7 @@ div.sidenav-content ul li a { text-decoration: none; color: #fff; cursor: pointe
   nav.desktop ul {
     display: grid;
     grid-template-columns: 100%;
-    row-gap: 10px;
+    row-gap: 20px;
   }
 
   nav.desktop ul li a {

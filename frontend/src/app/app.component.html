@@ -3,7 +3,11 @@
     <mat-sidenav #sidenav mode="over">
       <div class="sidenav-content">
         <ul>
-          <li><a routerLink="/">Buscar</a></li>
+          <li><a routerLink="/" (click)="sidenav.toggle()">Home</a></li>
+          <li><a routerLink="/search" (click)="sidenav.toggle()">Search</a></li>
+          <li><a routerLink="/new" (click)="sidenav.toggle()">New</a></li>
+          <li><a routerLink="/types" (click)="sidenav.toggle()">Types</a></li>
+          <li><a routerLink="/weathers" (click)="sidenav.toggle()">Weathers</a></li>
         </ul>
       </div>
     </mat-sidenav>
@@ -13,14 +17,15 @@
 
         <nav class="mobile">
           <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
-          <ul><li><a routerLink="/">Início</a></li></ul>
         </nav>
       
         <nav class="desktop">
           <ul>
-            <li><a routerLink="/">Início</a></li>
-            <li><a routerLink="/">Buscar</a></li>
-            <li><a routerLink="/new">Novo</a></li>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/search">Search</a></li>
+            <li><a routerLink="/new">New</a></li>
+            <li><a routerLink="/types">Types</a></li>
+            <li><a routerLink="/weathers">Weathers</a></li>
           </ul>
         </nav>
       
