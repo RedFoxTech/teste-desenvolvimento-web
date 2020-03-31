@@ -1,4 +1,4 @@
-const { readFileSync, unlinkSync } = require("fs");
+const { readFileSync, unlinkSync, existsSync } = require("fs");
 const { initializeDatabase } = require("./sequelize");
 const { createType, getTypes, getTypeById, getTypeByName } = require("./helpers/pokemonTypeHelper");
 const { createWeather, getWeathers, getWeatherById, getWeatherByName } = require("./helpers/weatherTypeHelper");
@@ -182,8 +182,10 @@ const populate = async () => {
 };
 
 if (process.env.RESET) {
+  const databaseFilename = "./database.sqlite";
   console.log("Removing old database");
-  unlinkSync("./database.sqlite");
+  if (existsSync(databaseFilename))
+    unlinkSync(databaseFilename);
   console.log("Old database removed. Now populating a new one.");
 }
 populate();
