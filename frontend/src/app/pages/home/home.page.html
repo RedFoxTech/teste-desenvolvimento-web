@@ -1,0 +1,19 @@
+<loading-backdrop [visible]="pageLoading"></loading-backdrop>
+<div class="container">
+  <h1>Pokemon list</h1>
+  
+  <div class="paginator-container">
+    <mat-paginator
+      [length]="pokemonList.length"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20, 50]"
+      (page)="onPaginate($event)"
+    ></mat-paginator>
+  </div>
+
+  <div class="list-container">
+    <pokemon-list
+      [pokemonList]="pokemonList.slice(currentPageIndex * currentPageSize, currentPageIndex * currentPageSize + currentPageSize)"
+    ></pokemon-list>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+<loading-backdrop [visible]="pageLoading"></loading-backdrop>
+<div class="container">
+  <div class="header-container">
+    <h1>Weather List</h1>
+    <div class="icons-container">
+      <mat-icon (click)="onOpenAddDialog()">add</mat-icon>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <div class="table">
+      <div class="table-head">
+        <small>ID</small>
+        <small>Name</small>
+        <small class="last">Control</small>
+      </div>
+      <div class="table-body">
+        <div class="table-row" *ngFor="let weather of weatherList">
+          <strong>{{ weather.id }}</strong>
+          <strong>{{ weather.name }}</strong>
+          <div class="item-control">
+            <mat-icon (click)="onOpenEditDialog(weather)">edit</mat-icon>
+            <mat-icon (click)="onOpenRemoveDialog(weather)">delete</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

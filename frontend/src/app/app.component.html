@@ -1,0 +1,39 @@
+
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over">
+      <div class="sidenav-content">
+        <ul>
+          <li><a routerLink="/" (click)="sidenav.toggle()">Home</a></li>
+          <li><a routerLink="/search" (click)="sidenav.toggle()">Search</a></li>
+          <li><a routerLink="/new" (click)="sidenav.toggle()">New</a></li>
+          <li><a routerLink="/types" (click)="sidenav.toggle()">Types</a></li>
+          <li><a routerLink="/weathers" (click)="sidenav.toggle()">Weathers</a></li>
+        </ul>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <article>
+
+        <nav class="mobile">
+          <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+        </nav>
+      
+        <nav class="desktop">
+          <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/search">Search</a></li>
+            <li><a routerLink="/new">New</a></li>
+            <li><a routerLink="/types">Types</a></li>
+            <li><a routerLink="/weathers">Weathers</a></li>
+          </ul>
+        </nav>
+      
+        <main>
+          <router-outlet></router-outlet>
+        </main>
+      
+      </article>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

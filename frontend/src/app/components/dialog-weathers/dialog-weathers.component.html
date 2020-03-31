@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Choose weathers</h1>
+<div mat-dialog-content>
+  <p>Choose weather one</p>
+  <mat-form-field>
+    <mat-label>Weather one</mat-label>
+    <mat-select [(value)]="weatherOne">
+      <mat-option *ngFor="let weather of data" [value]="weather.id">{{ weather.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p>Choose weather two</p>
+  <mat-form-field>
+    <mat-label>Weather two</mat-label>
+    <mat-select [(value)]="weatherTwo">
+      <mat-option [value]="0">None</mat-option>
+      <mat-option *ngFor="let weather of data" [value]="weather.id">{{ weather.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="primary" (click)="onConfirm()">OK</button>
+  <button mat-flat-button (click)="onCancel()">Cancel</button>
+</div>

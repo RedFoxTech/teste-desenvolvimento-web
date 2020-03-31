@@ -1,0 +1,32 @@
+div.container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+div.filter-list {
+  display: grid;
+  grid-template-columns: 100%;
+  row-gap: 10px;
+}
+
+div.filter-row {
+  display: grid;
+  grid-template-columns: auto;
+  column-gap: 10px;
+}
+
+div.control-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10px;
+  margin: 0 0 10px 0;
+}
+
+div.list-container {
+  height: auto;
+  overflow-y: scroll;
+}

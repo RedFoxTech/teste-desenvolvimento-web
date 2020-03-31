@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>Choose types</h1>
+<div mat-dialog-content>
+  <p>Choose type one</p>
+  <mat-form-field>
+    <mat-label>Type one</mat-label>
+    <mat-select [(value)]="typeOne">
+      <mat-option *ngFor="let type of data" [value]="type.id">{{ type.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <p>Choose type two</p>
+  <mat-form-field>
+    <mat-label>Type two</mat-label>
+    <mat-select [(value)]="typeTwo">
+      <mat-option [value]="0">None</mat-option>
+      <mat-option *ngFor="let type of data" [value]="type.id">{{ type.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="primary" (click)="onConfirm()">OK</button>
+  <button mat-flat-button (click)="onCancel()">Cancel</button>
+</div>

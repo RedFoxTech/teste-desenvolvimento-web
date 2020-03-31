@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{ data.title }}</h1>
+<div mat-dialog-content>
+  <p>{{ data.description }}</p>
+  <mat-form-field>
+    <mat-label>{{ data.label }}</mat-label>
+    <input matInput placeholder="{{ data.placeholder }}" [(ngModel)]="genericValue" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-flat-button color="primary" (click)="onConfirm()">OK</button>
+  <button mat-flat-button (click)="onCancel()">Cancel</button>
+</div>

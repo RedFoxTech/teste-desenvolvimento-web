@@ -1,0 +1,54 @@
+<loading-backdrop [visible]="pageLoading"></loading-backdrop>
+<div class="container">
+  <h1>Search for pokemons</h1>
+  <div class="filter-list">
+
+    <div class="control-row">
+      <button mat-stroked-button color="primary" (click)="openAddFilterDialog()">
+        Set filter
+      </button>
+      <button mat-flat-button color="primary" (click)="performSearch()">
+        Search
+      </button>
+    </div>
+    
+    <div class="filter-row" *ngFor="let filter of dialogFilters">
+      <mat-form-field>
+        <mat-label>{{ filter.label }}</mat-label>
+        <input
+          *ngIf="filter.type !== 'boolean' && !filter.option"
+          matInput placeholder="{{ filter.example }}"
+          [attr.type]="filter.type"
+          [(ngModel)]="filter.value"
+        />
+
+        <mat-select *ngIf="filter.option" [(ngModel)]="filter.value">
+          <mat-option *ngFor="let option of filter.option" [value]="option.id">
+            {{ option.name }}
+          </mat-option>
+        </mat-select>
+
+        <mat-select *ngIf="filter.type === 'boolean'" [(ngModel)]="filter.value">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+  </div>
+
+  <div *ngIf="foundPokemonList.length > 0" class="paginator-container">
+    <mat-paginator
+      [length]="foundPokemonList.length"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 20, 50]"
+      (page)="onPaginate($event)"
+    ></mat-paginator>
+  </div>
+
+  <div class="list-container" *ngIf="foundPokemonList">
+    <pokemon-list
+      [pokemonList]="foundPokemonList.slice(currentPageIndex * currentPageSize, currentPageIndex * currentPageSize + currentPageSize)"
+    ></pokemon-list>
+  </div>
+</div>

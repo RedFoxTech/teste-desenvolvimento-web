@@ -1,0 +1,327 @@
+<loading-backdrop [visible]="pageLoading"></loading-backdrop>
+<div class="container" *ngIf="currentPokemon">
+  <div class="header-container">
+    <h1>{{ currentPokemon.name }}</h1>
+    <div class="icons-container">
+      <mat-icon *ngIf="!editMode" (click)="editMode = true">edit</mat-icon>
+      <mat-icon *ngIf="editMode" (click)="confirmChanges()">check</mat-icon>
+      <mat-icon (click)="openRemovePokemonDialog()">delete</mat-icon>
+    </div>
+  </div>
+  <div class="content-container">
+    <div class="info-row">
+      <strong>Name</strong>
+      <small *ngIf="!editMode">{{ currentPokemon.name }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Name</mat-label>
+        <input matInput
+          placeholder="Ex: Charizard"
+          [(ngModel)]="currentPokemon.name"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Pokedex No.</strong>
+      <small *ngIf="!editMode">{{ currentPokemon.pokedexNumber }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Pokedex No.</mat-label>
+        <input matInput
+          type="number"
+          placeholder="Ex: 123"
+          [(ngModel)]="currentPokemon.pokedexNumber"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Type(s)</strong>
+      <small>
+        {{ parseArray([pokemonTypeOne, pokemonTypeTwo]) }}
+      </small>
+      <button
+        *ngIf="editMode"
+        mat-stroked-button
+        color="primary"
+        (click)="openTypesDialog()"
+      >Choose types</button>
+    </div>
+
+    <div class="info-row">
+      <strong>Weather(s)</strong>
+      <small>
+        {{ parseArray([pokemonWeatherOne, pokemonWeatherTwo]) }}
+      </small>
+      <button
+        *ngIf="editMode"
+        mat-stroked-button
+        color="primary"
+        (click)="openWeathersDialog()"
+      >Choose weathers</button>
+    </div>
+
+    <div class="info-row">
+      <strong>Generation</strong>
+      <small *ngIf="!editMode">{{ currentPokemon.generation }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Generation</mat-label>
+        <input matInput
+          type="number"
+          placeholder="Ex: 1"
+          [(ngModel)]="currentPokemon.generation"
+        />
+      </mat-form-field>
+    </div>
+    
+    <div class="info-row">
+      <strong>Future evolve</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.futureEvolve) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Future evolve</mat-label>
+        <mat-select [(value)]="currentPokemon.futureEvolve">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Evolution stage</strong>
+      <small *ngIf="!editMode">{{ currentPokemon.evolutionStage }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Evolution stage</mat-label>
+        <input matInput
+          type="number"
+          placeholder="Ex: 2"
+          [(ngModel)]="currentPokemon.evolutionStage"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Evolved</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.evolved) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Evolved</mat-label>
+        <mat-select [(value)]="currentPokemon.evolved">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Family ID</strong>
+      <small *ngIf="!editMode">{{ currentPokemon.familyId }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Family ID</mat-label>
+        <input matInput
+          type="number"
+          placeholder="Ex: 2"
+          [(ngModel)]="currentPokemon.familyId"
+        />
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Cross Gen</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.crossGen) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Cross Gen</mat-label>
+        <mat-select [(value)]="currentPokemon.crossGen">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Legendary</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.legendary) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Legendary</mat-label>
+        <mat-select [(value)]="currentPokemon.legendary">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Acquirable</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.aquireable) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Acquirable</mat-label>
+        <mat-select [(value)]="currentPokemon.aquireable">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Spawns</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.spawns) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Spawns</mat-label>
+        <mat-select [(value)]="currentPokemon.spawns">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Regional</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.regional) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Regional</mat-label>
+        <mat-select [(value)]="currentPokemon.regional">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Raidable</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.raidable) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Raidable</mat-label>
+        <mat-select [(value)]="currentPokemon.raidable">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Hatchable</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.hatchable) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Hatchable</mat-label>
+        <mat-select [(value)]="currentPokemon.hatchable">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Shiny</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.shiny) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Shiny</mat-label>
+        <mat-select [(value)]="currentPokemon.shiny">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Nest</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.nest) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Nest</mat-label>
+        <mat-select [(value)]="currentPokemon.nest">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>New</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.new) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>New</mat-label>
+        <mat-select [(value)]="currentPokemon.new">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="info-row">
+      <strong>Not gettable</strong>
+      <small *ngIf="!editMode">{{ parseBoolean(currentPokemon.notGettable) }}</small>
+      <mat-form-field *ngIf="editMode">
+        <mat-label>Not gettable</mat-label>
+        <mat-select [(value)]="currentPokemon.notGettable">
+          <mat-option [value]="1">Yes</mat-option>
+          <mat-option [value]="0">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <table>
+      <tr>
+        <td>Total stats</td>
+        <td *ngIf="!editMode">{{ currentPokemon.totalStats }}</td>
+        <td *ngIf="editMode">
+          <mat-form-field>
+            <mat-label>Total stats</mat-label>
+            <input matInput type="number" placeholder="Ex: 300" [(ngModel)]="currentPokemon.totalStats" />
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Atk</td>
+        <td *ngIf="!editMode">{{ currentPokemon.statAtk }}</td>
+        <td *ngIf="editMode">
+          <mat-form-field>
+            <mat-label>Atk</mat-label>
+            <input matInput type="number" placeholder="Ex: 200" [(ngModel)]="currentPokemon.statAtk" />
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Def</td>
+        <td *ngIf="!editMode">{{ currentPokemon.statDef }}</td>
+        <td *ngIf="editMode">
+          <mat-form-field>
+            <mat-label>Def</mat-label>
+            <input matInput type="number" placeholder="Ex: 250" [(ngModel)]="currentPokemon.statDef" />
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Sta</td>
+        <td *ngIf="!editMode">{{ currentPokemon.statSta }}</td>
+        <td *ngIf="editMode">
+          <mat-form-field>
+            <mat-label>Sta</mat-label>
+            <input matInput type="number" placeholder="Ex: 180" [(ngModel)]="currentPokemon.statSta" />
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td>100% CP @ 40</td>
+        <td *ngIf="!editMode">{{ currentPokemon.totalCombatPowerAtFour }}</td>
+        <td *ngIf="editMode">
+          <mat-form-field>
+            <mat-label>100% CP @ 40</mat-label>
+            <input matInput type="number" placeholder="Ex: 50" [(ngModel)]="currentPokemon.totalCombatPowerAtFour" />
+          </mat-form-field>
+        </td>
+      </tr>
+
+      <tr>
+        <td>100% CP @ 39</td>
+        <td *ngIf="!editMode">{{ currentPokemon.totalCombatPowerAtThree }}</td>
+        <td *ngIf="editMode">
+          <mat-form-field>
+            <mat-label>100% CP @ 39</mat-label>
+            <input matInput type="number" [(ngModel)]="currentPokemon.totalCombatPowerAtThree" />
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
