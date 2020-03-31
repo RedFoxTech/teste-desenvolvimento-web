@@ -43,6 +43,7 @@ asyncForEach = async (array, callback) => {
 }
 
 const queryValidEntries = [
+  '_id',
   'row',
   'name',
   'pokedex_number',

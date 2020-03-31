@@ -1,14 +1,23 @@
 <div class="search-container">
-  <label for="typeahead-basic">Search for a state:</label>
-  <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model"/>
-  <input type="button" value="Search">
-  <hr>
-  <pre>Model: {{ model | json }}</pre>
-
+  <form class="example-form">
+    <mat-form-field>
+      <mat-label>Select an option</mat-label>
+      <mat-select disableRipple id="searchType" >
+        <mat-option (click)="onSearchTypeChange(type)" value="type" *ngFor="let type of searchType">{{type}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <hr>
+    
+    <mat-form-field class="example-full-width">
+      <mat-label>Search by {{searchSelect}}</mat-label>
+      <input matInput value="" (keyup)="onSearchValueChange($event.target.value)">
+    </mat-form-field>
+    <button style="margin-left: 2%;" *ngIf="searchSelect !== undefined && searchValue !== undefined" (click)="search()" mat-button>Search for Pokémons!</button>
+  </form>
 </div>
 
 <div class="container">
-  <table class="table table-striped table-sm table-responsive table-bordered">
+  <table class="table table-sm table-responsive table-bordered table-hover">
     <thead>
     <tr>
       <th class="fit" scope="col">#</th>
@@ -44,7 +53,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let pokemon of pokemons">
+    <tr *ngFor="let pokemon of pokemons" (click)="openEditModal(pokemon)">
       <th scope="row">{{ pokemon.row }}</th>
       <td>{{ pokemon.name }}</td>
       <td>{{ pokemon.pokedex_number }}</td>
@@ -84,10 +93,10 @@
     </ngb-pagination>
   
     <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (change)="reloadContent()">
-      <option [ngValue]="10">10 Pokémons por pagina</option>
-      <option [ngValue]="20">20 Pokémons por pagina</option>
-      <option [ngValue]="50">50 Pokémons por pagina</option>
-      <option [ngValue]="100">100 Pokémons por pagina</option>
+      <option [ngValue]="10">10 Pokémons per page</option>
+      <option [ngValue]="20">20 Pokémons per page</option>
+      <option [ngValue]="50">50 Pokémons per page</option>
+      <option [ngValue]="100">100 Pokémons per page</option>
     </select>
   </div>
 </div>

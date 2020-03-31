@@ -1,0 +1,26 @@
+<div mat-dialog-content>
+    <h1 mat-dialog-title>{{pokemon.name}}</h1>
+    <table class="table table-sm table-bordered table-hover">
+        <thead>
+            <tr>
+                <th class="fit" scope="col">Attibutes</th>
+                <th class="fit" scope="col">Current value</th>
+                <th class="fit" scope="col">New value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of tableData; let i = index">
+                <td>{{data.attribute}}</td>
+                <td>{{data.currentValue}}</td>
+                <td>
+                    <input *ngIf="data.attribute != '_id'" type="text" (keyup)="updateNewValue(i, $event.target.value)" value="{{data.newValue}}">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="close()">Go back</button>
+    <button style="margin-left: 2%;" [mat-dialog-close]="tableData" mat-button>Update {{pokemon.name}}</button>
+</div>
