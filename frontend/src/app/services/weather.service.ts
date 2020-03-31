@@ -8,7 +8,7 @@ import { Weather } from "@models/weather.model";
   providedIn: "root"
 })
 export class WeatherService {
-  private baseurl = "http://localhost:81";
+  private baseurl = "/api";
   constructor(private httpClient: HttpClient) {}
 
   public createWeather(weather: Weather): Observable<any> {

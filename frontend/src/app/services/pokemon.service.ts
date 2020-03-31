@@ -10,7 +10,7 @@ import { Weather } from "@models/weather.model";
   providedIn: "root"
 })
 export class PokemonService {
-  private baseurl = "http://localhost:81";
+  private baseurl = "/api";
   constructor(private httpClient: HttpClient) {}
 
   public createPokemon(pokemon: Pokemon): Observable<any> {

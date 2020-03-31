@@ -8,7 +8,7 @@ import { PokemonType } from "@models/pokemonType.model";
   providedIn: "root"
 })
 export class PokemonTypeService {
-  private baseurl = "http://localhost:81";
+  private baseurl = "/api";
   constructor(private httpClient: HttpClient) {}
 
   public createPokemonType(type: PokemonType): Observable<any> {
