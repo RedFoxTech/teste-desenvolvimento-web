@@ -5,7 +5,8 @@
   "author": "Gabriel D. Azevedo",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start": "PORT=81 node index.js",
+    "build": "npm run populate",
     "populate": "RESET=1 node populate.js"
   },
   "dependencies": {
