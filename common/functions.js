@@ -87,7 +87,7 @@ function paginationMiddleware(model) {
     
     const results = {}
 
-    if (endIndex < await model.count(query).exec()) {
+    if (endIndex < await model.countDocuments(query).exec()) {
       results.next = {
         page: page + 1,
         limit: limit
@@ -113,7 +113,7 @@ function paginationMiddleware(model) {
       }
 
       results.results = await model.find(query).limit(limit).skip(startIndex).exec()
-      results.count = await model.count(query).exec()
+      results.count = await model.countDocuments(query).exec()
       res.paginatedResults = results
       
       next()
