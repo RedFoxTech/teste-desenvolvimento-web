@@ -1,0 +1,93 @@
+<div class="search-container">
+  <label for="typeahead-basic">Search for a state:</label>
+  <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model"/>
+  <input type="button" value="Search">
+  <hr>
+  <pre>Model: {{ model | json }}</pre>
+
+</div>
+
+<div class="container">
+  <table class="table table-striped table-sm table-responsive table-bordered">
+    <thead>
+    <tr>
+      <th class="fit" scope="col">#</th>
+      <th class="fit" scope="col">Name</th>
+      <th class="fit" scope="col">Pokedex Number</th>
+      <th class="fit" scope="col">Img name</th>
+      <th class="fit" scope="col">Generation</th>
+      <th class="fit" scope="col">Evolution Stage</th>
+      <th class="fit" scope="col">Evolved</th>
+      <th class="fit" scope="col">FamilyID</th>
+      <th class="fit" scope="col">Cross Gen</th>
+      <th class="fit" scope="col">Type 1</th>
+      <th class="fit" scope="col">Type 2</th>
+      <th class="fit" scope="col">Weather 1</th>
+      <th class="fit" scope="col">Weather 2</th>
+      <th class="fit" scope="col">STAT TOTAL</th>
+      <th class="fit" scope="col">ATK</th>
+      <th class="fit" scope="col">DEF</th>
+      <th class="fit" scope="col">STA</th>
+      <th class="fit" scope="col">Legendary</th>
+      <th class="fit" scope="col">Aquireable</th>
+      <th class="fit" scope="col">Spawns</th>
+      <th class="fit" scope="col">Regional</th>
+      <th class="fit" scope="col">Raidable</th>
+      <th class="fit" scope="col">Hatchable</th>
+      <th class="fit" scope="col">Shiny</th>
+      <th class="fit" scope="col">Nest</th>
+      <th class="fit" scope="col">New</th>
+      <th class="fit" scope="col">Not-Gettable</th>
+      <th class="fit" scope="col">Future Evolve</th>
+      <th class="fit" scope="col">100% CP @ 40</th>
+      <th class="fit" scope="col">100% CP @ 39</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let pokemon of pokemons">
+      <th scope="row">{{ pokemon.row }}</th>
+      <td>{{ pokemon.name }}</td>
+      <td>{{ pokemon.pokedex_number }}</td>
+      <td>{{ pokemon.img_name }}</td>
+      <td>{{ pokemon.generation }}</td>
+      <td>{{ pokemon.evolution_stage }}</td>
+      <td>{{ pokemon.evolved }}</td>
+      <td>{{ pokemon.family_id }}</td>
+      <td>{{ pokemon.cross_gen }}</td>
+      <td>{{ pokemon.type_1 }}</td>
+      <td>{{ pokemon.type_2 }}</td>
+      <td>{{ pokemon.weather_1 }}</td>
+      <td>{{ pokemon.weather_2 }}</td>
+      <td>{{ pokemon.stat_total }}</td>
+      <td>{{ pokemon.atk }}</td>
+      <td>{{ pokemon.def }}</td>
+      <td>{{ pokemon.sta }}</td>
+      <td>{{ pokemon.legendary }}</td>
+      <td>{{ pokemon.aquireable }}</td>
+      <td>{{ pokemon.spawns }}</td>
+      <td>{{ pokemon.regional }}</td>
+      <td>{{ pokemon.raidable }}</td>
+      <td>{{ pokemon.hatchable }}</td>
+      <td>{{ pokemon.shiny }}</td>
+      <td>{{ pokemon.nest }}</td>
+      <td>{{ pokemon.new }}</td>
+      <td>{{ pokemon.not_gettable }}</td>
+      <td>{{ pokemon.future_evolve }}</td>
+      <td>{{ pokemon.hundred_cp_40 }}</td>
+      <td>{{ pokemon.hundred_cp_39 }}</td>
+    </tr>
+    </tbody>
+  </table>
+    
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" [maxSize]="7" (pageChange)="reloadContent()">
+    </ngb-pagination>
+  
+    <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (change)="reloadContent()">
+      <option [ngValue]="10">10 Pokémons por pagina</option>
+      <option [ngValue]="20">20 Pokémons por pagina</option>
+      <option [ngValue]="50">50 Pokémons por pagina</option>
+      <option [ngValue]="100">100 Pokémons por pagina</option>
+    </select>
+  </div>
+</div>

@@ -12,7 +12,6 @@ router.post('/getPokemonsByQuery', common.paginationMiddleware(Pokemon), (req, r
     res.status(200).json(res.paginatedResults)
 })
 
-
 router.post('/getPokemonByName', common.paginationMiddleware(Pokemon), (req, res) => {
     res.status(200).json(res.paginatedResults)
 })

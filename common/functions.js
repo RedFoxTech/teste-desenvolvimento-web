@@ -77,6 +77,7 @@ const queryValidEntries = [
 
 function paginationMiddleware(model) {
   return async (req, res, next) => {
+    const query = req.body.query
     const page = parseInt(req.query.page)
     const limit = parseInt(req.query.limit)
 
@@ -85,7 +86,7 @@ function paginationMiddleware(model) {
     
     const results = {}
 
-    if (endIndex < await model.countDocuments().exec()) {
+    if (endIndex < await model.count(query).exec()) {
       results.next = {
         page: page + 1,
         limit: limit
@@ -100,7 +101,7 @@ function paginationMiddleware(model) {
     }
 
     try {
-      const query = req.body.query
+      
       const validation = validateQuery(query, queryValidEntries)
       if (!validation.isValid) {
           res.status(400).json({
@@ -111,6 +112,7 @@ function paginationMiddleware(model) {
       }
 
       results.results = await model.find(query).limit(limit).skip(startIndex).exec()
+      results.count = await model.count(query).exec()
       res.paginatedResults = results
       
       next()
