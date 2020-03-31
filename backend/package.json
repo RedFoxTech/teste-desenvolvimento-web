@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "Gabriel D. Azevedo",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "populate": "RESET=1 node populate.js"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",

@@ -1,4 +1,4 @@
-const { readFileSync } = require("fs");
+const { readFileSync, unlinkSync } = require("fs");
 const { initializeDatabase } = require("./sequelize");
 const { createType, getTypes, getTypeById, getTypeByName } = require("./helpers/pokemonTypeHelper");
 const { createWeather, getWeathers, getWeatherById, getWeatherByName } = require("./helpers/weatherTypeHelper");
@@ -145,34 +145,6 @@ const getPokemonData = async (rawData = "") => {
         if (index < 8 || index > 11) {
           pokemonObject[columnNames[index]] = columns[index];
         }
-        // Populating type
-        // switch (index) {
-        //   case 8: {
-        //     const type = await getTypeByName(columns[index]);
-        //     console.log("Inserting type", type.id);
-        //     pokemonObject.typeOne.push(type.id);
-        //     break;
-        //   }
-        //   case 9: {
-        //     const type = await getTypeByName(columns[index]);
-        //     console.log("Inserting type", type.id);
-        //     pokemonObject.typeTwo.push(type.id);
-        //     break;
-        //   }
-        //   case 10: {
-        //     const weather = await getWeatherByName(columns[index]);
-        //     pokemonObject.weatherOne.push(weather.id);
-        //     break;
-        //   }
-        //   case 11: {
-        //     const weather = await getWeatherByName(columns[index]);
-        //     pokemonObject.weatherTwo.push(weather.id);
-        //     break;
-        //   }
-        //   default:
-        //     pokemonObject[columnNames[index]] = columns[index];
-        //     break;
-        // }
       }
     }
     dataSet.push(pokemonObject);
@@ -209,4 +181,9 @@ const populate = async () => {
   console.log("Server is now ready to work");
 };
 
+if (process.env.RESET) {
+  console.log("Removing old database");
+  unlinkSync("./database.sqlite");
+  console.log("Old database removed. Now populating a new one.");
+}
 populate();
