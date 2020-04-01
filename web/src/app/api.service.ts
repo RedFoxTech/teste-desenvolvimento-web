@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { DefaultResponse, InsertResponse } from './pokemon';
+import { DefaultResponse, InsertResponse, DeleteResponse } from './pokemon';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -40,6 +40,12 @@ export class ApiService {
 
   insertPokemon(query): Observable<InsertResponse> {
     return this.http.put<InsertResponse>('http://localhost:3000/insertManyPokemons', query).pipe(catchError(error => {
+      return Observable.throw(error || "Server error")
+    }))
+  }
+
+  deletePokemon(query): Observable<void> {
+    return this.http.delete<void>('http://localhost:3000/deletePokemon?id=' + query._id).pipe(catchError(error => {
       return Observable.throw(error || "Server error")
     }))
   }

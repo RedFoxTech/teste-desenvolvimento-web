@@ -16,6 +16,8 @@ export class EditModalComponent implements OnInit {
   currentValues = Object.values(this.pokemon)
   tableData = []
 
+  deletePokemon = { delete: true, '_id': this.pokemon['_id']}
+
   ngOnInit(): void {
     for (let key in this.pokemon) {
       this.tableData.push({attribute: key, currentValue: this.pokemon[key], newValue: this.pokemon[key]})

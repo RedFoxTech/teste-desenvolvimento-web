@@ -50,3 +50,8 @@ export interface InsertResponse {
     msg: string,
     pokemons: Pokemon[]
 }
+
+export interface DeleteResponse {
+    code: Number,
+    msg: string
+}

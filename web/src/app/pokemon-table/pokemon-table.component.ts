@@ -66,10 +66,15 @@ export class PokemonTableComponent implements OnInit {
     const dialogRef = this.dialog.open(EditModalComponent, {
       width: '70vh',
       height: '80%',
+      disableClose: true,
       data: pokemon
     });
 
     dialogRef.afterClosed().subscribe(data => {
+      if (data.delete) {
+        this.deletePokemon(data)
+        return
+      }
       if (data !== undefined){
         this.updatePokemon(data)
       }
@@ -138,6 +143,15 @@ export class PokemonTableComponent implements OnInit {
 
     this.defaultResponse$.subscribe(data => this.updateVariablesValues(data),
                                     err => this.openSnackBar('Something went wrong.','Try something different'))
+  }
+
+
+  deletePokemon(data) {
+    let query = { '_id': data._id }
+    
+    this.api.deletePokemon(query).subscribe(res => this.openSnackBar('The Pokémon was successfully deleted from your Pokédex.', ':)'),
+        	                                  err => this.openSnackBar('Something went wrong.','Try something different'))
+    this.reloadContent()
   }
 
   insertPokemon(data) {

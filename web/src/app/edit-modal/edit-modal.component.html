@@ -23,4 +23,5 @@
 <div mat-dialog-actions>
     <button mat-button (click)="close()">Go back</button>
     <button style="margin-left: 2%;" [mat-dialog-close]="tableData" mat-button>Update {{pokemon.name}}</button>
+    <button style="margin-left: 2%; color:red" [mat-dialog-close]="deletePokemon" mat-button>DELETE {{pokemon.name}}</button>
 </div>
