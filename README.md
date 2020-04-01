@@ -1,58 +1,60 @@
-# Teste de Desenvolvimento Web
+# Desafio Pokémon
 
-Olá Dev! Tudo bem?
+O desafio consiste em transformar uma planilha de informações sobre Pokémons em algo mais legível, maleável e sustentável.
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+## Do que se trata
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+Este webapp é basicamente um CRUD que foi feito para ajudar na visualização e manutenção de sua Pokédex. 
+Portanto, sua interface é super intuitiva e facil de usar.
 
-Agora vamos ao teste!
+No `backend` da aplicação foi usado NodeJS/express/mongoose. Não se preocupe com a instalação do MongoDB, este projeto utiliza MongoDB Atlas e está na nuvem, portanto não é necessario te-lo instalado. 
 
+No `frontend` foi usado Angular com Angular Materials e Bootstrap.
 
-## Desafio Pokémon
+O arquivo de variáveis `.env` foi tirado do `.gitignore` para facilitar a avaliação deste desafio.
 
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
+## Instalação e utilização
 
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
+Para instalar e rodar a aplicação você precisará de:
 
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
-
-
-## Consigo fazer tudo isso?
-
-Consegue sim!
-
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
-
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+- Git
+- Terminal
+- Docker
 
 
-## Por onde começo?
+### Como instalar/rodar a aplicação:
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+- Clone este repositorio em qualquer local desejado
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
+```
+$ git clone https://github.com/albertojnk/teste-desenvolvimento-web.git
+```
 
+- Use um terminal para entrar no diretório que você clonou e digite:
 
-## E o Layout??
-
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
-
-
-## Regras
-
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
+```
+    docker-compose up
+```
 
 
-## Só isso?
+### Como utilizar:
 
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
+A utilização pelo `frontend` é bem intuitiva, basta entrar em seu navegador e ir para `localhost:4200` que já aparecerá uma com alguns Pokémons.
 
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
+No canto superior esquerdo haverá 2 campos, estes campos serão sua ferramenta de busca. Pesquise o que quiser, essa ferramenta permite a pesquisa por qualquer atributo já listado.
+
+Ao clicar em um Pokémon da tabela, uma nova janela se abrirá, lhe dando a oportunidade de alterar algum atributo daquele Pokémon, deleta-lo, ou apenas ver melhor seus atributos.
+
+Abaixo da tabela há um botão para a inserção de um novo Pokémon, infelizmente apenas um por vez.
 
 
-Boa sorte! (^_^)
+## Utilize seu próprio banco de dados
+
+Sinta-se a vontade para utilizar seu próprio banco de dados, se quiser.
+
+Você precisará criar um `cluster` no  <a href="https://www.mongodb.com/cloud/atlas" target="_blank">MongoDB Atlas</a> , acesse seu cluster, clique em `connect`, e depois em `connect your application`, copie o link e preencha as variáveis em `.env` de acordo.
+
+Depois disso você precisará popular essa nova db, para isso utilize o endpoint `http://localhost:3000/pokemons/new` e preencha o `body` de acordo com o exemplo do arquivo `insert-example.json`.
+
+
+###### Authored by jnk

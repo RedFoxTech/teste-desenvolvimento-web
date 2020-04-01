@@ -1,0 +1,14 @@
+version: '3'
+services:
+    node-sever:
+        build:
+            context: .
+            dockerfile: Dockerfile-node
+        ports: 
+            - "3000:3000"
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile-web
+        ports: 
+            - "4200:4200"

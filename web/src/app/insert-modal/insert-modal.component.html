@@ -1,0 +1,24 @@
+<div mat-dialog-content>
+    <h1 mat-dialog-title>Insert a new Pokémon to your Pokédex</h1>
+    <table class="table table-sm table-bordered table-hover">
+        <thead>
+            <tr>
+                <th class="fit" scope="col">Attibutes</th>
+                <th class="fit" scope="col">Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let attribute of pokemon">
+                <td>{{attribute}}</td>
+                <td>
+                    <input type="text" (keyup)="updateReturnValue(attribute, $event.target.value)" value="">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button (click)="close()">Go back</button>
+    <button style="margin-left: 2%;" [mat-dialog-close]="returnValue" mat-button>Insert</button>
+</div>

@@ -1,0 +1,16 @@
+FROM mhart/alpine-node:12
+
+WORKDIR /app
+
+ENV PATH /app/node_modules/.bin:$PATH
+
+COPY ./web/package.json .
+COPY ./web/package-lock.json .
+
+
+RUN npm install
+RUN npm install -g @angular/cli
+
+COPY ./web .
+
+CMD ng serve --host 0.0.0.0
