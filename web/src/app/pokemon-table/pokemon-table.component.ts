@@ -71,7 +71,7 @@ export class PokemonTableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(data => {
-      if (data.delete) {
+      if (data !== undefined && data.delete) {
         this.deletePokemon(data)
         return
       }
