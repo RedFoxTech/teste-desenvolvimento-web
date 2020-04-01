@@ -52,9 +52,9 @@ Abaixo da tabela há um botão para a inserção de um novo Pokémon, infelizmen
 
 Sinta-se a vontade para utilizar seu próprio banco de dados, se quiser.
 
-Você precisará criar um `cluster` no  <a href="https://www.mongodb.com/cloud/atlas" target="_blank">MongoDB Atlas</a> , acesse seu cluster clique em `connect` e depois `connect your application` copie o link e preencha as variáveis em `.env` de acordo.
+Você precisará criar um `cluster` no  <a href="https://www.mongodb.com/cloud/atlas" target="_blank">MongoDB Atlas</a> , acesse seu cluster, clique em `connect`, e depois em `connect your application`, copie o link e preencha as variáveis em `.env` de acordo.
 
-Depois disso você precisará popular essa nova db, para isso utilize o endpoint `http://localhost:3000/pokemons/new` e preencha o body de acordo com o exemplo do arquivo `insert-example.json`.
+Depois disso você precisará popular essa nova db, para isso utilize o endpoint `http://localhost:3000/pokemons/new` e preencha o `body` de acordo com o exemplo do arquivo `insert-example.json`.
 
 
 ###### Authored by jnk
