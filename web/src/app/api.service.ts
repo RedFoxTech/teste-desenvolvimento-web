@@ -13,39 +13,39 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getAllPokemons(page, limit): Observable<DefaultResponse> {
-    return this.http.get<DefaultResponse>('http://localhost:3000/getAllPokemons', {
+    return this.http.get<DefaultResponse>('http://localhost:3000/pokemons', {
       params: {page, limit}
     }).pipe(catchError(error => {
       return Observable.throw(error || "Server error")
     }))
   }
 
-  getPokemonByQuery(query, page, limit): Observable<DefaultResponse> {
-    return this.http.post<DefaultResponse>('http://localhost:3000/getPokemonsByQuery?page=' + page + '&limit=' + limit, query).pipe(catchError(error => {
+  getPokemons(query, page, limit): Observable<DefaultResponse> {
+    return this.http.post<DefaultResponse>('http://localhost:3000/pokemons?page=' + page + '&limit=' + limit, query).pipe(catchError(error => {
       return Observable.throw(error || "Server error")
     }))
   }
 
   getPokemonByName(query): Observable<DefaultResponse> {
-    return this.http.post<DefaultResponse>('http://localhost:3000/getPokemonByName', query).pipe(catchError(error => {
+    return this.http.post<DefaultResponse>('http://localhost:3000/pokemons/name', query).pipe(catchError(error => {
       return Observable.throw(error || "Server error")
     }))
   }
 
-  updatePokemonByQuery(query): Observable<DefaultResponse> {
-    return this.http.put<DefaultResponse>('http://localhost:3000/updatePokemonsByQuery', query).pipe(catchError(error => {
+  updatePokemon(query): Observable<DefaultResponse> {
+    return this.http.put<DefaultResponse>('http://localhost:3000/pokemons', query).pipe(catchError(error => {
       return Observable.throw(error || "Server error")
     }))
   }
 
   insertPokemon(query): Observable<InsertResponse> {
-    return this.http.put<InsertResponse>('http://localhost:3000/insertManyPokemons', query).pipe(catchError(error => {
+    return this.http.put<InsertResponse>('http://localhost:3000/pokemons/new', query).pipe(catchError(error => {
       return Observable.throw(error || "Server error")
     }))
   }
 
   deletePokemon(query): Observable<void> {
-    return this.http.delete<void>('http://localhost:3000/deletePokemon?id=' + query._id).pipe(catchError(error => {
+    return this.http.delete<void>('http://localhost:3000/pokemons?id=' + query._id).pipe(catchError(error => {
       return Observable.throw(error || "Server error")
     }))
   }

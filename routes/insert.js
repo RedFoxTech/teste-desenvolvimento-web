@@ -6,7 +6,7 @@ const common = require('../common/functions')
 const insertDatasource = require('../datasource/datasource-insert')
 const findDatasource = require('../datasource/datasource-get')
 
-router.put('/insertManyPokemons', function (req, res) {
+router.put('/pokemons/new', function (req, res) {
     let pokemons = []
 
     const findAndInsertPokemons = async () => {

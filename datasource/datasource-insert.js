@@ -7,7 +7,7 @@ async function insertManyPokemons(pokemons) {
                 return console.error(err)
             } 
             
-            console.log('Varios Pokémons foram adicionados ao banco de dados')
+            console.log('Um ou varios Pokémons foram adicionados ao banco de dados')
         })
     } catch(error) {
         throw new Error(`Unable to insert Pokémons`)

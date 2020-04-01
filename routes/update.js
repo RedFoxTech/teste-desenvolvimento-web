@@ -4,7 +4,7 @@ const common = require('../common/functions')
 const updateDatasource = require('../datasource/datasource-update')
 
 
-router.put('/updatePokemonsByQuery', function(req, res) {
+router.put('/pokemons', function(req, res) {
     if (!req.body.find_query) {
         res.status(400).json({
             code: 400,

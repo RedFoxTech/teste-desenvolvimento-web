@@ -1,18 +1,17 @@
 const express = require('express')
 const router = express.Router();
 const common = require('../common/functions')
-const getDatasource = require('../datasource/datasource-get')
 const Pokemon = require('../models/pokemon')
 
-router.get('/getAllPokemons', common.paginationMiddleware(Pokemon), (req, res) => {
+router.get('/pokemons', common.paginationMiddleware(Pokemon), (req, res) => {
     res.status(200).json(res.paginatedResults)
 })
 
-router.post('/getPokemonsByQuery', common.paginationMiddleware(Pokemon), (req, res) => {
+router.post('/pokemons', common.paginationMiddleware(Pokemon), (req, res) => {
     res.status(200).json(res.paginatedResults)
 })
 
-router.post('/getPokemonByName', common.paginationMiddleware(Pokemon), (req, res) => {
+router.post('/pokemons/name', common.paginationMiddleware(Pokemon), (req, res) => {
     res.status(200).json(res.paginatedResults)
 })
 
