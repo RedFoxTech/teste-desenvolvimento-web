@@ -5,6 +5,7 @@ import { ApiService } from '../api.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { EditModalComponent } from '../edit-modal/edit-modal.component';
+import { InsertModalComponent } from '../insert-modal/insert-modal.component';
 
 @Component({
   selector: 'app-pokemon-table',
@@ -69,12 +70,28 @@ export class PokemonTableComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(data => {
-      console.log('The dialog was closed');
-      this.updatePokemon(data)
-      
+      if (data !== undefined){
+        this.updatePokemon(data)
+      }
     });   
   }
   
+  opemInsertModal() {
+    const dialogRef = this.dialog.open(InsertModalComponent, {
+      width: '70vh',
+      height: '80%',
+      disableClose: true,
+      data: this.searchType
+    });
+
+    dialogRef.afterClosed().subscribe(data => {
+      if (data !== undefined){
+        this.insertPokemon(data)
+      }
+    });   
+  }
+  
+
   ngOnInit(): void {
     this.reloadContent()
   }
@@ -119,9 +136,18 @@ export class PokemonTableComponent implements OnInit {
     find[this.searchSelect] = this.searchValue
     this.defaultResponse$ = this.api.getPokemonByQuery({"query": find })
 
-    this.defaultResponse$.subscribe(data => {
-      this.updateVariablesValues(data)
-    })
+    this.defaultResponse$.subscribe(data => this.updateVariablesValues(data),
+                                    err => this.openSnackBar('Something went wrong.','Try something different'))
+  }
+
+  insertPokemon(data) {
+    let query;
+    let pokemons = [data]
+    query = { pokemons: pokemons }
+
+    this.api.insertPokemon(query).subscribe(res => this.openSnackBar('The Pokémon was successfully saved on your Pokédex.', ':)'),
+        	                                  err => this.openSnackBar('Something went wrong.','Try something different'))
+    this.reloadContent()
   }
 
   updatePokemon(data) {
@@ -137,7 +163,8 @@ export class PokemonTableComponent implements OnInit {
     query['set_query'] = set
     
 
-    this.api.updatePokemonByQuery(query).subscribe()
+    this.api.updatePokemonByQuery(query).subscribe(res =>  this.openSnackBar('Pokémon was successfully updated.', ':)'),
+                                                    err => this.openSnackBar('Something went wrong.','Try something different'))
     this.reloadContent()
   }
 

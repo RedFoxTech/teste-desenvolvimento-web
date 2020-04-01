@@ -44,3 +44,9 @@ export interface DefaultResponse {
     count: Number,
     results: Pokemon[]
 }
+
+export interface InsertResponse {
+    code: Number,
+    msg: string,
+    pokemons: Pokemon[]
+}

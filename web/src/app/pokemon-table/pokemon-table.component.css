@@ -22,3 +22,10 @@
 .search-container label{
     display: block;
 }
+
+#addPokemon{
+    width: auto;
+    display: inline-flex;
+    height: 35px;
+    margin: auto 15px 2% 0;
+}

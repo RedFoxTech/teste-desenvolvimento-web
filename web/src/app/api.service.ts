@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { DefaultResponse } from './pokemon';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { DefaultResponse, InsertResponse } from './pokemon';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -15,18 +15,32 @@ export class ApiService {
   getAllPokemons(page, limit): Observable<DefaultResponse> {
     return this.http.get<DefaultResponse>('http://localhost:3000/getAllPokemons', {
       params: {page, limit}
-    }).pipe()
+    }).pipe(catchError(error => {
+      return Observable.throw(error || "Server error")
+    }))
   }
 
   getPokemonByQuery(query): Observable<DefaultResponse> {
-    return this.http.post<DefaultResponse>('http://localhost:3000/getPokemonsByQuery', query).pipe()
+    return this.http.post<DefaultResponse>('http://localhost:3000/getPokemonsByQuery', query).pipe(catchError(error => {
+      return Observable.throw(error || "Server error")
+    }))
   }
 
   getPokemonByName(query): Observable<DefaultResponse> {
-    return this.http.post<DefaultResponse>('http://localhost:3000/getPokemonByName', query).pipe()
+    return this.http.post<DefaultResponse>('http://localhost:3000/getPokemonByName', query).pipe(catchError(error => {
+      return Observable.throw(error || "Server error")
+    }))
   }
 
   updatePokemonByQuery(query): Observable<DefaultResponse> {
-    return this.http.put<DefaultResponse>('http://localhost:3000/updatePokemonsByQuery', query).pipe()
+    return this.http.put<DefaultResponse>('http://localhost:3000/updatePokemonsByQuery', query).pipe(catchError(error => {
+      return Observable.throw(error || "Server error")
+    }))
+  }
+
+  insertPokemon(query): Observable<InsertResponse> {
+    return this.http.put<InsertResponse>('http://localhost:3000/insertManyPokemons', query).pipe(catchError(error => {
+      return Observable.throw(error || "Server error")
+    }))
   }
 }

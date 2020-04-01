@@ -12,12 +12,15 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditModalComponent } from './edit-modal/edit-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { InsertModalComponent } from './insert-modal/insert-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonTableComponent,
     EditModalComponent,
+    InsertModalComponent,
   ],
   imports: [
     HttpClientModule,
@@ -28,11 +31,13 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSelectModule,
     MatInputModule,
     MatSnackBarModule,
-    MatDialogModule
+    MatDialogModule,
+    MatToolbarModule
   ],
   providers: [],
   entryComponents: [
-    EditModalComponent
+    EditModalComponent,
+    InsertModalComponent
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [AppComponent]

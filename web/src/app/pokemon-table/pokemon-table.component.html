@@ -1,7 +1,10 @@
+<mat-toolbar>
+  <span>Pokémon Go</span>
+</mat-toolbar>
 <div class="search-container">
   <form class="example-form">
     <mat-form-field>
-      <mat-label>Select an option</mat-label>
+      <mat-label>Select a search option</mat-label>
       <mat-select disableRipple id="searchType" >
         <mat-option (click)="onSearchTypeChange(type)" value="type" *ngFor="let type of searchType">{{type}}</mat-option>
       </mat-select>
@@ -13,9 +16,12 @@
       <input matInput value="" (keyup)="onSearchValueChange($event.target.value)">
     </mat-form-field>
     <button style="margin-left: 2%;" *ngIf="searchSelect !== undefined && searchValue !== undefined" (click)="search()" mat-button>Search for Pokémons!</button>
-  </form>
-</div>
+    <button style="margin-left: 2%;" *ngIf="searchSelect !== undefined && searchValue !== undefined" (click)="reloadContent()" mat-button>Reset search</button>
 
+  </form>
+  <hr>
+
+</div>
 <div class="container">
   <table class="table table-sm table-responsive table-bordered table-hover">
     <thead>
@@ -85,13 +91,15 @@
       <td>{{ pokemon.hundred_cp_40 }}</td>
       <td>{{ pokemon.hundred_cp_39 }}</td>
     </tr>
-    </tbody>
-  </table>
-    
-  <div class="d-flex justify-content-between p-2">
-    <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" [maxSize]="7" (pageChange)="reloadContent()">
+  </tbody>
+</table>
+
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" [maxSize]="7" (pageChange)="reloadContent()">
     </ngb-pagination>
-  
+    
+    <button id="addPokemon" (click)="opemInsertModal()" mat-button>Add new Pokémon</button>
+
     <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (change)="reloadContent()">
       <option [ngValue]="10">10 Pokémons per page</option>
       <option [ngValue]="20">20 Pokémons per page</option>
