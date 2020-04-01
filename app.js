@@ -11,11 +11,10 @@ const mongoose = require('mongoose')
 
 mongoose.Promise = global.Promise
 
-mongoose.connect('mongodb+srv://albertojnk:'+ process.env.MONGODB_PASSWORD +'@cluster0-ofgsd.mongodb.net/test?retryWrites=true&w=majority', { 
+mongoose.connect(process.env.MONGODB_BEFORE_PASSWORD+ process.env.MONGODB_PASSWORD + process.env.MONGODB_AFTER_PASSWORD, { 
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-
 
 var corsOptions = {
   origin: 'http://localhost:4200'

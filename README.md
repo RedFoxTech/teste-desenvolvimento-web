@@ -11,6 +11,8 @@ No `backend` da aplicação foi usado NodeJS/express/mongoose. Não se preocupe 
 
 No `frontend` foi usado Angular com Angular Materials e Bootstrap.
 
+O arquivo de variáveis `.env` foi tirado do `.gitignore` para facilitar a avaliação deste desafio.
+
 ## Instalação e utilização
 
 Para instalar e rodar a aplicação você precisará de:
@@ -46,8 +48,13 @@ Ao clicar em um Pokémon da tabela, uma nova janela se abrirá, lhe dando a opor
 Abaixo da tabela há um botão para a inserção de um novo Pokémon, infelizmente apenas um por vez.
 
 
+## Utilize seu próprio banco de dados
 
+Sinta-se a vontade para utilizar seu próprio banco de dados, se quiser.
 
+Você precisará criar um `cluster` no MongoDB Atlas <a href="https://www.mongodb.com/cloud/atlas" target="_blank"> , acesse seu cluster clique em `connect` e depois `connect your application` copie o link e preencha as variáveis em `.env` de acordo.
+
+Depois disso você precisará popular essa nova db, para isso utilize o endpoint `http://localhost:3000/pokemons/new` e preencha o body de acordo com o exemplo do arquivo `insert-example.json`.
 
 
 ###### Authored by jnk
