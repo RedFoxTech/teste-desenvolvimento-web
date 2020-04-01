@@ -20,8 +20,8 @@ export class ApiService {
     }))
   }
 
-  getPokemonByQuery(query): Observable<DefaultResponse> {
-    return this.http.post<DefaultResponse>('http://localhost:3000/getPokemonsByQuery', query).pipe(catchError(error => {
+  getPokemonByQuery(query, page, limit): Observable<DefaultResponse> {
+    return this.http.post<DefaultResponse>('http://localhost:3000/getPokemonsByQuery?page=' + page + '&limit=' + limit, query).pipe(catchError(error => {
       return Observable.throw(error || "Server error")
     }))
   }

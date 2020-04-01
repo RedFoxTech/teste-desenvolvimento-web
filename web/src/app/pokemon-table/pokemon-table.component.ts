@@ -55,6 +55,8 @@ export class PokemonTableComponent implements OnInit {
   pageSize = 10;
   collectionSize;
 
+  currentQuery = {}
+
   constructor(
     private api: ApiService,
     private _snackBar: MatSnackBar,
@@ -101,8 +103,16 @@ export class PokemonTableComponent implements OnInit {
     this.reloadContent()
   }
 
+  resetSearch() {
+    this.defaultResponse$ = this.api.getPokemonByQuery({}, 1, this.pageSize)
+
+    this.defaultResponse$.subscribe(data => {
+      this.reloadVariables(data)
+    })
+  }
+
   reloadContent() {
-    this.defaultResponse$ = this.api.getAllPokemons(this.page, this.pageSize)
+    this.defaultResponse$ = this.api.getPokemonByQuery(this.currentQuery, this.page, this.pageSize)
 
     this.defaultResponse$.subscribe(data => {
       this.reloadVariables(data)
@@ -127,8 +137,8 @@ export class PokemonTableComponent implements OnInit {
     if (this.searchSelect == 'name') {
       let find = {} 
       find[this.searchSelect] = this.titleCase(this.searchValue)
-      
-      this.defaultResponse$ = this.api.getPokemonByName({"query": find })
+      this.currentQuery = {"query": find }
+      this.defaultResponse$ = this.api.getPokemonByName(this.currentQuery)
 
       this.defaultResponse$.subscribe(data => {
         this.updateVariablesValues(data)
@@ -139,7 +149,8 @@ export class PokemonTableComponent implements OnInit {
     
     let find = {} 
     find[this.searchSelect] = this.searchValue
-    this.defaultResponse$ = this.api.getPokemonByQuery({"query": find })
+    this.currentQuery = {"query": find }
+    this.defaultResponse$ = this.api.getPokemonByQuery( this.currentQuery, this.page, this.pageSize)
 
     this.defaultResponse$.subscribe(data => this.updateVariablesValues(data),
                                     err => this.openSnackBar('Something went wrong.','Try something different'))
@@ -150,7 +161,8 @@ export class PokemonTableComponent implements OnInit {
     let query = { '_id': data._id }
     
     this.api.deletePokemon(query).subscribe(res => this.openSnackBar('The Pokémon was successfully deleted from your Pokédex.', ':)'),
-        	                                  err => this.openSnackBar('Something went wrong.','Try something different'))
+                                            err => this.openSnackBar('Something went wrong.','Try something different'))
+    this.currentQuery = {}
     this.reloadContent()
   }
 
@@ -161,6 +173,8 @@ export class PokemonTableComponent implements OnInit {
 
     this.api.insertPokemon(query).subscribe(res => this.openSnackBar('The Pokémon was successfully saved on your Pokédex.', ':)'),
         	                                  err => this.openSnackBar('Something went wrong.','Try something different'))
+
+    this.currentQuery = {}
     this.reloadContent()
   }
 
@@ -179,6 +193,8 @@ export class PokemonTableComponent implements OnInit {
 
     this.api.updatePokemonByQuery(query).subscribe(res =>  this.openSnackBar('Pokémon was successfully updated.', ':)'),
                                                     err => this.openSnackBar('Something went wrong.','Try something different'))
+                                                    
+    this.currentQuery = {}
     this.reloadContent()
   }
 

@@ -16,7 +16,7 @@
       <input matInput value="" (keyup)="onSearchValueChange($event.target.value)">
     </mat-form-field>
     <button style="margin-left: 2%;" *ngIf="searchSelect !== undefined && searchValue !== undefined" (click)="search()" mat-button>Search for Pokémons!</button>
-    <button style="margin-left: 2%;" *ngIf="searchSelect !== undefined && searchValue !== undefined" (click)="reloadContent()" mat-button>Reset search</button>
+    <button style="margin-left: 2%;" *ngIf="searchSelect !== undefined && searchValue !== undefined" (click)="resetSearch()" mat-button>Reset search</button>
 
   </form>
   <hr>
