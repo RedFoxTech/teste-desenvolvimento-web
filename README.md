@@ -58,16 +58,13 @@ Na primeira vez que a página é aberta ela irá mostrar de padrão os 12 primei
 
 - Visualizando Detalhes dos Pokemons:
 Os Pokemons estão organizados em cards onde é possível visualizar seu sprite, pokedex number, nome e tipos. Clicando no olho no cando do card um modal aparece exibindo mais detalhes do pokemon.
-![](./markdownfiles/vizualidandopokemons.gif) 
 
 - Paginação
 Abaixo da página tem um controle de paginas, com ele é possivel paginar de 12 em 12 pokemons.
-![](./markdownfiles/paginacao.gif)
 
 - Pesquisando Pokemons
 No topo da página é possível fazer a filtragem de pokemons, pesquisando pelo número ou nome do pokemon.
 Também é possivel digitar as iniciais assim exibindo todos os pokemons que tiverem os nomes com iniciais parecidas.
-![](./markdownfiles/pesquisandopokemons.gif)
 
 
 ## Back-End
@@ -139,7 +136,7 @@ Esse endpoint retorna um pokemon(ou vários) de acordo o numero ou nome passado 
 Esse endpoint retorna um pokemon de acordo com seu id passado como parâmetro.
 
 ## Considerações Finais :vulcan_salute:
-Optei por usar o Typescript no backend pois vi que na descrição da vaga Typescript é um diferencial e quis mostrar o meu conhecimento na linguagem.
+Optei por usar o Typescript no backend pois vi que na descrição da vaga Typescript é um diferencial e quis mostrar o meu conhecimento na linguagem além da tipagem ajudar muito no desenvolvimento.
 O front não ficou exatamente da forma que eu queria pois arrisquei aprender a usar o React Suite (sou mais acostumado a usar styled-components e Material UI). Tive alguns contratempos durante a semana que me impediram de fazer correções de alguns bugs e organizar melhor os componentes.
 
 Por fim vou manter as aplicações funcionando para que possa fazer o teste.
