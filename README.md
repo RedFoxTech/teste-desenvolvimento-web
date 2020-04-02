@@ -80,16 +80,16 @@ Também é possivel digitar as iniciais assim exibindo todos os pokemons que tiv
 
 ### :construction_worker: Arquitetura
 
-├── src &nbsp;
-    ├── business &nbsp;
-    │       ├──entities &nbsp;
-    │       ├──gateways &nbsp;
-    │       └──usecase &nbsp;
+├── src
+    ├── business 
+    │       ├──entities
+    │       ├──gateways
+    │       └──usecase
     │
-    ├── data &nbsp;
-    │   &nbsp;
-    └──upresentation &nbsp;
-            └──endpoints &nbsp;
+    ├── data
+    │   
+    └──upresentation
+            └──endpoints
 
 - Business:
 Aqui se encontra as regras de negócio da aplicação. Ela é composta por entidades, gateways(interfaces de funções) e casos de uso que são responsáveis por tratar os inputs, fazer validações, fazer a comunicação do banco com outros serviços e criar o corpo de respostas.
@@ -97,7 +97,7 @@ Aqui se encontra as regras de negócio da aplicação. Ela é composta por entid
 - Data:
     Aqui ficam as implementações referentes ao banco de dados. (Os use case são capazes usá-las sem precisar saber se o banco é SQL, Firestore, MongoDB ou qualquer outro)
 
--Presentation:
+- Presentation:
     É a camada responsável por tratar a comunicação do sistema com fontes externas. São compostas por funções chamadas de endpoints que recebem o input e convocam o use case adequado
 
 ### :computer: Rodando a aplicação
