@@ -1,58 +1,141 @@
-# Teste de Desenvolvimento Web
+# Teste de Desenvolvimento Web - Luan Bonetto
 
-Olá Dev! Tudo bem?
+Olá, inicialmente gostaria de dizer que foi divertido e desafiador realizar esse teste. :smile:
+Separei a documentação entre Front-end e Back-end, espero que goste!
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+## Front-End
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+### :hammer_and_wrench: Ferramentas Utilizadas
 
-Agora vamos ao teste!
+- Framework ReactJS
+- React Suite, um Framework UI de Componentes feito para o React
+- Redux, para o controle de estado
+- Redux-thunk, para procedimentos assíncronos
+- React-router para o controle de rotas
+- Webfontloader, para importar fontes
+- Axios, para requisições com o backend
+
+### :construction_worker: Estrutura de pastas
+
+```
+├── src
+    ├── actions
+    ├── components
+    ├── reducers
+    ├── resources
+    └── store
+```
+
+- Actions: A maioria da lógica de negócios e efeitos colaterais são implementados aqui.
+
+- Components :Aqui se encontram os Componentes React (Estão conectados com o Redux)
+
+- Reducers: Responsável por receber o estado e uma action, decide o que fazer a partir da action e retorna um novo estado.
+
+- Resources: Aqui ficam armazenados arquivos como imagens e videos que serão utilizados.
+
+- Store: Responsável por manter o estado da aplicação.
+
+### :computer: Rodando a aplicação
+    Antes de tudo será necessário digitar no terminal o comando: 
+
+    npm i
+
+    Para que seja instalado todas as ferramentas necessárias para o funcionamento da nossa aplicação.
+    Em seguida basta digitar o comando:
+
+    npm run start
+
+    Para rodar a aplicação na porta localhost:3000
+
+### :thinking: O que dá para fazer na aplicação?
+Na primeira vez que a página é aberta ela irá mostrar de padrão os 12 primeiros pokemons  (todos estão ordenados de acordo do o Pokedex Number).
+
+- Visualizando Detalhes dos Pokemons: Os Pokemons estão organizados em cards onde é possível visualizar seu sprite, pokedex number, nome e tipos. Clicando no olho no cando do card um modal aparece exibindo mais detalhes do pokemon.
+
+- Paginação: Abaixo da página tem um controle de paginas, com ele é possivel paginar de 12 em 12 pokemons.
+
+- Pesquisando Pokemons: No topo da página é possível fazer a filtragem de pokemons, pesquisando pelo número ou nome do pokemon.
+Também é possivel digitar as iniciais assim exibindo todos os pokemons que tiverem os nomes com iniciais parecidas.
 
 
-## Desafio Pokémon
+## Back-End
 
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
+### :hammer_and_wrench: Ferramentas Utilizadas
 
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
+- Banco de dados MySql
+- Express para criação de endpoits
+- dotenv para armazenamento de variáveis ambientes
+- knex para criação de querys SQL
+- Typescript para tipagem de código javascript
 
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
+### :construction_worker: Arquitetura
 
+```
+├── src
+    ├── business 
+    │       ├──entities
+    │       ├──gateways
+    │       └──usecase
+    │
+    ├── data
+    │   
+    └──upresentation
+            └──endpoints
+```
 
-## Consigo fazer tudo isso?
+- Business: Aqui se encontra as regras de negócio da aplicação. Ela é composta por entidades, gateways(interfaces de funções) e casos de uso que são responsáveis por tratar os inputs, fazer validações, fazer a comunicação do banco com outros serviços e criar o corpo de respostas.
 
-Consegue sim!
+- Data: Aqui ficam as implementações referentes ao banco de dados. (Os use case são capazes usá-las sem precisar saber se o banco é SQL, Firestore, MongoDB ou qualquer outro)
 
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
+- Presentation: É a camada responsável por tratar a comunicação do sistema com fontes externas. São compostas por funções chamadas de endpoints que recebem o input e convocam o use case adequado
 
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+### :computer: Rodando a aplicação
+Antes de tudo será necessário digitar no terminal o comando: 
 
+    npm i
 
-## Por onde começo?
+Para que seja instalado todas as ferramentas necessárias para o funcionamento da nossa aplicação.
+Em seguida basta digitar o comando:
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+    npm run start
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
-
-
-## E o Layout??
-
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
-
-
-## Regras
-
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
-
-
-## Só isso?
-
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
+Para rodar a aplicação na porta localhost:3333
 
 
-Boa sorte! (^_^)
+### Usando os Endpoints
+
+- POST https://redfox-pokedex.herokuapp.com/pokemons
+Esse endpoint é responsável por buscar uma lista de 12 pokemons de acordo com o número da página (inserida no body).
+
+exemplo de body:
+    ```
+    {
+	    "offset": 2
+    }
+    ```
+
+- GET https://redfox-pokedex.herokuapp.com/pages
+Esse endpoint é responsável por retornar a quantidade de páginas existentes de acordo com a quantidade de pokemons existentes no banco de dados.
+
+- GET https://redfox-pokedex.herokuapp.com/pokemons/:nameOrNumber
+Esse endpoint retorna um pokemon(ou vários) de acordo o numero ou nome passado como parâmetro.
+
+- GET https://redfox-pokedex.herokuapp.com/pokemon/:pokemonId
+Esse endpoint retorna um pokemon de acordo com seu id passado como parâmetro.
+
+## Considerações Finais :vulcan_salute:
+Optei por usar o Typescript no backend pois vi que na descrição da vaga Typescript é um diferencial e quis mostrar o meu conhecimento na linguagem além da tipagem ajudar muito no desenvolvimento.
+O front não ficou exatamente da forma que eu queria pois arrisquei aprender a usar o React Suite (sou mais acostumado a usar styled-components e Material UI). Tive alguns contratempos durante a semana que me impediram de fazer correções de alguns bugs e organizar melhor os componentes.
+
+Por fim vou manter as aplicações funcionando para que possa fazer o teste.
+Front: https://pokedex-redfox.surge.sh/
+Back: https://redfox-pokedex.herokuapp.com/
+
+E um pequeno detalhe, por questão de segurança eu coloquei a conexão com o banco de dados em variáveis de ambiente.
+
+
+
+
+
+
