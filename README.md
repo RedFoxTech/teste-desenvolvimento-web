@@ -64,7 +64,7 @@ Abaixo da página tem um controle de paginas, com ele é possivel paginar de 12 
 
 - Pesquisando Pokemons
 No topo da página é possível fazer a filtragem de pokemons, pesquisando pelo número ou nome do pokemon.
-Também é possivel digitar as iniciais assim exibindo todos os pokemons que tiverem os nomes iniciais parecidas.
+Também é possivel digitar as iniciais assim exibindo todos os pokemons que tiverem os nomes com iniciais parecidas.
 ![](https://i.imgur.com/2dQS7MT.mp4)
 
 
@@ -80,37 +80,38 @@ Também é possivel digitar as iniciais assim exibindo todos os pokemons que tiv
 
 ### :construction_worker: Arquitetura
 
-├── src
-    ├── business
-    │       ├──entities
-    │       ├──gateways
-    │       └──usecase
+├── src &nbsp;
+    ├── business &nbsp;
+    │       ├──entities &nbsp;
+    │       ├──gateways &nbsp;
+    │       └──usecase &nbsp;
     │
-    ├── data
-    │   
-    └──upresentation
-            └──endpoints
+    ├── data &nbsp;
+    │   &nbsp;
+    └──upresentation &nbsp;
+            └──endpoints &nbsp;
 
--Business
-    Aqui se encontra as regras de negócio da aplicação. Ela é composta por entidades, gateways(interfaces de funções) e casos de uso que são responsáveis por tratar os inputs, fazer validações, fazer a comunicação do banco com outros serviços e criar o corpo de respostas.
+- Business:
+Aqui se encontra as regras de negócio da aplicação. Ela é composta por entidades, gateways(interfaces de funções) e casos de uso que são responsáveis por tratar os inputs, fazer validações, fazer a comunicação do banco com outros serviços e criar o corpo de respostas.
 
--Data
+- Data:
     Aqui ficam as implementações referentes ao banco de dados. (Os use case são capazes usá-las sem precisar saber se o banco é SQL, Firestore, MongoDB ou qualquer outro)
 
--Presentation
+-Presentation:
     É a camada responsável por tratar a comunicação do sistema com fontes externas. São compostas por funções chamadas de endpoints que recebem o input e convocam o use case adequado
 
 ### :computer: Rodando a aplicação
 Antes de tudo será necessário digitar no terminal o comando: 
-    ```
+
     npm i
-    ```
+
 Para que seja instalado todas as ferramentas necessárias para o funcionamento da nossa aplicação.
 Em seguida basta digitar o comando:
-    ```
+
     npm run start
-    ```
+
 Para rodar a aplicação na porta localhost:3333
+
 
 ### Usando os Endpoints
 
