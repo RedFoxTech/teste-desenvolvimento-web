@@ -67,3 +67,84 @@ No topo da página é possível fazer a filtragem de pokemons, pesquisando pelo 
 Também é possivel digitar as iniciais assim exibindo todos os pokemons que tiverem os nomes iniciais parecidas.
 ![](https://i.imgur.com/2dQS7MT.mp4)
 
+
+## Back-End
+
+### :hammer_and_wrench: Ferramentas Utilizadas
+
+- Banco de dados MySql
+- Express para criação de endpoits
+- dotenv para armazenamento de variáveis ambientes
+- knex para criação de querys SQL
+- Typescript para tipagem de código javascript
+
+### :construction_worker: Arquitetura
+
+├── src
+    ├── business
+    │       ├──entities
+    │       ├──gateways
+    │       └──usecase
+    │
+    ├── data
+    │   
+    └──upresentation
+            └──endpoints
+
+-Business
+    Aqui se encontra as regras de negócio da aplicação. Ela é composta por entidades, gateways(interfaces de funções) e casos de uso que são responsáveis por tratar os inputs, fazer validações, fazer a comunicação do banco com outros serviços e criar o corpo de respostas.
+
+-Data
+    Aqui ficam as implementações referentes ao banco de dados. (Os use case são capazes usá-las sem precisar saber se o banco é SQL, Firestore, MongoDB ou qualquer outro)
+
+-Presentation
+    É a camada responsável por tratar a comunicação do sistema com fontes externas. São compostas por funções chamadas de endpoints que recebem o input e convocam o use case adequado
+
+### :computer: Rodando a aplicação
+Antes de tudo será necessário digitar no terminal o comando: 
+    ```
+    npm i
+    ```
+Para que seja instalado todas as ferramentas necessárias para o funcionamento da nossa aplicação.
+Em seguida basta digitar o comando:
+    ```
+    npm run start
+    ```
+Para rodar a aplicação na porta localhost:3333
+
+### Usando os Endpoints
+
+- POST https://redfox-pokedex.herokuapp.com/pokemons
+Esse endpoint é responsável por buscar uma lista de 12 pokemons de acordo com o número da página (inserida no body).
+
+exemplo de body:
+    ```
+    {
+	    "offset": 2
+    }
+    ```
+
+- GET https://redfox-pokedex.herokuapp.com/pages
+Esse endpoint é responsável por retornar a quantidade de páginas existentes de acordo com a quantidade de pokemons existentes no banco de dados.
+
+- GET https://redfox-pokedex.herokuapp.com/pokemons/:nameOrNumber
+Esse endpoint retorna um pokemon(ou vários) de acordo o numero ou nome passado como parâmetro.
+
+- GET https://redfox-pokedex.herokuapp.com/pokemon/:pokemonId
+Esse endpoint retorna um pokemon de acordo com seu id passado como parâmetro.
+
+## Considerações Finais :vulcan_salute:
+Optei por usar o Typescript no backend pois vi que na descrição da vaga Typescript é um diferencial e quis mostrar o meu conhecimento na linguagem.
+O front não ficou exatamente da forma que eu queria pois arrisquei aprender a usar o React Suite (sou mais acostumado a usar styled-components e Material UI). Tive alguns contratempos durante a semana que me impediram de fazer correções de alguns bugs e organizar melhor os componentes.
+
+Por fim vou manter as aplicações funcionando para que possa fazer o teste.
+Front: https://pokedex-redfox.surge.sh/
+Back: https://redfox-pokedex.herokuapp.com/
+
+E um pequeno detalhe, por questão de segurança eu coloquei a conexão com o banco de dados em variáveis ambientes.
+
+
+
+
+
+
