@@ -26,20 +26,15 @@ Separei a documentação entre Front-end e Back-end, espero que goste!
     └── store
 ```
 
-- Actions    
-    A maioria da lógica de negócios e efeitos colaterais são implementados aqui.
+- Actions: A maioria da lógica de negócios e efeitos colaterais são implementados aqui.
 
-- Components
-    Aqui se encontram os Componentes React (Estão conectados com o Redux)
+- Components :Aqui se encontram os Componentes React (Estão conectados com o Redux)
 
-- Reducers
-    Responsável por receber o estado e uma action, decide o que fazer a partir da action e retorna um novo estado.
+- Reducers: Responsável por receber o estado e uma action, decide o que fazer a partir da action e retorna um novo estado.
 
-- Resources
-    Aqui ficam armazenados arquivos como imagens e videos que serão utilizados.
+- Resources: Aqui ficam armazenados arquivos como imagens e videos que serão utilizados.
 
-- Store
-    Responsável por manter o estado da aplicação.
+- Store: Responsável por manter o estado da aplicação.
 
 ### :computer: Rodando a aplicação
     Antes de tudo será necessário digitar no terminal o comando: 
@@ -56,14 +51,11 @@ Separei a documentação entre Front-end e Back-end, espero que goste!
 ### :thinking: O que dá para fazer na aplicação?
 Na primeira vez que a página é aberta ela irá mostrar de padrão os 12 primeiros pokemons  (todos estão ordenados de acordo do o Pokedex Number).
 
-- Visualizando Detalhes dos Pokemons:
-Os Pokemons estão organizados em cards onde é possível visualizar seu sprite, pokedex number, nome e tipos. Clicando no olho no cando do card um modal aparece exibindo mais detalhes do pokemon.
+- Visualizando Detalhes dos Pokemons: Os Pokemons estão organizados em cards onde é possível visualizar seu sprite, pokedex number, nome e tipos. Clicando no olho no cando do card um modal aparece exibindo mais detalhes do pokemon.
 
-- Paginação
-Abaixo da página tem um controle de paginas, com ele é possivel paginar de 12 em 12 pokemons.
+- Paginação: Abaixo da página tem um controle de paginas, com ele é possivel paginar de 12 em 12 pokemons.
 
-- Pesquisando Pokemons
-No topo da página é possível fazer a filtragem de pokemons, pesquisando pelo número ou nome do pokemon.
+- Pesquisando Pokemons: No topo da página é possível fazer a filtragem de pokemons, pesquisando pelo número ou nome do pokemon.
 Também é possivel digitar as iniciais assim exibindo todos os pokemons que tiverem os nomes com iniciais parecidas.
 
 
@@ -92,14 +84,11 @@ Também é possivel digitar as iniciais assim exibindo todos os pokemons que tiv
             └──endpoints
 ```
 
-- Business:
-Aqui se encontra as regras de negócio da aplicação. Ela é composta por entidades, gateways(interfaces de funções) e casos de uso que são responsáveis por tratar os inputs, fazer validações, fazer a comunicação do banco com outros serviços e criar o corpo de respostas.
+- Business: Aqui se encontra as regras de negócio da aplicação. Ela é composta por entidades, gateways(interfaces de funções) e casos de uso que são responsáveis por tratar os inputs, fazer validações, fazer a comunicação do banco com outros serviços e criar o corpo de respostas.
 
-- Data:
-    Aqui ficam as implementações referentes ao banco de dados. (Os use case são capazes usá-las sem precisar saber se o banco é SQL, Firestore, MongoDB ou qualquer outro)
+- Data: Aqui ficam as implementações referentes ao banco de dados. (Os use case são capazes usá-las sem precisar saber se o banco é SQL, Firestore, MongoDB ou qualquer outro)
 
-- Presentation:
-    É a camada responsável por tratar a comunicação do sistema com fontes externas. São compostas por funções chamadas de endpoints que recebem o input e convocam o use case adequado
+- Presentation: É a camada responsável por tratar a comunicação do sistema com fontes externas. São compostas por funções chamadas de endpoints que recebem o input e convocam o use case adequado
 
 ### :computer: Rodando a aplicação
 Antes de tudo será necessário digitar no terminal o comando: 
