@@ -1,0 +1,28 @@
+.Filter-main {
+    margin-top: 20px;
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 10px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 10px -9px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 10px -9px rgba(0,0,0,0.75);
+
+    .form-group {
+        margin-bottom: 0;;
+    }
+
+    .Filter-title {
+        font-weight: 600;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media(max-width: 576px) {
+    .Filter-button {
+        margin-top: 10px;
+    }
+}
