@@ -1,10 +1,10 @@
 import React from 'react';
 import './pokemon.scss';
 
-export default function Item({ data }) {
+export default function Item({ data, onSelect }) {
 
     return (
-        <div className={`Item-main ${data.type1}`}>
+        <div className={`Item-main ${data.type1}`} onClick={ () => onSelect(data) }>
             <div className="row Item-box">
                 <div className="col-6 col-sm-2">
                     <div className="Item-type">
