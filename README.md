@@ -4,7 +4,7 @@
  - AdonisJS
  - SQLite3
 
-## Bug conhecidos
+## Bugs conhecidos
 
  - Alguns pokémons estão sem imagens
 
