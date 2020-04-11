@@ -1,8 +1,8 @@
 # Requisitos
 
-Node 10.x ou superior
-AdonisJS
-SQLite3
+ - Node 10.x ou superior
+ - AdonisJS
+ - SQLite3
 
 ## Bug conhecidos
 
@@ -20,11 +20,13 @@ SQLite3
 ### Backend
  - Acessar a pasta backend
  - npm i -g @adonisjs/cli
- - npm install
  - npm install sqlite3
+ - npm install
+ - adonis migration:run
  - adonis serve --dev
 
 ### Frontend
+ - Acessar a pasta frontend
  - npm install
  - npm start
 
