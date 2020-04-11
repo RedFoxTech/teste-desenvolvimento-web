@@ -1,0 +1,282 @@
+.Item-main {
+    height: 80px;
+    border-radius: 10px;
+    margin-top: 10px;
+    color: #616161;
+    font-size: 15px;
+    font-weight: 600;
+    -webkit-box-shadow: 10px 10px 10px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 10px -9px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 10px -9px rgba(0,0,0,0.75);
+    cursor: pointer;
+    transition: transform .2s; /* Animation */
+
+    &:hover {
+        // box-shadow: none;
+        transform: scale(1.04);
+    }
+
+    &.water {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(144,202,249,1) 0%, rgba(187,225,255,1) 27%, rgba(235,246,255,1) 100%);
+    }
+
+    &.bug {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(92,255,173,1) 0%, rgba(162,255,209,1) 27%, rgba(233,255,244,1) 100%);
+    }
+
+    &.grass {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(38,182,169,1) 0%, rgba(106,210,201,1) 27%, rgba(229,255,253,1) 100%);
+    }
+
+    &.fire {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(250,107,109,1) 0%, rgba(255,145,147,1) 27%, rgba(255,227,228,1) 100%);
+    }
+
+    &.rock {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(158,158,158,1) 0%, rgba(187,187,187,1) 27%, rgba(224,224,224,1) 100%);
+    }
+
+    &.normal {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(141,110,99,1) 0%, rgba(181,145,132,1) 27%, rgba(237,213,204,1) 100%);
+    }
+
+    &.poison {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(179,157,219,1) 0%, rgba(211,187,255,1) 27%, rgba(239,230,255,1) 100%);
+    }
+
+    &.electric {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,255,0,1) 0%, rgba(255,255,143,1) 27%, rgba(255,255,218,1) 100%);
+    }
+
+    &.fairy {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(240,98,146,1) 0%, rgba(240,156,184,1) 27%, rgba(255,227,236,1) 100%);
+    }
+
+    &.psychic {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(244,143,177,1) 0%, rgba(247,179,202,1) 27%, rgba(255,225,235,1) 100%);
+    }
+
+    &.fighting {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,152,0,1) 0%, rgba(255,187,87,1) 27%, rgba(255,236,209,1) 100%);
+    }
+
+    &.ground {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,196,0,1) 0%, rgba(255,219,100,1) 27%, rgba(255,246,215,1) 100%);
+    }
+
+    &.ghost {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(103,58,183,1) 0%, rgba(175,147,224,1) 27%, rgba(235,223,255,1) 100%);
+    }
+
+    &.ice {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(66,165,245,1) 0%, rgba(154,210,255,1) 27%, rgba(217,238,255,1) 100%);
+    }
+
+    &.dragon {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,134,203,1) 0%, rgba(169,178,228,1) 27%, rgba(228,232,255,1) 100%);
+    }
+
+    &.dark {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(97,97,97,1) 0%, rgba(154,154,154,1) 27%, rgba(226,226,226,1) 100%);
+    }
+
+    &.steel {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(96,125,139,1) 0%, rgba(151,183,198,1) 27%, rgba(222,243,252,1) 100%);
+    }
+
+    &.flying {
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,131,143,1) 0%, rgba(59,205,218,1) 27%, rgba(226,253,255,1) 100%);
+    }
+
+    .Item-pokedex {
+        display: flex;
+        align-items: center;
+    }
+
+    .Item-pokemon {
+        display: flex;
+        align-items: center;
+    }
+
+    .Item-type {
+        text-align: center;
+    }
+
+    .Item-box {
+        align-items: center;
+    }
+}
+
+.DetailModal-main {
+
+    color: #616161;
+
+    .modal-content {
+        border-radius: 10px !important;
+    }
+    
+    .DetailModal-content {
+
+        border-radius: 10px;
+
+        .DetailModal-detail {
+            margin-top: 15px;
+            text-align: center;
+            color: white;
+            h3 {
+                font-weight: bold;
+            }
+        }
+
+        .DetailModal-image {
+            text-align: center;
+        }
+
+        .DetailModal-name {
+            text-align: center;
+            h4 {
+                font-weight: bold;
+            }
+        }
+
+        .DetailModal-button {
+            padding: 10px;
+        }
+
+        .DetailModal-infos {
+            font-weight: bold;
+            p {
+                margin-left: 15px;
+            }
+        }
+        
+        .DetailModal-bar {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            svg {
+                width: 90%;
+            }
+
+        }
+
+        &.water {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(144,202,249,1) 0%, rgba(187,225,255,1) 27%, rgba(235,246,255,1) 100%);
+        }
+    
+        &.bug {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(92,255,173,1) 0%, rgba(162,255,209,1) 27%, rgba(233,255,244,1) 100%);
+        }
+    
+        &.grass {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(38,182,169,1) 0%, rgba(106,210,201,1) 27%, rgba(229,255,253,1) 100%);
+        }
+    
+        &.fire {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(250,107,109,1) 0%, rgba(255,145,147,1) 27%, rgba(255,227,228,1) 100%);
+        }
+    
+        &.rock {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(158,158,158,1) 0%, rgba(187,187,187,1) 27%, rgba(224,224,224,1) 100%);
+        }
+    
+        &.normal {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(141,110,99,1) 0%, rgba(181,145,132,1) 27%, rgba(237,213,204,1) 100%);
+        }
+    
+        &.poison {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(179,157,219,1) 0%, rgba(211,187,255,1) 27%, rgba(239,230,255,1) 100%);
+        }
+    
+        &.electric {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,0,1) 0%, rgba(255,255,143,1) 27%, rgba(255,255,218,1) 100%);
+        }
+    
+        &.fairy {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(240,98,146,1) 0%, rgba(240,156,184,1) 27%, rgba(255,227,236,1) 100%);
+        }
+    
+        &.psychic {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(244,143,177,1) 0%, rgba(247,179,202,1) 27%, rgba(255,225,235,1) 100%);
+        }
+    
+        &.fighting {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,152,0,1) 0%, rgba(255,187,87,1) 27%, rgba(255,236,209,1) 100%);
+        }
+    
+        &.ground {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,196,0,1) 0%, rgba(255,219,100,1) 27%, rgba(255,246,215,1) 100%);
+        }
+    
+        &.ghost {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(103,58,183,1) 0%, rgba(175,147,224,1) 27%, rgba(235,223,255,1) 100%);
+        }
+    
+        &.ice {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(66,165,245,1) 0%, rgba(154,210,255,1) 27%, rgba(217,238,255,1) 100%);
+        }
+    
+        &.dragon {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(121,134,203,1) 0%, rgba(169,178,228,1) 27%, rgba(228,232,255,1) 100%);
+        }
+    
+        &.dark {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(97,97,97,1) 0%, rgba(154,154,154,1) 27%, rgba(226,226,226,1) 100%);
+        }
+    
+        &.steel {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(96,125,139,1) 0%, rgba(151,183,198,1) 27%, rgba(222,243,252,1) 100%);
+        }
+    
+        &.flying {
+            background: rgb(2,0,36);
+            background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,131,143,1) 0%, rgba(59,205,218,1) 27%, rgba(226,253,255,1) 100%);
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .Item-main {
+        height: 130px;
+        text-align: center;
+        margin: 10px;
+        padding-top: 10px;
+    }
+}
