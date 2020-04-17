@@ -1,25 +1,25 @@
 {
-  "name": "testedevweb",
+  "name": "reactproj",
   "version": "1.0.0",
-  "description": "teste para web",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rickszaboDev/teste-desenvolvimento-web.git"
-  },
-  "author": "Henrique Szabo",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rickszaboDev/teste-desenvolvimento-web/issues"
-  },
-  "homepage": "https://github.com/rickszaboDev/teste-desenvolvimento-web#readme",
+  "description": "",
   "dependencies": {
-    "express": "^4.17.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
     "file-system": "^2.2.2",
     "lodash": "^4.17.15",
-    "nodemon": "^2.0.3"
-  }
+    "materialize-css": "^1.0.0-rc.2",
+    "nodemon": "^2.0.3",
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "author": "",
+  "license": "ISC"
 }
