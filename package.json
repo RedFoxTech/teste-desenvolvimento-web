@@ -1,0 +1,25 @@
+{
+  "name": "reactproj",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "file-system": "^2.2.2",
+    "lodash": "^4.17.15",
+    "materialize-css": "^1.0.0-rc.2",
+    "nodemon": "^2.0.3",
+    "react": "^16.13.1"
+  },
+  "devDependencies": {
+    "concurrently": "^4.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client": "cd client && yarn start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\""
+  },
+  "author": "",
+  "license": "ISC"
+}

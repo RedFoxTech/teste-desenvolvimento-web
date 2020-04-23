@@ -1,0 +1,11 @@
+.card-header {
+    position: sticky;
+    top: 9.9vh;
+    display: flex;
+    justify-content: start;
+}
+
+.card-header button {
+    padding: 5px 15px;
+    width: 10vw;
+}
