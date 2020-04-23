@@ -1,0 +1,10 @@
+.card-content {
+    display: flex;
+    justify-content: start;
+}
+
+.card-content button {
+    padding: 5px 15px;
+    width: 10vw;
+    height: 8vh;
+}

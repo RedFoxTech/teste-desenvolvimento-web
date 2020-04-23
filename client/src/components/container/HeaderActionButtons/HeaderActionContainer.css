@@ -1,0 +1,9 @@
+.header-container {
+ display: flex;
+ margin: 15px;
+}
+
+.header-container button{
+    width: 10vw;
+    height: 6vh;
+   }
