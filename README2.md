@@ -21,7 +21,7 @@ Páginação:
 Ordenação:
     Ao clicar no botão com o nome da coluna, ela é ordenada em crescente, ao clica uma segunda vez, ordena em ordem decrescente, ao clicar novamente, volta a ordem baseada na Row.
 
-    Para inicializar o projeto, após pull o projeto, no terminal dê o comando npm i, e posteriormente yarn dev para rodar o node e o react junto.
+    Para inicializar o projeto, após pull o projeto, no terminal comando: cd client/ && npm i && cd .. && npm i && yarn dev
 
     As requisições do serviço pelo front estão em ./client/src/API/Api.js
     Em ./client/src/App.js está todo gerenciamento de lógicas de negócio, e lógicas de view estão separadas dentro dos containers e components na pasta components.
