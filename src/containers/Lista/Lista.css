@@ -1,0 +1,14 @@
+.pokeList td, th, tr {
+    white-space: nowrap;
+    text-align: center;
+}
+
+.MuiPagination-ul {
+    justify-content: center;
+}
+
+@media(max-width: 500px) {
+    body{
+        font-size:0.9rem;
+    }
+}

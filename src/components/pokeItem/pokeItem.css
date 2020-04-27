@@ -1,0 +1,10 @@
+.opcao {
+    background: rgba(245, 245, 220, 0.62);
+    border: 2px solid #000000;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.opcao:hover {
+    background: beige;
+}
