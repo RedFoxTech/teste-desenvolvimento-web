@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering test/snapshot should render a pokeball button 1`] = `
+<a
+  className="homeButton"
+  href="/"
+>
+  <img
+    alt="home button"
+    src="home.png"
+  />
+</a>
+`;

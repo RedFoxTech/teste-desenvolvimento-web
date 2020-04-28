@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering test/snapshot should render the proper header prototype 1`] = `<tableHead />`;

@@ -113,7 +113,7 @@ const Lista = (props) => {
             </div>
             
             <div className="container-fluid m-auto justify-content-between align-items-center row">
-                <Search className="col col-12 col-md-4 my-2 p-0" placeholder="Quer filtrar algum campo?"/>
+                <Search className="col col-12 col-md-4 my-2 p-0" placeholder="Quer filtrar algum campo?" backToPageOne={onFlipPages}/>
                 <Paginas className="col mb-2 col-12 col-md-5 p-0" totalPaginas={Math.ceil((props.pokemonList.length)/pace)} paginaAtual={paginaAtual} mudarPagina={onFlipPages} />
             </div>
             <div className="container-fluid"> 

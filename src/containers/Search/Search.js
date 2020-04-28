@@ -22,7 +22,10 @@ const Search = (props) => {
             search = searchingFor;
         }
         setTimeOut(setTimeout( () => {
-            props.onSendSearch(search)
+            props.onSendSearch(search);
+            if (props.backToPageOne) {
+                props.backToPageOne(1)
+            };
         }, 1000))
     }
 
