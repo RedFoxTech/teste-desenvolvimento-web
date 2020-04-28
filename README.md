@@ -21,6 +21,7 @@ A intenção era construir um substituto (mais "bonito", user friendly) à uma p
 - redux (com Thunk como middleware)
 - bootstrap (+ react/bootstrap)
 - material UI
+- jest + enzyme
 
 ## Inicializando os dados
 
@@ -46,6 +47,10 @@ Em suma, temos as seguintes features na tabela:
 - Majoritariamente utilizei o bootstrap para fazer a disposição da UI e alguns elementos nativos (react boostrap)
 - Alguns elementos demandavam customização. Para tanto, utilizei o CSS "puro" mesmo
 - O Material UI foi utilizado no elemento de paginação (particularmente achei bem melhor que o componente do bootstrap)
+
+## Testes unitários
+
+Utilizei o combo Jest + Enzyme para fazer os testes unitários dos componentes. Não adicionei testes nos componentes de libs terceiras, partindo do pressuposto que eles são estáveis o suficiente.
 
 ## Melhorias futuras
 
