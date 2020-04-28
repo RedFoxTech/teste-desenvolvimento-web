@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { connect } from 'react-redux';
 
 import './Search.css';
@@ -27,16 +27,6 @@ const Search = (props) => {
                 props.backToPageOne(1)
             };
         }, 1000))
-    }
-
-    let dropdownItems = "";
-    if(props.params){
-        let params = Object.keys(props.params);
-        dropdownItems = params.map( param => {
-            if(param !== "Row" && param !== "Img name") {
-                return <option key={param}>{param}</option>
-            }
-        })
     }
 
     return (

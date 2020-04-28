@@ -32,7 +32,7 @@ const Lista = (props) => {
             });
             setHeaders(headers)
         };
-    }, [props.pokemonList]);
+    }, [props.pokemonList, props.params]);
 
     useEffect( () => {
         if(props.searchResults) {
@@ -73,6 +73,8 @@ const Lista = (props) => {
             headers.map( header => {
                 if(header !== "Img name"){ 
                     return (<th key={header}><TableHead id={header} sortList={sortList}/></th>)
+                } else {
+                    return null;
                 }
             });
 

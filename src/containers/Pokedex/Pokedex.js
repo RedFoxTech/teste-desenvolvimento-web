@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 
 import './Pokedex.css';
-import pokedex from '../../assets/pokedex_full.png';
+import pokedex from '../../assets/pokedex_full.jpg';
 
 import Search from '../Search/Search';
 import PokeInfo from '../../components/pokeInfo/pokeInfo';
@@ -20,7 +20,7 @@ const Pokedex = (props) => {
     return (
         <>
             <HomeButton />
-            <div className="container mx-auto row tela mt-4 justify-content-between">
+            <div className="container mx-auto row tela mt-5 justify-content-between">
                 <div className={"m-auto col col-12 order-md-1 order-12 col-md-5 pokedex my-2"}>
                     <div className="d-flex justify-content-center">
                         <img className="w-75" src={pokedex} alt="Pokedex" />
