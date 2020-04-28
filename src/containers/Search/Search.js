@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
 
+import './Search.css';
+
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
 
@@ -21,7 +23,7 @@ const Search = (props) => {
         }
         setTimeOut(setTimeout( () => {
             props.onSendSearch(search)
-        }, 300))
+        }, 1000))
     }
 
     let dropdownItems = "";
@@ -38,7 +40,7 @@ const Search = (props) => {
         <div className={props.className}>
             <InputGroup>
                 <FormControl
-                placeholder="Pesquisar (nome, type, generation, ...)"
+                placeholder={props.placeholder}
                 aria-label="searchFor"
                 aria-describedby="basic-addon2"
                 onChange={(evt) => onAttributeSelection(evt)}              

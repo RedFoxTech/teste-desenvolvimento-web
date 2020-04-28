@@ -23,7 +23,7 @@ const App = (props) => {
       <Switch>
         <Route path="/lista" component={Lista}/>
         <Route path="/pokedex" component={Pokedex}/>
-        <Route path="/pokemon/:pokemonName" />
+        <Route path="/pokemon/:pokemonName"/>
         <Route path="/">
           <div className="container-fluid background">
             <div className="container">

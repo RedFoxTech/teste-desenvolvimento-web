@@ -1,6 +1,8 @@
 import React from 'react';
 import Pagination from '@material-ui/lab/Pagination';
 
+import './pagination.css';
+
 
 const Paginas = (props) => {
     return (

@@ -4,11 +4,17 @@
 }
 
 .MuiPagination-ul {
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 @media(max-width: 500px) {
     body{
         font-size:0.9rem;
+    }
+    .MuiPagination-ul {
+        justify-content: center;
+    }
+    .hero img {
+        width: 70%;
     }
 }

@@ -1,0 +1,83 @@
+.card {
+    border: none;
+}
+
+.card-subtitle {
+    color:lightgray;
+}
+
+.type {
+    border-radius: 50px;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+}
+
+.bug, .grass {
+    background: green;
+    color: white;
+}
+
+.dark {
+    background: black;
+    color: white;
+}
+
+.dragon, .fairy, .flying {
+    background: beige;
+    color: black;
+}
+
+.electric {
+    background: goldenrod;
+    color: black;
+}
+.fighting, .ground, .rock {
+    background: burlywood;
+    color: black;
+}
+.fire {
+    background: red;
+    color: white;
+}
+.ghost, .poison, .psychic {
+    background: purple;
+    color: white;
+}
+.dark {
+    background: black;
+    color: white;
+}
+.ice, .water {
+    background: blue;
+    color: white;
+}
+.normal {
+    background: snow;
+    color: black;
+}
+.steel {
+    background: slategrey;
+    color: black;
+}
+
+.info {
+    font-weight: bolder;
+}
+
+.cpHolder {
+    background: rgba(0,212,255,0.15);
+    border-radius: 50px;
+}
+
+.cp {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(0,255,196,1) 19%, rgba(0,212,255,1) 100%);
+    border-radius: 50px;
+    padding: 5px 15px;
+    width: 45%;
+    text-align: center;
+}
+
+.cpValue {
+    margin-right: 15%;
+}

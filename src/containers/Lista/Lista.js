@@ -3,12 +3,15 @@ import {connect} from 'react-redux';
 import Table from 'react-bootstrap/Table';
 import './Lista.css';
 
-import Search from '../Search';
+import pokeball from '../../assets/pokeball.gif';
+import gotta_catch from '../../assets/gotta_catch_them_all.png';
+
+import Search from '../Search/Search';
 import Paginas from '../../components/pagination/pagination';
 import TableHead from '../../components/tableHead/tableHead';
 import TableRow from '../../components/tableRow/tableRow';
-import pokeball from '../../assets/pokeball.gif';
-import pokeFriends from '../../assets/pokeFriends.jpg';
+import HomeButton from '../../components/Home/Home';
+
 
 const Lista = (props) => {
 
@@ -62,7 +65,7 @@ const Lista = (props) => {
         setUpdate(toSortList);
     }
 
-    let tableHeaders = <img src={pokeball} />;
+    let tableHeaders = <img src={pokeball} alt="loading" />;
     let pokemonsTable = null;
     if(updatedList && headers) {
 
@@ -104,14 +107,16 @@ const Lista = (props) => {
 
     return (
         <>  
-            <div className="container m-auto">
-                <img src={pokeFriends} alt="Pikachu e seus amigos"/>
+            <HomeButton />
+            <div className="hero container d-flex justify-content-center">
+                <img src={gotta_catch} alt="Pikachu e seus amigos"/>
             </div>
-            <div className="container m-auto justify-content-between align-items-center row">
-                <Search className="col my-2"/>
-                <Paginas className="col mb-2 col-12 col-md-5" totalPaginas={Math.ceil((props.pokemonList.length)/pace)} paginaAtual={paginaAtual} mudarPagina={onFlipPages} />
+            
+            <div className="container-fluid m-auto justify-content-between align-items-center row">
+                <Search className="col col-12 col-md-4 my-2 p-0" placeholder="Quer filtrar algum campo?"/>
+                <Paginas className="col mb-2 col-12 col-md-5 p-0" totalPaginas={Math.ceil((props.pokemonList.length)/pace)} paginaAtual={paginaAtual} mudarPagina={onFlipPages} />
             </div>
-            <div className="container-fluid">
+            <div className="container-fluid"> 
                 <Table bordered hover responsive size="sm" className="pokeList">
                     <thead>
                         <tr>
