@@ -1,0 +1,12 @@
+.homeButton img {
+    width: 40px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+@media (max-width: 500px) {
+    .homeButton img {
+        width: 30px;
+    }
+}

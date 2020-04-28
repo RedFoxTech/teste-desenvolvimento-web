@@ -1,0 +1,14 @@
+.MuiPagination-ul {
+    justify-content: flex-end;
+}
+
+.MuiPaginationItem-page.Mui-selected {
+    background: url('../../assets/pokeball.jpg');
+    color: black;
+}
+
+@media(max-width: 500px) {
+    .MuiPagination-ul {
+        justify-content: center;
+    }
+}

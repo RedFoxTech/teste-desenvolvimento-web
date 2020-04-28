@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+.background {
+  background-image: url('./assets/pallet.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}

@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rendering test/snapshot should render the pokeInfo card 1`] = `
+<Card
+  body={false}
+  className="d-flex flex-column align-items-center"
+>
+  <CardImg
+    className="w-25"
+    src="https://pokeres.bastionbot.org/images/pokemon/1.png"
+    variant="top"
+  />
+  <CardBody
+    className="w-75"
+  >
+    <CardTitle
+      className="text-center mb-1"
+    >
+      Bulbasaur
+    </CardTitle>
+    <CardSubtitle
+      className="text-center mb-3"
+    >
+      1
+      a geração
+    </CardSubtitle>
+    <CardText
+      className="d-flex justify-content-center"
+    >
+      <p
+        className="type my-0 mx-2 grass"
+      >
+        grass
+      </p>
+      <p
+        className="type mb-0 mx-2 poison"
+      >
+        poison
+      </p>
+    </CardText>
+    <hr />
+    <CardText
+      className="d-flex justify-content-around"
+    >
+      <p
+        className="info mb-0"
+      >
+        ATK 
+        <img
+          alt="Ataque"
+          src="sword.png"
+        />
+        <br />
+        1000
+      </p>
+      <p
+        className="info mb-0"
+      >
+        DEF 
+        <img
+          alt="Defesa"
+          src="shield.png"
+        />
+        <br />
+        1000
+      </p>
+      <p
+        className="info mb-0"
+      >
+        STA 
+        <img
+          alt="Stamina"
+          src="stamina.png"
+        />
+        <br />
+        1000
+      </p>
+    </CardText>
+    <CardText>
+      <div
+        className="d-flex justify-content-between align-items-center cpHolder mb-2"
+      >
+        <div
+          className="cp"
+        >
+          CP @ 40
+        </div>
+        <div
+          className="cpValue"
+        >
+          1000
+        </div>
+      </div>
+      <div
+        className="d-flex justify-content-between align-items-center cpHolder mb-2"
+      >
+        <div
+          className="cp"
+        >
+          CP @ 39
+        </div>
+        <div
+          className="cpValue"
+        >
+          1000
+        </div>
+      </div>
+    </CardText>
+    <hr />
+    <CardText
+      className="w-50 m-auto text-center"
+    >
+      <p
+        className="question"
+      >
+        Evolved? 
+        <strong>
+          Sim!
+        </strong>
+      </p>
+      <p
+        className="question"
+      >
+        Cross Gen? 
+        <strong>
+          Não!
+        </strong>
+      </p>
+      <p
+        className="question"
+      >
+        Lengedary? 
+        <strong>
+          Não!
+        </strong>
+      </p>
+      <p
+        className="question"
+      >
+        Spawns? 
+        <strong>
+          Não!
+        </strong>
+      </p>
+    </CardText>
+  </CardBody>
+</Card>
+`;

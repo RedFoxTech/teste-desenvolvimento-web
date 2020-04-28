@@ -1,0 +1,20 @@
+.pokeList input {
+    border: none;
+    padding: 2px;
+    width: 95px;
+    text-align: center;
+}
+
+.pokeList input:focus {
+    outline: none;
+    background: beige;
+    border: 2px solid black;
+    border-radius: 5px;
+    -webkit-box-shadow: 7px 10px 16px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 10px 16px -6px rgba(0,0,0,0.75);
+    box-shadow: 7px 10px 16px -6px rgba(0,0,0,0.75);
+}
+
+.pokeIcon {
+    width: 30px;
+}

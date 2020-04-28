@@ -1,0 +1,52 @@
+.ash {
+  position: fixed;
+  bottom: 0;
+  transition: all 0.3s ease-out;
+  height: 40vh;
+}
+
+.chat {
+  background: snow;
+  border: 2px solid black;
+  border-radius: 0 15px 15px 15px;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  color: black;
+  padding: 5px;
+  -webkit-box-shadow: 7px 10px 16px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 7px 10px 16px -6px rgba(0,0,0,0.75);
+  box-shadow: 7px 10px 16px -6px rgba(0,0,0,0.75);
+}
+
+.continue {
+  margin: 10px 0;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  color: beige;
+  background: black;
+  -webkit-box-shadow: 7px 10px 16px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 7px 10px 16px -6px rgba(0,0,0,0.75);
+  box-shadow: 7px 10px 16px -6px rgba(0,0,0,0.75);
+}
+
+.continue:hover {
+  background: #282828;
+}
+
+@media (max-width: 500px) {
+  .ash {
+    height: 50vh;
+  }
+
+  .ash img {
+    width: 30%;
+  }
+
+  .chat {
+    border-radius: 15px 15px 15px 0;
+    font-size: 0.8rem;
+  }
+}
