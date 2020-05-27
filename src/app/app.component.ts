@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
   dataList: any[];
   ngOnInit() {
     // Create Datalist
-    fetch('https://pokeapi.co/api/v2/pokemon/')
+    fetch('https://pokeapi.co/api/v2/pokemon/?limit=964')
     .then((response) => {
       if (response.ok) {
         response.json()
@@ -63,30 +63,6 @@ export class AppComponent implements OnInit {
           118,
           90
         ),
-        // new Pokemon(
-        //   'Ivysaur',
-        //   151,
-        //   151,
-        //   120
-        // ),
-        // new Pokemon(
-        //   'Venusaur',
-        //   198,
-        //   198,
-        //   160
-        // ),
-        // new Pokemon(
-        //   'Charmander',
-        //   116,
-        //   96,
-        //   78
-        // ),
-        // new Pokemon(
-        //   'Charmeleon',
-        //   158,
-        //   129,
-        //   116
-        // )
       ];
 
       let pokemonStore: IDBObjectStore = null;
