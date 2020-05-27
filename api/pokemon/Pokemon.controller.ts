@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 import pokemon from './Pokemon.model';
+import PokemonXls from './PokemonXls';
 
 export default class PokemonController {
     public async create(req: Request, res: Response): Promise<Response> {
@@ -8,16 +9,28 @@ export default class PokemonController {
             return res.json({ success: true, data: created });
         }
         catch (err) {
-            return res.json({ success: false, data: err });
+            return res.json({ success: false, data: err.message });
         }
     }
 
     public async upload(req: Request, res: Response): Promise<Response> {
-        try {
+        const pokemonXls = new PokemonXls();
+        console.log(req.body);
+        if (!req.file) return res.json({ success: false, data: 'No file uploaded' });
+        if (!pokemonXls.validate(req.file.mimetype)) {
+            return res.json({
+                success: false,
+                data: `${req.file.originalname} is not valid (.xls / .xslx) excel file`
+            });
+        }
 
+        try {
+            const pokemons = await pokemonXls.parse(req.file.path);
+            console.log(pokemons);
+            return res.json({ success: true, data: pokemons });
         }
         catch (err) {
-
+            return res.json({ success: false, data: err.message });
         }
     }
 
@@ -27,7 +40,7 @@ export default class PokemonController {
             return res.json({ success: true, data: pokemons });
         }
         catch (err) {
-            return res.json({ success: false, data: err })
+            return res.json({ success: false, data: err.message })
         }
     }
 
@@ -37,7 +50,7 @@ export default class PokemonController {
             return res.json({ success: true, data: found })
         }
         catch (err) {
-            return res.json({ success: false, data: err })
+            return res.json({ success: false, data: err.message })
         }
     }
 
@@ -47,7 +60,7 @@ export default class PokemonController {
             return res.json({ success: true, data: updated })
         }
         catch (err) {
-            return res.json({ success: false, data: err })
+            return res.json({ success: false, data: err.message })
         }
     }
 
@@ -57,7 +70,7 @@ export default class PokemonController {
             return res.json({ success: true, data: deleted })
         }
         catch (err) {
-            return res.json({ success: false, data: err })
+            return res.json({ success: false, data: err.message })
         }
     }
 
