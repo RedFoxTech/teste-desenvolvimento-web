@@ -9,7 +9,7 @@ export class Pokemon {
         def: number,
         sta: number
     ) {
-        this.name = name;
+        this.name = name.toLowerCase();
         this.atk = atk;
         this.def = def;
         this.sta = sta;
