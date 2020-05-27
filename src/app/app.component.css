@@ -1,0 +1,13 @@
+.pokemonList {
+    margin: 0;
+}
+
+.pokemonList__row {
+    max-height: 60px;
+}
+
+.pokemonList__thumb {
+    width: auto;
+    height: 100%;
+    max-height: 60px;
+}
