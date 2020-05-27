@@ -4,8 +4,9 @@
   "description": "Olá Dev! Tudo bem?",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npm run webpack\" \"npm run nodemon\" ",
+    "start": "concurrently \"npm run start-client\" \"npm run webpack\" \"npm run nodemon\" ",
     "nodemon": "nodemon api/index.ts",
+    "start-client": "node start-client.js",
     "webpack": "webpack"
   },
   "repository": {
@@ -24,7 +25,8 @@
     "mongoose": "^5.9.16",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
-    "node-xlsx": "^0.15.0"
+    "node-xlsx": "^0.15.0",
+    "webpack": "^4.42.0"
   },
   "devDependencies": {
     "@types/body-parser": "^1.19.0",
@@ -39,7 +41,6 @@
     "ts-loader": "^7.0.5",
     "ts-node": "^8.10.1",
     "typescript": "^3.9.3",
-    "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-node-externals": "^1.7.2"
   }
