@@ -146,7 +146,7 @@ export class AppComponent implements OnInit {
    * @param pokemonName sprite´s pokemon name
    */
   getThumb(pokemonName: string) {
-    return `https://img.pokemondb.net/sprites/go/normal/${pokemonName.toLowerCase()}.png`;
+    return `https://img.pokemondb.net/sprites/home/normal/${pokemonName.toLowerCase()}.png`;
   }
   /**
    * Utility function to sort a array of objects by a key
