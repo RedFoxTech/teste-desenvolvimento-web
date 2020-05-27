@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
       if (response.ok) {
         response.json()
         .then((data) => {
-          this.dataList = data.results;
+          this.dataList = this.sortBy('name', data.results);
         })
       }
     })
