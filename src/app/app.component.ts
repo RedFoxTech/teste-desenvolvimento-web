@@ -117,9 +117,7 @@ export class AppComponent implements OnInit {
     const pokeStore = this.DB.transaction("pokeList", 'readwrite').objectStore('pokeList');
     const putRequest = pokeStore.put(data);
     
-    putRequest.addEventListener('success', () => {
-      console.log('data Saved', putRequest.result);
-    });
+    putRequest.addEventListener('success', () => {});
 
     // Refresh data
     this.getData();
@@ -133,6 +131,15 @@ export class AppComponent implements OnInit {
   onDelete(evt: MouseEvent, pokemonId: number) {
     evt.stopPropagation();
     console.log('onDelete', pokemonId);
+
+    const pokeStore = this.DB.transaction("pokeList", 'readwrite').objectStore('pokeList');
+    const delRequest = pokeStore.delete(pokemonId);
+    
+    delRequest.addEventListener('success', () => {
+      console.log('data Deleted', delRequest.result);
+      // Refresh data
+      this.getData();
+    });
   }
   /**
    * Sort pokemon list by a key
