@@ -1,0 +1,20 @@
+@media screen and (min-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+    .floatingButton {
+        display: none;
+    }
+
+    .appHeader__title {
+        /* text-align: center; */
+    }
+
+    .appHeader__actionNew {
+        display: block;
+    }
+    
+    .pokemonList tr:hover {
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+}

@@ -1,0 +1,138 @@
+/*
+| ================================================================================
+| Custom
+| ================================================================================
+*/
+
+:root {
+    --headerHeight: 60px;
+    --mainColor: #DDD;
+    --fabSize: 56px;
+    --listHeight: 60px;
+}
+
+/*
+| ================================================================================
+| Core
+| ================================================================================
+*/
+
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+
+html,
+body,
+.appRoot {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-size: 10px;
+}
+
+html,
+body,
+.appRoot {
+    overflow: hidden;
+}
+
+/*
+| ================================================================================
+| Header
+| ================================================================================
+*/
+
+.appHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: var(--headerHeight);
+    background-color: var(--mainColor);
+    padding: 0 50px;
+}
+
+.appHeader__title {
+    width: 100%;
+    font-weight: bolder;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.appHeader__actionNew {
+    display: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/*
+| ================================================================================
+| Main
+| ================================================================================
+*/
+
+.appContent {
+    height: calc(100% - var(--headerHeight));
+    overflow: hidden auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.floatingButton {
+    width: var(--fabSize);
+    height: var(--fabSize);
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.floatingButton::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI0NDhweCIgaGVpZ2h0PSI0NDhweCIgdmlld0JveD0iMCAwIDQ0OCA0NDgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDQ0OCA0NDgiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik00MDgsMTg0SDI3MmMtNC40MTgsMC04LTMuNTgyLTgtOFY0MGMwLTIyLjA5LTE3LjkxLTQwLTQwLTQwcy00MCwxNy45MS00MCw0MHYxMzZjMCw0LjQxOC0zLjU4Miw4LTgsOEg0MGMtMjIuMDksMC00MCwxNy45MS00MCw0MHMxNy45MSw0MCw0MCw0MGgxMzZjNC40MTgsMCw4LDMuNTgyLDgsOHYxMzZjMCwyMi4wOSwxNy45MSw0MCw0MCw0MHM0MC0xNy45MSw0MC00MFYyNzJjMC00LjQxOCwzLjU4Mi04LDgtOGgxMzZjMjIuMDksMCw0MC0xNy45MSw0MC00MFM0MzAuMDksMTg0LDQwOCwxODR6Ii8+PC9zdmc+);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.pokemonList {
+    font-size: 1.2rem;
+}
+
+.pokemonList td {
+    vertical-align: middle;
+}
+
+.pokemonList__action {
+    width: 35px;
+    height: 35px;
+}
+
+.pokemonList__action::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iYm9sZCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCIgdmlld0JveD0iMCAwIDUxMiA1MTIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik00NzQuNjY3LDE4MS4zMzRIMzcuMzMzYy04LjgzMiwwLTE2LTcuMTY4LTE2LTE2di00Mi42NjdDMjEuMzMzLDkwLjMwNCw0Ny42MzcsNjQsODAsNjRoMzUyYzMyLjM2MiwwLDU4LjY2NywyNi4zMDUsNTguNjY3LDU4LjY2N3Y0Mi42NjdDNDkwLjY2NywxNzQuMTY2LDQ4My40OTksMTgxLjMzNCw0NzQuNjY3LDE4MS4zMzR6Ii8+PHBhdGggZmlsbD0iI0ZGRkZGRiIgZD0iTTY0LDIwMi42Njd2MjUwLjY2N0M2NCw0ODUuNjk2LDkwLjMwNCw1MTIsMTIyLjY2Nyw1MTJoMjY2LjY2N0M0MjEuNjk2LDUxMiw0NDgsNDg1LjY5Niw0NDgsNDUzLjMzNFYyMDIuNjY3SDY0eiBNMTg2LjY2Nyw0MjYuNjY3YzAsMTEuNzc2LTkuNTM2LDIxLjMzMy0yMS4zMzMsMjEuMzMzUzE0NCw0MzguNDQzLDE0NCw0MjYuNjY3di0xNjBjMC0xMS43NzYsOS41MzYtMjEuMzMzLDIxLjMzMy0yMS4zMzNzMjEuMzMzLDkuNTU3LDIxLjMzMywyMS4zMzNWNDI2LjY2N3ogTTI3Ny4zMzQsNDI2LjY2N2MwLDExLjc3Ni05LjUzNywyMS4zMzMtMjEuMzM0LDIxLjMzM2MtMTEuNzk3LDAtMjEuMzMzLTkuNTU3LTIxLjMzMy0yMS4zMzN2LTE2MGMwLTExLjc3Niw5LjUzNi0yMS4zMzMsMjEuMzMzLTIxLjMzM2MxMS43OTcsMCwyMS4zMzQsOS41NTcsMjEuMzM0LDIxLjMzM1Y0MjYuNjY3eiBNMzY4LDQyNi42NjdjMCwxMS43NzYtOS41MzYsMjEuMzMzLTIxLjMzMywyMS4zMzNjLTExLjc5OCwwLTIxLjMzNC05LjU1Ny0yMS4zMzQtMjEuMzMzdi0xNjBjMC0xMS43NzYsOS41MzYtMjEuMzMzLDIxLjMzNC0yMS4zMzNjMTEuNzk3LDAsMjEuMzMzLDkuNTU3LDIxLjMzMywyMS4zMzNWNDI2LjY2N3oiLz48cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMzQxLjMzMyw0Mi42Njd2LTUuMzMzQzM0MS4zMzMsMTYuNzQ3LDMyNC41ODcsMCwzMDQsMGgtOTZjLTIwLjU4NywwLTM3LjMzMywxNi43NDctMzcuMzMzLDM3LjMzNHY1LjMzM0gzNDEuMzMzeiIvPjwvc3ZnPg==);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.isSortable::after {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 100%;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iODguMzM1cHgiIGhlaWdodD0iNzYuNXB4IiB2aWV3Qm94PSIwIDAgODguMzM1IDc2LjUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDg4LjMzNSA3Ni41OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSINCgk+DQo8cG9seWdvbiBzdHlsZT0ic3Ryb2tlOiNGRkZGRkY7c3Ryb2tlLW1pdGVybGltaXQ6MTA7IiBwb2ludHM9Ijg3LjQ2OSwwLjUgNDQuMTY3LDc1LjUgMC44NjYsMC41ICIvPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

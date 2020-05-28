@@ -1,0 +1,44 @@
+<div class="addDialog modal" [class]="{'addDialog--open': isOpen}" *ngIf="isOpen">
+    <div class="modal-background"></div>
+    <div class="addDialog__content modal-content">
+        <img [src]="getThumb()" alt="">
+        <form action="" class="addDialog__form" [formGroup]="pokeForm">
+            <div class="field">
+                <label class="label" for="pokeName">Nome </label>
+                <div class="control">
+                    <input class="input" type="text" formControlName="name" name="pokeName" id="pokeName" list="pokeData">
+                    <datalist id="pokeData">
+                        <option *ngFor="let listItem of dataList" [value]="listItem.name">
+                    </datalist>
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="pokeAtk">Atk </label>
+                <div class="control">
+                    <input class="input" type="number" formControlName="atk" name="pokeAtk" id="pokeAtk">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="pokeDef">Def </label>
+                <div class="control">
+                    <input class="input" type="number" formControlName="def" name="pokeDef" id="pokeDef">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label" for="pokeSta">Sta </label>
+                <div class="control">
+                    <input class="input" type="number" formControlName="sta" name="pokeSta" id="pokeSta">
+                </div>
+            </div>
+            <div class="field is-grouped">
+                <div class="control">
+                  <button type="button" class="button is-link" (click)="onSaveData()">Salvar</button>
+                </div>
+                <div class="control">
+                  <button type="button" class="button is-link is-light" (click)="onClose()">Cancelar</button>
+                </div>
+              </div>
+        </form>
+    </div>
+    <button class="modal-close is-large" aria-label="close" (click)="onClose()"></button>
+</div>

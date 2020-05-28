@@ -1,0 +1,7 @@
+.addDialog__content {
+    background-color: #FFF;
+}
+
+.addDialog--open {
+    display: flex;
+}
