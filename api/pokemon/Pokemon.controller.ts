@@ -15,7 +15,6 @@ export default class PokemonController {
 
     public async upload(req: Request, res: Response): Promise<Response> {
         const pokemonXls = new PokemonXls();
-        console.log(req.body);
         if (!req.file) return res.json({ success: false, data: 'No file uploaded' });
         if (!pokemonXls.validate(req.file.mimetype)) {
             return res.json({
