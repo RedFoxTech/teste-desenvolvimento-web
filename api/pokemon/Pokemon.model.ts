@@ -11,7 +11,7 @@ const schema = new Schema({
     generation: { type: Number, required: true, unique: false },
     atk: { type: Number, required: true, unique: false },
     def: { type: Number, required: true, unique: false },
-    stat: { type: Number, required: true, unique: false },
+    sta: { type: Number, required: true, unique: false },
     statTotal: { type: Number, required: true, unique: false },
     legendary: { type: Number, required: true, unique: false },
     evolutionStage: { type: Number, required: true, unique: false },

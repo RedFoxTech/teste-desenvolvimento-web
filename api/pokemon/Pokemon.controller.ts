@@ -26,8 +26,8 @@ export default class PokemonController {
 
         try {
             const pokemons = await pokemonXls.parse(req.file.path);
-            console.log(pokemons);
-            return res.json({ success: true, info: pokemons });
+            const saved = await pokemon.insertMany(pokemons);
+            return res.json({ success: true, info: saved });
         }
         catch (err) {
             return res.json({ success: false, info: err.message });
