@@ -7,6 +7,7 @@ const routes = Router();
 
 routes.post('/', controller.create);
 routes.post('/upload', uploadMiddleware.single('file'), controller.upload);
+routes.get('/download', controller.download);
 routes.get('/', controller.list);
 routes.get('/:_id', controller.listOne);
 routes.put('/:_id', controller.update);
