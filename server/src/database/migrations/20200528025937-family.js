@@ -1,14 +1,14 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('raidables', {
+    return queryInterface.createTable('families', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
         primearyKey: true,
-        unique: true,
+        unique: true
       },
-      raidable: {
+      family: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
@@ -24,6 +24,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('raidables');
+    return queryInterface.dropTable('families');
   }
 };

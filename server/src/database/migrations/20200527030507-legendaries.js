@@ -5,7 +5,8 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
-        primearyKey: true
+        primearyKey: true,
+        unique: true,
       },
       legendary: {
         type: Sequelize.INTEGER,

@@ -5,7 +5,8 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         autoIncrement: true,
-        primearyKey: true
+        primearyKey: true,
+        unique: true,
       },
       evolution_stage: {
         type: Sequelize.STRING,

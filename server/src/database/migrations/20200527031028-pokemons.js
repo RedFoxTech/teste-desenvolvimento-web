@@ -10,6 +10,7 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
         allowNull: false,
+        unique: true,
       },
       img_name: {
         type: Sequelize.STRING,
@@ -17,10 +18,16 @@ module.exports = {
       },
       generation_id: {
         type: Sequelize.INTEGER,
+        references: { model: 'generations', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
         allowNull: false,
       },
       evolution_stage_id: {
         type: Sequelize.INTEGER,
+        references: { model: 'evolution_stages', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
         allowNull: false,
       },
       evolved: {
@@ -39,18 +46,30 @@ module.exports = {
       },
       type_id_1: {
         type: Sequelize.INTEGER,
+        references: { model: 'types', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
         allowNull: false,
       },
       type_id_2: {
         type: Sequelize.INTEGER,
+        references: { model: 'types', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
         allowNull: true,
       },
-      weather_1: {
+      weather_id_1: {
         type: Sequelize.INTEGER,
+        references: { model: 'weathers', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
         allowNull: false,
       },
-      weather_2: {
+      weather_id_2: {
         type: Sequelize.INTEGER,
+        references: { model: 'weathers', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
         allowNull: true,
       },
       stat_total: {
@@ -71,10 +90,16 @@ module.exports = {
       },
       legendary_id: {
         type: Sequelize.INTEGER,
+        references: { model: 'legendaries', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
         allowNull: false,
       },
       aquireable_id: {
         type: Sequelize.INTEGER,
+        references: { model: 'aquireables', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
         allowNull: false,
       },
       spawns: {
@@ -89,10 +114,16 @@ module.exports = {
       },
       raidable_id: {
         type: Sequelize.INTEGER,
+        references: { model: 'raidables', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
         allowNull: false,
       },
       hatchable_id: {
         type: Sequelize.INTEGER,
+        references: { model: 'hatchables', key: 'id' },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
         allowNull: false,
       },
       shiny: {
@@ -120,11 +151,11 @@ module.exports = {
         defaultValue: false,
         allowNull: false,
       },
-      hundred_percent_CP_40: {
+      hundred_percent_cp_40: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      hundred_percent_CP_39: {
+      hundred_percent_cp_39: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
