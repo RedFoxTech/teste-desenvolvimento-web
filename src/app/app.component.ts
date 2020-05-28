@@ -14,11 +14,14 @@ export class AppComponent implements OnInit {
   @ViewChild(AddDialogComponent) addDialog;
   DB: IDBDatabase;
   IDBName = 'PokeDB';
-  IDBVersion = 1;
+  IDBVersion = 2;
   selectedPokemon: Pokemon = new Pokemon('',null,null,null);
   pokeList: Pokemon[];
-  viewList: Pokemon[];
+  viewList: Pokemon[] = [];
   dataList: any[];
+  // Pagination
+  currPage = 1;
+  totalInPage = 5;
   ngOnInit() {
     // Create Datalist
     fetch('https://pokeapi.co/api/v2/pokemon/?limit=964')
@@ -30,6 +33,7 @@ export class AppComponent implements OnInit {
         })
       }
     })
+    // Check for IndexedDB support
     if (!window.indexedDB) {
       console.warn("Your browser doesn't support a stable version of IndexedDB. Such and such feature will not be available.");
     }
@@ -45,6 +49,7 @@ export class AppComponent implements OnInit {
       console.error(evt);
     });
 
+    // Add mock data into DB
     request.addEventListener('upgradeneeded', () => {
       this.DB = request.result;
       // Create an objectStore for this database
@@ -155,6 +160,17 @@ export class AppComponent implements OnInit {
   getThumb(pokemonName: string) {
     return `https://img.pokemondb.net/sprites/home/normal/${pokemonName.toLowerCase()}.png`;
   }
+  getPage() {
+    this.mountPagination();
+
+    const startOffset = (this.currPage - 1) * this.totalInPage;
+    const endOffset = startOffset + this.totalInPage;
+    
+    return this.viewList.slice(startOffset, endOffset);
+  }
+  mountPagination() {
+    return Array(Math.ceil(this.viewList.length / this.totalInPage));
+  }
   /**
    * Utility function to sort a array of objects by a key
    * @param keySort key to sort by
@@ -179,5 +195,8 @@ export class AppComponent implements OnInit {
     });
   
     return tmpList;
+  }
+  chagePage(page: number) {
+    this.currPage = page;
   }
 }
