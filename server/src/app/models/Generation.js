@@ -13,6 +13,12 @@ class Generation extends Model {
 
         return this;
     }
+
+    static associate(models) {
+        this.hasMany(models.Pokemon, { foreignKey: 'generation_id' });
+    }
 }
+
+
 
 export default Generation;

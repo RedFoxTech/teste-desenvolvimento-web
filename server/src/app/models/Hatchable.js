@@ -13,6 +13,11 @@ class Hatchable extends Model {
 
         return this;
     }
+
+    static associate(models) {
+        this.hasMany(models.Pokemon, { foreignKey: 'hatchable_id' });
 }
+}
+
 
 export default Hatchable;

@@ -5,13 +5,12 @@ const routes = new Router();
 
 routes.get('/', async (req, res) => {
     const pokemon = await Pokemon.create({
-        name: "Teste01",
+        name: "Teste04",
         img_name: "1",
         evolved: true,
-        family_id: 2,
         cross_gen: false,
         stat_total: 123,
-        generation_id: 123,
+       
         atk: 123,
         def: 123,
         sta: 123,
@@ -25,17 +24,18 @@ routes.get('/', async (req, res) => {
         hundred_percent_cp_40: 123,
         hundred_percent_cp_39: 123,
 
-
-
-        raidable_id: 125,
-        hatchable_id: 125,
-        aquireable_id: 125,
-        legendary_id:  125,
-        type_id_1: 125,
-        type_id_2: 125,
-        weather_id_1: 125,
-        weather_id_2: 125,
-        evolution_stage_id: 125,
+        evolution_stage_id: 5,
+        family_id: 23,
+        raidable_id: 2,
+        hatchable_id: 3,
+        aquireable_id: 3,
+        legendary_id:  2,
+        generation_id: 1,
+        type_id_1: 1,
+        type_id_2: 5,
+        weather_id_1: 1,
+        weather_id_2: 3,
+       
     })
 
     return res.json(pokemon)

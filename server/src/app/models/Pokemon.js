@@ -10,7 +10,7 @@ class Pokemon extends Model {
                 family_id: Sequelize.INTEGER,
                 cross_gen: Sequelize.BOOLEAN,
                 stat_total: Sequelize.INTEGER,
-                generation_id: Sequelize.INTEGER,
+
                 atk: Sequelize.INTEGER,
                 def: Sequelize.INTEGER,
                 sta: Sequelize.INTEGER,
@@ -24,15 +24,15 @@ class Pokemon extends Model {
                 hundred_percent_cp_40: Sequelize.INTEGER,
                 hundred_percent_cp_39: Sequelize.INTEGER,
 
-                raidable_id: Sequelize.INTEGER,
-                hatchable_id: Sequelize.INTEGER,
-                aquireable_id: Sequelize.INTEGER,
-                legendary_id:  Sequelize.INTEGER,
-                type_id_1: Sequelize.INTEGER,
-                type_id_2: Sequelize.INTEGER,
-                weather_id_1: Sequelize.INTEGER,
-                weather_id_2:  Sequelize.INTEGER,
-                evolution_stage_id: Sequelize.INTEGER,
+                // raidable_id: Sequelize.INTEGER,
+                // hatchable_id: Sequelize.INTEGER,
+                // aquireable_id: Sequelize.INTEGER,
+                // legendary_id:  Sequelize.INTEGER,
+                // type_id_1: Sequelize.INTEGER,
+                // type_id_2: Sequelize.INTEGER,
+                // weather_id_1: Sequelize.INTEGER,
+                // weather_id_2:  Sequelize.INTEGER,
+                // evolution_stage_id: Sequelize.INTEGER,
             },
             {
                 sequelize,
@@ -42,17 +42,30 @@ class Pokemon extends Model {
         return this;
     }
 
-    // static associate(models) {
-    //     this.belongsTo(models.Raidable, { foreignKey: 'raidable_id', as: 'raidable' });
-    //     this.belongsTo(models.Hatchable, { foreignKey: 'hatchable_id', as: 'hatchable' });
-    //     this.belongsTo(models.Aquireable, { foreignKey: 'aquireable_id', as: 'aquireable' });
-    //     this.belongsTo(models.Legendary, { foreignKey: 'legendary_id', as: 'legendary' });
-    //     this.belongsTo(models.Type, { foreignKey: 'type_id_1', as: 'type_1' });
-    //     this.belongsTo(models.Type, { foreignKey: 'type_id_2', as: 'type_2' });
-    //     this.belongsTo(models.Weather, { foreignKey: 'weather_id_1', as: 'weather_1' });
-    //     this.belongsTo(models.Weather, { foreignKey: 'weather_id_2', as: 'weather_2' });
-    //     this.belongsTo(models.Evolution_stage, { foreignKey: 'evolution_stage_id', as: 'evolution_stage' });
-    // }
+    static associate(models) {
+        this.hasOne(models.Raidable, { foreignKey: 'raidable_id' });
+        this.hasOne(models.Hatchable, { foreignKey: 'hatchable_id' });
+        this.hasOne(models.Aquireable, { foreignKey: 'aquireable_id' });
+        this.hasOne(models.Legendary, { foreignKey: 'legendary_id' });
+        this.hasOne(models.Type, { foreignKey: 'type_id_1' });
+        this.hasOne(models.Type, { foreignKey: 'type_id_2' });
+        this.hasOne(models.Weather, { foreignKey: 'weather_id_1' });
+        this.hasOne(models.Weather, { foreignKey: 'weather_id_2' });
+        this.hasOne(models.Evolution_stage, { foreignKey: 'evolution_stage_id' });
+        this.hasOne(models.Generation, { foreignKey: 'generation_id' });
+
+
+        // this.belongsToMany(models.Raidable, { through: 'PokemonRaidable',foreignKey: 'raidable_id' });
+        // this.belongsToMany(models.Hatchable, { through: 'PokemonHatchable',foreignKey: 'hatchable_id' });
+        // this.belongsToMany(models.Aquireable, { through: 'PokemonAquireable', foreignKey: 'aquireable_id' });
+        // this.belongsToMany(models.Legendary, { through: 'PokemonLegendary', foreignKey: 'legendary_id' });
+        // this.belongsToMany(models.Type, { through: 'PokemonType1', foreignKey: 'type_id_1' });
+        // this.belongsToMany(models.Type, { through: 'PokemonType2', foreignKey: 'type_id_2' });
+        // this.belongsToMany(models.Weather, { through: 'PokemonWeather1', foreignKey: 'weather_id_1' });
+        // this.belongsToMany(models.Weather, { through: 'PokemonWeather2', foreignKey: 'weather_id_2' });
+        // this.belongsToMany(models.Evolution_stage, { through: 'PokemonEvolutionStage', foreignKey: 'evolution_stage_id' });
+        // this.belongsToMany(models.Generation, { through: 'PokemonGeneration', foreignKey: 'generation_id' });
+    }
 }
 
 export default Pokemon;

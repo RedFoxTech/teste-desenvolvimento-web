@@ -13,6 +13,14 @@ class Aquireable extends Model {
 
         return this;
     }
+
+    static associate(models) {
+        this.hasMany(models.Pokemon
+            , { foreignKey: 'aquireable_id' }
+            );
+    }
 }
+
+
 
 export default Aquireable;

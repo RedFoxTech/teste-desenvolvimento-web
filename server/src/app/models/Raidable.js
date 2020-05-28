@@ -13,6 +13,12 @@ class Raidable extends Model {
 
         return this;
     }
+
+    static associate(models) {
+        this.hasMany(models.Pokemon, { foreignKey: 'raidable_id' });
+    }
 }
+
+
 
 export default Raidable;

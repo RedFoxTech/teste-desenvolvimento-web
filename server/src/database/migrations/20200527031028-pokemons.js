@@ -56,7 +56,7 @@ module.exports = {
         references: { model: 'types', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: true,
+        allowNull: false,
       },
       weather_id_1: {
         type: Sequelize.INTEGER,
@@ -70,7 +70,7 @@ module.exports = {
         references: { model: 'weathers', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: true,
+        allowNull: false,
       },
       stat_total: {
         type: Sequelize.INTEGER,

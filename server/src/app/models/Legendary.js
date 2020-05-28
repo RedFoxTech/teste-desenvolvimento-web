@@ -13,6 +13,12 @@ class Legendary extends Model {
 
         return this;
     }
+
+    static associate(models) {
+        this.hasMany(models.Pokemon,  { foreignKey: 'legendary_id' });
+    }
 }
+
+
 
 export default Legendary;

@@ -13,6 +13,12 @@ class Evolution_stage extends Model {
 
         return this;
     }
+
+    static associate(models) {
+        this.hasMany(models.Pokemon, { foreignKey: 'evolution_stage_id' });
+    }
 }
+
+
 
 export default Evolution_stage;
