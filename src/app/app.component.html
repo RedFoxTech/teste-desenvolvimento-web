@@ -22,12 +22,16 @@
           <td>{{pokemon.atk}}</td>
           <td>{{pokemon.def}}</td>
           <td>{{pokemon.sta}}</td>
-          <td><button class="button is-primary" (click)="onDelete($event, pokemon.id)">X</button></td>
+          <td><button class="pokemonList__action button is-primary" (click)="onDelete($event, pokemon.id)">
+            <span class="is-sr-only">Delete</span>
+          </button></td>
         </tr>
       </tbody>
     </table>
     <app-add-dialog [pokemon]="selectedPokemon" [dataList]="dataList" (save)="onSave($event)"></app-add-dialog>
-    <button class="button is-primary floatingButton" aria-label="Add new" (click)="onAddNew()">+</button>
+    <button class="button is-primary floatingButton" aria-label="Add new" (click)="onAddNew()">
+      <span class="is-sr-only">Add new</span>
+    </button>
     <nav class="pagination is-medium" role="navigation" aria-label="pagination">
       <ul class="pagination-list">
         <li *ngFor="let page of mountPagination(); index as i"><a class="pagination-link" [class]="{'is-current':currPage == i + 1}" aria-label="Goto page 1" (click)="chagePage(i + 1)">{{i + 1}}</a></li>

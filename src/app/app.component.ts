@@ -10,7 +10,7 @@ import { Pokemon } from '../models/Pokemon.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Poketeste';
+  title = 'Pokéteste';
   @ViewChild(AddDialogComponent) addDialog;
   DB: IDBDatabase;
   IDBName = 'PokeDB';
