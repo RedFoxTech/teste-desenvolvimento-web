@@ -42,6 +42,6 @@ export class AddDialogComponent implements OnChanges {
         })
     }
     getThumb() {
-        return `https://img.pokemondb.net/sprites/go/normal/${this.pokemon.name.toLowerCase()}.png`;
+        return `https://img.pokemondb.net/sprites/home/normal/${this.pokemon.name.toLowerCase()}.png`;
       }
 }
