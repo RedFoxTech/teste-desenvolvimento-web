@@ -31,6 +31,12 @@ git clone https://github.com/RussoFaccin/teste-desenvolvimento-web.git
 cd teste-desenvolvimento-web
 ```
 
+- Troque para o branch RodrigoRusso
+
+```
+git checkout RodrigoRusso
+```
+
 - Instale as dependências.
 
 ```
