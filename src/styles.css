@@ -7,6 +7,8 @@
 :root {
     --headerHeight: 60px;
     --mainColor: #DDD;
+    --fabSize: 56px;
+    --listHeight: 60px;
 }
 
 /*
@@ -15,11 +17,20 @@
 | ================================================================================
 */
 
+* {
+    box-sizing: border-box;
+    position: relative;
+}
+
 html,
 body,
 .appRoot {
     width: 100%;
     height: 100%;
+}
+
+html {
+    font-size: 10px;
 }
 
 html,
@@ -50,5 +61,16 @@ body,
     overflow: hidden auto;
     padding: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.floatingButton {
+    width: var(--fabSize);
+    height: var(--fabSize);
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
 }
