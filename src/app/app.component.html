@@ -18,7 +18,7 @@
       <tbody>
         <tr class="pokemonList__row" *ngFor="let pokemon of viewList" (click)="onSelect(pokemon)">
           <td><img class="pokemonList__thumb" [src]="getThumb(pokemon.name)" alt=""></td>
-          <td>{{pokemon.name}}</td>
+          <td>{{pokemon.name | capitalize}}</td>
           <td>{{pokemon.atk}}</td>
           <td>{{pokemon.def}}</td>
           <td>{{pokemon.sta}}</td>
@@ -27,5 +27,6 @@
       </tbody>
     </table>
     <app-add-dialog [pokemon]="selectedPokemon" [dataList]="dataList" (save)="onSave($event)"></app-add-dialog>
+    <button class="button is-primary floatingButton" aria-label="Add new" (click)="onAddNew()">+</button>
   </main>
 </div>
