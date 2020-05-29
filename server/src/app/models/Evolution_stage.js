@@ -1,24 +1,22 @@
-import Sequelize, { Model } from 'sequelize';
+import Sequelize, { Model } from 'sequelize'
 
 class Evolution_stage extends Model {
-    static init(sequelize) {
-        super.init(
-            {
-                evolution_stage: Sequelize.STRING
-            },
-            {
-                sequelize,
-            }
-        );
+  static init (sequelize) {
+    super.init(
+      {
+        evolution_stage: Sequelize.STRING
+      },
+      {
+        sequelize,
+      }
+    )
 
-        return this;
-    }
+    return this
+  }
 
-    static associate(models) {
-        this.hasMany(models.Pokemon, { foreignKey: 'evolution_stage_id' });
-    }
+  static associate (models) {
+    this.hasMany(models.Pokemon, { foreignKey: 'evolution_stage_id', targetKey: 'id' })
+  }
 }
 
-
-
-export default Evolution_stage;
+export default Evolution_stage

@@ -1,26 +1,24 @@
-import Sequelize, { Model } from 'sequelize';
+import Sequelize, { Model } from 'sequelize'
 
 class Aquireable extends Model {
-    static init(sequelize) {
-        super.init(
-            {
-                aquireable: Sequelize.INTEGER
-            },
-            {
-                sequelize,
-            }
-        );
+  static init (sequelize) {
+    super.init(
+      {
+        aquireable: Sequelize.INTEGER
+      },
+      {
+        sequelize,
+      }
+    )
 
-        return this;
-    }
+    return this
+  }
 
-    static associate(models) {
-        this.hasMany(models.Pokemon
-            , { foreignKey: 'aquireable_id' }
-            );
-    }
+  static associate (models) {
+    this.hasMany(models.Pokemon
+      , { foreignKey: 'aquireable_id',  targetKey: 'id' }
+    )
+  }
 }
 
-
-
-export default Aquireable;
+export default Aquireable

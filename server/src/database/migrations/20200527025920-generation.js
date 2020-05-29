@@ -24,6 +24,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('generations');
+    return queryInterface.dropTable('generations')
   }
-};
+}

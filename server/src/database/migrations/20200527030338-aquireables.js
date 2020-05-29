@@ -24,6 +24,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('aquireables');
+    return queryInterface.dropTable('aquireables')
   }
-};
+}

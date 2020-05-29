@@ -1,44 +1,28 @@
-import { Router }from 'express';
-import Pokemon from './app/models/Pokemon';
+import { Router }from 'express'
+import PokemonController from './app/controllers/PokemonController'
+import AquireableController from './app/controllers/AquireableController'
+import EvolutionStageController from './app/controllers/EvolutionStageController'
+import GenerationController from './app/controllers/GenerationController'
+import HatchableController from './app/controllers/HatchableController'
+import LegendaryController from './app/controllers/LegendaryController'
+import RaidableController from './app/controllers/RaidableController'
+import TypeController from './app/controllers/TypeController'
+import WeatherController from './app/controllers/WeatherController'
 
-const routes = new Router();
+const routes = new Router()
 
-routes.get('/', async (req, res) => {
-    const pokemon = await Pokemon.create({
-        name: "Teste04",
-        img_name: "1",
-        evolved: true,
-        cross_gen: false,
-        stat_total: 123,
-       
-        atk: 123,
-        def: 123,
-        sta: 123,
-        spawns: true,
-        regional: true,
-        shiny: true,
-        nest: true,
-        new: true,
-        not_gettable: true,
-        future_evolve: true,
-        hundred_percent_cp_40: 123,
-        hundred_percent_cp_39: 123,
+routes.get('/pokemons', PokemonController.index)
+routes.post('/pokemons', PokemonController.store)
+routes.put('/pokemons/:id', PokemonController.update)
+routes.delete('/pokemons/:id', PokemonController.delete)
 
-        evolution_stage_id: 5,
-        family_id: 23,
-        raidable_id: 2,
-        hatchable_id: 3,
-        aquireable_id: 3,
-        legendary_id:  2,
-        generation_id: 1,
-        type_id_1: 1,
-        type_id_2: 5,
-        weather_id_1: 1,
-        weather_id_2: 3,
-       
-    })
+routes.get('/aquireables', AquireableController.index)
+routes.get('/evolution_stages', EvolutionStageController.index)
+routes.get('/generations', GenerationController.index)
+routes.get('/hatchables', HatchableController.index)
+routes.get('/legendaries', LegendaryController.index)
+routes.get('/raidables', RaidableController.index)
+routes.get('/types', TypeController.index)
+routes.get('/weathers', WeatherController.index)
 
-    return res.json(pokemon)
-})
-
-export default routes;
+export default routes

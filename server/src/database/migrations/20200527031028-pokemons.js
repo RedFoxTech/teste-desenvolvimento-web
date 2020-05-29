@@ -12,6 +12,11 @@ module.exports = {
         allowNull: false,
         unique: true,
       },
+      pokedex_number: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        unique: true,
+      },
       img_name: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -21,14 +26,14 @@ module.exports = {
         references: { model: 'generations', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: false,
+        allowNull: true,
       },
       evolution_stage_id: {
         type: Sequelize.INTEGER,
         references: { model: 'evolution_stages', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: false,
+        allowNull: true,
       },
       evolved: {
         type: Sequelize.BOOLEAN,
@@ -37,7 +42,7 @@ module.exports = {
       },
       family_id: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       cross_gen: {
         type: Sequelize.BOOLEAN,
@@ -49,28 +54,28 @@ module.exports = {
         references: { model: 'types', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: false,
+        allowNull: true,
       },
       type_id_2: {
         type: Sequelize.INTEGER,
         references: { model: 'types', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: false,
+        allowNull: true,
       },
       weather_id_1: {
         type: Sequelize.INTEGER,
-        references: { model: 'weathers', key: 'id' },
+        references: { model: 'weather', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: false,
+        allowNull: true,
       },
       weather_id_2: {
         type: Sequelize.INTEGER,
-        references: { model: 'weathers', key: 'id' },
+        references: { model: 'weather', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: false,
+        allowNull: true,
       },
       stat_total: {
         type: Sequelize.INTEGER,
@@ -93,14 +98,14 @@ module.exports = {
         references: { model: 'legendaries', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: false,
+        allowNull: true,
       },
       aquireable_id: {
         type: Sequelize.INTEGER,
         references: { model: 'aquireables', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: false,
+        allowNull: true,
       },
       spawns: {
         type: Sequelize.BOOLEAN,
@@ -117,14 +122,14 @@ module.exports = {
         references: { model: 'raidables', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: false,
+        allowNull: true,
       },
       hatchable_id: {
         type: Sequelize.INTEGER,
         references: { model: 'hatchables', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
-        allowNull: false,
+        allowNull: true,
       },
       shiny: {
         type: Sequelize.BOOLEAN,
@@ -171,6 +176,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('pokemons');
+    return queryInterface.dropTable('families')
   }
-};
+}

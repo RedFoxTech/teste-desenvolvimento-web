@@ -6,10 +6,10 @@ module.exports = {
       onUpdate: 'CASCADE',
       onDelete: 'SET NULL',
       allowNull: false,
-    });
+    })
   },
 
-  down: (queryInterface, Sequelize) => {
-    return queryInterface.bulkDelete('pokemons', null, {});
+  down: (queryInterface) => {
+    return queryInterface.bulkDelete('pokemons', null, {})
   }
-};
+}

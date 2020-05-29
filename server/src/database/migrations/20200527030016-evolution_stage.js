@@ -24,6 +24,6 @@ module.exports = {
   },
 
   down: (queryInterface) => {
-    return queryInterface.dropTable('evolution_stages');
+    return queryInterface.dropTable('evolution_stages')
   }
-};
+}
