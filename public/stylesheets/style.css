@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif; }
+
+a {
+  color: #00B7FF; }
+
+.pokeheader {
+  background-image: url("/images/ninetales.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center; }
+
+.pokedex-data {
+  margin-top: 100px;
+  height: 500px;
+  overflow: scroll;
+  font-size: 1rem; }
+  .pokedex-data td, .pokedex-data th {
+    padding: 5px; }
+  @media (max-width: 700px) {
+    .pokedex-data {
+      color: red; } }
+
+/*# sourceMappingURL=style.css.map */
