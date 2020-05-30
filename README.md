@@ -11,3 +11,6 @@
 - create interface
     install bootstrap for responsive layout
     create vue components for reactive search
+
+## App available at:
+https://better-redfox-pokedex.herokuapp.com/
