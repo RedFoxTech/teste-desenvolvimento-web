@@ -1,0 +1,7 @@
+- import excel database into postgresql:
+    convert excel table to dataframe in pandas
+    sava dataframe to postgres using sqlalchemy engine and .to_sql method
+- create restful json api list and detail connections on node
+    connect express to postgres database
+    install sequelize for node sql interface
+- create reactive interface on vue for filtering results

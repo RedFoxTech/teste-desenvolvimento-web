@@ -1,0 +1,24 @@
+{
+    "development": {
+      "username": "postgres",
+      "password": "123mudei",
+      "database": "redfox_pokedex",
+      "port": 5432,
+      "host": "localhost",
+      "dialect": "postgres"
+    },
+    "test": {
+      "username": "root",
+      "password": "123mudei",
+      "database": "database_test",
+      "host": "127.0.0.1",
+      "dialect": "postgres"
+    },
+    "production": {
+      "username": "root",
+      "password": "123mudei",
+      "database": "database_production",
+      "host": "127.0.0.1",
+      "dialect": "postgres"
+    }
+  }
