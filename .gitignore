@@ -2,3 +2,5 @@ node_modules
 .git
 dist
 .~lock.Pokemon_Go.xlsx#
+
+uploads/
