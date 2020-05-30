@@ -11,7 +11,12 @@ export default class Menu extends React.Component {
         activeTabIndex: 0
     }
 
-    handleTabChange = (e, { activeTabIndex }) => this.setState({ activeTabIndex })
+    componentWillMount() {
+        this.setState({activeIndex: 0});
+    }
+
+    handleTabChange = (e, { activeTabIndex }) => 
+        this.setState({ activeTabIndex})
 
     panes = [
         { menuItem: 'Pokemons', render: () =>  <PokemonsPane></PokemonsPane>},
@@ -25,7 +30,7 @@ export default class Menu extends React.Component {
             </Header>
             <Tab 
                 menu={{color:"teal", inverted:true}}
-                activeIndex={this.state.activeTabIndex}
+                activeTabIndex={this.state.activeTabIndex}
                 panes={this.panes}
                 onTabChange={this.handleTabChange}>
             </Tab>
