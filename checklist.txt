@@ -4,4 +4,6 @@
 - create restful json api list and detail connections on node
     connect express to postgres database
     install sequelize for node sql interface
-- create reactive interface on vue for filtering results
+- create interface
+    install bootstrap for responsive layout
+    create vue components for reactive search
