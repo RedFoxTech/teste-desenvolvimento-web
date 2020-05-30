@@ -17,23 +17,31 @@ export default class PokemonItem extends React.Component {
     componentDidMount() {
     }
 
+    handleDetailsClick = () => {
+        this.props.openModalDetails(this.state.details);
+    }
+
     render () {
+        const {details} = this.state;
         return (
             <Fragment>
                 <Item>
-                    <Item.Image size='small' src={`${baseSpriteAPI}/${this.state.details.imgNumber}.png`}></Item.Image>
+                    <Item.Image size='small' src={`${baseSpriteAPI}/${details.imgNumber}.png`}></Item.Image>
 
                     <Item.Content verticalAlign='middle'>
-                        <Item.Header>{this.state.details.name}</Item.Header>
+                        <Item.Header>{details.name}</Item.Header>
                         <Item.Description>
-                            type1: {this.state.details.type1}
+                            type1: {details.type1}
                             <Divider></Divider>
-                            generation: {this.state.details.generation}
+                            generation: {details.generation}
                             <Divider></Divider>
-                            stat total: {this.state.details.statTotal}
+                            stat total: {details.statTotal}
                         </Item.Description>
                     </Item.Content>
-                    
+
+                    <Item.Extra>
+                        <Button floated='right' size="small" color="blue" onClick={this.handleDetailsClick}>details</Button>
+                    </Item.Extra>                    
 
                 </Item>
             </Fragment>

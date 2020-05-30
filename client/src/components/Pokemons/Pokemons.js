@@ -1,14 +1,17 @@
 import React, { Fragment } from 'react';
-import {Tab, Grid, Container, Item, Pagination} from "semantic-ui-react";
+import {Tab, Grid, Container, Item, Pagination, Modal} from "semantic-ui-react";
 import axios from 'axios';
 import PokemonItem from './PokemonItem';
+import PokemonModal from './PokemonModal';
 
 export default class PokemonsPane extends React.Component {
     state = {
         loading: false,
 		pokemons: [],
 		activePage: 1,
-		pages: 0
+		pages: 0,
+		currentPokemonDetails: {},
+		detailsModalVisible: false
 	}
 
 	componentDidMount() {
@@ -51,9 +54,13 @@ export default class PokemonsPane extends React.Component {
 		this.fetchPokemons(activePage);
 	}
 
+	toggleModalDetails = (pokemon) => {
+		console.log('toggle modal', pokemon);
+		this.setState({currentPokemonDetails: pokemon, detailsModalVisible: !this.state.detailsModalVisible});
+	}
 
     render () {
-		const {activePage, pages} = this.state;
+		const {activePage, pages, currentPokemonDetails, detailsModalVisible} = this.state;
 		return (
 			<Fragment>
 				<Tab.Pane loading={this.loading}>
@@ -65,7 +72,8 @@ export default class PokemonsPane extends React.Component {
 									<Grid.Column>
 										<Item.Group>
 											<PokemonItem
-												details={pokemon}>
+												details={pokemon}
+												openModalDetails={this.toggleModalDetails}>
 											</PokemonItem>
 										</Item.Group>
 									</Grid.Column>
@@ -74,6 +82,13 @@ export default class PokemonsPane extends React.Component {
 						}
 					</Grid>
 				</Tab.Pane>
+				
+				<Modal open={detailsModalVisible}>
+					<PokemonModal
+						details={currentPokemonDetails}
+						close={this.toggleModalDetails}>
+					</PokemonModal>
+				</Modal>	
 
 				<Container textAlign='center'>
 				<Pagination activePage={activePage} totalPages={pages} 
