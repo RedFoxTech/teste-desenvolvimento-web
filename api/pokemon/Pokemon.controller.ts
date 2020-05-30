@@ -30,6 +30,7 @@ export default class PokemonController {
             return res.json({ success: true, info: saved });
         }
         catch (err) {
+            console.log(err);
             return res.json({ success: false, info: err.message });
         }
     }
@@ -38,9 +39,30 @@ export default class PokemonController {
         return res.sendFile(path.join(process.cwd(), 'Pokemon_Go2.xlsx'));
     }
 
+    public async listLength(req: Request, res: Response): Promise<Response> {
+        try {
+            const list = await pokemon.count({});
+            return res.json({
+                success: true, 
+                info: {
+                    pages: Math.round(list / 10),
+                    pokemons: list
+                }
+            });
+        } catch (err) {
+            console.log(err);
+            return res.json({success: false, info: err.message});
+        }
+    }
+
     public async list(req: Request, res: Response): Promise<Response> {
         try {
+            const intervalResult = 10;
+            const currentPage = +req.param('page') || 0;
+            const skip = intervalResult * currentPage;
             const pokemons = await pokemon.find()
+                .limit(intervalResult)
+                .skip(skip)
             return res.json({ success: true, info: pokemons });
         }
         catch (err) {
@@ -75,6 +97,20 @@ export default class PokemonController {
         }
         catch (err) {
             return res.json({ success: false, info: err.message })
+        }
+    }
+
+    public async removeMany(req: Request, res: Response): Promise<Response> {
+        console.log('body')
+        try {
+            const deleted = await pokemon.deleteMany({
+                _id: {
+                    $in: req.body
+                }
+            });
+            return res.json({success: true, deleted: deleted});
+        } catch (err) {
+            return res.json({success: false, info: err.message});
         }
     }
 

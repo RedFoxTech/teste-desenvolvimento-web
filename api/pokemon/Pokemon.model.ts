@@ -16,7 +16,6 @@ const schema = new Schema({
     legendary: { type: Number, required: true, unique: false },
     evolutionStage: { type: Number, required: true, unique: false },
     evolved: { type: Number, required: true, unique: false },
-    familyId: { type: Number, required: true, unique: false },
 });
 
 export default mongoose.model<Pokemon>('Pokemon', schema)
