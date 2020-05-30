@@ -4,7 +4,7 @@ import pandas.io.sql as psql
 import psycopg2 as postgres
 from sqlalchemy import create_engine
 
-engine = create_engine('postgresql://floor:jansen@localhost:5432/redfox_pokedex')
+engine = create_engine('CONNECTION STRING HERE')
 df = pd.read_excel('pokemon-go.xlsx')
 df_update = df.astype({
     'evolved':'boolean',

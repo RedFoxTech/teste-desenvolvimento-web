@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express'),
       createError = require('http-errors'),
       path = require('path'),
