@@ -1,12 +1,11 @@
 import React from 'react';
-import PokemonTable from './views/PokemonTable';
+import Routes from './routes';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 
 function App() {
-  return (
-    <>
-      <PokemonTable />
-    </>
-  );
+  return <Routes />;
 }
 
 export default App;
