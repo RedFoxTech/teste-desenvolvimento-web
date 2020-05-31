@@ -1,6 +1,6 @@
 # Pokemon SERVER/CLIENT
 
-A CRUD dashboard for add, edit, remove pokemons made with [NodeJS](https://nodejs.org/en/) and [ReactJS](https://pt-br.reactjs.org/). 
+A dashboard for add, edit, remove and see details of pokemons made with [NodeJS](https://nodejs.org/en/) and [ReactJS](https://pt-br.reactjs.org/). 
 
 The prototype/wireframe can be found [here](https://www.figma.com/file/8kQRDz3xeK1MyFaxTRlylC/RedFox?node-id=0%3A1).
 
