@@ -1,4 +1,4 @@
-# Pokedex SERVER/CLIENT
+# Pokemon SERVER/CLIENT
 
 A CRUD dashboard for add, edit, remove pokemons made with [NodeJS](https://nodejs.org/en/) and [ReactJS](https://pt-br.reactjs.org/). 
 
