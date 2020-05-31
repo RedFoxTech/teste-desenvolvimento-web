@@ -4,7 +4,7 @@ A CRUD dashboard for add, edit, remove pokemons made with [NodeJS](https://nodej
 
 The prototype/wireframe can be found [here](https://www.figma.com/file/8kQRDz3xeK1MyFaxTRlylC/RedFox?node-id=0%3A1).
 
-## Server
+## SERVER
 Setup
 ```
 npm install
