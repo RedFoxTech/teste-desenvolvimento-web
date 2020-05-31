@@ -33,7 +33,7 @@ yarn start
 ```
 
 ## Images of Application
-![Diagram](https://github.com/luiz-ortega/vue-user-bank_account/blob/master/dashboard_tela.png)
+![Diagram](https://github.com/luiz-ortega/teste-desenvolvimento-web/blob/luiz-ortega/screen_dashboard.png)
 ![Diagram](https://github.com/luiz-ortega/teste-desenvolvimento-web/blob/luiz-ortega/screen_form.png)
 
 ## License
