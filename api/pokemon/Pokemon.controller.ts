@@ -65,7 +65,7 @@ export default class PokemonController {
     }
 
     public async remove(req: Request, res: Response): Promise<Response> {
-        const result = await dataCaller(pokemon.findOneAndRemove.bind(pokemon), { _id: req.params._id });
+        const result = await dataCaller(pokemon.findOneAndRemove.bind(pokemon,  { _id: req.params._id }));
         return res.json(result);
     }
 
