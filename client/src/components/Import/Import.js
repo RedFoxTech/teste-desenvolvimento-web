@@ -1,11 +1,12 @@
 import React from 'react'
-import {Tab} from "semantic-ui-react"
+import {Tab, Grid, Container, Button, Divider, Modal, Confirm} from "semantic-ui-react"
 import axios from 'axios';
 
 export default class ImportPane extends React.Component {
     state = {
-		loading: false,
-		file: null
+		file: null,
+		confirmOpen: false,
+		confirmContent: ''
 	}
 	
 	handleFile (e) {
@@ -24,6 +25,10 @@ export default class ImportPane extends React.Component {
 		})
 		.then(response => {
 			console.log(response);
+			this.setState({
+				confirmOpen: true, 
+				confirmContent: response.data.info
+			})
 		})
 		.catch(err => console.log(err));
 		console.log(this.state);
@@ -49,21 +54,37 @@ export default class ImportPane extends React.Component {
 		.catch(err => console.log(err));
 	}
 
+	handleConfirm = () => {
+		this.setState({
+			confirmOpen: false
+		});
+	}
+
     render () {
+		const {confirmOpen, confirmContent} = this.state;
 		return (
 			<Tab.Pane loading={this.loading}>
 				<h2>Import</h2>
 
 				<form action=''>
-					<div className="">
+					<Container textAlign='center'>
 						<label>Select File</label>
 						<input type="file" name="file" onChange={(e) => this.handleFile(e)}></input>
-					</div>
-					<button onClick={(e) => this.handleUpload(e)}>Upload</button>
-					<button onClick={(e) => this.handleDownload(e)}>See an example</button>
+					</Container>
+					<Divider></Divider>
+					<Container textAlign='center'>
+						<Button positive onClick={(e) => this.handleUpload(e)}>Upload</Button>
+						<Button onClick={(e) => this.handleDownload(e)}>See an example</Button>
+					</Container>
+					
 				</form>
 
-				
+				<Confirm
+					open={confirmOpen}
+					content={confirmContent}
+					onConfirm={this.handleConfirm}
+					onCancel={this.handleConfirm}>
+				</Confirm>
 
 			</Tab.Pane>
 		);
