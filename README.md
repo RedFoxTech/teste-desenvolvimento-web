@@ -74,14 +74,14 @@ yarn start
 }
 ```
 ##### For selects:
-- GET - /aquireables ------> to list Aquireables
+- GET - /aquireables -----------> to list Aquireables
 - GET - /evolution_stages ------> to list Evolution Stages
-- GET - /generations ------> to list Generations
-- GET - /hatchables ------> to list Hatchables
-- GET - /legendaries ------> to list Legendaries
-- GET - /raidables ------> to list Raidables
-- GET - /types ------> to list Types
-- GET - /weathers ------> to list Weathers
+- GET - /generations -----------> to list Generations
+- GET - /hatchables ------------> to list Hatchables
+- GET - /legendaries -----------> to list Legendaries
+- GET - /raidables -------------> to list Raidables
+- GET - /types -----------------> to list Types
+- GET - /weathers --------------> to list Weathers
 
 ## Images of Application
 ![Diagram](https://github.com/luiz-ortega/teste-desenvolvimento-web/blob/luiz-ortega/screen_dashboard.png)
