@@ -1,0 +1,46 @@
+{
+    "env": {
+        "es6": true,
+        "node": true
+    },
+    "extends": ["airbnb-base", "prettier"],
+    "plugins": ["prettier"],  
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "rules": {
+        "prettier/prettier": "off",
+        "class-methods-use-this": "off",
+        "no-param-reassign": "off",
+        "camelcase": "off",
+        "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
+    "quotes": [
+      2,
+      "single",
+      { "allowTemplateLiterals": true, "avoidEscape": true }
+    ],
+    "semi": ["error", "never"],
+    "no-unexpected-multiline": "error",
+    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 }],
+    "object-curly-spacing": ["error", "always", { "objectsInObjects": true }],
+    "indent": ["error", 2, { "ArrayExpression": 1 }],
+    "array-bracket-newline": ["error", "consistent"],
+    "dot-location": ["error", "property"],
+    "newline-per-chained-call": ["error", { "ignoreChainWithDepth": 2 }],
+    "no-useless-return": 0,
+    "import/prefer-default-export": 0,
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "always",
+        "asyncArrow": "always"
+      }
+    ]
+    }
+}
