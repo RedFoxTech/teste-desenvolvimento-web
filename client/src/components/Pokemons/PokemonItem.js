@@ -1,17 +1,17 @@
 import React, {Fragment} from "react";
-import { Button, Item, Divider, Modal} from 'semantic-ui-react';
+import { Button, Item, Divider, Checkbox} from 'semantic-ui-react';
 import axios from 'axios';
 import defaultImg from '../../assets/image.png';
 const baseSpriteAPI = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon';
 export default class PokemonItem extends React.Component {
     state = {
         details: {},
-        sprite: defaultImg
+        sprite: defaultImg,
+        checked: false
     }
 
     componentWillMount() {
         this.setState({details: this.props.details});
-
     }
 
     componentDidMount() {
@@ -22,7 +22,7 @@ export default class PokemonItem extends React.Component {
     }
 
     render () {
-        const {details} = this.state;
+        const {details, checked} = this.state;
         return (
             <Fragment>
                 <Item>
@@ -40,7 +40,11 @@ export default class PokemonItem extends React.Component {
                     </Item.Content>
 
                     <Item.Extra>
+                        
+                                
                         <Button floated='right' size="small" color="blue" onClick={this.handleDetailsClick}>details</Button>
+                            
+                
                     </Item.Extra>                    
 
                 </Item>

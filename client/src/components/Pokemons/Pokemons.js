@@ -11,7 +11,8 @@ export default class PokemonsPane extends React.Component {
 		activePage: 1,
 		pages: 0,
 		currentPokemonDetails: {},
-		detailsModalVisible: false
+		detailsModalVisible: false,
+		selectedPokemons: []
 	}
 
 	componentDidMount() {

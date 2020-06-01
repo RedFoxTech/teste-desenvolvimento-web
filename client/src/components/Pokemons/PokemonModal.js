@@ -1,7 +1,6 @@
-import React, {Fragment} from "react";
+import React, {Fragment} from 'react';
 import { Button, Item, Divider, Modal, Grid, Icon} from 'semantic-ui-react';
-import axios from 'axios';
-import defaultImg from '../../assets/image.png';
+import PokemonChart from './PokemonChart';
 const baseSpriteAPI = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon';
 
 export default class PokemonModal extends React.Component {
@@ -22,6 +21,8 @@ export default class PokemonModal extends React.Component {
 
     render () {
         const {details} = this.state;
+        
+
         return (
             <Fragment>
                 <Modal.Content image scrolling>
@@ -34,6 +35,15 @@ export default class PokemonModal extends React.Component {
                              
                                         <Item.Content verticalAlign='bottom'>
                                             <Item.Header>Name:{details.name}</Item.Header>
+                                            <PokemonChart
+                                                details={details}>
+                                            </PokemonChart>
+                                        </Item.Content>
+                                    </Item>
+
+                                    <Item>
+                                        <Item.Content>
+                                            <Item.Header>Details</Item.Header>
                                             <Item.Description>
                                                 type1: {details.type1}
                                                 <Divider></Divider>
@@ -50,16 +60,9 @@ export default class PokemonModal extends React.Component {
                                                 weather2: {details.weather2}
                                                 <Divider></Divider>
                                                 legendary: {details.legendary}
+                                                <Divider></Divider>
                                             </Item.Description>
-                                            {/* <Item.Extra>
-                                                <Button floated='center' size="small" color="blue"></Button>
-                                            
-                                                <Button floated='center' 
-                                                    size="small" 
-                                                    color="blue">
-                                                </Button>
-                                            </Item.Extra> */}
-                                    </Item.Content>
+                                        </Item.Content>
                                     </Item>
                                 </Item.Group>
                             </Grid.Column>
