@@ -4,6 +4,8 @@ A dashboard for add, edit, remove and see details of pokemons made with [NodeJS]
 
 The prototype/wireframe can be found [here](https://www.figma.com/file/8kQRDz3xeK1MyFaxTRlylC/RedFox?node-id=0%3A1).
 
+The deploy site can be found [here](https://pokemon-crud.netlify.app/)
+
 ## SERVER
 Setup
 ```
