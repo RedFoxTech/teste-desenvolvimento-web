@@ -5,7 +5,7 @@ import path from 'path';
 import dataCaller from './DataCaller';
 export default class PokemonController {
     public async create(req: Request, res: Response): Promise<Response> {
-        const result = await dataCaller(pokemon.create.bind(pokemon), req.body);
+        const result = await dataCaller(pokemon.create.bind(pokemon, req.body));
         return res.json(result);
     }
 
@@ -19,13 +19,13 @@ export default class PokemonController {
             });
         }
         const pokemons = await pokemonXls.parse(req.file.path);
-        const result = await dataCaller(pokemon.insertMany.bind(pokemon), pokemons);
+        const result = await dataCaller(pokemon.insertMany.bind(pokemon, pokemons));
         return res.json(result);
         
     }
 
     public async download(req: Request, res: Response): Promise<void> {
-        return res.sendFile(path.join(process.cwd(), 'Pokemon_Go2.xlsx'));
+        return res.sendFile(path.join(process.cwd(), 'Pokemon_Go.xlsx'));
     }
 
     public async listLength(req: Request, res: Response): Promise<Response> {        
@@ -55,7 +55,7 @@ export default class PokemonController {
     }
 
     public async listOne(req: Request, res: Response): Promise<Response> {
-        const result = await dataCaller(pokemon.findById.bind(pokemon), req.params._id);
+        const result = await dataCaller(pokemon.findById.bind(pokemon, req.params._id));
         return res.json(result);
     }
 

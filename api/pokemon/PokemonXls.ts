@@ -20,7 +20,11 @@ export default class PokemonXls {
                     }
                     sheetPokemons.push(sheetPokemon);
                 }
-                resolve(this.normalize(sheetPokemons));
+
+                const normalized = this.normalize(sheetPokemons);
+                console.log('normalized', normalized);
+                // resolve(this.normalize(sheetPokemons));
+                resolve(normalized);
             }
             catch(err) {
                 console.log(err);
@@ -34,18 +38,18 @@ export default class PokemonXls {
             name: object['Name'],
             pokedexNumber: +object['Pokedex Number'],
             imgNumber: +object['Img name'],
-            generation: +object['Generation'],
+            generation: +object['Generation'] || 1,
             evolutionStage: +object['Evolution Stage'] || 1,
-            evolved: +object['Evolved'],
+            evolved: +object['Evolved'] || 0,
             type1: object['Type 1'],
             type2: object['Type 2'],
             weather1: object['Weather 1'],
             weather2: object['Weather 2'],
-            statTotal: +object['STAT TOTAL'],
-            atk: +object ['ATK'],
-            def: +object['DEF'],
-            sta: +object['STA'],
-            legendary: +object['Legendary'],
+            statTotal: +object['STAT TOTAL'] || 0,
+            atk: +object ['ATK'] || 0,
+            def: +object['DEF'] || 0,
+            sta: +object['STA'] || 0,
+            legendary: +object['Legendary'] || 0,
             crossGen: +object['Cross Gen'],
         }));
     }
