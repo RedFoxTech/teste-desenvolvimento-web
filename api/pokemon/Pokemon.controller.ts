@@ -2,16 +2,11 @@ import { Request, Response } from 'express';
 import pokemon from './Pokemon.model';
 import PokemonXls from './PokemonXls';
 import path from 'path';
-
+import dataCaller from './DataCaller';
 export default class PokemonController {
     public async create(req: Request, res: Response): Promise<Response> {
-        try {
-            const created = await pokemon.create(req.body);
-            return res.json({ success: true, info: created });
-        }
-        catch (err) {
-            return res.json({ success: false, info: err.message });
-        }
+        const result = await dataCaller(pokemon.create.bind(pokemon), req.body);
+        return res.json(result);
     }
 
     public async upload(req: Request, res: Response): Promise<Response> {
@@ -23,36 +18,25 @@ export default class PokemonController {
                 info: `${req.file.originalname} is not valid (.xls / .xslx) excel file`
             });
         }
-
-        try {
-            const pokemons = await pokemonXls.parse(req.file.path);
-            const saved = await pokemon.insertMany(pokemons);
-            return res.json({ success: true, info: saved });
-        }
-        catch (err) {
-            console.log(err);
-            return res.json({ success: false, info: err.message });
-        }
+        const pokemons = await pokemonXls.parse(req.file.path);
+        const result = await dataCaller(pokemon.insertMany.bind(pokemon), pokemons);
+        return res.json(result);
+        
     }
 
     public async download(req: Request, res: Response): Promise<void> {
         return res.sendFile(path.join(process.cwd(), 'Pokemon_Go2.xlsx'));
     }
 
-    public async listLength(req: Request, res: Response): Promise<Response> {
-        try {
-            const list = await pokemon.count({});
-            return res.json({
-                success: true, 
-                info: {
-                    pages: Math.round(list / 10),
-                    pokemons: list
-                }
-            });
-        } catch (err) {
-            console.log(err);
-            return res.json({success: false, info: err.message});
-        }
+    public async listLength(req: Request, res: Response): Promise<Response> {        
+        const list = await pokemon.count({});
+        return res.json({
+            success: true, 
+            info: {
+                pages: Math.round(list / 10),
+                pokemons: list
+            }
+        });
     }
 
     public async list(req: Request, res: Response): Promise<Response> {
@@ -71,47 +55,27 @@ export default class PokemonController {
     }
 
     public async listOne(req: Request, res: Response): Promise<Response> {
-        try {
-            const found = await pokemon.findById(req.params._id)
-            return res.json({ success: true, info: found })
-        }
-        catch (err) {
-            return res.json({ success: false, info: err.message })
-        }
+        const result = await dataCaller(pokemon.findById.bind(pokemon), req.params._id);
+        return res.json(result);
     }
 
     public async update(req: Request, res: Response): Promise<Response> {
-        try {
-            const updated = await pokemon.findByIdAndUpdate(req.params._id, req.body)
-            return res.json({ success: true, info: updated })
-        }
-        catch (err) {
-            return res.json({ success: false, info: err.message })
-        }
+        const result = await dataCaller(pokemon.findByIdAndUpdate.bind(pokemon), req.params._id, req.body)
+        return res.json(result);
     }
 
     public async remove(req: Request, res: Response): Promise<Response> {
-        try {
-            const deleted = await pokemon.findOneAndRemove({ _id: req.params._id })
-            return res.json({ success: true, info: deleted })
-        }
-        catch (err) {
-            return res.json({ success: false, info: err.message })
-        }
+        const result = await dataCaller(pokemon.findOneAndRemove.bind(pokemon), { _id: req.params._id });
+        return res.json(result);
     }
 
     public async removeMany(req: Request, res: Response): Promise<Response> {
-        console.log('body')
-        try {
-            const deleted = await pokemon.deleteMany({
+            const result = await dataCaller(pokemon.deleteMany.bind(pokemon), {
                 _id: {
                     $in: req.body
                 }
             });
-            return res.json({success: true, deleted: deleted});
-        } catch (err) {
-            return res.json({success: false, info: err.message});
-        }
+            return res.json(result);
     }
 
 }
