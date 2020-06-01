@@ -16,7 +16,11 @@ export default class PokemonsPane extends React.Component {
 	}
 
 	componentDidMount() {
-		Promise.all([
+		this.fetchAll();
+	}
+
+	fetchAll = () => {
+		return Promise.all([
 			this.fetchLengthList(),
 			this.fetchPokemons()
 		]);
@@ -87,9 +91,11 @@ export default class PokemonsPane extends React.Component {
 				<Modal open={detailsModalVisible}>
 					<PokemonModal
 						details={currentPokemonDetails}
-						close={this.toggleModalDetails}>
+						close={this.toggleModalDetails}
+						fetch={this.fetchAll}>
 					</PokemonModal>
-				</Modal>	
+				</Modal>
+
 
 				<Container textAlign='center'>
 				<Pagination activePage={activePage} totalPages={pages} 
