@@ -25,9 +25,10 @@ export default class PokemonModal extends React.Component {
         this.setState({confirmOpen: true});
     }
 
-    cancelConfirm = () => { 
+    confirmCancel = () => { 
         this.setState({confirmOpen: false});
     }
+    
 
     removePokemon = () => {
         Axios({
@@ -94,11 +95,12 @@ export default class PokemonModal extends React.Component {
 				</Modal.Content>
 
                 <Confirm
+                    content='Realy want to delete this?'
                     open={confirmOpen}
                     onCancel={this.confirmCancel}
                     onConfirm={this.removePokemon}>
                 </Confirm>
-                
+
 				<Modal.Actions>
                     <Button negative onClick={this.handleRemoveClick}>
 						Remove<Icon name='chevron right' />
