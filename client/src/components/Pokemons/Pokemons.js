@@ -24,6 +24,7 @@ export default class PokemonsPane extends React.Component {
 	}
 
 	fetchAll = () => {
+		console.log(this.state);
 		return Promise.all([
 			this.fetchLengthList(),
 			this.fetchPokemons()
@@ -32,7 +33,7 @@ export default class PokemonsPane extends React.Component {
 
 	fetchLengthList = async () => {
 		return axios({
-			url: 'http://localhost:8000/pokemons/length',
+			url: `http://localhost:8000/pokemons/length?searchkey=${this.state.searchKey}`,
 			method: 'GET'
 		})
 		.then(response => {
@@ -47,12 +48,12 @@ export default class PokemonsPane extends React.Component {
 	}
 
     fetchPokemons = async (page) => {
+		const searchKey = this.state.searchKey || '';
 		return axios({
-			url: `http://localhost:8000/pokemons?page=${page - 1}&searchkey=${this.state.searchKey.toLocaleLowerCase()}`,
+			url: `http://localhost:8000/pokemons?page=${page - 1}&searchkey=${searchKey.toLocaleLowerCase()}`,
 			method: 'GET',
 		})
 		.then(response => {
-			console.log(response.data.info);
 			this.setState({pokemons: response.data.info});
 		})
 		.catch(err => console.log(err));
@@ -64,19 +65,16 @@ export default class PokemonsPane extends React.Component {
 	}
 
 	toggleModalDetails = (pokemon) => {
-		console.log('toggle modal', pokemon);
 		this.setState({currentPokemonDetails: pokemon, detailsModalVisible: !this.state.detailsModalVisible});
 	}
 
 	handleResultSelect = (e, { result }) => {
-		console.log(result);
 		this.setState({
 			searchKey: result.name
 		})
 	}
 
 	handleSearchChange = (e, {value}) => {
-		console.log(value);
 		this.setState({searchLoading: true, searchKey: value});
 
 		setTimeout(() => {
@@ -84,10 +82,11 @@ export default class PokemonsPane extends React.Component {
 				searchLoading: false, searchResult: []
 			});
 
-			this.fetchPokemons();
+			this.fetchAll();
 
 			const result = this.state.pokemons.filter(pokemon => pokemon.name.toLowerCase().indexOf(value.toLowerCase()) !== -1);
 			const normalizedResult = result.map(pokemon => ({
+				key: Math.random(),
 				title: pokemon.name,
 				description: pokemon.type1,
 				image: `${baseSpriteAPI}/${pokemon.imgNumber}.png`,
@@ -154,11 +153,16 @@ export default class PokemonsPane extends React.Component {
 					</PokemonModal>
 				</Modal>
 
-
-				<Container textAlign='center'>
-				<Pagination activePage={activePage} totalPages={pages} 
-					onPageChange={this.handlePageChange}/>
-				</Container>
+				{
+					pages > 1 ? 
+					(
+						<Container textAlign='center'>
+						<Pagination activePage={activePage} totalPages={pages} 
+							onPageChange={this.handlePageChange}/>
+						</Container>
+					): ''
+				}
+				
 			</Fragment>
 		);
     }
