@@ -5,7 +5,7 @@
 
   
 
-### Show pokemon stats parsed from a Excel File
+### Show pokemon stats imported from an Excel File
 
 - Nodejs api + MongoDB + xlsx Parser + React app + Semantic UI + ApexCharts
 
@@ -47,7 +47,7 @@ npm start
 ---
 
 #### Troubleshooting 
-- The app was created on  **windows system operation**, so if you are using **unix based system** and the following **error** appear after npm start: 
+- The app was created on  **Windows O.S**, so if you are using **unix-based O.S** and the following **error** appear after npm start: 
 **''System limit for number of file watchers reached''**
 - then run this command on terminal: 
 ```` 
