@@ -44,7 +44,12 @@ export default class PokemonController {
             const intervalResult = 10;
             const currentPage = +req.param('page') || 0;
             const skip = intervalResult * currentPage;
-            const pokemons = await pokemon.find()
+            const searchKey = req.param('searchkey')
+            let criteria = {};
+            if (searchKey) {
+                criteria = {name: {'$regex': new RegExp(searchKey, 'igm')}};
+            }
+            const pokemons = await pokemon.find(criteria)
                 .limit(intervalResult)
                 .skip(skip)
             return res.json({ success: true, info: pokemons });
