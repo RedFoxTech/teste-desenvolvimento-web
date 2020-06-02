@@ -24,8 +24,8 @@ export default class ImportPane extends React.Component {
 			data: formData
 		})
 		.then(response => {
-			console.log(response);
-			if (response.data.info.success) {
+			console.log(response.data);
+			if (response.data.success) {
 				this.setState({
 					confirmOpen: true, 
 					confirmContent: 'Upload done!'
