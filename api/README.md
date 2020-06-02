@@ -1,41 +1,19 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+## API com NodeJs utilizando o Framework NestJs
 
-[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
-[travis-url]: https://travis-ci.org/nestjs/nest
-[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
-[linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
-<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
-<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
-  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository. 
 
-## Description
+## Instalação
+ 
+Após o download entrar na pasta **api** e inserir sua *URL* de conexão com um cluster do **MONGODB** em um arquivo chamado **'.env'** será necessário criar um arquivo e dar o nome de **'.env',** com uma variável de ambiente igual do **'.env.exemplo'**, mas contendo sua *URL* de cluster do **MONGODB**.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+Depois na mesma pasta via prompt de comando e executar:
 
 ```bash
 $ npm install
 ```
 
-## Running the app
-
+## Para iniciar o backend na porta 3000, usar uns dos CLI abaixo dentro da pasta api via prompt
+  
 ```bash
 # development
 $ npm run start
@@ -47,29 +25,63 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+## Exemplo de Objeto Pokemon para testar com o POST, PUT nas requisições
 ```
+{
+	"name": "Bulbasaur",
+	"pokedexnumber": 1,
+	"imgName": 1,
+	"generation": 1,
+	"evolutionStage": 1,
+	"evolved": 0,
+	"familyID": 1,
+	"crossGen": 0,
+	"typeOne": "grass",
+	"typewo": "poison",
+	"weatherOne": "Sunny/clear",
+	"weatherTwo": "Cloudy",
+	"statTotal": 326,
+	"atk": 118,
+	"def": 118,
+	"sta": 90,
+	"legendary": 0,
+	"aquireable": 1,
+	"spawns": 1,
+	"regional": 0,
+	"raidable": 0,
+	"hatchable": 5,
+	"shiny": 0,
+	"nest": 1,
+	"new": 0,
+	"notGettable": 0,
+	"futureEvolve": 0,
+	"oneHundredPercentCpForty": 981,
+	"oneHundredPercentCpThirtyNine": 967
+}
+```
+  
 
-## Support
+## Rotas da API
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
-## Stay in touch
+Consultar todos os Pokemons cadastrados.
+Método: GET
+URL: http://localhost:3000/pokmeons
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Consultar um Pokemon por ID.
+Método: GET
+URL: http://localhost:3000/pokmeons/10
 
-## License
+Atualizar um Pokemon por ID, passando os parametros via body em um objeto pokemon como no modelo.
+Método: PUT
+URL: http://localhost:3000/pokmeons/10
+ 
+Cadastrar um novo Pokemon passando os parametros via body em um objeto pokemon como no modelo.
+Método: POST
+URL: http://localhost:3000/pokmeons/10
+ 
+Deletar um Pokemon por ID.
+Método: DELETE
+URL: http://localhost:3000/pokmeons/10  
 
-  Nest is [MIT licensed](LICENSE).
+OBS: Quando eu estiver com mais tempo livre farei um componente de importação de Pokemons via excel e autenticação por da API com JWT.
