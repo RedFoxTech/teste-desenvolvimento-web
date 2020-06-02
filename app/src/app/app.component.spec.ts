@@ -32,4 +32,17 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain('client-side app is running!');
   });
+
+  it('should render obs text', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.obs').textContent).toContain('Obs is running!');
+  });
+
+  it('should render obs', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.obs')).toBeTruthy();
+  });
 });
