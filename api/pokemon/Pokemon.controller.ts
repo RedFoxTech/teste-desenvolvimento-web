@@ -29,7 +29,12 @@ export default class PokemonController {
     }
 
     public async listLength(req: Request, res: Response): Promise<Response> {        
-        const list = await pokemon.count({});
+        const searchKey = req.param('searchkey')
+        let criteria = {};
+        if (searchKey) {
+            criteria = {name: {'$regex': new RegExp(searchKey, 'igm')}};
+        }
+        const list = await pokemon.count(criteria);
         return res.json({
             success: true, 
             info: {
