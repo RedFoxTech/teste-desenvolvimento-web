@@ -4,16 +4,23 @@ import knex from '../database/connection';
 class PokemonsController {
     async index(request: Request, response: Response) {
         try {
-            const { name } = request.query;
+            const { name, page = 1 } = request.query;
 
             /** If user inserted a search paremeter */
             if (name) {
-                const filteredPokemons = await knex('pokemons').where('name', 'like', `%${String(name)}%`).select('*');
+                const filteredPokemons = await knex('pokemons')
+                .where('name', 'like', `%${String(name)}%`)
+                .limit(10)
+                .offset((Number(page) - 1) * 10)
+                .select('*');
                 return response.json(filteredPokemons);
             }
 
             /** If user did not insert a search parameter */
-            const pokemons = await knex('pokemons').select('*');
+            const pokemons = await knex('pokemons')
+            .limit(10)
+            .offset((Number(page) - 1) * 10)
+            .select('*');;
             return response.json(pokemons);
             
         } catch(err) {
