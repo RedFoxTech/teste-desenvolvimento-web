@@ -43,9 +43,9 @@ class PokemonsController {
     async create(request: Request, response: Response) {
     /** Trabalhei na inserção dos pokemons com apenas alguns campos presentes na planilha fornecida  */
         try {
-            const { name, pokedex_number, generation, type_1, type_2 } = request.body;
+            const { name, type_1, type_2 } = request.body;
             
-            const pokemon = { name, pokedex_number, generation, type_1, type_2};
+            const pokemon = { name, type_1, type_2};
 
             const insertedPokemon = await knex('pokemons').insert(pokemon);
 
