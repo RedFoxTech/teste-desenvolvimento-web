@@ -36,14 +36,14 @@ function OptionsBar() {
         </InputContainer>
 
         <FilterContainer>
-          <span>Filtro</span>
+          <span>FILTRO</span>
           <BsFilter size={24} color="#999" />
         </FilterContainer>
       </Left>
 
       <ButtonContainer onClick={() => history.push('new')}>
         <MdAddBox size={24} color="#fff" />
-        <span>Adicionar</span>
+        <span>ADICIONAR</span>
       </ButtonContainer>
     </Container>
   );

@@ -1,14 +1,17 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
+import history from '~/services/history';
+import { setId } from '~/store/modules/application/actions';
 import notloaded from '~/assets/question-mark.png';
-
 import api from '~/services/secondaryApi';
 
 import { Container, Header, TypesContainer, StatsContainer } from './styles';
 
 function Pokemon({ info }) {
   const [image, setImage] = useState('');
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function loadPokemonImage() {
@@ -23,8 +26,13 @@ function Pokemon({ info }) {
     loadPokemonImage();
   }, [info.name]);
 
+  async function handleShowPokemon() {
+    await dispatch(setId(info.id));
+    history.push(`/pokemons/${info.id}`);
+  }
+
   return (
-    <Container>
+    <Container onClick={handleShowPokemon}>
       <Header>
         <span>{info.name}</span>
         <span>STAT {info.stat_total}</span>

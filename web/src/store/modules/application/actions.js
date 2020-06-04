@@ -18,3 +18,10 @@ export function setLength(length) {
     payload: { length },
   };
 }
+
+export function setId(pokemon_id) {
+  return {
+    type: '@application/SET_ID',
+    payload: { pokemon_id },
+  };
+}

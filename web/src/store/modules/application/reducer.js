@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   searchInput: '',
   page: 1,
   length: 0,
+  pokemon_id: null,
 };
 
 export default function application(state = INITIAL_STATE, action) {
@@ -20,6 +21,18 @@ export default function application(state = INITIAL_STATE, action) {
     case '@application/SET_LENGTH':
       return produce(state, (draft) => {
         draft.length = action.payload.length;
+      });
+    case '@application/SET_ID':
+      return produce(state, (draft) => {
+        draft.pokemon_id = action.payload.pokemon_id;
+      });
+    case '@pokemon/UPDATE_SUCCESS':
+      return produce(state, (draft) => {
+        draft.page = 1;
+      });
+    case '@pokemon/DELETE_SUCCESS':
+      return produce(state, (draft) => {
+        draft.page = 1;
       });
     default:
       return state;

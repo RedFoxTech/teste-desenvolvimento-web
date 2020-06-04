@@ -16,6 +16,7 @@ export const InputContainer = styled.div`
   background: #e0b300;
   border-radius: 4px;
   padding: 0 5px;
+  height: 40px;
 
   input {
     border: none;
@@ -45,8 +46,10 @@ export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
   background: #e0b300;
-  padding: 3px;
+  padding: 5px;
   border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
 
   &:hover {
     box-shadow: 2px 2px 8px #111;
