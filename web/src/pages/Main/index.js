@@ -4,16 +4,14 @@ import OptionsBar from '~/components/OptionsBar';
 import PokemonsTable from '~/components/PokemonsTable';
 import PageContainer from '~/components/PageContainer';
 
-import { Container, Middle } from './styles';
+import { Container } from './styles';
 
 function Main() {
   return (
     <Container>
-      <Middle>
-        <OptionsBar />
-        <PokemonsTable />
-        <PageContainer />
-      </Middle>
+      <OptionsBar />
+      <PokemonsTable />
+      <PageContainer />
     </Container>
   );
 }

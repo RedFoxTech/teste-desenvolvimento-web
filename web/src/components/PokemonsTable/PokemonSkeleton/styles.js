@@ -5,7 +5,30 @@ export const Grid = styled.div`
   grid-template-columns: repeat(5, auto);
   grid-gap: 20px;
   align-items: center;
+  justify-content: center;
   margin-top: 30px;
+
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(4, auto);
+  }
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  @media (max-width: 800px) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @media (max-width: 500px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+      margin-bottom: 30px;
+    }
+  }
 `;
 
 export const Container = styled.div`

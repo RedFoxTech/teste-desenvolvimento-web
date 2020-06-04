@@ -31,14 +31,10 @@ function AddPokemon() {
     <Container>
       <Form onSubmit={handleSubmit}>
         <ButtonContainer>
-          <div>
-            <button type="button" onClick={() => history.goBack()}>
-              VOLTAR
-            </button>
-            <button type="submit">
-              {loading ? 'CARREGANDO' : 'ADICIONAR'}
-            </button>
-          </div>
+          <button type="button" onClick={() => history.goBack()}>
+            VOLTAR
+          </button>
+          <button type="submit">{loading ? 'CARREGANDO' : 'ADICIONAR'}</button>
         </ButtonContainer>
         <FormContainer>
           <h1>Novo Pokemon</h1>

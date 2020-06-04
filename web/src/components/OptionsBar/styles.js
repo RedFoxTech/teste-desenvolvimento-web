@@ -3,11 +3,11 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-`;
+  margin-top: 30px;
 
-export const Left = styled.div`
-  display: flex;
-  margin-right: 50px;
+  @media (max-width: 550px) {
+    flex-direction: column;
+  }
 `;
 
 export const InputContainer = styled.div`
@@ -15,39 +15,39 @@ export const InputContainer = styled.div`
   align-items: center;
   background: #e0b300;
   border-radius: 4px;
+  height: 50px;
   padding: 0 5px;
-  height: 40px;
+  margin-right: 20px;
+
+  @media (max-width: 550px) {
+    margin: 0 0 20px;
+  }
 
   input {
     border: none;
-    color: #999;
-    font-size: 16px;
-    width: 250px;
-    padding: 5px;
+    border-bottom: 2px solid #fff;
+    background: none;
+    color: #fff;
+    width: 100%;
+
+    ::placeholder {
+      color: #fff;
+      font-style: italic;
+    }
+    font-size: 18px;
+    padding: 10px;
     margin-right: 10px;
-  }
-`;
-
-export const FilterContainer = styled.div`
-  display: none;
-  align-items: center;
-  background: #fff;
-  border-radius: 4px;
-  margin-left: 20px;
-  padding: 0 5px 0;
-
-  span {
-    color: #999;
-    font-size: 16px;
   }
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   background: #e0b300;
   padding: 5px;
   border-radius: 4px;
+  height: 50px;
   font-size: 18px;
   font-weight: bold;
 

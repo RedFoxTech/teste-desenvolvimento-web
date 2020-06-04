@@ -1,12 +1,29 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 50px 500px;
+  padding: 50px 300px;
+
+  @media (max-width: 1500px) {
+    padding: 50px 100px;
+  }
+
+  @media (max-width: 800px) {
+    padding: 50px 50px;
+  }
+
+  @media (max-width: 600px) {
+    padding: 50px 0;
+  }
 `;
 
 export const ButtonContainer = styled.div`
   display: flex;
+  align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 
   button {
     color: #fff;
@@ -17,6 +34,11 @@ export const ButtonContainer = styled.div`
     border-radius: 4px;
     width: 100px;
     height: 35px;
+
+    @media (max-width: 600px) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
   }
   button:nth-of-type(1) {
     background: #e0b300;
@@ -50,6 +72,10 @@ export const FormContainer = styled.div`
   flex-direction: column;
   padding: 40px 80px;
   margin-top: 30px;
+
+  @media (max-width: 600px) {
+    padding: 40px 0;
+  }
 
   h1 {
     font-size: 25px;

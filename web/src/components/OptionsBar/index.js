@@ -2,18 +2,11 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { DebounceInput } from 'react-debounce-input';
 import { MdSearch, MdAddBox } from 'react-icons/md';
-import { BsFilter } from 'react-icons/bs';
 import history from '~/services/history';
 
 import { setSearchInput } from '~/store/modules/application/actions';
 
-import {
-  Container,
-  Left,
-  InputContainer,
-  FilterContainer,
-  ButtonContainer,
-} from './styles';
+import { Container, InputContainer, ButtonContainer } from './styles';
 
 function OptionsBar() {
   const dispatch = useDispatch();
@@ -24,22 +17,15 @@ function OptionsBar() {
 
   return (
     <Container>
-      <Left>
-        <InputContainer>
-          <DebounceInput
-            type="text"
-            debounceTimeout={600}
-            placeholder="Procure por um pokemon..."
-            onChange={handleInputChange}
-          />
-          <MdSearch size={30} color="#fff" />
-        </InputContainer>
-
-        <FilterContainer>
-          <span>FILTRO</span>
-          <BsFilter size={24} color="#999" />
-        </FilterContainer>
-      </Left>
+      <InputContainer>
+        <DebounceInput
+          type="text"
+          debounceTimeout={600}
+          placeholder="Procure por um pokemon..."
+          onChange={handleInputChange}
+        />
+        <MdSearch size={30} color="#fff" />
+      </InputContainer>
 
       <ButtonContainer onClick={() => history.push('new')}>
         <MdAddBox size={24} color="#fff" />
