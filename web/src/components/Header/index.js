@@ -1,9 +1,15 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import logo from '~/assets/pokehandler.png';
+
+import { Container } from './styles';
 
 function Header() {
-  return <div />;
+  return (
+    <Container>
+      <img src={logo} alt="logo" />
+    </Container>
+  );
 }
 
 export default Header;
