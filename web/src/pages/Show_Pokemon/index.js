@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Input } from '@rocketseat/unform';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
+import * as Yup from 'yup';
 import history from '~/services/history';
+
+import schema from '~/validations/pokemon/pokemon';
 
 import {
   updatePokemonRequest,
@@ -28,15 +32,21 @@ function Show_Pokemon() {
 
   async function handleSubmit(data) {
     const { name, type_1, type_2 } = data;
-
-    dispatch(
-      updatePokemonRequest(
-        String(pokemon_id),
-        String(name),
-        String(type_1),
-        String(type_2)
-      )
-    );
+    try {
+      await schema.validate({ name, type_1, type_2 }, { abortEarly: true });
+      dispatch(
+        updatePokemonRequest(
+          String(pokemon_id),
+          String(name),
+          String(type_1),
+          String(type_2)
+        )
+      );
+    } catch (err) {
+      if (err instanceof Yup.ValidationError) {
+        toast.error('Campos inválidos!');
+      }
+    }
   }
 
   async function handleDelete() {
@@ -50,9 +60,7 @@ function Show_Pokemon() {
           <button type="button" onClick={() => history.goBack()}>
             VOLTAR
           </button>
-          <button type="submit" onClick={handleSubmit}>
-            {loading ? 'CARREGANDO' : 'ATUALIZAR'}
-          </button>
+          <button type="submit">{loading ? 'CARREGANDO' : 'ATUALIZAR'}</button>
           <button type="button" onClick={handleDelete}>
             DELETAR
           </button>

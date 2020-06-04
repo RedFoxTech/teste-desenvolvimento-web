@@ -38,7 +38,7 @@ function Pokemon({ info }) {
         <span>STAT {info.stat_total}</span>
       </Header>
 
-      <img src={image} alt="bulbasaur" />
+      <img src={image} alt="pokemon_image" />
 
       <TypesContainer>
         <span>Tipo 1: {info.type_1}</span>
