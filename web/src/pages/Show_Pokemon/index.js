@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import * as Yup from 'yup';
 import history from '~/services/history';
-
+import notloaded from '~/assets/question-mark.png';
 import schema from '~/validations/pokemon/pokemon';
 
 import {
@@ -14,12 +14,14 @@ import {
 
 import { Container, ButtonContainer, FormContainer } from './styles';
 import api from '~/services/api';
+import secondaryApi from '~/services/secondaryApi';
 
 function Show_Pokemon() {
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.pokemon);
   const { pokemon_id } = useSelector((state) => state.application);
   const [pokemon, setPokemon] = useState([]);
+  const [image, setImage] = useState('');
 
   useEffect(() => {
     async function loadPokemon() {
@@ -27,8 +29,21 @@ function Show_Pokemon() {
 
       setPokemon(response.data);
     }
+
+    async function loadPokemonImage() {
+      try {
+        const response = await secondaryApi.get(
+          `pokemon/${pokemon.name.toLowerCase()}`
+        );
+        setImage(response.data.sprites.front_default);
+      } catch (err) {
+        setImage(notloaded);
+      }
+    }
+
+    loadPokemonImage();
     loadPokemon();
-  }, [pokemon_id]);
+  }, [pokemon.name, pokemon_id]);
 
   async function handleSubmit(data) {
     const { name, type_1, type_2 } = data;
@@ -67,6 +82,7 @@ function Show_Pokemon() {
         </ButtonContainer>
         <FormContainer>
           <h1>{pokemon.name}</h1>
+          <img src={image} alt="pokemon_image" />
           <Input label="Nome" name="name" />
 
           <Input label="Tipo 1" name="type_1" />

@@ -57,6 +57,13 @@ export const FormContainer = styled.div`
     margin-bottom: 30px;
   }
 
+  img {
+    align-self: center;
+    width: 200px; /* width of container */
+    height: 100px; /* height of container */
+    object-fit: fill;
+  }
+
   label {
     font-weight: bold;
     color: #333;
