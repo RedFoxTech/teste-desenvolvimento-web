@@ -42,7 +42,7 @@ function Pokemon({ info }) {
 
       <TypesContainer>
         <span>Tipo 1: {info.type_1}</span>
-        <span>Tipo 2: {info.type_2}</span>
+        <span>{info.type_2 ? `Tipo 2: ${info.type_2}` : ''}</span>
       </TypesContainer>
 
       <StatsContainer>

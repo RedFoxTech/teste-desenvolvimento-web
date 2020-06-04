@@ -25,7 +25,7 @@ export const Container = styled.div`
     align-items: center;
 
     div {
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
   }
 `;

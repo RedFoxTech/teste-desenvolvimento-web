@@ -12,6 +12,7 @@ export default function application(state = INITIAL_STATE, action) {
     case '@application/SET_INPUT':
       return produce(state, (draft) => {
         draft.searchInput = action.payload.searchInput;
+        draft.page = 1;
       });
     case '@application/SET_PAGE':
       return produce(state, (draft) => {
@@ -25,6 +26,8 @@ export default function application(state = INITIAL_STATE, action) {
     case '@application/SET_ID':
       return produce(state, (draft) => {
         draft.pokemon_id = action.payload.pokemon_id;
+        draft.page = 1;
+        draft.searchInput = '';
       });
     case '@pokemon/UPDATE_SUCCESS':
       return produce(state, (draft) => {
