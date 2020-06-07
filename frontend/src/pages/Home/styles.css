@@ -1,0 +1,162 @@
+.txtSearch{
+    margin-top: 10px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+body{
+    background-color: #F0F0F5;
+}
+
+.pokemon-container{
+    width: 100%;
+    max-width: 90%;
+    padding: 0 30px;
+    margin: 32px auto;
+}
+
+.pokemon-container ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 24px;
+    list-style: none;
+}
+
+.pokemon-container ul li{
+    background: #FFF;
+    padding: 24px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.pokemon-container ul li button{
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    border: 0;
+    background: transparent;
+}
+
+.pokemon-container ul li button:hover{
+    opacity: 0.8;
+}
+
+.pokemon-container ul li strong{
+    display: block;
+    margin-bottom: 5px;
+    color: #41414d;
+}
+
+.pokemon-container ul li p + strong{
+    margin-top: 7px;
+}
+
+.pokemon-container ul li p {
+    color: #737380;
+    line-height: 21px;
+    font-size: 16px;
+}
+.DEF, .STA{
+    margin-left: 50px;
+}
+
+.pokemon-container ul li .Stats li{
+    background: rgb(248, 76, 76);
+    padding: 24px;
+    border-radius: 8px;
+    position: relative;
+    max-width: 100px;
+    margin-left: 5px;
+    text-align: center; 
+}
+.pokemon-container ul li .Stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1FR;
+    grid-gap: 0px;
+    margin-left:-45px;
+    list-style: none;
+}
+.pokemon-container ul li .Stats li p{
+    color: white;
+}
+.DEF{
+    background: rgb(59, 142, 236);
+}
+.STA{
+    background: rgb(2, 88, 48)
+}
+
+.pokemon-container ul li ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px;
+    margin-left:-45px;
+    list-style: none;
+}
+.pokemon-container ul li ul li ul{
+    margin-top: 0px;
+}
+
+.pokemon-container ul li .bottom-buttons li{
+    background: rgb(248, 76, 76);
+    padding: 24px;
+    border-radius: 8px;
+    position: relative;
+    margin-left: 5px;
+    text-align: center; 
+    width: 100%;
+    margin-top: 10px;
+    color: white;
+}
+
+.pokemon-container ul li .bottom-buttons .bottom-del{
+    margin-left:10px;
+}
+.pokemon-container ul li .bottom-buttons .bottom-att{
+    background: rgb(54, 133, 223);
+}
+.deletebutton, .updatebutton{
+    width: 100%;
+    color: white;
+    height: 100%;
+    margin-top: -24px;
+    margin-right: -25px;
+}
+
+.navigationbar ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+    grid-gap: 10px;
+}
+
+.navigationbar{
+    width: 100px;
+    max-width: 90%;
+    padding: 0 30px;
+    margin: 32px auto;
+}
+
+
+.navigationbar ul li{
+    padding: 24px;
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    
+}
+
+.navigationbar ul li button{
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    border: 0;
+    border-bottom: 1px solid black;
+    background: #FFF;
+    height: 100%;
+    width: 100%;
+}
+
+.navigationbar ul li button:hover{
+    opacity: 0.8;
+}
