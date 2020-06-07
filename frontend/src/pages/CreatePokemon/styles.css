@@ -1,0 +1,42 @@
+body{
+    background-color: #F0F0F5;
+}
+.containerCreate{
+    width: 100%;
+    max-width: 1000px;
+    padding: 30px;
+    margin: 32px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.ATK, .DEF, .STA, .STAT{
+    background-color: #85d17b;
+    width: 50px;
+    margin-right: -40px;
+    border: 0;
+    border-radius: 5px;
+    height: 50px;
+    text-align: center;
+    color: black;
+}
+.DEF{
+    background-color: #7bc7d1;
+}
+.STA{
+    background-color: #d17b7b;
+}
+.Stats{
+    margin: auto;
+}
+
+.ATK::placeholder, .DEF::placeholder ,.STA::placeholder{
+    text-align: center;
+    color: #f7f7f7;
+}
+.formG{
+    margin-bottom: 20px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
