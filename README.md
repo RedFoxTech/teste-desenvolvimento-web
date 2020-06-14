@@ -1,58 +1,79 @@
-# Teste de Desenvolvimento Web
+# Desafio Pokemon
 
-Olá Dev! Tudo bem?
+### Considerações Iniciais
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+Para o desenvolvimento desse projeto foram utilizadas as seguintes tecnologias:
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+## Stack Back-End
+- TypeScript
+- NodeJs
+- Express
+- Knex
+- SQL
+- MySql
+- AWS
+- CORS
+- Dotenv
+ 
+Eu optei utilizar TypeScript com Node no BackEnd pois o  TypeScript adiciona tipagem e alguns outros recursos, o que o torna mais completo do que o JavaScript. Utilizei o Express pois, na etapa de planejamento deste projeto, projetei as rotas para que sejam utilizadas pelo FrontEnd de uma forma prática e completa. Com ele é possível criar CRUDs além de outros métodos menos utilizados.
 
-Agora vamos ao teste!
-
-
-## Desafio Pokémon
-
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
-
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
-
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
-
-
-## Consigo fazer tudo isso?
-
-Consegue sim!
-
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
-
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+Para o banco de dados eu utilizei o MySql e realizei o deploy na AWS, conhecida por oferecer um serviço robusto, rápido e seguro.
 
 
-## Por onde começo?
+# IDE e Estruturação do Projeto
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+Decidi fazer uso do VSCode, uma ferramenta gratuita desenvolvida pela Microsoft e muito completa que nos permite adicionar extensões que facilitam(e muito!) a vida de um desenvolvedor. Desde ferramentas, suporte para depuração, controle Git incorporado, recurso de auto completar incorporado, snnippets dentre outros recursos bastante úteis.
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
+Para instalar e executar o projeto a primeira coisa que deve ser feita é, na raiz do mesmo, abrir o powerShell(precisa ter o Node instalado) e executar a seguinte linha de comando:
+
+>npm instal 
+
+ou, de forma simplificada
+
+>npm i
+
+Isso irá garantir que todas as dependências do projeto serão instaladas localmente. 
+
+Após a instalação, o próximo procedimento será executar a linha abaixo:
+
+>npm start
+
+O VSCode irá rodar a aplicação localmente e o link e porta serão mostrados ao final do processo. 
+
+## Teste do backend
+
+O teste pode ser realizado pelo Postman de forma simples e prática. Primeiro passo é iniciar uma novo método e, para exemplificar, usaremos o GET.
+
+No campo do link, utilizaremos o seguinte:
+
+https://sec9w2ixle.execute-api.us-east-1.amazonaws.com/v1/PokemonGo
+
+Na guia de Query Params utilizaremos a KEY de nome page e no VALUE colocaremos o número da página com os dados a serem exibidos. Como há uma paginação que mostra 10 resultados por vez,  o resultado será mostrar os Pokémons de 1 ao 10 quando utilizamos o VALUE 1, por exemplo. A ultima página até o momento é a 83.
+
+Para testar o endPoint de deletar Pokémon, o procedimento é semelhante.
+Utilizaremos o link
+
+https://sec9w2ixle.execute-api.us-east-1.amazonaws.com/v1/Pokemons/deletePokemon
+
+e na aba Body colocaremos o seguinte objeto onde x é o número da ID do Pokémon no banco de dados
+
+>{
+    "pokemonId": x
+}
+
+Em caso de número incorreto da ID a seguinte mensagem aparecerá
+
+>"Id informada não existe no banco de dados"
 
 
-## E o Layout??
+## Considerações finais
 
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
+O projeto ficou bem completo e além de substituir a planilha por um banco de dados robusto, ainda foi realizado o deploy na AWS. O projeto é modular e oferece a  possibilidade de expansão de forma prática devido a arquitetura utilizada.
 
+Este é meu primeiro projeto completo no BackEnd e tudo que posso dizer é que valeu cada minuto investido em estudos. 
 
-## Regras
+# Contato
+##### Vitor Soares Lopes
+##### [LinkedIN](https://www.linkedin.com/in/vitor-soares-lopes/)
+##### [GitHub](https://github.com/vitor-slopes)
 
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
-
-
-## Só isso?
-
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
