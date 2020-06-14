@@ -1,58 +1,68 @@
-# Teste de Desenvolvimento Web
+# Desafio Pokemon
 
-Olá Dev! Tudo bem?
+### Considerações Iniciais
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+Para o desenvolvimento desse projeto foram utilizadas as seguintes tecnologias:
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+## Stack Front-End
+- JavaScript
+- ReactJs
+- Redux/Redux-Thunk
+- NodeJs
+- Material-Ui
+- Axios
+- Connected-react-router
+- Styled-Components
+ 
+EU optei por JavaScript com React no front com o Redux e o Redux-Thunk dando suporte para lidar com as requisições assíncronas. Como framework eu utilizei componentes do Material-Ui e tags estilizáveis do Styled-Components. 
 
-Agora vamos ao teste!
-
-
-## Desafio Pokémon
-
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
-
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
-
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
-
-
-## Consigo fazer tudo isso?
-
-Consegue sim!
-
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
-
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+Utilizei o Axios para lidar com as requisições da API
 
 
-## Por onde começo?
+# IDE e Estruturação do Projeto
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+Decidi fazer uso do VSCode, uma ferramenta gratuita desenvolvida pela Microsoft e muito completa que nos permite adicionar extensões que facilitam(e muito!) a vida de um desenvolvedor. Desde ferramentas, suporte para depuração, controle Git incorporado, recurso de auto completar incorporado, snnippets dentre outros recursos bastante úteis.
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
+Para instalar e executar o projeto a primeira coisa que deve ser feita é, na raiz do mesmo, abrir o powerShell(precisa ter o Node instalado) e executar a seguinte linha de comando:
 
+>npm instal 
 
-## E o Layout??
+ou, de forma simplificada
 
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
+>npm i
 
+Isso irá garantir que todas as dependências do projeto serão instaladas localmente. 
 
-## Regras
+Após a instalação, o próximo procedimento será executar a linha abaixo:
 
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
+>npm start
 
+O VSCode irá rodar a aplicação localmente e o link e porta serão mostrados ao final do processo. 
 
-## Só isso?
+## Teste do FrontEnd
 
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
+O teste pode ser realizado pela própria aplicação em servidor local ou através do deploy da build que fiz no Surge:
 
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
+#### [Surge](redfox-vitorslopes.surge.sh)
 
+Basta clicar nos botões para avançar e retroceder entre as telas.
 
-Boa sorte! (^_^)
+### O que funciona
+
+As funções de avançar e retroceder entre as telas enviam requisições ao BackEnd e este retorna 10 resultados por vez na tela. Também fiz a ligação do número contido no Image_name de cada Pokémon com um link de uma api externa para retornar a imagem correta de cada pokémon.
+
+### O que não funciona
+
+A função de filtro está incompleta, falta a implementação da função de deletar pokémon.
+
+## Considerações finais
+
+Devido a falta de tempo por questões pessoais, não pude concluir o Front em tempo hábil. Eu estou na etapa final de um bootcamp que vai das 08h as 18h de segunda até sexta-feira e também tenho 3 filhas menores de 4 anos, que necessitam muito da minha atenção. 
+
+Gostei bastante da oportunidade e do aprendizado, foi um projeto desafiador e muito completo. Posso dizer que saio dele com uma bagagem maior do que a que trouxe quando entrei.
+
+# Contato
+##### Vitor Soares Lopes
+##### [LinkedIN](https://www.linkedin.com/in/vitor-soares-lopes/)
+##### [GitHub](https://github.com/vitor-slopes)
+
