@@ -10,7 +10,6 @@ exports.default = {
     storage: multer_1.default.diskStorage({
         destination: path_1.default.resolve(__dirname, '..', '..', 'uploads'),
         filename: function (request, file, callback) {
-            console.log(file);
             var hash = crypto_1.default.randomBytes(6).toString('hex');
             var fileName = hash + "-" + file.originalname;
             callback(null, fileName);

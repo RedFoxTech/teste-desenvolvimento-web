@@ -47,6 +47,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+require('dotenv').config();
+console.log(process.env.APP_URL);
 var knex = require('../database/connection.js');
 var PokemonController = /** @class */ (function () {
     function PokemonController() {
@@ -85,7 +87,7 @@ var PokemonController = /** @class */ (function () {
                         _d.label = 5;
                     case 5:
                         serializedPokemons = pokemons.map(function (pokemon) {
-                            return __assign(__assign({}, pokemon), { image_url: Number.isInteger(Number(pokemon.img_name)) ? null : "http://localhost:3333/uploads/" + pokemon.img_name });
+                            return __assign(__assign({}, pokemon), { image_url: Number.isInteger(Number(pokemon.img_name)) ? null : process.env.APP_URL + ("/uploads/" + pokemon.img_name) });
                         });
                         return [2 /*return*/, response.json(serializedPokemons)];
                 }
@@ -102,7 +104,7 @@ var PokemonController = /** @class */ (function () {
                         return [4 /*yield*/, knex.select().from('pokemons').where('id', id).first()];
                     case 1:
                         pokemon = _a.sent();
-                        serializedPokemon = __assign(__assign({}, pokemon), { image_url: Number.isInteger(Number(pokemon.img_name)) ? null : "http://localhost:3333/uploads/" + pokemon.img_name });
+                        serializedPokemon = __assign(__assign({}, pokemon), { image_url: Number.isInteger(Number(pokemon.img_name)) ? null : process.env.APP_URL + ("/uploads/" + pokemon.img_name) });
                         return [2 /*return*/, response.status(200).json(serializedPokemon)];
                 }
             });
