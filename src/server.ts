@@ -17,6 +17,4 @@ app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
 
 dotenv.config();
 
-app.listen(3333, () => [
-  console.log('Server is running on port 3333')
-])
+app.listen(process.env.PORT ||3333);
