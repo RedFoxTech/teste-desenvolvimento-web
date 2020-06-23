@@ -1,3 +1,4 @@
+import dotenv from 'dotenv';
 import express from 'express';
 import routes from './routes';
 import path from 'path';
@@ -12,7 +13,9 @@ app.use(cors({
 }));
 app.use(routes);
 
-app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')))
+app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
+
+dotenv.config()
 
 app.listen(3333, () => [
   console.log('Server is running on port 3333')

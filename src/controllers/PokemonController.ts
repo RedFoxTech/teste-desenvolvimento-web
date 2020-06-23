@@ -1,5 +1,40 @@
 import {Request, Response} from 'express';
-import knex from '../database/connection';
+
+const knex = require('../database/connection.js');
+
+interface Pokemon {
+  id: string;
+  name: string;
+  pokedex_number: string;
+  img_name: string;
+  generation: string;
+  evolution_stage: string;
+  evolved: string;
+  family_id: string;
+  cross_gen: string;
+  type_1: string;
+  type_2: string;
+  weather_1: string;
+  weather_2: string;
+  stat_total: string;
+  atk: string;
+  def: string;
+  sta: string;
+  legendary: string;
+  aquireable: string;
+  spawns: string;
+  regional: string;
+  raidable: string;
+  hatchable: string;
+  shiny: string;
+  nest: string;
+  new: string;
+  not_gettable: string;
+  future_evolve: string;
+  cp_40: string;
+  cp_39: string;
+  image_url?: string;
+}
 
 
 class PokemonController {
@@ -30,7 +65,7 @@ class PokemonController {
 
       }
 
-      const serializedPokemons = pokemons.map(pokemon => {
+      const serializedPokemons = pokemons.map((pokemon:Pokemon) => {
         return {
           ...pokemon,
           image_url: Number.isInteger(Number(pokemon.img_name)) ? null : `http://localhost:3333/uploads/${pokemon.img_name}`

@@ -46,11 +46,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-var connection_1 = __importDefault(require("../database/connection"));
+var knex = require('../database/connection.js');
 var PokemonController = /** @class */ (function () {
     function PokemonController() {
     }
@@ -61,13 +58,13 @@ var PokemonController = /** @class */ (function () {
                 switch (_d.label) {
                     case 0:
                         _a = request.query, filter = _a.filter, _b = _a.page, page = _b === void 0 ? 1 : _b, _c = _a.limit, limit = _c === void 0 ? 20 : _c;
-                        return [4 /*yield*/, connection_1.default('pokemons').count('id')];
+                        return [4 /*yield*/, knex('pokemons').count('id')];
                     case 1:
                         count = (_d.sent())[0];
                         pokemons = [];
                         response.set('x-total-count', count['count']);
                         if (!!filter) return [3 /*break*/, 3];
-                        return [4 /*yield*/, connection_1.default.select()
+                        return [4 /*yield*/, knex.select()
                                 .from('pokemons')
                                 .limit(Number(limit))
                                 .offset((Number(page) - 1) * Number(limit))
@@ -75,7 +72,7 @@ var PokemonController = /** @class */ (function () {
                     case 2:
                         pokemons = _d.sent();
                         return [3 /*break*/, 5];
-                    case 3: return [4 /*yield*/, connection_1.default.select()
+                    case 3: return [4 /*yield*/, knex.select()
                             .from('pokemons')
                             .where('name', 'ilike', "%" + filter + "%")
                             .orWhere('type_1', 'ilike', "%" + filter + "%")
@@ -102,7 +99,7 @@ var PokemonController = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         id = request.params.id;
-                        return [4 /*yield*/, connection_1.default.select().from('pokemons').where('id', id).first()];
+                        return [4 /*yield*/, knex.select().from('pokemons').where('id', id).first()];
                     case 1:
                         pokemon = _a.sent();
                         serializedPokemon = __assign(__assign({}, pokemon), { image_url: Number.isInteger(Number(pokemon.img_name)) ? null : "http://localhost:3333/uploads/" + pokemon.img_name });
@@ -149,7 +146,7 @@ var PokemonController = /** @class */ (function () {
                             cp_39: request.body.cp_39,
                             img_name: (_a = request === null || request === void 0 ? void 0 : request.file) === null || _a === void 0 ? void 0 : _a.filename
                         };
-                        return [4 /*yield*/, connection_1.default('pokemons').insert(data)];
+                        return [4 /*yield*/, knex('pokemons').insert(data)];
                     case 1:
                         responseData = _b.sent();
                         return [2 /*return*/, response.status(200).json(responseData)];
@@ -196,7 +193,7 @@ var PokemonController = /** @class */ (function () {
                             cp_39: request.body.cp_39,
                             img_name: (_a = request === null || request === void 0 ? void 0 : request.file) === null || _a === void 0 ? void 0 : _a.filename
                         };
-                        return [4 /*yield*/, connection_1.default('pokemons').where('id', id).update(data)];
+                        return [4 /*yield*/, knex('pokemons').where('id', id).update(data)];
                     case 1:
                         responseData = _b.sent();
                         return [2 /*return*/, response.status(200).json(responseData)];
@@ -211,7 +208,7 @@ var PokemonController = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         id = request.params.id;
-                        return [4 /*yield*/, connection_1.default('pokemons').where('id', id).del()];
+                        return [4 /*yield*/, knex('pokemons').where('id', id).del()];
                     case 1:
                         _a.sent();
                         return [2 /*return*/, response.status(204).send()];
