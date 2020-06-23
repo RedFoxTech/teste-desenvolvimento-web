@@ -1,0 +1,56 @@
+#page-search {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+#page-search header {
+  margin-top: 48px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-search header a {
+  color: var(--title-color);
+  font-weight: bold;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+}
+
+#page-search header a svg {
+  margin-right: 16px;
+  color: var(--primary-color);
+}
+
+#page-search main {
+  margin: 80px auto;
+  padding: 64px;
+  max-width: 730px;
+  background: #FFF;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#page-search main h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#page-search main p {
+  font-size: 24px;
+  padding: 8px;
+}
+
+
+
+
+
+
+
