@@ -1,4 +1,7 @@
 import {Request, Response} from 'express';
+require('dotenv').config();
+
+console.log(process.env.APP_URL)
 
 const knex = require('../database/connection.js');
 
@@ -68,7 +71,7 @@ class PokemonController {
       const serializedPokemons = pokemons.map((pokemon:Pokemon) => {
         return {
           ...pokemon,
-          image_url: Number.isInteger(Number(pokemon.img_name)) ? null : `http://localhost:3333/uploads/${pokemon.img_name}`
+          image_url: Number.isInteger(Number(pokemon.img_name)) ? null : process.env.APP_URL+`/uploads/${pokemon.img_name}`
         }
       })
 
@@ -85,7 +88,7 @@ class PokemonController {
 
     const serializedPokemon =  {
       ...pokemon,
-      image_url:  Number.isInteger(Number(pokemon.img_name)) ? null : `http://localhost:3333/uploads/${pokemon.img_name}`
+      image_url:  Number.isInteger(Number(pokemon.img_name)) ? null : process.env.APP_URL+`/uploads/${pokemon.img_name}`
     }
 
     return response.status(200).json(serializedPokemon)
