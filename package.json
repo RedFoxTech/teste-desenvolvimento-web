@@ -1,0 +1,33 @@
+{
+  "name": "teste-desenvolvimento-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kelvynsantana/teste-desenvolvimento-web.git",
+  "author": "kelvynsantana <santanakelvyn@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev:server": "nodemon src/server.js",
+    "dev:debug": "nodemon -—inspect src/server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.13",
+    "uuidv4": "^6.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-prettier": "^3.1.4",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5",
+    "sequelize-cli": "^5.5.1",
+    "sucrase": "^3.15.0"
+  }
+}
