@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 require('dotenv').config();
 
-const knex = require('../database/connection')
+import knex from '../database/connection';
 
 interface Pokemon {
   id: string;

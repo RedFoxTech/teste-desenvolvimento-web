@@ -4,14 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var knex_1 = __importDefault(require("knex"));
-var connection = knex_1.default({
-    client: 'pg',
-    connection: {
-        host: 'localhost',
-        user: 'postgres',
-        password: 'postgres',
-        database: 'teste_fox'
-    },
-    useNullAsDefault: true,
-});
-exports.default = connection;
+var knexfile_1 = __importDefault(require("../knexfile"));
+// Set environment from `.env`
+var knex = knex_1.default(knexfile_1.default);
+exports.default = knex;
