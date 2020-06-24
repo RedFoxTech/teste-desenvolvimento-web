@@ -1,14 +1,7 @@
 const knex = require('knex');
-require('dotenv').config();
 
-const config = require('../../knexfile');
+const knexfile = require('../../knexfile');
 
+const connection = knex(knexfile);
 
-let connection;
-if(process.env.NODE_ENV === 'development') {
-  connection = knex(config.development);
-}else {
-  connection = knex(config.production);
-}
-
-module.exports = connection
+module.exports = connection;

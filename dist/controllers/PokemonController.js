@@ -48,8 +48,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 require('dotenv').config();
-console.log(process.env.APP_URL);
-var knex = require('../database/connection.js');
+var knex = require('../database/connection');
 var PokemonController = /** @class */ (function () {
     function PokemonController() {
     }
