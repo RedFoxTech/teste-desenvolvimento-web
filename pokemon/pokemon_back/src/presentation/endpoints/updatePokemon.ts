@@ -1,11 +1,14 @@
 import { Request, Response } from "express";
+import { UpdatePokemonUC } from "../../business/usecase/pokemon/updatePokemonUC";
 import { PokemonDB } from "../../data/pokemonDatabase";
-import { RegisterPokemonUC } from "../../business/usecase/pokemon/registerPokemonUC";
 
-export const RegisterPokemonEndpoint = async(req: Request, res: Response) =>{
-    try{
-        const registerPokemonUC = new RegisterPokemonUC(new PokemonDB());
-        const result = await registerPokemonUC.execute({
+
+
+export const UpdatePokemonEndpoint = async (req: Request, res: Response) => {
+    try {
+        const updatePokemonUC = new UpdatePokemonUC(new PokemonDB());
+        const result = await updatePokemonUC.execute({
+            id: req.params.id,
             pokedexID: req.body.pokedexID,
             name: req.body.name,
             img: req.body.img,
@@ -25,7 +28,8 @@ export const RegisterPokemonEndpoint = async(req: Request, res: Response) =>{
         })
 
         res.status(200).send(result)
-    } catch(err) {
+
+    } catch (err) {
         res.status(400).send({
             message: err.message
         })
