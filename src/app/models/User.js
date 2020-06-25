@@ -1,48 +1,58 @@
-import Sequelize, { Model } from 'sequelize';
-import bcrypt from 'bcryptjs';
+import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 
-import { uuid } from 'uuidv4';
 import authConfig from '../../config/auth';
 
-class User extends Model {
-  static init(sequelize) {
-    super.init(
-      {
-        id: {
-          type: Sequelize.UUID,
-          defaultValue() {
-            return uuid();
-          },
-          primaryKey: true,
-        },
-        name: Sequelize.STRING,
-        email: Sequelize.STRING,
-        password: Sequelize.VIRTUAL,
-        password_hash: Sequelize.STRING,
-      },
-      {
-        sequelize,
-      }
-    );
+const UserSchema = new mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+  },
+  { timestamps: true }
+);
 
-    this.addHook('beforeSave', async (user) => {
-      if (user.password) {
-        user.password_hash = await bcrypt.hash(user.password, 8);
-      }
-    });
-    return this;
+UserSchema.pre('save', async function (next) {
+  if (!this.isModified('password')) {
+    return next();
   }
 
-  checkPassword(password) {
-    return bcrypt.compare(password, this.password_hash);
-  }
+  this.password = await bcrypt.hash(this.password, 8);
+});
 
+UserSchema.methods = {
+  compareHash(password) {
+    return bcrypt.compare(password, this.password);
+  },
+};
+
+UserSchema.statics = {
   generateToken({ id }) {
     return jwt.sign({ id }, authConfig.secret, {
       expiresIn: authConfig.expiresIn,
     });
-  }
-}
+  },
+};
 
-export default User;
+UserSchema.set('toJSON', {
+  transform(doc, ret, opt) {
+    delete ret.password;
+    ret.id = ret._id;
+    delete ret._id;
+    delete ret.__v;
+    return ret;
+  },
+});
+
+export default mongoose.model('User', UserSchema);

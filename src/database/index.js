@@ -1,10 +1,4 @@
-import Sequelize from 'sequelize';
-
-import User from '../app/models/User';
-
-import databaseConfig from '../config/database';
-
-const models = [User];
+import mongoose from 'mongoose';
 
 class Database {
   constructor() {
@@ -12,13 +6,12 @@ class Database {
   }
 
   init() {
-    this.connection = new Sequelize(databaseConfig);
-
-    models
-      .map((model) => model.init(this.connection))
-      .map(
-        (model) => model.associate && model.associate(this.connection.models)
-      );
+    this.mongooseConnection = mongoose.connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useFindAndModify: false,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+    });
   }
 }
 

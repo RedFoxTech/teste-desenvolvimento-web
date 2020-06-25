@@ -4,32 +4,25 @@ class SessionController {
   async store(request, response) {
     const { email, password } = request.body;
 
-    const user = await User.findOne({ where: { email } });
+    const user = await User.findOne({ email });
 
     if (!user) {
-      return response.json({
-        error:
-          'Invalid email or password, please check your credentials and try again',
-      });
+      return response
+        .status(401)
+        .json(
+          'Invalid email or password, please check your credentials and try again'
+        );
     }
 
-    if (!(await user.checkPassword(password))) {
-      return response.status(401).json({
-        error:
-          'Invalid email or password, please check your credentials and try again ',
-      });
+    if (!(await user.compareHash(password))) {
+      return response
+        .status(401)
+        .json(
+          'Invalid email or password, please check your credentials and try again'
+        );
     }
 
-    const { id, name } = user;
-    const token = await user.generateToken({ user });
-    return response.json({
-      user: {
-        id,
-        name,
-        email,
-      },
-      token,
-    });
+    return response.json({ user, token: User.generateToken(user) });
   }
 }
 
