@@ -1,11 +1,15 @@
 import { Router } from 'express';
+import multer from 'multer';
 import authMiddleware from './app/middlewares/auth';
+import uploadConfig from './config/upload';
 
 import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
 import PokemonController from './app/controllers/PokemonController';
+import UpdatePokemonImageController from './app/controllers/UpdatePokemonImageController';
 
 const routes = new Router();
+const upload = multer(uploadConfig);
 
 routes.get('/', (request, response) => {
   return response.json({
@@ -22,9 +26,17 @@ routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
 
 /** Authenticated middlweares */
+routes.get('/pokemons', PokemonController.index);
+routes.get('/pokemons/:id', PokemonController.show);
+
 routes.use(authMiddleware);
 routes.post('/pokemons', PokemonController.store);
-routes.post('/pokemons/:id', PokemonController.update);
-routes.get('/pokemons', PokemonController.index);
+routes.put('/pokemons/:id', PokemonController.update);
+routes.delete('/pokemons/:id', PokemonController.destroy);
+routes.patch(
+  '/pokemons/:id/image',
+  upload.single('file'),
+  UpdatePokemonImageController.update
+);
 
 export default routes;

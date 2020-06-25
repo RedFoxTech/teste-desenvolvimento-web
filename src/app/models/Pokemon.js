@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import mongoosePaginate from 'mongoose-paginate';
+import mongooseFindAndFilter from 'mongoose-find-and-filter';
 
 const PokemonSchema = mongoose.Schema({
   name: {
@@ -159,5 +160,6 @@ PokemonSchema.set('toJSON', {
 });
 
 PokemonSchema.plugin(mongoosePaginate);
+PokemonSchema.plugin(mongooseFindAndFilter);
 
 export default mongoose.model('Pokemon', PokemonSchema);

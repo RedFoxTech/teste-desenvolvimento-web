@@ -7,24 +7,34 @@
   "license": "MIT",
   "scripts": {
     "dev:server": "nodemon src/server.js",
-    "dev:debug": "nodemon -—inspect src/server.js"
+    "build": "sucrase ./src -d ./dist --transform imports",
+    "dev:debug": "nodemon -—inspect src/server.js",
+    "test": "NODE_ENV=test jest --detectOpenHandles --forceExit"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.5.9",
     "mongoose": "^5.9.20",
-    "mongoose-paginate": "^5.0.3"
+    "mongoose-find-and-filter": "^1.0.0",
+    "mongoose-paginate": "^5.0.3",
+    "multer": "^1.4.2"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^1.1.5",
+    "@sucrase/jest-plugin": "^2.0.0",
+    "@types/jest": "^26.0.3",
     "eslint": "^7.3.1",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-prettier": "^3.1.4",
+    "jest": "^26.1.0",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
-    "sucrase": "^3.15.0"
+    "sucrase": "^3.15.0",
+    "supertest": "^4.0.2"
   }
 }
