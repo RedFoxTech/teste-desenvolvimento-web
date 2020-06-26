@@ -77,4 +77,28 @@ describe('Session', () => {
 
     expect(response.status).toBe(200); 
   })
+
+  it('should not be able to access private routes when unauthenticated',async () => {
+    const user = await factory.create('User', {
+      password: '123456'
+    })
+
+    const response = await request(app)
+      .get('/pokemons')
+
+    expect(response.status).toBe(401); 
+  })
+
+  it('should not be able to access private routes with invalid token',async () => {
+    const user = await factory.create('User', {
+      password: '123456'
+    })
+
+    const response = await request(app)
+      .get('/pokemons')
+      .set('Authorization', `Bearer 123456789`)
+
+
+    expect(response.status).toBe(401); 
+  })
 })
