@@ -7,7 +7,7 @@ class PokemonController {
       {},
       {
         page,
-        limit: parseInt(limit, 8),
+        limit: parseInt(limit, 10) || 10,
         populate: 'familyId',
         lean: false,
       }

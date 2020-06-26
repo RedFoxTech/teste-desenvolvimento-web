@@ -31,7 +31,7 @@ routes.use(authMiddleware);
 routes.get('/pokemons', PokemonController.index);
 routes.get('/pokemons/:id', PokemonController.show);
 routes.post('/pokemons', PokemonController.store);
-routes.put('/pokemons/:id', PokemonController.update);
+routes.patch('/pokemons/:id', PokemonController.update);
 routes.delete('/pokemons/:id', PokemonController.destroy);
 routes.patch(
   '/pokemons/:id/image',
