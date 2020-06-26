@@ -1,7 +1,9 @@
 import { MongoClient } from 'mongodb';
 import request from 'supertest';
-import app from '../../src/app';
+import bcrypt from 'bcryptjs'
 
+import app from '../../src/app';
+import factory from '../factories'
 describe('User', () => {
   let connection;
   let db;
@@ -22,7 +24,7 @@ describe('User', () => {
   beforeEach(async () => {
     await db.collection('users').deleteMany({});
   });
-  it('should be able to register', async () => {
+  it('should be able to register a new user', async () => {
     const response = await request(app).post('/users').send({
       name: 'Fulano de tal',
       email: 'test@test.com',
@@ -31,4 +33,16 @@ describe('User', () => {
 
     expect(response.body).toHaveProperty('id');
   });
+
+  it('should encrypt user password', async () => {
+    const user = await factory.create('User', {
+      password: '123456'
+    })
+
+    const compareHash = await bcrypt.compare('123456', user.password)
+
+    expect(compareHash).toBe(true);
+  })
+
+
 });

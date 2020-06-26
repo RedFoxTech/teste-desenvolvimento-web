@@ -9,16 +9,17 @@
     "dev:server": "nodemon src/server.js",
     "build": "sucrase ./src -d ./dist --transform imports",
     "dev:debug": "nodemon -—inspect src/server.js",
-    "test": "NODE_ENV=test jest --detectOpenHandles --forceExit"
+    "test": "NODE_ENV=test jest --detectOpenHandles --forceExit --verbose"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "factory-girl": "^5.0.4",
+    "faker": "^4.1.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.20",
-    "mongoose-find-and-filter": "^1.0.0",
     "mongoose-paginate": "^5.0.3",
     "multer": "^1.4.2"
   },

@@ -26,10 +26,10 @@ routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
 
 /** Authenticated middlweares */
-routes.get('/pokemons', PokemonController.index);
-routes.get('/pokemons/:id', PokemonController.show);
 
 routes.use(authMiddleware);
+routes.get('/pokemons', PokemonController.index);
+routes.get('/pokemons/:id', PokemonController.show);
 routes.post('/pokemons', PokemonController.store);
 routes.put('/pokemons/:id', PokemonController.update);
 routes.delete('/pokemons/:id', PokemonController.destroy);
