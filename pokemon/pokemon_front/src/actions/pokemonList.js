@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "http://localhost:3003"
+const baseURL = "https://pokeapiteste.herokuapp.com"
 
 const setPokemons = (pokemons) => ({
     type: 'SET_POKEMONS',
@@ -10,7 +10,6 @@ const setPokemons = (pokemons) => ({
 })
 
 export const getPokemons = (page) => async (dispath) => {
-
     try {
         const response = await axios.get(`${baseURL}/list?page=${page}`)
        

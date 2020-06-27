@@ -3,7 +3,6 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button"
 import { routes } from "../Router/index";
 import { connect } from "react-redux";
-import { push } from "connected-react-router";
 import logo from "../../resources/pokemon_go.png";
 import { createPokemon } from "../../actions/pokemons";
 import { DivContet, HeaderLogin, SignUpWrapper, LogoHome } from "./styled"

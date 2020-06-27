@@ -3,16 +3,25 @@ import { push } from "connected-react-router";
 import { routes } from "../containers/Router"
 import { getPokemons } from "./pokemonList";
 
-const baseURL = "http://localhost:3003"
+const baseURL = "https://pokeapiteste.herokuapp.com"
 
-export const deleteVideo = (id, name) => async (dispatch) => {
+export const setPokemonId = (id) => ({
+    type:"SET_POKEMON_ID",
+    payload:{
+        id
+    }
+})
+
+
+
+export const deletePokemon= (id) => async (dispatch) => {
 
     try {
         if (window.confirm("Delete Pokemon")) {
             await axios.delete(`${baseURL}/deletePokemon/${id}`, {
 
             })
-            window.alert(`The pokemon ${name} is deleted`)
+            window.alert(`The pokemon ${id} is deleted`)
             dispatch(getPokemons())
         }
 

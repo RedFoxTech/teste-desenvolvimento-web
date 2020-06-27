@@ -5,9 +5,11 @@ import { push } from "connected-react-router";
 import logo from "../../resources/pokemon_go.png"
 import pikachu from "../../resources/pikachu.png"
 import { getPokemons } from "../../actions/pokemonList";
+import { deletePokemon, setPokemonId,   } from "../../actions/pokemons";
 import Loading from "../../components/Loading"
 import { PokemonCardContainer, PageCount, StyledHeader, StyledLogo, LogoContainer, StyledImgSearch, SearchContainer, ButtonMenu, StyledButton, StyledInput, ButtonPass } from "./styled"
 import PokemonCard from "../../components/PokemonCard";
+import pokemons from "../../reducers/pokemons";
 
 
 
@@ -21,8 +23,10 @@ export class Home extends Component {
         }
     }
 
+
     componentDidMount() {
         this.props.getPokemons(this.state.page)
+        const pokemonid = this.props.getPokemons(pokemons.id)
     };
 
     handleFieldChange = event => {
@@ -51,11 +55,13 @@ export class Home extends Component {
         this.props.getPokemons(page - 1)
     }
 
+  
 
     render() {
 
         const { search } = this.state
         const { pokemonList } = this.props
+
 
 
         const pokemonIsReady = this.props.pokemonList.lenght === 0 ? <Loading /> : (
@@ -68,6 +74,7 @@ export class Home extends Component {
                         name={pokemons.name}
                         type1={pokemons.type1}
                         type2={pokemons.type2}
+                        button1={"x"} onClick1={this.props.goToRegister}
                     />
 
                 )}
@@ -113,7 +120,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     getPokemons: (page) => dispatch(getPokemons(page)),
     goToRegister: () => dispatch(push(routes.Register))
-
 })
 
 

@@ -9,7 +9,7 @@ export const StyledHeader = styled.header`
     justify-content: space-between;
     background-color: #c5b6ff;
     color: white;
-    font-family: 'Manrope', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 `
 export const StyledLogo = styled.img`
     width: 160px;
