@@ -10,11 +10,10 @@ import Loading from "../../components/Loading"
 import { PokemonCardContainer, PageCount, StyledHeader, StyledLogo, LogoContainer, StyledImgSearch, SearchContainer, ButtonMenu, StyledButton, StyledInput, ButtonPass } from "./styled"
 import PokemonCard from "../../components/PokemonCard";
 import pokemons from "../../reducers/pokemons";
-import Search from "../Search";
 
 
 
-export class Home extends Component {
+export class SearchPokemon extends Component {
     constructor(props) {
         super(props);
 
@@ -37,24 +36,7 @@ export class Home extends Component {
         this.setState({ search: event.target.value })
     };
 
-    handleNextPage = () => {
-        let { page } = this.state
-        this.setState({
-            page: page + 1
-        })
-        this.props.getPokemons(page + 1)
-    }
-
-    handlePreviousPage = () => {
-        let { page } = this.state
-        if (page > 1) {
-            this.setState({
-                page: page - 1
-            })
-        }
-
-        this.props.getPokemons(page - 1)
-    }
+   
 
     handleDeletePokemon = (id, name) => {
         this.props.deletePokemon(id, name)
@@ -92,10 +74,10 @@ export class Home extends Component {
             <>
                 <StyledHeader>
                     <LogoContainer>
-                        <StyledLogo src={logo} />
+                        <StyledLogo onClick={this.props.goToHome} src={logo} />
                     </LogoContainer>
                     <SearchContainer>
-                       <StyledButton onClick={this.props.goToSearch} >Search</StyledButton> <StyledImgSearch src={pikachu}></StyledImgSearch>
+                        <StyledInput placeholder="Search" /> <StyledImgSearch src={pikachu}></StyledImgSearch>
                     </SearchContainer>
                     <ButtonMenu>
                         <StyledButton onClick={this.props.goToRegister}>Register Pokemon</StyledButton>
@@ -105,9 +87,7 @@ export class Home extends Component {
                     {pokemonIsReady}
                 </PokemonCardContainer>
                 <ButtonPass>
-                    <div>
-                        <StyledButton onClick={this.handlePreviousPage}>Previous</StyledButton><PageCount>{this.state.page}</PageCount><StyledButton onClick={this.handleNextPage} > Next </StyledButton>
-                    </div>
+                    
                 </ButtonPass>
             </>
         );
@@ -123,7 +103,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => ({
     getPokemons: (page) => dispatch(getPokemons(page)),
     goToRegister: () => dispatch(push(routes.Register)),
-    goToSearch: () => dispatch(push(routes.Search)),
+    goToHome: () => dispatch(push(routes.Home)),
     deletePokemon: (id, name) => dispatch(deletePokemon(id, name))
 })
 
@@ -132,4 +112,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Home);
+)(SearchPokemon);

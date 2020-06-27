@@ -6,22 +6,22 @@ import { getPokemons } from "./pokemonList";
 const baseURL = "https://pokeapiteste.herokuapp.com"
 
 export const setPokemonId = (id) => ({
-    type:"SET_POKEMON_ID",
-    payload:{
+    type: "SET_POKEMON_ID",
+    payload: {
         id
     }
 })
 
 
 
-export const deletePokemon= (id) => async (dispatch) => {
+
+
+export const deletePokemon = (id, name) => async (dispatch) => {
 
     try {
-        if (window.confirm("Delete Pokemon")) {
-            await axios.delete(`${baseURL}/deletePokemon/${id}`, {
-
-            })
-            window.alert(`The pokemon ${id} is deleted`)
+        if (window.confirm(`Delete Pokemon ${name} ?`)) {
+            await axios.delete(`${baseURL}/deletePokemon/${id}`)
+            window.alert(`The pokemon ${name} is deleted`)
             dispatch(getPokemons())
         }
 
@@ -43,7 +43,7 @@ export const createPokemon = (
 
             window.alert("Pokemon Registred!")
             dispatch(push(routes.Home))
-            
+
         } catch (error) {
             window.alert("Error !")
         }
