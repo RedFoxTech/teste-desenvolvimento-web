@@ -47,11 +47,6 @@ npm install para instalar todas as dependências; npm run start para rodar local
 HOST= USER= PASSWORD= DATABASE= CLIENT= 
 
 
-## Observações
-
-Não consegui implementar todas as funcionalidades passadas no back para o front.
-
-
 ## Links para acessar o projeto
 
 Documentação Postman
