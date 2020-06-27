@@ -10,9 +10,9 @@ export class UpdatePokemonUC {
 
         const pokemon = await this.pokemonGateway.getPokemonByid(input.id)
 
-        // if (!pokemon) {
-        //     throw new Error("Pokemon not found");
-        // }
+        if (!pokemon) {
+            throw new Error("Pokemon not found");
+        }
         await this.pokemonGateway.updatePokemon(input)
 
         return {

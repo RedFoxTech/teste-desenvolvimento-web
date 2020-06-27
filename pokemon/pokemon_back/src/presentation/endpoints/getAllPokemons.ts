@@ -7,11 +7,9 @@ export const GetAllPokemonsEndpoint = async (req: Request, res: Response) => {
         const getAllPokemonsUC = new GetAllPokemonsUC(new PokemonDB());
 
         const result = await getAllPokemonsUC.execute({
-            page: req.body.page
+            page: Number (req.query.page)
         })
-        res.status(200).send({
-            result
-        })
+        res.status(200).send({ result })
 
     } catch (err) {
         res.status(400).send({

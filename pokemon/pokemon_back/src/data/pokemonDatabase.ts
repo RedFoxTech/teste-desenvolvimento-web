@@ -128,6 +128,38 @@ export class PokemonDB extends BaseDB implements PokemonGateway {
 
     }
 
+    public async getPokemonByNameOrPokeID(nameOrPokedexID: string): Promise<Pokemon[] | undefined> {
+        const pokemon = await this.connection.raw(`
+            SELECT * FROM ${this.pokemonTable}
+            WHERE name LIKE '%${nameOrPokedexID}%' OR pokedexID LIKE '%${nameOrPokedexID}%'
+        `)
+
+        return await pokemon[0].map((pokemon: any) => {
+            return new Pokemon(
+                pokemon.id,
+                pokemon.pokedexID,
+                pokemon.name,
+                pokemon.img,
+                pokemon.generation,
+                pokemon.envolved,
+                pokemon.familyID,
+                pokemon.cross_gen,
+                pokemon.type1,
+                pokemon.type2,
+                pokemon.weather1,
+                pokemon.weather2,
+                pokemon.stat_total,
+                pokemon.atk,
+                pokemon.def,
+                pokemon.sta,
+                pokemon.shiny
+            );
+        });
+    }
+
+
+
+
 
     public async updatePokemon(input: Partial<UpdatePokemonData>) {
         await this.connection(this.pokemonTable).update(input).where({ id: input.id })
@@ -145,33 +177,7 @@ export class PokemonDB extends BaseDB implements PokemonGateway {
 
 
 
-    // public async updatePoke(
-    //     id: string,
-    //     pokedexID: number,
-    //     name: string,
-    //     img: string,
-    //     generation: number,
-    //     envolved: number,
-    //     familyID: number,
-    //     cross_gen: number,
-    //     type1: string,
-    //     type2: string,
-    //     weather1: string,
-    //     weather2: string,
-    //     stat_total: number,
-    //     atk: number,
-    //     def: number,
-    //     sta: number,
-    //     shiny: number): Promise<void> {
 
-    //         await this.connection.raw(`
-    //             UPDATE ${this.pokemonTable}
-    //             SET pokedexID = '${pokedexID}', name = '${name}', img = '${img}', generation = '${generation}', envolved = '${envolved}', familyID = '${familyID}',
-    //             cross_gen = '${cross_gen}', type1 = '${type1}', type2 = '${type2}', weather1 = '${weather1}', weather2 = '${weather2}', stat_total = '${stat_total}',
-    //             atk = '${atk}', def = '${def}', sta = '${sta}', shiny = '${shiny}' 
-    //             WHERE id = '${id}' 
-    //         `)
-    // }
 }
 
 

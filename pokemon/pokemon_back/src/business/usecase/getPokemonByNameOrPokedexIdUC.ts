@@ -1,26 +1,19 @@
-import { PokemonGateway } from "../../gateways/pokeGateway";
+import { PokemonGateway } from "../gateways/pokeGateway";
 
 
-export class GetAllPokemonsUC {
-    constructor(
-        private pokemonGateway: PokemonGateway
-    ) { }
+export class GetPokemonByNameOrPokedexIdUC {
+    constructor(private pokemonGateway: PokemonGateway) { }
 
-    private POKE_PER_PAGE = 12;
+    public async execute(input: GetPokemonByNameOrPokedexIdUCInput): Promise<GetPokemonByNameOrPokedexIdUCOutput>{
 
-    public async execute(input: GetAllPokemonsUCInput): Promise<GetAllPokemonsUCOutput> {
+        let pokemons = await this.pokemonGateway.getPokemonByNameOrPokeID(input.nameOrPokedexID)
 
-        let page = input.page >= 1 ? input.page : 1;
-        const offset = this.POKE_PER_PAGE * (page - 1)
-
-        let pokes = await this.pokemonGateway.getAllPokemons(this.POKE_PER_PAGE, offset);
-
-        if (!pokes) {
-            pokes = []
+        if (!pokemons) {
+            pokemons = []
         };
 
         return {
-            pokemons: pokes.map(poke => {
+            pokemons: pokemons.map(poke => {
                 return {
                     id: poke.getId(),
                     pokedexID: poke.getPokedexID(),
@@ -42,16 +35,18 @@ export class GetAllPokemonsUC {
                 }
             })
         }
+
     }
 
 }
 
-export interface GetAllPokemonsUCInput {
-    page: number;
+interface GetPokemonByNameOrPokedexIdUCInput{
+    nameOrPokedexID: string
 }
 
-export interface GetAllPokemonsUCOutput{
-pokemons: GetAllPokemonsUCOutputPoke[];
+interface GetPokemonByNameOrPokedexIdUCOutput{
+    pokemons: GetAllPokemonsUCOutputPoke[]
+
 }
 
 export interface GetAllPokemonsUCOutputPoke {
@@ -73,5 +68,4 @@ export interface GetAllPokemonsUCOutputPoke {
     sta: number;
     shiny: number;
 }
-
 
