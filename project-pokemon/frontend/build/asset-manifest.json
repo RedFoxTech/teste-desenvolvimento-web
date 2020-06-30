@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f6a9991c.chunk.css",
+    "main.js": "/static/js/main.37633d80.chunk.js",
+    "main.js.map": "/static/js/main.37633d80.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f78e4ab1.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f78e4ab1.js.map",
+    "static/css/2.f005c5ff.chunk.css": "/static/css/2.f005c5ff.chunk.css",
+    "static/js/2.f5ce5c2f.chunk.js": "/static/js/2.f5ce5c2f.chunk.js",
+    "static/js/2.f5ce5c2f.chunk.js.map": "/static/js/2.f5ce5c2f.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.3e46e53c020830f927061ab9e8620216.js": "/precache-manifest.3e46e53c020830f927061ab9e8620216.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.f005c5ff.chunk.css.map": "/static/css/2.f005c5ff.chunk.css.map",
+    "static/css/main.f6a9991c.chunk.css.map": "/static/css/main.f6a9991c.chunk.css.map",
+    "static/js/2.f5ce5c2f.chunk.js.LICENSE.txt": "/static/js/2.f5ce5c2f.chunk.js.LICENSE.txt",
+    "static/media/pokefox.png": "/static/media/pokefox.c85bc991.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f78e4ab1.js",
+    "static/css/2.f005c5ff.chunk.css",
+    "static/js/2.f5ce5c2f.chunk.js",
+    "static/css/main.f6a9991c.chunk.css",
+    "static/js/main.37633d80.chunk.js"
+  ]
+}
