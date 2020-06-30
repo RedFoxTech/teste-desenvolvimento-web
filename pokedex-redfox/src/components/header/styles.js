@@ -7,6 +7,8 @@ export const Header = styled.div `
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
    
 
     img {
@@ -56,8 +58,6 @@ export const NavItem = styled.li `
 
     a:hover {
         filter: brightness(1.2)
-    }
-
     }
 
    
