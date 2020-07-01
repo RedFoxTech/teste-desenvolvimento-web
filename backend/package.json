@@ -15,6 +15,7 @@
     "@types/sequelize": "^4.28.9",
     "@types/supertest": "^2.0.10",
     "aws-sdk": "^2.707.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "multer": "^1.4.2",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@types/aws-sdk": "^2.7.0",
+    "@types/cors": "^2.8.6",
     "@types/express": "^4.17.6",
     "@types/jest": "^26.0.3",
     "@types/multer": "^1.4.3",

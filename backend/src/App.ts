@@ -1,5 +1,6 @@
 import express from 'express'
 import routes from './routes'
+import cors from 'cors'
 
 require('dotenv').config({
   path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env'
@@ -15,6 +16,7 @@ class App {
 
   middlewares () {
     this.express.use(express.json())
+    this.express.use(cors())
   }
 
   routes () {
