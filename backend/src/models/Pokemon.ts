@@ -2,10 +2,11 @@ import { DATE, STRING, INTEGER, BOOLEAN, Model } from 'sequelize'
 import database from '../database'
 
 export default class Pokemons extends Model {
-  public id!: number
+  public id?: number
   public name!: string
   public pokedexNumber!:string
   public imgName!: string
+  public imgUrl!: string
   public generation!: string
   public evolutionStage?: string
   public evolved!: boolean
@@ -40,26 +41,43 @@ export default class Pokemons extends Model {
 
 Pokemons.init({
   id: {
-    type: INTEGER.UNSIGNED,
+    type: INTEGER,
     primaryKey: true,
     autoIncrement: true
   },
   name: {
     type: STRING,
     allowNull: false,
-    unique: true
+    unique: true,
+    validate: {
+      notEmpty: true
+    }
   },
   pokedexNumber: {
     type: STRING,
-    allowNull: false
+    allowNull: false,
+    unique: true
   },
   imgName: {
     type: STRING,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
+  },
+  imgUrl: {
+    type: STRING,
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   generation: {
     type: STRING,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   evolutionStage: {
     type: STRING

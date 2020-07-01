@@ -16,9 +16,14 @@ module.exports = {
       },
       pokedex_number: {
         type: Sequelize.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       img_name: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      img_url: {
         type: Sequelize.STRING,
         allowNull: false
       },
