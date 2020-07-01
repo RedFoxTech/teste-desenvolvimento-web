@@ -5,9 +5,7 @@ function PokemonCard (props) {
 
     let color1 = "";
     let color2 = "";
-    // if (props.PokeType === "grass") {
-    //     color = "#a3ff84";
-    // }
+
 
     switch(props.PokeType){
         case "grass":
@@ -20,7 +18,7 @@ function PokemonCard (props) {
             color1 = "lightblue";
             break;
         case "fire":
-            color1 = "#ff4949";
+            color1 = "#ff790c";
             break;
         case "bug":
             color1 = "#C2CE63"
@@ -82,7 +80,7 @@ function PokemonCard (props) {
             color2 = "lightblue";
             break;
         case "fire":
-            color2 = "#ff4949";
+            color2 = "#ff790c";
             break;
         case "bug":
             color2 = "#C2CE63"
