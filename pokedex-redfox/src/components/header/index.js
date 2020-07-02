@@ -1,42 +1,25 @@
 import React from 'react';
-import {Header, NavBar, NavItem} from './styles';
+import {Header} from './styles';
 import FoxLogo from '../../img/redfox-logo.png';
+import { useHistory } from 'react-router-dom'
+import PokeHomeIcon from '../../img/pokemon-home.png'
 
 
-function HeaderFox() {
+
+function HeaderFox(props) {
+
+  const history = useHistory()
+
+  const handleHomeButton = () => {
+    history.push('/')
+  }
 
     return (
       <Header>
        <img src={FoxLogo} alt="Fox-Logo"/>
-       <NaviBar>
-         <NaviItem icon="🔥" />
-         <NaviItem icon="🍃" />
-         <NaviItem icon="💧" />
-       </NaviBar>
+       <button onClick={handleHomeButton}><img src={PokeHomeIcon} alt="Pokeball"></img></button>
+
       </Header>
     );
   }
-
-function NaviBar (props) {
-  return (
-    <div>
-      <NavBar>
-        <ul>
-          {props.children}
-        </ul>
-      </NavBar>
-    </div>
-  )
-}
-
-function NaviItem (props){
-  return (
-    <NavItem>
-      <a href="#">
-        {props.icon}
-      </a>
-    </NavItem>
-
-  );
-}
   export default HeaderFox;

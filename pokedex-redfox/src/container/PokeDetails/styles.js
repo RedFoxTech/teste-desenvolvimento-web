@@ -1,13 +1,29 @@
 import styled from 'styled-components';
 
+export const BackgroundPokeDetails = styled.div `
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background: ${props => {
+        if (props.background1 && props.background2){
+            return `linear-gradient(90deg, ${props.background1} 50%, ${props.background2} 50%);`
+        }
+        else {
+            return props.background1
+        }
+    }};
+`
+
 export const PokeDetailsContainer = styled.div `
 
     width: 98vw;
     height: 60vh;
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 10px;
-    background-color: lightblue;
+    background: white;
+    opacity: 0.9;
+
     display: flex;
+    margin-left: 3px;
 
     
 `
@@ -19,44 +35,50 @@ export const PainelHeader = styled.div `
         color: black;
         text-align: center;
         height: 70px;
-        background-color: white;
         width: 98vw;
 `
 
 export const PokemonSprite = styled.div `
-    border: 1px solid red;
     height: 200px;
     width: 50vw;
     display: flex;
     justify-content: center;
+    border-radius: 10px;
 
     img {
         display: flex;
-        width: 170px;
+        width: 120px;
+        height: 120px;
     }
 
 `
 
 export const PokeTypeHeader = styled.div `
     display: flex;
-    border: 1px solid black;
     width: 50vw;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 40px;
     align-items: center;
 
+    
     span:first-child {
-        background: green;
-        margin: 10px;
+        background: ${props => props.spanBg1};
+        margin-right: 10px;
     }
 
     span{
-        background: lightpink;
-    }
+        background: ${props => {
+            if (props.spanBg2 === ""){
+                return `""`
+        }
+        else {
+            return props.spanBg2
+        };
+    }}};
+
 `
 export const PokeAttributes = styled.div `
     display: flex;
     flex-direction: column;
-    border: 1px solid green;
     height: 160px;
 `

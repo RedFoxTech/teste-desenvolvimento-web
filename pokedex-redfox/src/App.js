@@ -1,59 +1,35 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Header from './components/header/index.js'
 import PokemonCard from './components/cards/index.js'
 import styled from 'styled-components'
-import {pokemons} from './Mock';
+import { pokemons } from './Mock';
 import Data from './Pokemon-data.json';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PokeDetails from './container/PokeDetails/index'
+import PokeMainPage from './container/PokeMainPage/index'
+import { useHistory } from 'react-router-dom'
 
 
-const MainContainer = styled.div `
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-`
+const App = () => {
 
+  const [pokemon,setPokemon] = useState(null);
 
+  const handleOnPokemonChange = (x) => {
+    setPokemon(x)
+  }
 
-
-function App() {
-
-  console.log(pokemons[0]["Type 1"]);
-
+  console.log(pokemon)
 
   return (
-
     <Router>
+      <Switch>
+        <Route exact path={'/'}><PokeMainPage changePokemon={handleOnPokemonChange} /></Route>
+        <Route exact path={'/poke-details'}><PokeDetails selectedPokemon={pokemon} /></Route>
+      </Switch>
+    </Router>
+  )
 
-      <MainContainer>
-
-      <Header/>
-
-        {/* {
-          Data.PokeData.map(function(item){
-
-          return (
-                  <>
-                    <PokemonCard 
-                      Pokename={item.Name} 
-                      PokeType={item["Type 1"]}
-                      PokeType2={item["Type 2"]}
-                      PokeImg={item.Row} />
-
-                    
-                  </>
-                )
-          })
-        } */}
-
-      <PokeDetails/>
-
-      </MainContainer>
-
-     </Router>
-
-  );
 }
+
 
 export default App;

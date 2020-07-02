@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.div`
+export const MainContainer = styled.a`
     width: 170px;
     height: 170px;
     border: 3px solid black;
@@ -9,6 +9,8 @@ export const MainContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
+    color: black;
     margin: 10px;
     /* background: linear-gradient(180deg, ${props => props.background} 50%, ${props => props.background2} 50%); */
     background: ${props => {
