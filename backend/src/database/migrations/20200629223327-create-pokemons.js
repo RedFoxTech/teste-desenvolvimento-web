@@ -15,7 +15,7 @@ module.exports = {
         unique: true
       },
       pokedex_number: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false,
         unique: true
       },

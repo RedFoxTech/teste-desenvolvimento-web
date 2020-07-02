@@ -4,7 +4,7 @@ import database from '../database'
 export default class Pokemons extends Model {
   public id?: number
   public name!: string
-  public pokedexNumber!:string
+  public pokedexNumber!:number
   public imgName!: string
   public imgUrl!: string
   public generation!: string
@@ -54,7 +54,7 @@ Pokemons.init({
     }
   },
   pokedexNumber: {
-    type: STRING,
+    type: INTEGER,
     allowNull: false,
     unique: true
   },
@@ -84,7 +84,10 @@ Pokemons.init({
   },
   evolved: {
     type: BOOLEAN,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   familyId: {
     type: INTEGER
@@ -94,61 +97,100 @@ Pokemons.init({
   },
   type1: {
     type: STRING,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   type2: {
     type: STRING
   },
   weather1: {
     type: STRING,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   weather2: {
     type: STRING
   },
   statTotal: {
     type: INTEGER,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   atk: {
     type: INTEGER,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   def: {
     type: INTEGER,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   sta: {
     type: INTEGER,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   legendary: {
     type: BOOLEAN,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   aquireable: {
     type: INTEGER,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   spawns: {
     type: BOOLEAN,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   regional: {
     type: BOOLEAN,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   raidable: {
     type: INTEGER,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   hatchable: {
     type: INTEGER,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   shiny: {
     type: BOOLEAN,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   nest: {
     type: BOOLEAN,
@@ -156,23 +198,38 @@ Pokemons.init({
   },
   new: {
     type: BOOLEAN,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   notGettable: {
     type: BOOLEAN,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   futureEvolve: {
     type: BOOLEAN,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   cp_100_lvl40: {
     type: INTEGER,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   cp_100_lvl39: {
     type: INTEGER,
-    allowNull: false
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
   },
   createdAt: {
     type: DATE,
@@ -185,5 +242,6 @@ Pokemons.init({
 },
 {
   sequelize: database.connection,
-  freezeTableName: true
+  freezeTableName: true,
+  tableName: 'pokemons'
 })
