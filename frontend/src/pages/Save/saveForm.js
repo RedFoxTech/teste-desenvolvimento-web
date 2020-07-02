@@ -291,8 +291,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                     label="Yes"
                     name='crossGen'
                     type='radio'
-                    defaultChecked={state.crossGen}
-                    onClick={e => setState({...state, crossGen: true})}
+                    checked={state.crossGen}
+                    onChange={e => setState({...state, crossGen: true})}
                   />
                   <Form.Check
                     required
@@ -300,8 +300,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                     label="No"
                     name='crossGen'
                     type='radio'
-                    defaultChecked={!state.crossGen}
-                    onClick={e => setState({...state, crossGen: false})}
+                    checked={!state.crossGen}
+                    onChange={e => setState({...state, crossGen: false})}
                   />
                 </div>
                 </Form.Group>
@@ -318,8 +318,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                     label="Yes"
                     name='legendary'
                     type='radio'
-                    defaultChecked={state.legendary}
-                    onClick={e => setState({...state, legendary: true})}
+                    checked={state.legendary}
+                    onChange={e => setState({...state, legendary: true})}
                   />
                   <Form.Check
                     required
@@ -327,8 +327,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                     label="No"
                     name='legendary'
                     type='radio'
-                    defaultChecked={!state.legendary}
-                    onClick={e => setState({...state, legendary: false})}
+                    checked={!state.legendary}
+                    onChange={e => setState({...state, legendary: false})}
                   />
                 </div>
                 </Form.Group>
@@ -345,8 +345,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                     label="Yes"
                     name='spawns'
                     type='radio'
-                    defaultChecked={state.spawns}
-                    onClick={e => setState({...state, spawns: true})}
+                    checked={state.spawns}
+                    onChange={e => setState({...state, spawns: true})}
                   />
                   <Form.Check
                     required
@@ -354,8 +354,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                     label="No"
                     name='spawns'
                     type='radio'
-                    defaultChecked={!state.spawns}
-                    onClick={e => setState({...state, spawns: false})}
+                    checked={!state.spawns}
+                    onChange={e => setState({...state, spawns: false})}
                   />
                 </div>
                 </Form.Group>
@@ -375,8 +375,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                       label="Yes"
                       name='regional'
                       type='radio'
-                      defaultChecked={state.regional}
-                      onClick={e => setState({...state, regional: true})}
+                      checked={state.regional}
+                      onChange={e => setState({...state, regional: true})}
                     />
                     <Form.Check
                       required
@@ -384,8 +384,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                       label="No"
                       name='regional'
                       type='radio'
-                      defaultChecked={!state.regional}
-                      onClick={e => setState({...state, regional: false})}
+                      checked={!state.regional}
+                      onChange={e => setState({...state, regional: false})}
                       />
                   </div>
                 </Form.Group>
@@ -402,8 +402,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                       label="Yes"
                       name='shiny'
                       type='radio'
-                      defaultChecked={state.shiny}
-                      onClick={e => setState({...state, shiny: true})}
+                      checked={state.shiny}
+                      onChange={e => setState({...state, shiny: true})}
                       />
                     <Form.Check
                       required
@@ -411,8 +411,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                       label="No"
                       name='shiny'
                       type='radio'
-                      defaultChecked={!state.shiny}
-                      onClick={e => setState({...state, shiny: false})}
+                      checked={!state.shiny}
+                      onChange={e => setState({...state, shiny: false})}
                     />
                   </div>
                 </Form.Group>
@@ -429,8 +429,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                       label="Yes"
                       name='nest'
                       type='radio'
-                      defaultChecked={state.nest}
-                      onClick={e => setState({...state, nest: true})}
+                      checked={state.nest}
+                      onChange={e => setState({...state, nest: true})}
                       />
                     <Form.Check
                       required
@@ -439,8 +439,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                       value='false'
                       name='nest'
                       type='radio'
-                      defaultChecked={!state.nest}
-                      onClick={e => setState({...state, nest: false})}
+                      checked={!state.nest}
+                      onChange={e => setState({...state, nest: false})}
                     />
                   </div>
                 </Form.Group>
@@ -459,8 +459,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                       label="Yes"
                       name='new'
                       type='radio'
-                      defaultChecked={state.new}
-                      onClick={e => setState({...state, new: true})}
+                      checked={state.new}
+                      onChange={e => setState({...state, new: true})}
                     />
                     <Form.Check
                       required
@@ -468,8 +468,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                       label="No"
                       name='new'
                       type='radio'
-                      defaultChecked={!state.new}
-                      onClick={e => setState({...state, new: false})}
+                      checked={!state.new}
+                      onChange={e => setState({...state, new: false})}
                     />
                   </div>
                 </Form.Group>
@@ -486,8 +486,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                       label="Yes"
                       name='notGettable'
                       type='radio'
-                      defaultChecked={state.notGettable}
-                      onClick={e => setState({...state, notGettable: true})}
+                      checked={state.notGettable}
+                      onChange={e => setState({...state, notGettable: true})}
                     />
                     <Form.Check
                       required
@@ -496,8 +496,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                       value='false'
                       name='notGettable'
                       type='radio'
-                      defaultChecked={!state.notGettable}
-                      onClick={e => setState({...state, notGettable: false})}
+                      checked={!state.notGettable}
+                      onChange={e => setState({...state, notGettable: false})}
                     />
                   </div>
                 </Form.Group>
@@ -514,8 +514,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                       label="Yes"
                       name='futureEvolve'
                       type='radio'
-                      defaultChecked={state.futureEvolve}
-                      onClick={e => setState({...state, futureEvolve: true})}
+                      checked={state.futureEvolve}
+                      onChange={e => setState({...state, futureEvolve: true})}
                     />
                     <Form.Check
                       required
@@ -523,8 +523,8 @@ export default function SaveForm({state, handleSubmit, setState, setFile, id=und
                       label="No"
                       name='futureEvolve'
                       type='radio'
-                      defaultChecked={!state.futureEvolve}
-                      onClick={e => setState({...state, futureEvolve: false})}
+                      checked={!state.futureEvolve}
+                      onChange={e => setState({...state, futureEvolve: false})}
                     />
                   </div>
                 </Form.Group>

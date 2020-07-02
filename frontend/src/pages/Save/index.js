@@ -3,7 +3,7 @@ import {Container, Row, Col} from 'react-bootstrap'
 import {useHistory, useParams} from 'react-router-dom'
 import {toast} from 'react-toastify'
 import api from '../../service/api'
-import SaveForm from './saveForm'
+import SaveForm from './SaveForm'
 
 export default function Save() {
 
@@ -65,7 +65,7 @@ export default function Save() {
     if(file)
       form.append('img',file)
 
-    if(state.evolutionStage > 1 ||  state.evolutionStage.trim()==='Evolved')
+    if(state.evolutionStage > 1 ||  state.evolutionStage.trim().toLowerCase()==='Evolved')
       form.set('evolved', 'true')
     else
       form.set('evolved', 'false')
@@ -94,7 +94,7 @@ export default function Save() {
     <Container>
       <Row>
         <Col md={12} className='m-auto'>
-          <h1 className="h1">Register Pokemon</h1>
+          <h1 className="h1 text-center mt-2">{!id ? 'Register Pokemon' : 'Update Pokemon'}</h1>
           <SaveForm handleSubmit={handleSubmit} setFile={setFile} setState={setState} state={state}></SaveForm>
         </Col>
       </Row>

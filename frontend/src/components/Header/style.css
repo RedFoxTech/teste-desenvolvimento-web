@@ -1,5 +1,8 @@
 .navbar{
-  background: rgb(37,119,167);
-  background: linear-gradient(135deg, rgba(37,119,167,1) 0%, rgba(26,125,182,1) 100%);
+  background: #8C0402;
   min-height: 70px;
+}
+
+.nav__link{
+  color: #fffef7 !important;
 }

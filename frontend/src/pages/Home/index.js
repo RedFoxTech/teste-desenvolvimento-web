@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react'
 import {Container, Row, Col, FormControl, InputGroup, Button} from 'react-bootstrap'
+import { useHistory } from 'react-router-dom'
+import {toast} from 'react-toastify'
 import Modal from '../../components/Modal'
 import Card from '../../components/Card'
 import Pagination from '../../components/Pagination'
 import api from '../../service/api'
+import './style.css'
 
 export default function Home() {
 
@@ -13,16 +16,30 @@ export default function Home() {
     currentPage: 1,
     perPage: 8
   })
-  
-  const indexOfLastPost = paginateParams.currentPage * paginateParams.perPage;
-  const indexOfFirstPost = indexOfLastPost - paginateParams.perPage;
-  const currentPosts = pokemons.slice(indexOfFirstPost, indexOfLastPost);
+  const history = useHistory()
 
   const searchBar = useRef(null)
 
   const getPokemons = async () =>{
     const gettedPokemons = await api.get('/pokemons')
     setPokemons(gettedPokemons.data)
+  }
+
+  const editFunc = (id) =>{
+    history.push(`/save/${id}`)
+  }
+
+  const deleteFunc = async (id) =>{
+    try{
+      await api.delete(`/pokemons/${id}`)
+      let filteredArray = pokemons.filter(item => item.id !== id)
+      setPokemons(filteredArray)
+      toast.success('Pokémon excluido com sucesso')
+    }catch(err){
+      if(err.response.data.message){
+        toast.error(err.response.data.message)
+      }
+    }
   }
 
   const searchPokemon = async ()=>{
@@ -73,15 +90,30 @@ export default function Home() {
     }
   }
 
+  const indexOfLastPost = paginateParams.currentPage * paginateParams.perPage;
+  const indexOfFirstPost = indexOfLastPost - paginateParams.perPage;
+  const currentPosts = pokemons.slice(indexOfFirstPost, indexOfLastPost);
+
   const paginate = (pageNum) => {
     setPaginateParams({...paginateParams, currentPage: pageNum });
   }
+  
   const nextPage = () =>{
-    setPaginateParams({...paginateParams, currentPage: paginateParams.currentPage + 1 })
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(pokemons.length / paginateParams); i++) {
+        pageNumbers.push(i);
+    }
+    if(paginateParams.currentPage <= pageNumbers+1)
+      setPaginateParams({...paginateParams, currentPage: paginateParams.currentPage + 1 })
   }
 
   const prevPage = () => {
-    setPaginateParams({...paginateParams, currentPage: paginateParams.currentPage - 1 })
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(pokemons.length / paginateParams); i++) {
+        pageNumbers.push(i);
+    }
+    if(paginateParams.currentPage > 1)
+      setPaginateParams({...paginateParams, currentPage: paginateParams.currentPage - 1 })
   }
 
   useEffect(() => {
@@ -93,7 +125,7 @@ export default function Home() {
     <Container fluid>
       <Row>
         <Col md={{span:6, offset:3}}>
-          <InputGroup>
+          <InputGroup className='search-bar'>
             <FormControl
               placeholder="Search by Pokedex nº, name or type"
               aria-label="Search by Pokedex nº, name or type"
@@ -102,7 +134,7 @@ export default function Home() {
               onKeyDown={(e)=>handleKeyDown(e)}
             />
             <InputGroup.Append>
-              <Button variant="outline-secondary" onClick={searchPokemon}>Search</Button>
+              <Button variant="outline-secondary" className="btn-search" onClick={searchPokemon}>Search</Button>
             </InputGroup.Append>
           </InputGroup>
         </Col>
@@ -119,6 +151,8 @@ export default function Home() {
                   type1={pokemon.type1}
                   type2={pokemon.type2}
                   onClick={()=>setShowPokemon(pokemon)}
+                  editFunc={()=>editFunc(pokemon.id)}
+                  deleteFunc={()=>deleteFunc(pokemon.id)}
                 />
               </Col>
             ))
