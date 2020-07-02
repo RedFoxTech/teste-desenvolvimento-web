@@ -1,0 +1,82 @@
+.pokemon{
+  max-width: 250px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 15px !important;
+  background: rgb(255,255,255);
+  background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(254,255,241,1) 100%);
+  -webkit-box-shadow: 0px 0px 10px 0px rgb(204, 204, 204);
+  -moz-box-shadow: 0px 0px 10px 0px rgb(204, 204, 204);
+  box-shadow: 0px 0px 10px 0px rgb(204, 204, 204);
+  cursor: pointer;
+}
+
+.pokemon__grass{
+  border: #9ff89f 2px solid !important;
+}
+
+.pokemon__normal{
+  border: #ca7d34 2px solid !important;
+}
+
+.pokemon__fighting{
+  border: #c3c7b2 2px solid !important;
+}
+
+.pokemon__poison{
+  border: #b02cd8 2px solid !important;
+}
+
+.pokemon__ground{
+  border: #e9eb9d 2px solid !important;
+}
+
+.pokemon__rock{
+  border: #818b63 2px solid !important;
+}
+
+.pokemon__bug{
+  border: #4d9c4d 2px solid !important;
+}
+
+.pokemon__steel{
+  border: #d6d6d6 2px solid !important;
+}
+
+.pokemon__fire{
+  border: #cf3b31 2px solid !important;
+}
+
+.pokemon__water{
+  border: #0e73e7 2px solid !important;
+}
+
+.pokemon__electric{
+  border: #ffee00 2px solid !important;
+}
+
+.pokemon__psychic{
+  border: #fc35d1 2px solid !important;
+}
+
+.pokemon__ice{
+  border: #2df1ff 2px solid !important;
+}
+
+.pokemon__dragon{
+  border: #9fd7f8 2px solid !important;
+}
+
+.pokemon__fairy{
+  border: #ffd8ff 2px solid !important;
+}
+
+.pokemon__dark{
+  border: #4b0981 2px solid !important;
+}
+
+.pokemon__img{
+  width: 130px;
+  height: 130px;
+}
