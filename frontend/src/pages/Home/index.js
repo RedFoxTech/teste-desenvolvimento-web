@@ -46,7 +46,7 @@ export default function Home() {
   }
 
   const searchPokemon = async ()=>{
-    const text = searchBar.current.value
+    const text = searchBar.current.value.trim()
     const pokemonTypes = [
       'normal',
       'fighting',
@@ -85,6 +85,7 @@ export default function Home() {
       setPokemons([gettedPokemons.data])
     else if(!gettedPokemons.data)
       setPokemons([])
+    setPaginateParams({...paginateParams, currentPage: 1})
   }
 
   const handleKeyUp = async(e) =>{
@@ -94,6 +95,7 @@ export default function Home() {
     if(e.key === 'Backspace' && searchBar.current.value === ''){
       const gettedPokemons = await api.get('/pokemons')
       setPokemons(gettedPokemons.data)
+      setPaginateParams({...paginateParams, currentPage: 1})
     }
   }
 
