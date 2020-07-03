@@ -13,8 +13,7 @@
 }
 
 .fit-pokemon{
-  min-width: fit-content;
-  max-width: 100%;
+  width: 100%;
 }
 
 .pokemon__info{
@@ -163,7 +162,7 @@
   border: #b29ff8 2px solid !important;
 }
 
-.pokemon__img{
+.pokemon__info__img{
   width: 130px;
   height: 130px;
 }
