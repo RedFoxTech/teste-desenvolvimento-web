@@ -1,0 +1,8 @@
+.navbar{
+  background: #8C0402;
+  min-height: 70px;
+}
+
+.nav__link{
+  color: #fffef7 !important;
+}
