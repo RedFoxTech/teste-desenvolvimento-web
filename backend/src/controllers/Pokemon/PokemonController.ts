@@ -82,7 +82,6 @@ class PokemonController {
       }
       return res.status(200).json(pokemons)
     } catch (error) {
-      console.log(error)
       return res.status(500).json({ message: 'Internal Server Error' })
     }
   }
@@ -104,16 +103,6 @@ class PokemonController {
       const pokemon = await Pokemon.findOne({ where: { id: req.params.id } })
       if (!pokemon) {
         return res.status(400).json({ message: 'Pokemon não encontrado' })
-      }
-
-      const validateNewPokedexNumber = await Pokemon.findOne({ where: { pokedex_number: req.body.pokedexNumber } })
-      if (validateNewPokedexNumber?.id !== pokemon.id) {
-        return res.status(400).json({ message: 'O número de Pokedex enviado já está em uso' })
-      }
-
-      const validateNewPokedexName = await Pokemon.findOne({ where: { name: req.body.name } })
-      if (validateNewPokedexName?.id !== pokemon.id) {
-        return res.status(400).json({ message: 'O nome enviado já está em uso' })
       }
 
       const oldImage = <string>pokemon?.imgName
