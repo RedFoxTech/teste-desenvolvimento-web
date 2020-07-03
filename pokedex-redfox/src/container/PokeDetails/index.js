@@ -26,7 +26,7 @@ function PokeDetails(props) {
 
     return (
 
-        <BackgroundPokeDetails  background1={color1} background2={color2}>
+        <BackgroundPokeDetails background1={color1} background2={color2}>
             <Header />
 
             <PainelHeader>

@@ -20,7 +20,7 @@ function HeaderFox(props) {
 
       <img src={FoxLogo} alt="Fox-Logo" />
 
-      <input type="text" name="name" value={props.value} onChange={props.handleInput}></input>
+      <input type="text" name="name" value={props.value} onChange={props.handleInput} placeholder={"Pesquisar"}></input>
 
       <button onClick={handleHomeButton}><img src={PokeHomeIcon} alt="Pokeball"></img></button>
 
