@@ -1,3 +1,20 @@
+# Back-end hospedado em:
+
+A hospedagem gratuita no heroku não é muito performatica e após um tempo sem acessar ele desativa a rota. Recomendado clicar na rota de back-end caso não obtenha resposta da api de primeira
+https://pokedexredfox.herokuapp.com/
+
+
+# Front-End integrado com Back-End hospedado em:
+https://pokedexredfox.netlify.app/
+
+# Banco de dados
+Banco de dados hospedado na AWS, o arquivo .env enviado possui dados desatualizados por questões de segurança, os reais estão na documentação oficial.
+
+# Documentação oficial do projeto está no seguinte pdf:
+https://docs.google.com/document/d/1XmrgDhq-2_sC9EtlI7APfFW1N3_wbdH-PL_8QeX2Y7c/export?format=pdf
+Ou
+Arquivo de documentação na raiz do projeto
+
 # Teste de Desenvolvimento Web
 
 Olá Dev! Tudo bem?
