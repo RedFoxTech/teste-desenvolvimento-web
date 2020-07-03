@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const BackgroundPokeDetails = styled.div `
-    height: 100vh;
+export const BackgroundPokeDetails = styled.div`
+    height: 87vh;
     font-family: 'Roboto', sans-serif;
     background: ${props => {
-        if (props.background1 && props.background2){
+        if (props.background1 && props.background2) {
             return `linear-gradient(90deg, ${props.background1} 50%, ${props.background2} 50%);`
         }
         else {
@@ -13,7 +13,7 @@ export const BackgroundPokeDetails = styled.div `
     }};
 `
 
-export const PokeDetailsContainer = styled.div `
+export const PokeDetailsContainer = styled.div`
 
     width: 98vw;
     height: 60vh;
@@ -28,7 +28,7 @@ export const PokeDetailsContainer = styled.div `
     
 `
 
-export const PainelHeader = styled.div `
+export const PainelHeader = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
@@ -38,7 +38,7 @@ export const PainelHeader = styled.div `
         width: 98vw;
 `
 
-export const PokemonSprite = styled.div `
+export const PokemonSprite = styled.div`
     height: 200px;
     width: 50vw;
     display: flex;
@@ -53,7 +53,7 @@ export const PokemonSprite = styled.div `
 
 `
 
-export const PokeTypeHeader = styled.div `
+export const PokeTypeHeader = styled.div`
     display: flex;
     width: 50vw;
     justify-content: space-between;
@@ -67,9 +67,10 @@ export const PokeTypeHeader = styled.div `
     }
 
     span{
+        text-transform: uppercase;
         background: ${props => {
-            if (props.spanBg2 === ""){
-                return `""`
+        if (props.spanBg2 === "") {
+            return `""`
         }
         else {
             return props.spanBg2
@@ -77,7 +78,7 @@ export const PokeTypeHeader = styled.div `
     }}};
 
 `
-export const PokeAttributes = styled.div `
+export const PokeAttributes = styled.div`
     display: flex;
     flex-direction: column;
     height: 160px;

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Header} from './styles';
+import { Header } from './styles';
 import FoxLogo from '../../img/redfox-logo.png';
 import { useHistory } from 'react-router-dom'
 import PokeHomeIcon from '../../img/pokemon-home.png'
@@ -14,12 +14,17 @@ function HeaderFox(props) {
     history.push('/')
   }
 
-    return (
-      <Header>
-       <img src={FoxLogo} alt="Fox-Logo"/>
-       <button onClick={handleHomeButton}><img src={PokeHomeIcon} alt="Pokeball"></img></button>
+  return (
 
-      </Header>
-    );
-  }
-  export default HeaderFox;
+    <Header>
+
+      <img src={FoxLogo} alt="Fox-Logo" />
+
+      <input type="text" name="name" value={props.value} onChange={props.handleInput}></input>
+
+      <button onClick={handleHomeButton}><img src={PokeHomeIcon} alt="Pokeball"></img></button>
+
+    </Header>
+  );
+}
+export default HeaderFox;

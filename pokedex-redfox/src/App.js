@@ -1,24 +1,19 @@
-import React,{useState} from 'react';
-import Header from './components/header/index.js'
-import PokemonCard from './components/cards/index.js'
-import styled from 'styled-components'
-import { pokemons } from './Mock';
-import Data from './Pokemon-data.json';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PokeDetails from './container/PokeDetails/index'
 import PokeMainPage from './container/PokeMainPage/index'
-import { useHistory } from 'react-router-dom'
+
+
+
 
 
 const App = () => {
 
-  const [pokemon,setPokemon] = useState(null);
+  const [pokemon, setPokemon] = useState(null);
 
-  const handleOnPokemonChange = (x) => {
-    setPokemon(x)
+  const handleOnPokemonChange = (activePokemon) => {
+    setPokemon(activePokemon)
   }
-
-  console.log(pokemon)
 
   return (
     <Router>
@@ -30,6 +25,5 @@ const App = () => {
   )
 
 }
-
 
 export default App;

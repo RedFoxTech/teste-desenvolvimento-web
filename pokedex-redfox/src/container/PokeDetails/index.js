@@ -45,7 +45,7 @@ function PokeDetails(props) {
                     <PokeTypeHeader spanBg1={color1} spanBg2={color2}>
 
                         <div>
-                            <span> {props.selectedPokemon["Type 1"].toUpperCase()} </span>
+                            <span> {props.selectedPokemon["Type 1"]} </span>
                             <span> {props.selectedPokemon["Type 2"]} </span>
                         </div>
 
