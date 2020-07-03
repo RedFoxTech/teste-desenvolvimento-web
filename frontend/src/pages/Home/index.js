@@ -31,10 +31,13 @@ export default function Home() {
 
   const deleteFunc = async (id) =>{
     try{
-      await api.delete(`/pokemons/${id}`)
-      let filteredArray = pokemons.filter(item => item.id !== id)
-      setPokemons(filteredArray)
-      toast.success('Pokémon excluido com sucesso')
+      const confirm = window.confirm("Do you really want to delete this Pokemon?");
+      if(confirm === true){
+        await api.delete(`/pokemons/${id}`)
+        let filteredArray = pokemons.filter(item => item.id !== id)
+        setPokemons(filteredArray)
+        toast.success('Pokémon excluido com sucesso')
+      }
     }catch(err){
       if(err.response.data.message){
         toast.error(err.response.data.message)
@@ -84,9 +87,13 @@ export default function Home() {
       setPokemons([])
   }
 
-  const handleKeyDown = (e) =>{
+  const handleKeyUp = async(e) =>{
     if (e.key === 'Enter') {
       searchPokemon()
+    }
+    if(e.key === 'Backspace' && searchBar.current.value === ''){
+      const gettedPokemons = await api.get('/pokemons')
+      setPokemons(gettedPokemons.data)
     }
   }
 
@@ -131,7 +138,7 @@ export default function Home() {
               aria-label="Search by Pokedex nº, name or type"
               aria-describedby="Search Bar"
               ref={searchBar}
-              onKeyDown={(e)=>handleKeyDown(e)}
+              onKeyUp={(e)=>handleKeyUp(e)}
             />
             <InputGroup.Append>
               <Button variant="outline-secondary" className="btn-search" onClick={searchPokemon}>Search</Button>
