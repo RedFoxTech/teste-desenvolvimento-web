@@ -10,7 +10,7 @@ export default class Routes extends Component {
             <BrowserRouter>
                 <Switch>
                     <Route path="/" exact component={Home} /> 
-                    <Route path="/pokemon/:id" exact component={ Pokemon }/>
+                    <Route path="/pokemon/:name" exact component={ Pokemon }/>
                 </Switch>
             </BrowserRouter>
         )

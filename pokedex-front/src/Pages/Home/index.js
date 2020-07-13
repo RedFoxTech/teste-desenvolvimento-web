@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import Main from 'Components/main';
 
-import api from 'services/api';
+// import api from 'services/api';
 import { Col, Row, Container, Image } from 'react-bootstrap';
+import Flip from 'react-reveal/Flip';
+
 import pokemons from 'assets/pokemons.json';
 import { Type, Pokemons, Types } from './style';
+import { Link } from 'react-router-dom';
+import { pad } from 'assets/scripts';
 
 export default class Home extends Component {
 	constructor(props) {
@@ -12,16 +16,6 @@ export default class Home extends Component {
 		this.state = {
 			data: [],
 		};
-		this.pad = this.pad.bind(this);
-	}
-
-	pad(number, length) {
-		//add numbers in front of the numbers.
-		var str = '' + number;
-		while (str.length < length) {
-			str = '0' + str;
-		}
-		return str;
 	}
 
 	componentDidMount() {
@@ -37,8 +31,7 @@ export default class Home extends Component {
 	render() {
 		return (
 			<Main>
-				<Container>
-					<h1> Home </h1>
+				<Container className='mt-5'>
 					<Row>
 						{pokemons.Sheet1.slice(0, 20).map(pokemon => (
 							<Col
@@ -49,32 +42,39 @@ export default class Home extends Component {
 								xl={3}
 								key={pokemon.Row}
 								className='mb-3'>
-								<Pokemons type={pokemon.Type_1}>
-									<Image
-										src={
-											'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/' +
-											this.pad(pokemon.Row, 3) +
-											'.png'
-										}
-									/>
-									<h3> {pokemon.Name} </h3>
+								<Flip top>
+									<Pokemons type={pokemon.Type_1}>
+										<Link to={'/pokemon/' + pokemon.Name}>
+											<h3> {pad(pokemon.Row, 3)} </h3>
 
-									<Container>
-										<Types>
-											<Type type={pokemon.Type_1} first>
-												{pokemon.Type_1}
-											</Type>
-
-											{pokemon.Type_2 ? (
-												<Type type={pokemon.Type_2}>
-													{pokemon.Type_2}
+											<Image
+												src={
+													'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/' +
+													pad(pokemon['Pokedex Number'], 3) +
+													'.png'
+												}
+											/>
+											<h2> {pokemon.Name} </h2>
+										</Link>
+										<Container>
+											<Types type={pokemon.Type_1}>
+												<Type
+													type={pokemon.Type_1}
+													first='true'>
+													{pokemon.Type_1}
 												</Type>
-											) : (
-												<> </>
-											)}
-										</Types>
-									</Container>
-								</Pokemons>
+
+												{pokemon.Type_2 ? (
+													<Type type={pokemon.Type_2}>
+														{pokemon.Type_2}
+													</Type>
+												) : (
+													<> </>
+												)}
+											</Types>
+										</Container>
+									</Pokemons>
+								</Flip>
 							</Col>
 						))}
 					</Row>

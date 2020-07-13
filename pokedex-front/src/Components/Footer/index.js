@@ -4,7 +4,7 @@ export default class Footer extends Component {
     render(){ 
         return (
 			<Container>
-				<h1>Este é o footer</h1>
+				<h1>__</h1>
 			</Container>
 		);
     }
