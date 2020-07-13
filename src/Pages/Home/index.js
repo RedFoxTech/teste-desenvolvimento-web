@@ -50,7 +50,12 @@ export default class Home extends Component {
 											<Image
 												src={
 													'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/' +
-													pad(pokemon['Pokedex Number'], 3) +
+													pad(
+														pokemon[
+															'Pokedex Number'
+														],
+														3
+													) +
 													'.png'
 												}
 											/>
@@ -61,12 +66,24 @@ export default class Home extends Component {
 												<Type
 													type={pokemon.Type_1}
 													first='true'>
-													{pokemon.Type_1}
+													<Link
+														to={
+															'/type/' +
+															pokemon.Type_1
+														}>
+														{pokemon.Type_1}
+													</Link>
 												</Type>
 
 												{pokemon.Type_2 ? (
 													<Type type={pokemon.Type_2}>
-														{pokemon.Type_2}
+														<Link
+															to={
+																'/type/' +
+																pokemon.Type_2
+															}>
+															{pokemon.Type_2}
+														</Link>
 													</Type>
 												) : (
 													<> </>

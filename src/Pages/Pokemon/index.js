@@ -87,7 +87,12 @@ export default class Pokemon extends Component {
 								<Image
 									src={
 										'https://assets.pokemon.com/assets/cms2/img/pokedex/full/' +
-										pad(this.state.pokemon['Pokedex Number'], 3) +
+										pad(
+											this.state.pokemon[
+												'Pokedex Number'
+											],
+											3
+										) +
 										'.png'
 									}
 									height='300px'
@@ -215,7 +220,12 @@ export default class Pokemon extends Component {
 												<Image
 													src={
 														'https://assets.pokemon.com/assets/cms2/img/pokedex/full/' +
-														pad(evol['Pokedex Number'], 3) +
+														pad(
+															evol[
+																'Pokedex Number'
+															],
+															3
+														) +
 														'.png'
 													}
 													width='30'
@@ -242,11 +252,16 @@ export default class Pokemon extends Component {
 										</Link>
 
 										<Type type={evol.Type_1}>
-											{evol.Type_1}
+											<Link to={'/type/' + evol.Type_1}>
+												{evol.Type_1}
+											</Link>
 										</Type>
 										{evol.Type_2 ? (
 											<Type type={evol.Type_2}>
-												{evol.Type_2}
+												<Link
+													to={'/type/' + evol.Type_2}>
+													{evol.Type_2}
+												</Link>
 											</Type>
 										) : (
 											<></>
