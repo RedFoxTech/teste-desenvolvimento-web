@@ -11,7 +11,7 @@ import logo from 'assets/images/pokemon-logo.png';
 export default class Header extends Component {
 	render() {
 		return (
-			<Heade className='mb-5 pt-2 pb-5'>
+			<Heade className='pt-2 pb-5'>
 				<Container>
 					<Row className='justify-content-center'>
 						<Col xs={12} sm={12} md={5} lg={4} xl={4}>
