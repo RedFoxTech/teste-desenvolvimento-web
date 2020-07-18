@@ -121,7 +121,7 @@ export default class Pagination extends Component {
 								onClick={() =>
 									this.changePage(this.state.lastPage)
 								}>
-								last
+								ultima
 							</Button>
 							<Button
 								variant='info'
