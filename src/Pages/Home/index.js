@@ -217,7 +217,7 @@ export default class Home extends Component {
 									<Accordion.Collapse eventKey='0'>
 										<Card.Body>
 											<Row className='justify-content-center types_filter'>
-												<Col xs={3}>
+												<Col xs={12} sm={4} md={3}>
 													<Col>
 														<BtnFilter
 															types='grass'
@@ -285,7 +285,7 @@ export default class Home extends Component {
 														</BtnFilter>
 													</Col>
 												</Col>
-												<Col xs={3}>
+												<Col xs={12} sm={4} md={3}>
 													<Col>
 														<BtnFilter
 															types='electric'
@@ -353,7 +353,7 @@ export default class Home extends Component {
 														</BtnFilter>
 													</Col>
 												</Col>
-												<Col xs={3}>
+												<Col xs={12} sm={4} md={3}>
 													<Col>
 														<BtnFilter
 															types='ghost'
@@ -519,8 +519,11 @@ export default class Home extends Component {
 						))}
 					</Row>
 				</Container>
-				{this.state.rows > 20 ? <Pagination rows={ this.state.rows} current={0} /> : <> </>}
-				
+				{this.state.rows > 20 ? (
+					<Pagination rows={this.state.rows} current={0} />
+				) : (
+					<> </>
+				)}
 			</Main>
 		);
 	}

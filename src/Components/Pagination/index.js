@@ -42,7 +42,6 @@ export default class Pagination extends Component {
     }
 
 	render() {
-        var numbers ; 
 
 		return (
 			<>

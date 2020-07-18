@@ -105,8 +105,8 @@ export default class Pokemon extends Component {
 										<h6>Max CP</h6>
 										<PBar
 											variant='info'
-											max={500}
-											now={Number(this.state.pokemon.ATK)}
+											max={5000}
+											now={Number(this.state.pokemon['100cp40'])}
 										/>
 										<CountUp
 											end={
