@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Main from 'Components/main';
 import Pagination from 'Components/Pagination';
 
-// import api from 'services/api';
 import {
 	Col,
 	Row,
@@ -21,15 +20,17 @@ import { Link } from 'react-router-dom';
 import { pad } from 'assets/scripts';
 
 import api from 'services/api';
+import history from 'services/history';
 
 export default class Home extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			data: [],
-			rows: 0,
+			count: 0,
 			searchWord: '',
 			type: '',
+			page: this.getParams('page')
 		};
 		this.search = this.search.bind(this);
 		this.typeFilter = this.typeFilter.bind(this);
@@ -40,38 +41,63 @@ export default class Home extends Component {
 
 	componentDidMount() {
 		api.get('/').then(response => {
-			this.setState({ data: response.data.rows, rows : response.data.count });
+			this.setState({
+				data: response.data.rows,
+				count: response.data.count,
+			});
 		});
+	}
+	onPaginate(page) {
+		this.setState({ page });
+		// console.log(history.location.pathname);
+		history.push({
+			pathname: history.location.pathname,
+			search: `?page=${page}`,
+		});
+		this.search();
+	}
+
+	getParams(param) {
+		var query = new URLSearchParams(this.props.location.search);
+		return query.get(param);
 	}
 
 	search(input) {
-		const { id, value } = input.target;
 		var search = {};
+		
 
 		if (this.state.type !== '') {
 			search.type = this.state.type;
 		}
+		if (this.state.page){ 
+			search.page = this.state.page; 
+		}
 
-		if (id === 'search') {
-			this.setState({ searchWord: value });
-			if (Number.isInteger(Number(value))) {
-				search.pokedex_number = value;
-			} else {
-				search.name = value;
+		
+		if (input){
+			search.page = 1;
+			const { id, value } = input.target;
+			if (id && id === 'search') {
+				this.setState({ searchWord: value });
+				if (Number.isInteger(Number(value))) {
+					search.pokedex_number = value;
+				} else {
+					search.name = value;
+				}
+			} else if (id === 'order') {
+				if (value !== '') {
+					search.filter = value.split('-')[0];
+					search.order = value.split('-')[1];
+				}
+				search.name = this.state.searchWord;
 			}
-		} else if (id === 'order') {
-			if (value !== '') {
-				search.filter = value.split('-')[0];
-				search.order = value.split('-')[1];
-			}
-			search.name = this.state.searchWord;
 		}
 		api.get('/', {
 			params: search,
 		}).then(response => {
 			this.setState({
 				data: response.data.rows,
-				rows: response.data.count,
+				count: response.data.count,
 			});
 		});
 		window.history.pushState({}, '/', '/');
@@ -82,6 +108,7 @@ export default class Home extends Component {
 		const { types } = target.attributes;
 
 		var params = {};
+		params.page = 1;
 		params.type = types.value;
 		if (this.state.searchWord) {
 			if (Number.isInteger(Number(this.state.searchWord))) {
@@ -97,7 +124,7 @@ export default class Home extends Component {
 			this.setState({ type: types.value });
 			this.setState({
 				data: response.data.rows,
-				rows: response.data.count,
+				count: response.data.count,
 			});
 		});
 	}
@@ -107,7 +134,7 @@ export default class Home extends Component {
 		api.get('/').then(response => {
 			this.setState({
 				data: response.data.rows,
-				rows: response.data.count,
+				count: response.data.count,
 			});
 		});
 	}
@@ -118,7 +145,7 @@ export default class Home extends Component {
 		}).then(response => {
 			this.setState({
 				data: response.data.rows,
-				rows: response.data.count,
+				count: response.data.count,
 			});
 		});
 	}
@@ -519,8 +546,12 @@ export default class Home extends Component {
 						))}
 					</Row>
 				</Container>
-				{this.state.rows > 20 ? (
-					<Pagination rows={this.state.rows} current={0} />
+				{this.state.count > 20 ? (
+					<Pagination
+						callBackParent={page => this.onPaginate(page)}
+						count={this.state.count}
+						current={this.state.page ? this.state.page : 1}
+					/>
 				) : (
 					<> </>
 				)}

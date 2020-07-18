@@ -28,12 +28,13 @@ export default class Types extends Component {
     }
     
     getPokemons(){ 
-        const pokemons = PokemonsJson.Sheet1.filter(p => {
+        const pokemons = PokemonsJson.Sheet1.filter((p) => {
 			if (p.Type_1 === this.props.match.params.type) {
 				return p;
 			} else if (p.Type_2 === this.props.match.params.type) {
 				return p;
 			}
+			return false;
 		});
 		this.setState({ pokemons: pokemons });
     }

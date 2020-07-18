@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Button } from 'react-bootstrap';
+import { Button, Container, Row } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 const limit = 20;
 export default class Pagination extends Component {
@@ -7,47 +9,134 @@ export default class Pagination extends Component {
 		super(props);
 		this.state = {
 			lastPage: 0,
-			rows: this.props.rows,
-			current: this.props.current,
+			count: Number(this.props.count),
+			current: Number(this.props.current),
 		};
 		this.paginate = this.paginate.bind(this);
 	}
 
 	componentDidMount() {
-		this.setState({ rows: this.props.rows, current: this.props.current });
 		this.paginate();
-    }
-    shouldComponentUpdate
-
-	componentDidUpdate(prevProps) {
-		if (
-			this.props.rows !== prevProps.rows ||
-			this.props.current !== prevProps.current
-		) {
-			console.log(this.props.rows);
-			this.setState({
-				rows: this.props.rows,
-				current: this.props.current,
-            });
-            this.paginate(); 
-		}
 	}
 
-	paginate() {
-        var { rows, lastPage} = this.state; 
-        lastPage = Math.ceil(rows / limit); 
-        console.log("pagina atual: " +  this.state.current, "ultima pagina :" + lastPage); 
-        this.setState({ lastPage }); 
+	shouldComponentUpdate(nextProps, nextState) {
+		if (nextProps !== this.props) {
+			this.setState({
+				count: nextProps.count
+			})
+			this.paginate();
+			return true;
+		}
+		return false;
+	}
 
-    }
+	paginate(c) {
+		if (!c){
+			var { count } = this.state;
+		}
+		var lastPage = Math.ceil(count / limit);
+
+		this.setState({ lastPage });
+	}
+
+	changePage(go) {
+		this.props.callBackParent(go);
+		this.setState({ current: go });
+		// window.location.href = `${window.location.pathname}?page=${go}`;
+	}
 
 	render() {
-
 		return (
-			<>
-                { this.state.current === 0 || this.state.current === 1  ? <> </> : <Button> {"<"}</Button> }				
-                    { }
-			</>
+			<Container className='mt-3'>
+				<Row className='justify-content-center'>
+					{this.state.current !== 1 ? (
+						<Button
+							variant='info'
+							className='ml-1'
+							onClick={() =>
+								this.changePage(this.state.current - 1)
+							}>
+							<FontAwesomeIcon icon={faArrowLeft} />
+						</Button>
+					) : (
+						<> </>
+					)}
+					{this.state.current - 2 > 0 ? (
+						<Button
+							variant='info'
+							className='ml-1'
+							onClick={() =>
+								this.changePage(this.state.current - 2)
+							}>
+							{this.state.current - 2}
+						</Button>
+					) : (
+						<> </>
+					)}
+					{this.state.current - 1 > 0 ? (
+						<Button
+							variant='info'
+							className='ml-1'
+							onClick={() =>
+								this.changePage(this.state.current - 1)
+							}>
+							{this.state.current - 1}
+						</Button>
+					) : (
+						<> </>
+					)}
+					<Button variant='secondary' className='ml-1'>
+						{this.state.current}
+					</Button>
+					{this.state.current + 1 < this.state.lastPage ? (
+						<Button
+							variant='info'
+							className='ml-1'
+							onClick={() =>
+								this.changePage(this.state.current + 1)
+							}>
+							{this.state.current + 1}
+						</Button>
+					) : (
+						<> </>
+					)}
+					{this.state.current + 2 < this.state.lastPage ? (
+						<Button
+							variant='info'
+							className='ml-1'
+							onClick={() =>
+								this.changePage(this.state.current + 2)
+							}>
+							{this.state.current + 2}
+						</Button>
+					) : (
+						<> </>
+					)}
+
+					{this.state.current !== this.state.lastPage ? (
+						<>
+							<Button
+								variant='info'
+								className='ml-1'
+								onClick={() =>
+									this.changePage(this.state.lastPage)
+								}>
+								last
+							</Button>
+							<Button
+								variant='info'
+								className='ml-1'
+								onClick={() =>
+									this.changePage(this.state.current + 1)
+								}>
+								<FontAwesomeIcon icon={faArrowRight} />
+							</Button>
+						</>
+					) : (
+						<> </>
+					)}
+				</Row>
+			</Container>
 		);
 	}
 }
