@@ -9,6 +9,8 @@ import IndexPokemons from 'Pages/Admin/Pokemon/index.js';
 import Forms from 'Pages/Admin/Pokemon/Forms'; 
 import Types from 'Pages/Admin/Types/index'; 
 import TypesForm from 'Pages/Admin/Types/form'; 
+import Weathers from 'Pages/Admin/Weathers/index'; 
+import WeathersForm from 'Pages/Admin/Weathers/form'; 
 
 
 
@@ -50,6 +52,17 @@ class Routes extends Component {
 								path='/admin/types/edit/:id'
 								exact
 								component={TypesForm}
+							/>
+							<Route
+								path='/admin/weather'
+								exact
+								component={Weathers}
+							/>
+
+							<Route
+								path='/admin/weather/edit/:id'
+								exact
+								component={WeathersForm}
 							/>
 						</>
 					) : (

@@ -11,25 +11,41 @@ import {
 	FormControl,
 	FormLabel,
 } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+
 import history from 'services/history';
 import api from 'services/api';
 
-export default class TypesForm extends Component {
+export default class WeathersForm extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
-			types: [],
+			weather: [],
+			name: '',
 		};
 	}
+
 	componentDidMount() {
-		api.get(`/types/${this.props.match.params.id}`).then(response => {
+		api.get(`/weathers/${this.props.match.params.id}`).then(response => {
 			this.setState({
-				types: response.data,
+				weather: response.data,
+				name: response.data.name,
 			});
 		});
+	}
+
+	onSubmitHandler(event) {
+		event.preventDefault();
+		const { name } = this.state;
+		api.put(`/weathers/${this.props.match.params.id}`, {
+			name,
+		}).then(response => console.log(response));
+	}
+
+	onChangeHandler(event) {
+		const { value } = event.target;
+		console.log(value);
+		this.setState({ name: value });
 	}
 
 	render() {
@@ -43,15 +59,15 @@ export default class TypesForm extends Component {
 									<Button
 										variant='link'
 										onClick={() => history.back()}>
-										<FontAwesomeIcon icon={faArrowLeft} />{' '}
+										{/* <FontAwesomeIcon icon={faArrowLeft} />{' '} */}
 										Voltar
 									</Button>
 
 									<Col>
 										<h4>
 											{this.props.match.params.id
-												? 'Edição de tipo'
-												: 'Criação de tipo'}
+												? 'Edição de clima'
+												: 'Criação de clima'}
 										</h4>
 									</Col>
 								</Row>
@@ -68,15 +84,12 @@ export default class TypesForm extends Component {
 													<FormLabel>Name</FormLabel>
 													<FormControl
 														name='name'
-														placeholder='Nome do pokemon'
+														placeholder='Type Name'
+														value={this.state.name}
 														onChange={event =>
 															this.onChangeHandler(
 																event
 															)
-														}
-														value={
-															this.state.types
-																.name
 														}
 														required
 													/>
@@ -85,7 +98,9 @@ export default class TypesForm extends Component {
 										</Row>
 									</Container>
 
-									<Col xs={12} className="d-flex justify-content-end">
+									<Col
+										xs={12}
+										className='d-flex justify-content-end'>
 										<Button type='submit'>
 											{this.props.match.params.id
 												? 'Atualizar'

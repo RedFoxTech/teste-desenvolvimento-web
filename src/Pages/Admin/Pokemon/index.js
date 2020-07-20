@@ -13,7 +13,7 @@ import {
 	FormControl,
 } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import EmptyImage from 'assets/images/empty_pokemon.png';
 import { pad } from 'assets/scripts';
@@ -28,16 +28,17 @@ class IndexPokemons extends Component {
 		super(props);
 		this.state = {
 			pokemons: [],
+			types: [],
 			count: 0,
 			page: this.getParams('page'),
+			search: {},
 		};
 	}
 	componentDidMount() {
-		
 		this.getPokemons();
 	}
 	getPokemons() {
-		console.log('chamou')
+		console.log('chamou');
 		var params = {};
 
 		const page = this.state.page ? this.state.page : this.getParams('page');
@@ -51,6 +52,10 @@ class IndexPokemons extends Component {
 				count: response.data.count,
 			});
 		});
+
+		api.get('/types').then(response =>
+			this.setState({ types: response.data })
+		);
 	}
 
 	onPaginate(page) {
@@ -68,25 +73,131 @@ class IndexPokemons extends Component {
 		return query.get(param);
 	}
 
+	search(input) {
+		const { value, name } = input.target;
+		console.log(name, value);
+		let search = {};
+		search = this.state.search;
+		if (name === 'search_id_name') {
+			if (Number(value)) {
+				search.pokedex_number = Number(value);
+			} else {
+				search.name = value;
+			}
+		}
+
+		if (name === 'type1') {
+			search.type = value;
+		}
+
+		if (name === 'order') {
+			search.filter = value.split('-')[0];
+			search.order = value.split('-')[1];
+		}
+		this.setState({ search }); 
+		api.get('/ad/pokemons', {
+			params: search,
+		}).then(response => {
+			this.setState({
+				pokemons: response.data.rows,
+				count: response.data.count,
+			});
+		});
+	}
+
 	render() {
 		return (
 			<Sidebar>
 				<Col className='mt-5'>
 					<Container>
 						<Card>
-							<Card.Header className='pb-5 pt-5'>
-								Pokemons
+							<Card.Header className='pb-5 pt-5 d-flex justify-content-between '>
+								<Col xs={4}>Pokemons</Col>
+								<Col xs={2}>
+									<Link to='/admin/pokemons/create'>
+										<FontAwesomeIcon icon={faPlus} />
+										<span> NOVO </span>
+									</Link>
+								</Col>
 							</Card.Header>
 							<Card.Body>
-								<Row>
-									<Col>
+								<Row className="mb-4">
+									<Col xs={12} sm={3} >
 										<FormGroup>
 											<FormLabel> Pesquisar </FormLabel>
-											<FormControl placeholder='Numero da pokedex ou nome' />
+											<FormControl
+												name='search_id_name'
+												placeholder='Numero da pokedex ou nome'
+												onChange={event =>
+													this.search(event)
+												}
+											/>
 										</FormGroup>
 									</Col>
+									<Col xs={12} sm={3}>
+										<FormGroup>
+											<FormLabel> Tipo </FormLabel>
+											<FormControl
+												as='select'
+												name='type1'
+												placeholder='Numero da pokedex ou nome'
+												onChange={event =>
+													this.search(event)
+												}
+												className='text-capitalize'>
+												<option value=""> Tipo 1 </option>
+												{this.state.types.map(type => (
+													<option
+														key={type.id}
+														value={type.name}>
+														{' '}
+														{type.name}{' '}
+													</option>
+												))}
+												<option> </option>
+											</FormControl>
+										</FormGroup>
+									</Col>
+									<Col xs={12} sm={3}>
+										<FormLabel> Ordenar </FormLabel>
+										<FormControl
+											as='select'
+											id='order'
+											name='order'
+											onChange={event =>
+												this.search(event)
+											}>
+											<option value=''>
+												Ordenar por
+											</option>
+											<option value='pokedex_number-ASC'>
+												Menor Numero
+											</option>
+											<option value='pokedex_number-DESC'>
+												Maior Numero
+											</option>
+											<option value='name-ASC'>
+												A-Z
+											</option>
+											<option value='name-DESC'>
+												Z-A
+											</option>
+											<option value='cp1-DESC'>
+												Maior CP
+											</option>
+											<option value='cp1-ASC'>
+												Menor CP
+											</option>
+											<option value='stat_total-DESC'>
+												Maior estatistica
+											</option>
+											<option value='stat_total-ASC'>
+												Menor statistica 
+											</option>
+										</FormControl>
+									</Col>
 								</Row>
-								<Row className='mb-3 border-bottom pb-2 text-center'>
+								<Row className='mb-3 border-bottom pb-2 text-center text-capitalize'>
 									<Col xs={2}>Pokedex Number</Col>
 									<Col xs={2} className='d-none d-sm-block'>
 										Image

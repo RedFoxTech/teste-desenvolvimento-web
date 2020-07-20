@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
 import SideBar from 'Components/SideBar';
+
 import {
 	Col,
 	Container,
 	Card,
-	Row
+	Row,
 } from 'react-bootstrap';
 
 import api from 'services/api';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
 import { Link } from 'react-router-dom';
 
-export default class Types extends Component {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
+export default class weathers extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			types: [],
+			weathers: [],
 		};
 	}
 
 	componentDidMount() {
-		this.getTypes();
+		this.getWeathers();
 	}
 
-	getTypes() {
-		api.get('/types').then(response => {
+	getWeathers() {
+		api.get('/weathers').then(response => {
 			const { data } = response;
-			this.setState({ types: data });
+			this.setState({ weathers: data });
 		});
 	}
 
@@ -42,17 +45,17 @@ export default class Types extends Component {
 							</Card.Header>
 							<Card.Body>
 								<Row className='border-bottom pb-2 text-center text-capitalize'>
-									<Col>
-										name
-									</Col>
+									<Col>name</Col>
 									<Col></Col>
 								</Row>
-								{this.state.types.map(type => (
-									<Row className="text-center pb-2 pt-2 border-bottom text-capitalize " key={ type.id }>
-										<Col> {type.name} </Col>
+								{this.state.weathers.map(weather => (
+									<Row
+										className='text-center pb-2 pt-2 border-bottom text-capitalize '
+										key={weather.id}>
+										<Col> {weather.name} </Col>
 										<Col>
 											<Link
-												to={`/admin/types/edit/${type.id}`}>
+												to={`/admin/weather/edit/${weather.id}`}>
 												<FontAwesomeIcon
 													icon={faEdit}
 												/>

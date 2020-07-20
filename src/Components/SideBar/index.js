@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Col, Row, Accordion, Card, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import { connect } from 'react-redux'; 
+import { connect } from 'react-redux';
 
 class Sidebar extends Component {
 	loggout() {
@@ -32,15 +32,30 @@ class Sidebar extends Component {
 								<Card.Body>
 									<Container>
 										<Row className='d-flex flex-column text-center'>
-											<Link to='/admin/pokemons'> Pokemons </Link>
-											<Link to='/'> Types </Link>
-											<Link to='/'> Weathers </Link>
+											<Link
+												className='pb-2'
+												to='/admin/pokemons'>
+												Pokemons
+											</Link>
+											<Link
+												className='pb-2'
+												to='/admin/types'>
+												Types
+											</Link>
+											<Link
+												className='pb-2'
+												to='/admin/weather'>
+												Weathers
+											</Link>
 										</Row>
 									</Container>
 								</Card.Body>
 							</Accordion.Collapse>
 						</Accordion>
-						<Button onClick={ () => this.loggout()}> Loggout </Button>
+						<Button onClick={() => this.loggout()}>
+							{' '}
+							Loggout{' '}
+						</Button>
 					</Card>
 				</Col>
 				{this.props.children}
@@ -49,4 +64,4 @@ class Sidebar extends Component {
 	}
 }
 
-export default connect()(Sidebar)
+export default connect()(Sidebar);
