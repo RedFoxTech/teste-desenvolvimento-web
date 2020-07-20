@@ -486,7 +486,7 @@ export default class Home extends Component {
 								md={4}
 								lg={3}
 								xl={3}
-								key={pokemon.id}
+								key={pokemon.pokedex_number}
 								className='mb-3'>
 								<Flip top>
 									<Pokemons type={pokemon.type1.name}>
