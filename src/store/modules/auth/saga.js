@@ -2,6 +2,7 @@ import { takeLatest, all, call, put} from 'redux-saga/effects';
 import api from 'services/api'; 
 
 import {login_success} from './actions'; 
+import history from 'services/history';
 
 export function* login({ payload }){
     const { email, password} = payload; 
@@ -14,6 +15,7 @@ export function* login({ payload }){
         const { token } = response.data; 
 
         yield put(login_success(token));
+        history.push('/admin/pokemons')
     }
 
 }

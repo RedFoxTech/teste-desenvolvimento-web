@@ -3,6 +3,8 @@ import { Col, Row, Accordion, Card, Button, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
 class Sidebar extends Component {
 	loggout() {
@@ -15,7 +17,7 @@ class Sidebar extends Component {
 		return (
 			<Row className='h-100'>
 				<Col lg={3} xl={2} className='d-none d-lg-block'>
-					<Card className='h-100'>
+					<Card className='h-100 w-100 fixed-top col-lg-3 col-xl-2 p-0 d-flex flex-column justify-content-center'>
 						<Card.Header className='text-center'>
 							<h3> Admin </h3>
 						</Card.Header>
@@ -52,10 +54,13 @@ class Sidebar extends Component {
 								</Card.Body>
 							</Accordion.Collapse>
 						</Accordion>
-						<Button onClick={() => this.loggout()}>
-							{' '}
-							Loggout{' '}
-						</Button>
+						<div className='align-self-end mt-auto mr-auto ml-auto p-2'>
+							<Button
+								onClick={() => this.loggout()}
+								variant='danger'>
+								Loggout <FontAwesomeIcon icon={faSignOutAlt} />
+							</Button>
+						</div>
 					</Card>
 				</Col>
 				{this.props.children}

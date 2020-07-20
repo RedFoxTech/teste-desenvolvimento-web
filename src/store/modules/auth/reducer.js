@@ -13,7 +13,6 @@ export default function auth(state = INITIAL_STATE, action) {
             }
             case '@auth/LOGIN_SUCCESS': { 
                 draft.token = action.payload.token; 
-                document.location.href = "/admin/pokemons"
                 break; 
             }
             case '@auth/LOGOUT': { 

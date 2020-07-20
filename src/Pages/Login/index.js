@@ -32,13 +32,6 @@ class Login extends Component {
 		}
 	}
 
-	shouldComponentUpdate(nextProps, nextState) {
-		if (this.props.token !== nextProps.token) {
-			history.push('/admin');
-		} else { 
-			console.log(this.props.token, nextProps.token)
-		}
-	}
 	onChangeHandler(event) {
 		const { name, value } = event.target;
 		this.setState({ [name]: value });
@@ -46,9 +39,9 @@ class Login extends Component {
 
 	onFormSubmit(event) {
 		event.preventDefault();
-
 		const { dispatch } = this.props;
 		const { email, password } = this.state;
+		console.log(email,password); 
 		dispatch({
 			type: '@auth/LOGIN',
 
