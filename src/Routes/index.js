@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch, Redirect } from 'react-router-dom';
+import Route from './Route'; 
 
 import Home from 'Pages/Home';
 import Pokemon from 'Pages/Pokemon';
@@ -26,48 +27,56 @@ class Routes extends Component {
 					{/* <Route path='/type/:type' exact component={Types} /> */}
 
 					<Route path='/login' exact component={Login} />
-					{this.props.token !== null || undefined ? (
-						<>
-							<Route
-								path='/admin/pokemons'
-								exact
-								component={IndexPokemons}
-							/>
-							<Route
-								path='/admin/pokemons/edit/:id'
-								exact
-								component={Forms}
-							/>
-							<Route
-								path='/admin/pokemons/create/'
-								exact
-								component={Forms}
-							/>
-							<Route
-								path='/admin/types/'
-								exact
-								component={Types}
-							/>
-							<Route
-								path='/admin/types/edit/:id'
-								exact
-								component={TypesForm}
-							/>
-							<Route
-								path='/admin/weather'
-								exact
-								component={Weathers}
-							/>
 
-							<Route
-								path='/admin/weather/edit/:id'
-								exact
-								component={WeathersForm}
-							/>
-						</>
-					) : (
-						<> </>
-					)}
+					<Route
+						path='/admin'
+						exact
+						component={<Redirect to='/admin/pokemons' />}
+						isPrivate
+					/>
+					<Route
+						path='/admin/pokemons'
+						exact
+						component={IndexPokemons}
+						isPrivate
+					/>
+					<Route
+						path='/admin/pokemons/edit/:id'
+						exact
+						component={Forms}
+						isPrivate
+					/>
+					<Route
+						path='/admin/pokemons/create/'
+						exact
+						component={Forms}
+						isPrivate
+					/>
+					<Route
+						path='/admin/types/'
+						exact
+						component={Types}
+						isPrivate
+					/>
+					<Route
+						path='/admin/types/edit/:id'
+						exact
+						component={TypesForm}
+						isPrivate
+					/>
+					<Route
+						path='/admin/weather'
+						exact
+						component={Weathers}
+						isPrivate
+					/>
+
+					<Route
+						path='/admin/weather/edit/:id'
+						exact
+						component={WeathersForm}
+						isPrivate
+					/>
 				</Switch>
 			</BrowserRouter>
 		);
