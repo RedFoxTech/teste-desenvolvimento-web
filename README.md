@@ -1,58 +1,69 @@
-# Teste de Desenvolvimento Web
 
-Olá Dev! Tudo bem?
+# Pokedex
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+## Kennedy Ferreira da Silva
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+[**Aplicação**](https://pokedex-kennedy.herokuapp.com/)
 
-Agora vamos ao teste!
+[**Backend**](https://pokedex-backend-k.herokuapp.com/)
 
+### Tecnologias usadas
 
-## Desafio Pokémon
+#### Frontend
 
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
+ - [x] React
+ - [x] Redux
+ - [x] Bootstrap
+ - [x] Axios
+ - [x] StyledComponents
 
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
+#### Backend
 
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
+ - [x] Node
+ - [x] JWT
+ - [x] Express
+ - [x] MYSql
+ - [x] Sequelize
+ - [x] Bcrypt
 
+A aplicação contém um admin que se encontra no caminho "/admin"  **úsuario: admin@admin.com** e  **senha: admin**
 
-## Consigo fazer tudo isso?
+ps : não foi trabalhado o layout do admin... ainda :/
 
-Consegue sim!
+**Token**
+Algumas das rotas da API necessitam de um token JWT gerado a partir do login do usuário com uma validade de apenas 1 dia, para fazer login faça um POST na rota "/login" enviando no corpo da requisição o "email" e "password" de Admin e terá como retorno o token
 
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
+**Senha**
+A senha é encriptografada utilizando o Bcrypt.
 
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+**Exclusão**
+A opção de excluir não exclui realmente os pokemons por questões de segurança, apenas muda o status de ativo para deletado sendo assim poderia ter futuramente um histórico de alterações em um pokemon. No cenário ideal teríamos uma segunda tabela apenas salvando os dados de quem alterou (como ip, nome, etc..)
 
+**Imagens**
 
-## Por onde começo?
+Optei por não fazer um upload de imagens pois percebi que o numero da pokedex de um pokemon é também o número da imagem dele no bucket oficial dos pokemons. Além do que isso garante uma velocidade maior para a minha aplicação e um gasto menor com um bucket na AWS além de ter que buscar e subir a imagem respectiva de cada um dos pokemons. 
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+**Escolha do banco** 
+Foi cogitada a ideia de utilizar o MongoDB, porém a ideia de fazer relacionamentos em um NoSQL mesmo sendo possível quebra a necessidade de usar um NoSQL então preferi utilizar um banco de dados relacional, nesse caso o MySQL.
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
+Transformei o .xlsx em um .json e a partir dele eu fiz uma migração uma controller de migração, para transformar em 3 tabelas diferentes além de ter uma tabela reserva com todos os dados do json unificados.
 
+**Tabela de pokemons** 
 
-## E o Layout??
+Essa tabela contem todos os dados dos pokemons, como seu nome, atk, def, stam, stat_total e cp1 além do campo status e createdAt e updatedAt
 
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
+Como chaves estrangeiras temos o campo type_1, type_2, weather_1, weather_2, esses campos armazenam apenas os ID de suas tabelas respectivas. 
 
+**Como alguns pokemons estavam sem seu family_id preferi não criar uma tabela secundaria para fazer esse relacionamento, no momento a aplicação web utiliza daqueles que tem esse campo para trazer em tela as futuras evoluções de um pokemon** 
 
-## Regras
+As outras duas tabelas são as de Types e Weathers e ambas contém apenas id e name além do timestamps de createdAt e updatedAt
 
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
+**Deploy**
 
+Para fazer deploy preferi utilizar o heroku pois no momento não estou com nenhum servidor VPS a disposição como os da digital ocean para fazer deploy. 
 
-## Só isso?
+O admin ainda está meio cru e tem o que ser melhorado além de a aplicação necessitar que se passe mais das funcionalidades do front pra dentro do redux, como o filtro e a busca que devem ser transformados em components ainda. 
 
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
+**[API](https://github.com/kennedy-f/pokedex-backend)**
 
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
+A API se encontra  [nesse repositório](https://github.com/kennedy-f/pokedex-backend) e lá tem mais informações sobre a mesma. 
