@@ -14,9 +14,9 @@ export default function RouteWrapper({
         return <Redirect to='/login' />;
 	}
 
-	if (token && !isPrivate) {
-		return <Redirect to='/admin/pokemons' />;
-	}
+	// if (token && !isPrivate) {
+	// 	return <Redirect to='/admin/pokemons' />;
+	// }
 
 	return <Route {...rest} component={Component} />;
 }
