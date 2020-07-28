@@ -9,3 +9,7 @@ body {
 .btnSuccess {
   margin-right: 10px;
 }
+
+.control {
+  width: 350px;
+}

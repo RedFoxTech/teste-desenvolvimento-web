@@ -6,30 +6,19 @@ import { Button, Form, Table } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const headerProps = {
-    icon: "users",
+    icon: "dragon",
     title: 'Pokemóns',
     subtitle: 'Pokemón registration:'
 }
 
-const baseUrl = 'http://localhost:3001/Pokemon'
+const baseUrl = 'http://localhost:3001/pokemons'
 const initialState = {
-    pokemon: { Row: '',
-    Name: '', 
-    PokedexNumber: '',
-    ImgName: '',
-    Generation: '',
-    EvolutionStage: '',
-    Evolved: '',
-    FamilyID: '',
-    CrossGen: '',
-    Type1: '',
-    Type2: '',
-    Weather1: '',
-    Weather2: '',
-    STATTOTAL: '',
-    ATK: '',
-    DEF: '',
-    STA: ''},
+    pokemon: {
+        Name: '',
+        ATK: '',
+        DEF: '',
+        STA: ''
+    },
     list: []
 }
 
@@ -58,7 +47,7 @@ export default class PokemonCreate extends Component {
     }
 
     getUpdatedList(pokemon, add = true) {
-        const list = this.state.list.filter(u => u.Row !== pokemon.Row)
+        const list = this.state.list.filter(pok => pok.Row !== pokemon.Row)
         if (add) list.unshift(pokemon)
         return list
     }
@@ -73,9 +62,9 @@ export default class PokemonCreate extends Component {
         return (
 
             <Form className="form">
-                <Form.Group controlId="formBasicText">
+                <Form.Group controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
-                    <Form.Control name="name" value={this.state.pokemon.Name}
+                    <Form.Control className="control" name="Name" defaultValue={this.state.pokemon.Name}
                         onChange={e => this.updateField(e)} type="text"
                         placeholder="Enter the Pokemón name" />
                     <Form.Text className="text-muted">
@@ -83,11 +72,25 @@ export default class PokemonCreate extends Component {
                     </Form.Text>
                 </Form.Group>
 
-                <Form.Group controlId="formBasicText">
+                <Form.Group controlId="formBasicPassword">
                     <Form.Label>Pokemón ATK</Form.Label>
-                    <Form.Control name="text" value={this.state.pokemon.ATK}
-                        onChange={e => this.updateField(e)} type="text"
+                    <Form.Control className="control" name="ATK" defaultValue={this.state.pokemon.ATK}
+                        onChange={e => this.updateField(e)} type="number"
                         placeholder="Enter the Pokemón ATK" />
+                </Form.Group>
+
+                <Form.Group controlId="formBasicText">
+                    <Form.Label>Pokemón DEF</Form.Label>
+                    <Form.Control className="control" name="DEF" defaultValue={this.state.pokemon.DEF}
+                        onChange={e => this.updateField(e)} type="number"
+                        placeholder="Enter the Pokemón DEF" />
+                </Form.Group>
+
+                <Form.Group controlId="formBasicText">
+                    <Form.Label>Pokemón STA</Form.Label>
+                    <Form.Control className="control" name="STA" defaultValue={this.state.pokemon.STA}
+                        onChange={e => this.updateField(e)} type="number"
+                        placeholder="Enter the Pokemón STA" />
                 </Form.Group>
 
                 <Button className="btnSuccess" variant="btn btn-outline-success" type="submit"
@@ -99,7 +102,7 @@ export default class PokemonCreate extends Component {
                     onClick={e => this.clear(e)} >
                     Cancel
                 </Button>
-                <hr/>
+                <hr />
             </Form>
 
         )
@@ -118,12 +121,14 @@ export default class PokemonCreate extends Component {
 
     renderTable() {
         return (
-            <Table striped bordered hover variant="dark">
+            <Table striped bordered hover variant="dark" responsive="lg">
                 <thead>
                     <tr>
-                        <th>ROW</th>
+                        <th>Id</th>
                         <th>Name</th>
                         <th>Pokemón ATK</th>
+                        <th>Pokemón DEF</th>
+                        <th>Pokemón STA</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -140,6 +145,8 @@ export default class PokemonCreate extends Component {
                     <td>{pokemon.Row}</td>
                     <td>{pokemon.Name}</td>
                     <td>{pokemon.ATK}</td>
+                    <td>{pokemon.DEF}</td>
+                    <td>{pokemon.STA}</td>
                     <td>
                         <button className="btn btn-warning"
                             onClick={() => this.load(pokemon)}>

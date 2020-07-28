@@ -12,8 +12,5 @@ export default props =>
             <Link to="/Pokemon">
             <FontAwesomeIcon icon="pen" /> Create Pokemóns
             </Link>
-            <Link to="/PokemonList">
-            <FontAwesomeIcon icon="dragon" /> List Pokemóns
-            </Link>
         </nav>
     </aside>
