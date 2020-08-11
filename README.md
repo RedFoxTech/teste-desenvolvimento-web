@@ -1,58 +1,54 @@
-# Teste de Desenvolvimento Web
+## Projeto Frontend desenvolvido por Marina Isabel
+- [Linkedin](https://www.linkedin.com/in/marinaisabel/)
 
-Olá Dev! Tudo bem?
+status do projeto: Em andamento ⌛ 
+______
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
-
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
-
-Agora vamos ao teste!
-
-
-## Desafio Pokémon
-
+### Projeto Desafio Pokemon
 Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
 
 A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
 
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
 
+### Começando
+  Para executar o projeto, será necessário instalar os seguintes programas:
+  - [React Redux](https://medium.com/reactbrasil/iniciando-com-redux-c14ca7b7dcf)
+  - [Axios](https://medium.com/@eptaccio/construindo-um-service-para-requisi%C3%A7%C3%B5es-http-em-um-app-javascript-e93f653cb0ff)
+  - [Material-UI](https://material-ui.com/)
+  - [Styled-Components](https://styled-components.com/docs/basics/)
+  
+### Desenvolvimento
+  Para iniciar o desenvolvimento, é necessário clonar o projeto do GitHub num diretório de sua preferência:
+  
+  ``cd "Pasta do arquivo"
+    git clone 
+    ``
+### Configuração
+  Para configurar o arquivo, é preciso instalar as depêndencias
+  - React
+    ` npx create-react-app`
+  - React- Redux 
+  ` react-redux
+    redux
+    redux-thunk`
+  - Axios 
+    `npm install axios`
+  - Styled-components 
+    `npm install styled-components`
+  - Material - UI 
+    `npm install @material-ui`
+    
+Esse é um projeto de Frontend Web feito utilizando ReactJS, HTML e CSS; 
+E como gerenciador de pacotes do NodeJS o npm. Sobre a divisão dos arquivos, há dois grandes setores. Os `components` são os componentes em si do meu projeto (balão de fala, botão de enviar, inputs dos usuários e outros). Já os `Containers` são as páginas em si e podem ser pensadas como a união dos componentes para se mostrar na tela. 
 
-## Consigo fazer tudo isso?
+## Instruções para rodar
+Por ser um projeto com ReactJS, há a necessidade do NodeJS. Com ele em 
+sua máquina, basta abrir o terminal e navegar até o repositório clonado e 
+rodar:
 
-Consegue sim!
+1. `npm install` para instalar todas as dependências;
+1. `npm run start` para rodar localmente o projeto
+1. `npm run build` para gerar uma versão estática do projeto 
+(que ficará na pasta `build`)
 
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
-
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
-
-
-## Por onde começo?
-
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
-
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
-
-
-## E o Layout??
-
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
-
-
-## Regras
-
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
-
-
-## Só isso?
-
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
+    
