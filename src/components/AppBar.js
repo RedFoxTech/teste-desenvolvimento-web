@@ -59,7 +59,7 @@ function ButtonAppBar(props) {
     <AppBar className={classes.root} color='primary' position="static">
       <Toolbar className={classes.toolbar}>
         <Typography variant="h6" >
-          {props.pageName}
+          {props.pageName} 
         </Typography>
         {props.onChangeSearchInputValue && 
         <div className={classes.search}>

@@ -12,7 +12,7 @@ import MyTextField from '../../components/input';
 import ButtonStyle from '../../components/button';
 
 
-class RegisterPokemon extends React.Component {
+class UpdatePokemon extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -104,7 +104,7 @@ class RegisterPokemon extends React.Component {
             <PageWrapper>
                 <ButtonAppBar pageName="Pokemon Go"
                 />
-                <Title> Adicione um novo Pokemon </Title>
+                <Title> Alterações do registro de Pokemons </Title>
                 <FormStyle onSubmit={this.handleSubmit}>
                     <MyTextField
                         name="row"
@@ -316,7 +316,7 @@ class RegisterPokemon extends React.Component {
                         required={true}
                         onChange={this.handleInputValue}
                         value={this.state.form.cp_39} />
-                    <ButtonStyle type='submit' btnText="Registrar" onClick={this.props.goToHomePage}/>
+                    <ButtonStyle type='submit' btnText="Atualizar" onClick={this.props.goToHomePage}/>
                 </FormStyle>
             </PageWrapper>
         )
@@ -329,4 +329,4 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect (null, mapDispatchToProps)(RegisterPokemon);
+export default connect (null, mapDispatchToProps)(UpdatePokemon);

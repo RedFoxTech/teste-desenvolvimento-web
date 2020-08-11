@@ -40,6 +40,27 @@ export const ContainerNav = styled.div`
   margin: 5%;
   width: 80%;
   height: 100%;
-  background-color: #f1f1f1;
+  background-color: white;
   position: fixed;
+`
+export const ContainerSlide = styled.div`
+  margin: 10%;
+  width: 80%;
+  height: 60%;
+  overflow: hidden;
+  position: fixed;
+  
+`
+export const Slide = styled.ul`
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+    width: 100%;
+`
+export const PokemonImage= styled.img`
+  width: 80%;
+  height: 70%;
+  cursor: pointer;
 `
