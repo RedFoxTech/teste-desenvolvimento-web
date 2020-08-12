@@ -1,7 +1,7 @@
 
 ___
 > ## 💻 Sobre o projeto
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
+Atualmente o sistema esta somente no excel, cheio de informações sobre Pokémon. É utilizado como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
 
 A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
 
@@ -9,7 +9,11 @@ A missão é criar um sistema para substituir este excel, pois queremos expandir
 
 ## ⚙️ Funcionalidades
 
-- 
+- Dados 
+  - (Inserir Pokemons) Rota de Registro de Pokémons.
+  - (Update) Rota de atualização de informações dos Pokémons.
+  - (Show) Rota de detalhar informações de Pokémons.
+  - (Delete) Rota de deletar Pokémons.
 
 ---
 
@@ -33,7 +37,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ```bash
 
 # Clone este repositório
-$ git clone 
+$ git clone https://github.com/marinaisabels/teste-desenvolvimento-web.git
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd desktop
@@ -66,10 +70,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ---
 
 ## 🖱️ Documentação do Projeto
-- [Postman]()
+- [Postman](https://documenter.getpostman.com/view/10578922/T1LMiT9y?version=latest)
 
 ## Dificuldades 
-
+O Endpoint de detalhar informações do Pokémon separadamente. Não consegui desenvolve-lo de uma maneira correta. Estudarei mais para poder melhorar o projeto cada vez mais.
 
 
 ## 👩🏿 Autora
