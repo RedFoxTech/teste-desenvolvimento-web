@@ -1,5 +1,5 @@
+ <img style="border-radius: 50%;" src="https://raw.githubusercontent.com/marinaisabels/teste-desenvolvimento-web/marina-isabel/image.png" width="100px;" alt=""/>
 
-___
 > ## 💻 Sobre o projeto
 Atualmente o sistema esta somente no excel, cheio de informações sobre Pokémon. É utilizado como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
 
