@@ -70,6 +70,7 @@ export class PokemonController {
     }
     public async editPokemon(req: Request, res: Response) {
         const {
+            id,
             name,
             number,
             generation,
@@ -100,7 +101,7 @@ export class PokemonController {
         } = req.body
 
         try {
-            const result = await PokemonController.PokemonBusiness.editPokemon(name, number, generation, evolution_stage, evolved, familyId, cross_gen, type1, type2, weather1, weather2, stat_total, atk, def, sta, legendary, aquireable, spawns, regional, raidable, hatchable, shiny, nest, new_New, not_gettable, future_evolve, cp_40, cp_39)
+            const result = await PokemonController.PokemonBusiness.editPokemon(id, name, number, generation, evolution_stage, evolved, familyId, cross_gen, type1, type2, weather1, weather2, stat_total, atk, def, sta, legendary, aquireable, spawns, regional, raidable, hatchable, shiny, nest, new_New, not_gettable, future_evolve, cp_40, cp_39)
             res.status(201).send({
                 result,
                 message: "Pokemon atualizado com sucesso!"

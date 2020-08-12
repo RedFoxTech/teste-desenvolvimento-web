@@ -3,7 +3,7 @@ import { Pokemon } from "../model/Pokemon/Pokemon";
 
 
 export class PokemonDatabase extends BaseDatabase {
-    public static TABLE_NAME: string = '';
+    public static TABLE_NAME: string = 'Pokemon';
 
     private toModel(dbResult?: any): Pokemon | undefined {
         return (
@@ -64,7 +64,7 @@ export class PokemonDatabase extends BaseDatabase {
                 spawns: pokemon.getSpawns(),
                 regional: pokemon.getRegional(),
                 raidable: pokemon.getRaidable(),
-                hatchabel: pokemon.getHatchable(),
+                hatchable: pokemon.getHatchable(),
                 shiny: pokemon.getShiny(),
                 nest: pokemon.getNest(),
                 new_New: pokemon.getNew(),
@@ -92,33 +92,34 @@ export class PokemonDatabase extends BaseDatabase {
    : Promise<any | undefined> {
        await super.connection().raw(`
        UPDATE ${PokemonDatabase.TABLE_NAME}
-       SET name = "${name}", 
+       SET 
+       name = "${name}", 
        number = "${number}",
        generation = "${generation}",
        evolution_stage = "${evolution_stage}",
-       evolved = "${evolved}"
+       evolved = "${evolved}",
        familyId = "${familyId}", 
        cross_gen = "${cross_gen}",
        type1 = "${type1}",
        type2 = "${type2}",
-       weather1 = "${weather1}"
-       weather2 = "${weather2}"
-       stat_total = "${stat_total}"
-       atk = "${atk}"
-       def = "${def}"
-       sta = "${sta}"
-       legendary = "${legendary}"
-       aquireable = "${aquireable}"
-       spawns = "${spawns}"
-       regional = "${regional}"
-       raidable = "${raidable}"
-       hatchable = "${hatchable}"
-       shiny = "${shiny}"
-       nest = "${nest}"
-       new_New = "${new_New}"
-       not_gettable = "${not_gettable}"
-       future_evolve = "${future_evolve}"
-       cp_40 = "${cp_40}"
+       weather1 = "${weather1}",
+       weather2 = "${weather2}",
+       stat_total = "${stat_total}",
+       atk = "${atk}",
+       def = "${def}",
+       sta = "${sta}",
+       legendary = "${legendary}",
+       aquireable = "${aquireable}",
+       spawns = "${spawns}",
+       regional = "${regional}",
+       raidable = "${raidable}",
+       hatchable = "${hatchable}",
+       shiny = "${shiny}",
+       nest = "${nest}",
+       new_New = "${new_New}",
+       not_gettable = "${not_gettable}",
+       future_evolve = "${future_evolve}",
+       cp_40 = "${cp_40}",
        cp_39 = "${cp_39}"
      WHERE id = "${id}";  
        `)

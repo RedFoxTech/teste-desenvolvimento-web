@@ -4,8 +4,6 @@ import { Authenticator } from "../services/Authenticator";
 import { IdGenerator } from "../services/IdGenerator";
 import { Pokemon } from "../model/Pokemon/Pokemon";
 
-
-
 export class PokemonBusiness {
     constructor(
         private pokemonDataBase: PokemonDatabase,
@@ -67,6 +65,7 @@ export class PokemonBusiness {
         return pokemon
     }
     public async editPokemon(
+        id: string,
         name: string,
         number: number,
         generation: number,
@@ -96,9 +95,6 @@ export class PokemonBusiness {
         cp_40: number,
         cp_39: number
     ) {
-        const idGenerator = new IdGenerator()
-        const id = idGenerator.generatorId()
-
         const pokemonDataBase = new PokemonDatabase()
         const pokemon = await pokemonDataBase.editPokemons(id, name, number, generation, evolution_stage, evolved, familyId, cross_gen, type1, type2, weather1, weather2, stat_total, atk, def, sta, legendary, aquireable, spawns, regional, raidable, hatchable, shiny, nest, new_New, not_gettable, future_evolve, cp_40, cp_39)
 
