@@ -43,7 +43,7 @@ rodar:
 ```bash
 
 # Clone este repositório
-$ git clone git@github.com/marinaisabels/teste-navedex/
+$ git clone https://github.com/marinaisabels/teste-desenvolvimento-web.git
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd desktop
