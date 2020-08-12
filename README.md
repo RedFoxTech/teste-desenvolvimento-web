@@ -84,9 +84,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
   - [Styled-Components](https://styled-components.com/docs/basics/)
 ---
 
-## 🖱️ Documentação do Projeto
-- [Postman](https://documenter.getpostman.com/view/10578922/T1DpDdfv?version=latest)
-
 ## Dificuldades 
 
 As funcionalidades das telas não foram feitas por causa da data de entrega, me esforcei ao máximo para entregar tudo no dia certo porém não obtive êxito, continuarei melhorando o projeto mesmo após a entrega. 
