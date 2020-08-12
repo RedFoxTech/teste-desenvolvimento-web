@@ -78,6 +78,8 @@ export const deletePokemon = (id) => async (dispatch) => {
         console.error(err)
     }
 }
+
+
 // SINCRONAS //
 export const setPokemonsList = (listPokemons) => ({
     type: "SET_POKEMON_LIST",
