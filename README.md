@@ -1,4 +1,4 @@
- <img style="border-radius: 50%;" src="https://raw.githubusercontent.com/marinaisabels/teste-desenvolvimento-web/marina-isabel/image.png" width="200px;" alt="Logo RedFox"/>
+ <img style="border-radius: 50%;" src="https://redfox.tech/wp-content/uploads/2019/09/logo-colorido.png" width="200px;" alt="Logo RedFox"/>
 
 > ## 💻 Sobre o projeto
 Atualmente o sistema esta somente no excel, cheio de informações sobre Pokémon. É utilizado como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
