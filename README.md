@@ -89,7 +89,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## Dificuldades 
 
-OS endpoints de detalhes dos navers e projetos não ficou como deveria. Trabalhei para relacionar as tabelas entre si mas não obtive êxito. Estudarei mais a documentação do MYSQL para melhorar esta parte do projeto.
+As funcionalidades das telas não foram feitas por causa da data de entrega, me esforcei ao máximo para entregar tudo no dia certo porém não obtive êxito, continuarei melhorando o projeto mesmo após a entrega. 
 
 
 ## 👩🏿 Autora
