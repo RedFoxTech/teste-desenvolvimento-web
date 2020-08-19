@@ -1,0 +1,50 @@
+{
+  "name": "redfox",
+  "version": "1.0.0",
+  "description": "Processo Seletivo desenvolvedor backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./node_modules/jest/bin/jest.js",
+    "start": "ts-node-dev ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marinaisabels/teste-navedex.git"
+  },
+  "keywords": [
+    "nave",
+    "marina",
+    "processo",
+    "seletivo"
+  ],
+  "author": "Marina Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marinaisabels/teste-navedex/issues"
+  },
+  "homepage": "https://github.com/marinaisabels/teste-navedex#readme",
+  "dependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/express": "4.17.0",
+    "@types/jest": "^25.2.3",
+    "@types/jsonwebtoken": "^8.3.9",
+    "@types/knex": "^0.16.1",
+    "@types/node": "^13.7.7",
+    "@types/uuid": "^7.0.3",
+    "bcryptjs": "^2.4.3",
+    "bestzip": "^2.1.5",
+    "dotenv": "^8.2.0",
+    "express": "4.17.0",
+    "jest": "^26.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.1",
+    "lbn-lambda-express": "^0.1.10",
+    "moment": "^2.26.0",
+    "mysql": "^2.18.1",
+    "ts-jest": "^26.1.0",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.44",
+    "typescript": "^3.9.5",
+    "uuid": "^8.0.0"
+  }
+}
