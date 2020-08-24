@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  
+  api:
+    build:
+      context: .
+      dockerfile: api.Dockerfile
+    ports:
+      - '3000:3000'
+    container_name: api
+    restart: always
+    volumes:
+      - api-logs:/usr/src/node-api/logs:rw
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - pgsql
+
+  pgsql:
+    image: postgres:alpine
+    ports:
+      - '5433:5432'
+    container_name: 'pgsql'
+    restart: always
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpassword
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  api-logs:
+  pg-data:

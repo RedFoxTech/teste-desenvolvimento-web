@@ -1,0 +1,4 @@
+node_modules
+logs
+Dockerfile
+docker-compose.yml
