@@ -20,7 +20,7 @@ services:
   pgsql:
     image: postgres:alpine
     ports:
-      - '5433:5432'
+      - '5432:5432'
     container_name: 'pgsql'
     restart: always
     volumes:
@@ -28,7 +28,7 @@ services:
     environment:
       POSTGRES_USER: pguser
       POSTGRES_PASSWORD: pgpassword
-
+      POSTGRES_DB: bdpokedex
   adminer:
     image: adminer
     restart: always
