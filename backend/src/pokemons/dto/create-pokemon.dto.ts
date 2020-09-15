@@ -10,6 +10,8 @@ export class CreatePokemonDto {
 
     @ApiProperty()
     imgName: number;
+
+    @ApiProperty()
     generation: number;
 
     @ApiProperty()

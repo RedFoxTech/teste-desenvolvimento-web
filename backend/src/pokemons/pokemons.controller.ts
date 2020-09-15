@@ -17,13 +17,19 @@ import { UpdatePokemonDto } from './dto/update-pokemon.dto';
 import { PokemonsService } from './pokemons.service';
 import { ReturnPokemonDto } from './dto/return-pokemon.dto';
 import { FindPokemonsQueryDto } from './dto/find-pokemons-query.dto';
+import { AuthGuard } from '@nestjs/passport';
+import { RolesGuard } from '../auth/roles.guard';
+import { Role } from '../auth/role.decorator';
+import { UserRole } from '../users/user-roles.enum';
 
 @ApiTags('pokemons')
 @Controller('pokemons')
+@UseGuards(AuthGuard(), RolesGuard)
 export class PokemonsController {
     constructor(private readonly pokemonsService: PokemonsService) {}
 
     @Post()
+    @Role(UserRole.ADMIN)
     async createPokemon(
         @Body() createPokemonDto: CreatePokemonDto,
     ): Promise<ReturnPokemonDto> {
