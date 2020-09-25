@@ -86,9 +86,10 @@
   Por final, as informações são retornadas por meio do sistema de rotas, utilizando o formato JSON
   <br>
   Ao todo são utilizadas 6 rotas, sendo duas para pegar os todos os types/weathers, uma para todos os pokemons, e três para filtragem
-</h4>
+</h4> 
 
-# Front-End
+
+# Front-End 
  
  <h4>O Front-End é o lado que chega ao usuário, o que é mostrado na tela. Neste projeto, o Front-End foi desenvolvido principalmente com ReactJS.</h4>
  
