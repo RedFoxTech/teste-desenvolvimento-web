@@ -87,7 +87,7 @@
 <h4>
   Por final, as informações são retornadas por meio do sistema de rotas, utilizando o formato JSON
   <br>
-  Ao todo são utilizadas 6 rotas, sendo duas para pegar os todos os types/weathers, uma para todos os pokemons, e três para filtragem
+  Ao todo são utilizadas 6 rotas, sendo duas para pegar todos os types/weathers, uma para todos os pokemons, e três para filtragem
 </h4> 
 
 
