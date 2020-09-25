@@ -118,7 +118,7 @@
   <br>
   :diamonds: Selecionando algum weather e apertando em buscar, é possível visualizar todos os pokemons que possuem o weather selecionado.
   <br>
-  :diamonds: Pesquisando na seção de 'Nome do Pokemon', apertando bem buscar, é possível ver todos os pokemons que começam com a cadeia de caracteres inserida.
+  :diamonds: Pesquisando na seção de 'Nome do Pokemon', apertando em buscar, é possível ver todos os pokemons que começam com a cadeia de caracteres inserida.
 </h4>
 
 ### Recebimento de Informações
