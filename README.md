@@ -1,6 +1,7 @@
 # Índice
 <ul>
   <li>Introdução</li>
+  <li>Execução do Projeto</li>
   <li>Back-End</li>
   <li>Front-End</li>
   <li>Conclusão</li>
@@ -11,7 +12,7 @@
     O problema apresentado foi uma encontrar uma maneira de otimizar a busca e filtragem de informações em um arquivo XLSX, utilizando uma forma de aramzenagem de dados e uma maneira de exibir as informações claramente, bem como as funcionalidades para buscar, listar, filtrar e paginar as informações.
   </h4>
   
-<p>Para tal, foram utilizados Bulma, ReactJS e NodeJS</p>
+<p>Para tal, foram utilizados, principalmente, os frameworks Bulma, ReactJS e NodeJS</p>
   
  # Back-End
  <h5>O Back-End é o local onde se localiza o que fica por traz de uma aplicação, neste desafio, foi responsável por armazenar as informações, organizá-las e devolve-las para as solicitações do Front-End<h5>
@@ -49,8 +50,26 @@
  
  <h4>Depois de salvas no banco, as informações estão prontas para serem utilizadas, e, variando com a requisição do Front-End, elas são listadas e classificadas, podendo ser por type, weather, nome do pokemon, ou com nenhum filtro, selecionando todos os pokemons</h4>
  
+## Retorno de Informações
+<h4>
+  Por final, as informações são retornadas por meio do sistema de rotas, utilizando o formato JSON
+  <br>
+  Ao todo são utilizadas 6 rotas, sendo duas para pegar os todos os types/weathers, uma para todos os pokemons, e três para filtragem
+</h4>
+
+# Front-End
  
+ <h4>O Front-End é o lado que chega ao usuário, o que é mostrado na tela. Neste projeto, o Front-End foi desenvolvido principalmente com ReactJS.</h4>
+ 
+ ## Estruturação de Tópicos
+<ul>
+  <li>Aplicação em si</li>
+  <li>Requerimento de Informações</li>
+  <li>Recebimento de Informações</li>
+  <li>O Layout</li>
+  <li>Funcionalidades do Layout</li>
+</ul>
  
  <h4></h4>
- <li>/<li>
+ <li></li>
 
