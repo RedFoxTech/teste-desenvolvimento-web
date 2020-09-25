@@ -10,7 +10,7 @@
 # Execução
 
 <h4>
-  Para iniciar a execução do projeto, você precisa inicializar o serivor e a aplicação, e para tal, você precisará instalar as depêndencias de cada um
+  Para iniciar a execução do projeto, você precisa inicializar o servidor e a aplicação, e para tal, você precisará instalar as depêndencias de cada um
 </h4>
 
 <br>
