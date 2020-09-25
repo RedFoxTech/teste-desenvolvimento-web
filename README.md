@@ -46,17 +46,16 @@
   > Lembrando que os comandos com yarn apenas funcionam se o mesmo estiver instalado
  
 
-## Organização das Informações
+### Organização das Informações
  
  <h4>Depois de salvas no banco, as informações estão prontas para serem utilizadas, e, variando com a requisição do Front-End, elas são listadas e classificadas, podendo ser por type, weather, nome do pokemon, ou com nenhum filtro, selecionando todos os pokemons</h4>
  
-## Retorno de Informações
+### Retorno de Informações
 <h4>
   Por final, as informações são retornadas por meio do sistema de rotas, utilizando o formato JSON
   <br>
   Ao todo são utilizadas 6 rotas, sendo duas para pegar os todos os types/weathers, uma para todos os pokemons, e três para filtragem
 </h4>
-# 
 
 # Front-End
  
@@ -71,12 +70,12 @@
   <li>Funcionalidades do Layout</li>
 </ul>
 
-## A Aplicação em Si
+### A Aplicação em Si
 <h4>
   A Aplicação feita com a foco na linguagem TypeScript, uma varição do JavaScritp. Possui apenas uma página, em que é possível visualizar os pokemons, classificá-los, e filtra-los,bem como visualiza-los por 'páginas', seções que abrigam 50 pokemons por vez.
 </h4>
 
-## Requerimento de Informações
+### Requerimento de Informações
 
 <h4>
   :diamonds: As informações são solicitadas ao servidor de acordo com a interação do usuário, tendo como padrão a listagem de todos os pokemons.
