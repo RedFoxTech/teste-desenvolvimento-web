@@ -7,6 +7,35 @@
   <li>Conclusão</li>
 </ul>
 
+# Execução
+
+<h4>
+  Para iniciar a execução do projeto, você precisa inicializar o serivor e a aplicação
+</h4>
+
+<br>
+<h5>
+  Para iniciarlizar o servidor
+</h5>
+1. Navegue até a sua a pasta dentro do seu sistema de arquivos 
+2. Abra a pasta server 
+3. Ligue o terminal de comando, ou o CMD, ou o pronpt de comando nesta página 
+4. Execute o comando: **npm run start** 
+5. Pronto, agora basta ligar a aplicação 
+> Se preferir, também pode utilizar **yarn start**, caso o yarn esteja instalado 
+
+<br>
+<h5>
+  Para iniciarlizar a aplicação
+</h5>
+1. Navegue até a sua a pasta dentro do seu sistema de arquivos 
+2. Abra a pasta pokedex 
+3. Ligue o terminal de comando, ou o CMD, ou o pronpt de comando nesta página 
+4. Execute o comando **npm run start** 
+5. E pronto, será aberta uma aba em seu navegador com a aplicação rodando 
+6. E se tudo estiver certo, dentro de 2.7s as informações padrões serão carregadas do banco 
+> Se preferir, também pode utilizar **yarn start**, caso o yarn esteja instalado 
+
 # Introdução
   <h4>
     O problema apresentado foi uma encontrar uma maneira de otimizar a busca e filtragem de informações em um arquivo XLSX, utilizando uma forma de aramzenagem de dados e uma maneira de exibir as informações claramente, bem como as funcionalidades para buscar, listar, filtrar e paginar as informações.
@@ -79,7 +108,7 @@
 
 <h4>
   As informações são solicitadas ao servidor de acordo com a interação do usuário, tendo como padrão a listagem de todos os pokemons.
-  <br>
+  <br><br>
   :diamonds: Selecionando algum type e apertando em buscar, é possível visualizar todos os pokemons que possuem o type secionado.
   <br>
   :diamonds: Selecionando algum weather e apertando em buscar, é possível visualizar todos os pokemons que possuem o weather selecionado.
@@ -130,8 +159,5 @@ Feito com:
 
 :)
 
-Flávio Henrique     
-
- <h4></h4>
- <li></li>
+Flávio Henrique
 
