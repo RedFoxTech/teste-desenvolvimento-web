@@ -10,19 +10,20 @@
 # Execução
 
 <h4>
-  Para iniciar a execução do projeto, você precisa inicializar o serivor e a aplicação
+  Para iniciar a execução do projeto, você precisa inicializar o serivor e a aplicação, e para tal, você precisará instalar as depêndencias de cada um
 </h4>
 
 <br>
 <h5>
-  Para iniciarlizar o servidor
+  Para inicializar o servidor
 </h5>
 
 1. Navegue até a sua a pasta dentro do seu sistema de arquivos 
 2. Abra a pasta server 
 3. Ligue o terminal de comando, ou o CMD, ou o pronpt de comando nesta página 
-4. Execute o comando: **npm run start** 
-5. Pronto, agora basta ligar a aplicação 
+4. Execute o comando: **npm install**, e aguarde sua execução 
+5. Execute o comando: **npm run start** 
+6. Pronto, agora basta ligar a aplicação 
 > Se preferir, também pode utilizar **yarn start**, caso o yarn esteja instalado 
 
 <br>
@@ -33,9 +34,10 @@
 1. Navegue até a sua a pasta dentro do seu sistema de arquivos 
 2. Abra a pasta pokedex 
 3. Ligue o terminal de comando, ou o CMD, ou o pronpt de comando nesta página 
-4. Execute o comando **npm run start** 
-5. E pronto, será aberta uma aba em seu navegador com a aplicação rodando 
-6. E se tudo estiver certo, dentro de 2.7s as informações padrões serão carregadas do banco 
+4. Execute o comando: **npm install**, e aguarde sua execução 
+5. Execute o comando **npm run start** 
+6. E pronto, será aberta uma aba em seu navegador com a aplicação rodando 
+7. E se tudo estiver certo, dentro de 2.7s as informações padrões serão carregadas do banco 
 > Se preferir, também pode utilizar **yarn start**, caso o yarn esteja instalado 
 
 # Introdução
