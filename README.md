@@ -97,9 +97,9 @@
   O layout é estruturado para que seja de facil interação.
 </h4>
   
-  1 Logo no início da página, temos o **CABEÇALHO**, que armazena os botões de controle do usuário, falaremos deles mais abaixo 
-  2 No **PAINEL** é possível ver os filtros disponíveis e utiliza-los para requerir as informações 
-  3 Ao lado do painel, temos a **TABELA**, que exibe as informações dos pokemons requisitados 
+  1. Logo no início da página, temos o **CABEÇALHO**, que armazena os botões de controle do usuário, falaremos deles mais abaixo 
+  2. No **PAINEL** é possível ver os filtros disponíveis e utiliza-los para requerir as informações 
+  3. Ao lado do painel, temos a **TABELA**, que exibe as informações dos pokemons requisitados 
      A tabela possui rótulos acima e abaixo, para melhor encontrar os valores e suas respectivas correspondências 
      
 
