@@ -8,7 +8,7 @@
 
 # Introdução
   <h4>
-    O problema apresentado foi uma encontrar uma maneira de otimizar a busca e filtragem de informações em um arquivo XLSX, utilizando uma forma de aramzenagem de dados e uma forma de exibir as informações de forma simples, bem como as funcionalidades para buscar, listar, filtrar e paginar as informações.
+    O problema apresentado foi uma encontrar uma maneira de otimizar a busca e filtragem de informações em um arquivo XLSX, utilizando uma forma de aramzenagem de dados e uma maneira de exibir as informações claramente, bem como as funcionalidades para buscar, listar, filtrar e paginar as informações.
   </h4>
   
 <p>Para tal, foram utilizados Bulma, ReactJS e NodeJS</p>
@@ -28,28 +28,19 @@
 <h4>O banco escolhido foi o SQLite, com sua aplicação por meio da biblioteca KnexJS</h4>
 <h5>As informações sobre os types, weathers, generations, families e evolution foram organizadas em tabelas próprias, para otimização de dados, e relacionadas e/ou associadas com os pokemons, que também possuem tabela própria</h5>  
 
-> Confira o MER na dentro da pasta server, para maiores informações
+> Confira o MER dentro da pasta server, para maiores informações
 
 ### Migração de Dados
   <h4>A migração de dados foi feita de forma automática, utilizando a biblioteca Node-XLSX, buscando-as no arquivo XLSX e inserindo-as ao banco, sendo facilmente possível adicionar novos pokemons, apenas inserindo as informações no arquivo XLSX, e seguindo os passos abaixo:</h4>
   
-<ul>
-  <li>
   1. Exclua o arquivo database.sqlite 
      Ele se localiza na pasta database, dentro da pasta server, dentro server
-  </li>
-     
-  <li>
+
   2. Rode o comando: **npm run knex:migrate**
      Ou, se preferir, utilize o yarn: **yarn knex:migrate**
-  </li>
   
-  <li>
   3. Agora, insira as informações com o comando: **npm run knex:seed**
      Ou com o yarn: **yarn knex:seed**
-  </li>
-     
-</ul>
      
   > Lembrando que os comandos com yarn apenas funcionam se o mesmo estiver instalado
  
