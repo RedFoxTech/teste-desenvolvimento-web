@@ -1,0 +1,175 @@
+html {
+	overflow: hidden;
+}
+
+.page {
+	width: 100vw;
+	height: 100vh;
+
+	display: grid;
+	grid-template-rows: 1fr 6fr;
+	grid-template-columns: 1fr 3fr;
+	grid-template-areas: "header header" "painel tabela";
+}
+
+header {
+	grid-area: header;
+  background-color: var(--primary);
+}
+
+header .page-title {
+	font-family: Ubuntu;
+	color: var(--secondary);
+	font-size: 40px;
+
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+  padding-left: 20px;
+  
+  float: left;
+
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.close{
+  float: left;
+  height: 100%;
+	display: flex;
+	flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem
+}
+
+.close .close-btn{
+  font-family: Poppins;
+  background-color: var(--secondary);
+	color: var(--terciary);
+	border-color: var(--quarter);
+  cursor: pointer;
+}
+
+.close .close-btn:hover{
+	color: var(--quarter);
+	border-color: var(--terciary);
+}
+
+header .pagination-container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+header .pagination {
+	height: max-content;
+	padding-top: 1.5rem;
+}
+
+header .pagination a {
+	background-color: var(--secondary);
+	color: var(--terciary);
+	border-color: var(--quarter);
+}
+
+.painel {
+	grid-area: painel;
+
+	background-color: var(--secondary);
+
+	padding-right: 2rem;
+	padding-left: 1.2rem;
+	padding-top: 1rem;
+}
+
+.painel label {
+	color: var(--terciary);
+}
+
+.painel .button {
+	background-color: var(--primary);
+	border-color: var(--primary);
+}
+
+.painel .button:hover {
+	background-color: var(--terciary);
+}
+
+.painel fieldset {
+	margin-bottom: 10px;
+}
+
+.pokemon {
+	grid-area: tabela;
+	background-color: var(--terciary);
+
+	overflow: scroll;
+}
+
+.pokemon .table thead,
+.pokemon .table tfoot {
+	background-color: var(--secondary);
+}
+
+.table thead td,
+.table thead th,
+.table tfoot td,
+.table tfoot th {
+	color: #49397e;
+	font-family: Ubuntu;
+	border-color: #6a6180;
+	cursor: help;
+}
+
+.pokemon .table tbody tr td,
+.pokemon .table tbody tr th {
+	color: #fff;
+	border-color: var(--terciary);
+}
+
+.pokemon .table tbody tr {
+	background-color: var(--quarter) !important;
+}
+
+.pokemon .table tbody tr:nth-child(even) {
+	background-color: var(--terciary) !important;
+}
+
+.pokemon .table tbody tr:hover {
+	background-color: var(--primary) !important;
+}
+
+.close-painel{
+  grid-area: none;
+
+	display: none;
+}
+
+.expand-pokemon{
+  width: 100vw;
+	height: 100vh;
+
+	display: grid;
+	grid-template-rows: 1fr 6fr;
+	grid-template-columns: 1fr 3fr;
+	grid-template-areas: "header header" "tabela tabela";
+}
+
+.is-3{
+  color: var(--primary);
+  font-family: Poppins;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pagination-next label{
+  transform: rotate(90deg);
+}
+
+.pagination-previous label{
+  transform: rotate(-90deg);
+  cursor: pointer;
+}

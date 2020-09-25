@@ -1,58 +1,164 @@
-# Teste de Desenvolvimento Web
+# Índice
+<ul>
+  <li>Execução</li>
+  <li>Introdução</li>
+  <li>Back-End</li>
+  <li>Front-End</li>
+  <li>Conclusão</li>
+</ul>
 
-Olá Dev! Tudo bem?
+# Execução
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+<h4>
+  Para iniciar a execução do projeto, você precisa inicializar o servidor e a aplicação, e para tal, você precisará instalar as depêndencias de cada um
+</h4>
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+<br>
+<h5>
+  Para inicializar o servidor
+</h5>
 
-Agora vamos ao teste!
+1. Navegue até a pasta dentro do seu sistema de arquivos 
+2. Abra a pasta server 
+3. Ligue o terminal de comando, ou o CMD, ou o prompt de comando nesta pasta
+4. Execute o comando: **npm install**, e aguarde sua execução 
+5. Execute o comando: **npm run start** 
+6. Pronto, agora basta ligar a aplicação 
+> Se preferir, também pode utilizar **yarn start**, caso o yarn esteja instalado 
+
+<br>
+<h5>
+  Para iniciarlizar a aplicação
+</h5>
+
+1. Navegue até  a pasta dentro do seu sistema de arquivos 
+2. Abra a pasta pokedex 
+3. Ligue o terminal de comando, ou o CMD, ou o prompt de comando nesta pasta 
+4. Execute o comando: **npm install**, e aguarde sua execução 
+5. Execute o comando **npm run start** 
+6. E pronto, será aberta uma aba em seu navegador com a aplicação rodando 
+7. E se tudo estiver certo, dentro de 2.7s as informações padrões serão carregadas do banco 
+> Se preferir, também pode utilizar **yarn start**, caso o yarn esteja instalado 
+
+# Introdução
+  <h4>
+    O problema apresentado foi encontrar uma maneira de otimizar a busca e filtragem de informações em um arquivo XLSX, utilizando uma forma de armazenagem de dados e uma maneira de exibir as informações claramente, bem como as funcionalidades para buscar, listar, filtrar e paginar as informações.
+  </h4>
+  
+<p>Para tal, foram utilizados, principalmente, os frameworks Bulma, ReactJS e NodeJS</p>
+  
+# Back-End
+ <h5>O Back-End é onde se localiza o que fica por traz de uma aplicação, neste desafio, foi responsável por armazenar as informações, organizá-las e devolve-las para as solicitações do Front-End<h5>
+
+## Esquema
+  <ul>
+    <li>Banco de Dados</li>
+    <li>Migração de Informações</li>
+    <li>Organização das Informações</li>
+    <li>Retorno de Informações</li>
+  <ul>
+
+### Banco de Dados
+<h4>O banco escolhido foi o SQLite, com sua aplicação por meio da biblioteca KnexJS</h4>
+<h5>As informações sobre os types, weathers, generations, families e evolution foram organizadas em tabelas próprias, para otimização de dados, e relacionadas e/ou associadas com os pokemons, que também possuem tabela própria</h5>  
+
+> Confira o MER dentro da pasta server, para maiores informações
+
+### Migração de Dados
+  <h4>A migração de dados foi feita de forma automática, utilizando a biblioteca Node-XLSX, buscando-as no arquivo XLSX e inserindo-as ao banco, sendo facilmente possível adicionar novos pokemons, apenas inserindo as informações no arquivo XLSX, e seguindo os passos abaixo:</h4>
+  
+1. Exclua o arquivo database.sqlite 
+   Ele se localiza na pasta database, dentro da pasta src, dentro de server
+
+2. Rode o comando: **npm run knex:migrate**
+   Ou, se preferir, utilize o yarn: **yarn knex:migrate**
+  
+3. Agora, insira as informações com o comando: **npm run knex:seed**
+   Ou com o yarn: **yarn knex:seed**
+     
+> Lembrando que os comandos com yarn apenas funcionam se o mesmo estiver instalado
+ 
+
+### Organização das Informações
+ 
+ <h4>Depois de salvas no banco, as informações estão prontas para serem utilizadas, e, variando com a requisição do Front-End, elas são listadas e classificadas, podendo ser por type, weather, nome do pokemon, ou com nenhum filtro, selecionando todos os pokemons</h4>
+ 
+### Retorno de Informações
+<h4>
+  Por final, as informações são retornadas por meio do sistema de rotas, utilizando o formato JSON
+  <br>
+  Ao todo são utilizadas 6 rotas, sendo duas para pegar todos os types/weathers, uma para todos os pokemons, e três para filtragem
+</h4> 
 
 
-## Desafio Pokémon
+# Front-End 
+ 
+ <h4>O Front-End é o lado que chega ao usuário, o que é mostrado na tela. Neste projeto, o Front-End foi desenvolvido principalmente com ReactJS.</h4>
+ 
+ ## Estruturação de Tópicos
+<ul>
+  <li>A Aplicação em Si</li>
+  <li>Requerimento de Informações</li>
+  <li>Recebimento de Informações</li>
+  <li>O Layout</li>
+  <li>Funcionalidades do Layout</li>
+</ul>
 
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
+### A Aplicação em Si
+<h4>
+  A Aplicação feita com foco na linguagem TypeScript, uma varição do JavaScript. Possui apenas uma página, em que é possível visualizar os pokemons, classificá-los, e filtra-los, bem como visualiza-los por 'páginas', seções que abrigam 50 pokemons por vez.
+</h4>
 
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
+### Requerimento de Informações
 
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
+<h4>
+  As informações são solicitadas ao servidor de acordo com a interação do usuário, tendo como padrão a listagem de todos os pokemons.
+  <br><br>
+  :diamonds: Selecionando algum type e apertando em buscar, é possível visualizar todos os pokemons que possuem o type secionado.
+  <br>
+  :diamonds: Selecionando algum weather e apertando em buscar, é possível visualizar todos os pokemons que possuem o weather selecionado.
+  <br>
+  :diamonds: Pesquisando na seção de 'Nome do Pokemon', apertando em buscar, é possível ver todos os pokemons que começam com a cadeia de caracteres inserida.
+</h4>
 
+### Recebimento de Informações
+<h4>
+  Após o usuário escolher alguma forma de filtragem, as informações são pedidas para o Back-End por meio do sistema de rotas, utilizando o Axios, e então trabalhadas para serem exibidas em formato de tabela
+</h4>
 
-## Consigo fazer tudo isso?
+### O Layout
+<h4>
+  O layout é estruturado para que seja de fácil interação.
+</h4>
+  
+  1. Logo no início da página, temos o **CABEÇALHO**, que armazena os botões de controle do usuário, falaremos deles mais abaixo 
+  2. No **PAINEL** é possível ver os filtros disponíveis e utiliza-los para requerir as informações 
+  3. Ao lado do painel, temos a **TABELA**, que exibe as informações dos pokemons requisitados 
+     A tabela possui rótulos acima e abaixo, para melhor encontrar os valores e suas respectivas correspondências 
+### Funcionalidades do Layout
 
-Consegue sim!
+<h4>
+  O layout possui quatro componentes principais:
+</h4>
 
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
+1. O botão de próxima *página* 
+   Ele controla qual *página* está sendo exibida no momento, avança uma *página*, para organização dos pokemons
+   
+2. O botão de *página* anterior
+   Ele faz a mesma coisa que o botão anterior, porém no sentido inverso, ele retorna uma 'página'
+   
+3. O indicador de *página*
+   Ele indica qual a *página* atual
+   Obs: Ao escolher um filtro, você será automaticamente direcionado à *página*' inicial da exibição de pokemons, ou seja, a primeira 
 
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+4. O botão de **Esconder/Mostrar Painel**
+   Basicamente, ele exibe e esconde o painel de controle de filtros para melhor visualização da tabela
+   
+# Conclusão
 
+O projeto apresentado cria uma forma otimizada de armazenar as informações dos pokemons, bem como organiza-las e exibi-las ao usuário, para que seja facilmente possível encontrar informações a respeito de um respectivo pokemon.
 
-## Por onde começo?
+:)
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+Flávio Henrique
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
-
-
-## E o Layout??
-
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
-
-
-## Regras
-
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
-
-
-## Só isso?
-
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
