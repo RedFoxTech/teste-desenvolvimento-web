@@ -106,7 +106,7 @@
 
 ### A Aplicação em Si
 <h4>
-  A Aplicação feita com a foco na linguagem TypeScript, uma varição do JavaScritp. Possui apenas uma página, em que é possível visualizar os pokemons, classificá-los, e filtra-los,bem como visualiza-los por 'páginas', seções que abrigam 50 pokemons por vez.
+  A Aplicação feita com foco na linguagem TypeScript, uma varição do JavaScript. Possui apenas uma página, em que é possível visualizar os pokemons, classificá-los, e filtra-los, bem como visualiza-los por 'páginas', seções que abrigam 50 pokemons por vez.
 </h4>
 
 ### Requerimento de Informações
