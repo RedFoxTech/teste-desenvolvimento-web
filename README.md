@@ -78,7 +78,7 @@
 ### Requerimento de Informações
 
 <h4>
-  :diamonds: As informações são solicitadas ao servidor de acordo com a interação do usuário, tendo como padrão a listagem de todos os pokemons.
+  As informações são solicitadas ao servidor de acordo com a interação do usuário, tendo como padrão a listagem de todos os pokemons.
   <br>
   :diamonds: Selecionando algum type e apertando em buscar, é possível visualizar todos os pokemons que possuem o type secionado.
   <br>
@@ -95,12 +95,13 @@
 ### O Layout
 <h4>
   O layout é estruturado para que seja de facil interação.
+</h4>
   
   . Logo no início da página, temos o **CABEÇALHO**, que armazena os botões de controle do usuário, falaremos deles mais abaixo 
   . No **PAINEL** é possível ver os filtros disponíveis e utiliza-los para requerir as informações 
   . Ao lado do painel, temos a **TABELA**, que exibe as informações dos pokemons requisitados 
      A tabela possui rótulos acima e abaixo, para melhor encontrar os valores e suas respectivas correspondências 
-</h4>
+     
 
  <h4></h4>
  <li></li>
