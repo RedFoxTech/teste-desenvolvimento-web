@@ -128,7 +128,7 @@
 
 ### O Layout
 <h4>
-  O layout é estruturado para que seja de facil interação.
+  O layout é estruturado para que seja de fácil interação.
 </h4>
   
   1. Logo no início da página, temos o **CABEÇALHO**, que armazena os botões de controle do usuário, falaremos deles mais abaixo 
@@ -142,7 +142,7 @@
 </h4>
 
 1. O botão de próxima *página* 
-   Ele controla qual *página* está sendo exibida no momento, avança uma 'página', para organização dos pokemons
+   Ele controla qual *página* está sendo exibida no momento, avança uma *página*, para organização dos pokemons
    
 2. O botão de *página* anterior
    Ele faz a mesma coisa que o botão anterior, porém no sentido inverso, ele retorna uma 'página'
