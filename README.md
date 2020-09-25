@@ -31,9 +31,9 @@
   Para iniciarlizar a aplicação
 </h5>
 
-1. Navegue até a sua a pasta dentro do seu sistema de arquivos 
+1. Navegue até  a pasta dentro do seu sistema de arquivos 
 2. Abra a pasta pokedex 
-3. Ligue o terminal de comando, ou o CMD, ou o pronpt de comando nesta página 
+3. Ligue o terminal de comando, ou o CMD, ou o prompt de comando nesta pasta 
 4. Execute o comando: **npm install**, e aguarde sua execução 
 5. Execute o comando **npm run start** 
 6. E pronto, será aberta uma aba em seu navegador com a aplicação rodando 
@@ -42,7 +42,7 @@
 
 # Introdução
   <h4>
-    O problema apresentado foi uma encontrar uma maneira de otimizar a busca e filtragem de informações em um arquivo XLSX, utilizando uma forma de aramzenagem de dados e uma maneira de exibir as informações claramente, bem como as funcionalidades para buscar, listar, filtrar e paginar as informações.
+    O problema apresentado foi encontrar uma maneira de otimizar a busca e filtragem de informações em um arquivo XLSX, utilizando uma forma de aramzenagem de dados e uma maneira de exibir as informações claramente, bem como as funcionalidades para buscar, listar, filtrar e paginar as informações.
   </h4>
   
 <p>Para tal, foram utilizados, principalmente, os frameworks Bulma, ReactJS e NodeJS</p>
