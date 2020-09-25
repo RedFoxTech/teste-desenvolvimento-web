@@ -53,5 +53,13 @@
      
   > Lembrando que os comandos com yarn apenas funcionam se o mesmo estiver instalado
  
+
+## Organização das Informações
+ 
+ <h4>Depois de salvas no banco, as informações estão prontas para serem utilizadas, e, variando com a requisição do Front-End, elas são listadas e classificadas, podendo ser por type, weather, nome do pokemon, ou com nenhum filtro, selecionando todos os pokemons</h4>
+ 
+ 
+ 
  <h4></h4>
+ <li>/<li>
 
