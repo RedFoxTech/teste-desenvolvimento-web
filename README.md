@@ -101,7 +101,36 @@
   2. No **PAINEL** é possível ver os filtros disponíveis e utiliza-los para requerir as informações 
   3. Ao lado do painel, temos a **TABELA**, que exibe as informações dos pokemons requisitados 
      A tabela possui rótulos acima e abaixo, para melhor encontrar os valores e suas respectivas correspondências 
-     
+### Funcionalidades do Layout
+
+<h4>
+  O layout possui quatro componentes principais:
+</h4>
+
+1. O botão de próxima *página* 
+   Ele controla qual *página* está sendo exibida no momento, avança uma 'página', para organização dos pokemons
+   
+2. O botão de *página* anterior
+   Ele faz a mesma coisa que o botão anterior, porém no sentido inverso, ele retorna uma 'página'
+   
+3. O indicador de *página*
+   Ele indica qual a *página* atual
+   Obs: Ao escolher um filtro, você será automaticamente direcionado à *página*' inicial da exibição de pokemons, ou seja, a primeira 
+
+4. O botão de **Esconder/Mostrar Painel**
+   Basicamente, ele exibe e esconde o painel de controle de filtros para melhor visualização da tabela
+   
+# Conclusão
+
+O projeto apresentado cria uma forma otimizada de armazenar as informações dos pokemons, bem como organiza-las e exibi-las ao usuário, para que seja facilmente possível encontrar informações a respeito de um respectivo pokemon.
+
+Feito com:
+:coffee: Café 
+:notes: Músia boa 
+
+:)
+
+Flávio Henrique     
 
  <h4></h4>
  <li></li>
