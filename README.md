@@ -14,7 +14,7 @@
   
 <p>Para tal, foram utilizados, principalmente, os frameworks Bulma, ReactJS e NodeJS</p>
   
- # Back-End
+# Back-End
  <h5>O Back-End é o local onde se localiza o que fica por traz de uma aplicação, neste desafio, foi responsável por armazenar as informações, organizá-las e devolve-las para as solicitações do Front-End<h5>
 
 ## Esquema
@@ -78,13 +78,13 @@
 ## Requerimento de Informações
 
 <h4>
-  As informações são solicitadas ao servidor de acordo com a interação do usuário, tendo como padrão a listagem de todos os pokemons.
+  :diamonds: As informações são solicitadas ao servidor de acordo com a interação do usuário, tendo como padrão a listagem de todos os pokemons.
   <br>
   Selecionando algum type e apertando em buscar, é possível visualizar todos os pokemons que possuem o type secionado.
   <br>
-  Selecionando algum weather e apertando em buscar, é possível visualizar todos os pokemons que possuem o weather selecionado.
+  :diamonds: :diamonds: Selecionando algum weather e apertando em buscar, é possível visualizar todos os pokemons que possuem o weather selecionado.
   <br>
-  Pesquisando na seção de 'Nome do Pokemon', apertando bem buscar, é possível ver todos os pokemons que começam com a cadeia de caracteres inserida.
+  :diamonds: Pesquisando na seção de 'Nome do Pokemon', apertando bem buscar, é possível ver todos os pokemons que começam com a cadeia de caracteres inserida.
 </h4>
  
  <h4></h4>
