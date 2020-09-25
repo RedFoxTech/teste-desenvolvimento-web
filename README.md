@@ -23,3 +23,10 @@
     <li>Organização das Informações</li>
     <li>Retorno de Informações</li>
   <ul>
+
+### Banco de Dados
+<h4>O banco escolhido foi o SQLite, com sua aplicação por meio da biblioteca KnexJS</h4>
+<h5>As informações sobre os types, weathers, generations, families e evolution foram organizadas em tabelas próprias, para otimização de dados, e relacionadas e/ou associadas com os pokemons, que também possuem tabela própria</h5>
+> Confira o MER na dentro da pasta server, para maiores informações
+<h4></h4>
+<li></li>
