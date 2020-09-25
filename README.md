@@ -86,7 +86,22 @@
   <br>
   :diamonds: Pesquisando na seção de 'Nome do Pokemon', apertando bem buscar, é possível ver todos os pokemons que começam com a cadeia de caracteres inserida.
 </h4>
- 
+
+### Recebimento de Informações
+<h4>
+  Após o usuário escolher alguma forma de filtragem, as informações são pedidas para o Back-End por meio do sistema de rotas, utilizando o Axios, e então trabalhadas para serem exibidas em formato de tabela
+</h4>
+
+### O Layout
+<h4>
+  O layout é estruturado para que seja de facil interação.
+  
+  . Logo no início da página, temos o **CABEÇALHO**, que armazena os botões de controle do usuário, falaremos deles mais abaixo 
+  . No **PAINEL** é possível ver os filtros disponíveis e utiliza-los para requerir as informações 
+  . Ao lado do painel, temos a **TABELA**, que exibe as informações dos pokemons requisitados 
+     A tabela possui rótulos acima e abaixo, para melhor encontrar os valores e suas respectivas correspondências 
+</h4>
+
  <h4></h4>
  <li></li>
 
