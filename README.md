@@ -18,9 +18,9 @@
   Para inicializar o servidor
 </h5>
 
-1. Navegue até a sua a pasta dentro do seu sistema de arquivos 
+1. Navegue até a pasta dentro do seu sistema de arquivos 
 2. Abra a pasta server 
-3. Ligue o terminal de comando, ou o CMD, ou o pronpt de comando nesta página 
+3. Ligue o terminal de comando, ou o CMD, ou o prompt de comando nesta pasta
 4. Execute o comando: **npm install**, e aguarde sua execução 
 5. Execute o comando: **npm run start** 
 6. Pronto, agora basta ligar a aplicação 
