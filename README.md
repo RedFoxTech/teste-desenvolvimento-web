@@ -63,12 +63,29 @@
  
  ## Estruturação de Tópicos
 <ul>
-  <li>Aplicação em si</li>
+  <li>A Aplicação em Si</li>
   <li>Requerimento de Informações</li>
   <li>Recebimento de Informações</li>
   <li>O Layout</li>
   <li>Funcionalidades do Layout</li>
 </ul>
+
+## A Aplicação em Si
+<h4>
+  A Aplicação feita com a foco na linguagem TypeScript, uma varição do JavaScritp. Possui apenas uma página, em que é possível visualizar os pokemons, classificá-los, e filtra-los,bem como visualiza-los por 'páginas', seções que abrigam 50 pokemons por vez.
+</h4>
+
+## Requerimento de Informações
+
+<h4>
+  As informações são solicitadas ao servidor de acordo com a interação do usuário, tendo como padrão a listagem de todos os pokemons.
+  <br>
+  Selecionando algum type e apertando em buscar, é possível visualizar todos os pokemons que possuem o type secionado.
+  <br>
+  Selecionando algum weather e apertando em buscar, é possível visualizar todos os pokemons que possuem o weather selecionado.
+  <br>
+  Pesquisando na seção de 'Nome do Pokemon', apertando bem buscar, é possível ver todos os pokemons que começam com a cadeia de caracteres inserida.
+</h4>
  
  <h4></h4>
  <li></li>
