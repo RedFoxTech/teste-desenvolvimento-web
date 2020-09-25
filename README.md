@@ -158,10 +158,6 @@
 
 O projeto apresentado cria uma forma otimizada de armazenar as informações dos pokemons, bem como organiza-las e exibi-las ao usuário, para que seja facilmente possível encontrar informações a respeito de um respectivo pokemon.
 
-Feito com:
-:coffee: Café 
-:notes: Músia boa 
-
 :)
 
 Flávio Henrique
