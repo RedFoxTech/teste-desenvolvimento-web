@@ -67,16 +67,16 @@
 ### Migração de Dados
   <h4>A migração de dados foi feita de forma automática, utilizando a biblioteca Node-XLSX, buscando-as no arquivo XLSX e inserindo-as ao banco, sendo facilmente possível adicionar novos pokemons, apenas inserindo as informações no arquivo XLSX, e seguindo os passos abaixo:</h4>
   
-  1. Exclua o arquivo database.sqlite 
-     Ele se localiza na pasta database, dentro da pasta server, dentro server
+1. Exclua o arquivo database.sqlite 
+   Ele se localiza na pasta database, dentro da pasta server, dentro de server
 
-  2. Rode o comando: **npm run knex:migrate**
-     Ou, se preferir, utilize o yarn: **yarn knex:migrate**
+2. Rode o comando: **npm run knex:migrate**
+   Ou, se preferir, utilize o yarn: **yarn knex:migrate**
   
-  3. Agora, insira as informações com o comando: **npm run knex:seed**
-     Ou com o yarn: **yarn knex:seed**
+3. Agora, insira as informações com o comando: **npm run knex:seed**
+   Ou com o yarn: **yarn knex:seed**
      
-  > Lembrando que os comandos com yarn apenas funcionam se o mesmo estiver instalado
+> Lembrando que os comandos com yarn apenas funcionam se o mesmo estiver instalado
  
 
 ### Organização das Informações
