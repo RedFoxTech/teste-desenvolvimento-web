@@ -42,7 +42,7 @@
 
 # Introdução
   <h4>
-    O problema apresentado foi encontrar uma maneira de otimizar a busca e filtragem de informações em um arquivo XLSX, utilizando uma forma de aramzenagem de dados e uma maneira de exibir as informações claramente, bem como as funcionalidades para buscar, listar, filtrar e paginar as informações.
+    O problema apresentado foi encontrar uma maneira de otimizar a busca e filtragem de informações em um arquivo XLSX, utilizando uma forma de armazenagem de dados e uma maneira de exibir as informações claramente, bem como as funcionalidades para buscar, listar, filtrar e paginar as informações.
   </h4>
   
 <p>Para tal, foram utilizados, principalmente, os frameworks Bulma, ReactJS e NodeJS</p>
