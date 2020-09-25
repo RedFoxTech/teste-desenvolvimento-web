@@ -56,6 +56,7 @@
   <br>
   Ao todo são utilizadas 6 rotas, sendo duas para pegar os todos os types/weathers, uma para todos os pokemons, e três para filtragem
 </h4>
+# 
 
 # Front-End
  
@@ -80,9 +81,9 @@
 <h4>
   :diamonds: As informações são solicitadas ao servidor de acordo com a interação do usuário, tendo como padrão a listagem de todos os pokemons.
   <br>
-  Selecionando algum type e apertando em buscar, é possível visualizar todos os pokemons que possuem o type secionado.
+  :diamonds: Selecionando algum type e apertando em buscar, é possível visualizar todos os pokemons que possuem o type secionado.
   <br>
-  :diamonds: :diamonds: Selecionando algum weather e apertando em buscar, é possível visualizar todos os pokemons que possuem o weather selecionado.
+  :diamonds: Selecionando algum weather e apertando em buscar, é possível visualizar todos os pokemons que possuem o weather selecionado.
   <br>
   :diamonds: Pesquisando na seção de 'Nome do Pokemon', apertando bem buscar, é possível ver todos os pokemons que começam com a cadeia de caracteres inserida.
 </h4>
