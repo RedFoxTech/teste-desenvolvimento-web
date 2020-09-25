@@ -17,6 +17,7 @@
 <h5>
   Para iniciarlizar o servidor
 </h5>
+
 1. Navegue até a sua a pasta dentro do seu sistema de arquivos 
 2. Abra a pasta server 
 3. Ligue o terminal de comando, ou o CMD, ou o pronpt de comando nesta página 
@@ -28,6 +29,7 @@
 <h5>
   Para iniciarlizar a aplicação
 </h5>
+
 1. Navegue até a sua a pasta dentro do seu sistema de arquivos 
 2. Abra a pasta pokedex 
 3. Ligue o terminal de comando, ou o CMD, ou o pronpt de comando nesta página 
