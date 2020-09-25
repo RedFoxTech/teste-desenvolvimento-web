@@ -1,7 +1,7 @@
 # Índice
 <ul>
+  <li>Execução</li>
   <li>Introdução</li>
-  <li>Execução do Projeto</li>
   <li>Back-End</li>
   <li>Front-End</li>
   <li>Conclusão</li>
