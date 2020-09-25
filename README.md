@@ -48,7 +48,7 @@
 <p>Para tal, foram utilizados, principalmente, os frameworks Bulma, ReactJS e NodeJS</p>
   
 # Back-End
- <h5>O Back-End é o local onde se localiza o que fica por traz de uma aplicação, neste desafio, foi responsável por armazenar as informações, organizá-las e devolve-las para as solicitações do Front-End<h5>
+ <h5>O Back-End é onde se localiza o que fica por traz de uma aplicação, neste desafio, foi responsável por armazenar as informações, organizá-las e devolve-las para as solicitações do Front-End<h5>
 
 ## Esquema
   <ul>
