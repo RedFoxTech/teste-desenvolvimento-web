@@ -10,3 +10,7 @@
 .navbar {
   background-color: #ef5350 !important;
 }
+
+body {
+  background-color: transparent !important;
+}
