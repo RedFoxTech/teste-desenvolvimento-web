@@ -63,6 +63,54 @@ export default class Pokemon extends Component {
           break;
       }
     });
+
+    //Convertendo decímetro para metros... O + 0.0001 * 100 / 100 é para arredondar para 2 decimais
+    const altura = Math.round((pokemonInfo.data.height * 0.1 + 0.0001) * 100) / 100;
+
+    //Convertendo hectograms para quilogramas... O mesmo conceito acima se aplica aqui
+    const peso = Math.round((pokemonInfo.data.weight * 0.1 + 0.0001) * 100) / 100;
+
+    const tipos = pokemonInfo.data.types.map(tipo => tipo.type.name);
+
+    const habilidades = pokemonInfo.data.abilities.map(habilidade => {
+      return habilidade.ability.name
+        .toLowerCase()
+        .split('-')
+        .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+        .join(' ');
+    });
+
+    const evs = pokemonInfo.data.stats.filter(stat => {
+      if (stat.effort > 0) {
+        return true;
+      }
+      return false;
+    })
+      .map(stat => {
+        return `${stat.effort} ${stat.stat.name}`
+          .toLowerCase()
+          .split('-')
+          .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+          .join(' ');
+      })
+      .join(', ');
+
+    await axios.get(especiesPokemonUrl).then(res => {
+      let descricao = '';
+      res.data.flavor_text_entries.some(flavor => {
+        if (flavor.language.name === 'en') {
+          descricao = flavor.flavor_text;
+          return;
+        }
+      });
+    })
+
+    console.log(altura);
+    console.log(peso);
+    console.log(tipos);
+    console.log(habilidades);
+    console.log(evs);
+
   }
 
   render() {
