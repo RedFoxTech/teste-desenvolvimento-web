@@ -178,11 +178,13 @@ export default class Pokemon extends Component {
         <div className="card">
           <div className="card-header">
             <div className="row">
+
               <div className="col-5">
                 <h5>
                   {this.state.pokemonIndex}
                 </h5>
               </div>
+
               <div className="col-7">
                 <div className="float-right">
                   {this.state.tipos.map(tipo => (
@@ -204,6 +206,32 @@ export default class Pokemon extends Component {
                   ))}
                 </div>
               </div>
+
+            </div>
+          </div>
+
+          <div className="card-body">
+            <div className="row align-items-center">
+
+              <div className="col-md-3">
+                <img
+                  src={this.state.imgUrl}
+                  alt="Foto do Pokemon"
+                  className="card-img-top rounded mx-auto mr-2"
+                />
+              </div>
+
+              <div className="col-md-9">
+                <h4 className="mx-auto">
+                  {this.state.name
+                    .toLowerCase()
+                    .split('-')
+                    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+                    .join(' ')
+                  }
+                </h4>
+              </div>
+
             </div>
           </div>
         </div>
