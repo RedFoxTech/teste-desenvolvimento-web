@@ -179,12 +179,14 @@ export default class Pokemon extends Component {
           <div className="card-header">
             <div className="row">
 
+              {/* Número do Pokemon na PokeDex */}
               <div className="col-5">
                 <h5>
                   {this.state.pokemonIndex}
                 </h5>
               </div>
 
+              {/* Tipos do Pokemon */}
               <div className="col-7">
                 <div className="float-right">
                   {this.state.tipos.map(tipo => (
@@ -213,6 +215,7 @@ export default class Pokemon extends Component {
           <div className="card-body">
             <div className="row align-items-center">
 
+              {/* Imagem do Pokemon */}
               <div className="col-md-3">
                 <img
                   src={this.state.imgUrl}
@@ -221,6 +224,7 @@ export default class Pokemon extends Component {
                 />
               </div>
 
+              {/* Nome do Pokemon */}
               <div className="col-md-9">
                 <h4 className="mx-auto">
                   {this.state.name
@@ -231,6 +235,7 @@ export default class Pokemon extends Component {
                   }
                 </h4>
 
+                {/* Vida do Pokemon */}
                 <div className="row align-items-center">
                   <div className="col-12 col-md-3">HP</div>
                   <div className="col-12 col-md-9">
@@ -252,6 +257,8 @@ export default class Pokemon extends Component {
                     </div>
                   </div>
                 </div>
+
+                {/* Ataque do Pokemon */}
                 <div className="row align-items-center">
                   <div className="col-12 col-md-3">Attack</div>
                   <div className="col-12 col-md-9">
@@ -273,6 +280,8 @@ export default class Pokemon extends Component {
                     </div>
                   </div>
                 </div>
+
+                {/* Defesa do Pokemon */}
                 <div className="row align-items-center">
                   <div className="col-12 col-md-3">Defense</div>
                   <div className="col-12 col-md-9">
@@ -294,6 +303,8 @@ export default class Pokemon extends Component {
                     </div>
                   </div>
                 </div>
+
+                {/* Velocidade do Pokemon */}
                 <div className="row align-items-center">
                   <div className="col-12 col-md-3">Speed</div>
                   <div className="col-12 col-md-9">
@@ -315,6 +326,8 @@ export default class Pokemon extends Component {
                     </div>
                   </div>
                 </div>
+
+                {/* Nível do ataque especial do Pokemon */}
                 <div className="row align-items-center">
                   <div className="col-12 col-md-3">Special Attack</div>
                   <div className="col-12 col-md-9">
@@ -336,6 +349,8 @@ export default class Pokemon extends Component {
                     </div>
                   </div>
                 </div>
+
+                {/* Nível da defesa especial do Pokemon */}
                 <div className="row align-items-center">
                   <div className="col-12 col-md-3">Special Defense</div>
                   <div className="col-12 col-md-9">
@@ -358,9 +373,16 @@ export default class Pokemon extends Component {
                   </div>
                 </div>
               </div>
-            </div>
 
+              {/* Descrição do Pokemon*/}
+              <div className="row mt-1">
+                <div className="col">
+                  <p className="pd-2">{this.state.descricao}</p>
+                </div>
+              </div>
+            </div>
           </div>
+          <hr />
         </div>
       </div>
     );
