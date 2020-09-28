@@ -380,9 +380,89 @@ export default class Pokemon extends Component {
                   <p className="pd-2">{this.state.descricao}</p>
                 </div>
               </div>
+
             </div>
           </div>
           <hr />
+
+          <div className="card-body">
+            <h5 className="card-title text-center">Profile</h5>
+
+            <div className="row">
+              <div className="col-md-6">
+
+                {/* Altura do Pokemon */}
+                <div className="row">
+                  <div className="col-md-6">
+                    <h6 className="float-right">Height:</h6>
+                  </div>
+                  <div className="col-md-6">
+                    <h6 className="float-left">
+                      {this.state.altura} Meters
+                    </h6>
+                  </div>
+                </div>
+
+                {/* Peso do Pokemon */}
+                <div className="row">
+                  <div className="col-md-6">
+                    <h6 className="float-right">Weight:</h6>
+                  </div>
+                  <div className="col-md-6">
+                    <h6 className="float-left">
+                      {this.state.peso} Kg
+                    </h6>
+                  </div>
+                </div>
+
+                {/* Taxa de captura do Pokemon */}
+                <div className="row">
+                  <div className="col-md-6">
+                    <h6 className="float-right">Catch Rate:</h6>
+                  </div>
+                  <div className="col-md-6">
+                    <h6 className="float-left">
+                      {this.state.taxaCaptura}%
+                    </h6>
+                  </div>
+                </div>
+
+                {/* Taxa do sexo do Pokemon (Feminino/Masculino) */}
+                <div className="row">
+                  <div className="col-md-6">
+                    <h6 className="float-right">Gender Ratio:</h6>
+                  </div>
+                  <div className="col-md-6">
+                    <div className="progress">
+                      <div className="progress-bar" role="progressBar" style={{
+                        width: `${this.state.razaoSexoFemea}%`,
+                        backgroundColor: '#C2185B'
+                      }}
+                        aria-valuenow="15"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <small>{this.state.razaoSexoFemea}%</small>
+                      </div>
+                      <div className="progress-bar" role="progressBar" style={{
+                        width: `${this.state.razaoSexoMacho}%`,
+                        backgroundColor: '#1976D2'
+                      }}
+                        aria-valuenow="30"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      >
+                        <small>{this.state.razaoSexoMacho}%</small>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     );
