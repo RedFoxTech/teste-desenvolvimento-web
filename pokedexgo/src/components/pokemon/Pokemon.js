@@ -6,6 +6,24 @@ export default class Pokemon extends Component {
     name: '',
     pokemonIndex: '',
     imgUrl: '',
+    types: [],
+    description: '',
+    stats: {
+      hp: '',
+      attack: '',
+      defense: '',
+      speed: '',
+      specialAttack: '',
+      specialDefense: '',
+    },
+    height: '',
+    weight: '',
+    eggGroup: '',
+    abilities: '',
+    genderRatioMale: '',
+    genderRatioFemale: '',
+    evs: '',
+    hatchSteps: '',
   };
 
   async componentDidMount() {
@@ -19,7 +37,9 @@ export default class Pokemon extends Component {
     const pokemonInfo = await axios.get(pokemonUrl);
 
     const name = pokemonInfo.data.name;
-    this.setState({ name });
+    const imgUrl = pokemonInfo.data.sprites.front_default;
+
+    let { hp, attack, defense, speed, specialAttack, specialDefense } = '';
   }
 
   render() {
