@@ -6,8 +6,8 @@ export default class Pokemon extends Component {
     name: '',
     pokemonIndex: '',
     imgUrl: '',
-    types: [],
-    description: '',
+    tipos: [],
+    descricao: '',
     stats: {
       hp: '',
       attack: '',
@@ -16,12 +16,12 @@ export default class Pokemon extends Component {
       specialAttack: '',
       specialDefense: '',
     },
-    height: '',
-    weight: '',
-    eggGroup: '',
-    abilities: '',
-    genderRatioMale: '',
-    genderRatioFemale: '',
+    altura: '',
+    peso: '',
+    eggGroups: '',
+    habilidades: '',
+    razaoSexoMacho: '',
+    razaoSexoFemea: '',
     evs: '',
     hatchSteps: '',
   };
@@ -103,14 +103,52 @@ export default class Pokemon extends Component {
           return;
         }
       });
+
+      const taxaFemea = res.data['gender_rate'];
+      const razaoSexoFemea = 12.5 * taxaFemea;
+      const razaoSexoMacho = 12.5 * (8 - taxaFemea);
+
+      const taxaCaptura = Math.round((100 / 255) * res.data['capture_rate']);
+
+      const eggGroups = res.data['egg_groups'].map(group => {
+        return group.name
+          .toLowerCase()
+          .split('-')
+          .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+          .join(' ');
+      })
+        .join(', ');
+
+      const hatchSteps = 255 * (res.data['hatch_counter'] + 1);
+
+      this.setState({
+        descricao,
+        razaoSexoFemea,
+        razaoSexoMacho,
+        taxaCaptura,
+        eggGroups,
+        hatchSteps
+      })
+    });
+
+    this.setState({
+      imgUrl,
+      pokemonIndex,
+      name,
+      tipos,
+      stats: {
+        hp,
+        attack,
+        defense,
+        speed,
+        specialAttack,
+        specialDefense
+      },
+      altura,
+      peso,
+      habilidades,
+      evs,
     })
-
-    console.log(altura);
-    console.log(peso);
-    console.log(tipos);
-    console.log(habilidades);
-    console.log(evs);
-
   }
 
   render() {
