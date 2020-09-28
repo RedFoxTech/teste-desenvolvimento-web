@@ -230,9 +230,136 @@ export default class Pokemon extends Component {
                     .join(' ')
                   }
                 </h4>
-              </div>
 
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-3">HP</div>
+                  <div className="col-12 col-md-9">
+                    <div className="progress">
+                      <div
+                        className="progress-bar"
+                        role='progressBar'
+                        style={{
+                          width: `${this.state.stats.hp}%`
+                        }}
+                        aria-valuenow='25'
+                        aria-valuemin='0'
+                        aria-max='100'
+                      >
+                        <small>
+                          {this.state.stats.hp}
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-3">Attack</div>
+                  <div className="col-12 col-md-9">
+                    <div className="progress">
+                      <div
+                        className="progress-bar"
+                        role='progressBar'
+                        style={{
+                          width: `${this.state.stats.attack}%`
+                        }}
+                        aria-valuenow='25'
+                        aria-valuemin='0'
+                        aria-max='100'
+                      >
+                        <small>
+                          {this.state.stats.attack}
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-3">Defense</div>
+                  <div className="col-12 col-md-9">
+                    <div className="progress">
+                      <div
+                        className="progress-bar"
+                        role='progressBar'
+                        style={{
+                          width: `${this.state.stats.defense}%`
+                        }}
+                        aria-valuenow='25'
+                        aria-valuemin='0'
+                        aria-max='100'
+                      >
+                        <small>
+                          {this.state.stats.defense}
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-3">Speed</div>
+                  <div className="col-12 col-md-9">
+                    <div className="progress">
+                      <div
+                        className="progress-bar"
+                        role='progressBar'
+                        style={{
+                          width: `${this.state.stats.speed}%`
+                        }}
+                        aria-valuenow='25'
+                        aria-valuemin='0'
+                        aria-max='100'
+                      >
+                        <small>
+                          {this.state.stats.speed}
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-3">Special Attack</div>
+                  <div className="col-12 col-md-9">
+                    <div className="progress">
+                      <div
+                        className="progress-bar"
+                        role='progressBar'
+                        style={{
+                          width: `${this.state.stats.specialAttack}%`
+                        }}
+                        aria-valuenow='25'
+                        aria-valuemin='0'
+                        aria-max='100'
+                      >
+                        <small>
+                          {this.state.stats.specialAttack}
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row align-items-center">
+                  <div className="col-12 col-md-3">Special Defense</div>
+                  <div className="col-12 col-md-9">
+                    <div className="progress">
+                      <div
+                        className="progress-bar"
+                        role='progressBar'
+                        style={{
+                          width: `${this.state.stats.specialDefense}%`
+                        }}
+                        aria-valuenow='25'
+                        aria-valuemin='0'
+                        aria-max='100'
+                      >
+                        <small>
+                          {this.state.stats.specialDefense}
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
