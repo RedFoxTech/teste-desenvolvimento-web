@@ -3,10 +3,11 @@ import React from 'react';
 import './App.css';
 import NavBar from './components/layout/NavBar';
 import PainelPokemon from './components/layout/PainelPokemon';
+import fundo from './assets/fundo.png';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ background: `url(${fundo})` }}>
       <NavBar />
       <div className="container">
         <PainelPokemon />

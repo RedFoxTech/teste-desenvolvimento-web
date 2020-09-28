@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import loading from '../pokemon/loading.gif';
+import loading from '../../assets/loading.gif';
 
 const Sprite = styled.img`
   width: 5em;
