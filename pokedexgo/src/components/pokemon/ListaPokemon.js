@@ -5,7 +5,7 @@ import PokemonCard from './PokemonCard';
 export default class ListaPokemon extends Component {
 
   state = {
-    url: 'https://pokeapi.co/api/v2/pokemon?limit=9999',
+    url: 'https://pokeapi.co/api/v2/pokemon/',
     pokemon: null
   };
 

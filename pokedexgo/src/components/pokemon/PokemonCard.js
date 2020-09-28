@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import loading from '../pokemon/loading.gif';
 
 const Sprite = styled.img`
   width: 5em;
   height: 5em;
+  display: none;
 `;
 
 export default class PokemonCard extends Component {
@@ -38,12 +40,31 @@ export default class PokemonCard extends Component {
             {this.state.pokemonIndex}
           </h5>
 
+          {this.state.carregandoImg ? (
+            <img
+              src={loading}
+              alt="Carregando"
+              style={{
+                width: '5em',
+                height: '5em'
+              }}
+              className="card-img-top rounded mx-auto d-block mt-2" />
+          ) : null}
+
           <Sprite
             className="card-img-top rounded mx-auto mt-2"
             onLoad={() => this.setState({ carregandoImg: false })}
             onError={() => this.setState({ muitasRequests: true })}
             src={this.state.imgUrl}
+            style={
+              this.state.muitasRequests ? { display: 'none' } :
+                this.state.carregandoImg ? null : { display: 'block' }
+            }
           />
+          {this.state.muitasRequests ? (
+            <h6 className="mx-auto">
+              <span className="badge badge-danger mt-2">Muitas requisições no Servidor</span>
+            </h6>) : null}
 
           <div className="card-body mx-auto">
             <h6 className="card-title">
