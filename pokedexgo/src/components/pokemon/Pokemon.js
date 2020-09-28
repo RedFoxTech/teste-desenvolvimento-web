@@ -189,8 +189,17 @@ export default class Pokemon extends Component {
                     <span
                       key={tipo}
                       className='badge badge-primary badge-pill mr-1'
+                      style={{
+                        backgroundColor: `#${COR_TIPOS[tipo]}`,
+                        color: 'white'
+                      }}
                     >
-                      {tipo}
+                      {tipo
+                        .toLowerCase()
+                        .split('-')
+                        .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+                        .join(' ')
+                      }
                     </span>
                   ))}
                 </div>
