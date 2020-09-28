@@ -5,20 +5,26 @@ import PokemonCard from './PokemonCard';
 export default class ListaPokemon extends Component {
 
   state = {
-    url: 'https://pokeapi.com/api/v2/pokemon',
+    url: 'https://pokeapi.co/api/v2/pokemon/',
     pokemon: null
   };
 
   async componentDidMount() {
     const resposta = await axios.get(this.state.url);
-    this.setState({ pokemon: resposta.data['resultados'] });
+    this.setState({ pokemon: resposta.data['results'] });
   }
 
   render() {
     return (
-      <div className="row">
-        {}
-      </div>
+      <>
+        {
+          this.state.pokemon ? (<div className="row">
+            {this.state.pokemon.map(pokemon => (
+              <PokemonCard />
+            ))}
+          </div>) : (<h1>Carregando Pokemons</h1>)
+        }
+      </>
     );
   }
 }
