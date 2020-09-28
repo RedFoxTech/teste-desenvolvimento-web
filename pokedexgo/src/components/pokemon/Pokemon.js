@@ -460,6 +460,50 @@ export default class Pokemon extends Component {
                 </div>
 
               </div>
+
+              <div className="col-md-6">
+
+                {/* Ovos do Pokemon */}
+                <div className="row">
+                  <div className="col-md-6">
+                    <h6 className="float-right">Egg Groups:</h6>
+                  </div>
+                  <div className="col-md-6">
+                    <h6 className="float-left">{this.state.eggGroups}</h6>
+                  </div>
+                </div>
+
+                {/* Passos para chocar o ovo do Pokemon */}
+                <div className="row">
+                  <div className="col-md-6">
+                    <h6 className="float-right">Hatch Steps:</h6>
+                  </div>
+                  <div className="col-md-6">
+                    <h6 className="float-left">{this.state.hatchSteps}</h6>
+                  </div>
+                </div>
+
+                {/* Habilidades do Pokemon */}
+                <div className="row">
+                  <div className="col-md-6">
+                    <h6 className="float-right">Abilities:</h6>
+                  </div>
+                  <div className="col-md-6">
+                    <h6 className="float-left">{this.state.habilidades}</h6>
+                  </div>
+                </div>
+
+                {/* EVs do Pokemon */}
+                <div className="row">
+                  <div className="col-md-6">
+                    <h6 className="float-right">EVs:</h6>
+                  </div>
+                  <div className="col-md-6">
+                    <h6 className="float-left">{this.state.evs}</h6>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
 
