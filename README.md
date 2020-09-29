@@ -10,7 +10,7 @@
 
 <h1 align="center">PokeDex</h1>
 
-### Hosted @ https://pokedexgo-redfox.vercel.app/ for easy demonstration
+<h3 align="center"> Hosted @ https://pokedexgo-redfox.vercel.app/ for easy demonstration </h3>
 
 ## :pushpin: Table of contents
 
