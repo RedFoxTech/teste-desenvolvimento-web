@@ -33,6 +33,7 @@
 <ul>
   <li><a href="https://reactjs.org/">React</a></li>
   <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/">Javascript</a></li>
+  <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
 </ul>
 
 <h2 id="features">:ballot_box_with_check: Features</h2>
