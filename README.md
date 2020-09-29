@@ -1,58 +1,68 @@
-# Teste de Desenvolvimento Web
+<div align="center">
+	<img height="200" src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true" alt="PokeAPI">
+</div>
 
-Olá Dev! Tudo bem?
+<div align="center">
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+![Pokedex gif](https://github.com/ziguirifow/teste-desenvolvimento-web/blob/master/pokedex.gif)
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+</div>
 
-Agora vamos ao teste!
+<h1 align="center">PokeDex</h1>
 
+### Hosted @ https://pokedexgo-redfox.vercel.app/ for easy demonstration
 
-## Desafio Pokémon
+## :pushpin: Table of contents
 
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
+<p align="center">
+  <a href="#intro">Introduction </a>|
+  <a href="#tech"> Technologies </a>|
+  <a href="#features"> Features </a>|
+  <a href="#install"> How to run</a>
+</p>
 
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
+<h2 id="intro">:rocket: Introduction</h2>
+<p>
+  Pokemon database that uses PokeAPI, for now it only shows the first 151 pokemons as cards and you can check its stats, description and profiling information.
+</p>
 
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
+> :rocket: This project was developed for RedFoxTech as a test for web dev.
 
+<h2 id="tech">:computer: Technologies</h2>
+<p>Technologies used in the project</p>
+<ul>
+  <li><a href="https://reactjs.org/">React</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/">Javascript</a></li>
+</ul>
 
-## Consigo fazer tudo isso?
+<h2 id="features">:ballot_box_with_check: Features</h2>
+<p>You can check:</p>
+<ul>
+  <li>Pokemons sprites</li>
+  <li>Pokemon index number</li>
+  <li>Pokemon atributes</li>
+  <li>Pokemon description</li>
+  <li>Pokemon abilities</li>
+  <li>And more profiling info</li>
+</ul>
 
-Consegue sim!
+<h2 id="intro">:checkered_flag: How to run</h2>
+<p>
+  You need to make sure you have the following tools on your machine: Node and Git.
+  It is also good that you have a code editor of your choice, such as VS Code.
+</p>
+<h4>Cloning repository</h4>
 
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
+> \$ git clone https://github.com/ziguirifow/teste-desenvolvimento-web
 
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+<h4>Installing dependencies</h4>
 
+> \$ npm install
 
-## Por onde começo?
+<p>or</p>
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+> \$ yarn install
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
+<h4>Running the application separately (web, mobile or server)</h4>
 
-
-## E o Layout??
-
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
-
-
-## Regras
-
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
-
-
-## Só isso?
-
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
+> \$ npm start
