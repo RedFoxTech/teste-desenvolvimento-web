@@ -1,58 +1,38 @@
-# Teste de Desenvolvimento Web
+#teste desenvolvimento web
 
-Olá Dev! Tudo bem?
+O QUE É
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+É uma aplicação que permite gerenciar dados de um pokemón.
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+CONVENÇÕES UTILIZADAS
 
-Agora vamos ao teste!
+Foi utilizado eslint para a garantia de padronização e boas práticas.
 
+Todas as classes e variáveis nomeadas em inglês
 
-## Desafio Pokémon
+TECNOLOGIAS USADAS
 
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
+Backend: MongoDB, Node.js
 
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
+Frontend: React.js, Material-UI
 
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
+O motivo das tecnologias de desenvolvimento escolhidas, foram por eu já ter um conhecimento sobre elas, por já ter realizado um pequeno projeto com as mesmas.
 
+DESCRIÇÃO DAS FUNCIONALIDADES
 
-## Consigo fazer tudo isso?
+Todos os endpoints da Api retornam mensagem de sucesso ou erro e o status code, as mensagens são mostradas pelo frontend através de um toast
 
-Consegue sim!
+Salvar (POST):Na Tela inicial canto superior esquerdo, tem um botão para cadastrar um novo pokémon, clicando nele abrirá um formulário. O programa permite salvar um número ilimitado de pokémons, porém o mesmo não permite salvar dois pokémons com o mesmo nome, o programa permite salvar ou não uma imagem para o pokémon, ao escolher salvar uma imagem o programa realiza o upload da mesma no serviço S3 da AWS e guarda somente o link referente a imagem no banco de dados(MongoDB).
 
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
+Mostrar (GET): O programa exibe os pokémons na tela e permite o usuário clicar em qualquer um para mostrar os detalhes, o programa possui uma paginação que permite mostrar até 8 pokémons por vez, a paginação é feita pelo backend por uma função do banco de dados (MongoDB), onde o frontend manda no HEADER da request o número da página e a quantidade máxima de registros, o backend retorna os registros requisitados e o número total de registro no schema, para que o frontend possa mostrar o número de páginas dinamicamente.
 
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+Editar (PUT): O programa permite o usuário clicar no pekémon em que deseja alterar os dados, abrindo a tela de mostrar os detalhes. Após a tela ser aberta, no canto superior esquerdo aparecerá três opçoes, fechar: o programa fechara a tela de mostrar os detalhes e retornara para a tela inicial. Atualizar: ao clicar em atualizar o programa abre o mesmo formulário que é usado para cadastrar um novo pokémon, porém populando os campos com os dados do mesmo e deletar.
 
+Excluir (DELETE): Após o usuário ter clicado no pokémon em que deseja alterar / excluir, clicando em excluir o programa apaga todo o registro do mesmo no banco de dados e também apaga a imagem do S3 AWS.
 
-## Por onde começo?
+DEPLOY
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+O banco de dados foi hospedado no serviço de cloud MongoDB Atlas (https://www.mongodb.com/cloud/atlas), o deploy da API e do frontend foram feitos no Heroku (https://www.heroku.com/), cada um em seu app, ambos estão com CI/CD emplementados.
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
-
-
-## E o Layout??
-
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
-
-
-## Regras
-
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
-
-
-## Só isso?
-
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
+Link da aplicação desenvolvida
+https://test-redfox-frontend.herokuapp.com/#/

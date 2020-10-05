@@ -1,0 +1,214 @@
+.pokemon_main {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 25% auto 25%;
+  grid-template-rows: 40% auto 11%;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../img/pokemon-background-full-hd-279220.jpg");
+}
+.pokemon_main .pokemon_header {
+  background-repeat: no-repeat;
+  background-size: contain;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  background-image: url("../../img/Daco_5394286-min.png");
+}
+.pokemon_main .pokemon_filter_side {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  display: grid;
+  grid-template-rows: 30%;
+  grid-template-columns: 10%;
+}
+.pokemon_main .pokemon_filter_side .btn_new {
+  margin: auto;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.pokemon_main .pokemon_filter_side .pokemon_type {
+  margin: auto;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.pokemon_main .pokemon_filter_side .btn_clear {
+  margin: auto;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.pokemon_main .pokemon_table {
+  grid-row-start: 2;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  display: grid;
+  grid-template-areas: "1 2 3 4" "5 6 7 8";
+}
+.pokemon_main .pokemon_table .pokemon_cards:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.pokemon_main .pokemon_table .pokemon_cards {
+  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  margin: auto;
+  width: 80%;
+  height: 80%;
+}
+.pokemon_main .pokemon_table .pokemon_cards img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.pokemon_main .pagination {
+  grid-row-start: 3;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 2;
+}
+.pokemon_main .pagination .MuiPagination-ul {
+  margin: auto;
+  max-width: fit-content;
+}
+
+.MuiToolbar-root .btn_delete {
+  margin: 10px;
+}
+
+.pokemon_info {
+  margin-top: auto;
+  width: 100vw;
+  height: 90vh;
+  display: grid;
+  grid-template-areas: "info1 atk def sta info2" "info3 . pokemonName . info4" "info5 . img . info6" "info7 info21 img info22 info8" "info9 cal39 imgNumber cal40 info10" "info11 info12 pokedexNumber info14 info15" "info16 info17 info18 info19 info20";
+}
+.pokemon_info .info1 {
+  margin: auto;
+  grid-area: info1;
+}
+.pokemon_info .atk {
+  margin: auto;
+  grid-area: atk;
+}
+.pokemon_info .def {
+  margin: auto;
+  grid-area: def;
+}
+.pokemon_info .sta {
+  margin: auto;
+  grid-area: sta;
+}
+.pokemon_info .info2 {
+  margin: auto;
+  grid-area: info2;
+}
+.pokemon_info .info3 {
+  margin: auto;
+  grid-area: info3;
+}
+.pokemon_info .pokemonName {
+  margin: auto;
+  grid-area: pokemonName;
+}
+.pokemon_info .info4 {
+  margin: auto;
+  grid-area: info4;
+}
+.pokemon_info .info5 {
+  margin: auto;
+  grid-area: info5;
+}
+.pokemon_info .img {
+  margin: auto;
+  grid-area: img;
+}
+.pokemon_info .info6 {
+  margin: auto;
+  grid-area: info6;
+}
+.pokemon_info .info7 {
+  margin: auto;
+  grid-area: info7;
+}
+.pokemon_info .info8 {
+  margin: auto;
+  grid-area: info8;
+}
+.pokemon_info .cal39 {
+  margin: auto;
+  grid-area: cal39;
+}
+.pokemon_info .cal40 {
+  margin: auto;
+  grid-area: cal40;
+}
+.pokemon_info .info10 {
+  margin: auto;
+  grid-area: info10;
+}
+.pokemon_info .info9 {
+  margin: auto;
+  grid-area: info9;
+}
+.pokemon_info .imgNumber {
+  margin: auto;
+  grid-area: imgNumber;
+}
+.pokemon_info .info11 {
+  margin: auto;
+  grid-area: info11;
+}
+.pokemon_info .info12 {
+  margin: auto;
+  grid-area: info12;
+}
+.pokemon_info .info13 {
+  margin: auto;
+  grid-area: info13;
+}
+.pokemon_info .pokedexNumber {
+  margin: auto;
+  grid-area: pokedexNumber;
+}
+.pokemon_info .info14 {
+  margin: auto;
+  grid-area: info14;
+}
+.pokemon_info .info15 {
+  margin: auto;
+  grid-area: info15;
+}
+.pokemon_info .info16 {
+  margin: auto;
+  grid-area: info16;
+}
+.pokemon_info .info17 {
+  margin: auto;
+  grid-area: info17;
+}
+.pokemon_info .info18 {
+  margin: auto;
+  grid-area: info18;
+}
+.pokemon_info .info19 {
+  margin: auto;
+  grid-area: info19;
+}
+.pokemon_info .info20 {
+  margin: auto;
+  grid-area: info20;
+}
+.pokemon_info .info21 {
+  margin: auto;
+  grid-area: info21;
+}
+.pokemon_info .info22 {
+  margin: auto;
+  grid-area: info22;
+}
+
+/*# sourceMappingURL=index.css.map */
