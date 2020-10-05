@@ -10,10 +10,18 @@ router.get('/pokemon', async (req, res) => {
         const limit = parseInt(req.query.limit)
         const skip = limit * (page - 1)
         const amount = await Pokemon.count()
-        await Pokemon.find().skip(skip).limit(limit).exec((err, pokemons) => {
-            if (err) throw err
-            return res.status(200).send({ pokemons, amount })
-        })
+        if (req.query.type !== '') {
+            const type1 = req.query.type
+            await Pokemon.find({ type1 }).skip(skip).limit(limit).exec((err, pokemons) => {
+                if (err) throw err
+                return res.status(200).send({ pokemons, amount })
+            })
+        } else {
+            await Pokemon.find().skip(skip).limit(limit).exec((err, pokemons) => {
+                if (err) throw err
+                return res.status(200).send({ pokemons, amount })
+            })
+        }
     } catch (err) {
         return res.status(400).send({ error: 'Erro ao carregar os pokémons.' })
     }

@@ -8,8 +8,10 @@ const s3 = new aws.S3({
 
 const PokemonSchema = new db.Schema({
     name: String,
+    pokedexNumber: Number,
+    imgName: Number,
     generation: Number,
-    evolutionStage: Number,
+    evolutionStage: String,
     evolved: Boolean,
     FamilyID: Number,
     crossGen: Boolean,
