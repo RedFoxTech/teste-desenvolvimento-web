@@ -33,3 +33,6 @@ Excluir (DELETE): Após o usuário ter clicado no pokémon em que deseja alterar
 DEPLOY
 
 O banco de dados foi hospedado no serviço de cloud MongoDB Atlas (https://www.mongodb.com/cloud/atlas), o deploy da API e do frontend foram feitos no Heroku (https://www.heroku.com/), cada um em seu app, ambos estão com CI/CD emplementados.
+
+Link da aplicação desenvolvida
+https://test-redfox-frontend.herokuapp.com/#/
