@@ -1,0 +1,170 @@
+.MuiToolbar-root {
+    .btn_delete {
+        margin: 10px;
+    }
+}
+
+.pokemon_info {
+    margin-top: auto;
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    grid-template-areas: "info1 atk def sta info2" "info3 . pokemonName . info4" "info5 . img . info6" "info7 info21 img info22 info8" "info9 cal39 imgNumber cal40 info10"
+        "info11 info12 pokedexNumber info14 info15" "info16 info17 info18 info19 info20";
+
+        .info1 {
+            margin: auto;
+            grid-area: info1;
+        }
+
+        .atk {
+            margin: auto;
+            grid-area: atk;
+        }
+
+        .def {
+            margin: auto;
+            grid-area: def;
+        }
+
+        .sta {
+            margin: auto;
+            grid-area: sta;
+        }
+
+        .info2 {
+            margin: auto;
+            grid-area:info2
+        }
+
+        .info3 {
+            margin: auto;
+            grid-area:info3
+        }
+
+        .pokemonName {
+            margin: auto;
+            grid-area:pokemonName
+        }
+
+        .info4 {
+            margin: auto;
+            grid-area:info4
+        }
+
+        .info5 {
+            margin: auto;
+            grid-area:info5
+        }
+
+        .img {
+            margin: auto;
+            grid-area:img
+        }
+
+        .info6 {
+            margin: auto;
+            grid-area:info6
+        }
+
+        .info7 {
+            margin: auto;
+            grid-area:info7
+        }
+
+        .info8 {
+            margin: auto;
+            grid-area:info8
+        }
+
+        .cal39 {
+            margin: auto;
+            grid-area:cal39
+        }
+
+        .cal40 {
+            margin: auto;
+            grid-area:cal40
+        }
+
+        .info10 {
+            margin: auto;
+            grid-area:info10
+        }
+
+        .info9 {
+            margin: auto;
+            grid-area:info9
+        }
+
+        .imgNumber {
+            margin: auto;
+            grid-area:imgNumber
+        }
+
+        .info11 {
+            margin: auto;
+            grid-area:info11
+        }
+
+        .info12 {
+            margin: auto;
+            grid-area:info12
+        }
+
+        .info13 {
+            margin: auto;
+            grid-area:info13
+        }
+
+        .pokedexNumber {
+            margin: auto;
+            grid-area:pokedexNumber
+        }
+
+        .info14 {
+            margin: auto;
+            grid-area:info14
+        }
+
+        .info15 {
+            margin: auto;
+            grid-area:info15
+        }
+
+        .info16 {
+            margin: auto;
+            grid-area:info16
+        }
+
+        .info17 {
+            margin: auto;
+            grid-area:info17
+        }
+
+        .info18 {
+            margin: auto;
+            grid-area:info18
+        }
+
+        .info19 {
+            margin: auto;
+            grid-area:info19
+        }
+
+        .info20 {
+            margin: auto;
+            grid-area:info20
+        }
+
+        .info21 {
+            margin: auto;
+            grid-area:info21
+        }
+
+        .info22 {
+            margin: auto;
+            grid-area:info22
+        }
+
+}
