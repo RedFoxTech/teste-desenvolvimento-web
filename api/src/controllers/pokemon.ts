@@ -19,7 +19,7 @@ export class PokemonController {
   @Post('')
   public async create (req: Request, res: Response): Promise<void> {
     try {
-      const pokemon = await new Pokemon(req.body)
+      const pokemon = await new Pokemon(req.body).save()
       res.status(201).send(pokemon)
     } catch (err) {
       res.status(400).send({
