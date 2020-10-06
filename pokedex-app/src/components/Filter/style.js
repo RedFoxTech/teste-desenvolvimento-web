@@ -51,3 +51,17 @@ export const ButtonSubmit = styled.button`
     }
   }
 `;
+
+export const Pokemons = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 850px;
+  height: 800px;
+  font-weight: bolder;
+  :hover {
+    cursor: pointer;
+  }
+`;

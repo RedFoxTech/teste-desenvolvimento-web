@@ -9,9 +9,9 @@ export const Form = styled.form`
   width: 55%;
   height: 400px;
 
-  box-shadow: 1px 2px 80px 1px red;
+  box-shadow: 1px 2px 40px 1px red;
   input {
-    width: 200px;
+    width: 79%;
     border: none;
     align-items: center;
     :hover {

@@ -2,26 +2,15 @@ import styled from "styled-components";
 
 export const Form = styled.form`
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto;
+  grid-column-gap: 80px;
   justify-content: center;
   align-items: center;
-  text-align: left;
+  list-style-type: none;
   width: 55%;
   height: 400px;
-
+  font-weight: bolder;
   box-shadow: 1px 2px 40px 1px red;
-  input {
-    width: 79%;
-    border: none;
-    align-items: center;
-    :hover {
-      cursor: text;
-    }
-  }
-  label {
-    padding-left: 140px;
-    font-weight: bold;
-  }
 `;
 
 export const Container = styled.div`
@@ -49,5 +38,19 @@ export const ButtonSubmit = styled.button`
     :active {
       transform: scale(1);
     }
+  }
+`;
+
+export const Pokemons = styled.div`
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 850px;
+  height: 800px;
+  font-weight: bolder;
+  :hover {
+    cursor: pointer;
   }
 `;

@@ -5,6 +5,7 @@ import Insert from "../Insert";
 import Edit from "../Edit";
 import Filter from "../Filter";
 import Delete from "../Delete";
+import Pokemon from "../Pokemon";
 import { ControlPage } from "../ControlPage";
 
 export const Routes = () => {
@@ -15,6 +16,7 @@ export const Routes = () => {
       <Route exact path="/filter" component={Filter} />
       <Route exact path="/edit" component={Edit} />
       <Route exact path="/delete" component={Delete} />
+      <Route exact path="/pokemon/:id" component={Pokemon} />
     </Switch>
   );
 };

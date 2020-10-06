@@ -42,6 +42,12 @@ export default function Edit() {
     const { name, value } = e.target;
     onChange(name, value);
   };
+
+  const handleEditPokemon = (e) => {
+    e.preventDefault();
+    console.log("editou");
+  };
+
   return (
     <div>
       <Container>
@@ -252,7 +258,9 @@ export default function Edit() {
             value={form.hundredCPthirtynine}
             onChange={handleInputChange}
           ></input>
-          <ButtonSubmit type="submit">EDIT</ButtonSubmit>
+          <ButtonSubmit onClick={handleEditPokemon} type="submit">
+            EDIT
+          </ButtonSubmit>
         </Form>
       </Container>
       <Container>

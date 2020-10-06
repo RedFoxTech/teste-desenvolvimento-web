@@ -18,3 +18,31 @@ export const ButtonDelete = styled.button`
     }
   }
 `;
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+export const Form = styled.form`
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  font-weight: bolder;
+  width: 55%;
+  height: 400px;
+
+  box-shadow: 1px 2px 40px 1px red;
+  input {
+    width: 79%;
+    border: none;
+    align-items: center;
+    :hover {
+      cursor: text;
+    }
+  }
+  label {
+    padding-left: 140px;
+    font-weight: bold;
+  }
+`;

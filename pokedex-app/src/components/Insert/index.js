@@ -2,315 +2,441 @@ import React, { useState, useEffect } from "react";
 import { Button } from "../ControlPage/style";
 import { ButtonSubmit } from "./style";
 import { Link } from "react-router-dom";
-import useForm from "../hook/useForm";
+
 import { Form, Container, Container2 } from "./style";
 
 export default function Insert() {
-  const [addPokemon, setAddPokemon] = useState([]);
-  const { form, onChange } = useForm({
-    name: "",
-    pokedexNumber: "",
-    imgName: "",
-    generation: "",
-    evolutionStage: "",
-    evolved: "",
-    familyId: "",
-    crossGen: "",
-    type1: "",
-    type2: "",
-    weather1: "",
-    weather2: "",
-    statTotal: "",
-    atk: "",
-    def: "",
-    sta: "",
-    legendary: "",
-    aquireable: "",
-    spawns: "",
-    regional: "",
-    raidable: "",
-    hatchable: "",
-    shiny: "",
-    nest: "",
-    new: "",
-    notGettable: "",
-    futureEvolve: "",
-    hundredCPfourty: "",
-    hundredCPthirtynine: "",
+  const [name, setName] = useState("");
+  const [number, setNumber] = useState("");
+  const [img, setImg] = useState("");
+  const [generation, setGeneration] = useState("");
+  const [evolution, setEvolution] = useState("");
+  const [evolved, setEvolved] = useState("");
+  const [family, setFamily] = useState("");
+  const [gen, setGen] = useState("");
+  const [type1, setType1] = useState("");
+  const [type2, setType2] = useState("");
+  const [weather1, setWeather1] = useState("");
+  const [weather2, setWeather2] = useState("");
+  const [statTotal, setStatTotal] = useState("");
+  const [atk, setAtk] = useState("");
+  const [def, setDef] = useState("");
+  const [sta, setSta] = useState("");
+  const [legendary, setLegendary] = useState("");
+  const [aquireable, setAquireable] = useState("");
+  const [spawns, setSpawns] = useState("");
+  const [regional, setRegional] = useState("");
+  const [raidable, setRaidable] = useState("");
+  const [hatchable, setHatchable] = useState("");
+  const [shiny, setShiny] = useState("");
+  const [nest, setNest] = useState("");
+  const [New, setNew] = useState("");
+  const [notGettable, setNotGettable] = useState("");
+  const [futureEvolve, setFutureEvolve] = useState("");
+  const [hundredCPfourty, setHundredCPfourty] = useState("");
+  const [hundredCPthirtynine, setHundredCPThirtyNine] = useState("");
+  const [dados, setDados] = useState({
+    name: name,
+    number: number,
+    imgName: img,
+    generation: generation,
+    evolutionStage: evolution,
+    evolved: evolved,
+    familyId: family,
+    crossGen: gen,
+    type1: type1,
+    type2: type2,
+    weather1: weather1,
+    weather2: weather2,
+    statTotal: statTotal,
+    atk: atk,
+    def: def,
+    sta: sta,
+    legendary: legendary,
+    aquireable: aquireable,
+    spawns: spawns,
+    regional: regional,
+    raidable: raidable,
+    hatchable: hatchable,
+    shiny: shiny,
+    nest: nest,
+    new: New,
+    notGettable: notGettable,
+    futureEvolve: futureEvolve,
+    hundredCPfourty: hundredCPfourty,
+    hundredCPthirtynine: hundredCPthirtynine,
   });
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    onChange(name, value);
+  const handleName = (e) => {
+    setName(e.target.value);
   };
+  const handleNumber = (e) => {
+    setNumber(e.target.value);
+  };
+  const handleImg = (e) => {
+    setImg(e.target.value);
+  };
+  const handleGeneration = (e) => {
+    setGeneration(e.target.value);
+  };
+  const handleEvolution = (e) => {
+    setEvolution(e.target.value);
+  };
+  const handleEvolved = (e) => {
+    setEvolved(e.target.value);
+  };
+  const handleFamily = (e) => {
+    setFamily(e.target.value);
+  };
+  const handleGen = (e) => {
+    setGen(e.target.value);
+  };
+  const handleType1 = (e) => {
+    setType1(e.target.value);
+  };
+  const handleType2 = (e) => {
+    setType2(e.target.value);
+  };
+  const handleWeather1 = (e) => {
+    setWeather1(e.target.value);
+  };
+  const handleWeather2 = (e) => {
+    setWeather2(e.target.value);
+  };
+  const handleStatTotal = (e) => {
+    setStatTotal(e.target.value);
+  };
+  const handleAtk = (e) => {
+    setAtk(e.target.value);
+  };
+  const handleDef = (e) => {
+    setDef(e.target.value);
+  };
+  const handleSta = (e) => {
+    setSta(e.target.value);
+  };
+  const handleLegendary = (e) => {
+    setLegendary(e.target.value);
+  };
+  const handleAquireable = (e) => {
+    setAquireable(e.target.value);
+  };
+  const handleSpawns = (e) => {
+    setSpawns(e.target.value);
+  };
+  const handleRegional = (e) => {
+    setRegional(e.target.value);
+  };
+  const handleRaidable = (e) => {
+    setRaidable(e.target.value);
+  };
+  const handleHatchable = (e) => {
+    setHatchable(e.target.value);
+  };
+  const handleShiny = (e) => {
+    setShiny(e.target.value);
+  };
+  const handleNest = (e) => {
+    setNest(e.target.value);
+  };
+  const handleNew = (e) => {
+    setNew(e.target.value);
+  };
+  const handleNotGettable = (e) => {
+    setNotGettable(e.target.value);
+  };
+  const handleFutureEvolve = (e) => {
+    setFutureEvolve(e.target.value);
+  };
+  const handleHundredCPfourty = (e) => {
+    setHundredCPfourty(e.target.value);
+  };
+  const handleHundredCPthirtynine = (e) => {
+    setHundredCPThirtyNine(e.target.value);
+  };
+
+  const data = {
+    name: name,
+    number: number,
+    imgName: img,
+    generation: generation,
+    evolutionStage: evolution,
+    evolved: evolved,
+    familyId: family,
+    crossGen: gen,
+    type1: type1,
+    type2: type2,
+    weather1: weather1,
+    weather2: weather2,
+    statTotal: statTotal,
+    atk: atk,
+    def: def,
+    sta: sta,
+    legendary: legendary,
+    aquireable: aquireable,
+    spawns: spawns,
+    regional: regional,
+    raidable: raidable,
+    hatchable: hatchable,
+    shiny: shiny,
+    nest: nest,
+    new: New,
+    notGettable: notGettable,
+    futureEvolve: futureEvolve,
+    hundredCPfourty: hundredCPfourty,
+    hundredCPthirtynine: hundredCPthirtynine,
+  };
+
+  const addPokemon = (e) => {
+    e.preventDefault();
+
+    const newData = { ...dados, data };
+    setDados(newData);
+    console.log(newData);
+  };
+
   return (
     <div>
       <Container>
         <h1>Add your Pokemon</h1>
       </Container>
       <Container>
-        <Form autoComplete="off">
+        <Form autoComplete="off" onSubmit={addPokemon}>
           <label>Name:</label>
           <input
             type="text"
             name="name"
-            value={form.name}
-            onChange={handleInputChange}
+            value={name}
+            onChange={handleName}
             required
           ></input>
           <label>Pokedex Number:</label>
           <input
             type="number"
             name="pokedexNumber"
-            value={form.pokedexNumber}
-            onChange={handleInputChange}
+            value={number}
+            onChange={handleNumber}
             required
-            autoComplete="new-password"
           ></input>
           <label>Img name:</label>
           <input
             type="text"
             name="imgName"
-            value={form.imgName}
-            onChange={handleInputChange}
+            value={img}
+            onChange={handleImg}
             required
-            autoComplete="new-password"
           ></input>
           <label>Generation:</label>
           <input
             type="number"
             name="generation"
-            value={form.generation}
-            onChange={handleInputChange}
+            value={generation}
+            onChange={handleGeneration}
             required
-            autoComplete="new-password"
           ></input>
           <label>Evolution Stage:</label>
           <input
             type="number"
             name="evolutionStage"
-            value={form.evolutionStage}
-            onChange={handleInputChange}
+            value={evolution}
+            onChange={handleEvolution}
             required
-            autoComplete="new-password"
           ></input>
           <label>Evolved:</label>
           <input
             type="number"
             name="evolved"
-            value={form.evolved}
-            onChange={handleInputChange}
+            value={evolved}
+            onChange={handleEvolved}
             required
-            autoComplete="new-password"
           ></input>
           <label>FamilyID:</label>
           <input
             type="number"
             name="familyId"
-            value={form.familyId}
-            onChange={handleInputChange}
+            value={family}
+            onChange={handleFamily}
             required
-            autoComplete="new-password"
           ></input>
           <label>Cross Gen:</label>
           <input
             type="number"
             name="crossGen"
-            value={form.crossGen}
-            onChange={handleInputChange}
+            value={gen}
+            onChange={handleGen}
             required
-            autoComplete="new-password"
           ></input>
           <label> Type 1:</label>
           <input
             type="number"
             name="type1"
-            value={form.type1}
-            onChange={handleInputChange}
+            value={type1}
+            onChange={handleType1}
             required
-            autoComplete="new-password"
           ></input>
           <label>Type 2:</label>
           <input
             type="number"
             name="type2"
-            value={form.type2}
-            onChange={handleInputChange}
+            value={type2}
+            onChange={handleType2}
             required
-            autoComplete="new-password"
           ></input>
           <label>Weather 1:</label>
           <input
             type="text"
             name="weather1"
-            value={form.weather1}
-            onChange={handleInputChange}
+            value={weather1}
+            onChange={handleWeather1}
             required
-            autoComplete="new-password"
           ></input>
           <label> Weather 2:</label>
           <input
             type="text"
             name="weather2"
-            value={form.weather2}
-            onChange={handleInputChange}
+            value={weather2}
+            onChange={handleWeather2}
             required
-            autoComplete="new-password"
           ></input>
           <label>STAT TOTAL:</label>
           <input
             type="number"
             name="statTotal"
-            value={form.statTotal}
-            onChange={handleInputChange}
+            value={statTotal}
+            onChange={handleStatTotal}
             required
-            autoComplete="new-password"
           ></input>
           <label>ATK:</label>
           <input
             type="number"
             name="atk"
-            value={form.atk}
-            onChange={handleInputChange}
+            value={atk}
+            onChange={handleAtk}
             required
-            autoComplete="new-password"
           ></input>
           <label>DEF:</label>
           <input
             type="number"
             name="def"
-            value={form.def}
-            onChange={handleInputChange}
+            value={def}
+            onChange={handleDef}
             required
-            autoComplete="new-password"
           ></input>
           <label>STA:</label>
           <input
             type="number"
             name="sta"
-            value={form.sta}
-            onChange={handleInputChange}
+            value={sta}
+            onChange={handleSta}
             required
-            autoComplete="new-password"
           ></input>
           <label>Legendary:</label>
           <input
             type="number"
             name="legendary"
-            value={form.legendary}
-            onChange={handleInputChange}
+            value={legendary}
+            onChange={handleLegendary}
             required
-            autoComplete="new-password"
           ></input>
           <label>Aquireable:</label>
           <input
             type="number"
             name="aquireable"
-            value={form.aquireable}
-            onChange={handleInputChange}
+            value={aquireable}
+            onChange={handleAquireable}
             required
-            autoComplete="new-password"
           ></input>
           <label>Spawns:</label>
           <input
             type="number"
             name="spawns"
-            value={form.spawns}
-            onChange={handleInputChange}
+            value={spawns}
+            onChange={handleSpawns}
             required
-            autoComplete="new-password"
           ></input>
           <label>Regional:</label>
           <input
             type="number"
             name="regional"
-            value={form.regional}
-            onChange={handleInputChange}
+            value={regional}
+            onChange={handleRegional}
             required
-            autoComplete="new-password"
           ></input>
           <label>Raidable:</label>
           <input
             type="number"
             name="raidable"
-            value={form.raidable}
-            onChange={handleInputChange}
+            value={raidable}
+            onChange={handleRaidable}
             required
-            autoComplete="new-password"
           ></input>
           <label>Hatchable:</label>
           <input
             type="number"
             name="hatchable"
-            value={form.hatchable}
-            onChange={handleInputChange}
+            value={hatchable}
+            onChange={handleHatchable}
             required
-            autoComplete="new-password"
           ></input>
           <label>Shiny:</label>
           <input
             type="number"
             name="shiny"
-            value={form.shiny}
-            onChange={handleInputChange}
+            value={shiny}
+            onChange={handleShiny}
             required
-            autoComplete="new-password"
           ></input>
           <label>Nest:</label>
           <input
             type="number"
             name="nest"
-            value={form.nest}
-            onChange={handleInputChange}
+            value={nest}
+            onChange={handleNest}
             required
-            autoComplete="new-password"
           ></input>
           <label>New:</label>
           <input
             type="number"
             name="new"
-            value={form.new}
-            onChange={handleInputChange}
+            value={New}
+            onChange={handleNew}
             required
-            autoComplete="new-password"
           ></input>
           <label>Not-Gettable:</label>
           <input
             type="number"
             name="notGettable"
-            value={form.notGettable}
-            onChange={handleInputChange}
+            value={notGettable}
+            onChange={handleNotGettable}
             required
-            autoComplete="new-password"
           ></input>
           <label>Future Evolve:</label>
           <input
             type="number"
             name="futureEvolve"
-            value={form.futureEvolve}
-            onChange={handleInputChange}
+            value={futureEvolve}
+            onChange={handleFutureEvolve}
             required
-            autoComplete="new-password"
           ></input>
           <label>100% CP @ 40:</label>
           <input
             type="number"
             name="hundredCPfourty"
-            value={form.hundredCPfourty}
-            onChange={handleInputChange}
+            value={hundredCPfourty}
+            onChange={handleHundredCPfourty}
             required
-            autoComplete="new-password"
           ></input>
           <label>100% CP @ 39:</label>
           <input
             type="number"
             name="hundredCPthirtynine"
-            value={form.hundredCPthirtynine}
-            onChange={handleInputChange}
+            value={hundredCPthirtynine}
+            onChange={handleHundredCPthirtynine}
             required
-            autoComplete="new-password"
           ></input>
-          <ButtonSubmit type="submit">ADD</ButtonSubmit>
+          <ButtonSubmit onClick={addPokemon} type="submit">
+            ADD
+          </ButtonSubmit>
         </Form>
       </Container>
       <Container>
