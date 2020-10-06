@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "yarn build && node dist/src/index.js",
+    "start:dev": "ts-node-dev src/index.ts",
+    "test": "yarn test:unit && yarn test:functional",
+    "test:functional": "jest --projects ./test --runInBand",
+    "test:unit": "jest"
+  },
   "devDependencies": {
     "@types/config": "^0.0.36",
     "@types/jest": "^26.0.14",
