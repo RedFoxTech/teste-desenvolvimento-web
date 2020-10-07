@@ -42,7 +42,7 @@ const schema = new Schema({
   },
   Name: {
     type: String,
-    unique: [true, 'Name most be unique'],
+    unique: true,
     required: true
   },
   'Pokedex Number': {
@@ -157,5 +157,14 @@ const schema = new Schema({
     default: 0
   }
 })
+
+schema.path('Name').validate(
+  async (Name: string) => {
+    const nameCount = await mongoose.models.Pokemon.countDocuments({ Name })
+    return !nameCount
+  },
+  'already exists in the database.',
+  'DUPLICATED'
+)
 
 export const Pokemon: Model<PokemonModel> = mongoose.model('Pokemon', schema)
