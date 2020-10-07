@@ -1,5 +1,7 @@
 # Pokemon API
 
+Eu Criei apenas a parte do servidor da aplicação porque estou estudando mais esta parte e fiquei mais confiante em criar apenas a api sem interface grafica.<br>
+
 Esta API foi desenvolvida para que subistitua um sistema de gerenciamento de Pokemons que era feito com uma planilha do EXCEL.<br>
 
 Eu usei o MongoDB neste projeto pela flexibilidade que cada documento poderia ter, tendo em vista que no arquivo excel, as colunas não tinham um tipo de dados bem definido.<br>
