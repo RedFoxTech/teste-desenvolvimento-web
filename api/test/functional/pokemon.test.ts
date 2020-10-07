@@ -68,7 +68,7 @@ describe('Pokemon functional tests', () => {
     expect(response.status).toBe(400)
     expect(response.body).toEqual({
       message:
-        'E11000 duplicate key error collection: pokemon-test.pokemons index: Name_1 dup key: { Name: "Pokemon" }'
+        'Pokemon validation failed: Name: already exists in the database.'
     })
   })
 })
