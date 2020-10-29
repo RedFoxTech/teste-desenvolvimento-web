@@ -18,6 +18,13 @@ class Pokemons {
         
         Pokemon.findAll().then(pokemons => res.status(200).json(pokemons))
     }
+
+    getOnePokemon(req, res) {
+
+        const {id} = req.params
+
+        Pokemon.findOne({where: {id: id}}).then(pokemon => res.status(200).json(pokemon))
+    }
 }
 
 
