@@ -5,6 +5,8 @@ const routes = require('./routes')
 const connection = require('../database/db')
 
 
+const Pokemon = require('../models/Pokemon')
+
 
 app.use(express.json())
 app.use(routes)
