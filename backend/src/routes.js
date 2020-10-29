@@ -1,9 +1,10 @@
 const express = require('express')
 const routes = express.Router()
 
-routes.get('/', (req, res) => {
-    res.send('ok')
-})
+const PokemonsController = require('../controllers/PokemonController')
 
+
+routes.get('/pokemons', PokemonsController.getPokemons)
+routes.post('/pokemon', PokemonsController.createPokemon)
 
 module.exports = routes
