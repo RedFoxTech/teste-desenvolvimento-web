@@ -7,5 +7,6 @@ const PokemonsController = require('../controllers/PokemonController')
 routes.get('/pokemons', PokemonsController.getPokemons)
 routes.get('/pokemon/:id', PokemonsController.getOnePokemon)
 routes.post('/pokemon', PokemonsController.createPokemon)
+routes.put('/pokemon/:id', PokemonsController.editPokemon)
 
 module.exports = routes
