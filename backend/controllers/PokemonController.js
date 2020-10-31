@@ -35,7 +35,9 @@ class Pokemons {
         const {name, type, description, image} = req.body
 
 
-        Pokemon.update({name: name, type: type, description: description, image: image}, {where: {id: id}}).then(pokemon => res.status(200).json({message: 'Pokemon updated '}))
+        Pokemon.update({name: name, type: type, description: description, image: image}, {where: {id: id}}).then(() => {
+            return res.sendStatus(200).json({message: 'Pokemon updated '})
+        })
 
     }
 }
