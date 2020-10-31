@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react'
 
 function Main() {
     const [search, setSearch] = useState('')
-
     const [pokemons, setPokemons] = useState([])
 
     useEffect(() => {
@@ -33,9 +32,9 @@ function Main() {
             <div className="form-group">
                 <input className="form-control mt-4" type="text" placeholder="Procure por um pokemon" onChange={ e => setSearch(e.target.value)} />
             </div>
-                <Row>
+                <Row my-1>
                     {filterPokemons.map(pokemon => (
-                        <Col sm={12} md={6} lg={4}wq xl={3} >
+                        <Col sm={6} md={4} lg={3}wq xl={3} >
                             <Cards key={pokemon.id} name={pokemon.name} image={pokemon.image} description={pokemon.description} id={pokemon.id}  />
                         </Col>                   
                     ))}
