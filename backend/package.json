@@ -16,9 +16,13 @@
     "eslint": "^7.12.1",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.1",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "sequelize-cli": "^6.2.0"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mariadb": "^2.5.1",
+    "sequelize": "^6.3.5",
+    "sequelize-auto": "^0.6.6"
   }
 }
