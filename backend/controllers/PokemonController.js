@@ -40,6 +40,13 @@ class Pokemons {
         })
 
     }
+
+
+    deletePokemon(req, res) {
+        const {id} = req.params
+
+        Pokemon.destroy({where: {id: id}}).then(() => res.status(200).json({message: 'Deletado'}))
+    }
 }
 
 
