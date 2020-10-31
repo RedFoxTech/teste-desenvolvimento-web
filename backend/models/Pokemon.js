@@ -1,26 +1,27 @@
-const Sequelize = require('sequelize')
-const connection = require('../database/db')
+const mongoose = require('mongoose')
 
 
-const Pokemon = connection.define('poke', {
+const PokemonSchema = new mongoose.Schema({
     name: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: String,
+        required: true
     },
     type: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: String,
+        required: true
     },
     description: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: String,
+        required: true
     },
     image: {
-        type: Sequelize.STRING,
-        allowNull: false
+        type: String,
+        required: true
+    },
+    date : {
+        type: Date,
+        default: Date.now
     }
 })
 
-
-
-module.exports = Pokemon
+module.exports = Pokemon = mongoose.model('pokemons', PokemonSchema)

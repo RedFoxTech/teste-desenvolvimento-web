@@ -3,49 +3,82 @@ const Pokemon = require('../models/Pokemon')
 
 class Pokemons {
 
-    createPokemon(req, res) {
-        const {name, type, description, image} = req.body
+    async createPokemon(req, res) {
+        try {   
+            const pokemon = await Pokemon.create(req.body)
 
-        Pokemon.create({
-            name: name,
-            type: type,
-            description: description,
-            image: image
-        }).then(pokemon => res.status(200).json(pokemon))
+            return res.json({pokemon})
+        } catch (err) {
+            return res.status(400).json({error: 'Error creating new pokemon'})
+        }
     }
 
 
-    getPokemons(req, res) {
+    async getPokemons(req, res) {
         
-        Pokemon.findAll().then(pokemons => res.status(200).json(pokemons))
+        try {
+            const pokemons = await Pokemon.find()
+
+            return res.json({pokemons})
+
+        } catch (err) {
+
+            return res.status(400).json({error: 'Error loading pokemons'})
+        }
+        
     }
 
 
-    getOnePokemon(req, res) {
+    async getOnePokemon(req, res) {
+        try {
+            const {id} = req.params
 
-        const {id} = req.params
+            const pokemon = await Pokemon.findById(id)
 
-        Pokemon.findOne({where: {id: id}}).then(pokemon => res.status(200).json(pokemon))
+            return res.json({pokemon})
+
+        } catch (err) {
+
+            return res.status(400).json({error: 'Error loading pokemon'})
+        }
+        
     }
 
 
-    editPokemon(req, res) {
+    async editPokemon(req, res) {
+        try {
+            const {id} = req.params
+            const {name, type, description, image} = req.body
 
-        const {id} = req.params 
-        const {name, type, description, image} = req.body
+            const pokemon = await Pokemon.findByIdAndUpdate(id, {
+                name: name,
+                type: type,
+                description: description,
+                image: image
+            }, {new: true })
 
+            return res.status(200).json(pokemon)
 
-        Pokemon.update({name: name, type: type, description: description, image: image}, {where: {id: id}}).then(() => {
-            return res.sendStatus(200).json({message: 'Pokemon updated '})
-        })
+        } catch (err) {
+
+            return res.status(400).json({error: 'Error removing pokemon'})
+        }
 
     }
 
 
-    deletePokemon(req, res) {
-        const {id} = req.params
+    async deletePokemon(req, res) {
+        try {
+            const {id} = req.params
 
-        Pokemon.destroy({where: {id: id}}).then(() => res.status(200).json({message: 'Deletado'}))
+            await Pokemon.findByIdAndRemove(id)
+
+            return res.json({message: 'Pokemon removed'})
+
+        } catch (err) {
+
+            return res.status(400).json({error: 'Error removing pokemon'})
+        }
     }
 }
 
