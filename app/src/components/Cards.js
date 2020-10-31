@@ -38,7 +38,7 @@ function Cards({image, name, description, id}) {
         </Modal.Body>
         <Modal.Footer>
             <Button onClick={() => {
-                axios.delete(`http://localhost:8080/pokemon/${id}`).then(() => window.location.href = "/")
+                axios.delete(`https://apitestepoke.herokuapp.com/pokemon/${id}`).then(() => window.location.href = "/")
             }} variant="danger">Excluir</Button>
             <Link to={`/edit/${id}`}> 
                 <Button variant="warning">Editar</Button>

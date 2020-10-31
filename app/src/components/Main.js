@@ -13,7 +13,7 @@ function Main() {
     useEffect(() => {
         
      function getPokemons() {
-            axios.get('http://localhost:8080/pokemons').then(pokemon => {
+            axios.get('https://apitestepoke.herokuapp.com/pokemons').then(pokemon => {
                 const data = pokemon.data.pokemons
                 console.log(data)
                 setPokemons(data)

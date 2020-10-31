@@ -18,7 +18,7 @@ function NewPokemon() {
     function handleSubmit(e) {
         e.preventDefault()
 
-        axios.post('http://localhost:8080/pokemon', {
+        axios.post('https://apitestepoke.herokuapp.com/pokemon', {
             name: name,
             type: type,
             description: description,

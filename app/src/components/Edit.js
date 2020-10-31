@@ -22,7 +22,7 @@ function Edit() {
 
     useEffect(() => {
         function getPokemon() {
-            axios.get(`http://localhost:8080/pokemon/${id}`).then(pokemon => {
+            axios.get(`https://apitestepoke.herokuapp.com/pokemon/${id}`).then(pokemon => {
                 const data = pokemon.data.pokemon
                 setName(data.name)
                 setType(data.type)
@@ -39,7 +39,7 @@ function Edit() {
 
     function editPokemon(e) {
         e.preventDefault()
-        axios.put(`http://localhost:8080/pokemon/${id}`, {
+        axios.put(`https://apitestepoke.herokuapp.com/pokemon/${id}`, {
             name: name,
             type: type,
             description: description,
