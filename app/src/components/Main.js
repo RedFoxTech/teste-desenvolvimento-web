@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 
 function Main() {
 
+
     const [pokemons, setPokemons] = useState([])
 
     useEffect(() => {
@@ -23,13 +24,13 @@ function Main() {
 
     return(
         <>
-            <Header item="novo pokemon" link={'/newpokemon'} />
+            <Header logo="pokedex" item="novo pokemon" link={'/newpokemon'} />
             <Container>
                 <Row>
                     {pokemons.map(pokemon => (
-                        <Col  xl={3} >
-                            <Cards name={pokemon.name} image={pokemon.image} description={pokemon.description}  />
-                        </Col>
+                        <Col sm={12} md={6} lg={4}wq xl={3} >
+                            <Cards key={pokemon.id} name={pokemon.name} image={pokemon.image} description={pokemon.description} id={pokemon.id}  />
+                        </Col>                   
                     ))}
                 </Row>
             </Container>

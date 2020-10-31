@@ -2,12 +2,11 @@ import {Navbar,Container, Nav} from 'react-bootstrap'
 
 import { Link } from 'react-router-dom'
 
-function Header({item, icon, link}) {
+function Header({logo, item, link}) {
     return(
         <Navbar bg="dark" variant="dark">
             <Container>
-                <Link to="/"> <Navbar.Brand>Pokedex</Navbar.Brand></Link>
-                {icon}
+                <Navbar.Brand>{logo}</Navbar.Brand>
                 <Nav className="ml-auto">
                     <Link style={{color: '#fff', textDecoration: 'none', fontFamily: "Nunito Sans"}} to={link}>{item}</Link>
                 </Nav>

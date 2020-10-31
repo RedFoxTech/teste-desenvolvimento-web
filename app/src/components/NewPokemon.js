@@ -30,10 +30,11 @@ function NewPokemon() {
             }
         })
     }
+    
 
     return (
         <>
-            <Header item={ <FiArrowLeft size={18} color="white"/>} link="/"  />
+            <Header logo="pokedex" item={ <FiArrowLeft size={18} color="white"/>} link="/"  />
             <Container>
                 <form style={{marginTop: '20px'}} onSubmit={handleSubmit}> 
                     <fieldset>
@@ -53,7 +54,7 @@ function NewPokemon() {
                             <label htmlFor="exampleTextarea">Descrição do pokemon</label>
                             <textarea className="form-control" id="exampleTextarea" rows="3" onChange={(e) => setDescription(e.target.value)}  name="description" value={description} ></textarea>
                         </div>
-                        <button className="btn btn-primary">Submit</button>
+                        <button className="btn btn-primary">Listar pokemon</button>
                     </fieldset>
                 </form>
 
