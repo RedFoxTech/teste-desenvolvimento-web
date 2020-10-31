@@ -11,9 +11,10 @@ function Main() {
     const [pokemons, setPokemons] = useState([])
 
     useEffect(() => {
+        
      function getPokemons() {
             axios.get('http://localhost:8080/pokemons').then(pokemon => {
-                const data = pokemon.data
+                const data = pokemon.data.pokemons
                 console.log(data)
                 setPokemons(data)
             })
@@ -34,8 +35,8 @@ function Main() {
             </div>
                 <Row my-1>
                     {filterPokemons.map(pokemon => (
-                        <Col sm={6} md={4} lg={3}wq xl={3} >
-                            <Cards key={pokemon.id} name={pokemon.name} image={pokemon.image} description={pokemon.description} id={pokemon.id}  />
+                        <Col key={pokemon._id} sm={6} md={4} lg={3} xl={3} >
+                            <Cards name={pokemon.name} image={pokemon.image} description={pokemon.description} id={pokemon._id}  />
                         </Col>                   
                     ))}
                 </Row>

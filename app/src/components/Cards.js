@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 function Cards({image, name, description, id}) {
+    
+    
 
     const [show, setShow] = useState(false);
 
@@ -13,7 +15,7 @@ function Cards({image, name, description, id}) {
 
     return(
         <>
-        <Card onClick={handleShow} className="my-1 p-1" style={{minHeight: '25rem', minWidth: '12rem',}}>
+        <Card onClick={handleShow} className="my-1 p-1" style={{minHeight: '25rem', minWidth: '12rem'}}>
             <Card.Img src={image} variant="top"/>
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
@@ -21,7 +23,10 @@ function Cards({image, name, description, id}) {
             </Card.Body>
         </Card>
         
-        <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
+        <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}
+            size="md"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered >
 
         <Modal.Header closeButton>
             <Modal.Title>{name}</Modal.Title>
