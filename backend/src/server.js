@@ -1,6 +1,7 @@
-const { default: app } = require('./app');
+const app = require('./app');
+const { PORT } = require('./config');
 
-const port = 8080;
+const port = PORT || 8080;
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
