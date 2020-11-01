@@ -39,11 +39,15 @@ eu optei por fazer o backend e o frontend da aplicação, criando a interface e 
 
 ### Foi feito o deploy do front-end na plataforma vercel
 
-##### com esse link é possivel usar todas as funcionalidades da aplicação
+#### com esse link é possivel usar todas as funcionalidades da aplicação
 
-Link para acessar a aplicação
--https://pokemon-ivory.vercel.app/
+Link para acessar a aplicação hospedada
+-https://pokemon-two-phi.vercel.app/
 
+#### Link para pegar as imagens dos pokemons
+
+https://pokeres.bastionbot.org/images/pokemon/- ID DO POKEMON -.png<br>
+Exemplo: https://pokeres.bastionbot.org/images/pokemon/1.png
 
 #  :floppy_disk: Back-end
 
