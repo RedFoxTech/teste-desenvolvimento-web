@@ -82,6 +82,43 @@ As seguintes ferramentas foram usadas na construção do projeto:
 -  **[MongoDB Atlas](https://www.mongodb.com/cloud/atlas)**
 
 
+
+## Instalação
+
+```
+# Clone este repositório
+$ git clone https://github.com/Mikelovex/teste-desenvolvimento-web.git
+
+# Instalando front-end
+
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd teste-desenvolvimento-web
+
+# Va para a pasta da aplicação front end
+$ cd app
+
+# Instale as dependências
+$ npm ou yarn install
+
+# Iniciando o front end
+$npm ou yarn start
+
+---
+
+# Instalando back-end
+
+Va para a pasta da API
+$ cd backend
+
+# Instale as dependências
+$ npm ou yarn install
+
+# Inicie o servidor
+$npm ou yarn start
+
+```
+
+
 ---
 
 # :man: Autor
