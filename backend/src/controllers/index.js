@@ -1,5 +1,5 @@
 const getAllPokemonsController = require('./getAllPokemons');
-const getPokemonByIdController = require('./getAllPokemons');
+const getPokemonByIdController = require('./getPokemonById');
 const getStatsByIdController = require('./getStatsById');
 const getGenerationsByIdController = require('./getGenerationsById');
 const getAttributesByIdController = require('./getAttributesById');
