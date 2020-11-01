@@ -36,7 +36,7 @@ function Main() {
                 <Row my-1>
                     {filterPokemons.map(pokemon => (
                         <Col key={pokemon._id} sm={6} md={4} lg={3} xl={3} >
-                            <Cards name={pokemon.name} image={pokemon.image} description={pokemon.description} id={pokemon._id}  />
+                            <Cards name={pokemon.name} image={pokemon.image} description={pokemon.description} id={pokemon._id} type={pokemon.type}  />
                         </Col>                   
                     ))}
                 </Row>
