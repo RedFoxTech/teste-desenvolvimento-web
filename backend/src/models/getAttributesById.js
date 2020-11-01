@@ -62,6 +62,6 @@ module.exports = async (id) => {
 
     return list;
   } catch (err) {
-    console.error('getAttributesByIdModel', err);
+    console.error('getAttributesByIdModel', err.message);
   }
 };

@@ -30,6 +30,6 @@ module.exports = async () => {
     );
     return list;
   } catch (err) {
-    console.error('getAllPokemonsModel', err);
+    console.error('getAllPokemonsModel', err.message);
   }
 };

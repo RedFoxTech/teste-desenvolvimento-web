@@ -32,6 +32,6 @@ module.exports = async (pokemonId) => {
     )[0];
     return list;
   } catch (err) {
-    console.error('getPokemonByIdModel', err);
+    console.error('getPokemonByIdModel', err.message);
   }
 };

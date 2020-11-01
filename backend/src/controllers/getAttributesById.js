@@ -7,6 +7,7 @@ module.exports = async (req, res) => {
 
     return res.status(200).json(attributes);
   } catch (err) {
+    console.error('getAttributesByIdController', err.message);
     return res.status(500).json({ message: 'Error Intern' });
   }
 };

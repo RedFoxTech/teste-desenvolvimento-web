@@ -7,6 +7,7 @@ module.exports = async (req, res) => {
 
     return res.status(200).json(stats);
   } catch (err) {
+    console.error('getStatsByIdController', err.message);
     return res.status(500).json({ message: 'Error Intern' });
   }
 };

@@ -31,6 +31,6 @@ module.exports = async (id) => {
 
     return list;
   } catch (err) {
-    console.error('getGenerationsByIdModel', err);
+    console.error('getGenerationsByIdModel', err.message);
   }
 };

@@ -6,6 +6,7 @@ module.exports = async (req, res) => {
 
     return res.status(200).json(pokemons);
   } catch (err) {
+    console.error('getAllPokemonsController', err.message);
     return res.status(500).json({ message: 'Error Intern' });
   }
 };
