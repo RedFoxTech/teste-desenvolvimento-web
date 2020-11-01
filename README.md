@@ -1,58 +1,134 @@
-# Teste de Desenvolvimento Web
+<p align="center"><img alt="NextLevelWeek" title="#NextLevelWeek" src="https://cdn.bulbagarden.net/upload/4/4b/Pok%C3%A9dex_logo.png" /></p>
 
-Olá Dev! Tudo bem?
+# :computer: Sobre
+### Teste de Desenvolvimento Web
+O teste é baseado em criar uma aplicação para substituir uma planilha de excel que lista pokemons.<br>
+regras do teste: <br>
+No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...).<br>
+como tecnologias deve ser usado algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery).<br>
+No backend deve utilizar NodeJS.<br>
+eu tinha a possibilidade de escolher entre criar a interface, as funcionalidades, o banco de dados, etc... <br>
+eu optei por fazer o backend e o frontend da aplicação, criando a interface e tambem as funcionalidade junto com banco de dados.
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+<br>
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
-
-Agora vamos ao teste!
-
-
-## Desafio Pokémon
-
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
-
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
-
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
+## 🎨 Layout
 
 
-## Consigo fazer tudo isso?
+### Tela Inicial
+![pokemondesafio](https://user-images.githubusercontent.com/27930968/97791164-11185980-1bae-11eb-94fa-b08d36e30611.png)
 
-Consegue sim!
+### Tela para adicionar novos pokemons
+![pokemondesafio](https://user-images.githubusercontent.com/27930968/97791478-a49f5980-1bb1-11eb-8823-e31fb8655fde.png)
 
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
+### Modal
+![pokemondesafio](https://user-images.githubusercontent.com/27930968/97791469-846f9a80-1bb1-11eb-85f5-191290a3a85c.png)
 
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+<br>
 
+# :wrench: Funcionalidades:
+- Criar novos pokemons
+- Listar pokemons cadastrados
+- Editar pokemon 
+- Excluir pokemon da base de dados
 
-## Por onde começo?
-
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
-
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
-
-
-## E o Layout??
-
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
-
-
-## Regras
-
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
+<br>
 
 
-## Só isso?
+# :computer: Front-end
 
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
+### Foi feito o deploy do front-end na plataforma vercel
 
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
+#### com esse link é possivel usar todas as funcionalidades da aplicação
+
+Link para acessar a aplicação hospedada
+-https://pokemon-two-phi.vercel.app/
+
+#### Link para pegar as imagens dos pokemons
+
+https://pokeres.bastionbot.org/images/pokemon/- ID DO POKEMON -.png<br>
+Exemplo: https://pokeres.bastionbot.org/images/pokemon/1.png
+
+#  :floppy_disk: Back-end
+
+Link para acessar a api
+-https://apitestepoke.herokuapp.com/
+
+#### EndPoint para listar todos pokemons
+-https://apitestepoke.herokuapp.com/pokemons
+
+<br>
+
+## 🛠 Tecnologias
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+#### **Website**  ([React](https://reactjs.org/))
+
+-  **[React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)**
+-  **[React Icons](https://react-icons.github.io/react-icons/)**
+-  **[Axios](https://github.com/axios/axios)**
+-  **[React Boostrap](https://react-bootstrap.github.io/)**
 
 
-Boa sorte! (^_^)
+#### **Server**  ([NodeJS](https://nodejs.org/en/)) 
+
+-  **[Express](https://expressjs.com/)**
+-  **[Cors](https://expressjs.com/en/resources/middleware/cors.html)**
+-  **[dotENV](https://github.com/motdotla/dotenv)**
+-  **[Mongoose](https://mongoosejs.com/)**
+
+#### **Banco de dados** ([MongoDB](https://www.mongodb.com/))
+-  **[MongoDB Atlas](https://www.mongodb.com/cloud/atlas)**
+
+
+
+## Instalação
+
+```
+# Clone este repositório
+$ git clone https://github.com/Mikelovex/teste-desenvolvimento-web.git
+
+# Instalando front-end
+
+# Acesse a pasta do projeto no seu terminal/cmd
+$ cd teste-desenvolvimento-web
+
+# Va para a pasta da aplicação front end
+$ cd app
+
+# Instale as dependências
+$ npm ou yarn install
+
+# Iniciando o front end
+$npm ou yarn start
+
+---
+
+# Instalando back-end
+
+Va para a pasta da API
+$ cd backend
+
+# Instale as dependências
+$ npm ou yarn install
+
+# Inicie o servidor
+$npm ou yarn start
+
+```
+
+
+---
+
+# :man: Autor
+
+<img  border-radius="50px" src="https://avatars0.githubusercontent.com/u/27930968?s=460&u=09299d3d156e530764896493838a0892158bd607&v=4" width="100px" alt="Marcelo Rafael Gonçalves"/>
+
+[![Linkedin Badge](https://img.shields.io/badge/-Michael-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/michaelmike/)](https://www.linkedin.com/in/michaelmike/) 
+[![Gmail Badge](https://img.shields.io/badge/-maicon.rafael17@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:maicon.rafael17@gmail.com)](mailto:maicon.rafael17@gmail.com)
+
+---
+
+
+Made with love by [Michael Gonçalves](https://github.com/mikelovex) :hearts:
