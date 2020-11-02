@@ -12,3 +12,7 @@ body {
 button {
   cursor: pointer;
 }
+
+button a {
+  color: white;
+}

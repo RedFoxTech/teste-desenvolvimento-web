@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import React from 'react';
-import { Box, Card, Media, Title, SubTitle, Content, Tag } from 'reactbulma';
+import { Box, Button, Card, Media, Title, SubTitle, Content, Tag } from 'reactbulma';
 
 const Cards = ({ pokemon }) => (
   <Box className="column is-narrow is-one-quarter">
@@ -16,12 +17,19 @@ const Cards = ({ pokemon }) => (
             <SubTitle is="6">Geração: {pokemon.generation}</SubTitle>
           </Media.Content>
         </Media>
-        <Content className="columns">
-          <Tag medium className="column is-half">
+        <Content>
+          <Button info>
+            <Link to={`/${pokemon.pokemonName}/${pokemon.id}`}>
+              I Choose You: {pokemon.pokemonName}!
+            </Link>
+          </Button>
+        </Content>
+        <Content className="columns is-centered is-variable">
+          <Tag primary medium className="column is-two-fifths ">
             {pokemon.type1}
           </Tag>
           {pokemon.type2 ? (
-            <Tag medium className="column is-half">
+            <Tag primary medium className="column is-two-fifths ">
               {pokemon.type2}
             </Tag>
           ) : null}

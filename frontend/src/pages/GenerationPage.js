@@ -1,12 +1,9 @@
 import React from 'react';
-import { Cards } from '../components';
-import {} from 'reactbulma';
+import { Title } from 'reactbulma';
 
 const GenerationPage = () => (
   <>
-    <h1>Ola</h1>
-    <Cards />
+    <Title>Generation</Title>
   </>
 );
-
 export default GenerationPage;
