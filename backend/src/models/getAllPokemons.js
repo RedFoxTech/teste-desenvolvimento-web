@@ -14,6 +14,7 @@ module.exports = async () => {
         'type_1',
         'type_2',
       ])
+      .limit(20)
       .execute();
 
     const listing = await results.fetchAll();
