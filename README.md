@@ -30,4 +30,4 @@ npm i
 npm start
 ```
 
-Após esses passos a apliação deve iniciar no seu navegador padrão do windows :tw-1f601: *(caso isso não aconteça acesse a seguinte [URL](localhost:3000/))*
+Após esses passos a apliação deve iniciar no seu navegador padrão do windows :tw-1f601: *(caso isso não aconteça acesse a seguinte [URL](http://localhost:3000/))*
