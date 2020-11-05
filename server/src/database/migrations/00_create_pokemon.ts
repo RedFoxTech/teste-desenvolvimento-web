@@ -25,11 +25,12 @@ export async function up(knex:Knex){
         table.integer('hatchable').notNullable()
         table.integer('shiny').notNullable()
         table.boolean('nest').notNullable()
-        table.boolean('new').notNullable()
+        table.boolean('newPoke').notNullable()
         table.boolean('notGettable').notNullable()
         table.boolean('futureEvolved').notNullable()
         table.integer('cp40').notNullable()
         table.integer('cp39').notNullable()
+        table.string('image').notNullable()
     })
 }
 export async function down(knex:Knex){
