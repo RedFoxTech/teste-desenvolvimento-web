@@ -1,17 +1,14 @@
 import {Router} from 'express'
+import PokemonController from './controllers/PokemonController'
+
 const routes = Router()
+const pokemonController = new PokemonController()
 
-routes.get('/pokemon', (req, res)=>{
-    res.status(200).send({
-        mensagem: 'Olá mundo'
-    })
-})
+//padrao controller (index, create, show, update, delete)
+routes.get('/pokemon', pokemonController.index)
+routes.get('/pokemon/:pokedexNumber', pokemonController.show)
+routes.post('/pokemon', pokemonController.create)
 
-routes.get('/pokemon/:id', (req, res)=>{
-    res.status(200).send({
-        mensagem: 'Olá mundo'
-    })
-})
 
 
 export default routes
