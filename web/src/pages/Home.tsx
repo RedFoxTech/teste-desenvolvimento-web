@@ -10,7 +10,6 @@ function Home(){
            <Sidebar/>
 
             <div className="page-content">
-
             <Form.Control type="text" placeholder="Buscar pokemon" />
 
             <Card style={{ width: '18rem' }}>
