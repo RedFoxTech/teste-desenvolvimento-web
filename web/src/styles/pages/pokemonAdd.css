@@ -1,0 +1,19 @@
+.page-pokemonAdd{
+    display: flex;
+    width: 98.8vw;
+    min-height: 100vh;
+    max-height: auto;
+    background: linear-gradient(400deg, #ffd900 0%,  #f88400 100%, #ff0000 100%);
+    justify-content: space-between;
+}
+.form-container{
+    width: 80vw;
+    height: 70vh;
+    background-color: #fff;
+    position: relative;
+    left: 6%;
+    margin: auto;
+    padding: 15px;
+    border-radius: 5px;
+}
+
