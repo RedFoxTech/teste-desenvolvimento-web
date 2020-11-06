@@ -1,0 +1,67 @@
+.page-landing{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(400deg, #ffd900 0%,  #f88400 100%, #ff0000 100%);
+    display: flex;
+    align-items: center;
+    padding: 80px;
+}
+.page-landing .content-wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: 600px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+    background: url('../../images/pokemons.png') no-repeat 75% center;
+    background-size: 40%;
+}
+.page-landing .content-wrapper .content-img{
+    display: flex;
+    align-items: center;
+}
+.page-landing .content-wrapper .content-img #logo{
+    height: 60px;
+    margin: 10px;
+}
+.content-wrapper .location{
+    position: absolute;
+    right: 0;
+    top: 15px;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+}
+.content-wrapper .location strong{
+    font-weight: 800;
+}
+.page-landing .content-wrapper main{
+    position: absolute;
+    top: 45%;
+    left: 60px;
+    max-width: 300px;
+}
+.page-landing .content-wrapper main h1{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+}
+.page-landing .content-wrapper main p{
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 28px;
+}
+.content-wrapper .enter-app{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 70px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
