@@ -27,6 +27,7 @@
     -webkit-transform:rotatey(360deg);
     transition:0.7s;
 }
+
 .page-home aside img{
     height: 60px;
 }
