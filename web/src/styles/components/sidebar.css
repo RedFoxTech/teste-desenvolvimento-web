@@ -1,9 +1,9 @@
-.page-home aside h1{
+aside h1{
     font-family: 'Nunito';
     font-weight: 400;
     font-size: 40px;
 }
-.page-home aside{
+aside{
     position: fixed;
     left: 0;
     width:12vw;
@@ -15,19 +15,22 @@
     align-items: center;
     justify-content: space-between;
 }
-.page-home aside a{
+aside a{
     height: auto;
     text-align: center;
     text-decoration: none;
     color: white;
 }
-.page-home aside img:hover{
+aside a:hover{
+    text-decoration: none;
+    color: #fff;
+}
+aside img:hover{
     background-color: rgb(84, 84, 182);
     border-radius: 5px;
     -webkit-transform:rotatey(360deg);
     transition:0.7s;
 }
-
-.page-home aside img{
+aside img{
     height: 60px;
 }
