@@ -29,7 +29,6 @@ function Landing(){
              <FiArrowRight size={30} color="rgba(250, 250, 250, 250)"/>
             </Button>
             </Link>
-
             </div>
         </div>
     )
