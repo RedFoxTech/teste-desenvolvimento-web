@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import logoImg from '../images/pokedex.png'
 import Button from 'react-bootstrap/Button'
 import { FiArrowRight } from 'react-icons/fi'
@@ -24,9 +25,10 @@ function Landing(){
               <span>São Paulo</span>
             </div>
 
-            <Button className="enter-app" variant="danger">
+            <Link to="/home"><Button className="enter-app" variant="danger">
              <FiArrowRight size={30} color="rgba(250, 250, 250, 250)"/>
             </Button>
+            </Link>
 
             </div>
         </div>
