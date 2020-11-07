@@ -8,12 +8,21 @@
 }
 .form-container{
     width: 80vw;
-    height: 70vh;
+    height: 75vh;
     background-color: #fff;
     position: relative;
     left: 6%;
     margin: auto;
     padding: 15px;
     border-radius: 5px;
+    display: flex;
+}
+.form-container #form{
+    width: 100%;
+}
+.buttonForm{
+    float: right;
+    width: 100px;
+    margin: 10px;
 }
 
