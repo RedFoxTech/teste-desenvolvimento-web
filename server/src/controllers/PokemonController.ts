@@ -34,9 +34,14 @@ class PokemonController{
             cp39
         } = req.body
 
+        const reqImages = req.files as Express.Multer.File[]
+        const image = reqImages.map(image=>{
+            return {path: image.filename}
+        })
+
         const pokemon = {
             //nome de cada coluna no banco de dados
-            image: "image-fake",
+            image,
             namePokemon,
             generation,
             evolutionStage,
@@ -65,6 +70,7 @@ class PokemonController{
             cp40,
             cp39
         }
+        console.log(image)
     
         const insertedPoke = await knex('pokemon').insert(pokemon)
         const pokedexNumber = insertedPoke[0]
