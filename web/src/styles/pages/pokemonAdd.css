@@ -8,12 +8,13 @@
 }
 .form-container{
     width: 80vw;
-    height: 75vh;
+    min-height: 75vh;
+    max-height: auto;
     background-color: #fff;
     position: relative;
     left: 6%;
     margin: auto;
-    padding: 15px;
+    padding: 10px;
     border-radius: 5px;
     display: flex;
 }
