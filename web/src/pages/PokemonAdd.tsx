@@ -9,6 +9,9 @@ function PokemonAdd(){
     function handleInputChange(event: ChangeEvent<HTMLInputElement>){
         console.log(event)
     }
+    function handleSelectChange(event: ChangeEvent<HTMLSelectElement>){
+        const evolved = event.target.value
+    }
 
     return(
         <div className="page-pokemonAdd">
@@ -190,7 +193,7 @@ function PokemonAdd(){
                 <Form.Row>
                     <Col>
                     <InputGroup>
-                <FormControl as="select" className="legendary" id="legendary">
+                <FormControl as="select"  className="legendary" id="legendary">
                     <option selected disabled defaultValue="true">Legendary?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
