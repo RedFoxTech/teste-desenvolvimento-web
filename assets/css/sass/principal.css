@@ -1,0 +1,124 @@
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f53b3b), to(#e6e61b));
+  background-image: linear-gradient(180deg, #f53b3b, #e6e61b);
+}
+
+#header {
+  background-color: #ccc;
+  font-family: 'Bebas Neue', cursive;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  height: auto;
+  opacity: 0.92;
+}
+
+#buscar {
+  height: auto;
+}
+
+.titulo {
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  background-color: gray;
+  height: 40px;
+  bottom: 0;
+}
+
+#voltar {
+  text-decoration: none;
+  color: #615858;
+  position: fixed;
+  top: 50%;
+  right: 2%;
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
+
+#voltar:hover {
+  color: gray;
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+}
+
+#card {
+  padding: 15px;
+  border-radius: 35px;
+  width: 260px;
+  height: auto;
+  margin: 30px;
+  background: #999;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+  border: 2px solid #ff888f;
+  -webkit-box-shadow: 5px 5px 10px #e61515;
+          box-shadow: 5px 5px 10px #e61515;
+  display: inline-block;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#card .container-fluid:hover {
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.card img {
+  width: 150px;
+  border-radius: 30px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  margin: auto;
+}
+
+.card img:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: all 1s ease-in;
+  transition: all 1s ease-in;
+  border: none;
+}
+
+.ball {
+  width: 40px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  margin: 5px;
+  border-radius: 50%;
+  -webkit-box-shadow: 5px 5px 15px gray;
+          box-shadow: 5px 5px 15px gray;
+}
+
+.ball:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: rotateZ(580deg);
+          transform: rotateZ(580deg);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.att {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.dropdown-menu {
+  height: auto;
+  width: 200px;
+  line-height: 12px;
+  background-color: #cdcd;
+  opacity: 0.9;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  -webkit-box-shadow: 2px 8px 16px gray;
+          box-shadow: 2px 8px 16px gray;
+}
+/*# sourceMappingURL=principal.css.map */

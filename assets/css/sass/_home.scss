@@ -1,0 +1,67 @@
+
+#card{
+    
+    padding: 15px;
+    border-radius: 35px;
+    width: 260px;
+    height: auto;
+    margin: 30px ;
+    background: #999;
+    transition: all .25s ease;
+    border: 2px solid #ff888f;
+    box-shadow: 5px 5px 10px rgb(230, 21, 21);
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+      
+    
+}
+#card .container-fluid:hover{
+    transition: all 1s ease-in-out;
+    transform: scale(1.05);
+       
+    
+}
+.card img{
+    width: 150px;
+    border-radius: 30px;
+    transition: all 1s ease-in-out;
+    margin: auto;
+    
+}
+.card img:hover{
+    transform: scale(1.05);
+    transition: all 1s ease-in;
+    border: none;
+}
+
+.ball{
+    width: 40px;
+    transition: all 1s ease;
+    margin: 5px;
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px gray;
+}
+.ball:hover{
+    box-shadow: none;
+    transform: rotateZ(580deg);
+    transition: all 1s ease;
+    
+}
+.att{
+    display: inline-flex;
+}
+
+.dropdown-menu{
+    height: auto;
+    width: 200px;
+    line-height: 12px;
+    background-color: #cdcd;
+    opacity: 0.9;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 2px 8px 16px gray;
+        
+}
+
+
+

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/sass/principal.scss">
+    <link rel="stylesheet" type="text/css" href="assets/css/sass/principal.css">
+    <!-- Google fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Arimo&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
+    <!--Ícones-->
+    <script src="https://kit.fontawesome.com/43f0f5be6f.js" crossorigin="anonymous"></script>
+
+    <title>Pokémon - Teste</title>
+</head>
+
+<body>
+
+    <!--Início Cabeçalho-->
+    <header id="header">
+        <div class="container-fluid">
+            <div class="navbar navbar-expand-lg navbar-justify-content-around" id="buscar">
+                <h1 class="titulo">Encontre o seu Pokémon Favorito</h1>
+                <nav class="navbar ">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar seu Pokémon"
+                            aria-label="Pesquisar">
+                        <img class="ball" src="assets/img/Pokeball.png">
+                        <button class="btn btn-info my-2 my-sm-0" type="submit">Pesquisar</button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!--Fim Cabeçalho-->
+
+
+    <!--Início do Card 001-->
+    <header id="card">
+        <div class="container-fluid">
+            <div class="card">
+                <img class="img-thumbnail" src="assets/img/bubasaur.jpg" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Bubassaur </h5>
+                    <div class="card-text">
+                        <div class="att">
+                            <div class="atk">
+                                <button type="button" class="btn btn-success"><strong>ATK</strong> 118</button>
+                            </div>
+                            <div class="def">
+                                <button type="button" class="btn btn-danger"><strong>DEF</strong> 118</button>
+                            </div>
+                            <div class="sta">
+                                <button type="button" class="btn btn-warning"><strong>STA</strong> 90</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Início Menu Dropdown -->
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Saiba Mais
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="nav">
+                            <li class="dropdown-item"><strong>Pokedex Number:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Generation:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolution Stage:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolved:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Family ID:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Cross Gen:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Type 1:</strong> 0 grass</li>
+                            <li class="dropdown-item"><strong>Type 2:</strong> poison</li>
+                            <li class="dropdown-item"><strong>Weather 1:</strong> sunny/clear</li>
+                            <li class="dropdown-item"><strong>Weather 2:</strong> cloudy</li>
+                            <li class="dropdown-item"><strong>Stat Total:</strong> 326</li>
+                            <li class="dropdown-item"><strong>Legendary:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Aquireable:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Spawns:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Regional: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Raidable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Hatchable: </strong> 5</li>
+                            <li class="dropdown-item"><strong>Shiny: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Nest: </strong> 1</li>
+                            <li class="dropdown-item"><strong>New: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Not-gettable: </strong>0</li>
+                            <li class="dropdown-item"><strong>Future Evolve: </strong>0</li>
+                            <li class="dropdown-item"><strong>100% CP @40: </strong>981</li>
+                            <li class="dropdown-item"><strong>100% CP @39: </strong>967</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fim Menu Dropdwon -->
+            </div>
+        </div>
+    </header>
+    <!--Fim do Card 001-->
+
+    <!--Início do Card 002-->
+    <header id="card">
+        <div class="container-fluid">
+            <div class="card">
+                <img class="img-thumbnail" src="assets/img/2.png" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Ivysaur</h5>
+                    <div class="card-text">
+                        <div class="att">
+                            <div class="atk">
+                                <button type="button" class="btn btn-success"><strong>ATK</strong> 151</button>
+                            </div>
+                            <div class="def">
+                                <button type="button" class="btn btn-danger"><strong>DEF</strong> 151</button>
+                            </div>
+                            <div class="sta">
+                                <button type="button" class="btn btn-warning"><strong>STA</strong> 120</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Início Menu Dropdown -->
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Saiba Mais
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="nav">
+                            <li class="dropdown-item"><strong>Pokedex Number:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Generation:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolution Stage:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolved:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Family ID:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Cross Gen:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Type 1:</strong> 0 grass</li>
+                            <li class="dropdown-item"><strong>Type 2:</strong> poison</li>
+                            <li class="dropdown-item"><strong>Weather 1:</strong> sunny/clear</li>
+                            <li class="dropdown-item"><strong>Weather 2:</strong> cloudy</li>
+                            <li class="dropdown-item"><strong>Stat Total:</strong> 326</li>
+                            <li class="dropdown-item"><strong>Legendary:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Aquireable:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Spawns:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Regional: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Raidable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Hatchable: </strong> 5</li>
+                            <li class="dropdown-item"><strong>Shiny: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Nest: </strong> 1</li>
+                            <li class="dropdown-item"><strong>New: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Not-gettable: </strong>0</li>
+                            <li class="dropdown-item"><strong>Future Evolve: </strong>0</li>
+                            <li class="dropdown-item"><strong>100% CP @40: </strong>1552</li>
+                            <li class="dropdown-item"><strong>100% CP @39: </strong>1529</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fim Menu Dropdwon -->
+            </div>
+        </div>
+    </header>
+    <!--Fim do Card 002-->
+
+    <!--Início do Card 003-->
+    <header id="card">
+        <div class="container-fluid">
+            <div class="card">
+                <img class="img-thumbnail" src="assets/img/3.png" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Venusaur</h5>
+                    <div class="card-text">
+                        <div class="att">
+                            <div class="atk">
+                                <button type="button" class="btn btn-success"><strong>ATK</strong> 198</button>
+                            </div>
+                            <div class="def">
+                                <button type="button" class="btn btn-danger"><strong>DEF</strong> 198</button>
+                            </div>
+                            <div class="sta">
+                                <button type="button" class="btn btn-warning"><strong>STA</strong> 160</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Início Menu Dropdown -->
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Saiba Mais
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="nav">
+                            <li class="dropdown-item"><strong>Pokedex Number:</strong> 3</li>
+                            <li class="dropdown-item"><strong>Generation:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolution Stage:</strong> 3</li>
+                            <li class="dropdown-item"><strong>Evolved:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Family ID:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Cross Gen:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Type 1:</strong> 0 grass</li>
+                            <li class="dropdown-item"><strong>Type 2:</strong> poison</li>
+                            <li class="dropdown-item"><strong>Weather 1:</strong> sunny/clear</li>
+                            <li class="dropdown-item"><strong>Weather 2:</strong> cloudy</li>
+                            <li class="dropdown-item"><strong>Stat Total:</strong> 556</li>
+                            <li class="dropdown-item"><strong>Legendary:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Aquireable:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Spawns:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Regional: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Raidable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Hatchable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Shiny: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Nest: </strong> 1</li>
+                            <li class="dropdown-item"><strong>New: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Not-gettable: </strong>0</li>
+                            <li class="dropdown-item"><strong>Future Evolve: </strong>0</li>
+                            <li class="dropdown-item"><strong>100% CP @40: </strong>2568</li>
+                            <li class="dropdown-item"><strong>100% CP @39: </strong>2531</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fim Menu Dropdwon -->
+            </div>
+        </div>
+    </header>
+    <!--Fim do Card 003-->
+
+    <!--Início do Card 004-->
+    <header id="card">
+        <div class="container-fluid">
+            <div class="card">
+                <img class="img-thumbnail" src="assets/img/charmander.jpg" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Charmander</h5>
+                    <div class="card-text">
+                        <div class="att">
+                            <div class="atk">
+                                <button type="button" class="btn btn-success"><strong>ATK</strong> 116</button>
+                            </div>
+                            <div class="def">
+                                <button type="button" class="btn btn-danger"><strong>DEF</strong> 96</button>
+                            </div>
+                            <div class="sta">
+                                <button type="button" class="btn btn-warning"><strong>STA</strong> 78</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Início Menu Dropdown -->
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Saiba Mais
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="nav">
+                            <li class="dropdown-item"><strong>Pokedex Number:</strong> 4</li>
+                            <li class="dropdown-item"><strong>Generation:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolution Stage:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolved:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Family ID:</strong> 2</li>
+                            <li class="dropdown-item"><strong>Cross Gen:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Type 1:</strong> 0 fire</li>
+                            <li class="dropdown-item"><strong>Type 2:</strong> -</li>
+                            <li class="dropdown-item"><strong>Weather 1:</strong> sunny/clear</li>
+                            <li class="dropdown-item"><strong>Weather 2:</strong> -</li>
+                            <li class="dropdown-item"><strong>Stat Total:</strong> 290</li>
+                            <li class="dropdown-item"><strong>Legendary:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Aquireable:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Spawns:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Regional: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Raidable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Hatchable: </strong> 5</li>
+                            <li class="dropdown-item"><strong>Shiny: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Nest: </strong> 1</li>
+                            <li class="dropdown-item"><strong>New: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Not-gettable: </strong>0</li>
+                            <li class="dropdown-item"><strong>Future Evolve: </strong>0</li>
+                            <li class="dropdown-item"><strong>100% CP @40: </strong>831</li>
+                            <li class="dropdown-item"><strong>100% CP @39: </strong>819</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fim Menu Dropdwon -->
+            </div>
+        </div>
+    </header>
+    <!--Fim do Card 004-->
+
+    <!--Início do Card 005-->
+    <header id="card">
+        <div class="container-fluid">
+            <div class="card">
+                <img class="img-thumbnail" src="assets/img/5.png" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Charmeleon</h5>
+                    <div class="card-text">
+                        <div class="att">
+                            <div class="atk">
+                                <button type="button" class="btn btn-success"><strong>ATK</strong> 158</button>
+                            </div>
+                            <div class="def">
+                                <button type="button" class="btn btn-danger"><strong>DEF</strong> 129</button>
+                            </div>
+                            <div class="sta">
+                                <button type="button" class="btn btn-warning"><strong>STA</strong> 116</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Início Menu Dropdown -->
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Saiba Mais
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="nav">
+                            <li class="dropdown-item"><strong>Pokedex Number:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Generation:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolution Stage:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolved:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Family ID:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Cross Gen:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Type 1:</strong> 0 grass</li>
+                            <li class="dropdown-item"><strong>Type 2:</strong> poison</li>
+                            <li class="dropdown-item"><strong>Weather 1:</strong> sunny/clear</li>
+                            <li class="dropdown-item"><strong>Weather 2:</strong> cloudy</li>
+                            <li class="dropdown-item"><strong>Stat Total:</strong> 326</li>
+                            <li class="dropdown-item"><strong>Legendary:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Aquireable:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Spawns:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Regional: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Raidable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Hatchable: </strong> 5</li>
+                            <li class="dropdown-item"><strong>Shiny: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Nest: </strong> 1</li>
+                            <li class="dropdown-item"><strong>New: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Not-gettable: </strong>0</li>
+                            <li class="dropdown-item"><strong>Future Evolve: </strong>0</li>
+                            <li class="dropdown-item"><strong>100% CP @40: </strong>1484</li>
+                            <li class="dropdown-item"><strong>100% CP @39: </strong>1462</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fim Menu Dropdwon -->
+            </div>
+        </div>
+    </header>
+    <!--Fim do Card 005-->
+
+    <!--Início do Card 006-->
+    <header id="card">
+        <div class="container-fluid">
+            <div class="card">
+                <img class="img-thumbnail" src="assets/img/006.png" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Charizard</h5>
+                    <div class="card-text">
+                        <div class="att">
+                            <div class="atk">
+                                <button type="button" class="btn btn-success"><strong>ATK</strong> 223</button>
+                            </div>
+                            <div class="def">
+                                <button type="button" class="btn btn-danger"><strong>DEF</strong> 176</button>
+                            </div>
+                            <div class="sta">
+                                <button type="button" class="btn btn-warning"><strong>STA</strong> 156</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Início Menu Dropdown -->
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Saiba Mais
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="nav">
+                            <li class="dropdown-item"><strong>Pokedex Number:</strong> 6</li>
+                            <li class="dropdown-item"><strong>Generation:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolution Stage:</strong> 3</li>
+                            <li class="dropdown-item"><strong>Evolved:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Family ID:</strong> 2/li>
+                            <li class="dropdown-item"><strong>Cross Gen:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Type 1:</strong> 0 fire</li>
+                            <li class="dropdown-item"><strong>Type 2:</strong> flying</li>
+                            <li class="dropdown-item"><strong>Weather 1:</strong> sunny/clear</li>
+                            <li class="dropdown-item"><strong>Weather 2:</strong> windy</li>
+                            <li class="dropdown-item"><strong>Stat Total:</strong> 555</li>
+                            <li class="dropdown-item"><strong>Legendary:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Aquireable:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Spawns:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Regional: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Raidable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Hatchable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Shiny: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Nest: </strong> 0</li>
+                            <li class="dropdown-item"><strong>New: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Not-gettable: </strong>0</li>
+                            <li class="dropdown-item"><strong>Future Evolve: </strong>0</li>
+                            <li class="dropdown-item"><strong>100% CP @40: </strong>2686</li>
+                            <li class="dropdown-item"><strong>100% CP @39: </strong>2648</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fim Menu Dropdwon -->
+            </div>
+        </div>
+    </header>
+    <!--Fim do Card 006-->
+
+    <!--Início do Card 007-->
+    <header id="card">
+        <div class="container-fluid">
+            <div class="card">
+                <img class="img-thumbnail" src="assets/img/007.png" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Squirtle</h5>
+                    <div class="card-text">
+                        <div class="att">
+                            <div class="atk">
+                                <button type="button" class="btn btn-success"><strong>ATK</strong> 94</button>
+                            </div>
+                            <div class="def">
+                                <button type="button" class="btn btn-danger"><strong>DEF</strong> 122</button>
+                            </div>
+                            <div class="sta">
+                                <button type="button" class="btn btn-warning"><strong>STA</strong> 88</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Início Menu Dropdown -->
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Saiba Mais
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="nav">
+                            <li class="dropdown-item"><strong>Pokedex Number:</strong> 7</li>
+                            <li class="dropdown-item"><strong>Generation:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolution Stage:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolved:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Family ID:</strong> 3</li>
+                            <li class="dropdown-item"><strong>Cross Gen:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Type 1:</strong> 0 water</li>
+                            <li class="dropdown-item"><strong>Type 2:</strong> -</li>
+                            <li class="dropdown-item"><strong>Weather 1:</strong> rainy</li>
+                            <li class="dropdown-item"><strong>Weather 2:</strong> -</li>
+                            <li class="dropdown-item"><strong>Stat Total:</strong> 304</li>
+                            <li class="dropdown-item"><strong>Legendary:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Aquireable:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Spawns:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Regional: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Raidable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Hatchable: </strong> 5</li>
+                            <li class="dropdown-item"><strong>Shiny: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Nest: </strong> 1</li>
+                            <li class="dropdown-item"><strong>New: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Not-gettable: </strong>0</li>
+                            <li class="dropdown-item"><strong>Future Evolve: </strong>0</li>
+                            <li class="dropdown-item"><strong>100% CP @40: </strong>808</li>
+                            <li class="dropdown-item"><strong>100% CP @39: </strong>797</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fim Menu Dropdwon -->
+            </div>
+        </div>
+    </header>
+    <!--Fim do Card 007-->
+
+    <!--Início do Card 008-->
+    <header id="card">
+        <div class="container-fluid">
+            <div class="card">
+                <img class="img-thumbnail" src="assets/img/008.png" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Wartortle</h5>
+                    <div class="card-text">
+                        <div class="att">
+                            <div class="atk">
+                                <button type="button" class="btn btn-success"><strong>ATK</strong> 126</button>
+                            </div>
+                            <div class="def">
+                                <button type="button" class="btn btn-danger"><strong>DEF</strong> 155</button>
+                            </div>
+                            <div class="sta">
+                                <button type="button" class="btn btn-warning"><strong>STA</strong> 118</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Início Menu Dropdown -->
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Saiba Mais
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="nav">
+                            <li class="dropdown-item"><strong>Pokedex Number:</strong> 8</li>
+                            <li class="dropdown-item"><strong>Generation:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolution Stage:</strong> 2</li>
+                            <li class="dropdown-item"><strong>Evolved:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Family ID:</strong> 3</li>
+                            <li class="dropdown-item"><strong>Cross Gen:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Type 1:</strong> 0 water</li>
+                            <li class="dropdown-item"><strong>Type 2:</strong> -</li>
+                            <li class="dropdown-item"><strong>Weather 1:</strong> rainy</li>
+                            <li class="dropdown-item"><strong>Weather 2:</strong> -</li>
+                            <li class="dropdown-item"><strong>Stat Total:</strong> 399</li>
+                            <li class="dropdown-item"><strong>Legendary:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Aquireable:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Spawns:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Regional: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Raidable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Hatchable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Shiny: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Nest: </strong> 1</li>
+                            <li class="dropdown-item"><strong>New: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Not-gettable: </strong>0</li>
+                            <li class="dropdown-item"><strong>Future Evolve: </strong>0</li>
+                            <li class="dropdown-item"><strong>100% CP @40: </strong>1324</li>
+                            <li class="dropdown-item"><strong>100% CP @39: </strong>1305</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fim Menu Dropdwon -->
+            </div>
+        </div>
+    </header>
+    <!--Fim do Card 008-->
+
+    <!--Início do Card 009-->
+    <header id="card">
+        <div class="container-fluid">
+            <div class="card">
+                <img class="img-thumbnail" src="assets/img/009.png" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Blastoise</h5>
+                    <div class="card-text">
+                        <div class="att">
+                            <div class="atk">
+                                <button type="button" class="btn btn-success"><strong>ATK</strong> 171</button>
+                            </div>
+                            <div class="def">
+                                <button type="button" class="btn btn-danger"><strong>DEF</strong> 210</button>
+                            </div>
+                            <div class="sta">
+                                <button type="button" class="btn btn-warning"><strong>STA</strong> 158</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Início Menu Dropdown -->
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Saiba Mais
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="nav">
+                            <li class="dropdown-item"><strong>Pokedex Number:</strong> 9</li>
+                            <li class="dropdown-item"><strong>Generation:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolution Stage:</strong> 3</li>
+                            <li class="dropdown-item"><strong>Evolved:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Family ID:</strong> 3</li>
+                            <li class="dropdown-item"><strong>Cross Gen:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Type 1:</strong> 0 water</li>
+                            <li class="dropdown-item"><strong>Type 2:</strong> -</li>
+                            <li class="dropdown-item"><strong>Weather 1:</strong> rainy</li>
+                            <li class="dropdown-item"><strong>Weather 2:</strong> -</li>
+                            <li class="dropdown-item"><strong>Stat Total:</strong> 539</li>
+                            <li class="dropdown-item"><strong>Legendary:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Aquireable:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Spawns:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Regional: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Raidable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Hatchable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Shiny: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Nest: </strong> 0</li>
+                            <li class="dropdown-item"><strong>New: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Not-gettable: </strong>0</li>
+                            <li class="dropdown-item"><strong>Future Evolve: </strong>0</li>
+                            <li class="dropdown-item"><strong>100% CP @40: </strong>2291</li>
+                            <li class="dropdown-item"><strong>100% CP @39: </strong>2259</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fim Menu Dropdwon -->
+            </div>
+        </div>
+    </header>
+    <!--Fim do Card 009-->
+
+    <!--Início do Card 010-->
+    <header id="card">
+        <div class="container-fluid">
+            <div class="card">
+                <img class="img-thumbnail" src="assets/img/010.png" alt="Imagem de capa do card">
+                <div class="card-body">
+                    <h5 class="card-title">Caterpie</h5>
+                    <div class="card-text">
+                        <div class="att">
+                            <div class="atk">
+                                <button type="button" class="btn btn-success"><strong>ATK</strong> 55</button>
+                            </div>
+                            <div class="def">
+                                <button type="button" class="btn btn-danger"><strong>DEF</strong> 62</button>
+                            </div>
+                            <div class="sta">
+                                <button type="button" class="btn btn-warning"><strong>STA</strong> 90</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Início Menu Dropdown -->
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Saiba Mais
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="nav">
+                            <li class="dropdown-item"><strong>Pokedex Number:</strong> 10</li>
+                            <li class="dropdown-item"><strong>Generation:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolution Stage:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Evolved:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Family ID:</strong> 4</li>
+                            <li class="dropdown-item"><strong>Cross Gen:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Type 1:</strong> 0 bug</li>
+                            <li class="dropdown-item"><strong>Type 2:</strong> -</li>
+                            <li class="dropdown-item"><strong>Weather 1:</strong> sunny/clear</li>
+                            <li class="dropdown-item"><strong>Weather 2:</strong> -</li>
+                            <li class="dropdown-item"><strong>Stat Total:</strong> 207</li>
+                            <li class="dropdown-item"><strong>Legendary:</strong> 0</li>
+                            <li class="dropdown-item"><strong>Aquireable:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Spawns:</strong> 1</li>
+                            <li class="dropdown-item"><strong>Regional: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Raidable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Hatchable: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Shiny: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Nest: </strong> 1</li>
+                            <li class="dropdown-item"><strong>New: </strong> 0</li>
+                            <li class="dropdown-item"><strong>Not-gettable: </strong>0</li>
+                            <li class="dropdown-item"><strong>Future Evolve: </strong>0</li>
+                            <li class="dropdown-item"><strong>100% CP @40: </strong>393</li>
+                            <li class="dropdown-item"><strong>100% CP @39: </strong>387</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Fim Menu Dropdwon -->
+            </div>
+        </div>
+    </header>
+    <!--Fim do Card 010-->
+
+    
+    <!--Botão retornar-->
+    <a href="#" id="voltar" title="Voltar ao Topo" class=" fas fa-arrow-circle-up fa-3x"></i> </a>
+
+    <footer>
+        <div class="container-fluid">
+            <h6>Teste de Desenvolvimento Web feito por Renato Dourado</h6>
+        </div>
+    </footer>
+    <!-- Jquery -->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+
+
+    <!-- Bootstrap Js -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Js Próprio -->
+    <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/js/pokemon.js"></script>
+    
+</body>
+
+</html>
