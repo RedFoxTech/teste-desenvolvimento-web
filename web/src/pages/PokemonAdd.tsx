@@ -1,35 +1,61 @@
-import React, { ChangeEvent } from 'react'
+import React, { useState, ChangeEvent, FormEvent } from 'react'
 import {Form, FormControl, Col, Button, InputGroup} from 'react-bootstrap'
 import Sidebar from '../components/Sidebar'
 import '../styles/pages/pokemonAdd.css'
 
 function PokemonAdd(){
 
+    const [formData, setFormData] = useState({
+        namePokemon: '',
+        generation: '',
+        evolutionStage: '',
+        familyId: '',
+        type1: '',
+        type2: '',
+        wheater1:'',
+        wheater2: '',
+        statTotal: '',
+        atk: '',
+        def: '',
+        sta: '',
+        aquireable: '',
+        raidable: '',
+        hatchable: '',
+        shiny: '',
+        cp39: '',
+        cp40: ''
+    })
+
+    const [selectData, setSelectData]= useState({
+        evolved: '',
+        legendary: '',
+        spawns: '',
+        regional: '',
+        nest: '',
+        notGettable: '',
+        futureEvolved: ''
+    })
 
     function handleInputChange(event: ChangeEvent<HTMLInputElement>){
-        console.log(event)
+        const {name, value} = event.target
+        setFormData({...formData, [name]: value})
     }
     function handleSelectChange(event: ChangeEvent<HTMLSelectElement>){
-        const evolved = event.target.value
-        console.log(evolved)
+        const{name, value} = event.target
+        setSelectData({...selectData, [name]: value})
+    }
+    function handleSubmit(event: FormEvent){
+        event.preventDefault()
+        console.log('teste')
     }
 
     return(
         <div className="page-pokemonAdd">
                 <Sidebar/>
             <div className="form-container">
-            <Form id="form">
+            <Form onSubmit={handleSubmit} id="form">
                 
-            <Col>
-                <Form.File
-              className="image"
-              required
-              name="image"
-              label="Pokemon Photo"
-              id="image"
-            />
-            </Col>
-               <br/>
+           
 
                 <Form.Row>
                     <Col xs={7}>
@@ -49,8 +75,8 @@ function PokemonAdd(){
                     <FormControl 
                         type="number" 
                         placeholder="Generation Pokemon"
-                        id="generationPokemon"
-                        className="generationPokemon"
+                        id="generation"
+                        className="generation"
                         onChange={handleInputChange}
                          />
                     </InputGroup>
