@@ -73,7 +73,7 @@ function PokemonAdd(){
                 <Col>
                 <InputGroup>
                 <FormControl as="select" className="evolved" id="evolved">
-                    <option selected disabled defaultValue="true">Evolved?</option>
+                    <option disabled value='DEFAULT'>Evolved?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -194,7 +194,7 @@ function PokemonAdd(){
                     <Col>
                     <InputGroup>
                 <FormControl as="select"  className="legendary" id="legendary">
-                    <option selected disabled defaultValue="true">Legendary?</option>
+                    <option disabled value='DEFAULT'>Legendary?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -216,7 +216,7 @@ function PokemonAdd(){
                     <Col>
                 <InputGroup>
                 <FormControl as="select" className="spawns" id="spawns">
-                    <option selected disabled defaultValue="true">Spawns</option>
+                    <option disabled value='DEFAULT'>Spawns</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -226,7 +226,7 @@ function PokemonAdd(){
                     <Col>
                 <InputGroup>
                 <FormControl as="select" className="regional" id="regional">
-                    <option selected disabled defaultValue="true">Regional</option>
+                    <option disabled value='DEFAULT'>Regional</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -275,7 +275,7 @@ function PokemonAdd(){
                     <Col>
                     <InputGroup>
                 <FormControl as="select" className="nest" id="nest">
-                    <option selected disabled defaultValue="true">Nest</option>
+                    <option disabled value='DEFAULT'>Nest</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -285,7 +285,7 @@ function PokemonAdd(){
                     <Col>
                     <InputGroup>
                 <FormControl as="select" className="newPoke" id="newPoke">
-                    <option selected disabled defaultValue="true">New</option>
+                    <option disabled value='DEFAULT'>New</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -298,7 +298,7 @@ function PokemonAdd(){
                 <Col>
                 <InputGroup>
                 <FormControl as="select" className="notGettable" id="notGettable">
-                    <option selected disabled defaultValue="true">Not gettable?</option>
+                    <option disabled value='DEFAULT'>Not gettable?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -307,7 +307,7 @@ function PokemonAdd(){
                     <Col>
                 <InputGroup>
                 <FormControl as="select" className="futureEvolved" id="futureEvolved">
-                    <option selected defaultValue="true" disabled>Future evolved?</option>
+                    <option value='DEFAULT' disabled>Future evolved?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
