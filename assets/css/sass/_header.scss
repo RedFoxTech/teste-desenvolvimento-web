@@ -1,0 +1,51 @@
+body{
+    background-image: linear-gradient(180deg, rgb(245, 59, 59), rgb(230, 230, 27));
+}
+
+#header{
+    background-color: #ccc;
+    font-family: 'Bebas Neue', cursive;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    height: auto;
+    opacity: 0.92;
+       
+}
+//Nav buscar
+#buscar{
+    height: auto;
+}
+
+.titulo{
+    margin: auto;
+   
+}
+
+// Div Footer
+
+footer{
+    text-align: center;
+    background-color:gray;
+    height: 40px;
+    bottom: 0;
+}
+
+// Botão Voltar ao topo
+
+#voltar{
+    text-decoration: none;
+    color: rgb(97, 88, 88);
+    position: fixed;
+    top: 50%;
+    right: 2%;
+    transition: all 1s ease-in;
+
+}
+#voltar:hover{
+    color: gray;
+    transition: all 1s ease-in;
+}
+
+
+
