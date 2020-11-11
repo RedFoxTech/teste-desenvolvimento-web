@@ -11,6 +11,7 @@ function PokemonAdd(){
     }
     function handleSelectChange(event: ChangeEvent<HTMLSelectElement>){
         const evolved = event.target.value
+        console.log(evolved)
     }
 
     return(
@@ -72,8 +73,8 @@ function PokemonAdd(){
                 <Form.Row>
                 <Col>
                 <InputGroup>
-                <FormControl as="select" className="evolved" id="evolved">
-                    <option disabled value='DEFAULT'>Evolved?</option>
+                <FormControl as="select" className="evolved" id="evolved" onChange={handleSelectChange}>
+                    <option value="">Evolved?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -193,8 +194,8 @@ function PokemonAdd(){
                 <Form.Row>
                     <Col>
                     <InputGroup>
-                <FormControl as="select"  className="legendary" id="legendary">
-                    <option disabled value='DEFAULT'>Legendary?</option>
+                <FormControl as="select"  className="legendary" id="legendary" onChange={handleSelectChange}>
+                    <option value="">Legendary?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -215,8 +216,8 @@ function PokemonAdd(){
 
                     <Col>
                 <InputGroup>
-                <FormControl as="select" className="spawns" id="spawns">
-                    <option disabled value='DEFAULT'>Spawns</option>
+                <FormControl as="select" className="spawns" id="spawns" onChange={handleSelectChange}>
+                    <option value="">Spawns</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -225,8 +226,8 @@ function PokemonAdd(){
                     
                     <Col>
                 <InputGroup>
-                <FormControl as="select" className="regional" id="regional">
-                    <option disabled value='DEFAULT'>Regional</option>
+                <FormControl as="select" className="regional" id="regional" onChange={handleSelectChange}>
+                    <option value="">Regional</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -274,8 +275,8 @@ function PokemonAdd(){
 
                     <Col>
                     <InputGroup>
-                <FormControl as="select" className="nest" id="nest">
-                    <option disabled value='DEFAULT'>Nest</option>
+                <FormControl as="select" className="nest" id="nest" onChange={handleSelectChange}>
+                    <option value="">Nest</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -284,8 +285,8 @@ function PokemonAdd(){
 
                     <Col>
                     <InputGroup>
-                <FormControl as="select" className="newPoke" id="newPoke">
-                    <option disabled value='DEFAULT'>New</option>
+                <FormControl as="select" className="newPoke" id="newPoke" onChange={handleSelectChange}>
+                    <option value="">New</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -297,8 +298,8 @@ function PokemonAdd(){
                 <Form.Row>
                 <Col>
                 <InputGroup>
-                <FormControl as="select" className="notGettable" id="notGettable">
-                    <option disabled value='DEFAULT'>Not gettable?</option>
+                <FormControl as="select" className="notGettable" id="notGettable" onChange={handleSelectChange}>
+                    <option value="">Not gettable?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
@@ -306,8 +307,8 @@ function PokemonAdd(){
                     </Col>
                     <Col>
                 <InputGroup>
-                <FormControl as="select" className="futureEvolved" id="futureEvolved">
-                    <option value='DEFAULT' disabled>Future evolved?</option>
+                <FormControl as="select" className="futureEvolved" id="futureEvolved" onChange={handleSelectChange}>
+                    <option value="">Future evolved?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
                 </FormControl>
