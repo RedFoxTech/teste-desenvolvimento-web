@@ -35,6 +35,7 @@ class PokemonController{
         } = req.body
 
         const reqImages = req.files as Express.Multer.File[]
+        
         const image = reqImages.map(image=>{
             return {path: image.filename}
         })
@@ -70,7 +71,6 @@ class PokemonController{
             cp40,
             cp39
         }
-        console.log(image)
     
         const insertedPoke = await knex('pokemon').insert(pokemon)
         const pokedexNumber = insertedPoke[0]
