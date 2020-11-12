@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent, FormEvent } from 'react'
 import {Form, FormControl, Col, Button, InputGroup} from 'react-bootstrap'
 import Sidebar from '../components/Sidebar'
 import '../styles/pages/pokemonAdd.css'
+import api from '../services/api'
 
 function PokemonAdd(){
 
@@ -12,8 +13,8 @@ function PokemonAdd(){
         familyId: '',
         type1: '',
         type2: '',
-        wheater1:'',
-        wheater2: '',
+        weather1:'',
+        weather2: '',
         statTotal: '',
         atk: '',
         def: '',
@@ -28,7 +29,9 @@ function PokemonAdd(){
 
     const [selectData, setSelectData]= useState({
         evolved: '',
+        newPoke: '',
         legendary: '',
+        cross: '',
         spawns: '',
         regional: '',
         nest: '',
@@ -59,7 +62,7 @@ function PokemonAdd(){
         const{name, value} = event.target
         setSelectData({...selectData, [name]: value})
     }
-    function handleSubmit(event: FormEvent){
+    async function handleSubmit(event: FormEvent){
         event.preventDefault()
         const {namePokemon,
             generation,
@@ -67,8 +70,8 @@ function PokemonAdd(){
             familyId,
             type1,
             type2,
-            wheater1,
-            wheater2,
+            weather1,
+            weather2,
             statTotal,
             atk,
             def,
@@ -87,6 +90,8 @@ function PokemonAdd(){
     spawns,
     regional,
     nest,
+    cross,
+    newPoke,
     notGettable,
     futureEvolved
     } = selectData
@@ -96,10 +101,11 @@ function PokemonAdd(){
             generation,
             evolutionStage,
             familyId,
+            cross,
             type1,
             type2,
-            wheater1,
-            wheater2,
+            weather1,
+            weather2,
             statTotal,
             atk,
             def,
@@ -115,11 +121,13 @@ function PokemonAdd(){
             spawns,
             regional,
             nest,
+            newPoke,
             inputFile,
             notGettable,
             futureEvolved
     }
-    console.log(data)
+    await api.post('pokemon', data)
+    alert('Pokemon Create')
 }
     return(
         <div className="page-pokemonAdd">
@@ -201,6 +209,15 @@ function PokemonAdd(){
                 </InputGroup>        
                 </Col>
                 <Col>
+                <InputGroup>
+                <FormControl as="select" className="cross" id="cross" onChange={handleSelectChange}>
+                    <option value="">cross?</option>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </FormControl>
+                </InputGroup>
+                </Col>
+                <Col>
                 <Form.Control 
                         type="text" 
                         placeholder="Type 1"
@@ -228,9 +245,9 @@ function PokemonAdd(){
                 <InputGroup>
                 <FormControl 
                         type="text" 
-                        placeholder="Wheater 1"
-                        id="wheater1"
-                        className="wheater1"
+                        placeholder="Weather 1"
+                        id="weather1"
+                        className="weather1"
                         onChange={handleInputChange}
                          />
                 </InputGroup>
@@ -240,9 +257,9 @@ function PokemonAdd(){
                 <InputGroup>
                 <FormControl 
                         type="text" 
-                        placeholder="Wheater 2"
-                        id="wheater2"
-                        className="wheater2" 
+                        placeholder="Weather 2"
+                        id="weather2"
+                        className="weather2" 
                         onChange={handleInputChange}
                         />
                 </InputGroup>       
