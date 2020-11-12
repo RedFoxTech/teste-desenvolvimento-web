@@ -36,6 +36,21 @@ function PokemonAdd(){
         futureEvolved: ''
     })
 
+    const [inputFile, setInputFile]= useState<File[]>([])
+    const [previewImages, setPreviewImages] = useState<string[]>([])
+
+    function handleInputFile(event: ChangeEvent<HTMLInputElement>){
+        if(!event.target.files){
+          return
+        }
+        const selectedImages = Array.from(event.target.files)
+        setInputFile(selectedImages)
+        const selectedImagesPreview = selectedImages.map(image =>{
+          return URL.createObjectURL(image)
+        })
+        setPreviewImages(selectedImagesPreview)
+       }
+
     function handleInputChange(event: ChangeEvent<HTMLInputElement>){
         const {name, value} = event.target
         setFormData({...formData, [name]: value})
@@ -46,16 +61,83 @@ function PokemonAdd(){
     }
     function handleSubmit(event: FormEvent){
         event.preventDefault()
-        console.log('teste')
-    }
+        const {namePokemon,
+            generation,
+            evolutionStage,
+            familyId,
+            type1,
+            type2,
+            wheater1,
+            wheater2,
+            statTotal,
+            atk,
+            def,
+            sta,
+            aquireable,
+            raidable,
+            hatchable,
+            shiny,
+            cp39,
+            cp40
+    } = formData
 
+    
+    const{evolved,
+    legendary,
+    spawns,
+    regional,
+    nest,
+    notGettable,
+    futureEvolved
+    } = selectData
+
+    const data={
+            namePokemon,
+            generation,
+            evolutionStage,
+            familyId,
+            type1,
+            type2,
+            wheater1,
+            wheater2,
+            statTotal,
+            atk,
+            def,
+            sta,
+            aquireable,
+            raidable,
+            hatchable,
+            shiny,
+            cp39,
+            cp40,
+            evolved,
+            legendary,
+            spawns,
+            regional,
+            nest,
+            inputFile,
+            notGettable,
+            futureEvolved
+    }
+    console.log(data)
+}
     return(
         <div className="page-pokemonAdd">
                 <Sidebar/>
             <div className="form-container">
             <Form onSubmit={handleSubmit} id="form">
                 
-           
+            <Col>
+                <Form.File
+              className="image"
+              required
+              name="image"
+              label="Pokemon Photo"
+              id="image"
+              onChange={handleInputFile}
+            />
+            </Col>
+               <br/>
 
                 <Form.Row>
                     <Col xs={7}>
