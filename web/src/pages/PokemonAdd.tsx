@@ -6,126 +6,82 @@ import api from '../services/api'
 
 function PokemonAdd(){
 
-    const [formData, setFormData] = useState({
-        namePokemon: '',
-        generation: '',
-        evolutionStage: '',
-        familyId: '',
-        type1: '',
-        type2: '',
-        weather1:'',
-        weather2: '',
-        statTotal: '',
-        atk: '',
-        def: '',
-        sta: '',
-        aquireable: '',
-        raidable: '',
-        hatchable: '',
-        shiny: '',
-        cp39: '',
-        cp40: ''
-    })
-
-    const [selectData, setSelectData]= useState({
-        evolved: '',
-        newPoke: '',
-        legendary: '',
-        cross: '',
-        spawns: '',
-        regional: '',
-        nest: '',
-        notGettable: '',
-        futureEvolved: ''
-    })
+    const [namePokemon, setNamePokemon]= useState('')
+    const [generation, setGeneration]= useState('')
+    const [evolutionStage, setEvolutionStage]= useState('')
+    const [familyId, setFamilyId]= useState('')
+    const [type1, setType1]= useState('')
+    const [type2, setType2]= useState('')
+    const [weather1, setWeather1]= useState('')
+    const [weather2, setWeather2]= useState('')
+    const [statTotal, setStatTotal]= useState('')
+    const [atk, setAtk]= useState('')
+    const [def, setDef]= useState('')
+    const [sta, setSta]= useState('')
+    const [aquireable, setAquireable]= useState('')
+    const [raidable, setRaidable]= useState('')
+    const [hatchable, setHatchable]= useState('')
+    const [shiny, setShiny]= useState('')
+    const [cp39, setCp39]= useState('')
+    const [cp40, setCp40]= useState('')
+    const [cross, setCross] = useState('')
+    const [evolved, setEvolved] = useState('')
+    const [legendary, setLegendary] = useState('')
+    const [spawns, setSpawns] = useState('')
+    const [regional, setRegional] = useState('')
+    const [nest, setNest] = useState('')
+    const [newPoke, setNewPoke] = useState('')
+    const [notGettable, setNotGettable] = useState('')
+    const [futureEvolved, setFutureEvolved] = useState('')
 
     const [inputFile, setInputFile]= useState<File[]>([])
-    const [previewImages, setPreviewImages] = useState<string[]>([])
 
-    function handleInputFile(event: ChangeEvent<HTMLInputElement>){
+    function handleSelectImages(event: ChangeEvent<HTMLInputElement>){
         if(!event.target.files){
-          return
+            return
+          }
+          const selectedImages = Array.from(event.target.files)
+          setInputFile(selectedImages)
         }
-        const selectedImages = Array.from(event.target.files)
-        setInputFile(selectedImages)
-        const selectedImagesPreview = selectedImages.map(image =>{
-          return URL.createObjectURL(image)
-        })
-        setPreviewImages(selectedImagesPreview)
-       }
 
-    function handleInputChange(event: ChangeEvent<HTMLInputElement>){
-        const {name, value} = event.target
-        setFormData({...formData, [name]: value})
-    }
-    function handleSelectChange(event: ChangeEvent<HTMLSelectElement>){
-        const{name, value} = event.target
-        setSelectData({...selectData, [name]: value})
-    }
     async function handleSubmit(event: FormEvent){
         event.preventDefault()
-        const {namePokemon,
-            generation,
-            evolutionStage,
-            familyId,
-            type1,
-            type2,
-            weather1,
-            weather2,
-            statTotal,
-            atk,
-            def,
-            sta,
-            aquireable,
-            raidable,
-            hatchable,
-            shiny,
-            cp39,
-            cp40
-    } = formData
+        
 
+    const data= new FormData()
+            data.append('namePokemon', namePokemon)
+            data.append('generation', generation)
+            data.append('evolutionStage', evolutionStage)
+            data.append('familyId', familyId)
+            data.append('cross', cross)
+            data.append('type1', type1)
+            data.append('type2', type2)
+            data.append('weather1', weather1)
+            data.append('weather2', weather2)
+            data.append('statTotal', statTotal)
+            data.append('atk', atk)
+            data.append('def', def)
+            data.append('sta', sta)
+            data.append('aquireable', aquireable)
+            data.append('raidable', raidable)
+            data.append('hatchable', hatchable)
+            data.append('shiny', shiny)
+            data.append('cp39', cp39)
+            data.append('cp40', cp40)
+            data.append('evolved', evolved)
+            data.append('legendary', legendary)
+            data.append('spawns', spawns)
+            data.append('regional', regional)
+            data.append('nest', nest)
+            data.append('newPoke', newPoke)
+            data.append('notGettable', notGettable)
+            data.append('futureEvolved', futureEvolved)
     
-    const{evolved,
-    legendary,
-    spawns,
-    regional,
-    nest,
-    cross,
-    newPoke,
-    notGettable,
-    futureEvolved
-    } = selectData
-
-    const data={
-            namePokemon,
-            generation,
-            evolutionStage,
-            familyId,
-            cross,
-            type1,
-            type2,
-            weather1,
-            weather2,
-            statTotal,
-            atk,
-            def,
-            sta,
-            aquireable,
-            raidable,
-            hatchable,
-            shiny,
-            cp39,
-            cp40,
-            evolved,
-            legendary,
-            spawns,
-            regional,
-            nest,
-            newPoke,
-            inputFile,
-            notGettable,
-            futureEvolved
-    }
+        inputFile.forEach(image=>{
+        data.append('image', image)
+         })
+    
+    console.log(data)
     await api.post('pokemon', data)
     alert('Pokemon Create')
 }
@@ -136,14 +92,15 @@ function PokemonAdd(){
             <Form onSubmit={handleSubmit} id="form">
                 
             <Col>
-                <Form.File
+                <InputGroup>
+                <FormControl
+                type="file"
               className="image"
               required
-              name="image"
-              label="Pokemon Photo"
               id="image"
-              onChange={handleInputFile}
+              onChange={handleSelectImages}
             />
+            </InputGroup>
             </Col>
                <br/>
 
@@ -155,7 +112,8 @@ function PokemonAdd(){
                              aria-label="namePokemon"
                              className="namePokemon"
                              id="namePokemon"
-                             onChange={handleInputChange}
+                             value={namePokemon}
+                             onChange={event => setNamePokemon(event.target.value)}
                                 />
                     </InputGroup>
                     </Col>
@@ -167,7 +125,7 @@ function PokemonAdd(){
                         placeholder="Generation Pokemon"
                         id="generation"
                         className="generation"
-                        onChange={handleInputChange}
+                        onChange={event => setGeneration(event.target.value)}
                          />
                     </InputGroup>
                     </Col>
@@ -179,7 +137,7 @@ function PokemonAdd(){
                         placeholder="Evolution stage"
                         id="evolutionStage"
                         className="evolutionStage"
-                        onChange={handleInputChange}
+                        onChange={event => setEvolutionStage(event.target.value)}
                          />
                         </InputGroup>
                     </Col>
@@ -189,7 +147,7 @@ function PokemonAdd(){
                 <Form.Row>
                 <Col>
                 <InputGroup>
-                <FormControl as="select" className="evolved" id="evolved" onChange={handleSelectChange}>
+                <FormControl as="select" className="evolved" id="evolved" onChange={event => setEvolved(event.target.value)}>
                     <option value="">Evolved?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -204,13 +162,13 @@ function PokemonAdd(){
                         placeholder="Family ID"
                         id="familyId"
                         className="familyId"
-                        onChange={handleInputChange}
+                        onChange={event => setFamilyId(event.target.value)}
                          />
                 </InputGroup>        
                 </Col>
                 <Col>
                 <InputGroup>
-                <FormControl as="select" className="cross" id="cross" onChange={handleSelectChange}>
+                <FormControl as="select" className="cross" id="cross" onChange={event => setCross(event.target.value)}>
                     <option value="">cross?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -223,7 +181,7 @@ function PokemonAdd(){
                         placeholder="Type 1"
                         id="type1"
                         className="type1"
-                        onChange={handleInputChange}
+                        onChange={event => setType1(event.target.value)}
                          />
                 </Col>
 
@@ -234,7 +192,7 @@ function PokemonAdd(){
                         placeholder="Type 2"
                         id="type2"
                         className="type2"
-                        onChange={handleInputChange} />
+                        onChange={event => setType2(event.target.value)} />
                 </InputGroup>      
                 </Col>
                 </Form.Row>
@@ -248,7 +206,7 @@ function PokemonAdd(){
                         placeholder="Weather 1"
                         id="weather1"
                         className="weather1"
-                        onChange={handleInputChange}
+                        onChange={event => setWeather1(event.target.value)}
                          />
                 </InputGroup>
                 </Col>
@@ -260,7 +218,7 @@ function PokemonAdd(){
                         placeholder="Weather 2"
                         id="weather2"
                         className="weather2" 
-                        onChange={handleInputChange}
+                        onChange={event => setWeather2(event.target.value)}
                         />
                 </InputGroup>       
                 </Col>
@@ -274,7 +232,7 @@ function PokemonAdd(){
                         placeholder="stat Total"
                         id="statTotal"
                         className="statTotal"
-                        onChange={handleInputChange} />
+                        onChange={event => setStatTotal(event.target.value)} />
                     </InputGroup> 
                     </Col>
 
@@ -285,7 +243,7 @@ function PokemonAdd(){
                         placeholder="atk"
                         id="atk"
                         className="atk"
-                        onChange={handleInputChange}
+                        onChange={event => setAtk(event.target.value)}
                          />
                     </InputGroup>
                     </Col>
@@ -298,7 +256,7 @@ function PokemonAdd(){
                         placeholder="def"
                         id="def"
                         className="def"
-                        onChange={handleInputChange}
+                        onChange={event => setDef(event.target.value)}
                          />
                     </InputGroup>
                     </Col>
@@ -310,7 +268,7 @@ function PokemonAdd(){
                         placeholder="sta"
                         id="sta"
                         className="sta"
-                        onChange={handleInputChange}
+                        onChange={event => setSta(event.target.value)}
                          />
                     </InputGroup>
                     </Col>
@@ -319,7 +277,7 @@ function PokemonAdd(){
                 <Form.Row>
                     <Col>
                     <InputGroup>
-                <FormControl as="select"  className="legendary" id="legendary" onChange={handleSelectChange}>
+                <FormControl as="select"  className="legendary" id="legendary" onChange={event => setLegendary(event.target.value)}>
                     <option value="">Legendary?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -334,14 +292,14 @@ function PokemonAdd(){
                         placeholder="Aquireable"
                         id="aquireable"
                         className="aquireable"
-                        onChange={handleInputChange}
+                        onChange={event => setAquireable(event.target.value)}
                     />
                     </InputGroup>
                     </Col>
 
                     <Col>
                 <InputGroup>
-                <FormControl as="select" className="spawns" id="spawns" onChange={handleSelectChange}>
+                <FormControl as="select" className="spawns" id="spawns" onChange={event => setSpawns(event.target.value)}>
                     <option value="">Spawns</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -351,7 +309,7 @@ function PokemonAdd(){
                     
                     <Col>
                 <InputGroup>
-                <FormControl as="select" className="regional" id="regional" onChange={handleSelectChange}>
+                <FormControl as="select" className="regional" id="regional" onChange={event => setRegional(event.target.value)}>
                     <option value="">Regional</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -369,7 +327,7 @@ function PokemonAdd(){
                         placeholder="Raidable"
                         id="raidable"
                         className="raidable"
-                        onChange={handleInputChange}
+                        onChange={event => setRaidable(event.target.value)}
                     />
                     </InputGroup>
                     </Col>
@@ -381,7 +339,7 @@ function PokemonAdd(){
                         placeholder="Hatchable"
                         id="hatchable"
                         className="hatchable"
-                        onChange={handleInputChange}
+                        onChange={event => setHatchable(event.target.value)}
                     />
                     </InputGroup>
                     </Col>
@@ -393,14 +351,14 @@ function PokemonAdd(){
                         placeholder="Shiny"
                         id="shiny"
                         className="shiny"
-                        onChange={handleInputChange}
+                        onChange={event => setShiny(event.target.value)}
                     />
                     </InputGroup>
                     </Col>
 
                     <Col>
                     <InputGroup>
-                <FormControl as="select" className="nest" id="nest" onChange={handleSelectChange}>
+                <FormControl as="select" className="nest" id="nest" onChange={event => setNest(event.target.value)}>
                     <option value="">Nest</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -410,7 +368,7 @@ function PokemonAdd(){
 
                     <Col>
                     <InputGroup>
-                <FormControl as="select" className="newPoke" id="newPoke" onChange={handleSelectChange}>
+                <FormControl as="select" className="newPoke" id="newPoke" onChange={event => setNewPoke(event.target.value)}>
                     <option value="">New</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -423,7 +381,7 @@ function PokemonAdd(){
                 <Form.Row>
                 <Col>
                 <InputGroup>
-                <FormControl as="select" className="notGettable" id="notGettable" onChange={handleSelectChange}>
+                <FormControl as="select" className="notGettable" id="notGettable" onChange={event => setNotGettable(event.target.value)}>
                     <option value="">Not gettable?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -432,7 +390,7 @@ function PokemonAdd(){
                     </Col>
                     <Col>
                 <InputGroup>
-                <FormControl as="select" className="futureEvolved" id="futureEvolved" onChange={handleSelectChange}>
+                <FormControl as="select" className="futureEvolved" id="futureEvolved" onChange={event => setFutureEvolved(event.target.value)}>
                     <option value="">Future evolved?</option>
                     <option value="1">Yes</option>
                     <option value="0">No</option>
@@ -446,7 +404,7 @@ function PokemonAdd(){
                         placeholder="CP39"
                         id="cp39"
                         className="cp39"
-                        onChange={handleInputChange}
+                        onChange={event => setCp39(event.target.value)}
                     />
                     </InputGroup>
                     </Col>
@@ -457,7 +415,7 @@ function PokemonAdd(){
                         placeholder="CP40"
                         id="cp40"
                         className="cp40"
-                        onChange={handleInputChange}
+                        onChange={event => setCp40(event.target.value)}
                     />
                     </InputGroup>
                     </Col>
