@@ -10,13 +10,12 @@ import api from '../services/api'
 interface Item{
   pokedexNumber: number
   namePokemon: String
-  image:{
-    path: string
-  }
   atk: number
   def: number
   type1: String
   type2: String
+  image: string
+  image_url: string
 }
 
 function Home(){
@@ -39,7 +38,7 @@ function Home(){
             {/* usando o map() para puxar todos os registros contidos na variavel pokemon*/}
             {pokemon.map(item=> (
                <Card className="cardPokemon" key={item.pokedexNumber} style={{ width: '18rem' }}>
-               <Card.Img variant="top" src={teste} />
+               <Card.Img variant="top" src={item.image_url} style={{height: '250px'}} />
                 <Card.Body>
                   <Card.Title>{item.namePokemon}</Card.Title>
                   <Card.Text>
