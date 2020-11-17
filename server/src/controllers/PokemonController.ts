@@ -33,16 +33,11 @@ class PokemonController{
             cp40,
             cp39
         } = req.body
-
-        const reqImages = req.files as Express.Multer.File[]
-        
-        const image = reqImages.map(image=>{
-            return {path: image.filename}
-        })
+     
 
         const pokemon = {
             //nome de cada coluna no banco de dados
-            image,
+            image: req.file.filename,
             namePokemon,
             generation,
             evolutionStage,
@@ -84,7 +79,13 @@ class PokemonController{
     async index(req: Request, res: Response){
         //buscando todos os registros com todos os detalhes
             const pokemon = await knex('pokemon').select('*') 
-            return res.json(pokemon)
+            const serializedPokemon = pokemon.map(poke=>{
+                return {
+                    ...poke,
+                    image_url: `http://localhost:3333/uploads/${poke.image}`
+                }
+            })
+            return res.json(serializedPokemon)
     }
 
     async show(req: Request, res: Response){
@@ -95,9 +96,14 @@ class PokemonController{
         //Caso o Id do pokemon for inválido, retorna status 400
         if(!pokemonId){
             return res.status(400).json({message: 'pokemon not found'})
-        }else{
-            return res.json(pokemonId)
         }
+
+        const serializedPoke = {
+                ...pokemonId,
+                image_url: `http://localhost:3333/uploads/${pokemonId.image}`
+            
+        }
+        return res.json({pokemonId: serializedPoke})
     }
 }
 
