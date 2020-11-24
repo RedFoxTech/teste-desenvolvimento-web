@@ -3,6 +3,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Landing from './pages/Landing'
 import Home from './pages/Home'
 import pokemonAdd from './pages/PokemonAdd'
+import pokemonView from './pages/PokemonView'
+
 
 
 function Routes(){
@@ -12,6 +14,7 @@ function Routes(){
             <Route path="/" exact component={Landing}/>
             <Route path="/home" component={Home}/>
             <Route path="/pokemonAdd" component={pokemonAdd}/>
+            <Route path="/pokemon/:pokedexNumber" component={pokemonView}/>
             </Switch>
         </BrowserRouter>
     )

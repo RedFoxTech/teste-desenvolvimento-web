@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
+import {Link} from 'react-router-dom'
 import {Card, Button, Form} from 'react-bootstrap'
 import '../styles/pages/home.css'
-import teste from '../images/pokemons.png'
 import Sidebar from '../components/Sidebar'
 import api from '../services/api'
 
@@ -45,7 +45,7 @@ function Home(){
                      <strong>ATK: </strong>{item.atk} <strong>DEF: </strong>{item.def}<br/>
                       <strong>Type 1: </strong>{item.type1} <strong>Type 2: </strong>{item.type2}
                   </Card.Text>
-                <Button variant="warning">Detalhes</Button>
+                <Link to={`/pokemon/${item.pokedexNumber}`}><Button variant="warning">Detalhes</Button></Link>
                </Card.Body>
               </Card>
             ))}
