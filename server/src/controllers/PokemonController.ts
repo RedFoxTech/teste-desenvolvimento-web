@@ -94,7 +94,7 @@ class PokemonController{
         const pokedexNumber = req.params.pokedexNumber
         const pokemonId = await knex('pokemon').where('pokedexNumber', pokedexNumber).first()
         //Caso o Id do pokemon for inválido, retorna status 400
-        if(!pokemonId){
+        if(!pokedexNumber){
             return res.status(400).json({message: 'pokemon not found'})
         }
 
@@ -103,7 +103,7 @@ class PokemonController{
                 image_url: `http://localhost:3333/uploads/${pokemonId.image}`
             
         }
-        return res.json({pokemonId: serializedPoke})
+        return res.json(serializedPoke)
     }
 }
 
