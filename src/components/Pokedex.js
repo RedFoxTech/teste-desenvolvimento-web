@@ -12,29 +12,16 @@ const Pokedex = () => {
       })
     })
     
-    // pokemons.map((pokemon, index) => {
-    //   if (pokemon.Evolved === 1) {
-    //     return (
-    //       <>
-    //         <span>o pokemon está na forma evoluída</span>
-    //       </>
-    //     ) 
-    //   } else {
-    //     return (
-    //       <span>o pokemon pode evoluir</span>
-    //     )
-    //   }
-    // }
     return (
       <Container>
           {
             pokemons.map((pokemon, index) => (
-              <Card body className="text-center" key={ index }>
+              <Card body className="text-center">
                 <CardHeader>
                   <Row>
-                    <Col className="pokemon" xs="6" sm="4">{ pokemon.Name }</Col>
-                    <Col xs="6" sm="4">Pokedex Number: { pokemon.['Pokedex Number'] }</Col>
-                    <Col xs="6" sm="4">Pokemon Generation: { pokemon.Generation }</Col>
+                    <Col className="pokemon" xs="1" md="4">{ pokemon.Name }</Col>
+                    <Col xs="1" md="4">Pokedex Number: { pokemon.['Pokedex Number'] }</Col>
+                    <Col xs="1" md="4">Pokemon Generation: { pokemon.Generation }</Col>
                   </Row>
                 </CardHeader>
                 <CardBody>
@@ -58,7 +45,15 @@ const Pokedex = () => {
                     <p className="card-text">100% CP @ 40: { pokemon.['100% CP @ 40'] }</p>                    
                   </CardText>
                 </CardBody>
-                <CardFooter className="text-muted">infos adicionais</CardFooter>
+                <CardFooter>
+                  <p>{pokemon.Evolved === '1' ? 'This Pokemon is already evolved' : 'This Pokemon can evolve'}</p>
+                  <p>{pokemon.Legendary === '1' ? 'This Pokemon is Legendary!' : null}</p>
+                  <p>{pokemon.Shiny === '1' ? 'This Pokemon is Shiny!' : null}</p>
+                  <p>{pokemon.Aquireable === '0' ? 'You can not aquire this Pokemon :(' : null}</p>
+                  <p>{pokemon.Regional === '1' ? 'This is a regional Pokemon' : null}</p>
+                  <p>{pokemon.['Not-Gettable'] === '1' ? 'You can not have this Pokemon, Sorry!' : null}</p>
+                  <p>{(pokemon.Hatchable === '2') ? 'You can hatch this Pokemon with a 2km egg' : (pokemon.Hatchable === '5') ? 'You can hatch this Pokemon with a 2km egg' : (pokemon.Hatchable === '10') ? 'You can hatch this Pokemon with a 10km egg' : null}</p>
+                </CardFooter>
               </Card>
             ))
           }
