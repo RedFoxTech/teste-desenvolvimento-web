@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import './Pokedex.css';
 import { Container, Row, Col, Card, CardHeader, CardFooter, CardBody, CardTitle, CardText } from 'reactstrap';
 
 const Pokedex = () => {
@@ -28,30 +29,36 @@ const Pokedex = () => {
       <Container>
           {
             pokemons.map((pokemon, index) => (
-              <Card key={ index }>
+              <Card body className="text-center" key={ index }>
                 <CardHeader>
                   <Row>
-                    <Col xs="6" sm="4">{ pokemon.Name }</Col>
+                    <Col className="pokemon" xs="6" sm="4">{ pokemon.Name }</Col>
                     <Col xs="6" sm="4">Pokedex Number: { pokemon.['Pokedex Number'] }</Col>
-                    <Col sm="4">Pokemon Generation: { pokemon.Generation }</Col>
+                    <Col xs="6" sm="4">Pokemon Generation: { pokemon.Generation }</Col>
                   </Row>
                 </CardHeader>
                 <CardBody>
                   <CardTitle>
-                    <p className="card-text">Type: { pokemon.['Type 1'] } and { pokemon.['Type 2']}</p> 
-                    <p className="card-text">Where to find: { pokemon.['Weather 1'] } and { pokemon.['Weather 2'] }</p>
-                  </CardTitle>
-                  <CardTitle tag="h6">STATUS</CardTitle>
+                    <Row xs="2">
+                      <Col>Type: { pokemon.['Type 1'] } and { pokemon.['Type 2']}</Col>
+                      <Col>Where to find: { pokemon.['Weather 1'] } and { pokemon.['Weather 2'] }</Col>
+                    </Row>
+                    </CardTitle>
+                  <CardTitle>STATUS</CardTitle>
                   <CardText>
-                    <p className="card-text">Total: { pokemon.['STAT TOTAL'] }</p>
-                    <p className="card-text">Atack: { pokemon.['ATK'] }</p>
-                    <p className="card-text">Defense: { pokemon.['DEF'] }</p>
-                    <p className="card-text">Status: { pokemon.['STA'] }</p>
-                    <p className="card-text">100% CP @ 40: { pokemon.['100% CP @ 40'] }</p>
+                    <Row xs="2">
+                      <Col>Total: { pokemon.['STAT TOTAL'] }</Col>
+                      <Col>Atack: { pokemon.['ATK'] }</Col>
+                    </Row>
+                    <Row xs="2">
+                      <Col>Defense: { pokemon.['DEF'] }</Col>
+                      <Col>Status: { pokemon.['STA'] }</Col>
+                    </Row>
                     <p className="card-text">100% CP @ 39: { pokemon.['100% CP @ 39'] }</p>
+                    <p className="card-text">100% CP @ 40: { pokemon.['100% CP @ 40'] }</p>                    
                   </CardText>
                 </CardBody>
-                <CardFooter className="text-muted">2 days ago</CardFooter>
+                <CardFooter className="text-muted">infos adicionais</CardFooter>
               </Card>
             ))
           }
