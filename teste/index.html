@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/css" href="pokebola.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+    <title>Pokédex</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding: 0;
+        }
+
+        body{
+            background-color: black;
+            font-family: 'Gloria Hallelujah', cursive;                     
+
+		}
+       
+        .title{
+
+            font-size: 50px;
+            color:blue;            
+            
+        }
+
+        section{
+            padding: 20px;
+            background-image: url("fundo.jpg");
+            background-size: cover;
+            overflow: hidden; 
+        }
+
+        .container{
+            width: 50%;               
+            margin: auto;          
+           
+        }
+
+        header{
+            background-color: #f0ec04;
+            text-align: center;
+            color: white;
+            padding: 10px;
+            border-radius: 15px;            
+            
+        }        
+
+        .image{            
+            background-image: url("pokedex.jpg");
+            width: 340px;
+            height: 500px;
+            border-radius: 15px;
+            border: solid 2px;  
+            background-size: 340px;
+            background-repeat: no-repeat;
+            margin: auto;            
+            transform: translateY(5px)
+        }  
+       
+        input, select{
+        width: 80%;    
+        box-sizing: border-box;
+        padding: 10px;
+        border-radius: 15px;
+        margin-bottom: 10px;
+        }
+
+        form{
+            transform: translate(35px, 80px);
+            
+        }
+
+        h2{
+            transform:translateX(80px)
+        }
+
+        /*
+        table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+            
+        }
+        
+        th, td {
+        padding: 5px;
+        text-align: center;
+        }*/
+       
+        
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>            
+        <h1 class="title">Pokédex</h1>
+        </header>
+        <section>
+
+        <div class="image">
+
+            <form>
+                <h2>Bem-Vindo</h2>
+                  <p>Aqui você pode pesquisar sobre <br> qualquer Pokémon, bora?</p><br>
+                <input id="texto" name="algo" placeholder="Digite Algo">
+                <select name="option">
+                    <option value="0" selected="selected" disabled="disabled" style="display: none">Escolha uma opção</option>
+                    <option value="1">A-Z</option>
+                    <option value="2">Z-A</option>
+                    <option value="3">Number</option>
+                    <option value="4">Generation</option>
+                    <option value="5">Evolution</option>
+                    <option value="6">Type</option>
+                </select>
+                <input onclick="buscar()" onmouseover="onOver(this)" onmouseout="onOut(this)" type="submit" value="BUSCAR">
+            </form>
+        </div>
+        </section>
+
+        <!--
+        <table style="width:50%" id="tabela">
+            <tr>
+              <th>Name</th>
+              <th>Number</th>
+              <th>Generation</th>
+              <th>Evolution</th>
+              <th>Type</th>
+            </tr>
+            <tr>
+              <td>Bulbasaur</td>
+              <td>1</td>
+              <td>1</td>
+              <td>1</td>
+              <td>grass</td>
+            </tr>
+            <tr>
+                <td>Charmander</td>
+                <td>4</td>
+                <td>4</td>
+                <td>1</td>
+                <td>fire</td>
+              </tr>
+              <tr>
+                <td>Squirtle</td>
+                <td>7</td>
+                <td>7</td>
+                <td>1</td>
+                <td>water</td>
+              </tr>
+              <tr>
+                <td>Pikachu</td>
+                <td>25</td>
+                <td>25</td>
+                <td>1</td>
+                <td>electric</td>
+              </tr>
+              <tr>
+                <td>Ho Oh</td>
+                <td>252</td>
+                <td>252</td>
+                <td>2</td>
+                <td>flying</td>
+              </tr>
+          </table> -->
+
+    </div>
+    <script>
+
+        function onOver(elemento){
+    
+            elemento.style.backgroundColor = "red"; 
+        }    
+    
+        function onOut(elemento){
+            elemento.style.backgroundColor = "white";
+        }
+
+        
+
+        //let inputTexto = document.getElementById("texto")
+
+        //function buscar(){
+        
+            //let texto= inputTexto.value;
+
+            //for(i=0;i<tr.length; i++){
+
+           // }
+
+
+        //}
+
+    </script>
+    
+</body>
+</html>
