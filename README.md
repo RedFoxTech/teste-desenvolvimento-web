@@ -19,8 +19,6 @@ yarn server
 ## Após isso vá para 
 ```bash
 http://localhost:4000
-# ou
-http://localhost:4000
 ```
 ## Rotas
 ```bash
@@ -32,42 +30,55 @@ http://localhost:4000/api/users/-> aqui você passa o id do pokemon
 ## Caso queira testar rotas de deletar úsuario ou criar pode testar utilizando <a src="https://www.postman.com/downloads/">postman</a> ou <a src="https://insomnia.rest/download/">Imsominia</a> Obs: Curto Mais o Postman porém é um pouco mais complicado se for iniciante!
 
 ```bash
-#obs:tipo da requisição precisa ser igual a delete para funcionar
+#Obs:tipo da requisição precisa ser igual a delete para funcionar
 #Excluir Pokemon
 http://localhost:4000/api/users/aqui você passa o id do pokemon
 # Excluir Todos os Pokemons
 http://localhost:4000/api/users/
 ```
-## Primeiro
-
+## Criar Pokemons
 ```bash
+#Obs:tipo da requisição precisa ser igual a post para funcionar
+#Criar Pokemon
+http://localhost:4000/api/users/
+no corpo da requisição passe os paramêtros obrigatórios,que são name,password, e password2, imgname,podexnumber
+```
+
+## FrontEnd
+antes, de tudo
+```bash
+Entre na pasta FrontEnd e rode
+# 
 npm install 
 # ou
 yarn install 
 ```
-depois, rode o servidor de desenvolvimento:
-
+## Em Seguida
+rode o servidor de desenvolvimento:
 ```bash 
 npm run dev
 # or
 yarn dev
 ```
-How, to run the production server:
+## Realize esses passos somente se quiser rodar em servidor de produção 
+
+Como, Rodar Servidor de Produção:
 ```bash 
 npm run build
 # or
 yarn build
 ```
-Shortly after run 
+Logo em seguida rode:
 ```bash 
 npm run start
 # or
 yarn start
 ```
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## FrontEnd
+Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado.
 
-
-
+## Backend
+Abra [http://localhost:4000](http://localhost:4000) com seu navegador para ver o resultado.
 
 
 
