@@ -1,0 +1,24 @@
+.page-home{
+    display: flex;
+    width: 98.8vw;
+    min-height: 100vh;
+    max-height: auto;
+    background: linear-gradient(400deg, #ffd900 0%,  #f88400 100%, #ff0000 100%);
+    justify-content: space-between;
+}
+
+.page-home .page-content{
+    position: relative;
+    left: 16%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    min-height: 100vh;
+    max-height: auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 80px;
+}
+.cardPokemon{
+    margin-top: 20px;
+}

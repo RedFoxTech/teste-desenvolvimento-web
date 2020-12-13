@@ -1,58 +1,38 @@
+![Sem título](https://user-images.githubusercontent.com/57490700/98570990-cc1db280-2292-11eb-85a7-768d3eab47b6.png)
+
 # Teste de Desenvolvimento Web
 
-Olá Dev! Tudo bem?
-
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
-
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
-
-Agora vamos ao teste!
-
-
-## Desafio Pokémon
-
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
-
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
-
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
-
-
-## Consigo fazer tudo isso?
-
-Consegue sim!
-
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
-
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
-
-
 ## Por onde começo?
+1. Antes de iniciar o projeto, tanto na pasta SERVER quanto na pasta WEB, executar o comando "npm install" ou "yarn install"
+2. Após isso, ele irá instalar as dependencias e inicie a pasta server com o comando "yarn dev"
+3. Após iniciar o server, entrar na pasta web e iniciar com o comando "yarn start"
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+# Tecnologias utilizadas até o momento
+## BackEnd
+Express()<br>
+Multer()<br>
+Cors()<br>
+SQLITE<br>
+Migrations<br>
+Knex<br>
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
+## FrontEnd
+React.js<br>
+Axios<br>
+Bootstrap<br>
+React-router-dom<br>
+useEffect<br>
+useState<br>
+
+# O que foi feito
+## BackEnd
+O servidor foi criado junto com o query Builder (knex) e o banco de dados SQLITE, onde já é possível cadastrar todos os campos com informações sobre o pokemon e também upload de imagem do próprio. No Controller, já está disponível a função de criar, de listar todos os pokemons, listar um único pokemon trazendo todas suas informações, faltando apenas update e o delete. 
+
+## FrontEnd
+Foi desenvolvido o layout com uma página de apresentação, uma página chamada "Home" onde já está listando o nome do pokemon e algumas informações direto do banco de dados. Foi estilizado um sidebar com algumas funções para estar efetuando a criação de algumas páginas e também um campo de busca para ser feito uma busca através do nome do pokemon.
+Você pode inserir novos pokemons através da opção "Cadastrar" no sidebar. 
+
+# Observações pessoais
+Algumas funções ainda não foram criadas pelo motivo da demanda do meu atual trabalho acabar me privando de focar 100% nesse projeto, mas através dessas poucas funções, pude mostrar um pouco de muitas outras habilidades que eu sei utilizar e um pouco do meu conhecimento. 
 
 
-## E o Layout??
-
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
-
-
-## Regras
-
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
-
-
-## Só isso?
-
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
