@@ -27,7 +27,7 @@ http://localhost:4000/api/users
 # Procurar pokemon por id
 http://localhost:4000/api/users/-> aqui você passa o id do pokemon
 ```
-## Caso queira testar rotas de deletar úsuario ou criar pode testar utilizando Postman[https://www.postman.com/downloads/](https://www.postman.com/downloads/) ou <a src="https://insomnia.rest/download/">Imsominia</a> Obs: Curto Mais o Postman porém é um pouco mais complicado se for iniciante!
+## Caso queira testar rotas de deletar úsuario ou criar pode testar utilizando -> [Postman](https://www.postman.com/downloads/) ou [Imsominia](https://insomnia.rest/download/) Obs: Curto Mais o Postman porém é um pouco mais complicado se for iniciante!
 
 ```bash
 #Obs:tipo da requisição precisa ser igual a delete para funcionar
