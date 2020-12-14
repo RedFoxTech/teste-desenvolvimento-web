@@ -1,0 +1,14 @@
+body {
+    background-color: #F7F7F7;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+.card {
+    color: #3F3D3D;
+    margin: 15px 0;
+}
+
+.pokemon {
+    font-weight: bold;
+}
