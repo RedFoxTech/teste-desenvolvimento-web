@@ -4,16 +4,19 @@ import './Pokedex.css';
 import { Container, Row, Col, Card, CardHeader, CardFooter, CardBody, CardTitle, CardText } from 'reactstrap';
 
 const Pokedex = () => {
-    const [pokemons, setPokemons] = useState([]);
+  const [pokemons, setPokemons] = useState([]);
+    // constantes que vão receber os dados no state
 
     useEffect(() => {
-      axios.get('pokemon.json').then((response) => {
+        axios.get('pokemon.json').then((response) => {
         setPokemons(response.data)
       })
     })
-    
+    // fetch dos dados já convertidos para json  
+
     return (
       <Container>
+        <h3 className="text-center">POKEDEX</h3>
           {
             pokemons.map((pokemon, index) => (
               <Card body className="text-center">
@@ -27,8 +30,11 @@ const Pokedex = () => {
                 <CardBody>
                   <CardTitle>
                     <Row xs="2">
-                      <Col>Type: { pokemon.['Type 1'] } and { pokemon.['Type 2']}</Col>
-                      <Col>Where to find: { pokemon.['Weather 1'] } and { pokemon.['Weather 2'] }</Col>
+                      {/* caso o pokemon não possua um outro tipo ou local não vai aparecer o resto do código */}
+                      <Col> Type: { pokemon.['Type 1'] }
+                                  { (pokemon.['Type 2']).length > 0 ? ` and ${pokemon.['Type 2']}` : null }</Col>
+                      <Col>Where to find: { pokemon.['Weather 1'] } 
+                                          { (pokemon.['Weather 2']).length > 0 ? ` and ${pokemon.['Weather 2']}` : null }</Col>
                     </Row>
                     </CardTitle>
                   <CardTitle>STATUS</CardTitle>
@@ -46,6 +52,7 @@ const Pokedex = () => {
                   </CardText>
                 </CardBody>
                 <CardFooter>
+                    {/* ternários de acordo com a ocasião que o pokemon vai aparecer */}
                   <p>{pokemon.Evolved === '1' ? 'This Pokemon is already evolved' : 'This Pokemon can evolve'}</p>
                   <p>{pokemon.Legendary === '1' ? 'This Pokemon is Legendary!' : null}</p>
                   <p>{pokemon.Shiny === '1' ? 'This Pokemon is Shiny!' : null}</p>
@@ -60,4 +67,5 @@ const Pokedex = () => {
       </Container>  
   )
 }
+
 export default Pokedex;
