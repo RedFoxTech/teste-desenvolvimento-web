@@ -47,6 +47,7 @@ class Main extends Component {
                     pokemonsPorPagina={pageSize} 
                     totalDePokemons={totalPokemons} 
                     CarregarPagina={this.CarregarPagina}
+                    paginaAtual={page}
                 />
             </div>
         )

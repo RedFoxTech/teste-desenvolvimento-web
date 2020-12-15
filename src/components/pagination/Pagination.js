@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Pagination = ({pokemonsPorPagina, totalDePokemons, CarregarPagina}) => {
+const Pagination = ({pokemonsPorPagina, totalDePokemons, paginaAtual, CarregarPagina }) => {
     // define a quantidade de paginas que será exibida
     const numeroDePaginas = [];
 
@@ -8,12 +8,18 @@ const Pagination = ({pokemonsPorPagina, totalDePokemons, CarregarPagina}) => {
         numeroDePaginas.push(i);
     }
 
+    function linkAtivo(numero){
+        if(parseInt(numero) == parseInt(paginaAtual)){
+            return "active"
+        }
+    }
+
     return (
         <nav>
             <ul className="pagination justify-content-center">
                 {numeroDePaginas.map(numero => (
-                    <li key={numero} className="page-item">
-                        <a onClick={ () => CarregarPagina(numero) } href="#" className="page-link">
+                    <li key={numero} className={`page-item ${linkAtivo(numero)}`}>
+                        <a onClick={ () => CarregarPagina(numero) } href="#" className='page-link'>
                             {numero}
                         </a>
                     </li>
