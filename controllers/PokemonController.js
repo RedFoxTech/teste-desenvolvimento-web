@@ -5,25 +5,37 @@ require('dotenv').config();
 module.exports = {
     index: async (req, res) => {
         // recupera os parametros de pequisa
-        let {name, type1} = req.query;
+        let {name, type1, page} = req.query;
 
-        let querySearc = {}
-
-        // verifa os parametros de pesquisa
+        // verifica os parametros de pesquisa
+        let querySearch = {}
         if(name != '' && name != undefined){
-            querySearc['name'] = name;
+            querySearch['name'] = name;
         }
-
         if(type1 != '' && type1 != undefined){
-            querySearc['type1'] = type1;
+            querySearch['type1'] = type1;
         }
 
-        // busca todos os pokemons de acordo com o parametro
-        let pokemon = await Pokemon.findAll({where:querySearc});
+        // paginacao
+        if(!page){
+            page = 1;
+        }
+        let pageSize = 40;
+        let offSet = (page - 1) * pageSize;
+
+        // busca quantidade total de pokemons de acordo com pesquisa       
+        let totalPokemons = await Pokemon.count({ where: querySearch });
+
+        // busca pokemons paginados de acordo com pesquisa
+        let pokemons = await Pokemon.findAll({
+            limit: pageSize,
+            offset: offSet,
+            where: querySearch,
+            order: [['id']]
+        });
 
         // retorna os dados encontrados
-        res.status(200).json(pokemon);
-
+        res.status(200).json({totalPokemons, page, pageSize, pokemons});
     },
     create: async (req, res) => {
         // recupera os dados vindos do corpo da requição
