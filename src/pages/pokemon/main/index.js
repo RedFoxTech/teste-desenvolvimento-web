@@ -42,7 +42,7 @@ class Main extends Component {
         return (
             <div>
                 <SearchPokemons />
-                <Pokemons pokemons={pokemons}/>
+                <Pokemons pokemons={pokemons} totalPokemons={totalPokemons}/>
                 <Pagination 
                     pokemonsPorPagina={pageSize} 
                     totalDePokemons={totalPokemons} 
