@@ -1,0 +1,25 @@
+{
+  "name": "teste_redfox",
+  "version": "1.0.0",
+  "description": "Teste RedFox: Criação de um app para listar todos pokemons, utilizando node.js e react.js.",
+  "main": "app.js",
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "keywords": [
+    "Node",
+    "Node.js",
+    "React",
+    "React.js"
+  ],
+  "author": "Iago Henrique",
+  "license": "ISC",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

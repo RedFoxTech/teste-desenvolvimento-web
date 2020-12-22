@@ -1,0 +1,77 @@
+.section-procedimento-five {
+  padding-top: 15px;
+  padding-bottom: 20px;
+
+  @include media-breakpoint-up(lg) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  &__square {
+    border: 1px solid $pink;
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(255, 123, 163, 0.05);
+    padding: 15px 15px;
+    height: 100%;
+
+    @include media-breakpoint-up(lg) {}
+  }
+
+  &__content-text {
+    h4 {
+      @include fontAlphaBold(20px);
+      line-height: 25px;
+      margin-bottom: 10px;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 35px;
+        line-height: 53px;
+        margin-bottom: 23px;
+      }
+    }
+
+    h5 {
+      @include fontAlphaBold(16px);
+      line-height: 25px;
+      margin-bottom: 10px;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 25px;
+        line-height: 28px;
+        margin-bottom: 10px;
+      }
+    }
+
+    p {
+      @include fontAlphaRegular(12px);
+      line-height: 18px;
+      margin-bottom: 20px;
+
+      @include media-breakpoint-up(lg) {
+        font-size: 18px;
+        line-height: 27px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__img {
+    width: 138px;
+    height: 138px;
+    object-fit: cover;
+
+    @include media-breakpoint-up(lg) {
+      width: auto;
+      height: auto;
+    }
+  }
+
+  &__reference {
+    color: $gray;
+    text-decoration: underline;
+    @include fontAlphaRegular(13px);
+    line-height: 18px;
+    font-style: italic;
+  }
+}

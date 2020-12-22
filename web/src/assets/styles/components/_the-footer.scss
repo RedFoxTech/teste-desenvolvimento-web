@@ -1,0 +1,52 @@
+.footer {
+  padding-top: 20px;
+
+  @include media-breakpoint-up(lg) {
+    width: 100%;
+    padding-top: 23px;
+    padding-bottom: 21px;
+  }
+
+  &__logo {
+    width: 155px;
+    height: 78px;
+    display: block;
+    margin: 0 auto;
+
+    @include media-breakpoint-up(lg) {
+      width: 315px;
+      height: 157px;
+    }
+  }
+
+  &__map-title {
+    text-align: center;
+    @include fontAlphaMedium(16px);
+    line-height: 25px;
+
+    @include media-breakpoint-up(lg) {
+      font-size: 20px;
+      line-height: 30px;
+      text-align: left;
+    }
+  }
+
+  &__item-nav {
+    @include fontAlphaRegular(14px);
+    line-height: 21px;
+    margin-bottom: 10px;
+
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+}

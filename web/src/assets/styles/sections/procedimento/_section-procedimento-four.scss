@@ -1,0 +1,72 @@
+.section-procedimento-four {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: rgb(194, 123, 255);
+    background: linear-gradient(180deg, rgba(194, 123, 255, 1) 49%, rgba(255, 123, 163, 1) 82%);
+
+
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    &__img {
+        width: 138px;
+        height: 138px;
+        object-fit: cover;
+
+        @include media-breakpoint-up(lg) {
+            width: auto;
+            height: auto;
+        }
+    }
+
+    &__content-text {
+        h4 {
+            @include fontAlphaBold(20px);
+            line-height: 25px;
+            margin-bottom: 10px;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 35px;
+                line-height: 53px;
+                margin-bottom: 23px;
+            }
+        }
+
+        h5 {
+            @include fontAlphaBold(16px);
+            line-height: 25px;
+            margin-bottom: 10px;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 25px;
+                line-height: 28px;
+                margin-bottom: 10px;
+            }
+
+        }
+
+        p {
+            @include fontAlphaRegular(12px);
+            line-height: 18px;
+            margin-bottom: 20px;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 18px;
+                line-height: 27px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &__reference {
+        color: $gray;
+        text-decoration: underline;
+        @include fontAlphaRegular(13px);
+        line-height: 18px;
+        font-style: italic;
+    }
+
+}

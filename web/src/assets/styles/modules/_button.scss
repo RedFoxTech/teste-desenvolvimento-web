@@ -1,0 +1,45 @@
+.btn-rounded {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    @include fontAlphaMedium(13px);
+    transition: all 0.4s ease-out;
+    box-shadow: 5px 9px 6px #32383e24;
+    padding: 11px 77px;
+
+
+    @include media-breakpoint-up(lg) {
+        padding: 18px 116px;
+        font-size: 16px;
+        text-align: center;
+        box-shadow: none;
+
+        &:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+                0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+    }
+}
+
+
+.btn-underline {
+    cursor: pointer;
+    background-color: transparent;
+    text-decoration: underline;
+    border: none;
+    outline: none;
+    @include fontAlphaMedium(13px);
+    transition: all 0.4s ease-out;
+
+    @include media-breakpoint-up(lg) {
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

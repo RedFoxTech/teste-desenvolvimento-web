@@ -1,0 +1,52 @@
+@import "./reset";
+@import "./default_files";
+@import "bootstrap";
+
+@import "./fonts";
+@import "./typography";
+
+@import "global";
+
+// Modules
+@import "./modules/container";
+@import "./modules/input";
+@import "./modules/button";
+
+// Components
+@import "./components/the-header";
+@import "./components/the-footer";
+// @import "./components/hero";
+@import "./components/top-button";
+@import "./components/card";
+
+// Sections
+// Home
+@import "./sections/home/section-home-content-text-gradient";
+@import "./sections/home/section-home-content-squares";
+// Diferencas
+@import "./sections/diferencas/section-diferencas-one";
+@import "./sections/diferencas/section-diferencas-two";
+@import "./sections/diferencas/section-diferencas-three";
+@import "./sections/diferencas/section-diferencas-four";
+@import "./sections/diferencas/section-diferencas-six";
+@import "./sections/diferencas/section-diferencas-seven";
+@import "./sections/diferencas/section-diferencas-eight";
+// No Brasil
+@import "./sections/noBrasil/section-no-brasil-one";
+@import "./sections/noBrasil/section-no-brasil-two";
+@import "./sections/noBrasil/section-no-brasil-three";
+@import "./sections/noBrasil/section-no-brasil-four";
+@import "./sections/noBrasil/section-no-brasil-five";
+@import "./sections/noBrasil/section-no-brasil-six";
+// Procedimento
+@import "./sections/procedimento/section-procedimento-one";
+@import "./sections/procedimento/section-procedimento-two";
+@import "./sections/procedimento/section-procedimento-three";
+@import "./sections/procedimento/section-procedimento-four";
+@import "./sections/procedimento/section-procedimento-five";
+@import "./sections/procedimento/section-procedimento-six";
+
+
+//Slick Style Default
+// @import "~slick-carousel/slick/slick.css";
+// @import "~slick-carousel/slick/slick-theme.css";

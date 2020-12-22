@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: #FCFFAA;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, input, button {
+  font-family: Roboto, sans-serif;
+}
+
+#paginate{
+  margin: 32px auto;
+}
+
+#paginate .pagination{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 8px;
+}
+
+#paginate .pagination{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  }
+
+  #paginate .pagination div:not(.numbers),
+  #paginate .pagination div.numbers {
+    width: 40px;
+    height: 40px;
+  }
+
+  #paginate .pagination div.numbers div:hover,
+  #paginate .pagination div.numbers div.active {
+  color: var(--primary);
+  }
