@@ -1,0 +1,133 @@
+@import '../../../node_modules/bootstrap/scss/variables';
+
+
+$yellow:#fcffaa;
+$yellow-dark:#e1c558;
+$black: #222222;
+$white: #ffffff;
+$gray: #707070;
+$darkGray:#4D4D4D;
+$grayLight:#DEDEDE;
+$pink: #FF7BA3;
+$red: #da291c;
+$blue: #0032f8;
+$green: #33CD29;
+
+$colors: ('red': $red,
+  'darkGray':$darkGray,
+  'grayLight':$grayLight,
+  'black': $black,
+  'pink': $pink,
+  'white': $white,
+  'blue': $blue,
+  'gray': $gray,
+  'green': $green,
+  'yellow':#fcffaa,
+  'yellow-dark':#e1c558,
+);
+
+@each $name,
+$hash in $colors {
+  .bg-#{$name} {
+    background-color: $hash !important;
+  }
+
+  .color-#{$name} {
+    color: $hash !important;
+  }
+
+  .outline-#{$name} {
+    border-color: $hash !important;
+  }
+}
+
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+
+$spacer: 5px;
+$spacers: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge((0: 0,
+    1: ($spacer * 1,
+    ),
+    2: ($spacer * 2,
+    ),
+    3: ($spacer * 3,
+    ),
+    4: ($spacer * 4,
+    ),
+    5: ($spacer * 5,
+    ),
+    6: ($spacer * 6,
+    ),
+    7: ($spacer * 7,
+    ),
+    8: ($spacer * 8,
+    ),
+    9: ($spacer * 9,
+    ),
+    10: ($spacer * 10,
+    ),
+    11: ($spacer * 11,
+    ),
+    12: ($spacer * 12,
+    ),
+    13: ($spacer * 13,
+    ),
+    14: ($spacer * 14,
+    ),
+    15: ($spacer * 15,
+    ),
+    16: ($spacer * 16,
+    ),
+    17: ($spacer * 17,
+    ),
+    18: ($spacer * 18,
+    ),
+    19: ($spacer * 19,
+    ),
+    20: ($spacer * 20,
+    ),
+    21: ($spacer * 21,
+    ),
+    22: ($spacer * 22,
+    ),
+    23: ($spacer * 23,
+    ),
+    24: ($spacer * 24,
+    ),
+    25: ($spacer * 25,
+    ),
+    26: ($spacer * 26
+    ),
+    27: ($spacer * 27,
+    ),
+    28: ($spacer * 28,
+    ),
+    29: ($spacer * 29,
+    ),
+    30: ($spacer * 30,
+    ),
+    31: ($spacer * 31,)
+  ),
+  $spacers);
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge((25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    auto: auto,
+  ),
+  $sizes);
+
+// $grid-breakpoints: (xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 1260px,
+//   xl: 1400px);

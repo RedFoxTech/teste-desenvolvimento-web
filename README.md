@@ -1,58 +1,72 @@
-# Teste de Desenvolvimento Web
+### Observação teste
+_____________________
+-Teste realizado utilizando:
+MongoDB,Node.js,React.js
 
-Olá Dev! Tudo bem?
+-BackEnd:
+Finalizei atingindo o objetivo solicitado no teste.
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+-FrontEnd:
+Realizei a integração com o backend e está apenas retornando os registros do banco.
+Por conta do prazo de entrega, faltou alguns ajustes na interface e a execução de algumas funcionalidades (paginação, cadastro, edição e busca).
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+### Dependências:
+-----------------
+Gerenciamento de pacotes (Npm install).
 
-Agora vamos ao teste!
+## BackEnd
+    "body-parse": "^0.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.11.8"
 
+## FrontEnd
+"@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.0",
+    "bootstrap": "^4.5.3",
+    "jquery": "^3.5.1",
+    "node-sass": "^4.14.0",
+    "popper.js": "^1.16.1",
+    "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0",
+    "react-scripts": "4.0.1",
+    "reactstrap": "^8.7.1",
+    "styled-components": "^5.2.1",
+    "web-vitals": "^0.2.4"
+    --------------------------------------------------------------------------
+### Executar Projeto BackEnd (Teste)
+____________________________________
+### - Executar backend
+  Comando: cd app.js / nodemon app.js
 
-## Desafio Pokémon
+###  - Testar BackEnd
+  Banco de Dados: MongoDB (DB:TesteRedFox / Table:pokemons)
 
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
+  Insominia: Criar "New Request" com métodos de requisição HTTP com a url: http://localhost:3333 porta em que a api esta executando.
 
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
+  Json:
+  {
+	"id_pokemon": "25",
+	"img_pokemon": "25",
+	"name_pokemon": "Pikachu",
+  "generation": "1",
+  "evolution_stage": "1",
+  "type_1": "Eletric",
+  "type_2": "Raio",
+	"weather": "Rainy",
+  "ATK": "283",
+  "DEF": "117"
+}
 
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
+### Executar Projeto FrontEnd (Teste)
+_____________________________________
 
+### - Executar frontend
+  Comando: cd src / npm start
 
-## Consigo fazer tudo isso?
-
-Consegue sim!
-
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
-
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
-
-
-## Por onde começo?
-
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
-
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
-
-
-## E o Layout??
-
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
-
-
-## Regras
-
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
-
-
-## Só isso?
-
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
+  obs: porta 3000 (http://localhost:3333)

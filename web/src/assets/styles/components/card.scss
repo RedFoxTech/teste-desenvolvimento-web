@@ -1,0 +1,80 @@
+.card {
+  border-radius: 10px !important;
+  position: relative;
+  transition: all 3s linear;
+  @include media-breakpoint-up(lg) {
+  }
+
+  &:hover {
+    .card__content-btns{
+      display: flex;
+      transition: all 3s linear;
+
+      &-btn{
+        width: 80%;
+        height: 35px;
+        background-color: $yellow-dark;
+        color:$white;
+        outline: none;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &__content-btns{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.6);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:0px;
+    left: 0px;
+    border-radius: 10px;
+    transition: all 3s linear;
+  }
+
+  &__header {
+    padding: 5px 10px;
+    background: linear-gradient(to left, #fad130, #ffef5f);
+
+    &-name {
+    }
+
+    &-ball-id {
+      width: 30px;
+      height: 30px;
+      background-color: $white;
+      border-radius: 100%;
+    }
+
+    &-id {
+    }
+  }
+
+  &__img {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 0 auto;
+  }
+  &__content {
+    padding: 5px 10px;
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    border-radius: 10px;
+  }
+
+  &__footer {
+    border-radius: 10px;
+    padding: 5px 10px;
+    background: linear-gradient(to left, #fad130, #ffef5f);
+  }
+  &__icon {
+    width: 24px;
+    height: 24px;
+  }
+}

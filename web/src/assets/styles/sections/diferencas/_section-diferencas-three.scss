@@ -1,0 +1,59 @@
+.section-diferencas-three {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    @include media-breakpoint-up(lg) {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    &__content-text {
+        h4 {
+            @include fontAlphaBold(20px);
+            line-height: 25px;
+            margin-bottom: 10px;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 35px;
+                line-height: 53px;
+                margin-bottom: 23px;
+            }
+        }
+
+        h5 {
+            @include fontAlphaBold(16px);
+            line-height: 25px;
+            margin-bottom: 10px;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 25px;
+                line-height: 28px;
+                margin-bottom: 10px;
+            }
+
+        }
+
+        p {
+            @include fontAlphaRegular(12px);
+            line-height: 18px;
+            margin-bottom: 20px;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 18px;
+                line-height: 27px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+
+        @include media-breakpoint-up(lg) {
+            width: auto;
+            height: auto;
+
+        }
+    }
+}

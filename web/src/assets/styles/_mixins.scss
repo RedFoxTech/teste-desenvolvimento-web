@@ -1,0 +1,38 @@
+@import '../../../node_modules/bootstrap/scss/mixins';
+
+
+@mixin fontAlpha($px, $weight) {
+  font-family: 'Poppins', sans-serif;
+  font-size: $px;
+  font-weight: $weight;
+  line-height: $px;
+}
+
+@mixin fontAlphaRegular($px) {
+  font-family: 'Poppins', sans-serif;
+  font-size: $px;
+  line-height: $px;
+  font-weight: 400;
+}
+
+@mixin fontAlphaMedium($px) {
+  font-family: 'Poppins', sans-serif;
+  font-size: $px;
+  line-height: $px;
+  font-weight: 500;
+}
+
+@mixin fontAlphaBold($px) {
+  font-family: 'Poppins', sans-serif;
+  font-size: $px;
+  line-height: $px;
+  font-weight: 700;
+}
+
+@mixin fontBeta($px, $weight) {
+  font-family: 'Roboto',
+    sans-serif;
+  font-size: $px;
+  font-weight: $weight;
+  line-height: $px;
+}
