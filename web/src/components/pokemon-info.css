@@ -1,0 +1,72 @@
+
+.pokeball-info {
+    position: absolute;
+    margin: 20px;
+    z-index: 1;
+}
+.center {
+    align-self: center;
+}
+
+h7 {
+    color: #FFF;
+    font-weight: bolder;
+}
+
+p {
+    color: #FFF;
+    font-size: 12px;
+}
+
+.pattern-info {
+    position: absolute;
+    z-index: 0;
+    margin-left: 15px;
+    margin-top: 50px;
+    fill: rgba(51, 51, 51, 0.8);
+}
+
+.infos {
+    padding-top: 10px;
+    border-radius: 25px;
+    z-index: -1;
+    width: 591px;
+    height: 441px;
+    background-color: #B42B2B !important;
+    margin-top: 25px;
+    float: right;
+    margin-right: 15px;
+}
+
+.glassmorfism {
+    width: 277px;
+    height: 65px;
+    margin-right: 25px;
+    background: linear-gradient(261.97deg, #77ADFF -4.56%, #77ADFF 55.31%, rgba(119, 173, 255, 0.25) 103.88%);
+}
+.glassmorfism-rain {
+    width: 277px;
+    height: 65px;
+    margin-right: 25px;
+    background: linear-gradient(261.97deg, #A2C2F1 -4.56%, #707781 55.31%, rgba(102, 102, 102, 0.25) 103.88%);
+}
+
+.cloud {
+    z-index: 2;
+    position: absolute;
+    margin:10px;
+}
+
+.sun {
+    margin-top: 5px;
+    margin-right: 4px;
+    position: relative;
+}
+
+.rain {
+    margin-top: 5px;
+}
+
+.stats p {
+    font-weight: bold;
+}

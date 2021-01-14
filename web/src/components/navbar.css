@@ -1,0 +1,11 @@
+.btn-nav {
+    width: 40px;
+    height: 40px;
+    border: 0 !important;
+    align-content: center;
+    margin-left: 5px;
+    background-color: #FFF !important;
+}
+h5 {
+    margin-left: 5px;
+}

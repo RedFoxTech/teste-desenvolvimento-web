@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@svgr/cli": "^5.5.0",
     "cra-template": "1.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1"
+    "react-scripts": "4.0.1",
+    "react-svg": "^11.2.2"
   },
   "scripts": {
+    "svgr": "svgr -d src/Icons src/assets",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

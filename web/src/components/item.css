@@ -1,0 +1,24 @@
+body {
+    font-family: Roboto;
+    background-image: url("../assets/bkg.png");
+}
+
+.card {
+    background-color: #B42B2B !important;
+    padding-top: 15px;
+    height: 101px;
+    width: 591px;
+    border-radius: 25px !important;
+    border: none;
+    float: left;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+.container {
+
+}
+
+.pokeball {
+    margin-left: 15px;
+    z-index: 0;
+}
