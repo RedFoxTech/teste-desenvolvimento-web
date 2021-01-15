@@ -1,3 +1,10 @@
+navbar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
 .btn-nav {
     width: 40px;
     height: 40px;

@@ -1,0 +1,16 @@
+.footer {
+    justify-self: flex-end;
+    width: 100%;
+    border-bottom: 5px solid;
+    border-color: #FFF;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.footerbox {
+    margin-bottom: -5px;
+    width: 272px;
+    height: 85px;
+}

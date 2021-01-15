@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@svgr/cli": "^5.5.0",
+    "axios": "^0.21.1",
     "cra-template": "1.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
