@@ -11,20 +11,19 @@ const fs = require('fs');
 const poskemanolos = [];
 
 routes.get('/list', async (req, res) => {
-    res.setHeader({headers: {'Access-Control-Allow-Origin': '*'}});
+
     const pokemons = await Pokemon.find();
     return res.json(pokemons);
 })
 
-routes.get('/filter', async (req, res) => {
-    res.setHeader({headers: {'Access-Control-Allow-Origin': '*'}});
+routes.post('/filter', async (req, res) => {
     const { filter } = req.body;
     const pokemons = await Pokemon.find(filter);
     return res.json(pokemons);
 });
 
 routes.post('/add', async (req, res) => {
-    res.setHeader({headers: {'Access-Control-Allow-Origin': '*'}});
+
     console.log(req.body);
     let {
         name,
@@ -119,7 +118,7 @@ routes.post('/add', async (req, res) => {
 })
 
 routes.delete('/delete', async (req, res) => {
-    res.setHeader({headers: {'Access-Control-Allow-Origin': '*'}});
+
     let id = req.query.id;
     const pokemon = await Pokemon.findByIdAndDelete(id, (err) => {
         if(err) {
@@ -131,7 +130,7 @@ routes.delete('/delete', async (req, res) => {
 })
 
 routes.get('/edit', async (req, res) => {
-    res.setHeader({headers: {'Access-Control-Allow-Origin': '*'}});
+
     const { id, update } = req.body;
     Pokemon.findByIdAndUpdate(id, update, (err) => {
         if(err){

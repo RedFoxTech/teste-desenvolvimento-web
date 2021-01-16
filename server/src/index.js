@@ -5,15 +5,10 @@ const routes = require('./routes');
 const cors = require('cors');
 
 const app = express ();
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
-const corsOptions = {
-    origin: 'http://localhost:3000',
-    optionsSuccessStatus: 200
-}
-
-app.use(cors(corsOptions));
 
 //Conectando com o banco de dados
 mongoose.connect('mongodb+srv://crimson:0iwdYxxQpr2H7ahE@cluster0.xkpwq.mongodb.net/pokedex?retryWrites=true&w=majority', {

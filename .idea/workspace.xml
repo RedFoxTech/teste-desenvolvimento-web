@@ -19,24 +19,50 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baa7a986-5391-43b8-894d-0d11133171c7" name="Default Changelist" comment="">
+    <list default="true" id="f60b1422-6aba-442f-a2f4-486aae270912" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/server/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/web/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/Icons/patterns/10X5.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/patterns/10X5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Bug.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Bug.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Dark.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Dark.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Dragon.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Dragon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Electric.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Electric.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Fairy.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Fairy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Fighting.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Fighting.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Fire.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Fire.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Flying.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Flying.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Ghost.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Ghost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Grass.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Grass.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Ground.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Ground.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Ice.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Ice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Normal.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Normal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Poison.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Poison.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Psychic.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Psychic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Rock.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Rock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Steel.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Steel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/Icons/types/Water.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/Icons/types/Water.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/assets/patterns/10x5.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/assets/patterns/10x5.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/assets/patterns/6x3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/assets/patterns/6x3.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/footer.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/components/item.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/item.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/components/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/navbar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/components/pokemon-info.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/pokemon-info.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/components/pokemon-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/pokemon-info.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/components/pokemon-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/pokemon-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/type.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/type.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/type.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/type.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/weather.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/weather.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/components/weather.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/components/weather.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/pages/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/pages/home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/web/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,17 +73,14 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1myXhkmXdmT2zoZXDnOPr4eCAMk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="1n71qIkiKbjCKtMgdBVESkWAE8k" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -65,41 +88,26 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.2.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Jhony\Desktop\teste-desenvolvimento-web\web\src" />
-      <recent name="C:\Users\Jhony\Desktop\teste-desenvolvimento-web\server\src" />
-    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="baa7a986-5391-43b8-894d-0d11133171c7" name="Default Changelist" comment="" />
-      <created>1610466926083</created>
+      <changelist id="f60b1422-6aba-442f-a2f4-486aae270912" name="Default Changelist" comment="" />
+      <created>1610726545248</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1610466926083</updated>
-      <workItem from="1610466927238" duration="15592000" />
-      <workItem from="1610495516801" duration="7354000" />
-      <workItem from="1610510481592" duration="271000" />
-      <workItem from="1610511081514" duration="965000" />
-      <workItem from="1610537176108" duration="31560000" />
-      <workItem from="1610591605057" duration="1898000" />
-      <workItem from="1610593598863" duration="2126000" />
-      <workItem from="1610626694024" duration="5316000" />
-      <workItem from="1610633954134" duration="12066000" />
-      <workItem from="1610659235511" duration="18427000" />
+      <updated>1610726545248</updated>
+      <workItem from="1610726566105" duration="30794000" />
+      <workItem from="1610770303529" duration="5922000" />
     </task>
     <servers />
   </component>
@@ -119,40 +127,21 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="456" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1610540096574">
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610747703028">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="456" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1610540096574" />
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610538975830">
+    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1610747703028" />
+    <state x="452" y="66" key="RollbackChangesDialog" timestamp="1610747398146">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="111" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1610538975830" />
-    <state x="452" y="66" key="RollbackChangesDialog" timestamp="1610679153930">
+    <state x="452" y="66" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1610747398146" />
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1610748911946">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="452" y="66" key="RollbackChangesDialog/0.0.1366.728@0.0.1366.728" timestamp="1610679153930" />
-    <state x="390" y="0" width="585" height="728" key="find.popup" timestamp="1610670761949">
+    <state x="500" y="278" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1610748911946" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1610728964166">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="0" width="585" height="728" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1610670761949" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1610563434397">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1610563434397" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1610676621990">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1610676621990" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/web/src/Icons/types/Fighting.js</url>
-          <line>14</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1610728964166" />
   </component>
 </project>

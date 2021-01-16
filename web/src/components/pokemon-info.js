@@ -1,12 +1,13 @@
 import Pattern from '../assets/patterns/10x5.png';
+import PatternWhite from '../Icons/patterns/10X5';
 import Pokeball from "../assets/patterns/pokeball-gradient.png";
 import Weather from "./weather";
 import Type from "./type";
 
 import './pokemon-info.css';
-import Image from '../assets/generations/generation1/4.png';
 
 function PokeInfo(props) {
+    console.log(props);
     if (props.type1 === "bug") {
             return (
                 <>
@@ -17,15 +18,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -54,7 +56,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -72,15 +74,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -109,7 +112,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -126,15 +129,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -163,7 +167,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -180,15 +184,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -217,7 +222,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -234,15 +239,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -271,7 +277,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -288,15 +294,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -325,7 +332,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -342,15 +349,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -379,7 +387,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -396,15 +404,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -433,7 +442,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -450,15 +459,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -487,7 +497,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -504,15 +514,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -541,7 +552,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -558,15 +569,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -595,7 +607,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -608,19 +620,20 @@ function PokeInfo(props) {
                     <div class="infos info-normal container">
                         <div class='row'>
                             <div class='pokeball-styled col'>
-                                <img src={Pattern} class='pattern-info' width='150' height='55'/>
+                                <PatternWhite fill="#FFF" class='pattern-info' width='150' height='55'/>
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -649,7 +662,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -666,15 +679,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -703,7 +717,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -720,15 +734,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -757,7 +772,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -774,15 +789,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -811,7 +827,7 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
@@ -828,15 +844,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -865,13 +882,14 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
                 </>
             )
-        } else {
+        }
+        if(props.type1 === "water"){
             return (
                 <>
                     <div class="infos info-water container">
@@ -881,15 +899,16 @@ function PokeInfo(props) {
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
-                                {!props.weather2 && <Weather weather={props.weather2}/>}
+                                {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
                         <div class='row'>
                             <div class="col-md ml-3 mg-tm2">
                                 <h4>{props.name}</h4>
                                 {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
-                                {props.raidable ? <p> NOT RAIDABLE </p> : <p>NOT REGIONAL</p>}
+                                <p>RAIDABLE {props.raidable} </p>
                                 <p>HATCHABLE {props.hatchable} </p>
                                 {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
                                 {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
@@ -918,12 +937,72 @@ function PokeInfo(props) {
                             <div class="col-md row mt-3 mr-3">
                                 <Type type={props.type1}/>
                                 {!!props.type2 && <Type type={props.type2}/>}
-                                <img src={Image} width="180" height="230" class="image"/>
+                                <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
                             </div>
                         </div>
                     </div>
                 </>
             )
+        }
+        if (props.type1 === "rock") {
+        return (
+            <>
+                <div class="infos info-rock container">
+                    <div class='row'>
+                        <div class='pokeball-styled col'>
+                            <img src={Pattern} class='pattern-info' width='150' height='55'/>
+                            <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
+                        </div>
+                        <div class='col'>
+                            {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
+                            <Weather weather={props.weather1}/>
+                            {!!props.weather2 && <Weather weather={props.weather2}/>}
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class="col-md ml-3 mg-tm2">
+                            <h4>{props.name}</h4>
+                            {props.regional ? <p>REGIONAL </p> : <p>NOT REGIONAL</p>}
+                            <p>RAIDABLE {props.raidable} </p>
+                            <p>HATCHABLE {props.hatchable} </p>
+                            {props.shiny ? <p>SHINY</p> : <p>NOT SHINY</p>}
+                            {props.nest ? <p>NEST</p> : <p>NO NEST</p>}
+                            {props.getable ? <p>GETABLE </p> : <p>NOT GETABLE</p>}
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th scope="col">ATK</th>
+                                    <th scope="col">DEF</th>
+                                    <th scope="col">STA</th>
+                                    <th scope="col">IV40</th>
+                                    <th scope="col">IV39</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>{props.atk}</td>
+                                    <td>{props.def}</td>
+                                    <td>{props.sta}</td>
+                                    <td>{props.IV40}</td>
+                                    <td>{props.IV39}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md row mt-3 mr-3">
+                            <Type type={props.type1}/>
+                            {!!props.type2 && <Type type={props.type2}/>}
+                            <img src={`https://cdn.traction.one/pokedex/pokemon/${props.pokedexNumber}.png`} width="200" height="200" className="image anim"/>
+                        </div>
+                    </div>
+                </div>
+            </>
+        )
+    }
+        else {
+            return (
+                <p>Que isso? ACHEI NADA</p>
+            );
         }
 }
 
