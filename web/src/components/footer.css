@@ -1,0 +1,19 @@
+.footer {
+    justify-self: flex-end;
+    width: 100vw;
+    border-bottom: 5px solid;
+    border-color: #FFF;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 5vw;
+}
+
+.footerbox {
+    width: 100vw;
+}
+
+.patt-footer {
+    margin-bottom: -5px;
+}

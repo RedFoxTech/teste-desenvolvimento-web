@@ -1,0 +1,60 @@
+.glassmorfism-pcloudly {
+    width: 250px;
+    height: 50px;
+    margin-right: 25px;
+    border-radius: 5px;
+    background: linear-gradient(261.97deg, #77ADFF -4.56%, #77ADFF 55.31%, rgba(119, 173, 255, 0.25) 103.88%);
+}
+.glassmorfism-rain {
+    width: 250px;
+    height: 50px;
+    margin-right: 25px;
+    border-radius: 5px;
+    background: linear-gradient(261.97deg, #A2C2F1 -4.56%, #707781 55.31%, rgba(102, 102, 102, 0.25) 103.88%);
+}
+.glassmorfism-clear {
+    width: 250px;
+    height: 50px;
+    margin-right: 25px;
+    border-radius: 5px;
+    background: linear-gradient(261.97deg, #77ADFF -4.56%, #77ADFF 55.31%, rgba(119, 173, 255, 0.25) 103.88%);
+}
+.glassmorfism-snowy {
+    width: 250px;
+    height: 50px;
+    margin-right: 25px;
+    border-radius: 5px;
+    background: linear-gradient(261.97deg, #FFFFFF -4.56%, #FFFFFF 55.31%, rgba(255, 255, 255, 0.25) 103.88%);
+}
+.glassmorfism-fog {
+    width: 250px;
+    height: 50px;
+    margin-right: 25px;
+    border-radius: 5px;
+    background: linear-gradient(261.97deg, #8F847B -4.56%, #8F847B 55.31%, rgba(143, 132, 123, 0.25) 103.88%);
+}
+.glassmorfism-cloudly {
+    width: 250px;
+    height: 50px;
+    margin-right: 25px;
+    border-radius: 5px;
+    background: linear-gradient(261.97deg, #A2C2F1 -4.56%, #707781 55.31%, rgba(102, 102, 102, 0.25) 103.88%);
+}
+
+.cloud {
+    z-index: 2;
+    position: absolute;
+}
+
+.empty {
+    width: 250px;
+    height: 50px;
+    margin-bottom: 5px;
+    margin-right: 25px;
+    border-radius: 5px;
+    background: transparent;
+}
+
+.mtcustom {
+    margin-top: 2.5rem;
+}

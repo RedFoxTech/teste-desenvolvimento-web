@@ -1,15 +1,8 @@
-# Teste de Desenvolvimento Web
+# Teste de Desenvolvimento Web de Jhony Terra
 
-Olá Dev! Tudo bem?
+Olá, RedFox! Tudo bem? Desenvolvi esse projeto no tempo delimitado, tendo um atraso na entrega devido ao ENEM 2020 e peço desculpas pelo ocorrido. Mas vamos ao projeto, sim?
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
-
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
-
-Agora vamos ao teste!
-
-
-## Desafio Pokémon
+## O Desafio Pokémon
 
 Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
 
@@ -18,41 +11,24 @@ A missão é criar um sistema para substituir este excel, pois queremos expandir
 Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
 
 
-## Consigo fazer tudo isso?
+## Consegui fazer tudo isso?
 
-Consegue sim!
+Desenvolvi a aplicação NodeJS com as rotas necessárias para fazer todas as funcionalidades pedidas. A mesma se encontra funcional e pode ser testada via Insomnia ou softwares parecidos. 
+O Design da aplicação pode ser visualizado no PDF que se encontra na pasta Design, foi feito no Figma e pensado especialmente para esse projeto.
+A aplicação web, não foi completamente finalizada, faltando a página de edição dos Pokémons e também otimização das ocorrências, mas como assim?
 
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
-
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
-
+A pesquisa é funcional, uma vez digitado o texto, caso clicado no componente dos Pokémons, mostra os Pokémons que possuem nomes com os digitos da pesquisa, a deleção de Pokémons também é funcional, uma vez que assim que apagado, não há mensagem de confirmação da ação ou algo parecido.
+Faltaram otimizar estes processos e espero que compreendam.
 
 ## Por onde começo?
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+Primeiramente, você pode clonar essa branch aqui, para sua Área de Trabalho, abrir as pastas /server e /web, dando um ```yarn``` em cada uma delas para instalar todas suas dependências. Um yarn start em ambas as pastas, as fará rodar.
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
-
-
-## E o Layout??
-
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
-
+Como os testes da implementação são realizados é vocês quem dizem :)
 
 ## Regras
 
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
-
-
-## Só isso?
-
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
+Das regras, foram todas seguidas:
+- No layout, foi utilizado Bootstrap.
+- No frontend, foi utilizado ReactJS 
+- No backend, foi utilizado NodeJS
