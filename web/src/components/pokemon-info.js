@@ -1,25 +1,54 @@
+import axios from 'axios';  
+import {useHistory} from 'react-router-dom';
+import {Button} from 'react-bootstrap';
 import Pattern from '../assets/patterns/10x5.png';
 import PatternWhite from '../Icons/patterns/10X5';
 import Pokeball from "../assets/patterns/pokeball-gradient.png";
 import Weather from "./weather";
 import Type from "./type";
+import Edit from '../assets/icons/edit.png';
+import Trash from '../assets/icons/trash.png';
 
 import './pokemon-info.css';
 
 function PokeInfo(props) {
-    console.log(props);
+    
+    const history = useHistory();
+    const Poke = props;
+
+    async function delet() {
+        console.log(Poke)
+        const response = axios.delete('http://localhost:3333/delete', { headers: {id: Poke.id}})
+        history.push('/');
+    }
+
+    async function edit(Pokemon){
+        console.log(Pokemon);
+    }
+
     if (props.type1 === "bug") {
             return (
                 <>
                     <div class="infos info-bug container">
+                    
+                                <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => edit} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
+
                         <div class='row'>
-                            <div class='pokeball-styled col'>
+                    
+                            <div class='col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
                                 {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
-                                <Weather weather={props.weather1}/>
+                                <Weather weather={props.weather1} className='mtcustom'/>
                                 {!!props.weather2 && <Weather weather={props.weather2}/>}
                             </div>
                         </div>
@@ -67,7 +96,17 @@ function PokeInfo(props) {
         if (props.type1 === "dark") {
             return (
                 <>
-                    <div class="infos info-dark container">
+                    <div class="infos info-dark container">  
+                    
+                    <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => edit} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
+
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
@@ -123,6 +162,15 @@ function PokeInfo(props) {
             return (
                 <>
                     <div class="infos info-dragon container">
+                    
+                    <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
@@ -177,7 +225,16 @@ function PokeInfo(props) {
         if (props.type1 === "electric") {
             return (
                 <>
-                    <div class="infos info-electric container">
+                    <div class="infos info-electric container"> 
+                    
+                    <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
@@ -232,7 +289,15 @@ function PokeInfo(props) {
         if (props.type1 === "fairy") {
             return (
                 <>
-                    <div class="infos info-fairy container">
+                    <div class="infos info-fairy container">                        
+                            <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
@@ -287,7 +352,15 @@ function PokeInfo(props) {
         if (props.type1 === "fire") {
             return (
                 <>
-                    <div class="infos info-fire container">
+                    <div class="infos info-fire container">                        
+                            <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
@@ -343,6 +416,15 @@ function PokeInfo(props) {
             return (
                 <>
                     <div class="infos info-grass container">
+                                                
+                            <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
@@ -398,12 +480,21 @@ function PokeInfo(props) {
             return (
                 <>
                     <div class="infos info-ghost container">
+                        <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+
                                 {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
                                 {!!props.weather2 && <Weather weather={props.weather2}/>}
@@ -453,12 +544,21 @@ function PokeInfo(props) {
             return (
                 <>
                     <div class="infos info-ground container">
+                                <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+
                                 {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
                                 {!!props.weather2 && <Weather weather={props.weather2}/>}
@@ -508,12 +608,21 @@ function PokeInfo(props) {
             return (
                 <>
                     <div class="infos info-fighting container">
+                                <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+
                                 {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
                                 {!!props.weather2 && <Weather weather={props.weather2}/>}
@@ -563,12 +672,21 @@ function PokeInfo(props) {
             return (
                 <>
                     <div class="infos info-flying container">
+                                <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+
                                 {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
                                 {!!props.weather2 && <Weather weather={props.weather2}/>}
@@ -618,12 +736,21 @@ function PokeInfo(props) {
             return (
                 <>
                     <div class="infos info-normal container">
+                                <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <PatternWhite fill="#FFF" class='pattern-info' width='150' height='55'/>
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+
                                 {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
                                 {!!props.weather2 && <Weather weather={props.weather2}/>}
@@ -673,12 +800,21 @@ function PokeInfo(props) {
             return (
                 <>
                     <div class="infos info-ice container">
+                                <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+
                                 {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
                                 {!!props.weather2 && <Weather weather={props.weather2}/>}
@@ -728,12 +864,21 @@ function PokeInfo(props) {
             return (
                 <>
                     <div class="infos info-poison container">
+                                <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+
                                 {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
                                 {!!props.weather2 && <Weather weather={props.weather2}/>}
@@ -783,12 +928,21 @@ function PokeInfo(props) {
             return (
                 <>
                     <div class="infos info-psychic container">
+                                <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+
                                 {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
                                 {!!props.weather2 && <Weather weather={props.weather2}/>}
@@ -838,12 +992,21 @@ function PokeInfo(props) {
             return (
                 <>
                     <div class="infos info-steel container">
+                                <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+
                                 {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
                                 {!!props.weather2 && <Weather weather={props.weather2}/>}
@@ -893,12 +1056,21 @@ function PokeInfo(props) {
             return (
                 <>
                     <div class="infos info-water container">
+                                <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                         <div class='row'>
                             <div class='pokeball-styled col'>
                                 <img src={Pattern} class='pattern-info' width='150' height='55'/>
                                 <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                             </div>
                             <div class='col'>
+
                                 {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                                 <Weather weather={props.weather1}/>
                                 {!!props.weather2 && <Weather weather={props.weather2}/>}
@@ -948,13 +1120,31 @@ function PokeInfo(props) {
         return (
             <>
                 <div class="infos info-rock container">
+                                <div class="w-100 pr-3">
+                                        <Button className="btn-transp" onClick={() => delet(props._id)} type='submit'>
+                                            <img src={Trash}/>
+                                        </Button>
+                                        <Button className="btn-transp" onClick={() => {edit(props)}} type='submit'>
+                                            <img src={Edit}/>
+                                        </Button>
+                                </div>
                     <div class='row'>
                         <div class='pokeball-styled col'>
                             <img src={Pattern} class='pattern-info' width='150' height='55'/>
                             <img src={Pokeball} width="100" height="100" class='pokeball-info'/>
                         </div>
                         <div class='col'>
-                            {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
+                            
+                                <div class="row right pb-5 pr-3">
+                                    <div class='col'>
+                                        <img src={Trash}/>
+                                    </div>
+                                    <div class='col'>
+                                        <img src={Edit}/>
+                                    </div>
+                                </div>
+
+                                {!props.weather2 && <div className="empty mt-3 mb-3"></div>}
                             <Weather weather={props.weather1}/>
                             {!!props.weather2 && <Weather weather={props.weather2}/>}
                         </div>

@@ -28,7 +28,13 @@ export default function Home (){
             <NavbarWeb/>
             <div class="row mr-5">
                 <div class='col-md mt-4 ml-3 overflow-auto scroll'>
-                    {Pokemons.map(Pokemon => (
+                    {Pokemons.filter((Pokemon) => {
+                        if(window.Nome == "" || window.Nome == undefined){
+                            return Pokemon;
+                        } else if (Pokemon.name.toLowerCase().includes(window.Nome.toLowerCase())) {
+                            return Pokemon;
+                        }
+                    }).map(Pokemon => (
                         <button
                             className={'button-info'}
                             key={Pokemon._id}
@@ -47,6 +53,7 @@ export default function Home (){
                 <div class='col-md ml-3 '>
                     {!!InfoPokemon &&
                     <PokeInfo
+                        id={InfoPokemon._id}
                         name={InfoPokemon.name}
                         pokedexNumber={InfoPokemon.pokedexNumber}
                         regional={InfoPokemon.regional}

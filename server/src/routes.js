@@ -112,14 +112,14 @@ routes.post('/add', async (req, res) => {
         IV40,
         IV39
     }).catch(function(e) {
-        console.log(e)
+        console.log(e._message)
     });
     return res.json(pokemon);
 })
 
 routes.delete('/delete', async (req, res) => {
-
-    let id = req.query.id;
+    console.log(req.headers.id);
+    let id = req.headers.id;
     const pokemon = await Pokemon.findByIdAndDelete(id, (err) => {
         if(err) {
             res.status(400).send({error: "Houve um erro em deletar este pokemón."})

@@ -9,25 +9,19 @@ import axios from "axios";
 import {useState} from "react";
 
 function NavbarWeb() {
-    const [Pokemons, setPokemons] = useState([]);
-    const [Event, setEvent] = useState([]);
-    const [Nome, setNome] = useState([]);
+    const [Nome, setNome] = useState("");
     const history = useHistory();
 
     async function filter(e){
         e.preventDefault();
-        setNome(Event.target.value);
-        const response = await axios.post("http://localhost:3333/filter", {
-        'filter': {
-            "name": Nome,
-        }});
-        setPokemons(response.data);
+        window.Nome = Nome;
+        console.log(Nome);
         return false;
     }
 
     return(
         <>
-        <Navbar bg="light" variant="light">
+        <Navbar bg="white" variant="light">
             <Navbar.Brand href="/">
                 <img
                     src={Pokeball}
@@ -40,7 +34,7 @@ function NavbarWeb() {
             </Navbar.Brand>
             <Nav className="mr-auto"/>
             <Form inline className="align-left" onSubmit={e => filter(e)}>
-                <FormControl placeholder='Pesquise um pokémon' className="mr-sm-2" onChange={e => setEvent(e)}/>
+                <FormControl placeholder='Pesquise um pokémon' className="mr-sm-2" onChange={e => setNome(e.target.value)}/>
                 <Button className="btn-nav" type="submit">
                     <img src={Search} alt="Search" width="18.22" height="18.22"/>
                 </Button>

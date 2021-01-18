@@ -4,6 +4,7 @@ navbar {
     top: 0;
     left: 0;
     right: 0;
+    background-color: #FFF !important;
 }
 .btn-nav {
     width: 40px;
@@ -13,6 +14,18 @@ navbar {
     margin-left: 5px;
     background-color: #FFF !important;
 }
+
+
+.btn-transp {
+    width: 40px;
+    height: 40px;
+    border: 0 !important;
+    align-content: center;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-color: transparent !important;
+}
+
 h5 {
     margin-left: 5px;
 }

@@ -203,7 +203,7 @@ function PokeItem(props) {
                                 <h7 className='left w-100'>{props.name}</h7>
                                 <p className='left w-100'> {props.weather1} {props.weather2}</p>
                             </div>
-                            <div className='col-sm centermr-3'>
+                            <div className='col-sm center d-block mr-3 ml-5'>
                                 <Ice fill="#FFF" width="25" height="25"/>
                             </div>
                         </div>

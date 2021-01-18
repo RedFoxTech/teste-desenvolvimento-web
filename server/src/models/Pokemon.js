@@ -11,29 +11,6 @@ const PokemonSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    imgName: {
-        type: String,
-        required: true,
-    },
-    generation: {
-        type: Number,
-        required: true
-    },
-    evolutionState: {
-        type: String,
-        required: true
-    },
-    evolved: {
-        type: Boolean,
-        required: true,
-    },
-    familyId: {
-        type: Number
-    },
-    crossGen: {
-        type: Boolean,
-        required: true
-    },
     type1: {
         type: String,
         required: true,
@@ -63,18 +40,6 @@ const PokemonSchema = new mongoose.Schema({
     totalStat: {
         type: Number,
     },
-    legendary: {
-        type: Boolean,
-        required: true,
-    },
-    aquireable: {
-        type: Boolean,
-        required: true,
-    },
-    spawns: {
-        type: Boolean,
-        required: true,
-    },
     regional: {
         type: Boolean,
         required: true,
@@ -95,15 +60,7 @@ const PokemonSchema = new mongoose.Schema({
         type: Boolean,
         required: true,
     },
-    isNoveau: {
-        type: Boolean,
-        required: true,
-    },
     notGettable: {
-        type: Boolean,
-        required: true,
-    },
-    futureEvolve: {
         type: Boolean,
         required: true,
     },
