@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0f0f0;
+  -webkit-font-smoothing: antialiased;
+  font-family: Roboto;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  background: rgb(19, 19, 19) !important;
+  border: 2px solid #333 !important;
+  color: #fff !important;  
+}
+
+input:focus {
+  box-shadow: 0 0 4px 0.2rem #ffc107 !important;
+}
