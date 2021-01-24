@@ -1,58 +1,45 @@
 # Teste de Desenvolvimento Web
 
-Olá Dev! Tudo bem?
+Teste para a vaga de desenvolvedor Web na RedFox Tech!
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
-
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
-
-Agora vamos ao teste!
+## Inicializando o projeto
+Para iniciar a aplicação usar o comando:
+#### `git clone -b kevinpagliuca https://github.com/KevinPagliuca/teste-desenvolvimento-web/`
 
 
-## Desafio Pokémon
-
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
-
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
-
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
+Para iniciar o servidor, entre na pasta teste-desenvolvimento-web e use o comando:
+#### `npm install && npm start`
 
 
-## Consigo fazer tudo isso?
+Iniciar o frontend, entre na pasta teste-desenvolvimento-web/web e use o comando:
+#### `npm install && npm start` 
 
-Consegue sim!
+## Banco de dados
+O banco de dados em SQLite foi criado com o auxílio de um query builder chamado Knex - http://knexjs.org/
 
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
+O arquivo Excel foi transformado em diversos arquivos JSONS contendo 50 Pokemons em cada um deles, para que conseguisse utilizar esses arquivos em JSON, para inserir os dados no banco de dados, e assim popular a tabela de Pokemons
 
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+## Backend
+Desenvolvido utilizando o NodeJs.
 
+## Frontend
+O Frontend foi desenvolvido em React e Bootstrap.
 
-## Por onde começo?
+### Api no front-end
+Consumindo a API do backend e PokeAPI com o Axios.
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+Foi feita 2 serviços para consumir as API's, pois na página de cadastro de Pokemons, a listagem dos Tipos deles são acessadas através da API do PokeAPI - https://pokeapi.co/api/v2/type
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
+## Funcionalidades
+Login - Usuário padrão: email: admin@admin.com // senha: admin 
+Registro - As senhas cadastradas no banco de dados são criptografadas pela biblioteca bcrypt no backend.
 
+Listagem de todos os pokemons do banco de dados na página inicial com paginação, mostrando 20 pokemons por página.
+Possibilidade de pesquisa em tempo real de pokemons cadastrados na página inicial, Pode-se pesquisar pelo Pokedex_Number, ou o próprio nome do Pokemon.
 
-## E o Layout??
+Se você estiver logado no sistema, será possível cadastrar novos Pokemons, basta acessar a página de cadastro de Pokemon. (/novoPokemon).
 
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
-
-
-## Regras
-
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
-
-
-## Só isso?
-
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
+## Obervações
+Esse foi um grande desafio para mim, apesar do tempo curto, tive alguns problemas relacionado a energia em meu bairro (2 dias) que acabou me fazendo perder muito tempo.
+Tive muito problema para utilizar o Bootstrap e entender seu funcionamento quando estava codando o frontend, pois não costumo utilizar bootstrap.
+Faltou algumas funcionalidades que gostaria de colocar no sistema, como o de editar um pokemon. (Está feito no backend).

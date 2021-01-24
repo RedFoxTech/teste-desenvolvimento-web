@@ -1,0 +1,34 @@
+#Registro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 1.5rem 0;
+    background: rgb(24, 25, 26);
+}
+
+#Registro main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 12px 5.0rem;
+    background: rgb(33, 33, 33);
+    box-shadow: 0 0 1.2rem 0.2rem rgb(15, 16, 17);
+    border-radius: 8px;
+}
+
+#Registro main .form-registro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 380px;
+    padding: 1rem;
+}
+
+.form-registro button {
+    font-size: 1.2rem;
+}
