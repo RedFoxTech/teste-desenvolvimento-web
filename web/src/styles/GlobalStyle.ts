@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         background-image: url(${PokemonBackground});
         background-size: cover;
-        background-position: center;
+        background-position: center -1px;
         background-repeat: no-repeat;
         background-attachment: fixed; 
     }
