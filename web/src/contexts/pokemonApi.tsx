@@ -15,6 +15,7 @@ const PokemonApiContext = createContext({} as IPokemonApiContext);
 
 
 function PokemonApiProvider({ children }: IPokemonProvideProps) {
+    const [ theresErrorWhileGettingData, setTheresErrorWhileGettingData ] = useState<boolean>(false);
     const [ isPokemonsLoaded, setIsPokemonsLoaded ] = useState<boolean>(false);
     const [ arrayOfPokemons, setArrayOfPokemons ] = useState<[]>([]);
 
@@ -22,12 +23,14 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
     useEffect(() => {
         getData();
     }, []);
-    
+
     async function getData(){
 
         await axios.get('http://localhost:3030/getPokemons').then( resp => { 
             setIsPokemonsLoaded(true);
             setArrayOfPokemons(resp.data);
+        }).catch( err => {
+            setTheresErrorWhileGettingData(true);
         });
     }
     
