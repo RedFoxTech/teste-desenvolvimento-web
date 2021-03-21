@@ -11,6 +11,16 @@ async function updatePokemon(req, resp) {
     })
 }
 
+async function deletePokemon(req,resp) {
+    const { id } = req.params;
+    await firebaseDatabase.ref(`/Pokemons/${id}`).remove();
+
+    resp.send({
+        message: "Done"
+    });
+}
+
 export { 
-    updatePokemon
+    updatePokemon,
+    deletePokemon
 }
