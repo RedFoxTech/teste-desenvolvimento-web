@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     #root { 
-        background: #00000056;
+        background: #00000076;
     }
 `
 
