@@ -42,8 +42,20 @@ async function deletePokemon(req, resp) {
     });
 }
 
+async function getPokemonData(req, resp) { 
+    const { id } = req.params;
+    
+    firebaseDatabase.ref(`/Pokemons/${id}`).on('value', ( pokemonDatabase ) => {
+        const pokemonObjectReturn = pokemonDatabase.val();
+        
+        if( pokemonObjectReturn === null ) return resp.sendStatus(404)
+        resp.send(pokemonObjectReturn);
+    })
+}
+
 export { 
     index,
     updatePokemon,
     deletePokemon,
+    getPokemonData
 }
