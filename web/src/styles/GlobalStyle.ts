@@ -12,6 +12,13 @@ const GlobalStyle = createGlobalStyle`
     html, body, #root {
         width: 100%;
         min-height: 100vh;
+
+        :root{ 
+            --white-opacity: #ffffff9f;
+            --light-blue: #50C0FA;
+            --dark-blue: #28AAED;
+        }
+
     }
 
     body {
