@@ -1,27 +1,41 @@
-import { createContext, ReactNode, useEffect } from 'react';
+import axios from 'axios';
+import { createContext, ReactNode, useEffect, useState } from 'react';
+
+interface IPokemonApiContext {
+    isPokemonsLoaded: boolean;
+    arrayOfPokemons: [];
+}
 
 interface IPokemonProvideProps{
     children: ReactNode;
 }
 
-const PokemonApiContext = createContext({});
+const PokemonApiContext = createContext({} as IPokemonApiContext);
 
 
 
 function PokemonApiProvider({ children }: IPokemonProvideProps) {
-
+    const [ isPokemonsLoaded, setIsPokemonsLoaded ] = useState<boolean>(false);
+    const [ arrayOfPokemons, setArrayOfPokemons ] = useState<[]>([]);
 
 
     useEffect(() => {
-        getData()
-    })
+        getData();
+    }, []);
+    
+    async function getData(){
 
-    function getData(){
-
+        await axios.get('http://localhost:3030/getPokemons').then( resp => { 
+            setIsPokemonsLoaded(true);
+            setArrayOfPokemons(resp.data);
+        });
     }
     
     return (
-        <PokemonApiContext.Provider value={{}}>
+        <PokemonApiContext.Provider value={{
+            isPokemonsLoaded,
+            arrayOfPokemons
+        }}>
 
             {children}
             
