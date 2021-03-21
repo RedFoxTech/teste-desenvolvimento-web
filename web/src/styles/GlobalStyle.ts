@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
         :root{ 
             --white-opacity: #ffffff9f;
             --light-blue: #50C0FA;
+            --lighter-blue: #C9EDFF;
             --dark-blue: #28AAED;
         }
 
