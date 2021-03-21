@@ -1,5 +1,27 @@
 import firebaseDatabase from '../database/connection';
 
+async function index(req, resp) {
+
+    return firebaseDatabase.ref(`/Pokemons`).on('value', ( pokemonsDatabase) => {    
+        let pokemonRow = undefined;
+        const PokemonsList = [];  
+
+        for( pokemonRow in pokemonsDatabase.val() ) {
+
+            if(pokemonRow === "Row"){
+                // Não fazer nada caso a condição seja verdadeira
+            } else {
+                // Pegando objeto conforme seu numero da linha/id no banco de dados
+                const pokemonObj = pokemonsDatabase.val()[`${pokemonRow}`];
+                PokemonsList.push(pokemonObj);
+            }
+        }
+
+        resp.send(PokemonsList)
+            
+    })
+}
+
 async function updatePokemon(req, resp) {
     const { id } = req.params;
     const  pokemonUpdateInfos = req.body;
@@ -11,7 +33,7 @@ async function updatePokemon(req, resp) {
     })
 }
 
-async function deletePokemon(req,resp) {
+async function deletePokemon(req, resp) {
     const { id } = req.params;
     await firebaseDatabase.ref(`/Pokemons/${id}`).remove();
 
@@ -21,6 +43,7 @@ async function deletePokemon(req,resp) {
 }
 
 export { 
+    index,
     updatePokemon,
-    deletePokemon
+    deletePokemon,
 }
