@@ -10,7 +10,7 @@ interface IPokemonProps {
     DEF: number;
     "Evolution Stage": number;
     Evolved: 0 | 1;
-    FamilyId: number;
+    FamilyID: number;
     "Future Evolve": 0 | 1;
     Generation: number;
     Hatchable: number;
@@ -25,11 +25,13 @@ interface IPokemonProps {
     Regional: 0 | 1;
     Row: number;
     STA: number;
-    "STA TOTAL": number;
-    Shiny: number;
+    "STAT TOTAL": number;
+    Shiny: 0 | 1;
     Spawns: 0 | 1;
     "Type 1": string;
+    "Type 2": string;
     "Weather 1": string;
+    "Weather 2": string;
 }
 
 interface IPokemonApiContext {
@@ -39,7 +41,7 @@ interface IPokemonApiContext {
     pokemonSearchedById: {} | undefined
     getPokemonById: (id: number) => void;
     searchPokemon: (value: string, filter: string) => IPokemonProps[];
-
+    updatePokémon: (pockemonObj: IPokemonProps) => void;
 }
 
 interface IPokemonProvideProps {
@@ -73,7 +75,6 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
         });
     }
 
-
     async function getPokemonById(id: number) {
         await axios.get(`http://localhost:3030/getPokemon/${id}`).then(resp => {
             setPokemonSearchedById(resp.data);
@@ -81,13 +82,13 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
     }
 
     function searchPokemon(value: string, filter: string) {
-        const pokemonsFounded:IPokemonProps[] = [];
+        const pokemonsFounded: IPokemonProps[] = [];
 
-        arrayOfPokemons?.forEach((pokemon: any)=> {
+        arrayOfPokemons?.forEach((pokemon: any) => {
             const filterValue = pokemon[filter].toString().toLowerCase();
             const valueToSearch = value.toLowerCase();
 
-            if(filterValue?.includes(valueToSearch)) {
+            if (filterValue?.includes(valueToSearch)) {
                 pokemonsFounded.push(pokemon)
             }
 
@@ -96,6 +97,15 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
         return pokemonsFounded;
     }
 
+    async function updatePokémon(pokemonObj: any) {
+        await axios.post(`http://localhost:3030/updatePokemon/${pokemonObj.Row}`, {
+            ...pokemonObj
+        }).then( () => {
+
+            getData();
+            
+        });
+    }
 
     return (
         <PokemonApiContext.Provider value={{
@@ -104,7 +114,8 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
             theresErrorWhileGettingData,
             pokemonSearchedById,
             getPokemonById,
-            searchPokemon
+            searchPokemon,
+            updatePokémon
         }}>
 
             {children}
