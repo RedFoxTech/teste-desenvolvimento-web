@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { createContext, ReactNode, useEffect, useState } from 'react';
+import { createContext, Profiler, ReactNode, useEffect, useState } from 'react';
 
 interface IPokemonProps {
     "100% CP @ 39": number;
@@ -42,7 +42,8 @@ interface IPokemonApiContext {
     getPokemonById: (id: number) => void;
     searchPokemon: (value: string, filter: string) => IPokemonProps[];
     updatePokemon: (pockemonObj: IPokemonProps) => void;
-    deletePokemon: (id: number) => void
+    deletePokemon: (id: number) => void;
+    newPokemon: (pokemonObj: any) => void
 }
 
 interface IPokemonProvideProps {
@@ -54,17 +55,17 @@ const PokemonApiContext = createContext({} as IPokemonApiContext);
 
 
 
+
 function PokemonApiProvider({ children }: IPokemonProvideProps) {
     const [theresErrorWhileGettingData, setTheresErrorWhileGettingData] = useState<boolean>(false);
     const [isPokemonsLoaded, setIsPokemonsLoaded] = useState<boolean>(false);
     const [arrayOfPokemons, setArrayOfPokemons] = useState<IPokemonProps[]>();
     const [pokemonSearchedById, setPokemonSearchedById] = useState<{}>();
 
-
     useEffect(() => {
         getData();
     }, []);
-
+        
     async function getData() {
 
         await axios.get('http://localhost:3030/getPokemons').then(resp => {
@@ -100,17 +101,43 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
     async function updatePokemon(pokemonObj: any) {
         await axios.post(`http://localhost:3030/updatePokemon/${pokemonObj.Row}`, {
             ...pokemonObj
-        }).then( () => {
+        }).then(() => {
 
             getData();
-            
+
         });
     }
 
     async function deletePokemon(id: number) {
-        await axios.delete(`http://localhost:3030/deletePokemon/${id}`).then( () => {
+        await axios.delete(`http://localhost:3030/deletePokemon/${id}`).then(() => {
             getData()
         })
+    }
+
+    async function newPokemon(pokemonObj: any) {
+        let isEverythingClean = true;
+
+        
+        for (let key in pokemonObj as any) {
+            const pokemonInfo = pokemonObj[key];
+
+            if (pokemonInfo === undefined) return isEverythingClean = false;
+        }
+
+        if (arrayOfPokemons && isEverythingClean) {
+            const RowToNewPokemon = arrayOfPokemons[arrayOfPokemons.length - 1].Row + 1;
+
+            const newPokemonObj = {
+                ...pokemonObj,
+                Row: RowToNewPokemon
+            }
+
+            await axios.post("http://localhost:3030/createPokemon", {
+                newPokemonObj
+            }).then(() => {
+                getData();
+            })
+        }
     }
 
     return (
@@ -122,7 +149,8 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
             getPokemonById,
             searchPokemon,
             updatePokemon,
-            deletePokemon
+            deletePokemon,
+            newPokemon
         }}>
 
             {children}
