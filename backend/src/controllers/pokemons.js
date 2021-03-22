@@ -53,9 +53,20 @@ async function getPokemonData(req, resp) {
     })
 }
 
+async function createPokemon(req, resp) { 
+    const { newPokemonObj } = req.body;
+
+    await firebaseDatabase.ref(`/Pokemons/${newPokemonObj.Row}`).set(newPokemonObj);
+    return resp.send({
+        message:"Done!"
+    })
+   
+    
+}
 export { 
     index,
     updatePokemon,
     deletePokemon,
-    getPokemonData
+    getPokemonData,
+    createPokemon
 }
