@@ -2,7 +2,18 @@ import { Container, MobileButtonsContainer, MobileContent } from "../styles/page
 import { BiSearchAlt, BiListPlus } from "react-icons/bi";
 import { IoIosList } from "react-icons/io";
 
-function Home() {
+interface IHomeProps { 
+    history: {
+        push: (path: string) => void; 
+    }
+}
+
+function Home(props: IHomeProps) {
+
+    function handleNavigate(path: string) {
+        props.history.push(path);
+    }
+    
     return (
         <Container>
             <MobileContent>
@@ -11,17 +22,17 @@ function Home() {
                 <MobileButtonsContainer>
 
 
-                    <div>
+                    <div onClick={() => handleNavigate("/search")}>
                         <BiSearchAlt />
                         Pesquisar
                     </div>
 
-                    <div>
+                    <div onClick={() => handleNavigate("/addPokemon")}>
                         <BiListPlus />
                         Adicionar
                     </div>
 
-                    <div>
+                    <div onClick={() => handleNavigate("/list-of-pokemons")}>
                         <IoIosList />
                         Lista
                     </div>
