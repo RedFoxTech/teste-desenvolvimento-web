@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { createContext, Profiler, ReactNode, useEffect, useState } from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
 
 interface IPokemonProps {
     "100% CP @ 39": number;
@@ -77,10 +77,11 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
     }
 
     async function getPokemonById(id: number) {
-        await axios.get(`http://localhost:3030/getPokemon/${id}`).then(resp => {
-            setPokemonSearchedById(resp.data);
+        await axios.get(`http://localhost:3030/getData/${id}`).then(resp => {
+            setPokemonSearchedById(resp.data as IPokemonProps);
         });
     }
+
 
     function searchPokemon(value: string, filter: string) {
         const pokemonsFounded: IPokemonProps[] = [];
