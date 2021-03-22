@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+
     > h1 {
         font-family: "Inter";
         text-align: center;
@@ -50,8 +53,16 @@ const SearchAreaContainer = styled.div`
         padding-left: 10%
     }
 
+
 `
+
+const ResultContainer = styled.div`
+    width: 100%;
+    flex-grow: 1;
+`
+
 export { 
     Container,
-    SearchAreaContainer
+    SearchAreaContainer,
+    ResultContainer
 }

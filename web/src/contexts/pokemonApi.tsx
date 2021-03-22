@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
 import api from "../services/server";
 
-interface IPokemonProps {
+export interface IPokemonProps {
     "100% CP @ 39": number;
     "100% CP @ 40": number;
     ATK: number;
