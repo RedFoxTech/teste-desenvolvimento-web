@@ -1,10 +1,10 @@
 import firebaseDatabase from '../database/connection';
 
 async function index(req, resp) {
+    const PokemonsList = [];  
 
-    return firebaseDatabase.ref(`/Pokemons`).on('value', ( pokemonsDatabase) => {    
+    await firebaseDatabase.ref(`/Pokemons`).once('value', ( pokemonsDatabase) => {    
         let pokemonRow = undefined;
-        const PokemonsList = [];  
 
         for( pokemonRow in pokemonsDatabase.val() ) {
 
@@ -16,10 +16,10 @@ async function index(req, resp) {
                 PokemonsList.push(pokemonObj);
             }
         }
-
-        resp.send(PokemonsList)
-            
     })
+
+    resp.send(PokemonsList);
+
 }
 
 async function updatePokemon(req, resp) {
