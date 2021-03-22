@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
 import Lottie from "react-lottie";
+import { BiSearchAlt } from 'react-icons/bi'
 import { PokemonApiContext, IPokemonProps } from "../contexts/pokemonApi";
 import { Container, ResultContainer, SearchAreaContainer } from "../styles/pages/search";
-import PikachuAnimation from "../images/pikachu-animation.json" 
+import PikachuAnimation from "../images/pikachu-animation.json"
+import PokemonItem from "../components/pokemonItem";
 
 const selectValues = [
     "100% CP @ 39",
@@ -43,34 +45,44 @@ function Search() {
     const [listOfPokemonsSearched, setListOfPokemonsSearched] = useState<IPokemonProps[]>([]);
     const { searchPokemon } = useContext(PokemonApiContext);
 
-    function handleOnChange(value: string){
-        if(value === '') return setListOfPokemonsSearched([]);
-        setInputValue(value);
+    function handleSearch() {
+
         const pokemonsFounded = searchPokemon(inputValue, selectValue);
-        setListOfPokemonsSearched(pokemonsFounded)
+        setListOfPokemonsSearched(pokemonsFounded);
     }
+    // alert(listOfPokemonsSearched.length)
 
     return (
         <Container>
             <h1> Pesquisar</h1>
             <SearchAreaContainer>
-                <input type="text" placeholder="pesquise..." onChange={event => handleOnChange(event.target.value)}/>
-                <select onChange={(event) => setSelectValue(event.target.value)  }>
-                    {selectValues.map( value => (
+                <button onClick={handleSearch}> Pesquisar <BiSearchAlt /> </button>
+                <input type="text" placeholder="pesquise..." value={inputValue} onChange={event => setInputValue(event.target.value)} />
+
+                <select onChange={(event) => setSelectValue(event.target.value)}>
+                    <option> Selecione </option>
+
+                    {selectValues.map(value => (
                         <option value={value} key={value}> {value} </option>
                     ))}
                 </select>
+
             </SearchAreaContainer>
 
             <ResultContainer>
                 {
-                    listOfPokemonsSearched?.length !== 0 ? null : (
-                        <Lottie options={{
-                            animationData: PikachuAnimation
-                        }}>
+                    listOfPokemonsSearched?.length !== 0 ?
+                        listOfPokemonsSearched.map((pokemonObj) => (
+                            <PokemonItem pokemonObj={pokemonObj} key={pokemonObj["Row"]} />
 
-                        </Lottie>
-                    )
+                        ))
+                        : (
+                            <Lottie options={{
+                                animationData: PikachuAnimation
+                            }}>
+
+                            </Lottie>
+                        )
                 }
             </ResultContainer>
         </Container>

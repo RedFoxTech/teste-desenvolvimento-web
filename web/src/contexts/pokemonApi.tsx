@@ -88,7 +88,7 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
         const pokemonsFounded: IPokemonProps[] = [];
 
         arrayOfPokemons?.forEach((pokemon: any) => {
-            const filterValue = pokemon[filter].toString().toLowerCase();
+            const filterValue = String(pokemon[filter]).toString().toLowerCase();
             const valueToSearch = value.toLowerCase();
 
             if (filterValue?.includes(valueToSearch)) {
@@ -96,7 +96,6 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
             }
 
         });
-
         return pokemonsFounded;
     }
 

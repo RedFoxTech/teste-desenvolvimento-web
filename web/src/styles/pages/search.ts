@@ -15,7 +15,7 @@ const Container = styled.div`
 const SearchAreaContainer = styled.div`
     height: 60px;
     width: 90vw;
-    margin: 0 auto;
+    margin: 40px auto;
 
     display: flex;
     flex-direction: column-reverse;
@@ -44,13 +44,41 @@ const SearchAreaContainer = styled.div`
     }
 
     > select {
-        width: 55%;
-        height: 30px;
+        width: 100%;
+        height: 35px;
+        font-size: 1.3rem;
         border-radius: 8px;
-        background: var(--dark-blue);
-        color: #ffffff;
+        background: var(--lighter-blue);
+        color: var(--dark-blue);
         outline: none;
-        padding-left: 10%
+        padding-left: 10%;
+        margin-bottom: 5px;
+    }
+
+
+    > button { 
+        margin: 10px 0;
+        height: 35px;
+        padding: 3px 7px;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        font-family: "Nunito";
+        background: var(--lighter-blue);
+        outline: none;
+
+        color: var(--dark-blue);
+
+        font-weight: 600 ;
+
+        > svg {
+            margin: 0 4px;
+        }
+
+
     }
 
 
@@ -59,6 +87,7 @@ const SearchAreaContainer = styled.div`
 const ResultContainer = styled.div`
     width: 100%;
     flex-grow: 1;
+    
 `
 
 export { 

@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
         min-height: 100vh;
 
         :root{ 
-            --white-opacity: #ffffff9f;
+            --white-opacity: rgba(255,255,255,.8);
             --light-blue: #50C0FA;
             --lighter-blue: #C9EDFF;
             --dark-blue: #28AAED;
