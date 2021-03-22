@@ -41,7 +41,8 @@ interface IPokemonApiContext {
     pokemonSearchedById: {} | undefined
     getPokemonById: (id: number) => void;
     searchPokemon: (value: string, filter: string) => IPokemonProps[];
-    updatePokémon: (pockemonObj: IPokemonProps) => void;
+    updatePokemon: (pockemonObj: IPokemonProps) => void;
+    deletePokemon: (id: number) => void
 }
 
 interface IPokemonProvideProps {
@@ -63,7 +64,6 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
     useEffect(() => {
         getData();
     }, []);
-
 
     async function getData() {
 
@@ -97,7 +97,7 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
         return pokemonsFounded;
     }
 
-    async function updatePokémon(pokemonObj: any) {
+    async function updatePokemon(pokemonObj: any) {
         await axios.post(`http://localhost:3030/updatePokemon/${pokemonObj.Row}`, {
             ...pokemonObj
         }).then( () => {
@@ -105,6 +105,12 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
             getData();
             
         });
+    }
+
+    async function deletePokemon(id: number) {
+        await axios.delete(`http://localhost:3030/deletePokemon/${id}`).then( () => {
+            getData()
+        })
     }
 
     return (
@@ -115,7 +121,8 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
             pokemonSearchedById,
             getPokemonById,
             searchPokemon,
-            updatePokémon
+            updatePokemon,
+            deletePokemon
         }}>
 
             {children}
