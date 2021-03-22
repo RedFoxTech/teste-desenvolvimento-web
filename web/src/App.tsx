@@ -1,19 +1,22 @@
+import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
 import { PokemonApiProvider } from "./contexts/pokemonApi";
-import Home from "./pages/Home";
+import Routes from "./routes";
 import { GlobalStyle } from "./styles/GlobalStyle";
 
 function App() {
   return (
     <div>
 
-      <PokemonApiProvider>
+      <BrowserRouter>
+        <PokemonApiProvider>
 
-        <Header />
-        <GlobalStyle />
-        <Home />
+          <Header />
+          <GlobalStyle />
+          <Routes />
 
-      </PokemonApiProvider>
+        </PokemonApiProvider>
+      </BrowserRouter>
     </div>
   );
 }
