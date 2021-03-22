@@ -111,7 +111,7 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
     }
 
     async function deletePokemon(id: number) {
-        await api.delete(`http://localhost:3030/deletePokemon/${id}`).then(() => {
+        await api.delete(`/deletePokemon/${id}`).then(() => {
             getData()
         })
     }
