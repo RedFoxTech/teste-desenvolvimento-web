@@ -7,6 +7,7 @@ function Routes() {
         <Switch> 
             <Route path="/" exact component={Home}/>
             <Route path="/search" component={Search}/>
+            <Redirect from="*" to="/"/>
         </Switch>
     )
 }
