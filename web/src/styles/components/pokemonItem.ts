@@ -15,12 +15,18 @@ const Container = styled.div`
         margin-right: 5px
     }
 
+    @media(min-width: 1024px){
+        justify-content: center;
+        gap: 20px
+    }
+
 `
 const InfosArea = styled.div`
     display: flex;
     background: var(--white-opacity);
     width: 75vw;
-    overflow: hidden;
+    overflow: scroll;
+    overflow-y: hidden;
     border-radius: 10px;
 
     > main {
@@ -28,7 +34,7 @@ const InfosArea = styled.div`
             display: flex;
             padding: 2px;
             > h3 {
-                min-width: 130px;
+                min-width: 170px;
                 height: 30px;
                 text-align: center;
                 font-family: "Nunito"
@@ -45,7 +51,24 @@ const InfosArea = styled.div`
         }
     }
 
-  
+    /* Removendo scrollbar scrollbar */
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media(min-width: 1024px){
+        
+        &::-webkit-scrollbar {
+            display: inherit;
+            width: 5px;
+            height: 5px
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--dark-blue);
+        }
+    }
     
 `
 
