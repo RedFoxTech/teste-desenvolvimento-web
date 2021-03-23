@@ -1,6 +1,8 @@
 import { Container } from "../styles/pages/pokemonData"
 
-function PokemonData(){ 
+function PokemonData(props: any){ 
+    console.log(props)
+    
     return (
         <Container>
             

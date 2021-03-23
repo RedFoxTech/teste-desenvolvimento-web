@@ -1,7 +1,7 @@
 import { Switch, Route, Redirect} from "react-router-dom";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
-import PokemonData from "./pages/Search";
+import PokemonData from "./pages/PokemonData";
 
 function Routes() {
     return (
