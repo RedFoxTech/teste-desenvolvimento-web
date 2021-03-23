@@ -44,7 +44,7 @@ interface IPokemonApiContext {
     updatePokemon: (pockemonObj: IPokemonProps) => void;
     deletePokemon: (id: number) => void;
     newPokemon: (pokemonObj: any) => void;
-    filterArrayOfPokemonsByProp : (propToFilter: string) => void;
+    filterArrayOfPokemonsByProp: (propToFilter: string) => void;
 }
 
 interface IPokemonProvideProps {
@@ -120,10 +120,13 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
         let isEverythingClean = true;
 
 
-        for (let key in pokemonObj as any) {
+        for (let key in pokemonObj) {
             const pokemonInfo = pokemonObj[key];
 
-            if (pokemonInfo === undefined) return isEverythingClean = false;
+            if (pokemonInfo === undefined) {
+                isEverythingClean = false;
+                return 
+            }
         }
 
         if (arrayOfPokemons && isEverythingClean) {
@@ -142,19 +145,19 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
         }
     }
 
-    function filterArrayOfPokemonsByProp( propToFilter: string) {
-        if(!arrayOfPokemons) return;
+    function filterArrayOfPokemonsByProp(propToFilter: string) {
+        if (!arrayOfPokemons) return;
         const sortableList = arrayOfPokemons;
-        sortableList.sort( (a: any, b: any)=> {
-                if ( a[propToFilter] > b[propToFilter] ){
+        sortableList.sort((a: any, b: any) => {
+            if (a[propToFilter] > b[propToFilter]) {
 
-                    return 1 
-                } 
-                if( a[propToFilter] < b[propToFilter] ) {
+                return 1
+            }
+            if (a[propToFilter] < b[propToFilter]) {
 
-                    return -1
-                }
-                return 0
+                return -1
+            }
+            return 0
 
         });
 
