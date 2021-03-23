@@ -12,6 +12,14 @@ const Container = styled.div`
         font-size: 3.4rem;
         margin: 5vh;
     }
+
+     > p{ 
+        text-align: center;
+        font-family: "Nunito";
+        font-weight: 600;
+        color: var(--yellow);
+     }
+
     
 `
 
@@ -27,30 +35,30 @@ const ButtonsArea = styled.div`
         display: flex;
         align-items: center;
         justify-content: space-around;
+        background: none;
         
         font-size: 1.3rem;
         padding: 2px 5px;
         font-family: "Nunito";
         font-weight: 600;
         margin: 5px;
-        border-radius: 5px;
         border: 0;
         outline: 0;
-        color: var(--grey);
+        border-bottom: 1px solid;
 
         &.update {
-            background: #FFF735;
+            color: var(--yellow);
         }
 
         &.save{
-            background: #61DD27;
-            color: var(--white-opacity)
+            color: var(--green);
+
 
         }
 
         &.delete{
-            background: #D60000;
-            color: var(--white-opacity)
+            color: var(--red);
+
 
         }
     }
@@ -112,6 +120,7 @@ const InfosArea = styled.div`
         }
     }
 `
+
 
 export {
     Container,
