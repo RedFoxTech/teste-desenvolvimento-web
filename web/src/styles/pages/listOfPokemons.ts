@@ -16,7 +16,7 @@ const Container = styled.div`
         margin: 20px;
         text-align: center;
 
-        button { 
+        > button { 
              padding: 3px 8px;
              margin: 10px;
              border: 0;
@@ -28,7 +28,14 @@ const Container = styled.div`
              &:disabled {
                  background: #ffffff60
              }
-             
+        }
+
+        > select {
+            outline: none;
+            border: 1px solid var(--dark-blue);
+            background: var(--white);
+            border-radius: 5px;
+            color: var(--dark-blue)
         }
     }
 `
