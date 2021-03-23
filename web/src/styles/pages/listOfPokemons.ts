@@ -15,6 +15,21 @@ const Container = styled.div`
         font-family: "Nunito";
         margin: 20px;
         text-align: center;
+
+        button { 
+             padding: 3px 8px;
+             margin: 10px;
+             border: 0;
+             color: var(--dark-blue);
+             border-radius: 5px;
+             background: var(--white);
+            outline: none;
+
+             &:disabled {
+                 background: #ffffff60
+             }
+             
+        }
     }
 `
 

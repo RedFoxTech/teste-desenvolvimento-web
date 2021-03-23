@@ -12,7 +12,7 @@ interface IListOfPokemons {
 }
 
 function ListOfPokemons(props: IListOfPokemons) {
-    const { arrayOfPokemons } = useContext(PokemonApiContext);
+    const { arrayOfPokemons, filterArrayOfPokemonsByProp } = useContext(PokemonApiContext);
     const [minPositionAtArray, setMinPositionAtArray] = useState<number>(0);
     const [currentPokemons, setCurrentPokemons] = useState<[]>();
 
@@ -20,21 +20,39 @@ function ListOfPokemons(props: IListOfPokemons) {
 
 
     function getElements() {
+        filterArrayOfPokemonsByProp("Name");
         const listToShow = arrayOfPokemons?.filter((pokemon, index) => {
             return index >= minPositionAtArray && index <= minPositionAtArray + 35;
         });
 
-        setCurrentPokemons(listToShow as any)
+        setCurrentPokemons(listToShow as any);
     }
 
     return (
         <Container>
             {currentPokemons && <h1> Lista de Pokemons </h1>}
-            
-            
-            {currentPokemons && <p> {minPositionAtArray + 36} de {arrayOfPokemons?.length}</p> }
 
-            
+
+            {currentPokemons &&
+                <p>
+                    <button
+                        disabled={minPositionAtArray === 0}
+                        onClick={() => setMinPositionAtArray(minPositionAtArray - 35)}
+                    >
+                        Anterior
+                    </button>
+
+                    {minPositionAtArray + 36} de {arrayOfPokemons?.length}
+                    <button
+                        disabled={arrayOfPokemons ? ( minPositionAtArray >=  arrayOfPokemons.length) : true }
+                        onClick={() => setMinPositionAtArray(minPositionAtArray + 35)}
+                    >
+                        Próxima
+                    </button>
+                </p>
+            }
+
+
 
             {
                 currentPokemons ?
