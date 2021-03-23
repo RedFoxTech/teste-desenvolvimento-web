@@ -13,55 +13,62 @@ interface IListOfPokemons {
 
 function ListOfPokemons(props: IListOfPokemons) {
     const { arrayOfPokemons, filterArrayOfPokemonsByProp } = useContext(PokemonApiContext);
-    const [minPositionAtArray, setMinPositionAtArray] = useState<number>(0);
-    const [currentPokemons, setCurrentPokemons] = useState<[]>();
 
-    useEffect(getElements, [minPositionAtArray, arrayOfPokemons])
+    const [currentPage, setCurrentPage] = useState(0);
+
+    const [indexStartCount, setIndexStartCount] = useState<number>(0);
+    const numberOfPokemonsByPage = 20;
+    const totalPages = arrayOfPokemons ? Math.ceil(arrayOfPokemons.length / numberOfPokemonsByPage) : 0;
+
+    useEffect(() => {
+
+    }, [indexStartCount, arrayOfPokemons, currentPage])
 
 
-    function getElements() {
-        filterArrayOfPokemonsByProp("Name");
-        const listToShow = arrayOfPokemons?.filter((pokemon, index) => {
-            return index >= minPositionAtArray && index <= minPositionAtArray + 35;
-        });
 
-        setCurrentPokemons(listToShow as any);
+    const renderElements = () => {
+        const ret = [];
+        const initialItem = currentPage * numberOfPokemonsByPage;
+        for (let i = initialItem; i <= initialItem + numberOfPokemonsByPage; i++) {
+            const pokemonObj = arrayOfPokemons && arrayOfPokemons[i];
+            if (pokemonObj) {
+                ret.push(<PokemonItem pokemonObj={pokemonObj} push={props.history.push} key={i} />);
+            }
+        }
+        return ret;
     }
 
     return (
         <Container>
-            {currentPokemons && <h1> Lista de Pokemons </h1>}
+            <h1> Lista de Pokemons </h1>
 
 
-            {currentPokemons &&
-                <p>
-                    <button
-                        disabled={minPositionAtArray === 0}
-                        onClick={() => setMinPositionAtArray(minPositionAtArray - 35)}
-                    >
-                        Anterior
-                    </button>
+            <p>
+                <button
+                    disabled={currentPage === 0}
+                    onClick={() => {
+                        setCurrentPage(currentPage - 1);
+                    }}>anterior</button>
 
-                    {minPositionAtArray + 36} de {arrayOfPokemons?.length}
-                    <button
-                        disabled={arrayOfPokemons ? ( minPositionAtArray >=  arrayOfPokemons.length) : true }
-                        onClick={() => setMinPositionAtArray(minPositionAtArray + 35)}
-                    >
-                        Próxima
-                    </button>
-                </p>
-            }
-
+                    { currentPage + 1 } de { totalPages }
+                    
+                <button
+                    disabled={currentPage === totalPages - 1}
+                    onClick={() => {
+                        setCurrentPage(currentPage + 1);
+                    }}>proximo</button>
+            </p>
 
 
             {
-                currentPokemons ?
-                    currentPokemons.map((pokemonObj: any) => <PokemonItem pokemonObj={pokemonObj} push={props.history.push} key={pokemonObj.Row} />)
-                    :
-                    <Lottie options={{
-                        animationData: LoadingAnimation
-                    }} />
+                renderElements()
             }
+
+
+            {/* {
+                currentPokemons?.map((pokemonObj: any) => <PokemonItem pokemonObj={pokemonObj} push={props.history.push} key={pokemonObj.Row} />)
+
+            } */}
         </Container>
     )
 }
