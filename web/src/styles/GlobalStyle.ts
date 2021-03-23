@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
             --light-blue: #50C0FA;
             --lighter-blue: #C9EDFF;
             --dark-blue: #28AAED;
+            --grey: #7B7B7B
         }
 
     }
