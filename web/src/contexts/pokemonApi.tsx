@@ -37,7 +37,6 @@ export interface IPokemonProps {
 interface IPokemonApiContext {
     isPokemonsLoaded: boolean;
     arrayOfPokemons: IPokemonProps[] | undefined;
-    theresErrorWhileGettingData: boolean;
     pokemonSearchedById: {} | undefined
     getPokemonById: (id: number) => void;
     searchPokemon: (value: string, filter: string) => IPokemonProps[];
@@ -58,7 +57,6 @@ const PokemonApiContext = createContext({} as IPokemonApiContext);
 
 
 function PokemonApiProvider({ children }: IPokemonProvideProps) {
-    const [theresErrorWhileGettingData, setTheresErrorWhileGettingData] = useState<boolean>(false);
     const [isPokemonsLoaded, setIsPokemonsLoaded] = useState<boolean>(false);
     const [arrayOfPokemons, setArrayOfPokemons] = useState<IPokemonProps[]>();
     const [pokemonSearchedById, setPokemonSearchedById] = useState<{}>();
@@ -168,7 +166,6 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
         <PokemonApiContext.Provider value={{
             isPokemonsLoaded,
             arrayOfPokemons,
-            theresErrorWhileGettingData,
             pokemonSearchedById,
             getPokemonById,
             searchPokemon,
