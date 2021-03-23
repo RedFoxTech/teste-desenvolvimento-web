@@ -71,7 +71,7 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
             setIsPokemonsLoaded(true);
             setArrayOfPokemons(resp.data);
         }).catch(err => {
-            setTheresErrorWhileGettingData(true);
+            console.log(err)
         });
     }
 
