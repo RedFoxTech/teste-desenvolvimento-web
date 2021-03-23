@@ -11,14 +11,13 @@ function PokemonItem(props: IPokemonItemProps) {
     const [arrayOfTitlesAndValues, setArrayOfTitlesAndValues] = useState<[[string, string | number]]>();;
     const [mainTitles, setMainTitles] = useState<[[string, string | number]]>();
 
-    useEffect(getTitlesAndValues,[])
+    useEffect(getTitlesAndValues,[props.pokemonObj])
 
     function getTitlesAndValues() {
         let titlesRet: any = [];
         let mainTitlesRet: any = [];
 
         for (let title in props.pokemonObj) {
-
             if (title === "Row" || title === "Name") {
                 mainTitlesRet.push([title, props.pokemonObj[title]]);
 
