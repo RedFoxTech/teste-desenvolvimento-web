@@ -59,7 +59,6 @@ function Search(props: ISearchProps) {
         const pokemonsFounded = searchPokemon(inputValue, selectValue);
         setListOfPokemonsSearched(pokemonsFounded);
     }
-    // alert(listOfPokemonsSearched.length)
 
     return (
         <Container>
