@@ -27,12 +27,12 @@ function Home(props: IHomeProps) {
                         Pesquisar
                     </div>
 
-                    <div onClick={() => handleNavigate("/addPokemon")}>
+                    <div onClick={() => handleNavigate("/addNewPokemon")}>
                         <BiListPlus />
                         Adicionar
                     </div>
 
-                    <div onClick={() => handleNavigate("/list-of-pokemons")}>
+                    <div onClick={() => handleNavigate("/listOfPokemons")}>
                         <IoIosList />
                         Lista
                     </div>
