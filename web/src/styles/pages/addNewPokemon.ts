@@ -13,63 +13,61 @@ const Container = styled.div`
         text-align: center;
         margin: 5vh;
     }
-    
-    > form {
 
-        > label { 
-            border-radius: 10px;
-            margin: 20px 0 ;
-            position: relative;
-            width: 90vw;
-            height: 40px;
+    > label { 
+        border-radius: 10px;
+        margin: 20px 0 ;
+        position: relative;
+        width: 90vw;
+        height: 40px;
+        display: flex;
+        background: var(--white);
+        overflow: hidden;
+
+        > span { 
+            background: var(--dark-blue);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            top: 0;
+            padding: 3px 9px;
+
             display: flex;
-            background: var(--white);
-            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            font-family: "Nunito";
+            font-weight: 700;
 
-            > span { 
-                background: var(--dark-blue);
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                top: 0;
-                padding: 3px 9px;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: var(--white);
-                font-family: "Nunito";
-                font-weight: 700;
-
-            }
-            
-            > input {
-                flex-grow: 1;   
-                outline: none;
-                border: 0;
-                text-align: center;
-                font-family: "Nunito";
-                font-weight: 600;
-
-                &[type="number"]{
-                    text-align: right;
-                    padding-right: 5%;
-                }
-            }
         }
-
-        >button {
-            width: 80vw;
-            margin: 3vh;
-            font-size: 1.7rem;
+        
+        > input {
+            flex-grow: 1;   
+            outline: none;
+            border: 0;
+            text-align: center;
             font-family: "Nunito";
             font-weight: 600;
-            border-radius: 5px;
-            border: 0;
-            background: var(--green);
-            color: var(--white)
+
+            &[type="number"]{
+                text-align: right;
+                padding-right: 5%;
+            }
         }
     }
+
+    >button {
+        width: 80vw;
+        margin: 3vh;
+        font-size: 1.7rem;
+        font-family: "Nunito";
+        font-weight: 600;
+        border-radius: 5px;
+        border: 0;
+        background: var(--green);
+        color: var(--white)
+    }
+
 `
 
 
