@@ -6,11 +6,11 @@ import Lottie from 'react-lottie';
 import LoadingAnimation from "../images/loadingAnimation.json"
 
 import { PokemonApiContext } from "../contexts/pokemonApi";
-import { Container, ButtonsArea, InfosArea } from "../styles/pages/pokemonData";
+import { Container, ButtonsArea, InfosArea, DeleteModal } from "../styles/pages/pokemonData";
 
 interface IPokemonDataProps {
     history: {
-        push: (path: string)  => void;
+        push: (path: string) => void;
     };
     match: {
         params: {
@@ -52,8 +52,8 @@ function PokemonData(props: IPokemonDataProps) {
     const { id } = props.match.params;
     const { arrayOfPokemons, updatePokemon, deletePokemon } = useContext(PokemonApiContext);
     const [pokemonObj, setPokemonObj] = useState<any>();
-    const [showSaveButton, setShowSaveButton] = useState<boolean>();
-    const [showDeleteModal, setShowDeleteModal] = useState<boolean>();
+    const [showSaveButton, setShowSaveButton] = useState<boolean>(false);
+    const [showDeleteModal, setShowDeleteModal] = useState<boolean>(false);
 
 
     useEffect(getData, [arrayOfPokemons, id]);
@@ -82,12 +82,25 @@ function PokemonData(props: IPokemonDataProps) {
         updatePokemon(pokemonObj);
     }
 
+    async function handleDeletePokemon() {
+        deletePokemon(pokemonObj.Row);
+        props.history.push('/search')
+    }
+
     return (
         <Container>
 
-            <h1> {pokemonObj?.Name} </h1>
+            { showDeleteModal && (
+                <DeleteModal>
+                    <main>
+                        <h1> Tem certeza ? </h1>
+                        <p> O pokémon {pokemonObj?.Name} será deletado permanentemente!</p>
 
-            <p> {showSaveButton ? 'Modo edição ativado' : "Modo edição desativado"} </p>
+                        <button onClick={() => setShowDeleteModal(false)} className="cancel"> Cancelar </button>
+                        <button onClick={handleDeletePokemon} className='delete'> Deletar </button>
+                    </main>
+                </DeleteModal>
+            )}
 
             { pokemonObj && (
 
@@ -99,13 +112,23 @@ function PokemonData(props: IPokemonDataProps) {
                         </>
                     ) : (
                         <>
-                            <button className="delete"> Deletar <IoTrashBinSharp /> </button>
-                            <button className="update" onClick={() => setShowSaveButton(true)}> Atualizar <RiEdit2Fill /> </button>
+                            <button className="delete" onClick={() => setShowDeleteModal(true)}> Deletar <IoTrashBinSharp /> </button>
+                            <button className="update" onClick={() => setShowSaveButton(true)}> Edição <RiEdit2Fill /> </button>
                         </>
                     )}
                 </ButtonsArea>
 
             )}
+
+            {pokemonObj && (
+                <>
+                    <h1> {pokemonObj?.Name} </h1>
+
+                    <p> {showSaveButton ? 'Modo edição ativado' : "Modo edição desativado"} </p>
+                </>
+            )}
+
+
             <InfosArea>
                 {
                     pokemonObj ? Object.keys(pokemonObj).map(title => (

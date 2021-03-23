@@ -9,8 +9,8 @@ const Container = styled.div`
 
         text-align: center;
 
-        font-size: 3.4rem;
-        margin: 5vh;
+        font-size: 3.2rem;
+        margin: 5vh 0;
     }
 
      > p{ 
@@ -44,20 +44,20 @@ const ButtonsArea = styled.div`
         margin: 5px;
         border: 0;
         outline: 0;
-        border-bottom: 1px solid;
+        border-radius: 10px;
+        color: var(--white);
 
         &.update {
-            color: var(--yellow);
+            background: var(--yellow);
+            color: var(--grey);
         }
 
         &.save{
-            color: var(--green);
-
-
+            background: var(--green);
         }
 
         &.delete{
-            color: var(--red);
+            background: var(--red);
 
 
         }
@@ -121,9 +121,66 @@ const InfosArea = styled.div`
     }
 `
 
+const DeleteModal = styled.div`
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,.7);
+
+    > main {
+        width: 90vw;
+        background: var(--white);
+        border-radius: 10px;
+
+        > h1 {
+            font-family: "Inter";
+            text-align: center;
+
+            margin: 5%;
+            color: var(--red);
+        }
+
+        > p {
+            font-family: "Nunito";
+            text-align: center;
+            font-weight: 600;
+        }
+
+        > button {
+            width: 45%;
+            margin: 5% 2.5%;
+            height: 30px;
+            border: none;
+            outline: none;
+            font-size: 1.3rem;
+            font-family: "Nunito";
+            font-weight: 600;
+            
+            &.cancel {
+                color: var(--grey);
+                background: none;
+            }
+
+            &.delete { 
+                background: var(--red);
+                color: var(--white);
+                border-radius: 5px;
+            }
+        }
+    }
+` 
 
 export {
     Container,
     ButtonsArea,
-    InfosArea
+    InfosArea,
+    DeleteModal
 }
