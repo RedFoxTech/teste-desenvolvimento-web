@@ -6,6 +6,13 @@ import { Container, ResultContainer, SearchAreaContainer } from "../styles/pages
 import PikachuAnimation from "../images/pikachu-animation.json"
 import PokemonItem from "../components/pokemonItem";
 
+interface ISearchProps {
+    history: {
+        push: (path: string) => void
+    }
+}
+
+
 const selectValues = [
     "100% CP @ 39",
     "100% CP @ 40",
@@ -39,7 +46,9 @@ const selectValues = [
     "Weather 2"
 ]
 
-function Search() {
+
+
+function Search(props: ISearchProps) {
     const [inputValue, setInputValue] = useState<string>('');
     const [selectValue, setSelectValue] = useState<string>('');
     const [listOfPokemonsSearched, setListOfPokemonsSearched] = useState<IPokemonProps[]>([]);
@@ -73,7 +82,7 @@ function Search() {
                 {
                     listOfPokemonsSearched?.length !== 0 ?
                         listOfPokemonsSearched.map((pokemonObj) => (
-                            <PokemonItem pokemonObj={pokemonObj} key={pokemonObj["Row"]} />
+                            <PokemonItem pokemonObj={pokemonObj} key={pokemonObj["Row"]} push={props.history.push}/>
 
                         ))
                         : (

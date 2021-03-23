@@ -2,29 +2,28 @@ import { useEffect, useState } from "react";
 import { Container, InfosArea } from "../styles/components/pokemonItem";
 import { BsEyeFill } from "react-icons/bs";
 
+interface IPokemonItemProps {
+    pokemonObj: any;
+    push: (path: string) => void;
+}
 
-function PokemonItem({ pokemonObj }: any) {
+function PokemonItem(props: IPokemonItemProps) {
     const [arrayOfTitlesAndValues, setArrayOfTitlesAndValues] = useState<[[string, string | number]]>();;
     const [mainTitles, setMainTitles] = useState<[[string, string | number]]>();
 
-    useEffect(() => {
-        getTitlesAndValues();
-
-        return getTitlesAndValues
-        
-    },[])
+    useEffect(getTitlesAndValues,[])
 
     function getTitlesAndValues() {
         let titlesRet: any = [];
         let mainTitlesRet: any = [];
 
-        for (let title in pokemonObj) {
+        for (let title in props.pokemonObj) {
 
             if (title === "Row" || title === "Name") {
-                mainTitlesRet.push([title, pokemonObj[title]]);
+                mainTitlesRet.push([title, props.pokemonObj[title]]);
 
             } else {
-                titlesRet.push([title, pokemonObj[title]])
+                titlesRet.push([title, props.pokemonObj[title]])
             }
 
         }
@@ -33,6 +32,9 @@ function PokemonItem({ pokemonObj }: any) {
         setArrayOfTitlesAndValues(titlesRet);
     }
 
+    function handleNavigateToPokemonsData(){
+        props.push(`/pokemonData/${props.pokemonObj.Row}`)
+    }
 
 
 
@@ -54,7 +56,7 @@ function PokemonItem({ pokemonObj }: any) {
                 </main>
             </InfosArea>
 
-            <BsEyeFill />
+            <BsEyeFill onClick={handleNavigateToPokemonsData}/>
 
         </Container>
     )
