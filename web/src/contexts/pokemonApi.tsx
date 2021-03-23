@@ -43,7 +43,8 @@ interface IPokemonApiContext {
     searchPokemon: (value: string, filter: string) => IPokemonProps[];
     updatePokemon: (pockemonObj: IPokemonProps) => void;
     deletePokemon: (id: number) => void;
-    newPokemon: (pokemonObj: any) => void
+    newPokemon: (pokemonObj: any) => void;
+    filterArrayOfPokemonsByProp : (propToFilter: string) => void;
 }
 
 interface IPokemonProvideProps {
@@ -141,6 +142,25 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
         }
     }
 
+    function filterArrayOfPokemonsByProp( propToFilter: string) {
+        if(!arrayOfPokemons) return;
+        const sortableList = arrayOfPokemons;
+        sortableList.sort( (a: any, b: any)=> {
+                if ( a[propToFilter] > b[propToFilter] ){
+
+                    return 1 
+                } 
+                if( a[propToFilter] < b[propToFilter] ) {
+
+                    return -1
+                }
+                return 0
+
+        });
+
+        setArrayOfPokemons(sortableList);
+    }
+
     return (
         <PokemonApiContext.Provider value={{
             isPokemonsLoaded,
@@ -151,7 +171,8 @@ function PokemonApiProvider({ children }: IPokemonProvideProps) {
             searchPokemon,
             updatePokemon,
             deletePokemon,
-            newPokemon
+            newPokemon,
+            filterArrayOfPokemonsByProp
         }}>
 
             {children}
