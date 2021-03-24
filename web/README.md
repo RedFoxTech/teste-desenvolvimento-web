@@ -28,6 +28,8 @@
 
 <h1> Importante para que funcione! </h1>
 
+- É necessário rodar o servidor primeiro. 
+
 - É necessario trocar a string da propiedade 'baseURL' dentro de /services/server.ts para o ip da sua maquina atual.
 
 - A string de ficar assim: "http://seu.ip:3030"
