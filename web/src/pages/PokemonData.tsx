@@ -102,6 +102,16 @@ function PokemonData(props: IPokemonDataProps) {
                 </DeleteModal>
             )}
 
+
+
+            {pokemonObj && (
+                <>
+                    <h1> {pokemonObj?.Name} </h1>
+
+                    <p> {showSaveButton ? 'Modo edição ativado' : "Modo edição desativado"} </p>
+                </>
+            )}
+
             { pokemonObj && (
 
                 <ButtonsArea>
@@ -118,14 +128,6 @@ function PokemonData(props: IPokemonDataProps) {
                     )}
                 </ButtonsArea>
 
-            )}
-
-            {pokemonObj && (
-                <>
-                    <h1> {pokemonObj?.Name} </h1>
-
-                    <p> {showSaveButton ? 'Modo edição ativado' : "Modo edição desativado"} </p>
-                </>
             )}
 
 

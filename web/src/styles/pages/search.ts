@@ -87,7 +87,29 @@ const SearchAreaContainer = styled.div`
     }
 
     @media(min-width: 1024px){
-        max-width: 50%
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        max-width: 70vw;
+
+        > input {
+            width: 30vw;
+            margin: 0 5px;
+            color: var(--white)
+        }
+
+        > select {
+            max-width: 150px;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        > button {
+            cursor: pointer;
+        }
+
+        
     }
 
 
@@ -100,9 +122,71 @@ const ResultContainer = styled.div`
 
     
 `
+const WarningModal = styled.div`
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top:0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,.6);
+    z-index: 99;
+
+    > main {
+        background: var(--white);
+        height: 40vh;
+        width: 90vw;
+        max-width: 400px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        > h1 {
+            font-size: 2.5rem;
+            font-family: "Inter";
+            color: var(--red);
+            text-align: center;
+            margin: 5vh auto 0;
+        }
+
+        > p {
+            font-family: "Nunito";
+            color: var(--grey);
+            font-weight: 700;
+            margin: 5vh 3vw ;
+            text-align: center;
+        }
+
+        > button {
+            width:70%;
+            border: 0;
+            outline: none;
+            font-family: "Nunito";
+            font-size: 1.5rem;
+            border-radius: 5px;
+            background: var(--dark-blue);
+            color: var(--white);
+            margin: 2vh;
+            
+            transition: all .4s;
+            cursor: pointer;
+            &:hover{ 
+                background: var(--light-blue);
+
+            }
+        }
+        
+    }
+` 
 
 export { 
     Container,
     SearchAreaContainer,
-    ResultContainer
+    ResultContainer,
+    WarningModal
 }
