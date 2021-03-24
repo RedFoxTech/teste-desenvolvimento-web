@@ -9,6 +9,8 @@ Bom a ideia foi demonstrar um pouco da estruturação que tenho utilizado nos pr
 - Separei todos os casos de uso, para seguindo o padrão de projeto, e tornando mais legivel o codigo.
 - Uma ideia para uma proxima oportunidade é implementar o postgresql, usando o docker (o que eu acho que é a parte magica rsrs)
 
+-PS: Editei o arquivo Pokemon Go, transformado-o em .csv e eliminando algumas colunas, já que a intenção era uma demonstração rsrs
+
 
 Para executar o projeto "yarn dev" ou "docker-compose up". Boa sorte para nós!
 
