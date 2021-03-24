@@ -48,7 +48,7 @@ function ListOfPokemons(props: IListOfPokemons) {
     const { arrayOfPokemons, filterArrayOfPokemonsByProp } = useContext(PokemonApiContext);
 
     const [currentPage, setCurrentPage] = useState<number>(0);
-    const [ filterByProp, setFilterByProp ] = useState<string>();
+    const [filterByProp, setFilterByProp] = useState<string>();
     const numberOfPokemonsByPage = 20;
     const totalPages = arrayOfPokemons ? Math.ceil(arrayOfPokemons.length / numberOfPokemonsByPage) : 0;
 
@@ -58,15 +58,15 @@ function ListOfPokemons(props: IListOfPokemons) {
 
 
     function handleOnFilterElements() {
-        if(!filterByProp) return;
+        if (!filterByProp) return;
         filterArrayOfPokemonsByProp(filterByProp);
-        if(currentPage === 0){
+        if (currentPage === 0) {
             setCurrentPage(1);
         } else {
             setCurrentPage(0);
 
         }
-        
+
     }
 
 
@@ -80,7 +80,7 @@ function ListOfPokemons(props: IListOfPokemons) {
             }
         }
 
-        
+
 
 
         return ret;
@@ -108,15 +108,15 @@ function ListOfPokemons(props: IListOfPokemons) {
                 > Próximo</button>
 
 
-                    <select name="" id="" onChange={event => setFilterByProp(event.target.value)}>
-                        <option value=""> Selecione </option>
-                        {
-                            selectValues.map(title => <option value={title} key={title}> {title} </option>)
-                        }
-                    </select>
-                    <button onClick={handleOnFilterElements}>
-                        Filtrar
-                    </button>
+                <select name="" id="" onChange={event => setFilterByProp(event.target.value)}>
+                    <option value=""> Selecione </option>
+                    {
+                        selectValues.map(title => <option value={title} key={title}> {title} </option>)
+                    }
+                </select>
+                <button onClick={handleOnFilterElements}>
+                    Filtrar
+                </button>
             </p>
 
 

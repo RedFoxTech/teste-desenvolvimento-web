@@ -24,6 +24,7 @@ const Container = styled.div`
              border-radius: 5px;
              background: var(--white);
             outline: none;
+            cursor: pointer;
 
              &:disabled {
                  background: #ffffff60
@@ -36,6 +37,19 @@ const Container = styled.div`
             background: var(--white);
             border-radius: 5px;
             color: var(--dark-blue)
+        }
+    }
+
+    @media( min-width: 1024px ){
+        width: 80vw;
+
+        > h1 {
+            font-size: 2.7rem;
+            margin: 3vh
+        }
+
+        > p {
+
         }
     }
 `
