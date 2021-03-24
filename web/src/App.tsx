@@ -1,6 +1,4 @@
 import { BrowserRouter } from "react-router-dom";
-
-import Header from "./components/Header";
 import Asidebar from "./components/Asidebar";
 import { PokemonApiProvider } from "./contexts/pokemonApi";
 import Routes from "./routes";
@@ -13,8 +11,6 @@ function App() {
 
       <BrowserRouter>
         <PokemonApiProvider>
-
-          {/* <Header /> */}
           <GlobalStyle />
           <Asidebar />
           <Content>
