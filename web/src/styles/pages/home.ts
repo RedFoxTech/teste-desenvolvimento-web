@@ -6,6 +6,7 @@ const Container = styled.div`
 
     @media(min-width: 1024px){
         width: 45%;
+        margin-left: 20vw;
     }
 `;
 

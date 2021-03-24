@@ -43,6 +43,7 @@ const Container = styled.div`
 
     @media( min-width: 1024px ){
         width: 80vw;
+        margin-left: 20vw;
 
         > h1 {
             font-size: 2.7rem;

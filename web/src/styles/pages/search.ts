@@ -13,7 +13,8 @@ const Container = styled.div`
     }
 
     @media(min-width: 1024px){
-        width: 80vw
+        width: 80vw;
+        margin-left: 20vw
     }
 `;
 

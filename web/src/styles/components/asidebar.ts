@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-    height: 85vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    height: 100vh;
     width: 20vw;
     background: var(--white-opacity);
 

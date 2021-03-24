@@ -14,10 +14,10 @@ function App() {
       <BrowserRouter>
         <PokemonApiProvider>
 
-          <Header />
+          {/* <Header /> */}
           <GlobalStyle />
+          <Asidebar />
           <Content>
-            <Asidebar />
             <Routes />
           </Content>
         </PokemonApiProvider>
