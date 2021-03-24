@@ -15,6 +15,7 @@ const Container = styled.div`
         font-family: "Nunito";
         margin: 20px;
         text-align: center;
+        font-weight: 700;
 
         > button { 
              padding: 3px 8px;

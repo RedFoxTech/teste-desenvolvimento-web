@@ -12,7 +12,13 @@ const Container = styled.div`
         border: 1px solid;
         border-radius: 50%;
         padding: 3px;
-        margin-right: 5px
+        margin-right: 5px;
+        cursor: pointer;
+        transition: all .5s;
+        
+        &:hover{
+            opacity: .5
+        }
     }
 
     @media(min-width: 1024px){
