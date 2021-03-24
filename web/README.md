@@ -27,6 +27,7 @@
 <p> A pasta services é bem simples, ela contem somente um arquivo e nele nos fazemos uma base de api, para assim evitarmos repetições ao precisar chamar algo na api.</p>
 
 <h1> Importante para que funcione! </h1>
+
 - É necessario trocar a string da propiedade 'baseURL' dentro de /services/server.ts para o ip da sua maquina atual.
 
 - A string de ficar assim: "http://seu.ip:3030"
