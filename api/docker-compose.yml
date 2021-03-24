@@ -1,0 +1,32 @@
+version: "3.7"
+
+services:
+  api_v1:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: development
+    volumes: 
+      - ./:/usr/app
+    ports: 
+      - ${APP_PORT}:${APP_PORT}
+    networks: 
+      - app
+    depends_on: 
+      - postgresdb
+
+  postgresdb:
+    image: postgres:13.1-alpine
+    environment: 
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - /var/lib/postgresql/data
+    ports: 
+      - ${DB_PORT}:${DB_PORT}
+    networks: 
+      - app
+  
+networks:
+  app:
