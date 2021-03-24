@@ -1,4 +1,4 @@
-import { Container, MobileButtonsContainer, MobileContent } from "../styles/pages/home";
+import { Container, MobileButtonsContainer, MobileContent, DesktopContent } from "../styles/pages/home";
 import { BiSearchAlt, BiListPlus } from "react-icons/bi";
 import { IoIosList } from "react-icons/io";
 
@@ -40,6 +40,13 @@ function Home(props: IHomeProps) {
                 </MobileButtonsContainer>
 
             </MobileContent>
+
+            <DesktopContent>
+                <h1> Pokémon Go </h1>
+
+                <p> Por favor selecione oque deseja fazer no menu ao lado.</p>
+
+            </DesktopContent>
         </Container>
     )
 }

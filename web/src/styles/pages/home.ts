@@ -23,6 +23,11 @@ const MobileContent = styled.div`
         margin: -10vh 0 10vh;
         color: #fff;
     }
+
+    @media(min-width: 1024px){
+        display: none;
+    }
+    
 `
 
 const MobileButtonsContainer = styled.div`
@@ -56,8 +61,41 @@ const MobileButtonsContainer = styled.div`
 
 `
 
+const DesktopContent = styled.div`
+    height: 100%;
+    width: 80vw;
+    /* margin-top: 15vh; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    > h1 {
+        margin-top: -9vh;
+        font-size: 3.4rem;
+        color: #fff;
+        font-family: "Inter";
+        text-shadow: 2px 2px 4px rgba(0,0,0,.6)
+
+    }
+
+    > p { 
+        font-size: 3rem;
+
+        font-family: "Nunito";
+        margin: 10vh;
+        color: var(--white);
+        font-weight: 700;
+        text-shadow: 2px 2px 4px rgba(0,0,0,.6)
+
+    }
+
+`
+
 export {
     Container,
     MobileContent,
-    MobileButtonsContainer
+    MobileButtonsContainer,
+    DesktopContent
 }

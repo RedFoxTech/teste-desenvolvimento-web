@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
     height: 85vh;
-    width: 25vw;
+    width: 20vw;
     background: var(--white-opacity);
 
     display: flex;
@@ -15,15 +15,26 @@ const Container = styled.div`
 
         > li{
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items:center;
 
-            color: var(--dark-blue);
+            color: var(--light-blue);
             font-size: 1.7rem;
             font-family: "Nunito";
+            font-weight: 700;
+            margin: 3vh 0;
+            cursor: pointer;
+
+            transition: all .7s;
 
             > svg{
-                margin: 0 3%;
+                margin: 0 2vw;
+                font-size: 2.7rem;
+            }
+
+
+            &:hover {
+                color: var(--dark-blue)
             }
         }
     }
