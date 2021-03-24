@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
+    width: 100%;
     
     > h1 { 
         font-family: "Nunito";
@@ -20,6 +21,10 @@ const Container = styled.div`
         color: var(--yellow);
      }
 
+
+     @media(min-width: 1024px){
+         width: 80vw
+     }
     
 `
 
@@ -46,6 +51,11 @@ const ButtonsArea = styled.div`
         outline: 0;
         border-radius: 10px;
         color: var(--white);
+        cursor: pointer;
+
+        > svg {
+            margin: 0 10px
+        }
 
         &.update {
             background: var(--yellow);
@@ -72,12 +82,13 @@ const InfosArea = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    
+    width: 100%;
 
     > label {
         position: relative; 
         height: 40px;
         width: 80vw;
+        max-width: 300px;
         margin: 15px;
         pointer-events: none;
 
@@ -119,10 +130,16 @@ const InfosArea = styled.div`
             font-family: "Nunito"
         }
     }
+
+
+    @media(min-width: 1024px) {
+        flex-direction: row
+    }
 `
 
 const DeleteModal = styled.div`
     width: 100%;
+    
     position: fixed;
     bottom: 0;
     left: 0;
@@ -137,6 +154,7 @@ const DeleteModal = styled.div`
 
     > main {
         width: 90vw;
+        max-width: 600px;
         background: var(--white);
         border-radius: 10px;
 
@@ -163,6 +181,7 @@ const DeleteModal = styled.div`
             font-size: 1.3rem;
             font-family: "Nunito";
             font-weight: 600;
+            cursor: pointer;
             
             &.cancel {
                 color: var(--grey);
