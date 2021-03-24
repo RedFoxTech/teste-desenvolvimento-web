@@ -3,6 +3,10 @@ import styled from "styled-components";
 const Container = styled.div`
     height: 85vh;
     width: 100%;
+
+    @media(min-width: 1024px){
+        width: 45%;
+    }
 `;
 
 const MobileContent = styled.div`

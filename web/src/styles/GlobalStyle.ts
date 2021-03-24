@@ -1,5 +1,5 @@
 
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import PokemonBackground from "../images/pokemon-background.jpg"
 
 const GlobalStyle = createGlobalStyle`
@@ -40,6 +40,12 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
+
+const Content = styled.div`
+    display: flex;
+`
+
 export { 
-    GlobalStyle
+    GlobalStyle,
+    Content
 }
