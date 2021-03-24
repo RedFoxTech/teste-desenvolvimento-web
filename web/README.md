@@ -1,6 +1,7 @@
 <h1 align="center"> Pokémon Go - Frontend </h1> 
 
 <h2> Tecnologias Usadas: </h2>
+
 - ReactJs
 - Typescript
 - Axios 
