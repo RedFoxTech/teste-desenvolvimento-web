@@ -7,8 +7,8 @@ Bom a ideia foi demonstrar um pouco da estruturação que tenho utilizado nos pr
 - Typescript: Tenho migrado muito os projetos para typescript afim de ter um controle melhor do fluxo do desenvolvimento, acredito que a tipagem traz mais confiabilidade no desenvolvimento.
 
 - Separei todos os casos de uso, para seguindo o padrão de projeto, e tornando mais legivel o codigo.
-- Uma ideia para uma proxima oportunidade é implementar docker e postgresql (o que eu acho que é a parte magica rsrs)
+- Uma ideia para uma proxima oportunidade é implementar o postgresql, usando o docker (o que eu acho que é a parte magica rsrs)
 
 
-Para executar o projeto yarn dev. Boa sorte para nós!
+Para executar o projeto "yarn dev" ou "docker-compose up". Boa sorte para nós!
 
