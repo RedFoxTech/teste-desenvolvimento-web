@@ -3,12 +3,17 @@ import styled from "styled-components";
 const Container = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
 
     > h1 {
         font-family: "Inter";
         text-align: center;
         margin: 3vh; 
         color: #ffffff
+    }
+
+    @media(min-width: 1024px){
+        width: 80vw
     }
 `;
 
@@ -81,12 +86,18 @@ const SearchAreaContainer = styled.div`
 
     }
 
+    @media(min-width: 1024px){
+        max-width: 50%
+    }
+
 
 `
 
 const ResultContainer = styled.div`
     width: 100%;
     flex-grow: 1;
+
+
     
 `
 

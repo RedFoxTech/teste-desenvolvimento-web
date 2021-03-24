@@ -13,6 +13,17 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
         min-height: 100vh;
 
+        &::-webkit-scrollbar {
+            display: inherit;
+            width: 9px;
+         
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--dark-blue);
+            border-radius: 10px;
+        }
+
         :root{ 
             --white: #ffffff;
             --white-opacity: rgba(255,255,255,.8);

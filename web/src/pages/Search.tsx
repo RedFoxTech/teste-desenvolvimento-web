@@ -87,7 +87,7 @@ function Search(props: ISearchProps) {
                         : (
                             <Lottie options={{
                                 animationData: PikachuAnimation
-                            }}>
+                            }} style={{maxWidth: 340}}>
 
                             </Lottie>
                         )

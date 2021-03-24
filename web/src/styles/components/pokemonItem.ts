@@ -58,6 +58,8 @@ const InfosArea = styled.div`
     }
 
     @media(min-width: 1024px){
+
+        width: 50vw;
         
         &::-webkit-scrollbar {
             display: inherit;
