@@ -4,7 +4,7 @@ const fs = require('fs').promises;
 const dotenv = require('dotenv');
 dotenv.config();
 
-const TRANSACTIONS_COLLECTION = 'pokemon';
+const TRANSACTIONS_COLLECTION = 'pokemons';
 
 /**
  * Crie um arquivo .env na raiz da pasta 'utils' e
@@ -124,6 +124,7 @@ async function populateCollections()
   });
 
   await Promise.all([promiseTransactions]);
+
 }
 
 function csvJSON(csv)
@@ -137,7 +138,31 @@ function csvJSON(csv)
     let currentline = lines[i].split(",");
     for (let j = 0; j < headers.length; j++)
     {
-      obj[headers[j]] = currentline[j];
+      if (j === 2) // ImgName
+      {
+        obj[headers[j].toLowerCase()] = currentline[j];
+      }
+      else if (j == 24)
+      {
+        obj["newp"] = parseInt(currentline[j]);
+      }
+      else if (j == 27)
+      {
+        obj["hundredcp40"] = parseInt(currentline[j]);
+      }
+      else if (j == 28)
+      {
+        obj["hundredcp39"] = parseInt(currentline[j]);
+      }
+      else if (getNumber(currentline[j]) >= 0)
+      {
+        obj[headers[j].toLowerCase()] = parseInt(currentline[j]);
+      }
+      else
+      {
+        obj[headers[j].toLowerCase()] = currentline[j];
+      }
+
     }
     if (currentline[1] != undefined)
     {
@@ -145,4 +170,15 @@ function csvJSON(csv)
     }
   }
   return result; //JSON
+}
+
+const getNumber = (string) =>
+{
+  if (string != undefined)
+  {
+    let regex = string.match(/\d+/)
+    let number = parseInt(regex ? regex[0] : null)
+    return number
+  }
+  return null
 }
