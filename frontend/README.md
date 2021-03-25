@@ -10,11 +10,11 @@ _(Durante o desenvolvimento foi utilizado o yarn como gerenciador de dependecias
 ## Rodar projeto
 
 ```bash
-yarn dev
+yarn start
 ```
 
 ou
 
 ```bash
-npm run dev
+npm run start
 ```
