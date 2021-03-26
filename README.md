@@ -73,7 +73,6 @@ A API possui controle de sessão através de um token JWT, na qual possibilita a
 | GET | /types/:id | Traz um type em especifico | Busca os dados de um type pelo seu id e todos os pokemons que possuiem este type |
 | GET | /types | Traz todos os types cadastrados | Verifica se existe algum type cadastrados. |
 | PUT | /types/:id | Atualiza os dados de um type | Busca os dados de um type pelo seu id e verifica se o type informado já foi cadastrdo.  |
-
 | POST| /weather | Cadastra um weather  | Campos obrigatorios: name. Antes de cadastadar o weather verifica se o type informado já foi cadastrdo.  | 
 | GET | /weather/:id | Traz um weather em especifico | Busca os dados de um weather pelo seu id e todos os pokemons que possuiem este weather. |
 | GET | /weather | Traz todos os weather cadastrados | Verifica se existe algum weather cadastrados. |
@@ -81,25 +80,6 @@ A API possui controle de sessão através de um token JWT, na qual possibilita a
 
 | POST | /pokemon | Cadastra um pokemon | Campos obrigatorios: name, type_1, weather_1, atk, def, sta, cp39 e cp40. Antes de cadastadar o pokemon verifica se o name informado já foi cadastrdo. |
 | GET | /pokemon | Traz todos os pokemons cadastrados| Busca todos os pokemons levendo em consideração o criterio de ativos e inativo e ordena pelo name.|
-
-
-| POST | /user| Cria um usuário | FALSE |
-| GET| /ad/pokemons | Traz os pokemons com alguns dados a mais (com o id que não apresento e não utilizo na aplicação web) | TRUE |
-| GET| /ad/pokemons/:id | Traz os dados de um único pokemon  | TRUE | 
-| POST| /pokemons/| Cria um pokemon  | TRUE | 
-| PUT| /pokemons/| Atualiza os dados de um pokemon  | TRUE | 
-| DELETE| /pokemons/| Altera a frag de "active" para "deleted" (por motivos de segurança prefiro não apagar nenhum dado e apenas não exibi-lo mais e ainda mante-lo em banco)  | TRUE | 
-| GET| /types| Lista todos os Types  | TRUE | 
-| GET| /types/:id | Traz um único Type  | TRUE | 
-| PUT| /types/:id | Atualiza um Type  | TRUE | 
-| GET| /weathers| Lista todos os Climas  | TRUE | 
-| GET| /weathers/:id | Traz um único Climas  | TRUE |
-| PUT| /weathers/:id | Atualiza um Climas  | TRUE |
-| GET| /ad/type/weather | Lista os tipos e os Climas em uma unica requisição, (para a aplicação não fazer mais de um requisição para pegar esses dados)   | TRUE | 
-| GET/POST | /migration/types | Migra os tipos para a tabela de types (ROTA COMENTADA) | TRUE | 
-| PUT/POST | /migration/weather | Migra os climas para a tabela Weathers  (ROTA COMENTADA) | TRUE | 
-| GET/POST | /migration/pokemons | Faz a migração dos pokemons, criando o relacionamento dos tipos e dos climas RODE PRIMEIRO AS OUTRAS DUAS (ROTA COMENTADA) | TRUE | 
-
 
 ### Frontend
 
