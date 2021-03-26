@@ -107,22 +107,22 @@ class PokemonsController {
         {
           model: Types,
           as: 'type1',
-          attributes: ['name'],
+          attributes: ['id', 'name'],
         },
         {
           model: Types,
           as: 'type2',
-          attributes: ['name'],
+          attributes: ['id', 'name'],
         },
         {
           model: Weather,
           as: 'weather1',
-          attributes: ['name'],
+          attributes: ['id', 'name'],
         },
         {
           model: Weather,
           as: 'weather2',
-          attributes: ['name'],
+          attributes: ['id', 'name'],
         },
       ],
     })
@@ -154,22 +154,22 @@ class PokemonsController {
         {
           model: Types,
           as: 'type1',
-          attributes: ['name'],
+          attributes: ['id', 'name'],
         },
         {
           model: Types,
           as: 'type2',
-          attributes: ['name'],
+          attributes: ['id', 'name'],
         },
         {
           model: Weather,
           as: 'weather1',
-          attributes: ['name'],
+          attributes: ['id', 'name'],
         },
         {
           model: Weather,
           as: 'weather2',
-          attributes: ['name'],
+          attributes: ['id', 'name'],
         },
       ],
     })
@@ -219,21 +219,3 @@ class PokemonsController {
 }
 
 export default new PokemonsController()
-/*
-
-{
-	"name": "Charmeleon",
-	"family_id": 1,
-	"type_1": 7,
-	"type_2": 14,
-	"weather_1": 5,
-	"weather_2": 1,
-	"stat_total": 422,
-	"atk": 151,
-	"def": 151,
-	"sta": 120,
-	"legendary": 0,
-	"cp39": 1552,
-	"cp40": 1529
-}
-*/
