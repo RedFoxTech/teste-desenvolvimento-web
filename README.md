@@ -12,7 +12,7 @@
 ## :computer: Projeto
 
 <p align="justify">
-Projeto desenvolvido para o teste de desenvolvimento web da RedFox, foi dado maior ênfase ao backend, visto que é minha atual área de atual no momento. </p>
+Projeto desenvolvido para o teste de desenvolvimento web da RedFox, foi dado maior ênfase ao backend, visto que é minha atual área atual no momento. </p>
 <p align="justify">
 Como o teste possibilita permite uma flexibilidade sobre a forma na qual o objetivo será atingido, optei por utilizar na modelagem do banco de dados MySQL os seguintes campos: name, pokedex_number, generation, evolution, familyID, type_1, type_2, weather_1, weather_2, stat_total, atk, def, sta, legendary, cp@39, cp@40, os demais campos não formão utilizados.  </p>
 <p align="justify">
@@ -53,7 +53,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 Para executar o projeto, instale as dependências.
 ```bash
-# navege até a pasta de backend
+# navegue até a pasta de backend
 $ cd Backend
 # instale as dependências de backend 
 $ yarn ou npm install
@@ -67,15 +67,15 @@ $ yarn sequelize-cli db:migrate
 $ yarn dev
 ```
 <p align="justify">
-A API possui controle de sessão através de um token JWT, na qual possibilita a divisão das rotas em rotas públicas e privadas. Sendo que as rotas publicação podem ser acessadas sem o token em quanto as privadas não podem ser acessadas sem um token valido.  </p>
+A API possui controle de sessão através de um token JWT, na qual possibilita a divisão das rotas em rotas públicas e privadas. Sendo que as rotas publicação podem ser acessadas sem o token em quanto as privadas não podem ser acessadas sem um token válido.  </p>
 
 <br />
-<h3> Rotas publicas </h3>
+<h3> Rotas públicas </h3>
 
 | Método | Rota | Função | Campos obrigatórios | Descrição |
 |--|--|--|--|--|
 | POST | /user | Cadastra um usuário | name, email e password | Antes de cadastrada um usuário é verificado se o email informado já foi cadastrado. |
-| PUT | /user | Atualiza os dados do usuário | Se exister oldPassword os campos password e confirPassword passam a ser obrigatórios.  | Verifica se a senha confere com a salva no banco e se o email informado já não foi cadastrado. |
+| PUT | /user | Atualiza os dados do usuário | Se existir oldPassword os campos password e confirPassword passam a ser obrigatórios.  | Verifica se a senha confere com a salva no banco e se o email informado já não foi cadastrado. |
 | POST | /session | Faz login na aplicação | email e password | Verifica se usuário existe e se a senha confere com a salva no banco. |
 
 <br />
@@ -83,14 +83,14 @@ A API possui controle de sessão através de um token JWT, na qual possibilita a
 
 | Método | Rota | Função | Campos obrigatórios | Descrição |
 |--|--|--|--|--|
-| POST| /types | Cadastra um type | name | Antes de cadastrada o type verifica se o type informado já foi cadastrado.  | 
+| POST| /types | Cadastra um type | name | Antes de cadastrar o type verifica se o type informado já foi cadastrado.  | 
 | GET | /types/:id | Traz um único type | |Busca os dados de um type pelo seu id e todos os pokémons que possuem aquele type. |
 | GET | /types | Traz todos os types cadastrados | |Verifica se existe algum type cadastrados e traz todos os types cadastrados. |
 | PUT | /types/:id | Atualiza os dados de um type | | Busca os dados de um type pelo id e verifica se o type informado já foi cadastrado.  |
-| POST| /weather | Cadastra um weather | name | Antes de cadastrada o weather verifica se o weather informado já foi cadastrado.  | 
-| GET | /weather/:id | Traz um weather em especifico | |Busca os dados de um weather pelo seu id e todos os pokemons que possuem este weather. |
-| GET | /weather | Traz todos os weather cadastrados | |Verifica se existe algum weather cadastrados e traz todos os weather cadastrados. |
-| PUT | /weather/:id | Atualiza os dados de um weather | |Busca os dados de um weather pelo seu id e verifica se o weather informado já foi cadastrdo. |
+| POST| /weather | Cadastrar um weather | name | Antes de cadastrar o weather verifica se o weather informado já foi cadastrado.  | 
+| GET | /weather/:id | Traz um weather em específico | |Busca os dados de um weather pelo seu id e todos os pokémons que possuem este weather. |
+| GET | /weather | Traz todos os weather cadastrados | |Verifica se existe algum weather cadastrado e traz todos os weather cadastrados. |
+| PUT | /weather/:id | Atualiza os dados de um weather | |Busca os dados de um weather pelo seu id e verifica se o weather informado já foi cadastrado. |
 | POST | /pokemon | Cadastra um pokémon | name, type_1, weather_1, atk, def, sta, cp39 e cp40 |Antes de cadastrada verifica se o pokémon informado já não foi cadastrado. |
 | GET | /pokemon | Traz todos os pokémons cadastrados| |Busca todos os pokémons através do filtro de ativos ou inativo e ordena pelo name.|
 | GET | /pokemon/:id | Traz todos os pokémons cadastrados| |Verifica se o pokémons existe e traz os dados deste Pokémon.|
@@ -102,7 +102,7 @@ A API possui controle de sessão através de um token JWT, na qual possibilita a
 
 Para executar o projeto, instale as dependências.
 ```bash
-# navege até a pasta de backend
+# navegue até a pasta de backend
 $ cd Fronted
 # instale as dependências de fronted
 $ yarn ou npm install
@@ -144,7 +144,7 @@ Funções:
 
 | Rota |Função | Descrição |
 |--|--|--|
-| /app | Rota com uma lista dos Pokémons. | Rota possui otão de navegação e botão para adicionar um Pokémon.|
+| /app | Rota com uma lista dos Pokémons. | Rota possui botão de navegação e botão para adicionar um Pokémon.|
  
 Funções:
 <blockquote><strong>handleGoToAddPokemon:</strong> Redireciona o usuário para cadastrar um Pokémon.</blockquote>
