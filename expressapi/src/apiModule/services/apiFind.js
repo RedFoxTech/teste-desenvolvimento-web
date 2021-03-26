@@ -14,7 +14,7 @@ apiFind.findPokemonById = async (req, res) =>
     {
         const pokemon = await dbModel.find({ pokedexnumber: id }).exec()
 
-        apiHelpers.resolveImageURL(pokemon, req.app.locals.controllerModuleHandler)
+        await apiHelpers.resolveImageURL(pokemon, req.app.locals.controllerModuleHandler, req)
 
         if (!pokemon)
         {
@@ -55,7 +55,7 @@ apiFind.findAllPokemonByProperty = async (req, res) =>
             {
                 pokemons = await dbModel.find(filter).sort({ name: 1, });
 
-                await apiHelpers.resolveImageURL(pokemons, req.app.locals.controllerModuleHandler)
+                await apiHelpers.resolveImageURL(pokemons, req.app.locals.controllerModuleHandler, req)
 
                 res.send(pokemons);
             }

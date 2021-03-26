@@ -44,9 +44,10 @@ apiHelpers.newPokemon = (body) =>
     return json;
 }
 
-apiHelpers.resolveImageURL = async (object, controllerModuleHandler) =>
+apiHelpers.resolveImageURL = async (object, controllerModuleHandler, req) =>
 {
-    if (object.length > 0)
+    let serverURL = req.protocol + '://' + req.get('host');
+    if (object.length >= 1)
     {
         let pokemons = Object.values(object)
 
@@ -56,30 +57,20 @@ apiHelpers.resolveImageURL = async (object, controllerModuleHandler) =>
             let pokemon = document._doc ? document._doc : null
             if (typeof pokemon.imgname == "string")
             {
-                await fullPathResolve(controllerModuleHandler, pokemon);
+                await fullPathResolve(controllerModuleHandler, pokemon, serverURL);
             }
         }
-
         return pokemons
     }
     else
     {
-        let pokemon = object
-        if (pokemon.imgname)
-        {
-            await fullPathResolve(controllerModuleHandler, pokemon);
-            return pokemon
-        }
-        else
-        {
-            return null
-        }
+        return null
     }
 
 }
 
 
-const fullPathResolve = async (controllerModuleHandler, pokemon) =>
+const fullPathResolve = async (controllerModuleHandler, pokemon, serverURL) =>
 {
     let directoryList = [];
     directoryList = await controllerModuleHandler.directoryListing(controllerModuleHandler.pathPokemons);
@@ -88,7 +79,8 @@ const fullPathResolve = async (controllerModuleHandler, pokemon) =>
         const file = directoryList[index];
         if (checkName(file.name, pokemon.imgname))
         {
-            pokemon.imgname = controllerModuleHandler.filePathToURL(file.path + file.name)
+            pokemon.imgname = serverURL + "/images/" + file.name
+            return true
         }
     }
 }
