@@ -11,6 +11,7 @@ import authMiddleware from './app/middlewares/auth'
 const routes = new Router()
 
 routes.post('/user', UserController.store)
+routes.put('/user', UserController.update)
 
 routes.post('/session', SessionController.store)
 
