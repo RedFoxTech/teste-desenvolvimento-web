@@ -69,6 +69,7 @@ $ yarn dev
 <p align="justify">
 A API possui controle de sessão através de um token JWT, na qual possibilita a divisão das rotas em rotas públicas e privadas. Sendo que as rotas publicação podem ser acessadas sem o token em quanto as privadas não podem ser acessadas sem um token valido.  </p>
 
+<br />
 > <h3> Rotas publicas </h3>
 
 | Método | Rota | Função | Campos obrigatórios | Descrição |
@@ -77,6 +78,7 @@ A API possui controle de sessão através de um token JWT, na qual possibilita a
 | PUT | /user | Atualiza os dados do usuário | Se exister oldPassword os campos password e confirPassword passam a ser obrigatórios.  | Verifica se a senha confere com a salva no banco e se o email informado já não foi cadastrado. |
 | POST | /session | Faz login na aplicação | email e password | Verifica se usuário existe e se a senha confere com a salva no banco. |
 
+<br />
 > <h3> Rotas privadas </h3>
 
 | Método | Rota | Função | Campos obrigatórios | Descrição |
@@ -112,6 +114,7 @@ $ yarn start ou npm start
 ```
 * O endereço base da API pode ser modificado no arquivo api.js que se encontra no diretório: src/services
 
+<br />
 > <h3> Rotas publicas  </h3>
 
 | Rota |Função | Descrição |
@@ -136,7 +139,7 @@ Funções:
 <blockquote> <strong>handleClose:</strong>  Fecha o Dilog de feedback.</blockquote>
 <blockquote> <strong>handleToRedirect:</strong>  Redireciona o usuário após a conta ser criada.</blockquote>
 
-
+<br />
 > <h3> Rotas privadas </h3>
 
 | Rota |Função | Descrição |
