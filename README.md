@@ -62,17 +62,20 @@ A API possui controle de sessão através de um token JWT, na qual possibilita a
 
 | Método | Rota | Função | Campos obrigatórios | Descrição |
 |--|--|--|--|--|
-| POST| /types | Cadastra um type  | name | Antes de cadastrada o type verifica se o type informado já foi cadastrado.  | 
-| GET | /types/:id | Traz um único type | |Busca os dados de um type pelo seu id e todos os pokémons que possuem aquele type |
+| POST| /types | Cadastra um type | name | Antes de cadastrada o type verifica se o type informado já foi cadastrado.  | 
+| GET | /types/:id | Traz um único type | |Busca os dados de um type pelo seu id e todos os pokémons que possuem aquele type. |
 | GET | /types | Traz todos os types cadastrados | |Verifica se existe algum type cadastrados e traz todos os types cadastrados. |
-| PUT | /types/:id | Atualiza os dados de um type || Busca os dados de um type pelo id e verifica se o type informado já foi cadastrado.  |
+| PUT | /types/:id | Atualiza os dados de um type | | Busca os dados de um type pelo id e verifica se o type informado já foi cadastrado.  |
 | POST| /weather | Cadastra um weather | name | Antes de cadastrada o weather verifica se o weather informado já foi cadastrado.  | 
 | GET | /weather/:id | Traz um weather em especifico | |Busca os dados de um weather pelo seu id e todos os pokemons que possuem este weather. |
 | GET | /weather | Traz todos os weather cadastrados | |Verifica se existe algum weather cadastrados e traz todos os weather cadastrados. |
-| PUT | /weather/:id | Atualiza os dados de um weather | Busca os dados de um weather pelo seu id e verifica se o weather informado já foi cadastrdo.  |
+| PUT | /weather/:id | Atualiza os dados de um weather | |Busca os dados de um weather pelo seu id e verifica se o weather informado já foi cadastrdo. |
+| POST | /pokemon | Cadastra um pokémon | name, type_1, weather_1, atk, def, sta, cp39 e cp40 |Antes de cadastrada verifica se o pokémon informado já não foi cadastrado. |
+| GET | /pokemon | Traz todos os pokémons cadastrados| |Busca todos os pokémons através do filtro de ativos ou inativo e ordena pelo name.|
+| GET | /pokemon/:id | Traz todos os pokémons cadastrados| |Verifica se o pokémons existe e traz os dados deste Pokémon.|
+| PUT | /pokemon/:id | Atualiza os dados de um pokémon| | Verifica se o pokémons existe e se já não existe outro Pokémon com o mesmo nome antes de atualizar os dados. |
+| DELETE | /pokemon/:id | Altera o estado do Pokémon para ativo ou inativo| | Verifica se o Pokémon existe e altera o seu estado. |
 
-| POST | /pokemon | Cadastra um pokemon | Campos obrigatorios: name, type_1, weather_1, atk, def, sta, cp39 e cp40. Antes de cadastadar o pokemon verifica se o name informado já foi cadastrdo. |
-| GET | /pokemon | Traz todos os pokemons cadastrados| Busca todos os pokemons levendo em consideração o criterio de ativos e inativo e ordena pelo name.|
 
 ### Frontend
 
