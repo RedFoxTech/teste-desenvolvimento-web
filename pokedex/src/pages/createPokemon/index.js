@@ -13,8 +13,11 @@ const CreatePokemon = () => {
         stat: "",
         types: []
     })
+    
+    const [chooseTypes, setChooseTypes] = useState("")
 
-    const listTypes = [
+
+   const listTypes = [
         "BUG",
         "DARK",
         "DRAGON",
@@ -33,8 +36,9 @@ const CreatePokemon = () => {
         "ROCK", 
         "STEEL", 
         "WATER"
-    ]
+    ] 
 
+    console.log(form)
 
 
     const addPokemons = (event) => {
@@ -62,8 +66,6 @@ const CreatePokemon = () => {
             resetForm()
     }
     
-   
-
     return(
         <div>
             <form onSubmit={addPokemons}>
@@ -102,16 +104,20 @@ const CreatePokemon = () => {
                     value={form.stat}
                     onChange={onChange}   
                />
-               <select>
-                   {
-                      
-                       listTypes.map((item)=>{
-                           <option></option>
-                       })
-                   }
-               </select>
-              
-
+              <select
+                name="types"
+                value={form.types}
+                onChange={onChange}              
+              >
+              {
+                 listTypes.map((item)=>{
+                     return(
+                         <option>{item}</option>
+           
+                     )
+                 })
+             }
+              </select>    
                <button>Create</button>
             </form>
         </div>

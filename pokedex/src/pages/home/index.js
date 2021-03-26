@@ -5,9 +5,16 @@ import axios from "axios"
 const Home = () => {
 
     const [pokemonList, setPokemonList] = useState([]);
+    const [search, setSearch ] = useState([])
+    const [inputSearch, setInputSearch] = useState("")
+
+    const handleInputSearch = (event) => {
+        setInputSearch(event.target.value)
+    }
 
     useEffect(()=>{
         getPokemons()
+        
     },[])
 
     const getPokemons = () => {
@@ -19,8 +26,25 @@ const Home = () => {
         })
     }
 
+    const searchPokemon = (name) => {
+        axios.get(`https://gopokemon.herokuapp.com/pokemon/search?${name}`)
+            .then((response)=>{
+                setSearch(response.data.results)
+            }).catch((error)=>{
+                alert(error.message)
+                console.log(error.message)
+            })
+    }
     return(
         <div>
+            <input
+                type="search"
+                name = "search"
+                value={inputSearch}
+                onChange={handleInputSearch}
+            
+            />
+            <button onClick={searchPokemon}>search</button>
             {
                 pokemonList.map((pokemon)=>{
                     return(
