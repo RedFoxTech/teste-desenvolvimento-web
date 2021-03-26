@@ -6,24 +6,13 @@
 
 <p align="center">
   <a href="#computer-project">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-built-with">Construído com</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-how-to-run">Para executar Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-license">Licença</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#mailbox_with_mail-get-in-touch">Entre em contato</a>
   </p>
-
-<p align="center">
-  <a href="https://insomnia.rest/run/?label=Run%20in%20Insomnia&uri=https%3A%2F%2Fraw.githubusercontent.com%2FStefanoSaffran%2Fecoleta%2Fmaster%2FInsomnia_2020-06-06.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia">
-  </a>
-</p>
 
 ## :computer: Projeto
 
 Ecoleta é um aplicativo que tem como objetivo fomentar a reciclagem de resíduos. Ele ajuda pessoas a encontrar pontos de coleta.
 
- <p align="center">
-  <img src="https://res.cloudinary.com/stefanosaffran/image/upload/v1591434863/Omnistack/j7gkzljoqptkidehvbuv.gif" >
-</p>
 ## :rocket: Construído com
 
 Este projeto foi desenvolvido com as seguintes tecnologias:
@@ -31,16 +20,16 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 <details>
   <summary>Backend</summary>
 
-- [Node.js](https://nodejs.org/)
-- [Express](https://expressjs.com/)
-- [Typescript](https://www.typescriptlang.org/)
-- [TS-Node-Dev](https://www.npmjs.com/package/ts-node-dev)
-- [Celebrate](https://github.com/arb/celebrate)
-- [sqlite3](https://sqlite.org/index.html)
-- [knex](https://knexjs.org/)
-- [multer](https://github.com/expressjs/multer)
-- [Cors](https://www.npmjs.com/package/cors)
-- [VS Code](https://code.visualstudio.com/)
+- [Node.js]
+- [Express]
+- [JWT]
+- [Bcrypt]
+- [Express-async-errors]
+- [MYSql]
+- [Sequelize]
+- [Dotenv]
+- [Cors]
+- [VS Code]
 
 </details>
 
