@@ -1,0 +1,32 @@
+export interface Pokemon {
+  Row: String;
+  Name: String;
+  Pokedex_Number: String;
+  Img_name: String;
+  Generation: String;
+  Evolution_Stage: String;
+  Evolved: String;
+  FamilyID: String;
+  Cross_Gen: String;
+  Type_1: String;
+  Type_2: String;
+  Weather_1: String;
+  Weather_2: String;
+  STAT_TOTAL: String;
+  ATK: String;
+  DEF: String;
+  STA: String;
+  Legendary: String;
+  Aquireable: String;
+  Spawns: String;
+  Regional: String;
+  Raidable: String;
+  Hatchable: String;
+  Shiny: String;
+  Nest: String;
+  New: String;
+  Not_Gettable: String;
+  Future_Evolve: String;
+  onehundred_CP_at_40: String;
+  onehundred_CP_at_39: String;
+}

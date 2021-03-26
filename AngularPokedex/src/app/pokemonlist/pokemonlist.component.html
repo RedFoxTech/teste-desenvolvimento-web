@@ -1,0 +1,140 @@
+<div class="container-fluid">
+    <div class="container-fluid pt-5 pb-4">
+        <button mat-raised-button  matTooltip="Filtros!" color="warn" (click)="open = !open">
+          <i class="fas fa-filter"></i>
+        </button>
+      </div>
+  <div class="pb-4" *ngIf="open">
+    <form>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <mat-card>
+            <div class="d-flex justify-content-center">
+              <h4>Filtros</h4>
+            </div>
+            <mat-form-field color="warn" class="w-100">
+              <mat-label>Nome do Pokemon</mat-label>
+              <input
+                [(ngModel)]="filters.name"
+                type="text"
+                matInput
+                name="filtername"
+              />
+            </mat-form-field>
+            <mat-form-field color="warn" class="w-100">
+              <mat-label>Tipo 1</mat-label>
+              <mat-select name="tipo1" [(ngModel)]="filters.type1">
+                <mat-option
+                  *ngFor="let types of poketypes"
+                  [value]="types.value"
+                >
+                  {{ types.name | titlecase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field color="warn" class="w-100">
+              <mat-label>Tipo 2</mat-label>
+              <mat-select name="tipo2" [(ngModel)]="filters.type2">
+                <mat-option
+                  *ngFor="let types of poketypes"
+                  [value]="types.value"
+                >
+                  {{ types.name | titlecase }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <button
+                  class="mr-2"
+                  matTooltip="Filtrar"
+                  mat-raised-button
+                  color="warn"
+                  (click)="getFilteredPokemon()"
+                >
+                Filtrar
+                </button>
+                <button mat-raised-button  matTooltip="Limpar Filtros" color="warn" (click)="clearFilters()">
+                  limpar Filtros
+                </button>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="container">
+   
+    <div class="container" *ngIf="!isSearching">
+      <nav class="mt-1 pt-2">
+        <ul class="pagination justify-content-center">
+          <li class="page-item">
+            <button class="page-link text-danger" (click)="voltarPagina()">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+          </li>
+          <li class="page-item">
+            <span class="page-link disabled text-danger">{{ paginacao }}</span>
+          </li>
+          <li class="page-item">
+            <button class="page-link text-danger" (click)="proxPagina()">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div>
+      <div class="d-flex justify-content-center" *ngIf="isLoading">
+        <mat-progress-spinner
+          class="justify-content-center"
+          color="warn"
+          mode="indeterminate"
+        ></mat-progress-spinner>
+      </div>
+    
+      <div class="row no-gutters" *ngIf="!isLoading">
+        <div
+          class="card m-2"
+          style="width: 22rem"
+          *ngFor="let pokes of pokemons"
+        >
+          <img
+            [src]="getSprite(pokes.Pokedex_Number)"
+            loading="lazy"
+            class="card-img-top p-3"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ pokes.Name }}</h5>
+            <p class="card-text">#{{ pokes.Pokedex_Number }}</p>
+            <p>Tipo(s)</p>
+            <div class="row">
+                <div class="col-1 pl-1">
+                    <div class="icon " [ngClass]="pokes.Type_1">
+                        <img [src]="getTypeIcon(pokes.Type_1)" alt="">
+                    </div>
+                </div>
+               <div class="col-1">
+                <div class="icon " *ngIf="pokes.Type_2"[ngClass]="pokes.Type_2">
+                    <img [src]="getTypeIcon(pokes.Type_2)" alt="">
+                </div>
+               </div>
+            </div>
+           
+            
+            <!-- <p class="card-text">
+              {{ pokes.Type_1 | uppercase
+              }}<span *ngIf="pokes.Type_2"
+                >/{{ pokes.Type_2 | uppercase }}</span
+              >
+            </p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
