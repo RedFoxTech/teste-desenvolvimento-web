@@ -4,21 +4,6 @@
 
 <br />
 
-<h2 align="center">
-   ♻️ NextLevelWeek 1.0 ♻️
-</h2>
-
-<!-- <p align="center">
-  <img alt="Project programing languages count" src="https://img.shields.io/github/languages/count/StefanoSaffran/ecoleta?color=34cb79">
-   <img alt="Repository size" src="https://img.shields.io/github/repo-size/StefanoSaffran/ecoleta?color=34cb79">
-  <img alt="Last commit on GitHub" src="https://img.shields.io/github/last-commit/StefanoSaffran/ecoleta?color=34cb79">
-  <img alt="Made by Stefano" src="https://img.shields.io/badge/made%20by-StefanoSaffran-%20?color=34cb79">
-  <img alt="Project top programing language" src="https://img.shields.io/github/languages/top/StefanoSaffran/ecoleta?color=34cb79">
-  <img alt="GitHub license" src="https://img.shields.io/github/license/StefanoSaffran/ecoleta?color=34cb79">
-</p>
-
--->
-
 <p align="center">
   <a href="#computer-project">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-built-with">Construído com</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -74,34 +59,6 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 </details>
 
-<details>
-  <summary>Mobile</summary>
-
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.io/learn)
-- [Styled Components](https://styled-components.com/)
-- [Typescript](https://www.typescriptlang.org/)
-- [React Navigation](https://reactnavigation.org/)
-- [Axios](https://www.npmjs.com/package/axios)
-- [Expo Google Fonts](https://github.com/expo/google-fonts)
-- [Expo Location](https://docs.expo.io/versions/latest/sdk/location/)
-- [Expo Mail Composer](https://docs.expo.io/versions/latest/sdk/mail-composer/)
-- [React Native Appearance](https://github.com/expo/react-native-appearance)
-- [React Native Picker Select](https://www.npmjs.com/package/react-native-picker-select)
-- [VS Code](https://code.visualstudio.com/)
-
-</details>
-
-## :information_source: Para executar o aplicativo
-
-### Requisitos
-
-Você precisará de:
-
-- [Git](https://git-scm.com)
-- [Node](https://nodejs.org/)
-- [Yarn](https://yarnpkg.com/)
 
 ### Backend
 
