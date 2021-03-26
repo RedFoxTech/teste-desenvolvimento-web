@@ -41,4 +41,14 @@ directoryListing.removeDirectoriesFromListing = (files) =>
     return files
 }
 
+directoryListing.resolveDirectory = (basePath) =>
+{
+    let directoryPath = ""
+    if (typeof basePath === "string")
+    {
+        directoryPath = path.resolve(basePath)
+    }
+    return directoryPath
+}
+
 module.exports = directoryListing

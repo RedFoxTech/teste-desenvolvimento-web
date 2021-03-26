@@ -10,5 +10,6 @@ controllerModule.dbConnector = storageModule.dbConnector
 controllerModule.filePathToURL = storageModule.filePathToURL
 controllerModule.pathPokemons = storageModule.pathPokemons
 controllerModule.directoryListing = storageModule.directoryListing
+controllerModule.resolveDirectory = storageModule.resolveDirectory
 
 module.exports = controllerModule
