@@ -1,5 +1,5 @@
 <div align="center">
-    <h1 align="center"> Pokedex </h1>
+    <h1 align="center"> Desafio Pokémon </h1>
 </div>
 
 <br />
@@ -11,11 +11,9 @@
 
 ## :computer: Projeto
 
-Este projeto foi desenvolvido para o teste de desenvolvimento web da RedFox, foi dada uma maior enfase ao backend, visto que  é minha atual área de atual no momento. 
-Como o teste possibilita uma maior flexibilidade sobre a forma de se atingir o objetivo, optei por utilizar os campos: name, pokedex_number,generation,evolution,familyID,type_1,
-type_2, weather_1, weather_2, stat_total, atk, def, sta, legendary, cp@39,
-cp@40, os demais campos não formão utilizados. 
-
+Projeto desenvolvido para o teste de desenvolvimento web da RedFox, foi dado maior ênfase ao backend, visto que é minha atual área de atual no momento. 
+Como o teste possibilita permite uma flexibilidade sobre a forma na qual o objetivo será atingido, optei por utilizar na modelagem do banco de dados MySQL os seguintes campos: name, pokedex_number, generation, evolution, familyID, type_1, type_2, weather_1, weather_2, stat_total, atk, def, sta, legendary, cp@39, cp@40, os demais campos não formão utilizados. 
+Os campos que possuíam maior relacionamento entre os pokémons eram type_1 e weather_1, por isso optei por criar na tabela de pokemons os campos type_1, type_2, weather_1 e weather_2 como chaves estrangerias das tabelas types e weather. Sendo que cada Pokémon possuía um types e weather e as tabelas types e weather possuem vários Pokémons. 
 
 ## :rocket: Construído com
 
@@ -29,7 +27,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - JWT
 - Bcrypt
 - Express-async-errors
-- MYSql
+- MySQL
 - Sequelize
 - Dotenv
 - Cors
@@ -40,42 +38,37 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 <details>
   <summary>Frontend</summary>
 
-- [React](https://pt-br.reactjs.org/)
-- [Typescript](https://www.typescriptlang.org/)
-- [Styled Components](https://styled-components.com/)
-- [Axios](https://www.npmjs.com/package/axios)
-- [React Dropzone](https://github.com/react-dropzone/react-dropzone)
-- [React Icons](https://react-icons.netlify.com/#/)
-- [Leaflet](https://leafletjs.com/)
-- [React Leaflet](https://react-leaflet.js.org/)
-- [VS Code](https://code.visualstudio.com/)
+- React
+- MaterializeCSS
+- Axios
+- VS Code
 
 </details>
 
 
 ### Backend
 
-A API possui controle de sessão através de um token JWT, na qual possibilita a divisão das rotas em rotas publicas e privadas. Sendo que as rotas publicação podem ser acessadas sem o token em quanto as privadas não pode ser acessadas sem o um token valido.  
+A API possui controle de sessão através de um token JWT, na qual possibilita a divisão das rotas em rotas públicas e privadas. Sendo que as rotas publicação podem ser acessadas sem o token em quanto as privadas não podem ser acessadas sem um token valido.  
 
 > Rotas publicas 
 
-| Método | Rota |  Função | Descrição |
-|--|--|--|--|
-| POST | /user | Cadastra um usuário | Campos obrigatorios: name, email e password. Antes de cadastadar usuário verifica se o email informado já foi cadastrdo. |
-| PUT | /user | Atualiza os dados do usuário | Campos obrigatorios, se usuário informar oldPassword os campos password e confirPassword passar ser obrigatorios. Verifica se a senha confere com a salva no banco e se o email informado já não foi cadastrdo. |
-| POST | /session | Faz login na aplicação | Campos obrigatorios: email e password. Verifica se usuário existe e se a senha confere com a salva no banco. |
-
+| Método | Rota | Função | Campos obrigatórios | Descrição |
+|--|--|--|--|--|
+| POST | /user | Cadastra um usuário | name, email e password | Antes de cadastrada um usuário é verificado se o email informado já foi cadastrado. |
+| PUT | /user | Atualiza os dados do usuário | Se exister oldPassword os campos password e confirPassword passam a ser obrigatórios.  | Verifica se a senha confere com a salva no banco e se o email informado já não foi cadastrado. |
+| POST | /session | Faz login na aplicação | email e password | Verifica se usuário existe e se a senha confere com a salva no banco. |
+<br />
 > Rotas privadas
 
-| Método | Rota |  Função | Descrição |
-|--|--|--|--|
-| POST| /types | Cadastra um type  | Campos obrigatorios: name. Antes de cadastadar o type verifica se o type informado já foi cadastrdo.  | 
-| GET | /types/:id | Traz um type em especifico | Busca os dados de um type pelo seu id e todos os pokemons que possuiem este type |
-| GET | /types | Traz todos os types cadastrados | Verifica se existe algum type cadastrados. |
-| PUT | /types/:id | Atualiza os dados de um type | Busca os dados de um type pelo seu id e verifica se o type informado já foi cadastrdo.  |
-| POST| /weather | Cadastra um weather  | Campos obrigatorios: name. Antes de cadastadar o weather verifica se o type informado já foi cadastrdo.  | 
-| GET | /weather/:id | Traz um weather em especifico | Busca os dados de um weather pelo seu id e todos os pokemons que possuiem este weather. |
-| GET | /weather | Traz todos os weather cadastrados | Verifica se existe algum weather cadastrados. |
+| Método | Rota | Função | Campos obrigatórios | Descrição |
+|--|--|--|--|--|
+| POST| /types | Cadastra um type  | name | Antes de cadastrada o type verifica se o type informado já foi cadastrado.  | 
+| GET | /types/:id | Traz um único type | |Busca os dados de um type pelo seu id e todos os pokémons que possuem aquele type |
+| GET | /types | Traz todos os types cadastrados | |Verifica se existe algum type cadastrados e traz todos os types cadastrados. |
+| PUT | /types/:id | Atualiza os dados de um type || Busca os dados de um type pelo id e verifica se o type informado já foi cadastrado.  |
+| POST| /weather | Cadastra um weather | name | Antes de cadastrada o weather verifica se o weather informado já foi cadastrado.  | 
+| GET | /weather/:id | Traz um weather em especifico | |Busca os dados de um weather pelo seu id e todos os pokemons que possuem este weather. |
+| GET | /weather | Traz todos os weather cadastrados | |Verifica se existe algum weather cadastrados e traz todos os weather cadastrados. |
 | PUT | /weather/:id | Atualiza os dados de um weather | Busca os dados de um weather pelo seu id e verifica se o weather informado já foi cadastrdo.  |
 
 | POST | /pokemon | Cadastra um pokemon | Campos obrigatorios: name, type_1, weather_1, atk, def, sta, cp39 e cp40. Antes de cadastadar o pokemon verifica se o name informado já foi cadastrdo. |
