@@ -1,1 +1,35 @@
-<p>pokemonlist works!</p>
+<div class="container-fluid ">
+    <div class=" container ">
+        <nav aria-label="Page navigation example" class="mt-1 pt-2">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <button class="page-link text-danger" (click)="voltarPagina()">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+              </li>
+              <li class="page-item">
+                <span class="page-link disabled text-danger">{{paginacao}}</span>
+              </li>
+              <li class="page-item">
+                <button class="page-link text-danger"  (click)="proxPagina()">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </li>
+            </ul>
+          </nav>
+          <div >
+            <div class="row no-gutters"  >
+                <div class="card m-2" style="width: 20rem;" *ngFor="let pokes of pokemons">
+                    <img [src]="getSprite(pokes.Pokedex_Number)" loading="lazy" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">{{pokes.Name}}</h5>
+                      <p class="card-text">#{{pokes.Pokedex_Number}}</p>
+                      <p class="card-text">{{pokes.Type_1}}<span *ngIf="pokes.Type_2">/{{pokes.Type_2}}</span></p>
+                     
+                    </div>
+                  </div>
+                </div>
+          </div>
+      
+    </div>
+</div>
