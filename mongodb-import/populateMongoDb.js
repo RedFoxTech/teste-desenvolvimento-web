@@ -138,29 +138,25 @@ function csvJSON(csv)
     let currentline = lines[i].split(",");
     for (let j = 0; j < headers.length; j++)
     {
-      if (j === 2) // ImgName
-      {
+      if ((j === 0) || (j === 2) || (j === 8) || (j === 9) || (j === 10) || (j === 11)) 
+      {// Name || ImgName || Type1 || Type2 || Weather1 || Wheater2 
         obj[headers[j].toLowerCase()] = currentline[j];
       }
-      else if (j == 24)
-      {
+      else if (j === 24)
+      {// new is a reserved word
         obj["newp"] = parseInt(currentline[j]);
       }
-      else if (j == 27)
+      else if (j === 27)
       {
         obj["hundredcp40"] = parseInt(currentline[j]);
       }
-      else if (j == 28)
+      else if (j === 28)
       {
         obj["hundredcp39"] = parseInt(currentline[j]);
       }
       else if (getNumber(currentline[j]) >= 0)
       {
         obj[headers[j].toLowerCase()] = parseInt(currentline[j]);
-      }
-      else
-      {
-        obj[headers[j].toLowerCase()] = currentline[j];
       }
 
     }
