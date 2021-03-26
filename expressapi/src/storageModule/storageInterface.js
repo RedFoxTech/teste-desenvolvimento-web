@@ -9,6 +9,7 @@ storageModule.pathPokemons = "./res/pokemons"
 
 storageModule.directoryListing = directoryListing.listing
 storageModule.removeDirectoriesFromListing = directoryListing.removeDirectoriesFromListing
+storageModule.resolveDirectory = directoryListing.resolveDirectory
 
 storageModule.filePathToURL = directoryConversion.filePathToURL
 storageModule.URLtoFilePath = directoryConversion.URLtoFilePath
