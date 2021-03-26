@@ -1,44 +1,22 @@
 <div align="center">
-    <img src="https://res.cloudinary.com/stefanosaffran/image/upload/v1591433716/Omnistack/tkp3avuykaqfpvydmt0i.svg" width="300px"/>
+    <h1 align="center"> Pokedex </h1>
 </div>
 
 <br />
 
-<h2 align="center">
-   ♻️ NextLevelWeek 1.0 ♻️
-</h2>
-
-<!-- <p align="center">
-  <img alt="Project programing languages count" src="https://img.shields.io/github/languages/count/StefanoSaffran/ecoleta?color=34cb79">
-   <img alt="Repository size" src="https://img.shields.io/github/repo-size/StefanoSaffran/ecoleta?color=34cb79">
-  <img alt="Last commit on GitHub" src="https://img.shields.io/github/last-commit/StefanoSaffran/ecoleta?color=34cb79">
-  <img alt="Made by Stefano" src="https://img.shields.io/badge/made%20by-StefanoSaffran-%20?color=34cb79">
-  <img alt="Project top programing language" src="https://img.shields.io/github/languages/top/StefanoSaffran/ecoleta?color=34cb79">
-  <img alt="GitHub license" src="https://img.shields.io/github/license/StefanoSaffran/ecoleta?color=34cb79">
-</p>
-
--->
-
 <p align="center">
   <a href="#computer-project">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#rocket-built-with">Construído com</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#information_source-how-to-run">Para executar Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-license">Licença</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#mailbox_with_mail-get-in-touch">Entre em contato</a>
   </p>
 
-<p align="center">
-  <a href="https://insomnia.rest/run/?label=Run%20in%20Insomnia&uri=https%3A%2F%2Fraw.githubusercontent.com%2FStefanoSaffran%2Fecoleta%2Fmaster%2FInsomnia_2020-06-06.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia">
-  </a>
-</p>
-
 ## :computer: Projeto
 
-Ecoleta é um aplicativo que tem como objetivo fomentar a reciclagem de resíduos. Ele ajuda pessoas a encontrar pontos de coleta.
+Este projeto foi desenvolvido para o teste de desenvolvimento web da RedFox, foi dada uma maior enfase ao backend, visto que  é minha atual área de atual no momento. 
+Como o teste possibilita uma maior flexibilidade sobre a forma de se atingir o objetivo, optei por utilizar os campos: name, pokedex_number,generation,evolution,familyID,type_1,
+type_2, weather_1, weather_2, stat_total, atk, def, sta, legendary, cp@39,
+cp@40, os demais campos não formão utilizados. 
 
- <p align="center">
-  <img src="https://res.cloudinary.com/stefanosaffran/image/upload/v1591434863/Omnistack/j7gkzljoqptkidehvbuv.gif" >
-</p>
+
 ## :rocket: Construído com
 
 Este projeto foi desenvolvido com as seguintes tecnologias:
@@ -46,16 +24,16 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 <details>
   <summary>Backend</summary>
 
-- [Node.js](https://nodejs.org/)
-- [Express](https://expressjs.com/)
-- [Typescript](https://www.typescriptlang.org/)
-- [TS-Node-Dev](https://www.npmjs.com/package/ts-node-dev)
-- [Celebrate](https://github.com/arb/celebrate)
-- [sqlite3](https://sqlite.org/index.html)
-- [knex](https://knexjs.org/)
-- [multer](https://github.com/expressjs/multer)
-- [Cors](https://www.npmjs.com/package/cors)
-- [VS Code](https://code.visualstudio.com/)
+- Node.js
+- Express
+- JWT
+- Bcrypt
+- Express-async-errors
+- MYSql
+- Sequelize
+- Dotenv
+- Cors
+- VS Code
 
 </details>
 
@@ -74,101 +52,36 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 
 </details>
 
-<details>
-  <summary>Mobile</summary>
-
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [Expo](https://expo.io/learn)
-- [Styled Components](https://styled-components.com/)
-- [Typescript](https://www.typescriptlang.org/)
-- [React Navigation](https://reactnavigation.org/)
-- [Axios](https://www.npmjs.com/package/axios)
-- [Expo Google Fonts](https://github.com/expo/google-fonts)
-- [Expo Location](https://docs.expo.io/versions/latest/sdk/location/)
-- [Expo Mail Composer](https://docs.expo.io/versions/latest/sdk/mail-composer/)
-- [React Native Appearance](https://github.com/expo/react-native-appearance)
-- [React Native Picker Select](https://www.npmjs.com/package/react-native-picker-select)
-- [VS Code](https://code.visualstudio.com/)
-
-</details>
-
-## :information_source: Para executar o aplicativo
-
-### Requisitos
-
-Você precisará de:
-
-- [Git](https://git-scm.com)
-- [Node](https://nodejs.org/)
-- [Yarn](https://yarnpkg.com/)
 
 ### Backend
 
-Clone o repositório e instale as dependências.
+A API possui controle de sessão através de um token JWT, na qual possibilita a divisão das rotas em rotas publicas e privadas. Sendo que as rotas publicação podem ser acessadas sem o token em quanto as privadas não pode ser acessadas sem o um token valido.  
 
-```bash
-# clonar o repositório
-$ git clone https://github.com/SpencerOtoni/Ecoleta.git
-# navege até a pasta de backend
-$ cd ecoleta/backend
-# instale as dependências de backend
-$ yarn
-```
+> Rotas publicas 
 
-```bash
-# Criando tabela no banco de dados
-# run migrations
-$ yarn Knex:migrate
-# run api
-$ yarn dev
-```
+| Método | Rota |  Função | Descrição |
+|--|--|--|--|
+| POST | /user | Cadastra um usuário | Campos obrigatorios: name, email e password. Antes de cadastadar usuário verifica se o email informado já foi cadastrdo. |
+| PUT | /user | Atualiza os dados do usuário | Campos obrigatorios, se usuário informar oldPassword os campos password e confirPassword passar ser obrigatorios. Verifica se a senha confere com a salva no banco e se o email informado já não foi cadastrdo. |
+| POST | /session | Faz login na aplicação | Campos obrigatorios: email e password. Verifica se usuário existe e se a senha confere com a salva no banco. |
+
+> Rotas privadas
+
+| Método | Rota |  Função | Descrição |
+|--|--|--|--|
+| POST| /types | Cadastra um type  | Campos obrigatorios: name. Antes de cadastadar o type verifica se o type informado já foi cadastrdo.  | 
+| GET | /types/:id | Traz um type em especifico | Busca os dados de um type pelo seu id e todos os pokemons que possuiem este type |
+| GET | /types | Traz todos os types cadastrados | Verifica se existe algum type cadastrados. |
+| PUT | /types/:id | Atualiza os dados de um type | Busca os dados de um type pelo seu id e verifica se o type informado já foi cadastrdo.  |
+| POST| /weather | Cadastra um weather  | Campos obrigatorios: name. Antes de cadastadar o weather verifica se o type informado já foi cadastrdo.  | 
+| GET | /weather/:id | Traz um weather em especifico | Busca os dados de um weather pelo seu id e todos os pokemons que possuiem este weather. |
+| GET | /weather | Traz todos os weather cadastrados | Verifica se existe algum weather cadastrados. |
+| PUT | /weather/:id | Atualiza os dados de um weather | Busca os dados de um weather pelo seu id e verifica se o weather informado já foi cadastrdo.  |
+
+| POST | /pokemon | Cadastra um pokemon | Campos obrigatorios: name, type_1, weather_1, atk, def, sta, cp39 e cp40. Antes de cadastadar o pokemon verifica se o name informado já foi cadastrdo. |
+| GET | /pokemon | Traz todos os pokemons cadastrados| Busca todos os pokemons levendo em consideração o criterio de ativos e inativo e ordena pelo name.|
 
 ### Frontend
-
-```bash
-# navege até a pasta de frontend
-$ cd ecoleta/frontend
-# Instale as dependências do frontend e execute-o, em outra aba do terminal.
-$ yarn
-$ yarn start
-```
-
-### Mobile
-
-O Aplicativo foi desenvolvido em Expo. É uma cadeia de ferramentas gratuita e de código aberto construída em torno do React Native para facilitar o processo de execução e teste de aplicativos. [Clique aqui] (https://expo.io/learn) para começar a Expo.
-
-```bash
-# navege até a pasta de mobile
-$ cd ecoleta/mobile
-# Instale as dependências
-yarn
-```
-
-Para executar o aplicativo em seu dispositivo, você precisa alterar a configuração de ip.
-
-[api.ts](https://github.com/SpencerOtoni/Ecoleta/blob/master/mobile/src/services/api.ts)
-
-```javascript
-  baseURL: 'http://192.168.0.104:3333',
-```
-
-substitua http://192.168.0.104 pelo ip da sua máquina.
-
-Agora, com tudo pronto, execute o aplicativo.
-
-```bash
-# para executar o aplicativo
-yarn start
-```
-
-Expo irá abrir uma página no seu navegador, escaneie o QRcode na página e espere o aplicativo carregar.
-
-> O aplicativo foi desenvolvido e testado no android 11.
-
-## :memo: Licença
-
-Este projeto está sob a licença do MIT. Consulte a [LICENÇA] (https://opensource.org/licenses/MIT) para obter mais informações
 
 ##: Entre em contato!
 
