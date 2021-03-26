@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="https://res.cloudinary.com/stefanosaffran/image/upload/v1591433716/Omnistack/tkp3avuykaqfpvydmt0i.svg" width="300px"/>
+    <h1 align="center"> Pokedex </h1>
 </div>
 
 <br />
@@ -105,70 +105,7 @@ Você precisará de:
 
 ### Backend
 
-Clone o repositório e instale as dependências.
-
-```bash
-# clonar o repositório
-$ git clone https://github.com/SpencerOtoni/Ecoleta.git
-# navege até a pasta de backend
-$ cd ecoleta/backend
-# instale as dependências de backend
-$ yarn
-```
-
-```bash
-# Criando tabela no banco de dados
-# run migrations
-$ yarn Knex:migrate
-# run api
-$ yarn dev
-```
-
 ### Frontend
-
-```bash
-# navege até a pasta de frontend
-$ cd ecoleta/frontend
-# Instale as dependências do frontend e execute-o, em outra aba do terminal.
-$ yarn
-$ yarn start
-```
-
-### Mobile
-
-O Aplicativo foi desenvolvido em Expo. É uma cadeia de ferramentas gratuita e de código aberto construída em torno do React Native para facilitar o processo de execução e teste de aplicativos. [Clique aqui] (https://expo.io/learn) para começar a Expo.
-
-```bash
-# navege até a pasta de mobile
-$ cd ecoleta/mobile
-# Instale as dependências
-yarn
-```
-
-Para executar o aplicativo em seu dispositivo, você precisa alterar a configuração de ip.
-
-[api.ts](https://github.com/SpencerOtoni/Ecoleta/blob/master/mobile/src/services/api.ts)
-
-```javascript
-  baseURL: 'http://192.168.0.104:3333',
-```
-
-substitua http://192.168.0.104 pelo ip da sua máquina.
-
-Agora, com tudo pronto, execute o aplicativo.
-
-```bash
-# para executar o aplicativo
-yarn start
-```
-
-Expo irá abrir uma página no seu navegador, escaneie o QRcode na página e espere o aplicativo carregar.
-
-> O aplicativo foi desenvolvido e testado no android 11.
-
-## :memo: Licença
-
-Este projeto está sob a licença do MIT. Consulte a [LICENÇA] (https://opensource.org/licenses/MIT) para obter mais informações
 
 ##: Entre em contato!
 
