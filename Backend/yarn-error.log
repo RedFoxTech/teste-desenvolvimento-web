@@ -1,0 +1,63 @@
+Arguments: 
+  /home/spencer/.nvm/versions/node/v14.15.5/bin/node /home/spencer/.nvm/versions/node/v14.15.5/bin/yarn add uuid
+
+PATH: 
+  /home/spencer/.nvm/versions/node/v14.15.5/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.15.5
+
+Platform: 
+  linux x64
+
+Trace: 
+  SyntaxError: /home/spencer/Área de Trabalho/API-Nodejs-Express/teste-desenvolvimento-web/package.json: Unexpected string in JSON at position 241
+      at JSON.parse (<anonymous>)
+      at /home/spencer/.nvm/versions/node/v14.15.5/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/home/spencer/.nvm/versions/node/v14.15.5/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /home/spencer/.nvm/versions/node/v14.15.5/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "teste-desenvolvimento-web",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/SpencerOtoni/teste-desenvolvimento-web.git",
+    "author": "SpencerOtoni <sspencerotoni@gmail.com>",
+    "license": "MIT"
+    "scripts": {
+      "dev": "nodemon src/server.js"
+    },
+    "dependencies": {
+      "bcryptjs": "^2.4.3",
+      "cors": "^2.8.5",
+      "dotenv": "^8.2.0",
+      "express": "^4.17.1",
+      "express-async-errors": "^3.1.1",
+      "jsonwebtoken": "^8.5.1",
+      "mysql2": "^2.2.5",
+      "sequelize": "^6.5.0",
+      "yup": "^0.32.9"
+    },
+    "devDependencies": {
+      "eslint": "^7.21.0",
+      "eslint-config-airbnb-base": "^14.2.1",
+      "eslint-config-prettier": "^8.1.0",
+      "eslint-plugin-import": "^2.22.1",
+      "eslint-plugin-prettier": "^3.3.1",
+      "nodemon": "^2.0.7",
+      "prettier": "^2.2.1",
+      "sequelize-cli": "^6.2.0",
+      "sucrase": "^3.17.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
