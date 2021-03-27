@@ -18,9 +18,33 @@ const Card = ({ pokemon }) =>
         }
     }, [image]);
 
-    const imageLoader = (pokemon) =>
+    const imageLoader = (image) =>
     {
-        // set image and activate cropping effect
+        if (image.includes("http"))
+        {
+            fetch(image).then(async (img) =>
+            {
+                let blob = await img.blob()
+                readBlob(blob);
+            })
+        }
+        else if (typeof image === 'object' && image !== null)// is a blob
+        {
+            readBlob(image);
+        }
+    }
+
+    const readBlob = (blob) =>
+    {
+        const reader = new FileReader();
+        reader.addEventListener('load', () =>
+        {
+            setImage(reader.result);
+        }, false);
+        if (blob)
+        {
+            reader.readAsDataURL(blob);
+        }
     }
 
     return (<Fragment>
@@ -47,3 +71,5 @@ const Card = ({ pokemon }) =>
 };
 
 export default Card;
+
+
