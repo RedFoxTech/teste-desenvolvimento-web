@@ -74,11 +74,13 @@ com direito a upload de imagem além de filtro de type, weather, e stat.
 | notGettable     |  
 | futureEvolve    |
 
+
 - ``/api/session/pokemon/id``
 
 | Data        | Resposta                  | Ação 
 |-------------|---------------------------|---------------------
 | Nenhuma     | todos os dados do pokemon | Rota para obter todos os dados de um pokemon em específico
+
 
 - ``api/session/pokemons``
 - ``api/session/pokemons?type={type}``
@@ -88,8 +90,8 @@ com direito a upload de imagem além de filtro de type, weather, e stat.
 
 | Data        | Resposta                       | Ação 
 |-------------|--------------------------------|---------------------
-| Nenhuma     | todos os pokemons e seus dados | Rota para obter todos os pokemons e seus dados, 
-|             |                                | com filtro via query na url da api
+| Nenhuma     | todos os pokemons e seus dados | Rota para obter todos os pokemons e seus dados, com filtro via query na url da api                           
+
 
 - ``/api/session/update/id``
 
@@ -104,10 +106,11 @@ com direito a upload de imagem além de filtro de type, weather, e stat.
 |--------------------------|--------------|---------------------
 | Novo arquivo de imagem   | Nenhuma      | Rota para atualizar a imagem de um pokemon
 
+
 - ``api/session/dropall``
 
 | Data      | Resposta     |Ação 
-|--------------------------|--------------
+|-----------|--------------|--------------
 | Nenhuma   | Nenhuma      | Rota para deletar todos os pokemons do usuário
 
 ## Executando a API
