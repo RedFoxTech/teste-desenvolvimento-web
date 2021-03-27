@@ -4,7 +4,7 @@ exports.up = function(knex) {
       return knex.schema.createTable('pokemons', table => {
           table.increments('pokemon_number');
 
-          table.string('name').notNullable().unique();
+          table.string('name').notNullable();
           table.string('type_one');
           table.string('type_two');
           table.string('weather_one');
@@ -31,7 +31,15 @@ exports.up = function(knex) {
           table.boolean('nest').defaultTo(false);
           table.boolean('new').defaultTo(false);
           table.boolean('not_gettable').defaultTo(false);
-          table.boolean('future_evolve').defaultTo(false);       
+          table.boolean('future_evolve').defaultTo(false); 
+          
+          table.timestamp('created_at').defaultTo(knex.fn.now());
+          table.timestamp('updated_at').defaultTo(knex.fn.now());
+
+          table.string('user_id')
+            .references('users.id')
+            .notNullable()
+            .onDelete('CASCADE');
       });
     }
   })

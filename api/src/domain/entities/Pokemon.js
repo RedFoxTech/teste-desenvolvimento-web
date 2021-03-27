@@ -1,13 +1,14 @@
 class Pokemon {
-  constructor(
-    name, typeOne, typeTwo, imageName,
+  constructor({
+    userId, name, typeOne, typeTwo, imageName,
     weatherOne, weatherTwo, generation,
-    evolutionStage, familyId, statTotal,
-    atk, def, stat, raidable, hatchable,
-    evolved, cross_gender, lengendary,
+    evolutionStage, familyId, atk, 
+    def, stat, raidable, hatchable,
+    evolved, crossGender, lengendary,
     acquirable, spawns, regional, shiny,
     nest, newField, notGettable, futureEvolve
-  ) {
+  }) {
+    this.userId = userId;
     this.name = name;
     this.imageName = imageName;
     this.typeOne = typeOne;
@@ -17,14 +18,13 @@ class Pokemon {
     this.generation = generation;
     this.evolutionStage = evolutionStage;
     this.familyId = familyId;
-    this.statTotal = statTotal;
     this.atk = atk;
     this.def = def;
     this.stat = stat;
     this.raidable = raidable;
     this.hatchable = hatchable;
     this.evolved = evolved;
-    this.cross_gender = cross_gender;
+    this.crossGender = crossGender;
     this.lengendary = lengendary;
     this.acquirable = acquirable;
     this.spawns = spawns;
@@ -38,6 +38,7 @@ class Pokemon {
 
   getValues() {
     return {
+      userId: this.userId,
       name: this.name,
       imageName: this.imageName,
       typeOne: this.typeOne,
@@ -47,14 +48,13 @@ class Pokemon {
       generation: this.generation,
       evolutionStage: this.evolutionStage,
       familyId: this.familyId,
-      statTotal: this.statTotal,
       atk: this.atk,
       def: this.def,
       stat: this.stat,
       raidable: this.raidable,
       hatchable: this.hatchable,
       evolved: this.evolved,
-      cross_gender: this.cross_gender,
+      crossGender: this.crossGender,
       lengendary: this.lengendary,
       acquirable: this.acquirable,
       spawns: this.spawns,
