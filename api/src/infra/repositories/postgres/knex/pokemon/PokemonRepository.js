@@ -135,13 +135,14 @@ class PokemonRepository {
         .where('stat_total', '>=', aboveStat)
     }
 
-    const [{ count }] = await db('pokemons')
+    let [{ count }] = await db('pokemons')
       .count('user_id')
       .where({ user_id: userId })
    
     const pokemons = await query;
-
-    const totalPages = count <= LIMIT_ITEMS ? 1 : Math.ceil(LIMIT_ITEMS / count);
+    count = Number(count);
+   
+    const totalPages = count <= LIMIT_ITEMS ? 1 : Math.ceil(count / LIMIT_ITEMS);
 
     return {
       count,

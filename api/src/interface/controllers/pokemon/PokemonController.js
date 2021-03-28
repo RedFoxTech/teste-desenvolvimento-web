@@ -16,7 +16,6 @@ class PokemonController {
 
     try {
       if ((await this.pokemonServices.existsPokemon({ name: data.name, userId }))) {
-        deleteUploadImage(imageName);
         return res.status(401).json({ error: 'Pokemon with name alredy exists'});
       }
 
@@ -30,7 +29,6 @@ class PokemonController {
 
       return res.status(201).json({ message: 'Pokemon created with success'});
     } catch(err) {
-      deleteUploadImage(imageName);
       return res.status(500).json({ error: 'Internal server error'});
     }
   }
