@@ -91,7 +91,7 @@ apiHelpers.resolveImageURL = async (object, controllerModuleHandler, req) =>
 const resolveImagePath = async (controllerModuleHandler, pokemon, serverURL) =>
 {
     let directoryList = [];
-    directoryList = await controllerModuleHandler.storageModule.listFilesAndFolders(controllerModuleHandler.pathPokemons);
+    directoryList = await controllerModuleHandler.storageModule.listFilesAndFolders(controllerModuleHandler.storageModule.pathPokemons);
     for (let index = 0; index < directoryList.length; index++)
     {
         const file = directoryList[index];
