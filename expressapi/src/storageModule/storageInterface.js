@@ -7,7 +7,7 @@ const storageModule = {}
 
 storageModule.pathPokemons = "./res/pokemons"
 
-storageModule.directoryListing = directoryListing.listing
+storageModule.listFilesAndFolders = directoryListing.listFilesAndFolders
 storageModule.removeDirectoriesFromListing = directoryListing.removeDirectoriesFromListing
 storageModule.resolveDirectory = directoryListing.resolveDirectory
 
