@@ -95,7 +95,7 @@ npm install
 yarn install
 ```
 
-- 3 Agora crie um arquivo na raiz do projeto, chamado .env e dentro dele escreva o mesmo conteúdo que tem no arquivo "env.example" que deixei neste repositório, agora após o ``REACT_APP_URL_API=`` você deve colocar a url da api se você estiver executando a api em sua máquina local, igual eu ensinei na pasta da api, você deve deixar assim ``REACT_APP_URL_API=http://localhost:3003``, caso contrario use a api que esta online deve ficar assim ``REACT_APP_URL_API=http://localhost:3003/api``.
+- 3 Agora crie um arquivo na raiz do projeto, chamado .env e dentro dele escreva o mesmo conteúdo que tem no arquivo "env.example" que deixei neste repositório, agora após o ``REACT_APP_URL_API=`` você deve colocar a url da api se você estiver executando a api em sua máquina local, igual eu ensinei na pasta da api, você deve deixar assim ``REACT_APP_URL_API=http://localhost:3003``, caso contrario use a api que esta online deve ficar assim ``https://redfox-api.herokuapp.com/``.
 
 - 4 Feito isso é hora de executar o projeto, para isso execute o comando abaixo.
 
@@ -112,6 +112,6 @@ yarn start
 
 Caso você não queira executar os passos de instalação manualmente, para sua sorte fiz o deploy da aplicação, e você pode testa ela no link abaixo.
 
-[Aplicação aqui]()
+[Aplicação aqui](https://redfox-test-web.vercel.app/)
 
 Creator with 💙 by [Edmilson Jesus](https://www.linkedin.com/in/edmilson-jesus-4128711b5)
