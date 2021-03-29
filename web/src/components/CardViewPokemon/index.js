@@ -10,7 +10,7 @@ function CardViewPokemon({ data, name }) {
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={`${process.env.REACT_APP_URL_API}/images/${data[0].image_name}`}
+          image={`${process.env.REACT_APP_URL_API}/api/images/${data[0].image_name}`}
           title={name}
         />
         <CardContent>

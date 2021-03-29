@@ -19,7 +19,6 @@ function LoginPage() {
 
   let history = useHistory();
   const [ email, setEmail ] = useState('');
-  const [ name, setName ] = useState('');
   const [ password, setPassword ] = useState('');
   
   async function handlerLoginClick() {

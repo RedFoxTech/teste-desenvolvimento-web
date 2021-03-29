@@ -7,7 +7,6 @@ import Routes from "./routes";
 import CustomThemeProvider from './styles/theme';
 
 function App() {
-  
   return (
     <CustomThemeProvider>
       <ToastContainer />

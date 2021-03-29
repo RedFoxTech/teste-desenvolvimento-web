@@ -88,7 +88,6 @@ function DashBoard() {
     })()
   }, [queries])
 
-
   return (
     <DashboardWrapper>
       <FilterPokemons />
@@ -100,7 +99,7 @@ function DashBoard() {
                 <Box>
                   <CardPokemon 
                     name={pokemon.name}
-                    image={`${process.env.REACT_APP_URL_API}/images/${pokemon.image_name}`}
+                    image={`${process.env.REACT_APP_URL_API}/api/images/${pokemon.image_name}`}
                     handleDelete={async () => await handleDeletePokemon(pokemon.pokemon_number)}
                     handleUpdateImage={() => handleUpdatePokemonImage(pokemon.pokemon_number, pokemon.name)}
                     handleUpdatePokemon={() => handleUpdatePokemon(pokemon.pokemon_number, pokemon.name)}

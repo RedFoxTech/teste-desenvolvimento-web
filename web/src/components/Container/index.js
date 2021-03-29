@@ -2,7 +2,7 @@ import { Container } from '@material-ui/core';
 
 function ContainerComponent({ children }) {
   return (
-    <Container maxWidth="sm" maxWidth="md" maxWidth="lg">
+    <Container>
       { children }
     </Container>
   )

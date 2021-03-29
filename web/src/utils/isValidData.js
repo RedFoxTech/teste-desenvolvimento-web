@@ -1,8 +1,6 @@
 import { toast } from 'react-toastify';
 
 export function isValidDataRegister(email, name, password) { 
-  const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
   if (email === '' || name === '' || password === '') {
     toast.error('Preencha todos os campos, para proseguir!');
     return false;
@@ -18,17 +16,10 @@ export function isValidDataRegister(email, name, password) {
     return false;
   }
 
-  if (email !== '' && !emailRegex.test(email)) {
-    toast.error('O formato do email esta incorreto!');
-    return false;
-  }
-
   return true;
 }
 
 export function isValidDataLogin(email, password) { 
-  const emailRegex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
   if (email === '' || password === '') {
     toast.error('Preencha todos os campos, para proseguir!');
     return false;
@@ -36,11 +27,6 @@ export function isValidDataLogin(email, password) {
 
   if (password !== '' && password.length < 6) {
     toast.error('A senha não pode ter menos que 6 caracteres!');
-    return false;
-  }
-
-  if (email !== '' && !emailRegex.test(email)) {
-    toast.error('O formato do email esta incorreto!');
     return false;
   }
 

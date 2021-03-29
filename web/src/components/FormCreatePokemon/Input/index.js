@@ -1,5 +1,4 @@
 import { TextField } from "@material-ui/core";
-import { useEffect } from "react";
 
 import useStyles from "./styles";
 
