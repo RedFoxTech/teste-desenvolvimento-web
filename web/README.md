@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# RedFox - Teste para desenvolvedor web
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Front-end
 
-## Available Scripts
+Este é o front-end da aplicação, construida totalmente resonsiva, layout agradavél, com telas de login e registro, tela para listagem de pokemons, formulário para criar pokemons, filtro, etc.
 
-In the project directory, you can run:
+# Tópicos 
 
-### `yarn start`
+- [Tecologias](#techs)
+- [Rotas da aplicação](#routes)
+- [Rodando a aplicação](#execute)
+- [Página online](#online)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<a id="techs"></a>
+## Tecnologias e bibliotecas utilizadas
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [ReactJS](https://pt-br.reactjs.org/)
+- [Material UI](https://material-ui.com/pt/)
+- [Axios](https://www.npmjs.com/package/axios)
+- [Toastify](https://www.npmjs.com/package/react-toastify)
 
-### `yarn test`
+<a id="routes"></a>
+## Rotas da aplicação
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Públicas
 
-### `yarn build`
+> As rotas públicas não necessitam da auteticação do usuário.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ``/`` 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> Rota da home da aplicação.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+- ``/login`` 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> Rota para o usuário fazer login.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- ``/register`` 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+> Rota para o usuário criar conta.
 
-## Learn More
+### Privadas
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+> AS rotas privadas necessitam que o usuário esteja autenticado.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+- ``/dashboard`` 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+> Rota da dashboard aplicação.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- ``/create`` 
 
-### Making a Progressive Web App
+> Rota para adicionar um novo pokemon.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+__Todas as rotas abaixo só podem ser acessadas via clique no botão de um card relacionado a um pokemon em espécifico, caso contrário você apenas retornará a página da dashboard__
 
-### Advanced Configuration
+- ``/updatepokemon`` 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+> Rota para atualizar alguns dados do pokemon.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- ``/updateimage`` 
 
-### `yarn build` fails to minify
+> Rota para atualizar a imagem de um pokemon.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+- ``/viewpokemon`` 
+
+> Rota para visualizar os dados de um pokemon
+
+<a id="execute"></a>
+## Executando o front-end
+
+Para executar a frnt-end em sua máquina siga os passos abaixo.
+
+- 1 Clone meu repositório em sua máquina 
+
+```sh
+git clone git@github.com:edmilson-dk/teste-desenvolvimento-web.git
+
+# entre na pasta web
+
+cd teste-desenvolvimento-web/web
+```
+
+- 2 Após o passo acima, instale as dependências necessárias, para isso é preciso que você tenha o [NodeJS](https://nodejs.org/en/) instalado em sua máquina.
+
+```sh
+npm install
+
+# ou com yarn
+
+yarn install
+```
+
+- 3 Agora crie um arquivo na raiz do projeto, chamado .env e dentro dele escreva o mesmo conteúdo que tem no arquivo "env.example" que deixei neste repositório, agora após o ``REACT_APP_URL_API=`` você deve colocar a url da api se você estiver executando a api em sua máquina local, igual eu ensinei na pasta da api, você deve deixar assim ``REACT_APP_URL_API=http://localhost:3003/api``, caso contrario use a api que esta online deve ficar assim ``REACT_APP_URL_API=http://localhost:3003/api``.
+
+- 4 Feito isso é hora de executar o projeto, para isso execute o comando abaixo.
+
+```sh
+npm start 
+
+# ou com yarn
+
+yarn start
+```
+
+<a id="online"></a>
+## Veja a aplicação funcionando
+
+Caso você não queira executar os passos de instalação manualmente, para sua sorte fiz o deploy da aplicação, e você pode testa ela no link abaixo.
+
+[Aplicação aqui]()
+
+Creator with 💙 by [Edmilson Jesus](https://www.linkedin.com/in/edmilson-jesus-4128711b5)

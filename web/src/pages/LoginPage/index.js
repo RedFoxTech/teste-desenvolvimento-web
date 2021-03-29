@@ -31,12 +31,9 @@ function LoginPage() {
           toast.success('Bem vindo de volta!');
           userLogin(response.data.token);
           history.push('/dashboard');
-        } else {
-          toast.info('Houve um problema inesperado, tente novamente.');
         }
       } catch (err) {
-        toast.info('Houve um problema inesperado, tente novamente.');
-        console.log(err)
+        toast.info('Dados incorretos, tente novamente!');
       }
     }
   }

@@ -1,6 +1,8 @@
 import { Box } from "@material-ui/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from 'react-toastify';
+
+import { useHistory, useLocation } from "react-router-dom";
 
 import ContainerComponent from "../../components/Container";
 import TitleSecondary from "../../components/TitleSecondary";
@@ -12,15 +14,28 @@ import FormCreatePokemon from "../../components/FormCreatePokemon";
 import ButtonCreatePokemon from "../../components/FormCreatePokemon/Button";
 import GoBackDashBoardHeader from "../../components/GoBackDashBoardHeader";
 import handlerFile from "../../utils/handlerFile";
-import { useLocation } from "react-router-dom";
 
 function DashBoardUpdateImage() {
   const location = useLocation();
+  const history = useHistory();
   const { getUserToken } = useTokenStore();
-  const [ image, setImage ] = useState('');
 
-  const pokemonId = location.state.id;
-  const pokemonName = location.state.name;
+  const [ image, setImage ] = useState('');
+  const [ pokemonId, setPokemonId  ] = useState(null);
+  const [ pokemonName, setPokemonName ] = useState('');
+
+  useEffect(() => {  
+    (async () => {
+      if (!location.state) {
+        history.push('/dashboard');
+        return;
+      } else {
+        setPokemonId(location.state.id);
+        setPokemonName(location.state.name);
+      }
+    })()
+  }, []);
+
   const token = getUserToken();
   
   async function handlerUpdateImage() {

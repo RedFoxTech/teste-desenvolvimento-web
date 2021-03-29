@@ -16,9 +16,12 @@ import { validatePokemonData } from "../../utils/isValidData";
 
 function DashBoardUpdatePokemon() {
   const location = useLocation();
+  const history = useHistory();
 
   const { getUserToken } = useTokenStore();
 
+  const [ pokemonId, setPokemonId  ] = useState(null);
+  const [ pokemonName, setPokemonName ] = useState('');
   const [ typeOne, setTypeOne ] = useState('');
   const [ typeTwo, setTypeTwo ] = useState('');
   const [ weatherOne, setWeatherOne ] = useState('');
@@ -31,8 +34,19 @@ function DashBoardUpdatePokemon() {
 
   const [ defaultData, setDefaultData ] = useState({});
 
-  const pokemonId = location.state.id;
-  const pokemonName = location.state.name;
+  useEffect(() => {  
+    (async () => {
+      if (!location.state) {
+        history.push('/dashboard');
+        return;
+      } else {
+        setPokemonId(location.state.id);
+        setPokemonName(location.state.name);
+        await getPokemonData();
+      }
+    })()
+  }, []);
+  
   const token = getUserToken();
 
   function deleteNotUsedData(data, keys) {
@@ -40,24 +54,22 @@ function DashBoardUpdatePokemon() {
     return data;
   }
 
-  useEffect(() => {
-    (async () => {
-      const { data } = await API.get(`/session/pokemon/${pokemonId}`, 
-      { headers: { Authorization: `Bearer ${token}`}});
+ async function getPokemonData() {
+    const { data } = await API.get(`/session/pokemon/${pokemonId}`, 
+    { headers: { Authorization: `Bearer ${token}`}});
 
-      const result = data.pokemon[0];
-  
-      const notUsedData = [ 
-        'type_one', 'type_two', 'weather_one', 
-        'weather_two', 'generation', 'evolution_stage', 
-        'atk', 'def', 'stat', 'image_name'
-      ];
+    const result = data.pokemon[0];
 
-      const newData = deleteNotUsedData(result, notUsedData);
-      setDefaultData(newData);
-    })();
-  }, []);
-  
+    const notUsedData = [ 
+      'type_one', 'type_two', 'weather_one', 
+      'weather_two', 'generation', 'evolution_stage', 
+      'atk', 'def', 'stat', 'image_name'
+    ];
+
+    const newData = deleteNotUsedData(result, notUsedData);
+    setDefaultData(newData);
+  }
+
   async function handleUpdateImage() {
     const data = {
       typeOne, typeTwo, atk, evolutionStage, def, 
