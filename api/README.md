@@ -214,6 +214,6 @@ yarn dev
 <a id="online"></a>
 ## Veja a aplicação funcionando
 
-Caso você não queira executar os passos de instalação manualmente, para sua sorte fiz o deploy da aplicação, a url da API é esta ``aqui``.
+Caso você não queira executar os passos de instalação manualmente, para sua sorte fiz o deploy da aplicação, a url da API é esta ``https://redfox-api.herokuapp.com/``.
 
 Creator with 💙 by [Edmilson Jesus](https://www.linkedin.com/in/edmilson-jesus-4128711b5)
