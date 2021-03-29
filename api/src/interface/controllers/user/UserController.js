@@ -41,7 +41,7 @@ class UserController {
         return res.status(404).json({ error: 'User not found' });
       }
 
-      if(!(isValidHash(password, user.password))) {
+      if(!(await isValidHash(password, user.password))) {
         return res.status(401).json({ error: 'Password error' });
       }
 

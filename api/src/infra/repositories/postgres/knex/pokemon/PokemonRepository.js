@@ -104,7 +104,7 @@ class PokemonRepository {
   }
 
   async getAllPokemons({ userId, page, type, weather, minStatTotal, maxStatTotal, aboveStat }) { 
-    const LIMIT_ITEMS = 25;
+    const LIMIT_ITEMS = 24;
 
     let query = db('pokemons')
       .limit(LIMIT_ITEMS)

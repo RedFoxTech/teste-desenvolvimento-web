@@ -10,7 +10,7 @@ async function encrypt(password, salt) {
 
 async function isValidHash(currentHash, originalHash) {
   const isValid = await bcrypt.compare(currentHash, originalHash);
-  return !isValid ? false : true;
+  return isValid;
 }
 
 module.exports = {

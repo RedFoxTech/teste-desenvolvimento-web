@@ -3,8 +3,17 @@
 # Back-end 
 
 Este é o back-end da aplicação, construida com cadastro de usuário e CRUD de pokemons
-com direito a upload de imagem além de filtro de type, weather, e stat.
+com direito a upload de imagem além de filtro de type, weather, e stat, seguindo boas práticas de programação
+e abstraindo toda a lógica em camadas.
 
+# Tópicos 
+
+- [Tecologias](#techs)
+- [Rotas da aplicação](#routes)
+- [Rodando a aplicação](#execute)
+- [API online](#online)
+
+<a id="techs"></a>
 ## Tecnologias e bibliotecas utilizadas
 
 - [NodeJS](https://nodejs.org/en/)
@@ -13,6 +22,7 @@ com direito a upload de imagem além de filtro de type, weather, e stat.
 - [Multer](https://www.npmjs.com/package/multer)
 - [Sharp](https://sharp.pixelplumbing.com/)
 
+<a id="routes"></a>
 ## Rotas da aplicação
 
 ### Públicas
@@ -113,11 +123,12 @@ com direito a upload de imagem além de filtro de type, weather, e stat.
 |-----------|--------------|--------------
 | Nenhuma   | Nenhuma      | Rota para deletar todos os pokemons do usuário
 
+<a id="execute"></a>
 ## Executando a API
 
 Para executar a api em sua máquina siga os passos abaixo.
 
-- 1 Clone meu repositorio em sua maquina 
+- 1 Clone meu repositório em sua máquina 
 
 ```sh
 git clone git@github.com:edmilson-dk/teste-desenvolvimento-web.git
@@ -126,6 +137,7 @@ git clone git@github.com:edmilson-dk/teste-desenvolvimento-web.git
 
 cd teste-desenvolvimento-web/api
 ```
+
 - 2 Após o passo acima, instale as dependências necessárias, para isso é preciso que você tenha o [NodeJS](https://nodejs.org/en/) instalado em sua máquina.
 
 ```sh
@@ -198,5 +210,10 @@ npm dev
 
 yarn dev
 ```
+
+<a id="online"></a>
+## Veja a aplicação funcionando
+
+Caso você não queira executar os passos de instalação manualmente, para sua sorte fiz o deploy da aplicação, a url da API é esta ``aqui``.
 
 Creator with 💙 by [Edmilson Jesus](https://www.linkedin.com/in/edmilson-jesus-4128711b5)
