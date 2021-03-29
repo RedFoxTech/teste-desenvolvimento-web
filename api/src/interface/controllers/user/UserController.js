@@ -9,7 +9,7 @@ class UserController {
 
   async store(req, res) {
     const { name, email, password } = req.body;
-
+    
     try {
       if (!isValidUserData(name, email, password)) {
         return res.status(401).json({ error: 'Unspecified or incorrectly formatted data' });
