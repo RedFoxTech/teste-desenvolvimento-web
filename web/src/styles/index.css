@@ -1,0 +1,90 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, button, input {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.color-primary {
+  color: #0065cd;
+}
+
+.color-secondary {
+  color: #e68b04;
+}
+
+.color-error {
+  color: #b12139;
+}
+
+.color-success {
+  color: #109b43;
+}
+
+.color-white {
+  color: #F8FAFC;
+}
+
+.bg-primary {
+  background-color: #0065cd;
+}
+
+.bg-secondary {
+  background-color: #e68b04;
+}
+
+.bg-error {
+  background-color: #b12139;
+}
+
+.bg-success {
+  background-color: #109b43;
+}
+
+.label svg {
+  width: 1em;
+}
+
+.maxWidthItem {
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+.lineItem {
+  width: 100%;
+  height: 3rem;
+  border-radius: 5px;
+  background-color: #F8FAFC;
+  color: #0065cd;
+  font-weight: 600;
+  text-align: left;
+  
+  padding: 0 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lineItem + .lineItem {
+  margin-top: 1rem;
+}
+
+.lineItem > span {
+  color: #e68b04;
+  font-weight: 500;
+  text-align: right;
+}
