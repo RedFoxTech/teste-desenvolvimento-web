@@ -44,6 +44,24 @@ apiHelpers.newPokemon = (body) =>
     return json;
 }
 
+apiHelpers.validateProperty = (propertyName) =>
+{
+    const dataStructure = apiHelpers.newPokemon("")
+
+    if (typeof propertyName == "string")
+    {
+        for (let key of Object.keys(dataStructure)) 
+        {
+            console.log("Current key: ", key)
+            if (propertyName === key)
+            {
+                return true
+            }
+        }
+    }
+    return false
+}
+
 apiHelpers.resolveImageURL = async (object, controllerModuleHandler, req) =>
 {
     let serverURL = req.protocol + '://' + req.get('host');
@@ -57,7 +75,7 @@ apiHelpers.resolveImageURL = async (object, controllerModuleHandler, req) =>
             let pokemon = document._doc ? document._doc : null
             if (typeof pokemon.imgname == "string")
             {
-                await fullPathResolve(controllerModuleHandler, pokemon, serverURL);
+                await resolveImagePath(controllerModuleHandler, pokemon, serverURL);
             }
         }
         return pokemons
@@ -70,10 +88,10 @@ apiHelpers.resolveImageURL = async (object, controllerModuleHandler, req) =>
 }
 
 
-const fullPathResolve = async (controllerModuleHandler, pokemon, serverURL) =>
+const resolveImagePath = async (controllerModuleHandler, pokemon, serverURL) =>
 {
     let directoryList = [];
-    directoryList = await controllerModuleHandler.directoryListing(controllerModuleHandler.pathPokemons);
+    directoryList = await controllerModuleHandler.storageModule.listFilesAndFolders(controllerModuleHandler.pathPokemons);
     for (let index = 0; index < directoryList.length; index++)
     {
         const file = directoryList[index];
@@ -85,11 +103,11 @@ const fullPathResolve = async (controllerModuleHandler, pokemon, serverURL) =>
     }
 }
 
-const checkName = (fileName, partialName) =>
+const checkName = (fileName, documentFileName) =>
 {
-    let result = (typeof fileName == "string") ? fileName.split(".") : []
+    let result = (typeof fileName === "string") ? fileName.split(".") : []
 
-    if (result[0] === partialName)
+    if (result[0] === documentFileName)
     {
         return true
     }
