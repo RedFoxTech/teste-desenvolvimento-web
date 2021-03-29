@@ -6,7 +6,7 @@ const apiDelete = {}
 apiDelete.deletePokemonById = async (req, res) =>
 {
     const id = req.params.id;
-    const dbModel = req.app.locals.controllerModuleHandler.dbModel
+    const dbModel = req.app.locals.controllerModuleHandler.storageModule.dbModel
 
     try
     {
@@ -33,11 +33,11 @@ apiDelete.removeAllPokemonByProperty = async (req, res) =>
 {
     const propertyName = req.query.name;
     const propertyValue = req.query.value;
-    const dbModel = req.app.locals.controllerModuleHandler.dbModel
+    const dbModel = req.app.locals.controllerModuleHandler.storageModule.dbModel
 
     //build filter
     let filter = null
-    if ((typeof propertyName == "string") && (propertyValue != undefined) && (propertyValue != ""))
+    if (apiHelpers.validateProperty(propertyName) && (propertyValue != undefined) && (propertyValue != ""))
     {
         //filter = { [propertyName]: { $regex: new RegExp(propertyValue), $options: 'i' } };
         filter = { [propertyName]: propertyValue }

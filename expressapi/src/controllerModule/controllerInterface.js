@@ -4,12 +4,6 @@ const controllerModule = {}
 
 // Any business module (created with DDD) can be added here, for further data processing
 
-controllerModule.dbModel = storageModule.dbModel
-controllerModule.dbConnector = storageModule.dbConnector
-
-controllerModule.filePathToURL = storageModule.filePathToURL
-controllerModule.pathPokemons = storageModule.pathPokemons
-controllerModule.directoryListing = storageModule.directoryListing
-controllerModule.resolveDirectory = storageModule.resolveDirectory
+controllerModule.storageModule = storageModule
 
 module.exports = controllerModule

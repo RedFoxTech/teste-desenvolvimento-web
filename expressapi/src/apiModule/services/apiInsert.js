@@ -7,7 +7,7 @@ const apiInsert = {}
 // Insert new pokemon
 apiInsert.insertPokemon = async (req, res) =>
 {
-    const dbModel = req.app.locals.controllerModuleHandler.dbModel
+    const dbModel = req.app.locals.controllerModuleHandler.storageModule.dbModel
     try
     {
         let newPokemonJSON = helpers.newPokemon(req.body);

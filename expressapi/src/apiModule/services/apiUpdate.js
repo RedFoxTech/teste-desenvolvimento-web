@@ -8,7 +8,7 @@ const apiUpdate = {}
 apiUpdate.updatePokemonById = async (req, res) =>
 {
     const id = req.params.id;
-    const dbModel = req.app.locals.controllerModuleHandler.dbModel
+    const dbModel = req.app.locals.controllerModuleHandler.storageModule.dbModel
 
     if (!req.body)
     {

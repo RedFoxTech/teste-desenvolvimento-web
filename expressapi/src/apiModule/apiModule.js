@@ -27,8 +27,8 @@ apiModule.initialize = async (controllerModuleHandler) =>
         response.send({ message: 'Wellcome to pokemondex', });
     });
 
-    const imageDirectory = controllerModuleHandler.resolveDirectory(controllerModuleHandler.pathPokemons)
-    // Image directory
+    const imageDirectory = controllerModuleHandler.storageModule.resolveDirectory(controllerModuleHandler.storageModule.pathPokemons)
+    // Images endpoint
     api.use('/images', express.static(imageDirectory));
 
 

@@ -8,7 +8,7 @@ const apiFind = {}
 apiFind.findPokemonById = async (req, res) =>
 {
     let id = parseInt(req.params.id);
-    const dbModel = req.app.locals.controllerModuleHandler.dbModel
+    const dbModel = req.app.locals.controllerModuleHandler.storageModule.dbModel
 
     try
     {
@@ -37,11 +37,11 @@ apiFind.findAllPokemonByProperty = async (req, res) =>
 {
     const propertyName = req.query.name;
     const propertyValue = req.query.value;
-    const dbModel = req.app.locals.controllerModuleHandler.dbModel
+    const dbModel = req.app.locals.controllerModuleHandler.storageModule.dbModel
 
     //build filter
     let filter = null
-    if ((typeof propertyName == "string") && (propertyValue != undefined) && (propertyValue != ""))
+    if (apiHelpers.validateProperty(propertyName) && (propertyValue != undefined) && (propertyValue != ""))
     {
         filter = { [propertyName]: propertyValue }
     }
@@ -76,8 +76,7 @@ apiFind.findAllPokemonByProperty = async (req, res) =>
 // apiFind.findUniquePokemon = async (req, res) =>
 // {
 //     let property = req;
-//     //const dbModel = req.app.locals.controllerModuleHandler.dbModel
-//     const dbConnection = req.app.locals.controllerModuleHandler.dbConnector.connection
+//     //const dbModel = req.app.locals.controllerModuleHandler.storageModule.dbModel
 
 //     try
 //     {
