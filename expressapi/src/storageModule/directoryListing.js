@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const directoryListing = {}
 
-directoryListing.listing = async (basePath) => 
+directoryListing.listFilesAndFolders = async (basePath) => 
 {
     let filesPath = []
     // resolve to absolute path
