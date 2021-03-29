@@ -135,13 +135,24 @@ class PokemonRepository {
         .where('stat_total', '>=', aboveStat)
     }
 
-    let [{ count }] = await db('pokemons')
-      .count('user_id')
-      .where({ user_id: userId })
-   
     const pokemons = await query;
-    count = Number(count);
-   
+    let count = 0;
+
+    let queriesParams = [type, weather, maxStatTotal, minStatTotal, aboveStat];
+    queriesParams = queriesParams.filter(item => item);
+
+    let withQuery = queriesParams.length >= 1 ? true : false;
+
+    if (!withQuery) {
+      const [{ count: result }] = await db('pokemons')
+        .count('user_id')
+        .where({ user_id: userId });
+     
+      count = Number(result);
+    } else {
+      count = pokemons.length;
+    }
+
     const totalPages = count <= LIMIT_ITEMS ? 1 : Math.ceil(count / LIMIT_ITEMS);
 
     return {

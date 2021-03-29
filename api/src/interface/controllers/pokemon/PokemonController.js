@@ -122,7 +122,7 @@ class PokemonController {
     const { id } = req.params;
     const { filename } = req.file;
     const userId = req.userId;
-
+   
     const [ originaFileName ] = filename.split('.');
     const imageName = `${originaFileName}.webp`;
 
@@ -145,7 +145,6 @@ class PokemonController {
 
       return res.status(200).json({ message: 'Pokemon image was successfully updated'})
     } catch(err) {
-      deleteUploadImage(imageName);
       return res.status(500).json({ error: 'Internal server error'});
     }
   }
