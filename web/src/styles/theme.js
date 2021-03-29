@@ -15,13 +15,16 @@ const theme = createMuiTheme({
       main: "#0f1720"
     },
     error: {
-      main: "#b12139"
+      main: "#ea0043"
     },
     success: {
-      main: "#109b43"
+      main: "#00d862",
     },
     white: {
       main: "#F8FAFC"
+    },
+    blue: {
+      main: "#00add3",
     },
     gray: {
       main: "#D1D5DB"
@@ -30,14 +33,18 @@ const theme = createMuiTheme({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 600,
-      md: 960,
+      sm: 780,
+      md: 980,
       lg: 1280,
       xl: 1920,
     },
   },
   typography: {
-    fontFamily: ['Montserrat', 'sans-serif']
+    fontFamily: ['Montserrat', 'sans-serif'],
+    htmlFontSize: 10,
+    "@media screen and (min-width: 360px)": {
+      htmlFontSize: 8,
+    }
   }
 });
 

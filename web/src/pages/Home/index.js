@@ -20,7 +20,7 @@ function Home() {
         <ContainerComponent >
           <Box display="flex" minHeight="100vh" justifyContent='center' alignItems='center'>
             <Grid container spacing={3}>
-              <Grid item xs={12} md={6}>
+              <Grid item xs={12} md={8}>
                 <Typography className={classes.fontTitleMain} color="secondary" variant="h2" component="h1">
                   PokeStore registre seus pokemons favoritos!
                 </Typography>
@@ -29,11 +29,11 @@ function Home() {
                   Com o PokeStore você poderá salvar os dados de todos os pokemons que você conhece! além de poder gerenciar de um jeito simples e intuitivo.
                 </Typography>
 
-                <Button className={classes.btn} variant="contained" color="primary" size="large">
+                <Button className={classes.btn} variant="contained" color="primary" size="medium">
                   <Link className={`${classes.btnStyles} color-white`} to='/register'>Começar</Link>
                 </Button>
               </Grid>
-              <Grid item xs={12} md={6} justify="flex">
+              <Grid item xs={12} md={4}>
                 <Box display="flex" justifyContent="center" alignItems="center" height='360px'>
                   <img className={classes.bgImgStyles} src={bgImg} alt="Pokemon" />
                 </Box>

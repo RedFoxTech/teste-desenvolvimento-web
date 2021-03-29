@@ -6,11 +6,9 @@ function Logo() {
   const classes = useStyles();
 
   return (
-    <Box fontWeight="fontWeightBold">
-      <Typography variant="h3" component="h3">
-        <Typography className={classes.font} variant="h3" color="white" component="span">Poke</Typography>
-        <Typography className={classes.font} variant="h3" color="secondary"component="span">Store</Typography>
-      </Typography>
+    <Box height='5rem' fontWeight="fontWeightBold" display='flex' justifyContent="center" alignItems='center'>
+      <Typography className={classes.font} variant="h3" color="white" component="span">Poke</Typography>
+      <Typography className={classes.font} variant="h3" color="secondary"component="span">Store</Typography>
     </Box>
   )
 }

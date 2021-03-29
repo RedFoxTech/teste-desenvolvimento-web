@@ -1,9 +1,11 @@
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
-  font: {
-    fontSize: "2rem", 
-    fontWeight: 500,
+  root: {
+    '@media screen and (max-width: 779px)': {
+      width: '380px',
+      margin: '0 auto',
+    }
   },
 }))
 

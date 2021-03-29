@@ -2,13 +2,13 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   fontTitleMain: {
-    fontSize: "4rem",
+    fontSize: "2.5rem",
     fontWeight: 600,
   },
   text: {
-    fontSize: "2rem",
+    fontSize: "1.25rem",
     color: "#A1A1AA",
-    margin: "4rem 0"
+    margin: "40px 0"
   },
   bgImgStyles: {
     maxWidth: "100%",
@@ -17,12 +17,12 @@ const useStyles = makeStyles(theme => ({
     objectFit: "cover",
   },
   btn: {
-    padding: '1.2rem',
+    padding: '12px',
     width: '180px',
-    marginBottom: "4rem",
+    marginBottom: "40px",
   },
   btnStyles: {
-    fontSize: "1.8rem", 
+    fontSize: "1.125rem", 
     fontWeight: 600,
   }
 }))

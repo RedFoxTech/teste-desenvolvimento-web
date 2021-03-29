@@ -1,10 +1,11 @@
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
-  font: {
-    fontSize: "2rem", 
-    fontWeight: 500,
-  },
+  root: {
+    fontSize: '2rem',
+    borderRadius: '5px',
+    backgroundColor: theme.palette.white.main,
+  }
 }))
 
 export default useStyles;

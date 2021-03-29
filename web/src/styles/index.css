@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 
-body,
-html {
-  font-size: 62.5%;
-}
-
 body, button, input {
   font-family: 'Montserrat', sans-serif;
 }
@@ -57,4 +52,39 @@ li {
 
 .bg-success {
   background-color: #109b43;
+}
+
+.label svg {
+  width: 1em;
+}
+
+.maxWidthItem {
+  max-width: 390px;
+  margin: 0 auto;
+}
+
+.lineItem {
+  width: 100%;
+  height: 3rem;
+  border-radius: 5px;
+  background-color: #F8FAFC;
+  color: #0065cd;
+  font-weight: 600;
+  text-align: left;
+  
+  padding: 0 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lineItem + .lineItem {
+  margin-top: 1rem;
+}
+
+.lineItem > span {
+  color: #e68b04;
+  font-weight: 500;
+  text-align: right;
 }
