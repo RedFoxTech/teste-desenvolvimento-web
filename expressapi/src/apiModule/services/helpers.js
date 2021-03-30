@@ -52,7 +52,7 @@ apiHelpers.validateProperty = (propertyName) =>
     {
         for (let key of Object.keys(dataStructure)) 
         {
-            console.log("Current key: ", key)
+            //console.log("Current key: ", key)
             if (propertyName === key)
             {
                 return true
@@ -80,11 +80,7 @@ apiHelpers.resolveImageURL = async (object, controllerModuleHandler, req) =>
         }
         return pokemons
     }
-    else
-    {
-        return null
-    }
-
+    return null
 }
 
 
