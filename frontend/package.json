@@ -11,6 +11,7 @@
     "generate": "yarn plop --plopfile ./generators/plopfile.js"
   },
   "dependencies": {
+    "@types/react-icons": "^3.0.0",
     "axios": "^0.21.1",
     "next": "10.0.6",
     "next-pwa": "^5.0.5",
