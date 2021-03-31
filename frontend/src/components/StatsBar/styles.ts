@@ -11,9 +11,9 @@ export const WrapperBar = styled.div`
 `
 
 export const WrapperSpanBar = styled.div<StatsBarProps>`
-  ${({ completed, bgColor, totalStats }) => css`
+  ${({ completed, bgColor, statTotal }) => css`
     height: 100%;
-    width: ${math(`${completed}*100/${totalStats}`)}%;
+    width: ${math(`${completed}*100/${statTotal}`)}%;
     max-width: 380px;
     background-color: ${bgColor};
     border-radius: inherit;

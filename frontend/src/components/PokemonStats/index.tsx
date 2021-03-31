@@ -8,7 +8,7 @@ export type PokemonStatsProps = {
   atk: number
   def: number
   sta: number
-  totalStats: number
+  statTotal: number
   weather: string
   weather2?: string | ''
   evolutionStage: number
@@ -35,7 +35,7 @@ const PokemonStats = ({
   atk,
   def,
   sta,
-  totalStats,
+  statTotal,
   weather,
   weather2,
   evolutionStage,
@@ -82,19 +82,11 @@ const PokemonStats = ({
 
           <S.WrapperStatsBar>
             <span>ATK</span>
-            <StatsBar bgColor={'red'} completed={atk} totalStats={totalStats} />
+            <StatsBar bgColor={'red'} completed={atk} statTotal={statTotal} />
             <span>DEF</span>
-            <StatsBar
-              bgColor={'blue'}
-              completed={def}
-              totalStats={totalStats}
-            />
+            <StatsBar bgColor={'blue'} completed={def} statTotal={statTotal} />
             <span>STA</span>
-            <StatsBar
-              bgColor={'green'}
-              completed={sta}
-              totalStats={totalStats}
-            />
+            <StatsBar bgColor={'green'} completed={sta} statTotal={statTotal} />
           </S.WrapperStatsBar>
           <S.AditionalInfo>
             <S.AditionalInfoColumn>

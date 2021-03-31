@@ -5,20 +5,16 @@ type StatsColors = 'red' | 'green' | 'blue'
 export type StatsBarProps = {
   bgColor: StatsColors
   completed: number
-  totalStats: number
+  statTotal: number
 }
 
-const StatsBar = ({
-  bgColor,
-  completed = 1,
-  totalStats = 1,
-}: StatsBarProps) => {
+const StatsBar = ({ bgColor, completed = 1, statTotal = 1 }: StatsBarProps) => {
   return (
     <S.WrapperBar>
       <S.WrapperSpanBar
         bgColor={bgColor}
         completed={completed}
-        totalStats={totalStats}
+        statTotal={statTotal}
       >
         <S.Progress>{completed}</S.Progress>
       </S.WrapperSpanBar>
