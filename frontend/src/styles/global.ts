@@ -55,7 +55,7 @@ const GlobalStyles = createGlobalStyle`
     font-size: 62.5%;
   }
   html, body, #__next {
-    height: 100%;
+    height: fit-content;
     -ms-overflow-style: none;
 ::-webkit-scrollbar {
     display: none;

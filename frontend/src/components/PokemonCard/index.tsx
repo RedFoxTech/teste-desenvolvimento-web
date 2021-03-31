@@ -24,7 +24,7 @@ export type PokemonCardProps = {
   id: number
   name: string
   image: string
-  pokemonType: PokemonTypes
+  pokemonType: PokemonTypes | ''
   pokemonType2?: PokemonTypes | ''
 }
 
@@ -32,7 +32,7 @@ const PokemonCard = ({
   id,
   name,
   image,
-  pokemonType = 'bug',
+  pokemonType = 'normal',
   pokemonType2 = '',
 }: PokemonCardProps) => {
   return (

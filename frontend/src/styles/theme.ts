@@ -1,6 +1,7 @@
 export default {
   grid: {
-    container: '93.5rem',
+    container: '70rem',
+    gap: '2rem',
   },
   border: {
     radius: '1.5rem',
