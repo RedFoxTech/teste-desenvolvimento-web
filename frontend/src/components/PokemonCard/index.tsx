@@ -4,7 +4,7 @@ type PokemonTypes =
   | 'bug'
   | 'dark'
   | 'dragon'
-  | 'eletric'
+  | 'electric'
   | 'fairy'
   | 'fighting'
   | 'fire'

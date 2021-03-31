@@ -40,7 +40,7 @@ const wrapperModifiers = {
     }
     background: ${theme.colors.dragon};
   `,
-  eletric: (theme: DefaultTheme) => css`
+  electric: (theme: DefaultTheme) => css`
     ${PokemonID},
     ${PokemonName},
     ${PokemonType},
@@ -264,7 +264,9 @@ export const CardWrapper = styled.div<BackgroundColorProps>`
     max-width: 350px;
     border-radius: ${theme.border.radius};
 
-    ${!!pokemonType && wrapperModifiers[pokemonType](theme)}
+    ${!!pokemonType &&
+    wrapperModifiers[pokemonType] &&
+    wrapperModifiers[pokemonType](theme)}
     ${!!onStats && wrapperModifiers.onStats()}
   `}
 `
