@@ -224,6 +224,8 @@ const wrapperModifiers = {
   onStats: () => css`
     width: 500px;
     height: 400px;
+    /* top-left | top-right | bottom-right | bottom-left */
+    border-radius: ${theme.border.radius} 0 0 ${theme.border.radius};
     ${Image} {
       top: 65px;
       left: 60px;
@@ -258,8 +260,7 @@ export const CardWrapper = styled.div<BackgroundColorProps>`
     justify-content: space-between;
     height: 201px;
     max-width: 350px;
-    /* top-left | top-right | bottom-right | bottom-left */
-    border-radius: ${theme.border.radius} 0 0 ${theme.border.radius};
+    border-radius: ${theme.border.radius};
 
     ${!!pokemonType && wrapperModifiers[pokemonType](theme)}
     ${!!onStats && wrapperModifiers.onStats()}
