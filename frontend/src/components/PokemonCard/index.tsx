@@ -24,7 +24,7 @@ export type PokemonCardProps = {
   id: number
   name: string
   image: string
-  pokemonType: PokemonTypes | ''
+  pokemonType: PokemonTypes
   pokemonType2?: PokemonTypes | ''
   onStats: boolean
 }
