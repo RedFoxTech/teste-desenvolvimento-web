@@ -4,8 +4,12 @@ type CoverProps = {
   src: string
 }
 
-export const Main = styled.main`
-  margin-top: 20rem;
+export const PageWrapper = styled.main`
+  margin-top: 5rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
 `
 
 export const Cover = styled.div<CoverProps>`

@@ -1,25 +1,17 @@
-import PokemonCard from 'components/PokemonCard'
+import PokemonCard, { PokemonCardProps } from 'components/PokemonCard'
+import PokemonStats, { PokemonStatsProps } from 'components/PokemonStats'
 import * as S from './styles'
 
-type PokemonAtributes = {
-  atk: number
-  def: number
-  sta: number
-}
 export type PokemonTemplateProps = {
-  pokemonInfo: PokemonAtributes
+  pokemonInfo: PokemonStatsProps & PokemonCardProps
 }
 
 const Pokemon = ({ pokemonInfo }: PokemonTemplateProps) => {
   return (
-    <>
+    <S.PageWrapper>
       <PokemonCard {...pokemonInfo} onStats />
-      <S.Main>
-        {pokemonInfo.atk}
-        {pokemonInfo.def}
-        {pokemonInfo.sta}
-      </S.Main>
-    </>
+      <PokemonStats {...pokemonInfo} />
+    </S.PageWrapper>
   )
 }
 

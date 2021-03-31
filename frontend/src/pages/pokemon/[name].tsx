@@ -41,6 +41,8 @@ export async function getStaticProps({ params }: any) {
 
   const pokemon = data[0]
 
+  console.log(pokemon)
+
   return {
     revalidate: 60,
     props: {
@@ -72,7 +74,6 @@ export async function getStaticProps({ params }: any) {
         hatchable: pokemon['Hatchable'],
         shiny: pokemon['Shiny'],
         nest: pokemon['Nest'],
-        new: pokemon['New'],
         notGettable: pokemon['Not-Gettable'],
         futureEvolve: pokemon['Future Evolve'],
         cp40: pokemon['100% CP @ 40'],

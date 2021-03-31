@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@types/react-icons": "^3.0.0",
+    "@types/react-tabs": "^2.3.2",
     "axios": "^0.21.1",
     "json-server": "^0.16.3",
     "next": "10.0.6",
@@ -19,6 +20,7 @@
     "polished": "^4.1.1",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-tabs": "^3.2.1",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
