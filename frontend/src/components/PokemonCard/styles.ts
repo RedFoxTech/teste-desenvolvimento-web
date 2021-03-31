@@ -222,19 +222,21 @@ const wrapperModifiers = {
   `,
 
   onStats: () => css`
-    width: 500px;
-    height: 400px;
-    /* top-left | top-right | bottom-right | bottom-left */
-    border-radius: ${theme.border.radius} 0 0 ${theme.border.radius};
-    ${Image} {
-      top: 65px;
-      left: 60px;
-      width: 250px;
-      height: 250px;
-    }
-    ${TypesContainer} {
-      flex-direction: row;
-    }
+    ${({ theme }) => css`
+      width: 500px;
+      height: 400px;
+      /* top-left | top-right | bottom-right | bottom-left */
+      border-radius: ${theme.border.radius} 0 0 ${theme.border.radius};
+      ${Image} {
+        top: 65px;
+        left: 60px;
+        width: 250px;
+        height: 250px;
+      }
+      ${TypesContainer} {
+        flex-direction: row;
+      }
+    `}
   `,
 }
 
