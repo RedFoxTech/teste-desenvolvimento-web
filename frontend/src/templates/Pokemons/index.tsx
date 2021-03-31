@@ -55,6 +55,7 @@ const Pokemons = ({ pokemons }: PokemonsTemplateProps) => {
             pokemonType={pokemon.pokemonType}
             pokemonType2={pokemon.pokemonType2}
             image={pokemon.image}
+            onStats={pokemon.onStats}
           />
         ))}
       </S.WrapperCards>

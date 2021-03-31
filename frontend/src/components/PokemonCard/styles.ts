@@ -220,12 +220,35 @@ const wrapperModifiers = {
     }
     background: ${theme.colors.water};
   `,
+
+  onStats: () => css`
+    box-shadow: 0.5rem 0 0 0.5rem rgba(0, 0, 0, 0.2);
+    width: 500px;
+    height: 400px;
+    ${Image} {
+      top: 65px;
+      left: 60px;
+      width: 250px;
+      height: 250px;
+    }
+    ${TypesContainer} {
+      flex-direction: row;
+    }
+  `,
 }
 
-type BackgroundColorProps = Pick<PokemonCardProps, 'pokemonType'>
+export const TypesContainer = styled.div`
+  ${({ theme }) => css`
+    flex-direction: column;
+    margin: ${theme.spacings.small};
+    display: flex;
+  `}
+`
+
+type BackgroundColorProps = Pick<PokemonCardProps, 'pokemonType' | 'onStats'>
 
 export const CardWrapper = styled.div<BackgroundColorProps>`
-  ${({ theme, pokemonType }) => css`
+  ${({ theme, pokemonType, onStats }) => css`
     cursor: pointer;
     box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.2);
     background: ${theme.colors.normal};
@@ -239,6 +262,7 @@ export const CardWrapper = styled.div<BackgroundColorProps>`
     border-radius: ${theme.border.radius};
 
     ${!!pokemonType && wrapperModifiers[pokemonType](theme)}
+    ${!!onStats && wrapperModifiers.onStats()}
   `}
 `
 

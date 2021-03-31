@@ -26,6 +26,7 @@ export type PokemonCardProps = {
   image: string
   pokemonType: PokemonTypes | ''
   pokemonType2?: PokemonTypes | ''
+  onStats: boolean
 }
 
 const PokemonCard = ({
@@ -34,14 +35,15 @@ const PokemonCard = ({
   image,
   pokemonType = 'normal',
   pokemonType2 = '',
+  onStats = false,
 }: PokemonCardProps) => {
   return (
-    <S.CardWrapper pokemonType={pokemonType}>
+    <S.CardWrapper onStats={onStats} pokemonType={pokemonType}>
       <S.WrapperTop>
         <S.PokemonName>{name}</S.PokemonName>
         <S.PokemonID>#{id}</S.PokemonID>
       </S.WrapperTop>
-      <>
+      <S.TypesContainer>
         {!!pokemonType2 && (
           <S.WrapperType>
             <S.PokemonType2>{pokemonType2}</S.PokemonType2>
@@ -50,7 +52,7 @@ const PokemonCard = ({
         <S.WrapperType>
           <S.PokemonType>{pokemonType}</S.PokemonType>
         </S.WrapperType>
-      </>
+      </S.TypesContainer>
 
       <S.Image src={image} alt={name} role="img" />
     </S.CardWrapper>
