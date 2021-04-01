@@ -11,7 +11,7 @@ export const Default: Story<PokemonCardProps> = (args) => (
 )
 
 Default.args = {
-  id: 123,
+  pokedexNumber: 123,
   name: 'Picachu',
 
   pokemonType: 'electric',
