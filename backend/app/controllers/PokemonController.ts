@@ -4,6 +4,9 @@ import Pokemon, { PokemonInterface } from "../models/Pokemon";
 const getPokemons = async (req: Request, res: Response): Promise<void> => {
   try {
     const pokemons: PokemonInterface[] = await Pokemon.find({});
+
+    const count = await Pokemon.countDocuments();
+    console.log(count);
     res.json(pokemons);
   } catch (err) {
     res.status(500);
