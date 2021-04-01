@@ -34,7 +34,7 @@ export interface PokemonInterface extends Document {
 }
 
 const PokemonSchema: Schema = new Schema({
-  Row: { type: String, required: true },
+  Row: { type: String },
   Name: { type: String, required: true },
   "Pokedex Number": { type: String, required: true },
   "Img name": { type: String, required: true },
