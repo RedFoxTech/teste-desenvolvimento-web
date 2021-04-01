@@ -37,10 +37,9 @@ export async function getStaticProps({ params }: any) {
   return {
     revalidate: 60,
     props: {
-      //pokemonInfo: pokemonsMapper(pokemon),
       pokemonInfo: {
         name: pokemon['Name'],
-        id: PokemonID._id,
+        id: pokemon._id,
         pokedexNumber: pokemon['Pokedex Number'],
         image: pokemon['Img name']
           ? `/img/${pokemon['Img name']}.png`
