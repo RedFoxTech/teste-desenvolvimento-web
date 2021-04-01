@@ -1,5 +1,12 @@
+import { useRouter } from 'next/router'
+
 import Button from 'components/Button'
 import ModalConfirmation from 'components/ModalConfirmation'
+
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+import Link from 'next/link'
 import { useState } from 'react'
 import * as S from './styles'
 
@@ -45,14 +52,16 @@ const PokemonCard = ({
   const [displayConfirmationModal, setDisplayConfirmationModal] = useState(
     false,
   )
+  const router = useRouter()
   async function handleDeletePokemon(id: string) {
     await fetch(`http://localhost:3333/pokemons/${id}`, {
       method: 'DELETE',
     })
 
-    console.log('Pokemon removido')
+    toast.info('Pokemon removido')
 
     setDisplayConfirmationModal(false)
+    router.push('/pokemons')
   }
 
   const showConfirmationModal = () => {
@@ -71,9 +80,12 @@ const PokemonCard = ({
         pokemonId={id}
         handleDelete={() => handleDeletePokemon(id)}
       />
+
       <S.CardWrapper onStats={onStats} pokemonType={pokemonType}>
         <S.WrapperTop>
-          <S.PokemonName>{name}</S.PokemonName>
+          <Link href={`pokemon/${name}`} passHref>
+            <S.PokemonName>{name}</S.PokemonName>
+          </Link>
           <S.PokemonID>#{pokedexNumber}</S.PokemonID>
         </S.WrapperTop>
         <S.TypesContainer>
