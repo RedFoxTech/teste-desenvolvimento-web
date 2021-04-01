@@ -1,7 +1,5 @@
 import styled, { css } from 'styled-components'
 
-import * as ButtonStyles from 'components/Button/styles'
-
 type OpenedlProps = {
   isOpen: boolean
 }
@@ -30,21 +28,27 @@ export const ModalWrapper = styled.div`
     border-radius: ${theme.border.radius};
     z-index: ${theme.layers.modal};
     position: relative;
-    width: 516px;
-    height: 244px;
+    width: 695px;
     background: ${theme.colors.white};
-    color: ${theme.colors.primary};
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
   `}
 `
 
-export const ButtonsWrapper = styled.label`
-  ${ButtonStyles.Wrapper} {
-    width: 116px;
-    height: 42px;
-    margin: 0px 10px 0px 10px;
-  }
+export const TitleWrapper = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    margin-left: ${theme.spacings.small};
+    margin-top: ${theme.spacings.small};
+    h1 {
+      color: ${theme.colors.primary};
+    }
+    > svg {
+      margin-right: ${theme.spacings.xxsmall};
+      color: ${theme.colors.primary};
+    }
+  `}
 `
