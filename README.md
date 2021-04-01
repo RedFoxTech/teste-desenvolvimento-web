@@ -24,6 +24,8 @@ Procurei desenvolver os componentes de forma mais isolada possível, permitindo 
 - Storybook - O Storybook é uma excelente ferramenta para prototipação da UI e visualização isolada da aplicação.
 
 <img src="frontend/public/img/storybook.gif"/>
+<img src="frontend/public/img/Frontend.gif"/>
+<img src="frontend/public/img/add.gif"/>
 
 - [x] Typescript
 - [x] NextJs
@@ -32,8 +34,6 @@ Procurei desenvolver os componentes de forma mais isolada possível, permitindo 
 ## Importante
 
 - [x] Utilizei o NextJs com recursos de criação dinâmica de páginas estáticas para as rotas /pokemon/nomedopokemon. Ou seja a aplicação tem uma página estática para cada pokemon do banco de dados.
-
-<img src="frontend/public/img/frontend.gif"/>
 
 ---
 
