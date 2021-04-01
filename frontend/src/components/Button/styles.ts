@@ -16,10 +16,10 @@ const wrapperModifiers = {
       }
     }
   `,
-  onlyText: (theme: DefaultTheme) => css`
+  onlyText: () => css`
     background: none;
-    color: ${theme.colors.primary};
     text-decoration: underline;
+    color: #000;
   `,
 }
 
@@ -53,6 +53,6 @@ export const Wrapper = styled.button<WrapperProps>`
     }
 
     ${!!hasIcon && wrapperModifiers.withIcon(theme)}
-    ${!!onlyText && wrapperModifiers.onlyText(theme)}
+    ${!!onlyText && wrapperModifiers.onlyText()}
   `}
 `

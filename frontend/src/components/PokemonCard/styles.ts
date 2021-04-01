@@ -254,9 +254,10 @@ export const CardWrapper = styled.div<BackgroundColorProps>`
   ${({ theme, pokemonType, onStats }) => css`
     cursor: pointer;
     box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+    z-index: ${theme.layers.base};
     background: ${theme.colors.normal};
     position: relative;
-    padding: ${theme.spacings.small};
+    padding: ${theme.spacings.xsmall};
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -273,8 +274,8 @@ export const CardWrapper = styled.div<BackgroundColorProps>`
 
 export const Image = styled.img`
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 30px;
+  right: 80px;
   width: 110px;
   height: 110px;
 `
@@ -329,4 +330,9 @@ export const PokemonType2 = styled.h2`
     font-size: ${theme.font.sizes.large};
     text-transform: capitalize;
   `}
+`
+export const RemoveWrapper = styled.div`
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 `

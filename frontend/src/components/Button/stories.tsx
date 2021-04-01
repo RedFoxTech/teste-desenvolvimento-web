@@ -1,5 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import { Plus } from '@styled-icons/boxicons-regular/Plus'
+//import { Plus } from '@styled-icons/boxicons-regular/Plus'
 import Button from '.'
 
 export default {
@@ -19,7 +19,7 @@ export const withIcon: Story = (args) => <Button {...args} />
 
 withIcon.args = {
   children: 'Adicionar',
-  icon: <Plus />,
+  //icon: <Plus />,
 }
 
 export const onlyText: Story = (args) => <Button {...args} />

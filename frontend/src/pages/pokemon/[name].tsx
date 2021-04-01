@@ -1,3 +1,4 @@
+import { PokemonID } from 'components/PokemonCard/styles'
 import { useRouter } from 'next/router'
 
 import Pokemon, { PokemonTemplateProps } from 'templates/Pokemon'
@@ -11,11 +12,7 @@ export default function Index(props: PokemonTemplateProps) {
 }
 
 export async function getStaticPaths() {
-  const response = await fetch(
-    'http://localhost:3333/pokemons',
-    //'https://run.mocky.io/v3/e85e336d-2a15-403b-a777-fdebaf38052f',
-    //'https://run.mocky.io/v3/80f925cd-3c57-475d-9acb-b0b784f8f1f2',
-  )
+  const response = await fetch('http://localhost:3333/pokemons')
 
   const data = await response.json()
 
@@ -27,12 +24,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: any) {
-  //get game data
-  const response = await fetch(
-    //usar a rota para buscar pelo nome que será criada na api.
-    'https://run.mocky.io/v3/e85e336d-2a15-403b-a777-fdebaf38052f',
-    //'https://run.mocky.io/v3/80f925cd-3c57-475d-9acb-b0b784f8f1f2',
-  )
+  const response = await fetch(`http://localhost:3333/pokemons/${params.name} `)
 
   const data = await response.json()
 
@@ -41,16 +33,15 @@ export async function getStaticProps({ params }: any) {
   }
 
   const pokemon = data[0]
-
   console.log(pokemon)
-
   return {
     revalidate: 60,
     props: {
       //pokemonInfo: pokemonsMapper(pokemon),
       pokemonInfo: {
         name: pokemon['Name'],
-        id: pokemon['Pokedex Number'],
+        id: PokemonID._id,
+        pokedexNumber: pokemon['Pokedex Number'],
         image: pokemon['Img name']
           ? `/img/${pokemon['Img name']}.png`
           : `/img/pokemon-notfound.png`,

@@ -4,7 +4,8 @@ export const pokemonsMapper = (pokemons: PokemonCardProps[] | undefined) => {
   return pokemons
     ? pokemons.map((pokemon: any) => ({
         name: pokemon['Name'],
-        id: pokemon['Pokedex Number'],
+        id: pokemon._id,
+        pokedexNumber: pokemon['Pokedex Number'],
         image: pokemon['Img name']
           ? `/img/${pokemon['Img name']}.png`
           : `/img/pokemon-notfound.png`,
