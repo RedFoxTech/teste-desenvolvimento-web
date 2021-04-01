@@ -1,58 +1,81 @@
-# Teste de Desenvolvimento Web
+# [](https://github.com/wesleymoliveira)👨‍💻 Wesley Moreira Oliveira
 
-Olá Dev! Tudo bem?
+[![GitHub Badge](https://img.shields.io/badge/%3E-GitHub-black?style=flat&logo=github)](https://github.com/wesleymoliveira) [![Linkedin Badge](https://img.shields.io/badge/%3E-Linkedin-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/wesleymoliveira/) [![Gmail Badge](https://img.shields.io/badge/%3E-Gmail-red?style=flat&logo=gmail)](mailto:oliveirawesleyrj@gmail.com) [![Whatsapp Badge](https://img.shields.io/badge/%3E-Whatsapp-green?style=flat&logo=whatsapp)](https://api.whatsapp.com/send?phone=5522999130259&text=Ol%C3%A1!)
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+# - Frontend -
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+## Abordagem
 
-Agora vamos ao teste!
+Comecei criando um mock com os dados necessários e usei o mocky.io junto com o storybook para fazer o Frontend.
+Procurei desenvolver os componentes de forma mais isolada possível, permitindo a sua reutilização ampla.
 
+## Instruções
 
-## Desafio Pokémon
+- Instale as dependências `$ yarn`
+- Navegue até a pasta /frontend e execute - `$ yarn dev`
+- Para visualizar o protótipo isolado de cada componente e suas diferentes propriedades, utilize o comando: `$ yarn storybook`
 
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
+### O que foi utilizado?
 
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
+- Typescript
+- Styled Components
+- NextJS
+- Plop - `$ yarn generate ComponentName` (automatizar a criação dos components)
+- Storybook - O Storybook é uma excelente ferramenta para prototipação da UI e visualização isolada da aplicação.
 
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
+<img src="frontend/public/img/storybook.gif"/>
 
+- [x] Typescript
+- [x] NextJs
+- [x] Styled Components
 
-## Consigo fazer tudo isso?
+## Importante
 
-Consegue sim!
+- [x] Utilizei o NextJs com recursos de criação dinâmica de páginas estáticas para as rotas /pokemon/nomedopokemon. Ou seja a aplicação tem uma página estática para cada pokemon do banco de dados.
 
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
+<img src="frontend/public/img/frontend.gif"/>
 
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+---
 
+# - Backend -
 
-## Por onde começo?
+## Instruções
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+- Por favor certifique-se que tem o MongoDB Instalado.
+  - inicie o serviço do Mongo - `$ mongod`
+- Navegue até a pasta /backend e execute - `$ yarn dev`
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
+- Para visualizar a documentação da API, visite a rota: `/api-docs/`. Exemplo : `http://localhost:3333/api-docs/`
 
+<img src="backend/src/api-doc.png"/>
 
-## E o Layout??
+### O que foi utilizado?
 
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
+- Typescript
+- Nodemon
+- Cors
+- MongoDB
+- Mongoose
+- Express
+- Swagger
 
+## Rotas disponíveis
 
-## Regras
+- [x] GET - http://localhost:3333/pokemons
+- [x] GET - http://localhost:3333/pokemons/{pokemonname}
+- [x] DELETE - http://localhost:3333/pokemons/{id}
+- [x] POST - http://localhost:3333/pokemons/ (passando JSON no corpo da requisição)
+      Extra:
+- [x] GET - http://localhost:3333/api-docs
 
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
+### Leiam por favor.
 
+Infelizmente não consegui completar o projeto como eu gostaria. Precisei enviar para que vissem e posteriormente vou corrigir. Vou pontuar algumas coisa que ainda vou trabalhar para corrigir:
 
-## Só isso?
+1- Manipulação correta para salvar/ler os campos '0' e '1' do banco.
+2- No backend, não consegui usar regex corretamente para que o filtro pelo nome do pokemon fosse case insensitive. Vou continuar pesquisando. Mas atualmente só está pesquisando se o nome do pokemon estiver minúsculo no banco, afetaando também a geração dinâmica de páginas estáticas do NExt.
+3- Disponibilizei um arquivo short-mock.json peço que importem no mongo pois nele, os nome já estão minúsculos.
+4- Cadastro e envio com imagens e seus tratamentos.
+5- validações para inserir.
 
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
+### Por favor, fiquem a vontade para críticas e feedbacks de melhoria. Eu ficaria muito feliz em saber como progredir.
