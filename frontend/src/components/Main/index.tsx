@@ -1,4 +1,5 @@
 import * as S from './styles'
+import Link from 'next/link'
 
 const Main = ({
   title = 'RedFox - Desafio Frontend',
@@ -11,6 +12,10 @@ const Main = ({
     />
     <S.Title>{title}</S.Title>
     <S.Description>{description}</S.Description>
+
+    <Link href="/pokemons">
+      <a>Clique aqui e navegue para rota /pokemons</a>
+    </Link>
   </S.Wrapper>
 )
 
