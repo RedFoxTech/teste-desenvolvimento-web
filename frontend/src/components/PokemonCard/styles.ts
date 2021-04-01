@@ -261,7 +261,7 @@ export const CardWrapper = styled.div<BackgroundColorProps>`
     flex-direction: column;
     justify-content: space-between;
     height: 201px;
-    max-width: 350px;
+    width: 350px;
     border-radius: ${theme.border.radius};
 
     ${!!pokemonType &&
