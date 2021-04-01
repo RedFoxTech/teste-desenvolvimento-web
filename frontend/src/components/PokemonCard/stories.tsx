@@ -14,7 +14,7 @@ Default.args = {
   id: 123,
   name: 'Picachu',
 
-  pokemonType: 'eletric',
+  pokemonType: 'electric',
   image:
     'https://www.pinclipart.com/picdir/big/355-3552131_pikachu-sticker-transparent-background-pikachu-emoji-clipart.png',
 }

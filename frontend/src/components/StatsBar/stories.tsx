@@ -11,5 +11,5 @@ export const Default: Story<StatsBarProps> = (args) => <StatsBar {...args} />
 Default.args = {
   completed: 21,
   bgColor: 'red',
-  totalStats: 100,
+  statTotal: 100,
 }
