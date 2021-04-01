@@ -148,4 +148,23 @@ const createPokemon = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export { getPokemons, getPokemonByName, createPokemon };
+const deletePokemon = async (req: Request, res: Response): Promise<void> => {
+  try {
+    const id = req.params.id.toString();
+
+    if (Pokemon.findById(id)) {
+      await Pokemon.findByIdAndDelete(id);
+      res.status(204);
+      res.end();
+    } else {
+      res.status(404);
+      res.json({ erro: "ID não encontrada" });
+    }
+  } catch (err) {
+    res.status(500);
+    res.end();
+    console.error("Error message:", err);
+  }
+};
+
+export { getPokemons, getPokemonByName, createPokemon, deletePokemon };
