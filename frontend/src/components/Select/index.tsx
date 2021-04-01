@@ -2,7 +2,7 @@ import { useState, InputHTMLAttributes } from 'react'
 
 import * as S from './styles'
 
-export type TextInputFieldProps = {
+export type SelectProps = {
   onInput?: (value: string) => void
   label?: string
   initialValue?: string
@@ -19,7 +19,7 @@ const Select = ({
   fullWidth = true,
   onInput,
   ...props
-}: TextInputFieldProps) => {
+}: SelectProps) => {
   const [value, setValue] = useState(initialValue)
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {

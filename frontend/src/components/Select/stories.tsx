@@ -1,11 +1,11 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import TextInputField, { TextInputFieldProps } from '.'
+import Select, { SelectProps } from '.'
 
 import { FiSearch } from 'react-icons/fi'
 
 export default {
-  title: 'TextInputField',
-  component: TextInputField,
+  title: 'Select',
+  component: Select,
   args: {
     name: 'Buscar',
     icon: <FiSearch size={45} />,
@@ -17,9 +17,9 @@ export default {
   },
 } as Meta
 
-export const Default: Story<TextInputFieldProps> = (args) => (
+export const Default: Story<SelectProps> = (args) => (
   <div style={{ maxWidth: 900, padding: 15 }}>
-    <TextInputField {...args} />
+    <Select {...args} />
   </div>
 )
 
@@ -27,9 +27,9 @@ Default.args = {
   placeholder: 'Procure o Pokemon, tipo, movimento, habilidade ...',
 }
 
-export const WithLabel: Story<TextInputFieldProps> = (args) => (
+export const WithLabel: Story<SelectProps> = (args) => (
   <div style={{ maxWidth: 900, padding: 15 }}>
-    <TextInputField {...args} />
+    <Select {...args} />
   </div>
 )
 

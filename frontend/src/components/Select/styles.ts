@@ -1,6 +1,6 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 
-import { TextInputFieldProps } from '.'
+import { SelectProps } from '.'
 
 export const wrapperModifiers = {
   WithLabel: (theme: DefaultTheme) => css`
@@ -14,7 +14,7 @@ export const wrapperModifiers = {
   `,
 }
 
-export const InputWrapper = styled.div<TextInputFieldProps>`
+export const InputWrapper = styled.div<SelectProps>`
   ${({ theme, label, fullWidth }) => css`
     display: flex;
     background: ${theme.colors.white};
