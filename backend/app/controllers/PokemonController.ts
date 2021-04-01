@@ -19,9 +19,10 @@ const getPokemonByName = async (req: Request, res: Response): Promise<void> => {
   try {
     const name = req.params.name.toString();
 
-    const namesearch = new RegExp(`${name}`, "i");
+    //const namesearch = new RegExp(name, "i");
+    //const namesearch = { $regex: name, $options: "i" };
 
-    console.log(namesearch);
+    //console.log(namesearch);
 
     const pokemon: PokemonInterface[] = await Pokemon.find({
       Name: name,
