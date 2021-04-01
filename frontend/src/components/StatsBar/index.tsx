@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-type StatsColors = 'red' | 'green' | 'blue'
+type StatsColors = 'red' | 'green' | 'blue' | 'navy'
 
 export type StatsBarProps = {
   bgColor: StatsColors
