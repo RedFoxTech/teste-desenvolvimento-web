@@ -4,8 +4,8 @@ import { useModal } from '../../context/ModalContext'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 
-import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+//import { toast } from 'react-toastify'
+//import 'react-toastify/dist/ReactToastify.css'
 import api from '../../services/api'
 import TextInputField from 'components/TextInputField'
 import { FormWrapper } from '../Form'
@@ -115,7 +115,7 @@ const FormAddPokemon = () => {
       '100% CP @ 39': cp39,
     })
     resetFields()
-    toast.success('Pokemon cadastrado com sucesso.')
+    alert('Pokemon cadastrado com sucesso.')
     changeModalView()
   }
 

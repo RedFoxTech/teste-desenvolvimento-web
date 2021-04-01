@@ -1,7 +1,7 @@
 import { ModalProvider } from '../context/ModalContext'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from 'styles/global'
-import { ToastContainer } from 'react-toastify'
+//import { ToastContainer } from 'react-toastify'
 
 import { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -18,7 +18,6 @@ function App({ Component, pageProps }: AppProps) {
           <meta name="description" content="Wesley M. Oliveira" />
         </Head>
         <Component {...pageProps} />
-        <ToastContainer autoClose={3000} />
       </ThemeProvider>
     </ModalProvider>
   )

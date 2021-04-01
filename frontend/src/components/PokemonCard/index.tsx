@@ -3,8 +3,8 @@ import { useRouter } from 'next/router'
 import Button from 'components/Button'
 import ModalConfirmation from 'components/ModalConfirmation'
 
-import { toast } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+//import { toast } from 'react-toastify'
+//import 'react-toastify/dist/ReactToastify.css'
 
 import Link from 'next/link'
 import { useState } from 'react'
@@ -58,7 +58,7 @@ const PokemonCard = ({
       method: 'DELETE',
     })
 
-    toast.info('Pokemon removido')
+    alert('Pokemon removido')
 
     setDisplayConfirmationModal(false)
     router.push('/pokemons')
