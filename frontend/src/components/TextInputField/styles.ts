@@ -8,7 +8,9 @@ export const wrapperModifiers = {
   `,
 
   fullWidth: () => css`
-    width: 100%;
+    ${Wrapper} {
+      width: 100%;
+    }
   `,
 }
 
@@ -23,7 +25,6 @@ export const InputWrapper = styled.div<TextInputFieldProps>`
     border-bottom: 0.3rem solid;
     border-color: ${theme.colors.lightGray};
     height: 5rem;
-    width: 22.6rem;
 
     ${!!label && wrapperModifiers.WithLabel(theme)};
 
@@ -70,6 +71,7 @@ export const Label = styled.label`
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
+    width: 100%;
     margin: ${theme.spacings.medium} ${theme.spacings.medium}
       ${theme.spacings.medium} 0;
   `}

@@ -225,6 +225,7 @@ const wrapperModifiers = {
     ${({ theme }) => css`
       width: 500px;
       height: 400px;
+
       /* top-left | top-right | bottom-right | bottom-left */
       border-radius: ${theme.border.radius} 0 0 ${theme.border.radius};
       ${Image} {
@@ -235,6 +236,12 @@ const wrapperModifiers = {
       }
       ${TypesContainer} {
         flex-direction: row;
+      }
+      ${PokemonName} {
+        pointer-events: none;
+      }
+      ${RemoveWrapper} {
+        visibility: visible;
       }
     `}
   `,
@@ -252,7 +259,6 @@ type BackgroundColorProps = Pick<PokemonCardProps, 'pokemonType' | 'onStats'>
 
 export const CardWrapper = styled.div<BackgroundColorProps>`
   ${({ theme, pokemonType, onStats }) => css`
-    cursor: pointer;
     box-shadow: 0 0.5rem 0.5rem 0 rgba(0, 0, 0, 0.2);
     z-index: ${theme.layers.base};
     background: ${theme.colors.normal};
@@ -289,6 +295,7 @@ export const WrapperTop = styled.div`
 
 export const PokemonName = styled.h2`
   ${({ theme }) => css`
+    cursor: pointer;
     color: ${theme.colors.white};
     font-weight: ${theme.font.bold};
     font-size: ${theme.font.sizes.xxlarge};
@@ -332,6 +339,7 @@ export const PokemonType2 = styled.h2`
   `}
 `
 export const RemoveWrapper = styled.div`
+  visibility: hidden;
   position: absolute;
   bottom: 0px;
   right: 0px;

@@ -12,6 +12,13 @@ export const Wrapper = styled.main`
   align-items: center;
   //justify-content: center;
 `
+export const WrapperSearch = styled.div`
+  width: 720px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+`
 
 export const Logo = styled.img`
   width: 25rem;
@@ -20,6 +27,7 @@ export const Logo = styled.img`
 
 export const WrapperCards = styled.main`
   ${({ theme }) => css`
+    z-index: ${theme.layers.base};
     margin-top: ${theme.spacings.medium};
     display: grid;
     grid-gap: ${theme.grid.gap};
@@ -32,7 +40,7 @@ export const WrapperHeading = styled.main`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    justify-items: center;
+    //justify-items: center;
     align-items: center;
     width: 100%;
     background-color: ${theme.colors.white};
