@@ -4,8 +4,6 @@ import { useModal } from '../../context/ModalContext'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 
-//import { toast } from 'react-toastify'
-//import 'react-toastify/dist/ReactToastify.css'
 import api from '../../services/api'
 import TextInputField from 'components/TextInputField'
 import { FormWrapper } from '../Form'
@@ -23,9 +21,7 @@ const FormAddPokemon = () => {
   const [image, setImage] = useState('')
   const [generation, setGeneration] = useState(0)
   const [evolutionStage, setEvolutionStage] = useState(0)
-  const [evolved, setEvolved] = useState(0)
   const [familyID, setfamilyID] = useState(0)
-  const [crossGen, setCrossGen] = useState(0)
   const [pokemonType, setpokemonType] = useState('')
   const [pokemonType2, setpokemonType2] = useState('')
   const [weather, setWeather] = useState('')
@@ -34,43 +30,50 @@ const FormAddPokemon = () => {
   const [atk, setAtk] = useState(0)
   const [def, setDef] = useState(0)
   const [sta, setSta] = useState(0)
-  const [legendary, setLegendary] = useState(0)
-  const [aquireable, setAquireable] = useState(0)
-  const [spaws, setSpaws] = useState(0)
-  const [regional, setRegional] = useState(0)
-  const [raidable, setRaidable] = useState(0)
   const [hatchable, setHatchable] = useState(0)
-  const [shiny, setShiny] = useState(0)
-  const [nest, setNest] = useState(0)
-  const [isNew, setIsNew] = useState(0)
-  const [notGettable, setNotgettable] = useState(0)
-  const [futureEvolve, setFutureEvolve] = useState(0)
   const [cp40, setCp40] = useState(0)
   const [cp39, setCp39] = useState(0)
 
+  const [checkBoxesValues, setCheckBoxesValues] = useState({
+    evolved: '0',
+    crossGen: '0',
+    legendary: '0',
+    aquireable: '0',
+    spaws: '1',
+    regional: '0',
+    raidable: '0',
+    shiny: '0',
+    nest: '0',
+    notGettable: '0',
+    isNew: '0',
+    futureEvolve: '0',
+  })
+
   function resetFields() {
-    setAquireable(0),
+    setCheckBoxesValues({
+      evolved: '0',
+      crossGen: '0',
+      legendary: '0',
+      aquireable: '0',
+      spaws: '0',
+      regional: '0',
+      raidable: '0',
+      shiny: '0',
+      nest: '0',
+      notGettable: '0',
+      isNew: '0',
+      futureEvolve: '0',
+    }),
       setAtk(0),
       setCp39(0),
       setCp40(0),
-      setCrossGen(0),
       setDef(0),
       setEvolutionStage(0),
-      setEvolved(0),
-      setFutureEvolve(0),
       setGeneration(0),
       setHatchable(0),
       setImage(''),
-      setLegendary(0),
       setName(''),
-      setNest(0),
-      setNotgettable(0),
-      setRaidable(0),
-      setRegional(0),
-      setShiny(0),
-      setSpaws(0),
       setSta(0),
-      setIsNew(0),
       setWeather(''),
       setWeather2(''),
       setfamilyID(0),
@@ -89,35 +92,93 @@ const FormAddPokemon = () => {
       'Img name': image,
       Generation: generation,
       'Evolution Stage': evolutionStage,
-      Evolved: evolved,
       FamilyID: familyID,
-      'Cross Gen': crossGen,
       'Type 1': pokemonType,
       'Type 2': pokemonType2,
       'Weather 1': weather,
       'Weather 2': weather2,
       'STAT TOTAL': statTotal,
-      New: isNew,
       ATK: atk,
       DEF: def,
       STA: sta,
-      Legendary: legendary,
-      Aquireable: aquireable,
-      Spawns: spaws,
-      Regional: regional,
-      Raidable: raidable,
       Hatchable: hatchable,
-      Shiny: shiny,
-      Nest: nest,
-      'Not-Gettable': notGettable,
-      'Future Evolve': futureEvolve,
       '100% CP @ 40': cp40,
       '100% CP @ 39': cp39,
+      'Cross Gen': checkBoxesValues.crossGen,
+      Evolved: checkBoxesValues.evolved,
+      New: checkBoxesValues.isNew,
+      Legendary: checkBoxesValues.legendary,
+      Aquireable: checkBoxesValues.aquireable,
+      Spawns: checkBoxesValues.spaws,
+      Regional: checkBoxesValues.regional,
+      Raidable: checkBoxesValues.raidable,
+      Shiny: checkBoxesValues.shiny,
+      Nest: checkBoxesValues.nest,
+      'Not-Gettable': checkBoxesValues.notGettable,
+      'Future Evolve': checkBoxesValues.futureEvolve,
     })
     resetFields()
     alert('Pokemon cadastrado com sucesso.')
     changeModalView()
   }
+
+  const checkboxFields = [
+    {
+      label: 'Evolved',
+      name: 'evolved',
+      value: `${checkBoxesValues.evolved}`,
+    },
+    {
+      label: 'Cross Gen',
+      name: 'crossGen',
+      value: `${checkBoxesValues.crossGen}`,
+    },
+    {
+      label: 'Legendary',
+      name: 'legendary',
+      value: `${checkBoxesValues.legendary}`,
+    },
+    {
+      label: 'Aquireable',
+      name: 'aquireable',
+      value: `${checkBoxesValues.aquireable}`,
+    },
+    {
+      label: 'Spaws',
+      name: 'spaws',
+      value: `${checkBoxesValues.spaws}`,
+    },
+    {
+      label: 'Regional',
+      name: 'regional',
+      value: `${checkBoxesValues.regional}`,
+    },
+    {
+      label: 'Raidable',
+      name: 'raidable',
+      value: `${checkBoxesValues.raidable}`,
+    },
+    {
+      label: 'Shiny',
+      name: 'shiny',
+      value: `${checkBoxesValues.shiny}`,
+    },
+    {
+      label: 'Not-Gettable',
+      name: 'notGettable',
+      value: `${checkBoxesValues.notGettable}`,
+    },
+    {
+      label: 'Nest',
+      name: 'nest',
+      value: `${checkBoxesValues.nest}`,
+    },
+    {
+      label: 'Future Evolve',
+      name: 'futureEvolve',
+      value: `${checkBoxesValues.futureEvolve}`,
+    },
+  ]
 
   const options = [
     { value: 'bug' },
@@ -139,6 +200,22 @@ const FormAddPokemon = () => {
     { value: 'steel' },
     { value: 'water' },
   ]
+
+  const handleCheckbox = (name: string, value: string) => {
+    if (value === '0') {
+      const newValue = '1'
+      console.log(checkBoxesValues)
+      setCheckBoxesValues((s) => ({ ...s, [name]: newValue }))
+      console.log(name, newValue)
+      console.log(checkBoxesValues)
+    } else {
+      const newValue = '0'
+      console.log(checkBoxesValues)
+      setCheckBoxesValues((s) => ({ ...s, [name]: newValue }))
+      console.log(name, newValue)
+      console.log(checkBoxesValues)
+    }
+  }
 
   return (
     <FormWrapper>
@@ -231,90 +308,18 @@ const FormAddPokemon = () => {
             label="Pokedex Number"
             type="number"
           />
-          <Checkbox
-            labelColor="black"
-            name="Evolved"
-            onCheck={() => setEvolved(1)}
-            value={evolved}
-            label="Evolved"
-          />
-          <Checkbox
-            labelColor="black"
-            name="crossGen"
-            onCheck={() => setCrossGen(1)}
-            value={crossGen}
-            label="Cross Gen"
-          />
-          <Checkbox
-            labelColor="black"
-            name="Legendary"
-            onCheck={() => setLegendary(1)}
-            value={legendary}
-            label="Legendary"
-          />
-          <Checkbox
-            labelColor="black"
-            name="Aquireable"
-            onCheck={() => setAquireable(1)}
-            value={aquireable}
-            label="Aquireable"
-          />
-          <Checkbox
-            labelColor="black"
-            name="Spaws"
-            onCheck={() => setSpaws(1)}
-            value={spaws}
-            label="Spaws"
-          />
-          <Checkbox
-            labelColor="black"
-            name="Regional"
-            onCheck={() => setRegional(1)}
-            value={regional}
-            label="Regional"
-          />
-          <Checkbox
-            labelColor="black"
-            name="Raidable"
-            onCheck={() => setRaidable(1)}
-            value={raidable}
-            label="Raidable"
-          />
-          <Checkbox
-            labelColor="black"
-            name="Shiny"
-            onCheck={() => setShiny(1)}
-            value={shiny}
-            label="Shiny"
-          />
-          <Checkbox
-            labelColor="black"
-            name="Nest"
-            onCheck={() => setNest(1)}
-            value={nest}
-            label="Nest"
-          />
-          <Checkbox
-            labelColor="black"
-            name="Not-Gettable"
-            onCheck={() => setNotgettable(1)}
-            value={notGettable}
-            label="Not-Gettable"
-          />
-          <Checkbox
-            labelColor="black"
-            name="New"
-            onCheck={() => setIsNew(1)}
-            value={isNew}
-            label="New"
-          />
-          <Checkbox
-            labelColor="black"
-            name="Future Evolve"
-            onCheck={() => setFutureEvolve(1)}
-            value={futureEvolve}
-            label="Future Evolve"
-          />
+
+          {checkboxFields.map((field) => (
+            <Checkbox
+              key={field.name}
+              labelColor="black"
+              isChecked={field.value === '1' ? true : false}
+              onCheck={() => handleCheckbox(field.name, field.value)}
+              name={field.name}
+              label={field.label}
+              value={field.value}
+            />
+          ))}
         </TabPanel>
       </Tabs>
     </FormWrapper>

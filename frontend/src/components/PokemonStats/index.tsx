@@ -12,23 +12,23 @@ export type PokemonStatsProps = {
   weather: string
   weather2?: string | ''
   evolutionStage: number
-  evolved: boolean
+  evolved: string
   generation: number
   familyID?: number
-  crossGen: boolean
-  legendary: boolean
+  crossGen: string
+  legendary: string
   aquireable: number
-  spawns: boolean
-  regional: boolean
-  raidable: boolean
+  spawns: string
+  regional: string
+  raidable: string
   hatchable: number
-  shiny: boolean
-  nest: boolean
-  notGettable: boolean
-  futureEvolve: boolean
+  shiny: string
+  nest: string
+  notGettable: string
+  futureEvolve: string
   cp40: number
   cp39: number
-  new: boolean
+  isNew: string
 }
 
 const PokemonStats = ({
@@ -55,6 +55,7 @@ const PokemonStats = ({
   regional,
   shiny,
   spawns,
+  isNew,
 }: PokemonStatsProps) => {
   return (
     <S.Wrapper>
@@ -132,27 +133,60 @@ const PokemonStats = ({
             </S.CPColumn>
           </S.CPWrapper>
           <S.CheckboxWrapper>
-            <Checkbox label="Evolved" labelColor="black" checked={evolved} />
-            <Checkbox label="Cross Gen" labelColor="black" checked={crossGen} />
+            <Checkbox
+              label="Evolved"
+              labelColor="black"
+              checked={evolved === '1' ? true : false}
+            />
+            <Checkbox
+              label="Cross Gen"
+              labelColor="black"
+              checked={crossGen === '1' ? true : false}
+            />
             <Checkbox
               label="Legendary"
               labelColor="black"
-              checked={legendary}
+              checked={legendary === '1' ? true : false}
             />
-            <Checkbox label="Spaws" labelColor="black" checked={spawns} />
-            <Checkbox label="Regional" labelColor="black" checked={regional} />
-            <Checkbox label="Raidable" labelColor="black" checked={raidable} />
-            <Checkbox label="Shiny" labelColor="black" checked={shiny} />
-            <Checkbox label="Nest" labelColor="black" checked={nest} />
+            <Checkbox
+              label="Spaws"
+              labelColor="black"
+              checked={spawns === '1' ? true : false}
+            />
+            <Checkbox
+              label="Regional"
+              labelColor="black"
+              checked={regional === '1' ? true : false}
+            />
+            <Checkbox
+              label="Raidable"
+              labelColor="black"
+              checked={raidable === '1' ? true : false}
+            />
+            <Checkbox
+              label="Shiny"
+              labelColor="black"
+              checked={shiny === '1' ? true : false}
+            />
+            <Checkbox
+              label="Nest"
+              labelColor="black"
+              checked={nest === '1' ? true : false}
+            />
             <Checkbox
               label="Not-Gettable"
               labelColor="black"
-              checked={notGettable}
+              checked={notGettable === '1' ? true : false}
             />
             <Checkbox
               label="Future Evolve"
               labelColor="black"
-              checked={!!futureEvolve}
+              checked={futureEvolve === '1' ? true : false}
+            />
+            <Checkbox
+              label="New"
+              labelColor="black"
+              checked={isNew === '1' ? true : false}
             />
           </S.CheckboxWrapper>
         </TabPanel>
