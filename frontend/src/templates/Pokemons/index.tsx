@@ -74,7 +74,7 @@ const Pokemons = ({ pokemons }: PokemonsTemplateProps) => {
         <S.WrapperCards>
           {pokemons.map((pokemon) => (
             <PokemonCard
-              key={pokemon.name}
+              key={pokemon.id}
               id={pokemon.id}
               pokedexNumber={pokemon.pokedexNumber}
               name={pokemon.name}

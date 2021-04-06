@@ -12,9 +12,11 @@ import * as S from './styles'
 import Button from 'components/Button'
 import Checkbox from 'components/CheckBox'
 import Select from 'components/Select'
+import { FiPlus } from 'react-icons/fi'
 
 const FormAddPokemon = () => {
   const { changeModalView } = useModal()
+  const [image2, setImage2] = useState<any>({ preview: '', raw: '' })
 
   const [name, setName] = useState('')
   const [pokedexNumber, setpokedexNumber] = useState('')
@@ -204,16 +206,23 @@ const FormAddPokemon = () => {
   const handleCheckbox = (name: string, value: string) => {
     if (value === '0') {
       const newValue = '1'
-      console.log(checkBoxesValues)
       setCheckBoxesValues((s) => ({ ...s, [name]: newValue }))
-      console.log(name, newValue)
-      console.log(checkBoxesValues)
     } else {
       const newValue = '0'
-      console.log(checkBoxesValues)
       setCheckBoxesValues((s) => ({ ...s, [name]: newValue }))
-      console.log(name, newValue)
-      console.log(checkBoxesValues)
+    }
+  }
+
+  const handleSelectedImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      setImage2({
+        preview: URL.createObjectURL(e.target.files[0]),
+        raw: e.target.files[0],
+      })
+      setImage(image2.raw.name)
+      console.log(image)
+    } else {
+      return
     }
   }
 
@@ -230,12 +239,32 @@ const FormAddPokemon = () => {
         </TabList>
         <TabPanel>
           <form onSubmit={handleSubmit}>
+            <>
+              <S.Label htmlFor="image">Adicione a imagem do Pokemon</S.Label>
+              <S.ImagesContainer>
+                {image2.preview ? (
+                  <S.Image src={image2.preview} alt={image} />
+                ) : (
+                  <S.NewImage htmlFor="image">
+                    <FiPlus size={24} color="#15b6d6" />
+                  </S.NewImage>
+                )}
+              </S.ImagesContainer>
+              <S.Input type="file" onChange={handleSelectedImage} id="image" />
+            </>
             <TextInputField
               name="Name"
               onChange={(event) => setName(event.target.value)}
               value={name}
               label="Name"
               type="text"
+            />
+            <TextInputField
+              name="Pokedex Number"
+              onChange={(event) => setpokedexNumber(event.target.value)}
+              value={pokedexNumber}
+              label="Pokedex Number"
+              type="number"
             />
             <Select
               name="Type 1"
@@ -263,27 +292,6 @@ const FormAddPokemon = () => {
                 </option>
               ))}
             </Select>
-            <TextInputField
-              name="Weather 1"
-              onChange={(event) => setWeather(event.target.value)}
-              value={weather}
-              label="Weather1"
-              type="text"
-            />
-            <TextInputField
-              name="Weather 2"
-              onChange={(event) => setWeather2(event.target.value)}
-              value={weather2}
-              label="Weather2"
-              type="text"
-            />
-            <TextInputField
-              name="Image name"
-              onChange={(event) => setImage(event.target.value)}
-              value={image}
-              label="Image name"
-              type="text"
-            />
 
             <S.ButtonsWrapper>
               <Button
@@ -302,11 +310,27 @@ const FormAddPokemon = () => {
 
         <TabPanel>
           <TextInputField
-            name="Pokedex Number"
-            onChange={(event) => setpokedexNumber(event.target.value)}
-            value={pokedexNumber}
-            label="Pokedex Number"
-            type="number"
+            name="Image name"
+            onChange={(event) => setImage(event.target.value)}
+            value={image}
+            initialValue={image}
+            placeholder={image}
+            label="Image name"
+            type="text"
+          />
+          <TextInputField
+            name="Weather 1"
+            onChange={(event) => setWeather(event.target.value)}
+            value={weather}
+            label="Weather1"
+            type="text"
+          />
+          <TextInputField
+            name="Weather 2"
+            onChange={(event) => setWeather2(event.target.value)}
+            value={weather2}
+            label="Weather2"
+            type="text"
           />
 
           {checkboxFields.map((field) => (
