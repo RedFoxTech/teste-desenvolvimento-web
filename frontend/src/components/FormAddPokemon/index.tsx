@@ -6,42 +6,52 @@ import 'react-tabs/style/react-tabs.css'
 
 import api from '../../services/api'
 import TextInputField from 'components/TextInputField'
-import { FormWrapper } from '../Form'
+import { FormError, FormWrapper } from '../Form'
 import * as S from './styles'
 
 import Button from 'components/Button'
 import Checkbox from 'components/CheckBox'
 import Select from 'components/Select'
-import { FiPlus } from 'react-icons/fi'
+
+import { FiPlus, FiXCircle } from 'react-icons/fi'
+
+import {
+  FieldErrors,
+  addPokemonValidate,
+  FieldsToValidate,
+} from '../../utils/validations'
 
 const FormAddPokemon = () => {
+  const [formError, setFormError] = useState('')
+  const [fieldError, setFieldError] = useState<FieldErrors>({})
   const { changeModalView } = useModal()
-  const [image2, setImage2] = useState<any>({ preview: '', raw: '' })
+  const [formValues, setFormValues] = useState<FieldsToValidate>({
+    name: '',
+    pokedexNumber: 0,
+    generation: 0,
+    evolutionStage: 0,
+    familyID: 0,
+    pokemonType: '',
+    pokemonType2: '',
+    weather: '',
+    weather2: '',
+    atk: 0,
+    def: 0,
+    sta: 0,
+    hatchable: 0,
+    cp39: 0,
+    cp40: 0,
+  })
 
-  const [name, setName] = useState('')
-  const [pokedexNumber, setpokedexNumber] = useState('')
-  const [image, setImage] = useState('')
-  const [generation, setGeneration] = useState(0)
-  const [evolutionStage, setEvolutionStage] = useState(0)
-  const [familyID, setfamilyID] = useState(0)
-  const [pokemonType, setpokemonType] = useState('')
-  const [pokemonType2, setpokemonType2] = useState('')
-  const [weather, setWeather] = useState('')
-  const [weather2, setWeather2] = useState('')
-  const [statTotal, setstatTotal] = useState(0)
-  const [atk, setAtk] = useState(0)
-  const [def, setDef] = useState(0)
-  const [sta, setSta] = useState(0)
-  const [hatchable, setHatchable] = useState(0)
-  const [cp40, setCp40] = useState(0)
-  const [cp39, setCp39] = useState(0)
+  const [image, setImage] = useState<any>()
+  const [previewImage, setPreviewImage] = useState<string>('')
 
   const [checkBoxesValues, setCheckBoxesValues] = useState({
     evolved: '0',
     crossGen: '0',
     legendary: '0',
     aquireable: '0',
-    spaws: '1',
+    spaws: '0',
     regional: '0',
     raidable: '0',
     shiny: '0',
@@ -66,59 +76,87 @@ const FormAddPokemon = () => {
       isNew: '0',
       futureEvolve: '0',
     }),
-      setAtk(0),
-      setCp39(0),
-      setCp40(0),
-      setDef(0),
-      setEvolutionStage(0),
-      setGeneration(0),
-      setHatchable(0),
-      setImage(''),
-      setName(''),
-      setSta(0),
-      setWeather(''),
-      setWeather2(''),
-      setfamilyID(0),
-      setpokedexNumber(''),
-      setpokemonType(''),
-      setpokemonType2(''),
-      setstatTotal(0)
+      setImage(undefined),
+      setFormValues({
+        name: '',
+        pokedexNumber: 0,
+        generation: 0,
+        evolutionStage: 0,
+        familyID: 0,
+        pokemonType: '',
+        pokemonType2: '',
+        weather: '',
+        weather2: '',
+        atk: 0,
+        def: 0,
+        sta: 0,
+        hatchable: 0,
+        cp39: 0,
+        cp40: 0,
+      })
   }
 
   async function handleSubmit(event: FormEvent) {
     event.preventDefault()
 
-    await api.post('pokemons', {
-      Name: name,
-      'Pokedex Number': pokedexNumber,
-      'Img name': image,
-      Generation: generation,
-      'Evolution Stage': evolutionStage,
-      FamilyID: familyID,
-      'Type 1': pokemonType,
-      'Type 2': pokemonType2,
-      'Weather 1': weather,
-      'Weather 2': weather2,
-      'STAT TOTAL': statTotal,
-      ATK: atk,
-      DEF: def,
-      STA: sta,
-      Hatchable: hatchable,
-      '100% CP @ 40': cp40,
-      '100% CP @ 39': cp39,
-      'Cross Gen': checkBoxesValues.crossGen,
-      Evolved: checkBoxesValues.evolved,
-      New: checkBoxesValues.isNew,
-      Legendary: checkBoxesValues.legendary,
-      Aquireable: checkBoxesValues.aquireable,
-      Spawns: checkBoxesValues.spaws,
-      Regional: checkBoxesValues.regional,
-      Raidable: checkBoxesValues.raidable,
-      Shiny: checkBoxesValues.shiny,
-      Nest: checkBoxesValues.nest,
-      'Not-Gettable': checkBoxesValues.notGettable,
-      'Future Evolve': checkBoxesValues.futureEvolve,
-    })
+    setFormError('')
+    const errors = addPokemonValidate(formValues)
+
+    if (Object.keys(errors).length) {
+      setFieldError(errors)
+      console.log(errors)
+      return
+    }
+
+    setFieldError({})
+
+    const data = new FormData()
+    const calcStat =
+      Number(formValues.atk) + Number(formValues.def) + Number(formValues.sta)
+
+    data.append('avatar', image)
+    data.append('Name', formValues.name)
+    data.append('Pokedex Number', formValues.pokedexNumber.toString())
+    data.append('Type 1', formValues.pokemonType)
+    if (formValues.pokemonType2) {
+      data.append('Type 2', formValues.pokemonType2)
+    }
+    data.append('Weather 1', formValues.weather)
+    if (formValues.weather2) {
+      data.append('Weather 2', formValues.weather2)
+    }
+    data.append('Generation', formValues.generation.toString())
+    data.append('Evolution Stage', formValues.evolutionStage.toString())
+    if (formValues.familyID) {
+      data.append('FamilyID', formValues.familyID.toString())
+    }
+    data.append('STAT TOTAL', calcStat.toString())
+    data.append('ATK', formValues.atk.toString())
+    data.append('DEF', formValues.def.toString())
+    data.append('STA', formValues.sta.toString())
+    data.append('Hatchable', formValues.hatchable.toString())
+    data.append('100% CP @ 40', formValues.cp40.toString())
+    data.append('100% CP @ 39', formValues.cp39.toString())
+    data.append('Cross Gen', checkBoxesValues.crossGen)
+    data.append('Evolved', checkBoxesValues.evolved)
+    data.append('New', checkBoxesValues.isNew)
+    data.append('Legendary', checkBoxesValues.legendary)
+    data.append('Aquireable', checkBoxesValues.aquireable)
+    data.append('Spawns', checkBoxesValues.spaws)
+    data.append('Regional', checkBoxesValues.regional)
+    data.append('Raidable', checkBoxesValues.raidable)
+    data.append('Shiny', checkBoxesValues.shiny)
+    data.append('Nest', checkBoxesValues.nest)
+    data.append('Not-Gettable', checkBoxesValues.notGettable)
+    data.append('Future Evolve', checkBoxesValues.futureEvolve)
+
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data',
+      },
+    }
+    await api.post('pokemons', data, config)
+
     resetFields()
     alert('Pokemon cadastrado com sucesso.')
     changeModalView()
@@ -183,24 +221,24 @@ const FormAddPokemon = () => {
   ]
 
   const options = [
-    { value: 'bug' },
-    { value: 'dark' },
-    { value: 'dragon' },
-    { value: 'electric' },
-    { value: 'fairy' },
-    { value: 'fighting' },
-    { value: 'fire' },
-    { value: 'flying' },
-    { value: 'ghost' },
-    { value: 'grass' },
-    { value: 'ground' },
-    { value: 'ice' },
-    { value: 'normal' },
-    { value: 'poison' },
-    { value: 'psychic' },
-    { value: 'rock' },
-    { value: 'steel' },
-    { value: 'water' },
+    { type: 'bug' },
+    { type: 'dark' },
+    { type: 'dragon' },
+    { type: 'electric' },
+    { type: 'fairy' },
+    { type: 'fighting' },
+    { type: 'fire' },
+    { type: 'flying' },
+    { type: 'ghost' },
+    { type: 'grass' },
+    { type: 'ground' },
+    { type: 'ice' },
+    { type: 'normal' },
+    { type: 'poison' },
+    { type: 'psychic' },
+    { type: 'rock' },
+    { type: 'steel' },
+    { type: 'water' },
   ]
 
   const handleCheckbox = (name: string, value: string) => {
@@ -213,17 +251,17 @@ const FormAddPokemon = () => {
     }
   }
 
+  const handleInput = (field: string, value: string) => {
+    setFormValues((s) => ({ ...s, [field]: value }))
+  }
+
   const handleSelectedImage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      setImage2({
-        preview: URL.createObjectURL(e.target.files[0]),
-        raw: e.target.files[0],
-      })
-      setImage(image2.raw.name)
-      console.log(image)
-    } else {
+    if (!e.target.files) {
       return
     }
+    setImage(e.target.files[0])
+    console.log(image)
+    setPreviewImage(URL.createObjectURL(e.target.files[0]))
   }
 
   return (
@@ -236,14 +274,22 @@ const FormAddPokemon = () => {
           <Tab>
             <h1>Aditional Info</h1>
           </Tab>
+          <Tab>
+            <h1>Stats</h1>
+          </Tab>
         </TabList>
         <TabPanel>
+          {!!formError && (
+            <FormError>
+              <FiXCircle /> {formError}
+            </FormError>
+          )}
           <form onSubmit={handleSubmit}>
             <>
               <S.Label htmlFor="image">Adicione a imagem do Pokemon</S.Label>
               <S.ImagesContainer>
-                {image2.preview ? (
-                  <S.Image src={image2.preview} alt={image} />
+                {image ? (
+                  <S.Image src={previewImage} alt={formValues.name} />
                 ) : (
                   <S.NewImage htmlFor="image">
                     <FiPlus size={24} color="#15b6d6" />
@@ -254,41 +300,45 @@ const FormAddPokemon = () => {
             </>
             <TextInputField
               name="Name"
-              onChange={(event) => setName(event.target.value)}
-              value={name}
+              error={fieldError?.name}
+              onInputChange={(v) => handleInput('name', v)}
+              value={formValues.name}
               label="Name"
               type="text"
             />
             <TextInputField
               name="Pokedex Number"
-              onChange={(event) => setpokedexNumber(event.target.value)}
-              value={pokedexNumber}
+              error={fieldError?.pokedexNumber}
+              onInputChange={(v) => handleInput('pokedexNumber', v)}
+              value={formValues.pokedexNumber}
               label="Pokedex Number"
               type="number"
             />
             <Select
-              name="Type 1"
-              onChange={(event) => setpokemonType(event.target.value)}
-              value={pokemonType}
+              name="Type1"
+              onInputChange={(v) => handleInput('pokemonType', v)}
+              value={formValues.pokemonType}
+              error={fieldError?.pokemonType}
               label="Type1"
               type="text"
             >
               {options.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.value}
+                <option key={option.type} value={option.type}>
+                  {option.type}
                 </option>
               ))}
             </Select>
             <Select
-              name="Type 2"
-              onChange={(event) => setpokemonType2(event.target.value)}
-              value={pokemonType2}
-              label="Type1"
+              name="Type2"
+              error={fieldError?.pokemonType2}
+              onInputChange={(v) => handleInput('pokemonType2', v)}
+              value={formValues.pokemonType2 ? formValues.pokemonType2 : ''}
+              label="Type2"
               type="text"
             >
               {options.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.value}
+                <option key={option.type} value={option.type}>
+                  {option.type}
                 </option>
               ))}
             </Select>
@@ -310,27 +360,36 @@ const FormAddPokemon = () => {
 
         <TabPanel>
           <TextInputField
-            name="Image name"
-            onChange={(event) => setImage(event.target.value)}
-            value={image}
-            initialValue={image}
-            placeholder={image}
-            label="Image name"
-            type="text"
-          />
-          <TextInputField
             name="Weather 1"
-            onChange={(event) => setWeather(event.target.value)}
-            value={weather}
-            label="Weather1"
+            error={fieldError?.weather1}
+            onInputChange={(v) => handleInput('weather', v)}
+            value={formValues.weather}
+            label="Weather 1"
             type="text"
           />
           <TextInputField
             name="Weather 2"
-            onChange={(event) => setWeather2(event.target.value)}
-            value={weather2}
-            label="Weather2"
+            error={fieldError?.weather2}
+            onInputChange={(v) => handleInput('weather2', v)}
+            value={formValues.weather2}
+            label="Weather 2"
             type="text"
+          />
+          <TextInputField
+            name="Hatchable"
+            error={fieldError?.hatchable}
+            onInputChange={(v) => handleInput('hatchable', v)}
+            value={formValues.hatchable}
+            label="Hatchable"
+            type="number"
+          />
+          <TextInputField
+            name="Family ID"
+            error={fieldError?.familyID}
+            onInputChange={(v) => handleInput('familyID', v)}
+            value={formValues.familyID}
+            label="Family ID"
+            type="number"
           />
 
           {checkboxFields.map((field) => (
@@ -344,6 +403,64 @@ const FormAddPokemon = () => {
               value={field.value}
             />
           ))}
+        </TabPanel>
+        <TabPanel>
+          <TextInputField
+            name="Generation"
+            error={fieldError?.generation}
+            onInputChange={(v) => handleInput('generation', v)}
+            value={formValues.generation}
+            label="Generation"
+            type="number"
+          />
+          <TextInputField
+            name="Evolution Stage"
+            error={fieldError?.evolutionStage}
+            onInputChange={(v) => handleInput('evolutionStage', v)}
+            value={formValues.evolutionStage}
+            label="Evolution Stage"
+            type="number"
+          />
+          <TextInputField
+            name="100% CP @ 39"
+            error={fieldError?.cp39}
+            onInputChange={(v) => handleInput('cp39', v)}
+            value={formValues.cp39}
+            label="100% CP @ 39"
+            type="number"
+          />
+          <TextInputField
+            name="100% CP @ 40"
+            error={fieldError?.cp40}
+            onInputChange={(v) => handleInput('cp40', v)}
+            value={formValues.cp40}
+            label="100% CP @ 40"
+            type="number"
+          />
+          <TextInputField
+            name="ATK"
+            error={fieldError?.atk}
+            onInputChange={(v) => handleInput('atk', v)}
+            value={formValues.atk}
+            label="ATK"
+            type="number"
+          />
+          <TextInputField
+            name="DEF"
+            error={fieldError?.def}
+            onInputChange={(v) => handleInput('def', v)}
+            value={formValues.def}
+            label="DEF"
+            type="number"
+          />
+          <TextInputField
+            name="STA"
+            error={fieldError?.sta}
+            onInputChange={(v) => handleInput('sta', v)}
+            value={formValues.sta}
+            label="STA"
+            type="number"
+          />
         </TabPanel>
       </Tabs>
     </FormWrapper>
