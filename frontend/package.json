@@ -13,6 +13,7 @@
   "dependencies": {
     "@types/testing-library__dom": "^7.5.0",
     "axios": "^0.21.1",
+    "joi": "^17.4.0",
     "json-server": "^0.16.3",
     "next": "10.0.8",
     "next-pwa": "^5.0.5",
