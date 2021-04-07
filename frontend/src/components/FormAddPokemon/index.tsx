@@ -1,6 +1,6 @@
 import React, { FormEvent, useState } from 'react'
 import { useModal } from '../../context/ModalContext'
-
+import { useRouter } from 'next/router'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 
@@ -22,6 +22,7 @@ import {
 } from '../../utils/validations'
 
 const FormAddPokemon = () => {
+  const router = useRouter()
   const [formError, setFormError] = useState('')
   const [fieldError, setFieldError] = useState<FieldErrors>({})
   const { changeModalView } = useModal()
@@ -159,6 +160,8 @@ const FormAddPokemon = () => {
 
     resetFields()
     alert('Pokemon cadastrado com sucesso.')
+
+    router.push('/pokemons')
     changeModalView()
   }
 
