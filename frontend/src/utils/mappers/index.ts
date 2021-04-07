@@ -6,13 +6,11 @@ export const pokemonsMapper = (pokemons: PokemonCardProps[] | undefined) => {
         name: pokemon['Name'],
         id: pokemon._id,
         pokedexNumber: pokemon['Pokedex Number'],
-        image: pokemon['Img name']
-          ? `/img/${pokemon['Img name']}.png`
-          : `/img/pokemon-notfound.png`,
+        image: `http://localhost:3333/images/${pokemon['Img name']}`,
         generation: pokemon['Generation'],
         evolutionStage: pokemon['Evolution Stage'],
         evolved: pokemon['Evolved'],
-        familyId: pokemon['FamilyID'],
+        familyID: pokemon['FamilyID'],
         crossGen: pokemon['Cross Gen'],
         pokemonType: pokemon['Type 1'],
         pokemonType2: pokemon['Type 2'],
