@@ -101,8 +101,9 @@ const PokemonStats = ({
           <S.AditionalInfo>
             <S.AditionalInfoColumn>
               <span>FamilyID</span>
-              {familyID}
+              {familyID ? familyID : ''}
             </S.AditionalInfoColumn>
+
             <S.AditionalInfoColumn>
               <span>Hatchable</span>
               {hatchable}

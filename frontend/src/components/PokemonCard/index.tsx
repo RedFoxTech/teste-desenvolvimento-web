@@ -11,6 +11,7 @@ import { useState } from 'react'
 import * as S from './styles'
 
 type PokemonTypes =
+  | ''
   | 'bug'
   | 'dark'
   | 'dragon'
@@ -89,14 +90,14 @@ const PokemonCard = ({
           <S.PokemonID>#{pokedexNumber}</S.PokemonID>
         </S.WrapperTop>
         <S.TypesContainer>
+          <S.WrapperType>
+            <S.PokemonType>{pokemonType}</S.PokemonType>
+          </S.WrapperType>
           {pokemonType2 && (
             <S.WrapperType>
               <S.PokemonType2>{pokemonType2}</S.PokemonType2>
             </S.WrapperType>
           )}
-          <S.WrapperType>
-            <S.PokemonType>{pokemonType}</S.PokemonType>
-          </S.WrapperType>
         </S.TypesContainer>
 
         <S.Image src={image} alt={name} role="img" />

@@ -270,11 +270,13 @@ export const CardWrapper = styled.div<BackgroundColorProps>`
     height: 201px;
     width: 350px;
     border-radius: ${theme.border.radius};
+    overflow: hidden;
 
     ${!!pokemonType &&
     wrapperModifiers[pokemonType] &&
     wrapperModifiers[pokemonType](theme)}
-    ${!!onStats && wrapperModifiers.onStats()}
+
+    ${onStats && wrapperModifiers.onStats()}
   `}
 `
 
