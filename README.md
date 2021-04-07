@@ -2,6 +2,10 @@
 
 [![GitHub Badge](https://img.shields.io/badge/%3E-GitHub-black?style=flat&logo=github)](https://github.com/wesleymoliveira) [![Linkedin Badge](https://img.shields.io/badge/%3E-Linkedin-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/wesleymoliveira/) [![Gmail Badge](https://img.shields.io/badge/%3E-Gmail-red?style=flat&logo=gmail)](mailto:oliveirawesleyrj@gmail.com) [![Whatsapp Badge](https://img.shields.io/badge/%3E-Whatsapp-green?style=flat&logo=whatsapp)](https://api.whatsapp.com/send?phone=5522999130259&text=Ol%C3%A1!)
 
+### Leiam por favor.
+
+Os ajustes informados anteriormente foram devidamente feitos. Muito obrigado pela compreensão.
+
 # - Frontend -
 
 ## Abordagem
@@ -20,12 +24,15 @@ Procurei desenvolver os componentes de forma mais isolada possível, permitindo 
 - Typescript
 - Styled Components
 - NextJS
+- Joi
 - Plop - `$ yarn generate ComponentName` (automatizar a criação dos components)
 - Storybook - O Storybook é uma excelente ferramenta para prototipação da UI e visualização isolada da aplicação.
 
 <img src="frontend/public/img/storybook.gif"/>
-<img src="frontend/public/img/Frontend.gif"/>
-<img src="frontend/public/img/add.gif"/>
+<img src="frontend/public/img/add-remove-flow.gif"/>
+
+- [x] Joi - Validation
+      <img src="frontend/public/img/fields-validation.gif"/>
 
 - [x] Typescript
 - [x] NextJs
@@ -54,6 +61,7 @@ Procurei desenvolver os componentes de forma mais isolada possível, permitindo 
 - Typescript
 - Nodemon
 - Cors
+- Multer
 - MongoDB
 - Mongoose
 - Express
@@ -67,15 +75,5 @@ Procurei desenvolver os componentes de forma mais isolada possível, permitindo 
 - [x] POST - http://localhost:3333/pokemons/ (passando JSON no corpo da requisição)
       Extra:
 - [x] GET - http://localhost:3333/api-docs
-
-### Leiam por favor.
-
-Infelizmente não consegui completar o projeto como eu gostaria. Precisei enviar para que vissem e posteriormente vou corrigir. Vou pontuar algumas coisa que ainda vou trabalhar para corrigir:
-
-1- Manipulação correta para salvar/ler os campos '0' e '1' do banco.
-2- No backend, não consegui usar regex corretamente para que o filtro pelo nome do pokemon fosse case insensitive. Vou continuar pesquisando. Mas atualmente só está pesquisando se o nome do pokemon estiver minúsculo no banco, afetaando também a geração dinâmica de páginas estáticas do NExt.
-3- Disponibilizei um arquivo short-mock.json peço que importem no mongo pois nele, os nome já estão minúsculos.
-4- Cadastro e envio com imagens e seus tratamentos.
-5- validações para inserir.
 
 ### Por favor, fiquem a vontade para críticas e feedbacks de melhoria. Eu ficaria muito feliz em saber como progredir.
