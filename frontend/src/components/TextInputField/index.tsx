@@ -3,12 +3,12 @@ import { useState, InputHTMLAttributes } from 'react'
 import * as S from './styles'
 
 export type TextInputFieldProps = {
-  onInput?: (value: string) => void
+  onInputChange?: (value: string) => void
   label?: string
   initialValue?: string
   icon?: React.ReactNode
   fullWidth?: boolean
-  as?: React.ElementType
+  error?: string
 } & InputHTMLAttributes<HTMLInputElement>
 
 const TextInputField = ({
@@ -16,8 +16,9 @@ const TextInputField = ({
   initialValue = '',
   icon,
   name,
+  error,
   fullWidth = true,
-  onInput,
+  onInputChange,
   ...props
 }: TextInputFieldProps) => {
   const [value, setValue] = useState(initialValue)
@@ -26,7 +27,7 @@ const TextInputField = ({
     const newValue = e.currentTarget.value
     setValue(newValue)
 
-    !!onInput && onInput(newValue)
+    !!onInputChange && onInputChange(newValue)
   }
 
   return (
@@ -43,6 +44,7 @@ const TextInputField = ({
           {...props}
         />
       </S.InputWrapper>
+      {!!error && <S.Error>{error}</S.Error>}
     </S.Wrapper>
   )
 }

@@ -32,6 +32,13 @@ export const InputWrapper = styled.div<SelectProps>`
   `}
 `
 
+export const Error = styled.label`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xsmall};
+    color: ${theme.colors.primary};
+  `}
+`
+
 export const Input = styled.select`
   ${({ theme }) => css`
     color: ${theme.colors.primary};

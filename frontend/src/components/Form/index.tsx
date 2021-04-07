@@ -20,3 +20,15 @@ export const FormWrapper = styled.div`
       ${theme.spacings.small} ${theme.spacings.xxlarge};
   `}
 `
+export const FormError = styled.div`
+  ${({ theme }) => css`
+    text-align: center;
+    line-height: ${theme.font.sizes.huge};
+    color: red;
+    font-size: ${theme.font.sizes.small};
+
+    svg {
+      width: 1.6rem;
+    }
+  `}
+`

@@ -2,7 +2,7 @@ import styled, { css, DefaultTheme } from 'styled-components'
 
 import { TextInputFieldProps } from '.'
 
-export const wrapperModifiers = {
+export const WrapperModifiers = {
   WithLabel: (theme: DefaultTheme) => css`
     border: 0.1rem solid ${theme.colors.primary};
   `,
@@ -26,9 +26,14 @@ export const InputWrapper = styled.div<TextInputFieldProps>`
     border-color: ${theme.colors.lightGray};
     height: 5rem;
 
-    ${!!label && wrapperModifiers.WithLabel(theme)};
-
-    ${fullWidth && wrapperModifiers.fullWidth()};
+    ${!!label && WrapperModifiers.WithLabel(theme)};
+    ${fullWidth && WrapperModifiers.fullWidth()};
+  `}
+`
+export const Error = styled.label`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xsmall};
+    color: ${theme.colors.primary};
   `}
 `
 

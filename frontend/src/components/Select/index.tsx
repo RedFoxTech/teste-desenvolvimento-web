@@ -3,21 +3,22 @@ import { useState, InputHTMLAttributes } from 'react'
 import * as S from './styles'
 
 export type SelectProps = {
-  onInput?: (value: string) => void
+  onInputChange?: (value: string) => void
   label?: string
   initialValue?: string
   icon?: React.ReactNode
+  error?: string
   fullWidth?: boolean
-  as?: React.ElementType
 } & InputHTMLAttributes<HTMLInputElement>
 
 const Select = ({
   label = '',
   initialValue = '',
   icon,
+  error,
   name,
   fullWidth = true,
-  onInput,
+  onInputChange,
   ...props
 }: SelectProps) => {
   const [value, setValue] = useState(initialValue)
@@ -26,7 +27,7 @@ const Select = ({
     const newValue = e.currentTarget.value
     setValue(newValue)
 
-    !!onInput && onInput(newValue)
+    !!onInputChange && onInputChange(newValue)
   }
 
   return (
@@ -43,6 +44,7 @@ const Select = ({
           {...props}
         />
       </S.InputWrapper>
+      {!!error && <S.Error>{error}</S.Error>}
     </S.Wrapper>
   )
 }
