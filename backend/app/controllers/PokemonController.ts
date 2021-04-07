@@ -82,7 +82,7 @@ const createPokemon = async (req: Request, res: Response): Promise<void> => {
       Row: body.Row,
       Name: body.Name,
       "Pokedex Number": body["Pokedex Number"],
-      "Img name": body["Img name"],
+      "Img name": req.file.filename,
       Generation: body.Generation,
       "Evolution Stage": body["Evolution Stage"],
       Evolved: body.Evolved,
