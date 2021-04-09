@@ -1,0 +1,276 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "RedFox - Test Wesley",
+    "description": "Documentação da API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3333/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Pokemons",
+      "description": "Rotas disponíveis para pokemons"
+    }
+  ],
+  "paths": {
+    "/pokemons": {
+      "get": {
+        "tags": ["pokemons"],
+        "summary": "Esta rota retorna todos os pokemons cadastrados",
+        "operationId": "getPokemons",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pokemons"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["pokemons"],
+        "summary": "Adicione um novo pokemon",
+        "operationId": "createPokemon",
+        "requestBody": {
+          "description": "Objeto do pokemon que deve ser adicionado",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pokemons"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {}
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      }
+    },
+
+    "/pokemons/{id}": {
+      "delete": {
+        "tags": ["pokemons"],
+        "summary": "Apaga o pokemon referente ao ID passado",
+        "operationId": "deletePokemon",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Id do pokemon a ser apagado",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content",
+            "content": {}
+          }
+        }
+      }
+    },
+
+    "/pokemons/{name}": {
+      "get": {
+        "tags": ["pokemons"],
+        "summary": "Esta rota retorna o pokemons pelo nome informado",
+        "operationId": "getPokemonsByName",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "Informe o nome a ser buscado",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/pokemons"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "pokemons": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "description": "Nome do Pokemon",
+            "example": "Bulbasaur"
+          },
+          "Pokedex Number": {
+            "type": "number",
+            "description": "Id do Pokemon na Pokedex",
+            "example": 1
+          },
+          "Img name": {
+            "type": "number",
+            "description": "Nome do arquivo da imagem do pokemon",
+            "example": 1
+          },
+          "Generation": {
+            "type": "number",
+            "description": "Geração do Pokemon",
+            "example": 1
+          },
+          "Evolution Stage": {
+            "type": "number",
+            "description": "Estágio da evolução do pokemon",
+            "example": 1
+          },
+          "Evolved": {
+            "type": "boolean",
+            "description": "Boolean que representa se o pokemon já evoluiu",
+            "example": 0
+          },
+          "FamilyID": {
+            "type": "number",
+            "description": "Id da família do Pokemon",
+            "example": 1
+          },
+          "Cross Gen": {
+            "type": "boolean",
+            "description": "Cross Generation",
+            "example": 0
+          },
+          "Type 1": {
+            "type": "string",
+            "description": "Tipo primário do pokemon",
+            "example": "grass"
+          },
+          "Type 2": {
+            "type": "string",
+            "description": "Tipo secundário do pokemon",
+            "example": "poison"
+          },
+          "Weather 1": {
+            "type": "string",
+            "description": "Clima primário do pokemon",
+            "example": "Sunny/clear"
+          },
+          "Weather 2": {
+            "type": "string",
+            "description": "Clima secundário do pokemon",
+            "example": "Cloudy"
+          },
+          "STAT TOTAL": {
+            "type": "number",
+            "description": "Valor da soma dos atributos do pokemon",
+            "example": 326
+          },
+          "ATK": {
+            "type": "number",
+            "description": "Valor do atributos ATK do pokemon",
+            "example": 118
+          },
+          "DEF": {
+            "type": "number",
+            "description": "Valor do atributos DEF do pokemon",
+            "example": 118
+          },
+          "STA": {
+            "type": "number",
+            "description": "Valor do atributos STA do pokemon",
+            "example": 90
+          },
+          "Legendary": {
+            "type": "boolean",
+            "description": "Boolean que representa se o pokemon é lendário",
+            "example": 0
+          },
+          "Aquireable": {
+            "type": "boolean",
+            "description": "Boolean que representa se o pokemon é Aquireavel",
+            "example": 1
+          },
+          "Spaws": {
+            "type": "boolean",
+            "description": "Boolean que representa se o pokemon aparece",
+            "example": 1
+          },
+          "Regional": {
+            "type": "boolean",
+            "description": "Boolean que representa se o pokemon é da região",
+            "example": 0
+          },
+          "Raidable": {
+            "type": "boolean",
+            "description": "Boolean que representa se o pokemon tem ataque rápido",
+            "example": 0
+          },
+          "Hatchable": {
+            "type": "number",
+            "description": "Pokemon Hatchable",
+            "example": 5
+          },
+          "Shiny": {
+            "type": "boolean",
+            "description": "Boolean que representa se o pokemon é brilhante",
+            "example": 0
+          },
+          "Nest": {
+            "type": "boolean",
+            "description": "Boolean que representa pokemon nest",
+            "example": 1
+          },
+          "New": {
+            "type": "boolean",
+            "description": "Boolean que representa se o pokemon é novo",
+            "example": 0
+          },
+          "Not-Gettable": {
+            "type": "boolean",
+            "description": "Boolean que representa se o pokemon não pode ser pegável",
+            "example": 0
+          },
+          "Future Evolve": {
+            "type": "boolean",
+            "description": "Boolean que representa se o pokemon tem evolução futura",
+            "example": 0
+          },
+          "100% CP @ 40": {
+            "type": "number",
+            "description": "Combat points cp 40",
+            "example": 981
+          },
+          "100% CP @ 39": {
+            "type": "number",
+            "description": "Combat points cp 39",
+            "example": 967
+          }
+        },
+        "xml": {
+          "name": "pokemons"
+        }
+      }
+    }
+  }
+}
