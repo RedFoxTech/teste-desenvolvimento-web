@@ -1,0 +1,11 @@
+import { ElementRef, NgZone, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+export declare class NgbModalBackdrop implements OnInit {
+    private _el;
+    private _zone;
+    animation: boolean;
+    backdropClass: string;
+    constructor(_el: ElementRef<HTMLElement>, _zone: NgZone);
+    ngOnInit(): void;
+    hide(): Observable<void>;
+}

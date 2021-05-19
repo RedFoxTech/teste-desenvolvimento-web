@@ -1,0 +1,8 @@
+/**
+ * Global ng-bootstrap config
+ *
+ * @since 8.0.0
+ */
+export declare class NgbConfig {
+    animation: boolean;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ngx-bootstrap/carousel",
+  "version": "6.2.0",
+  "description": "Native Angular Bootstrap Components",
+  "private": true,
+  "main": "bundles/ngx-bootstrap-carousel.umd.js",
+  "module": "fesm5/ngx-bootstrap-carousel.js",
+  "es2015": "fesm2015/ngx-bootstrap-carousel.js",
+  "esm5": "esm5/ngx-bootstrap-carousel.js",
+  "esm2015": "esm2015/ngx-bootstrap-carousel.js",
+  "fesm5": "fesm5/ngx-bootstrap-carousel.js",
+  "fesm2015": "fesm2015/ngx-bootstrap-carousel.js",
+  "typings": "ngx-bootstrap-carousel.d.ts",
+  "metadata": "ngx-bootstrap-carousel.metadata.json",
+  "sideEffects": false,
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  }
+}

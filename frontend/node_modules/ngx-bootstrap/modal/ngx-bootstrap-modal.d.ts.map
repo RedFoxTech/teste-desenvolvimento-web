@@ -1,0 +1,1 @@
+{"version":3,"file":"ngx-bootstrap-modal.d.ts","sources":["ngx-bootstrap-modal.d.ts"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA","sourcesContent":["/**\n * Generated bundle index. Do not edit.\n */\nexport * from './public_api';\nexport { CLASS_NAME as ɵa } from './modal-options.class';\n"]}

@@ -1,0 +1,26 @@
+/* .content {
+    padding: 16px;
+}
+
+.home {
+    margin: 16px;
+} */
+
+
+/* .instrucao td {
+    width: 25%;
+    overflow: hidden;
+} */
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td, th {
+    width: 25%;
+}
