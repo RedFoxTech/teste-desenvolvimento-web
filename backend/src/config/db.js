@@ -54,8 +54,7 @@ module.exports = wb.xlsx.readFile(filePath).then(function (){
             not_gettable: sh.getRow(i).getCell(27).value,
             future_evolve: sh.getRow(i).getCell(28).value,
             cem_por_cento_CP_40: sh.getRow(i).getCell(29).value,
-            cem_por_cento_CP_39: sh.getRow(i).getCell(30).value,
-            showDetail: false          
+            cem_por_cento_CP_39: sh.getRow(i).getCell(30).value
         })
                 
     }
