@@ -1,22 +1,24 @@
-## Backend
+# Backend
 
 Responsável por consumir os dados da tabela Pokemon Go
 
-# Instalação
+## Instalação
 
 npm i
 
-# Executar
+## Executar
 
 npm start
 
 
-## Frontend
+# Frontend
 
-# Instalação
+Mostra os dados consumidos pelo backend
+
+## Instalação
 
 npm i
 
-# Executar
+## Executar
 
 npm start
