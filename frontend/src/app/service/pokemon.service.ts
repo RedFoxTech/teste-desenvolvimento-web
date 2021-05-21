@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Pokemon } from 'src/model/pokemon.model';
 
-//import { environment } from '../../environments/environment';
-import { environment } from '../../environments/environment.prod';
+//import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 
 
 @Injectable({
