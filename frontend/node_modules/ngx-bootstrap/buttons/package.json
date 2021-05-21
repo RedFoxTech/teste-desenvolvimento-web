@@ -1,0 +1,19 @@
+{
+  "name": "ngx-bootstrap/buttons",
+  "version": "6.2.0",
+  "description": "Native Angular Bootstrap Components",
+  "private": true,
+  "main": "bundles/ngx-bootstrap-buttons.umd.js",
+  "module": "fesm5/ngx-bootstrap-buttons.js",
+  "es2015": "fesm2015/ngx-bootstrap-buttons.js",
+  "esm5": "esm5/ngx-bootstrap-buttons.js",
+  "esm2015": "esm2015/ngx-bootstrap-buttons.js",
+  "fesm5": "fesm5/ngx-bootstrap-buttons.js",
+  "fesm2015": "fesm2015/ngx-bootstrap-buttons.js",
+  "typings": "ngx-bootstrap-buttons.d.ts",
+  "metadata": "ngx-bootstrap-buttons.metadata.json",
+  "sideEffects": false,
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "ngx-bootstrap/typeahead",
+  "version": "6.2.0",
+  "description": "Native Angular Bootstrap Components",
+  "private": true,
+  "main": "bundles/ngx-bootstrap-typeahead.umd.js",
+  "module": "fesm5/ngx-bootstrap-typeahead.js",
+  "es2015": "fesm2015/ngx-bootstrap-typeahead.js",
+  "esm5": "esm5/ngx-bootstrap-typeahead.js",
+  "esm2015": "esm2015/ngx-bootstrap-typeahead.js",
+  "fesm5": "fesm5/ngx-bootstrap-typeahead.js",
+  "fesm2015": "fesm2015/ngx-bootstrap-typeahead.js",
+  "typings": "ngx-bootstrap-typeahead.d.ts",
+  "metadata": "ngx-bootstrap-typeahead.metadata.json",
+  "sideEffects": false,
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  }
+}

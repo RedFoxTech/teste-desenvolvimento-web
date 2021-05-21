@@ -1,0 +1,19 @@
+{
+  "name": "ngx-bootstrap/accordion",
+  "version": "6.2.0",
+  "description": "Native Angular Bootstrap Components",
+  "private": true,
+  "main": "bundles/ngx-bootstrap-accordion.umd.js",
+  "module": "fesm5/ngx-bootstrap-accordion.js",
+  "es2015": "fesm2015/ngx-bootstrap-accordion.js",
+  "esm5": "esm5/ngx-bootstrap-accordion.js",
+  "esm2015": "esm2015/ngx-bootstrap-accordion.js",
+  "fesm5": "fesm5/ngx-bootstrap-accordion.js",
+  "fesm2015": "fesm2015/ngx-bootstrap-accordion.js",
+  "typings": "ngx-bootstrap-accordion.d.ts",
+  "metadata": "ngx-bootstrap-accordion.metadata.json",
+  "sideEffects": false,
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  }
+}

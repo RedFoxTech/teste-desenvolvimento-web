@@ -1,0 +1,19 @@
+{
+  "name": "ngx-bootstrap/sortable",
+  "version": "6.2.0",
+  "description": "Native Angular Bootstrap Components",
+  "private": true,
+  "main": "bundles/ngx-bootstrap-sortable.umd.js",
+  "module": "fesm5/ngx-bootstrap-sortable.js",
+  "es2015": "fesm2015/ngx-bootstrap-sortable.js",
+  "esm5": "esm5/ngx-bootstrap-sortable.js",
+  "esm2015": "esm2015/ngx-bootstrap-sortable.js",
+  "fesm5": "fesm5/ngx-bootstrap-sortable.js",
+  "fesm2015": "fesm2015/ngx-bootstrap-sortable.js",
+  "typings": "ngx-bootstrap-sortable.d.ts",
+  "metadata": "ngx-bootstrap-sortable.metadata.json",
+  "sideEffects": false,
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  }
+}

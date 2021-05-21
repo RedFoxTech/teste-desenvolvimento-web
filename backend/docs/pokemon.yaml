@@ -1,0 +1,115 @@
+
+components:
+  schemas:
+    Pokemon:
+      type: object
+      properties:
+        row:
+          type: int
+          description: The id of the pokemon
+        name:
+          type: string
+          description: The pokemon name
+        pokedex_number:
+          type: int
+          description: The pokemon numero pokedex
+        img_name:
+          type: int
+          description: The pokemon nome imagem
+        generation:
+          type: int
+          description: The pokemon geração
+        evolution_stage:
+          type: int
+          description: The pokemon estagio de evolucao
+        evolved:
+          type: int
+          description: The pokemon evolucao
+        family_id:
+          type: int
+          description: The pokemon id familia
+        cross_gen:
+          type: int
+          description: The pokemon cross gen
+        type_1:
+          type: string
+          description: The pokemon tipo 1
+        type_2:
+          type: string
+          description: The pokemon tipo 2
+        weather_1:
+          type: string
+          description: The pokemon tempo 1
+        weather_2:
+          type: string
+          description: The pokemon tempo 2
+        stat_total:
+          type: int
+          description: The pokemon total estatistico
+        atk:
+          type: int
+          description: The pokemon atk
+        def:
+          type: int
+          description: The pokemon def
+        sta:
+          type: int
+          description: The pokemon sta
+        legendary:
+          type: int
+          description: The pokemon lendario
+        aquireable:
+          type: int
+          description: The pokemon aquireable
+        spawns:
+          type: int
+          description: The pokemon desova
+        regional:
+          type: int
+          description: The pokemon regional
+        raidable:
+          type: int
+          description: The pokemon invasao
+        hatchable:
+          type: int
+          description: The pokemon incubavel
+        shiny:
+          type: int
+          description: The pokemon brilhante
+        nest:
+          type: int
+          description: The pokemon ninho
+        new:
+          type: int
+          description: The pokemon novo
+        not_gettable:
+          type: int
+          description: The pokemon nao alcancavel
+        future_evolve:
+          type: int
+          description: The pokemon evolucao futura
+        cem_por_cento_CP_40:
+          type: int
+          description: The pokemon 100% cp 40
+        cem_por_cento_CP_39:
+          type: int
+          description: The pokemon 100% cp 39
+      
+
+tags:
+  name: Pokemon
+  description: The pokemon managing API
+
+/pokemons:
+  get:
+    summary: Returns the list of all the pokemon
+    tags: [Pokemon]
+    responses:
+      200:
+        description: The list of the pokemon
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/Pokemon'

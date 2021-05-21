@@ -1,0 +1,19 @@
+{
+  "name": "ngx-bootstrap/tooltip",
+  "version": "6.2.0",
+  "description": "Native Angular Bootstrap Components",
+  "private": true,
+  "main": "bundles/ngx-bootstrap-tooltip.umd.js",
+  "module": "fesm5/ngx-bootstrap-tooltip.js",
+  "es2015": "fesm2015/ngx-bootstrap-tooltip.js",
+  "esm5": "esm5/ngx-bootstrap-tooltip.js",
+  "esm2015": "esm2015/ngx-bootstrap-tooltip.js",
+  "fesm5": "fesm5/ngx-bootstrap-tooltip.js",
+  "fesm2015": "fesm2015/ngx-bootstrap-tooltip.js",
+  "typings": "ngx-bootstrap-tooltip.d.ts",
+  "metadata": "ngx-bootstrap-tooltip.metadata.json",
+  "sideEffects": false,
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  }
+}

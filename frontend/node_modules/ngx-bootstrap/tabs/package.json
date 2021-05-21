@@ -1,0 +1,19 @@
+{
+  "name": "ngx-bootstrap/tabs",
+  "version": "6.2.0",
+  "description": "Native Angular Bootstrap Components",
+  "private": true,
+  "main": "bundles/ngx-bootstrap-tabs.umd.js",
+  "module": "fesm5/ngx-bootstrap-tabs.js",
+  "es2015": "fesm2015/ngx-bootstrap-tabs.js",
+  "esm5": "esm5/ngx-bootstrap-tabs.js",
+  "esm2015": "esm2015/ngx-bootstrap-tabs.js",
+  "fesm5": "fesm5/ngx-bootstrap-tabs.js",
+  "fesm2015": "fesm2015/ngx-bootstrap-tabs.js",
+  "typings": "ngx-bootstrap-tabs.d.ts",
+  "metadata": "ngx-bootstrap-tabs.metadata.json",
+  "sideEffects": false,
+  "peerDependencies": {
+    "tslib": "^1.10.0"
+  }
+}
