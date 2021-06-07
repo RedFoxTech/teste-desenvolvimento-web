@@ -1,0 +1,20 @@
+{
+  "files.exclude": {
+    // Global
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    // Docs
+    "docs": true,
+    // Backend
+    "backend": false,
+    // Frontend
+    "frontend": false,
+    // Root
+    ".gitignore": true,
+    "README.md": false
+  }
+}

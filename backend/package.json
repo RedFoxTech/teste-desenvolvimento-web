@@ -1,0 +1,23 @@
+{
+  "name": "pokemon-go",
+  "version": "0.1.0",
+  "description": "Sistema para busca de dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "json-server --watch pokemon.json --port 3001"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JefersonLucas/teste-desenvolvimento-web.git"
+  },
+  "author": "Jeferson Lucas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JefersonLucas/teste-desenvolvimento-web/issues"
+  },
+  "homepage": "https://github.com/JefersonLucas/teste-desenvolvimento-web#readme",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
+}
