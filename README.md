@@ -34,5 +34,5 @@ git clone https://github.com/YuriODantas/teste-desenvolvimento-web
 npm install
 
 # Rode a aplicação
-npm run dev
+npm run start
 ```
