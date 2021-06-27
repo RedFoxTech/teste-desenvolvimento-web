@@ -1,0 +1,321 @@
+
+
+
+.fighting{
+    color: #c03028;
+
+}
+.fighting:hover{
+    background-color: rgba(192, 48, 40, 0.2);
+
+}
+
+.fighting-active{
+    color: #fff;
+    background-color: #c03028;
+
+}
+
+
+
+
+
+
+
+.flying{
+    color: #9096f0;
+
+}
+.flying:hover{
+    background-color: rgba(144,150,240,.2);
+
+}
+
+.flying-active{
+    color: #fff;
+    background-color: #9096f0;
+
+}
+
+
+
+
+.poison{
+    color: #a040a0
+}
+
+.poison:hover{
+    background-color: rgba(160,64,160,.2);
+
+}
+
+.poison-active{
+    color: #fff;
+    background-color: #a040a0;
+
+}
+
+
+
+
+
+.ground{
+    color: #e0b668
+}
+
+.ground:hover{
+    background-color: rgba(224,182,104,.2);
+
+}
+
+.ground-active{
+    color: #fff;
+    background-color: #e0b668;
+
+}
+
+
+
+
+
+
+.rock{
+    color: #b8a038
+}
+
+.rock:hover{
+    background-color: rgba(184,160,56,.2);
+
+}
+
+.rock-active{
+    color: #fff;
+    background-color: #b8a038;
+
+}
+
+
+
+
+
+.bug{
+    color: #9cb820
+}
+
+.bug:hover{
+    background-color: rgba(156,184,32,.2);
+
+}
+
+.bug-active{
+    color: #fff;
+    background-color: #9cb820;
+
+}
+
+
+
+
+.ghost{
+    color: #705898
+}
+
+.ghost:hover{
+    background-color: rgba(112,88,152,.2);
+
+}
+
+.ghost-active{
+    color: #fff;
+    background-color: #705898;
+
+}
+
+
+
+.steel{
+    color: #6d8f9c
+}
+
+.steel:hover{
+    background-color: rgba(109,143,156,.2);
+
+}
+
+.steel-active{
+    color: #fff;
+    background-color: #705898;
+
+}
+
+
+
+
+.fire{
+    color: #f08030
+}
+
+.fire:hover{
+    background-color: rgba(240,128,48,.2);
+
+}
+
+.fire-active{
+    color: #fff;
+    background-color: #f08030;
+
+}
+
+
+
+
+
+
+.water{
+    color: #6890f0
+}
+
+.water:hover{
+    background-color: rgba(104,144,240,.2);
+
+}
+
+.water-active{
+    color: #fff;
+    background-color: #6890f0;
+
+}
+
+
+
+.grass{
+    color: #22c02a
+}
+
+.grass:hover{
+    background-color: rgba(34,192,42,.2);
+
+}
+
+.grass-active{
+    color: #fff;
+    background-color: #22c02a;
+
+}
+
+
+.electric{
+    color: #c09643
+}
+
+.electric:hover{
+    background-color: rgba(192,150,67,.2);
+
+}
+
+.electric-active{
+    color: #fff;
+    background-color: #c09643;
+
+}
+
+
+
+
+
+
+
+
+.psychic{
+    color: #eb2d77
+}
+
+.psychic:hover{
+    background-color: rgba(235,45,119,.2);
+
+}
+
+.psychic-active{
+    color: #fff;
+    background-color: #eb2d77;
+
+}
+
+
+
+
+
+.ice{
+    color: #98d8d8
+}
+
+.ice:hover{
+    background-color: rgba(152,216,216,.2);
+
+}
+
+.ice-active{
+    color: #fff;
+    background-color: #98d8d8;
+
+}
+
+
+
+
+
+.dragon{
+    color: #7038f8
+}
+
+.dragon:hover{
+    background-color: rgba(112,56,248,.2);
+
+}
+
+.dragon-active{
+    color: #fff;
+    background-color: #7038f8;
+
+}
+
+
+
+.dark{
+    color: #504843
+}
+
+.dark:hover{
+    background-color: rgba(80,72,67,.2);
+
+}
+
+.dark-active{
+    color: #fff;
+    background-color: #504843;
+
+}
+
+
+
+.fairy{
+    color: #f09ad9
+}
+
+.fairy:hover{
+    background-color: rgba(240,154,217,.2);
+
+
+}
+
+.fairy-active{
+    color: #fff;
+    background-color: #f09ad9;
+
+}
+
+.all-active{
+    color: white;
+    background-color: rgb(138, 138, 138)
+}
+
