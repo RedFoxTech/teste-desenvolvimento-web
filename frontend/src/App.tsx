@@ -2,37 +2,13 @@ import React, { useContext, useEffect } from 'react'
 import { Sidebar } from './components/SideBar'
 import { Card } from './components/Card'
 import { RequestContextData } from './RequestContext'
+import { Loading } from './components/Loading'
 
 
 function App() {
-  const { loading, pokemons, types, setIndexPokemon,  infinite} =
+  const { loading, pokemons, types} =
     useContext(RequestContextData)
 
-
-  useEffect(() => {
-    let wait = false
-    function inifiteScroll() {
-        const scroll = window.scrollY
-        const height = document.body.offsetHeight - window.innerHeight
-        if (scroll > height * 0.96 && !wait) {
-          setIndexPokemon(prevState => prevState + 5)
-
-          wait = true
-          setTimeout(() => {
-            wait = false
-          }, 500)
-        }
-
-      
-    }
-    window.addEventListener('wheel', inifiteScroll)
-    window.addEventListener('scroll', inifiteScroll)
-
-    return () => {
-      window.removeEventListener('wheel', inifiteScroll)
-      window.removeEventListener('scroll', inifiteScroll)
-    }
-  }, [infinite])
 
   // if (loading) {
   //   return (

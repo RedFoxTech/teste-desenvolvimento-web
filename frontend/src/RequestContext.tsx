@@ -67,19 +67,17 @@ export function RequestProvider({ children }: RequestProviderData) {
         )
         setPokemonsAll(ResponseNoSpaces)
 
-        const TenFirstItems = ResponseNoSpaces.map((item, index) => index < indexPokemon ? item : false).filter(item => item == false ? false : true)
+        // const TenFirstItems = ResponseNoSpaces.map((item, index) => index < indexPokemon ? item : false).filter(item => item == false ? false : true)
 
         if (value === 'All') {
-          setPokemons(TenFirstItems)
+          setPokemons(ResponseNoSpaces)
         } else {
           const onlyPokemonTypes = pokemonAll.filter(pokemon => {
             return pokemon.Type1 === value ? true : false
           })
-          const TenFirstItems:any = onlyPokemonTypes.map((item, index) => index <= indexPokemon ? item : false).filter(item => item == false ? false : true)
-          setPokemons(TenFirstItems)
+          // const TenFirstItems:any = onlyPokemonTypes.map((item, index) => index <= indexPokemon ? item : false).filter(item => item == false ? false : true)
+          setPokemons(onlyPokemonTypes)
         }
-
-        
 
         const pokemonsTypes = ResponseNoSpaces.map(
           (item) => item.Type1
