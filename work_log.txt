@@ -39,3 +39,5 @@ no Loopback(number) e tipo salvo no MongoDB(string)
 para frontend
 
 - Limpando boilerplate do Vue
+
+- Instalação do Vuetify deu problemas, recriando projeto Vue do 0
