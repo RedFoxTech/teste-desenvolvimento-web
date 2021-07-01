@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar
+    <!-- <v-app-bar
       app
       color="primary"
       dark
@@ -35,8 +35,11 @@
         <span class="mr-2">Latest Release</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
-    </v-app-bar>
-
+    </v-app-bar> -->
+    <v-img
+      id="bg"
+      src="@/assets/background.jpg"
+    ></v-img>
     <v-main>
       <router-view/>
     </v-main>
@@ -53,3 +56,10 @@ export default {
   }),
 };
 </script>
+<style>
+#bg {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+}
+</style>

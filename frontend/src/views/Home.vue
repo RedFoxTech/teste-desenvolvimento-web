@@ -1,15 +1,15 @@
 <template>
-  <hello-world />
+  <pokemon />
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+  import Pokemon from '../components/Pokemon'
 
   export default {
     name: 'Home',
 
     components: {
-      HelloWorld,
+      Pokemon,
     },
   }
 </script>
