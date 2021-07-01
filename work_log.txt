@@ -29,4 +29,11 @@ atributos adicionais. Para fins de praticidade iremos removê-la
 a fim de não precisarmos cadastrar todos os atributos de um pokemon 
 manualmente
 
-- 
+- Foi identificado que ao fazermos um GET, o id retornado é null,
+erro o qual deverá ser corrigido
+
+- Erro corrigido a partir da detecção do conflito tipo do id declarado
+no Loopback(number) e tipo salvo no MongoDB(string)
+
+- Operações do CRUD no backend testadas e funcionando, agora a prosseguir
+para frontend
