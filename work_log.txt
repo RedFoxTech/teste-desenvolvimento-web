@@ -8,3 +8,4 @@ de familiaridade:
     - Para o frontend, será utilizado Vue.js
     - Para o backend, será utilizado Node.js com Loopback.js
 
+- Agora inicializaremos ambos os projetos, backend e frontend
