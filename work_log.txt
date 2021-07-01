@@ -1,0 +1,10 @@
+- A primeira decisão consiste em escolher as tecnologias
+a serem utilizadas.
+
+- A fim de concluir o desafio em tempo hábil,
+as seguintes ferramentas foram escolhidas por motivos
+de familiaridade:
+    - Para o layout, será utilizado Vuetify.js
+    - Para o frontend, será utilizado Vue.js
+    - Para o backend, será utilizado Node.js com Loopback.js
+
