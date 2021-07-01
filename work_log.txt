@@ -37,3 +37,5 @@ no Loopback(number) e tipo salvo no MongoDB(string)
 
 - Operações do CRUD no backend testadas e funcionando, agora a prosseguir
 para frontend
+
+- Limpando boilerplate do Vue
