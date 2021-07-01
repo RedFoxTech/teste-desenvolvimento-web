@@ -22,3 +22,11 @@ como datasource
 - Banco, datasource, repository e controller criados
 
 - Conexão com o MongoDB testada e funcionando
+
+- Antes de prosseguirmos para o frontend, faz-se necessário
+remover a constraint do modelo de dados o qual não permite
+atributos adicionais. Para fins de praticidade iremos removê-la
+a fim de não precisarmos cadastrar todos os atributos de um pokemon 
+manualmente
+
+- 

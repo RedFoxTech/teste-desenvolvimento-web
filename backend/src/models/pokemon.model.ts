@@ -1,6 +1,10 @@
 import {Entity, model, property} from '@loopback/repository';
 
-@model()
+@model({
+  settings: {
+    strict: false
+  }
+})
 export class Pokemon extends Entity {
   @property({
     type: 'number',
