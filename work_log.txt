@@ -7,5 +7,18 @@ de familiaridade:
     - Para o layout, será utilizado Vuetify.js
     - Para o frontend, será utilizado Vue.js
     - Para o backend, será utilizado Node.js com Loopback.js
+    - Para o banco de dados, será utilizado o MongoDB Atlas
 
 - Agora inicializaremos ambos os projetos, backend e frontend
+
+- Com os boilerplates criados, agora criaremos o endpoint
+dos pokemons
+
+- Primeiro criamos o modelo
+
+- Em seguida criamos o banco de dados na nuvem para utilizarmos
+como datasource
+
+- Banco, datasource, repository e controller criados
+
+- Conexão com o MongoDB testada e funcionando
