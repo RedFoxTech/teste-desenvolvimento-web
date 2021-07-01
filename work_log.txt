@@ -42,3 +42,5 @@ para frontend
 
 - Instalação do Vuetify deu problemas, recriando projeto Vue do 0
 
+- Projeto instalado, agora a prosseguir para criação da tabela
+e das operações do CRUD

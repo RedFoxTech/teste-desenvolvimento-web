@@ -15,7 +15,7 @@
             <v-data-table
               no-data-text="Sem pokémons para exibir"
               :headers="headers"
-              :items="desserts"
+              :items="pokemons"
               :items-per-page="15"
             ></v-data-table>
           </v-card-text>
@@ -27,11 +27,30 @@
 </template>
 
 <script>
-  export default {
-    name: 'Pokémon',
+import DB from '@/db'
+const db = new DB();
 
-    data: () => ({
-      
-    }),
+export default {
+  name: 'Pokémon',
+
+  data: () => ({
+    pokemons: [],
+    headers: [
+      { text: "Nome", value: "Name" },
+      { text: "Número da Pokedex", value: "Pokedex Number" },
+      { text: "Geração", value: "Generation" },
+      { text: "Evoluído", value: "Evolved" },
+    ]
+  }),
+
+  async mounted() {
+    await db.getPokemons()
+    .then(res => {
+      this.pokemons = res.data.slice()
+      console.log('pokemons')
+      console.log(this.pokemons)
+    })
+    .catch(err => console.log(err))
   }
+}
 </script>
