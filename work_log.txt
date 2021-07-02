@@ -52,8 +52,13 @@ ao invés da branch com meu nome como instruído, portanto fiz um merge da minha
 branch a master, a fim de transferir os commits e em seguida fiz o revert de
 todos os commits erroneamente enviados para a master.
 
-- O processo apesar de doloroso e ter me custado algumas horas desde a pesquisa
+- O processo apesar de doloroso e de ter me custado algumas horas desde a pesquisa
 sobre qual o procedimento adequado para solucionar o problema (jamais fazer 
 $git push -f !) até a execução em si da solução foi muito enriquecedor. Pude
-aprender mais sobre como o histórico de commits(git log) funcionam e como usar git reset ou 
+aprender mais sobre como o histórico de commits(git log) funciona e como usar git reset ou 
 git revert para fazer os ajustes necessários.
+
+- Apesar de saber que poderia ter pego um atalho e resolvido a questão em apenas alguns
+minutos com um comando git não recomendado, preferi dar relevância ao problema e fazer
+a correção da forma mais correta possível, dado o nível de criticidade que uma 
+situação análoga teria em um projeto real.
