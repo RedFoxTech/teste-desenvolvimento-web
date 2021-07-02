@@ -44,3 +44,16 @@ para frontend
 
 - Projeto instalado, agora a prosseguir para criação da tabela
 e das operações do CRUD
+
+- GET funcionando
+
+- Percebi que havia cometido um deslize e estava trabalhando na branch master
+ao invés da branch com meu nome como instruído, portanto fiz um merge da minha
+branch a master, a fim de transferir os commits e em seguida fiz o revert de
+todos os commits erroneamente enviados para a master.
+
+- O processo apesar de doloroso e ter me custado algumas horas desde a pesquisa
+sobre qual o procedimento adequado para solucionar o problema (jamais fazer 
+$git push -f !) até a execução em si da solução foi muito enriquecedor. Pude
+aprender mais sobre como o histórico de commits(git log) funcionam e como usar git reset ou 
+git revert para fazer os ajustes necessários.
