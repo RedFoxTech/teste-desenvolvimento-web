@@ -79,3 +79,7 @@ o refinamento para select será feito a posteriori caso sobre tempo
 
 - Para melhor visualização dos dados dos pokémons, optei por mostrar todas as colunas
 da tabela
+
+- Considero que um passo relevante no momento seja fazer o deploy de ambos 
+o front e o backend, por conseguinte, fá-lo-ei
+
