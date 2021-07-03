@@ -91,3 +91,5 @@ o Heroku
 - Agora a opção de adicionar pokemon via JSON será adicionada
 
 - Uma nova tentativa de deploy será feita, desta vez com Firebase
+
+- Deploy do frontend bem sucedido, link:  https://pokemon-go-redfox.web.app
