@@ -442,7 +442,7 @@ export default {
       { text: "Estágio da Evolução", value: "Evolution Stage" },
       { text: "Evoluído", value: "Evolved" },
       { text: "ID da Família", value: "FamilyID" },
-      { text: "Cross Gen", value: "Cross Gen" },
+      { text: "Cruzado Geneticamente", value: "Cross Gen" },
       { text: "Tipo 1", value: "Type 1" },
       { text: "Tipo 2", value: "Type 2" },
       { text: "Tempo 1", value: "Weather 1" },
