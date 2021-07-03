@@ -83,3 +83,5 @@ da tabela
 - Considero que um passo relevante no momento seja fazer o deploy de ambos 
 o front e o backend, por conseguinte, fá-lo-ei
 
+- Por saber que se trata de uma ferramenta de deploy moderna e prática, optei por utilizar 
+o Heroku
