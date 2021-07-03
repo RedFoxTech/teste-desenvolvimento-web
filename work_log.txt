@@ -85,3 +85,7 @@ o front e o backend, por conseguinte, fá-lo-ei
 
 - Por saber que se trata de uma ferramenta de deploy moderna e prática, optei por utilizar 
 o Heroku
+
+- O deploy do Heroku está dando muitos erros, a estratégia de deploy será repensada posteriormente
+
+- Agora a opção de adicionar pokemon via JSON será adicionada

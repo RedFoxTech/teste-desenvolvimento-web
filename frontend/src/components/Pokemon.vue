@@ -54,7 +54,6 @@
     <v-dialog
       v-model="dialog"
       persistent
-      fullscreen
     >
       <v-card>
         <v-card-title class="primary lighten white--text">
