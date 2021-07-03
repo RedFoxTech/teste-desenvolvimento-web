@@ -89,3 +89,5 @@ o Heroku
 - O deploy do Heroku está dando muitos erros, a estratégia de deploy será repensada posteriormente
 
 - Agora a opção de adicionar pokemon via JSON será adicionada
+
+- Uma nova tentativa de deploy será feita, desta vez com Firebase
