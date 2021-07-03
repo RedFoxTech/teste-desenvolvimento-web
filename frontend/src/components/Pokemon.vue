@@ -62,337 +62,367 @@
         <v-card-subtitle>
           <br>
         </v-card-subtitle>
-        <v-card-text>
-          <v-row>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['Name']"
-                label="Nome"
-                outlined
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['Pokedex Number']"
-                label="N. da Pokedex"
-                outlined
-                type="number"
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['Img name']"
-                label="Img name"
-                outlined
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['Generation']"
-                label="Geração"
-                outlined
-                type="number"
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-select
-                v-model="editedItem['Evolution Stage']"
-                label="Estágio da Evolução"
-                :items="[1, 2, 3, 'Lower', 'Evolved']"
-                outlined
-              >
-              </v-select>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['Evolved']"
-                label="Evoluído"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['FamilyID']"
-                label="ID da Família"
-                outlined
-                type="number"
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['Cross Gen']"
-                label="Cruzado Geneticamente"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['Type 1']"
-                label="Tipo 1"
-                outlined
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['Type 2']"
-                label="Tipo 2"
-                outlined
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['Weather 1']"
-                label="Tempo 1"
-                outlined
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['Weather 2']"
-                label="Tempo 2"
-                outlined
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['STAT TOTAL']"
-                label="Stat Total"
-                outlined
-                type="number"
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['ATK']"
-                label="Ataque"
-                outlined
-                type="number"
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['DEF']"
-                label="Defesa"
-                outlined
-                type="number"
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['STA']"
-                label="Estamina"
-                outlined
-                type="number"
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['Legendary']"
-                label="Lendário"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['Aquireable']"
-                label="Adquirível"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['Spawns']"
-                label="Spawnvável"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['Regional']"
-                label="Regional"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['Raidable']"
-                label="Participa de Raids"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['Hatchable']"
-                label="Eclodível"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['Shiny']"
-                label="Brilhoso"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['Nest']"
-                label="Ninho"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['New']"
-                label="Novo"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['Not-Gettable']"
-                label="Não-coletável"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-checkbox
-                v-model="editedItem['Future Evolve']"
-                label="Evolução Futura"
-                outlined
-                :true-value="1"
-                :false-value="0"
-              >
-              </v-checkbox>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['100% CP @ 40']"
-                label="100% CP @ 40"
-                outlined
-                type="number"
-              >
-              </v-text-field>
-            </v-col>
-            <v-col
-              cols="3"
-            >
-              <v-text-field
-                v-model="editedItem['100% CP @ 39']"
-                label="100% CP @ 39"
-                outlined
-                type="number"
-              >
-            
-              </v-text-field>
-            </v-col>
-          </v-row>
-        </v-card-text>
+
+        <v-tabs v-model="tab" grow height="25px">
+          <v-tab
+            v-for="item in ['Inserção Manual', 'Inserir JSON'].filter(el => editedIndex == -1 || el == 'Inserção Manual')"
+            :key="item"
+          >
+            {{item}}
+          </v-tab>
+        </v-tabs>
+
+        <v-tabs-items v-model="tab">
+          <v-tab-item> 
+            <v-card-text>
+              <v-row>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['Name']"
+                    label="Nome"
+                    outlined
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['Pokedex Number']"
+                    label="N. da Pokedex"
+                    outlined
+                    type="number"
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['Img name']"
+                    label="Img name"
+                    outlined
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['Generation']"
+                    label="Geração"
+                    outlined
+                    type="number"
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-select
+                    v-model="editedItem['Evolution Stage']"
+                    label="Estágio da Evolução"
+                    :items="[1, 2, 3, 'Lower', 'Evolved']"
+                    outlined
+                  >
+                  </v-select>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['Evolved']"
+                    label="Evoluído"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['FamilyID']"
+                    label="ID da Família"
+                    outlined
+                    type="number"
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['Cross Gen']"
+                    label="Cruzado Geneticamente"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['Type 1']"
+                    label="Tipo 1"
+                    outlined
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['Type 2']"
+                    label="Tipo 2"
+                    outlined
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['Weather 1']"
+                    label="Tempo 1"
+                    outlined
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['Weather 2']"
+                    label="Tempo 2"
+                    outlined
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['STAT TOTAL']"
+                    label="Stat Total"
+                    outlined
+                    type="number"
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['ATK']"
+                    label="Ataque"
+                    outlined
+                    type="number"
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['DEF']"
+                    label="Defesa"
+                    outlined
+                    type="number"
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['STA']"
+                    label="Estamina"
+                    outlined
+                    type="number"
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['Legendary']"
+                    label="Lendário"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['Aquireable']"
+                    label="Adquirível"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['Spawns']"
+                    label="Spawnvável"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['Regional']"
+                    label="Regional"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['Raidable']"
+                    label="Participa de Raids"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['Hatchable']"
+                    label="Eclodível"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['Shiny']"
+                    label="Brilhoso"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['Nest']"
+                    label="Ninho"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['New']"
+                    label="Novo"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['Not-Gettable']"
+                    label="Não-coletável"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-checkbox
+                    v-model="editedItem['Future Evolve']"
+                    label="Evolução Futura"
+                    outlined
+                    :true-value="1"
+                    :false-value="0"
+                  >
+                  </v-checkbox>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['100% CP @ 40']"
+                    label="100% CP @ 40"
+                    outlined
+                    type="number"
+                  >
+                  </v-text-field>
+                </v-col>
+                <v-col
+                  cols="3"
+                >
+                  <v-text-field
+                    v-model="editedItem['100% CP @ 39']"
+                    label="100% CP @ 39"
+                    outlined
+                    type="number"
+                  >
+                
+                  </v-text-field>
+                </v-col>
+              </v-row>
+            </v-card-text>
+          </v-tab-item>
+          <v-tab-item>
+            <v-card-text>
+              <v-row>
+                <v-col>
+                  <v-textarea
+                    v-model="pokemonJSON"
+                    label="JSON"
+                    outlined
+                    max-width="800"
+                  >
+                  </v-textarea>        
+                </v-col>
+              </v-row>
+            </v-card-text>
+          </v-tab-item>
+        </v-tabs-items>
+        
         <v-divider></v-divider>
         <v-card-actions>
           <v-btn @click="close" text color="dark grey">
@@ -430,8 +460,10 @@ export default {
     dialogDelete: false,
     saveButtonLoading: false,
     editedIndex: -1,
+    tab: null,
     key: 0,
     search: '',
+    pokemonJSON: '',
     pokemons: [],
     headers: [
       { text: "Ações", value: "actions", sortable: false},
@@ -533,6 +565,9 @@ export default {
     async save() {
       this.saveButtonLoading = true;
       var self = this;
+      if(this.tab == 1){
+        this.editedItem = JSON.parse(this.pokemonJSON)
+      }
       if (this.editedIndex > -1) {
         await db.updatePokemon(JSON.parse(JSON.stringify(this.editedItem)))
         .then(res => {
@@ -577,6 +612,7 @@ export default {
       this.dialog = false
       this.$nextTick(() => {
         this.editedItem = JSON.parse(JSON.stringify(this.pokemon))
+        this.pokemonJSON = ''
         this.editedIndex = -1
       })
     },
