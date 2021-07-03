@@ -73,3 +73,6 @@ direta com a mesma no futuro.
 inseridos
 
 - Funções e códigos de acesso ao backend ajustados para suportar as operações do CRUD
+
+- Os campos de Tempo e Tipo por simplicidade continuarão inicialmente como texto,
+o refinamento para select será feito a posteriori caso sobre tempo
