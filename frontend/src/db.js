@@ -15,10 +15,10 @@ export default class DB {
   createPokemon(pokemon) {
     return axios.post(url + "/pokemon", pokemon);
   }
-  updatePokemon(id, pokemon) {
-    return axios.patch(url + "/pokemon/" + id, pokemon);
+  updatePokemon(pokemon) {
+    return axios.patch(url + "/pokemon/" + pokemon.id, pokemon);
   }
   deletePokemon(id) {
-    return axios.delete(url + "/pokemon/" + user_id);
+    return axios.delete(url + "/pokemon/" + id);
   }
 }

@@ -69,3 +69,7 @@ situação análoga teria em um projeto real.
 exatamente iguais aos da tabela do Excel visando facilitar uma possível integração
 direta com a mesma no futuro.
 
+- Ajustando o form de cadastro de Pokémons de acordo com os tipos dos dados a serem
+inseridos
+
+- Funções e códigos de acesso ao backend ajustados para suportar as operações do CRUD

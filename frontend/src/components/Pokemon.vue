@@ -6,18 +6,28 @@
           <v-card-title>
             Pokémons
             <v-spacer></v-spacer>
-            <v-btn @click="dialog = true" text color="primary">
+            <v-btn @click="dialog = true" small text color="primary">
               Adicionar
               <v-icon>add</v-icon>
             </v-btn>
           </v-card-title>
+          <v-card-subtitle>
+            <v-text-field
+              v-model="search"
+              append-icon="mdi-magnify"
+              label="Pesquisa"
+              single-line
+              hide-details
+            ></v-text-field>
+          </v-card-subtitle>
           <v-card-text>
             <v-data-table
               no-data-text="Sem pokémons para exibir"
               :headers="headers"
               :items="pokemons"
               :items-per-page="15"
-              
+              :search="search"
+              :key="key"
             >
               <template v-slot:item.actions="{ item }">
                 <v-icon
@@ -30,7 +40,7 @@
                 </v-icon>
                 <v-icon
                   small
-                  color="primary"
+                  color="dark grey"
                   @click="deleteItem(item)"
                 >
                   mdi-delete
@@ -47,14 +57,16 @@
       fullscreen
     >
       <v-card>
-        <v-card-title class="primary lighten white--text">{{formTitle}}</v-card-title>
+        <v-card-title class="primary lighten white--text">
+          {{formTitle}}
+        </v-card-title>
         <v-card-text>
           <v-row>
             <v-col
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['Name']"
+                v-model="editedItem['Name']"
                 label="Nome"
                 outlined
               >
@@ -64,9 +76,10 @@
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['Pokedex Number']"
+                v-model="editedItem['Pokedex Number']"
                 label="N. da Pokedex"
                 outlined
+                type="number"
               >
               </v-text-field>
             </v-col>
@@ -74,7 +87,7 @@
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['Img name']"
+                v-model="editedItem['Img name']"
                 label="Img name"
                 outlined
               >
@@ -84,57 +97,64 @@
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['Generation']"
+                v-model="editedItem['Generation']"
                 label="Geração"
                 outlined
+                type="number"
               >
               </v-text-field>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Evolution Stage']"
+              <v-select
+                v-model="editedItem['Evolution Stage']"
                 label="Estágio da Evolução"
+                :items="[1, 2, 3, 'Lower', 'Evolved']"
                 outlined
               >
-              </v-text-field>
+              </v-select>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Evolved']"
+              <v-checkbox
+                v-model="editedItem['Evolved']"
                 label="Evoluído"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['FamilyID']"
+                v-model="editedItem['FamilyID']"
                 label="ID da Família"
                 outlined
+                type="number"
               >
               </v-text-field>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Cross Gen']"
-                label="Cruzamento Genético"
+              <v-checkbox
+                v-model="editedItem['Cross Gen']"
+                label="Cruzado Geneticamente"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['Type 1']"
+                v-model="editedItem['Type 1']"
                 label="Tipo 1"
                 outlined
               >
@@ -144,7 +164,7 @@
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['Type 2']"
+                v-model="editedItem['Type 2']"
                 label="Tipo 2"
                 outlined
               >
@@ -154,7 +174,7 @@
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['Weather 1']"
+                v-model="editedItem['Weather 1']"
                 label="Tempo 1"
                 outlined
               >
@@ -164,7 +184,7 @@
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['Weather 2']"
+                v-model="editedItem['Weather 2']"
                 label="Tempo 2"
                 outlined
               >
@@ -174,9 +194,10 @@
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['STAT TOTAL']"
+                v-model="editedItem['STAT TOTAL']"
                 label="Stat Total"
                 outlined
+                type="number"
               >
               </v-text-field>
             </v-col>
@@ -184,9 +205,10 @@
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['ATK']"
+                v-model="editedItem['ATK']"
                 label="Ataque"
                 outlined
+                type="number"
               >
               </v-text-field>
             </v-col>
@@ -194,9 +216,10 @@
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['DEF']"
+                v-model="editedItem['DEF']"
                 label="Defesa"
                 outlined
+                type="number"
               >
               </v-text-field>
             </v-col>
@@ -204,129 +227,153 @@
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['STA']"
+                v-model="editedItem['STA']"
                 label="Estamina"
                 outlined
+                type="number"
               >
               </v-text-field>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Legendary']"
+              <v-checkbox
+                v-model="editedItem['Legendary']"
                 label="Lendário"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Aquireable']"
+              <v-checkbox
+                v-model="editedItem['Aquireable']"
                 label="Adquirível"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Spawns']"
-                label="Aparições"
+              <v-checkbox
+                v-model="editedItem['Spawns']"
+                label="Spawnvável"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Regional']"
+              <v-checkbox
+                v-model="editedItem['Regional']"
                 label="Regional"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Raidable']"
-                label="Raidable"
+              <v-checkbox
+                v-model="editedItem['Raidable']"
+                label="Participa de Raids"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Hatchable']"
+              <v-checkbox
+                v-model="editedItem['Hatchable']"
                 label="Eclodível"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Shiny']"
+              <v-checkbox
+                v-model="editedItem['Shiny']"
                 label="Refletível"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Nest']"
+              <v-checkbox
+                v-model="editedItem['Nest']"
                 label="Ninho"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['New']"
+              <v-checkbox
+                v-model="editedItem['New']"
                 label="Novo"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Not-Gettable']"
+              <v-checkbox
+                v-model="editedItem['Not-Gettable']"
                 label="Não-coletável"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
-              <v-text-field
-                v-model="pokemon['Future Evolve']"
+              <v-checkbox
+                v-model="editedItem['Future Evolve']"
                 label="Evolução Futura"
                 outlined
+                :true-value="1"
+                :false-value="0"
               >
-              </v-text-field>
+              </v-checkbox>
             </v-col>
             <v-col
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['100% CP @ 40']"
+                v-model="editedItem['100% CP @ 40']"
                 label="100% CP @ 40"
                 outlined
+                type="number"
               >
               </v-text-field>
             </v-col>
@@ -334,9 +381,10 @@
               cols="3"
             >
               <v-text-field
-                v-model="pokemon['100% CP @ 39']"
+                v-model="editedItem['100% CP @ 39']"
                 label="100% CP @ 39"
                 outlined
+                type="number"
               >
             
               </v-text-field>
@@ -357,11 +405,11 @@
     </v-dialog>
     <v-dialog v-model="dialogDelete" max-width="500px">
       <v-card>
-        <v-card-title class="primary small lighten white--text">Tem certeza de que deseja apagar este pokémon?</v-card-title>
+        <v-card-title class="primary small lighten white--text">Tem certeza de que deseja apagar o pokémon?</v-card-title>
         <v-card-actions>
-          <v-btn color="dark grey" small text @click="closeDelete">Cancelar</v-btn>
+          <v-btn color="green" small text @click="closeDelete">Cancelar</v-btn>
           <v-spacer></v-spacer>
-          <v-btn color="primary" small text @click="deleteItemConfirm">Excluir</v-btn>
+          <v-btn color="red" small text @click="deleteItemConfirm">Apagar</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -380,6 +428,8 @@ export default {
     dialogDelete: false,
     saveButtonLoading: false,
     editedIndex: -1,
+    key: 0,
+    search: '',
     pokemons: [],
     headers: [
       { text: "Nome", value: "Name" },
@@ -389,6 +439,7 @@ export default {
       { text: "Ações", value: "actions", sortable: false}
     ],
     pokemon: {
+      id: null,
       'Name': null,
       'Pokedex Number': null,
       'Img name': null,
@@ -420,6 +471,7 @@ export default {
       '100% CP @ 39': null
     },
     editedItem: {
+      id: null,
       'Name': null,
       'Pokedex Number': null,
       'Img name': null,
@@ -465,12 +517,13 @@ export default {
       } else {
         await db.createPokemon(JSON.parse(JSON.stringify(this.editedItem)))
         .then(res => {
-          self.editedItem.id = res;
+          self.editedItem.id = res.id;
           self.pokemons.push(self.editedItem)
         })
         .catch(err => console.log(err));
       }
       this.saveButtonLoading = false;
+      this.key++;
       this.close()
     },
 
@@ -496,7 +549,6 @@ export default {
 
     close() {
       this.dialog = false
-      this.imageUploadError = undefined
       this.$nextTick(() => {
         this.editedItem = JSON.parse(JSON.stringify(this.pokemon))
         this.editedIndex = -1
