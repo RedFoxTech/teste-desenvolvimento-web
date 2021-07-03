@@ -60,5 +60,12 @@ git revert para fazer os ajustes necessários.
 
 - Apesar de saber que poderia ter pego um atalho e resolvido a questão em apenas alguns
 minutos com um comando git não recomendado, preferi dar relevância ao problema e fazer
-a correção da forma mais correta possível, dado o nível de criticidade que uma 
+os ajustes da forma mais correta possível, dado o nível de criticidade que uma 
 situação análoga teria em um projeto real.
+
+- Agora a implementar o Create (POST)
+
+- Na hora de salvar o JSON dos pokemons optei por manter o nome dos campos 
+exatamente iguais aos da tabela do Excel visando facilitar uma possível integração
+direta com a mesma no futuro.
+

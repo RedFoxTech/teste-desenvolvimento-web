@@ -12,7 +12,7 @@ export default class DB {
   getPokemons() {
     return axios.get(url + '/pokemon');
   }
-  savePokemon(pokemon) {
+  createPokemon(pokemon) {
     return axios.post(url + "/pokemon", pokemon);
   }
   updatePokemon(id, pokemon) {
