@@ -15,14 +15,14 @@
             <v-text-field
               v-model="search"
               append-icon="mdi-magnify"
-              label="Pesquisa"
+              label="Pesquise um Pokémon por nome ou atributo"
               single-line
               hide-details
             ></v-text-field>
           </v-card-subtitle>
           <v-card-text>
             <v-data-table
-              no-data-text="Sem pokémons para exibir"
+              no-data-text="Sem Pokémons para exibir"
               :headers="headers"
               :items="pokemons"
               :items-per-page="15"
