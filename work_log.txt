@@ -76,3 +76,6 @@ inseridos
 
 - Os campos de Tempo e Tipo por simplicidade continuarão inicialmente como texto,
 o refinamento para select será feito a posteriori caso sobre tempo
+
+- Para melhor visualização dos dados dos pokémons, optei por mostrar todas as colunas
+da tabela

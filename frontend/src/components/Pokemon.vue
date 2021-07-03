@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row class="text-center">
-      <v-col>
+      <v-col cols="12">
         <v-card class="rounded-xl" style="top: 13vh">
           <v-card-title>
             Pokémons
@@ -60,6 +60,9 @@
         <v-card-title class="primary lighten white--text">
           {{formTitle}}
         </v-card-title>
+        <v-card-subtitle>
+          <br>
+        </v-card-subtitle>
         <v-card-text>
           <v-row>
             <v-col
@@ -311,7 +314,7 @@
             >
               <v-checkbox
                 v-model="editedItem['Shiny']"
-                label="Refletível"
+                label="Brilhoso"
                 outlined
                 :true-value="1"
                 :false-value="0"
@@ -432,11 +435,35 @@ export default {
     search: '',
     pokemons: [],
     headers: [
+      { text: "Ações", value: "actions", sortable: false},
       { text: "Nome", value: "Name" },
       { text: "N. da Pokedex", value: "Pokedex Number" },
       { text: "Geração", value: "Generation" },
+      { text: "Estágio da Evolução", value: "Evolution Stage" },
       { text: "Evoluído", value: "Evolved" },
-      { text: "Ações", value: "actions", sortable: false}
+      { text: "ID da Família", value: "FamilyID" },
+      { text: "Cross Gen", value: "Cross Gen" },
+      { text: "Tipo 1", value: "Type 1" },
+      { text: "Tipo 2", value: "Type 2" },
+      { text: "Tempo 1", value: "Weather 1" },
+      { text: "Tempo 2", value: "Weather 2" },
+      { text: "Stat Total", value: "STAT TOTAL" },
+      { text: "Ataque", value: "ATK" },
+      { text: "Defesa", value: "DEF" },
+      { text: "Estamina", value: "STA" },
+      { text: "Lendário", value: "Legendary" },
+      { text: "Adquirível", value: "Aquireable" },
+      { text: "Spawnável", value: "Spawns" },
+      { text: "Regional", value: "Regional" },
+      { text: "Participa de Raids", value: "Raidable" },
+      { text: "Eclodível", value: "Hatchable" },
+      { text: "Brilhoso", value: "Shiny" },
+      { text: "Ninho", value: "Nest" },
+      { text: "Novo", value: "New" },
+      { text: "Não-coletável", value: "Not-Gettable" },
+      { text: "Evolução Futura", value: "Future Evolve" },
+      { text: "100% CP @ 40", value: "100% CP @ 40" },
+      { text: "100% CP @ 39", value: "100% CP @ 39" },
     ],
     pokemon: {
       id: null,
