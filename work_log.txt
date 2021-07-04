@@ -93,3 +93,10 @@ o Heroku
 - Uma nova tentativa de deploy será feita, desta vez com Firebase
 
 - Deploy do frontend bem sucedido, link:  https://pokemon-go-redfox.web.app
+
+- Nova tentativa de deploy do backend no Heroku, ainda encontrei bastantes erros porém persisti
+e apesar de a própria documentação do Loopback estar errada quanto ao deploy no Heroku, encontrei 
+o artigo https://stackoverflow.com/questions/59460356/loopback-4-deployment-in-heroku-lb-tsc-not-found-error
+que salvou minha vida 
+
+- Agora a atualizar o frontend para utilizar a nova url da api em produção
