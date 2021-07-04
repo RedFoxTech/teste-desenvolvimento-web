@@ -108,9 +108,18 @@ para restringir um eventual acesso indesejado
     - email: jgfn@cin.ufpe.br
     - senha: essavagaeminha
 
+- Creio que a relação esforço/demonstração de conhecimento na transformação dos campos 
+de Tipo e Tempo 1 e 2 de texto para select não é favorável para que eu opte por fazê-la 
+em troca de postergar a entrega, portanto, a mesma não será feita. Há incrementações mais 
+relevantes de se fazer no tempo proposto.
+
 - Garantindo que não haverá repetição de nomes dos pokémons
 
 - Permitindo a criação de vários pokemons ao mesmo tempo
 
 - Inserida a funcionalidade de aceitar cadastro de pokémons via submissão de planilha excel,
-visando a facilitação da troca de um sistema para outro.
+visando a conversão instantânea do banco de dados do sistema antigo para o novo.
+
+- Com isto, encerro meu desafio.
+
+- Câmbio, desliga.
