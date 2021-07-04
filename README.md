@@ -5,8 +5,8 @@ Este projeto consiste em desenvolver uma aplicação web que substitua um sistem
 Seguir o link: https://pokemon-go-redfox.web.app/#/login
 
 Credenciais:
-    - email: jgfn@cin.ufpe.br
-    - senha: essavagaeminha
+    email: jgfn@cin.ufpe.br
+    senha: essavagaeminha
 
 ## Para visualizar a API 
 https://pokemon-go-redfox-backend.herokuapp.com/explorer/#/
