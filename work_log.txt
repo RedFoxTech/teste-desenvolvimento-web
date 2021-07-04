@@ -103,3 +103,9 @@ que salvou minha vida
 
 - Como o site agora está online, creio que uma boa adição seja uma página de login
 para restringir um eventual acesso indesejado
+
+- Página de Login criada utilizando Firebase Authentication
+    - email: jgfn@cin.ufpe.br
+    - senha: essavagaeminha
+
+- Garantindo que não haverá repetição de nomes dos pokémons

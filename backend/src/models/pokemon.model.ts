@@ -13,6 +13,14 @@ export class Pokemon extends Entity {
   })
   id?: string;
 
+  @property({
+    type: 'string',
+    required: true,
+    index: {
+      unique: true,
+    },
+  })
+  Name?: string;
 
   constructor(data?: Partial<Pokemon>) {
     super(data);
