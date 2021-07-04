@@ -47,6 +47,30 @@ export class PokemonController {
     return this.pokemonRepository.create(pokemon);
   }
 
+  @post('/pokemons')
+  @response(200, {
+    description: 'Pokemon model instance array',
+    content: {'application/json': {schema: getModelSchemaRef(Pokemon)}},
+  })
+  async createMany(
+    @requestBody({
+      content: {
+        'application/json': {
+          schema: {
+            type: 'array',
+            items: getModelSchemaRef(Pokemon, {
+              title: 'NewPokemons',
+              exclude: ['id'],
+            }),
+          }
+        },
+      },
+    })
+    pokemon: [Omit<Pokemon, 'id'>],
+  ): Promise<Pokemon[]> {
+    return this.pokemonRepository.createAll(pokemon);
+  }
+
   @get('/pokemon/count')
   @response(200, {
     description: 'Pokemon model count',
