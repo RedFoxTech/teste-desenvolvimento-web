@@ -1,7 +1,5 @@
 # Pokemon Go App
-## Este projeto consiste em desenvolver uma aplicação web que 
-## substitua um sistema de cadastro de pokémons que atualmente 
-## se resume à uma planilha de Excel. 
+Este projeto consiste em desenvolver uma aplicação web que substitua um sistema de cadastro de pokémons que atualmente se resume à uma planilha de Excel. 
 
 ## Para visualizar o frontend
 Seguir o link: https://pokemon-go-redfox.web.app/#/login
