@@ -1,0 +1,75 @@
+{
+  "name": "backend",
+  "version": "0.0.1",
+  "description": "redfox challenge",
+  "author": "jgfn1 <jgfn@cin.ufpe.br>",
+  "scripts": {
+    "build": "lb-tsc",
+    "lint": "npm run eslint && npm run prettier:check",
+    "build:watch": "lb-tsc --watch",
+    "clean": "lb-clean dist *.tsbuildinfo .eslintcache",
+    "docker:build": "docker build -t backend .",
+    "docker:run": "docker run -p 3000:3000 -d backend",
+    "eslint": "lb-eslint --report-unused-disable-directives .",
+    "eslint:fix": "npm run eslint -- --fix",
+    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
+    "migrate": "node ./dist/migrate",
+    "openapi-spec": "node ./dist/openapi-spec",
+    "posttest": "npm run lint",
+    "premigrate": "npm run build",
+    "preopenapi-spec": "npm run build",
+    "prestart": "npm run rebuild",
+    "pretest": "npm run rebuild",
+    "prettier:check": "npm run prettier:cli -- -l",
+    "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.js\"",
+    "prettier:fix": "npm run prettier:cli -- --write",
+    "rebuild": "npm run clean && npm run build",
+    "start": "node -r source-map-support/register .",
+    "test": "lb-mocha --allow-console-logs \"dist/__tests__\"",
+    "test:dev": "lb-mocha --allow-console-logs dist/__tests__/**/*.js && npm run posttest"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "README.md",
+    "dist",
+    "src",
+    "!*/__tests__"
+  ],
+  "dependencies": {
+    "@loopback/boot": "^3.4.1",
+    "@loopback/core": "^2.16.1",
+    "@loopback/repository": "^3.7.0",
+    "@loopback/rest": "^9.3.1",
+    "@loopback/rest-explorer": "^3.3.1",
+    "@loopback/service-proxy": "^3.2.1",
+    "glob-parent": "^5.1.2",
+    "loopback-connector-mongodb": "^5.5.0",
+    "tslib": "^2.0.0"
+  },
+  "devDependencies": {
+    "@loopback/build": "^6.4.1",
+    "@loopback/eslint-config": "^10.2.1",
+    "@loopback/testlab": "^3.4.1",
+    "@types/node": "^10.17.60",
+    "eslint": "^7.28.0",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "source-map-support": "^0.5.19",
+    "typescript": "~4.3.2",
+    "vue-cli-plugin-vuetify": "~2.4.1",
+    "vuetify-loader": "^1.7.0"
+  },
+  "engines": {
+    "node": ">=10.16"
+  },
+  "keywords": [
+    "loopback-application",
+    "loopback"
+  ],
+  "license": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "types": "dist/index.d.ts"
+}

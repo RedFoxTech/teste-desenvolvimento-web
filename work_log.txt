@@ -1,0 +1,125 @@
+- A primeira decisão consiste em escolher as tecnologias
+a serem utilizadas.
+
+- A fim de concluir o desafio em tempo hábil,
+as seguintes ferramentas foram escolhidas por motivos
+de familiaridade:
+    - Para o layout, será utilizado Vuetify.js
+    - Para o frontend, será utilizado Vue.js
+    - Para o backend, será utilizado Node.js com Loopback.js
+    - Para o banco de dados, será utilizado o MongoDB Atlas
+
+- Agora inicializaremos ambos os projetos, backend e frontend
+
+- Com os boilerplates criados, agora criaremos o endpoint
+dos pokemons
+
+- Primeiro criamos o modelo
+
+- Em seguida criamos o banco de dados na nuvem para utilizarmos
+como datasource
+
+- Banco, datasource, repository e controller criados
+
+- Conexão com o MongoDB testada e funcionando
+
+- Antes de prosseguirmos para o frontend, faz-se necessário
+remover a constraint do modelo de dados o qual não permite
+atributos adicionais. Para fins de praticidade iremos removê-la
+a fim de não precisarmos cadastrar todos os atributos de um pokemon 
+manualmente
+
+- Foi identificado que ao fazermos um GET, o id retornado é null,
+erro o qual deverá ser corrigido
+
+- Erro corrigido a partir da detecção do conflito tipo do id declarado
+no Loopback(number) e tipo salvo no MongoDB(string)
+
+- Operações do CRUD no backend testadas e funcionando, agora a prosseguir
+para frontend
+
+- Limpando boilerplate do Vue
+
+- Instalação do Vuetify deu problemas, recriando projeto Vue do 0
+
+- Projeto instalado, agora a prosseguir para criação da tabela
+e das operações do CRUD
+
+- GET funcionando
+
+- Percebi que havia cometido um deslize e estava trabalhando na branch master
+ao invés da branch com meu nome como instruído, portanto fiz um merge da minha
+branch a master, a fim de transferir os commits e em seguida fiz o revert de
+todos os commits erroneamente enviados para a master.
+
+- O processo apesar de doloroso e de ter me custado algumas horas desde a pesquisa
+sobre qual o procedimento adequado para solucionar o problema (jamais fazer 
+$git push -f !) até a execução em si da solução foi muito enriquecedor. Pude
+aprender mais sobre como o histórico de commits(git log) funciona e como usar git reset ou 
+git revert para fazer os ajustes necessários.
+
+- Apesar de saber que poderia ter pego um atalho e resolvido a questão em apenas alguns
+minutos com um comando git não recomendado, preferi dar relevância ao problema e fazer
+os ajustes da forma mais correta possível, dado o nível de criticidade que uma 
+situação análoga teria em um projeto real.
+
+- Agora a implementar o Create (POST)
+
+- Na hora de salvar o JSON dos pokemons optei por manter o nome dos campos 
+exatamente iguais aos da tabela do Excel visando facilitar uma possível integração
+direta com a mesma no futuro.
+
+- Ajustando o form de cadastro de Pokémons de acordo com os tipos dos dados a serem
+inseridos
+
+- Funções e códigos de acesso ao backend ajustados para suportar as operações do CRUD
+
+- Os campos de Tempo e Tipo por simplicidade continuarão inicialmente como texto,
+o refinamento para select será feito a posteriori caso sobre tempo
+
+- Para melhor visualização dos dados dos pokémons, optei por mostrar todas as colunas
+da tabela
+
+- Considero que um passo relevante no momento seja fazer o deploy de ambos 
+o front e o backend, por conseguinte, fá-lo-ei
+
+- Por saber que se trata de uma ferramenta de deploy moderna e prática, optei por utilizar 
+o Heroku
+
+- O deploy do Heroku está dando muitos erros, a estratégia de deploy será repensada posteriormente
+
+- Agora a opção de adicionar pokemon via JSON será adicionada
+
+- Uma nova tentativa de deploy será feita, desta vez com Firebase
+
+- Deploy do frontend bem sucedido, link:  https://pokemon-go-redfox.web.app
+
+- Nova tentativa de deploy do backend no Heroku, ainda encontrei bastantes erros porém persisti
+e apesar de a própria documentação do Loopback estar errada quanto ao deploy no Heroku, encontrei 
+o artigo https://stackoverflow.com/questions/59460356/loopback-4-deployment-in-heroku-lb-tsc-not-found-error
+que salvou minha vida 
+
+- Agora a atualizar o frontend para utilizar a nova url da api em produção
+
+- Como o site agora está online, creio que uma boa adição seja uma página de login
+para restringir um eventual acesso indesejado
+
+- Página de Login criada utilizando Firebase Authentication
+    - email: jgfn@cin.ufpe.br
+    - senha: essavagaeminha
+
+- Creio que a relação esforço/demonstração de conhecimento na transformação dos campos 
+de Tipo e Tempo 1 e 2 de texto para select não é favorável para que eu opte por fazê-la 
+em troca de postergar a entrega, portanto, a mesma não será feita. Há incrementações mais 
+relevantes de se fazer no tempo proposto.
+
+- Garantindo que não haverá repetição de nomes dos pokémons
+
+- Permitindo a criação de vários pokemons ao mesmo tempo
+
+- Inserida a funcionalidade de aceitar cadastro de pokémons via submissão de planilha excel,
+visando a conversão instantânea do banco de dados do sistema antigo para o novo.
+
+- Com isto, encerro meu desafio.
+
+- Câmbio, desliga.
