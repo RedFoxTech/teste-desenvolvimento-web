@@ -1,12 +1,12 @@
 <template>
   <v-container>
-    <v-row class="text-center">
+    <v-row>
       <v-col cols="12">
-        <v-card class="rounded-xl" style="top: 13vh">
+        <v-card style="top: 13vh">
           <v-card-title>
             Pokémons
             <v-spacer></v-spacer>
-            <v-btn @click="dialog = true" small text color="primary">
+            <v-btn @click="dialog = true" small text color="black">
               Adicionar
               <v-icon>add</v-icon>
             </v-btn>
@@ -32,7 +32,7 @@
               <template v-slot:item.actions="{ item }">
                 <v-icon
                   small
-                  color="primary"
+                  color="black"
                   class="mr-2"
                   @click="editItem(item)"
                 >
@@ -56,15 +56,16 @@
       persistent
     >
       <v-card>
-        <v-card-title class="primary lighten white--text">
+        <v-card-title class="black lighten white--text">
           {{formTitle}}
         </v-card-title>
         <v-card-subtitle>
           <br>
         </v-card-subtitle>
 
-        <v-tabs v-model="tab" grow height="25px">
+        <v-tabs color="black" v-model="tab" grow height="25px">
           <v-tab
+            
             v-for="item in ['Inserção Manual', 'Inserir JSON'].filter(el => editedIndex == -1 || el == 'Inserção Manual')"
             :key="item"
           >
@@ -429,7 +430,7 @@
             Cancelar
           </v-btn>
           <v-spacer></v-spacer>
-          <v-btn @click="save" :loading="saveButtonLoading" text color="primary">
+          <v-btn @click="save" :loading="saveButtonLoading" text color="black">
             Salvar
           </v-btn>
         </v-card-actions>
@@ -437,7 +438,7 @@
     </v-dialog>
     <v-dialog v-model="dialogDelete" max-width="500px">
       <v-card>
-        <v-card-title class="primary small lighten white--text">Tem certeza de que deseja apagar o pokémon?</v-card-title>
+        <v-card-title class="black small lighten white--text">Tem certeza de que deseja apagar o pokémon?</v-card-title>
         <v-card-actions>
           <v-btn color="green" small text @click="closeDelete">Cancelar</v-btn>
           <v-spacer></v-spacer>
@@ -445,12 +446,24 @@
         </v-card-actions>
       </v-card>
     </v-dialog>
+    <v-btn
+      dark
+      small
+      absolute
+      right
+      style="top: 2vh;"
+      @click="logOut()"
+    >
+      Sair
+      <v-icon>exit_to_app</v-icon>
+    </v-btn>
   </v-container>
 </template>
 
 <script>
 import DB from '@/db'
 const db = new DB();
+import { mapActions } from "vuex";
 
 export default {
   name: 'Pokémon',
@@ -562,6 +575,11 @@ export default {
     }
   }),
   methods: {
+    ...mapActions(["logout"]),
+    logOut(){
+      this.logout();
+      this.$router.push('/login');
+    },
     async save() {
       this.saveButtonLoading = true;
       var self = this;

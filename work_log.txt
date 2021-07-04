@@ -100,3 +100,6 @@ o artigo https://stackoverflow.com/questions/59460356/loopback-4-deployment-in-h
 que salvou minha vida 
 
 - Agora a atualizar o frontend para utilizar a nova url da api em produção
+
+- Como o site agora está online, creio que uma boa adição seja uma página de login
+para restringir um eventual acesso indesejado
