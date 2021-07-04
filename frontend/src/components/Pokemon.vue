@@ -66,7 +66,7 @@
         <v-tabs color="black" v-model="tab" grow height="25px">
           <v-tab
             
-            v-for="item in ['Inserção Manual', 'Inserir JSON'].filter(el => editedIndex == -1 || el == 'Inserção Manual')"
+            v-for="item in ['Inserção Manual', 'Inserir Excel/JSON'].filter(el => editedIndex == -1 || el == 'Inserção Manual')"
             :key="item"
           >
             {{item}}
@@ -411,10 +411,24 @@
             <v-card-text>
               <v-row>
                 <v-col>
+                  <v-text-field
+                    class="text-no-wrap"
+                    label="Planilha Excel"
+                    @click="pickFile"
+                    v-model="sheetFile"
+                    outlined
+                    :disabled="pokemonJSON.length > 0"
+                    messages="Obs.: Uma planilha com muitos pokémons já cadastrados pode causar erro."
+                    readonly
+                    append-icon="attach_file"
+                  ></v-text-field>
+                </v-col>
+                <v-col>
                   <v-textarea
                     v-model="pokemonJSON"
                     label="JSON"
                     outlined
+                    :disabled="sheetFile != null"
                     max-width="800"
                   >
                   </v-textarea>        
@@ -457,6 +471,14 @@
       Sair
       <v-icon>exit_to_app</v-icon>
     </v-btn>
+
+    <input
+      type="file"
+      style="display: none"
+      ref="sheet"
+      accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+      @change="onFilePicked"
+    >
   </v-container>
 </template>
 
@@ -464,7 +486,7 @@
 import DB from '@/db'
 const db = new DB();
 import { mapActions } from "vuex";
-
+var XLSX = require('xlsx');
 export default {
   name: 'Pokémon',
 
@@ -474,6 +496,7 @@ export default {
     saveButtonLoading: false,
     editedIndex: -1,
     tab: null,
+    sheetFile: null,
     key: 0,
     search: '',
     pokemonJSON: '',
@@ -580,6 +603,25 @@ export default {
       this.logout();
       this.$router.push('/login');
     },
+    pickFile() {
+      this.$refs.sheet.click();
+    },
+    onFilePicked(e) {
+      var files = e.target.files, f = files[0];
+      var reader = new FileReader();
+      const self = this
+      reader.onload = function(e) {
+        var data = new Uint8Array(e.target.result);
+        var workbook = XLSX.read(data, {type: 'array'});
+        let sheetName = workbook.SheetNames[0]
+        console.log(workbook);
+        let worksheet = workbook.Sheets[sheetName];
+        let jsonVersion = XLSX.utils.sheet_to_json(worksheet)
+        self.pokemonJSON =  JSON.stringify(jsonVersion)
+        console.log(self.pokemonJSON);
+      };
+      reader.readAsArrayBuffer(f);
+    },
     async save() {
       this.saveButtonLoading = true;
       var self = this;
@@ -594,10 +636,13 @@ export default {
         })
         .catch(err => console.log(err));
       } else {
-        await db.createPokemon(JSON.parse(JSON.stringify(this.editedItem)))
+        Array.isArray(this.editedItem) ?
+         await db.createPokemons(JSON.parse(JSON.stringify(this.editedItem))) : 
+         await db.createPokemon(JSON.parse(JSON.stringify(this.editedItem)))
         .then(res => {
           self.editedItem.id = res.id;
           self.pokemons.push(self.editedItem)
+          self.key++;
         })
         .catch(err => console.log(err));
       }

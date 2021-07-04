@@ -109,3 +109,8 @@ para restringir um eventual acesso indesejado
     - senha: essavagaeminha
 
 - Garantindo que não haverá repetição de nomes dos pokémons
+
+- Permitindo a criação de vários pokemons ao mesmo tempo
+
+- Inserida a funcionalidade de aceitar cadastro de pokémons via submissão de planilha excel,
+visando a facilitação da troca de um sistema para outro.
