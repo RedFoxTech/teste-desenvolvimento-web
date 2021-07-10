@@ -56,3 +56,24 @@ ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite
 
 
 Boa sorte! (^_^)
+
+
+### Deploy
+
+[PokemonGO](https://red-fox-dev-assessment.herokuapp.com/)
+
+### Como Rodar o Projeto:
+
+```bash
+Go to the client folder and run: 
+$ yarn 
+$ yarn start
+
+In a separete terminal, go to the server folder and run:
+$ yarn 
+$ yarn start 
+```
+
+### Algumas Informações:
+
+Para possibilitar a produção do front da maneira mais rápida e simples possível, optei por usar o chakra-ui, juntamente com o choc-ui. Dessa forma, consegui sistematizar essa parte do processo de desenvolvimento deixando o projeto com um design agradável, embora minimalista. Infelizmente não me senti seguro o suficiente, em relação ao tempo, para criar uma concepção e mock-up do zero. Ademais, também com a visão de acelerar o desenvolvimento, decidi por usar a biblioteca "react-hook-form" para criação de forms controlados dentro da aplicação, essa decisão gerou a oportunidade de integrar a view de update com a view de detalhes de cada elemento. Por fim, confesso que gostei bastante da sensação de simplicidade e robustez que o projeto adquiriu.
