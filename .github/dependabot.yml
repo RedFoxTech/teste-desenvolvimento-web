@@ -5,17 +5,17 @@
 
 version: 2
 updates:
-  - package-ecosystem: "yarn" # See documentation for possible values
+  - package-ecosystem: "npm" # See documentation for possible values
     directory: "/" # Buscar pacotes vulneráveis no monorepo
     schedule:
       interval: "daily"
  
-  - package-ecosystem: "yarn" # See documentation for possible values
+  - package-ecosystem: "npm" # See documentation for possible values
     directory: "/packages/backend" # Buscar pacotes vulneráveis no backend
     schedule:
       interval: "daily"
       
-  - package-ecosystem: "yarn" # See documentation for possible values
+  - package-ecosystem: "npm" # See documentation for possible values
     directory: "/packages/frontend" # Buscar pacotes vulneráveis no frontend
     schedule:
       interval: "daily"
