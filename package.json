@@ -1,0 +1,15 @@
+{
+  "name": "teste-desenvolvimento-web",
+  "version": "1.0.0",
+  "description": "Teste para vaga de desenvolvedor web",
+  "main": "index.js",
+  "repository": "https://github.com/wh1t3h47/teste-desenvolvimento-web",
+  "author": "wh1t3h47 <tom.mharres@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
