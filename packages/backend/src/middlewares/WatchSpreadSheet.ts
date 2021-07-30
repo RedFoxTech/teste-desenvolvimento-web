@@ -71,7 +71,7 @@ const writeHashAsync = (
  * @param {function} next - Próximo middleware
  * @return {Promise<void>} - Nada
  */
-export default async (
+const WatchSpreadSheet = async (
     req: Request, res: Response, next: NextFunction,
 ): Promise<void> => {
   const fileName = '../../../Pokemon Go.xlsx';
@@ -89,3 +89,4 @@ export default async (
   }
 };
 
+export default WatchSpreadSheet;

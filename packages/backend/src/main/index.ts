@@ -1,5 +1,6 @@
 import App from './App';
 import {config} from 'dotenv';
+import {connect} from 'mongoose';
 
 /**
  * @fileoverview ponto de entrada pra executar o backend do teste-pokémon-excel
@@ -12,13 +13,14 @@ import {config} from 'dotenv';
  * @see {@link https://www.npmjs.com/package/dotenv}
  * @requires App
  * @requires dotenv
+ * @requires mongoose
  * @copyright wh1t3h47 - All Wrongs Reserved
  * @version 1.0.0
  */
 
 /* global process, console */
 
-(function() {
+(async function() {
 /** Carrega .env em process.env */
   config();
 
@@ -26,6 +28,14 @@ import {config} from 'dotenv';
 
   const {PORT = 31337} = process.env;
   const port = (typeof PORT === 'number')? PORT: parseInt(PORT, 10);
+  const {DB_URI = 'mongodb://localhost/teste-pokemon-excel'} = process.env;
+  console.log(DB_URI);
+
+  const mongoConnection = await connect(DB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+  console.log(mongoConnection);
 
   const app = new App().app;
 
