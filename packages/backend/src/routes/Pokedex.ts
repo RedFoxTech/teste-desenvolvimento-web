@@ -37,7 +37,7 @@ class PokedexRoute extends RouteAbstract {
 
     protected postRoute(
         req: Request,
-    res: Response,
+        res: Response,
         next: NextFunction,
     ) {
       return;
