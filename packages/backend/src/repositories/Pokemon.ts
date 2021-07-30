@@ -1,6 +1,7 @@
 /* eslint-disable require-jsdoc */
 import CRUDAbstract from '../declarations/abstracts/CRUD';
 import Pokemon from '../declarations/interfaces/Pokemon';
+import InternalServerError from '../exceptions/InternalServerError';
 import NoPokemonsRegistered from '../exceptions/NoPokemonsRegistered';
 import PokemonAlreadyExists from '../exceptions/PokemonAlreadyExists';
 import PokemonNotFound from '../exceptions/PokemonNotFound';
@@ -36,7 +37,8 @@ class PokemonRepository extends CRUDAbstract {
    * @param {string|any} unsafeId
    */
   async read(unsafeId: string): Promise<PokemonModel> {
-    const id = String(unsafeId);
+    try {
+    const id = String(unsafeId || '');
     const pokemon = await PokemonSchema.findOne({_id: id}, {lean: true});
 
     if (!pokemon) {
@@ -44,10 +46,14 @@ class PokemonRepository extends CRUDAbstract {
     }
 
     return pokemon;
+} catch (error) {
+    throw new InternalServerError();
   }
+}
 
   /** GET, deve retornar 200 em sucesso */
   async readAll(): Promise<Array<PokemonModel>> {
+      try {
     const pokemon = await PokemonSchema.find();
 
     if (!pokemon || pokemon.length === 0) {
@@ -55,6 +61,12 @@ class PokemonRepository extends CRUDAbstract {
     }
 
     return pokemon;
+} catch (error) {
+    if (error instanceof NoPokemonsRegistered) {
+        throw error;
+    } // else
+    throw new InternalServerError();
+  }
   }
 
   /**
@@ -63,6 +75,7 @@ class PokemonRepository extends CRUDAbstract {
    * @param {Pokemon} data
    */
   async updateAll(data: Pokemon): Promise<PokemonModel> {
+      try {
     const {_id} = data;
 
     const updatedPokemon = await PokemonSchema.findByIdAndUpdate(
@@ -77,7 +90,13 @@ class PokemonRepository extends CRUDAbstract {
     }
 
     return updatedPokemon;
-  }
+} catch (error) {
+    if (error instanceof PokemonNotFound) {
+        throw error;
+    } // else
+    throw new InternalServerError();
+  }}
+  
 
   /**
    * @description PATCH, deve retornar 200 em sucesso e ter todas as
@@ -86,6 +105,7 @@ class PokemonRepository extends CRUDAbstract {
    * @param {Pokemon} data
    */
   async updatePartial(data: Pokemon): Promise<PokemonModel> {
+      try {
     const {_id} = data;
     const pokemon = await PokemonSchema.findOne({_id}, {lean: true});
 
@@ -110,6 +130,13 @@ class PokemonRepository extends CRUDAbstract {
     }
 
     return updatedPokemon;
+    
+}catch(error) {
+        if (error instanceof PokemonNotFound) {
+            throw error;
+        } // else
+        throw new InternalServerError();
+    }
   }
 
   /**
@@ -117,13 +144,23 @@ class PokemonRepository extends CRUDAbstract {
    * sucesso
    * @param {string|any} unsafeId
    */
-  async delete(unsafeId: string): Promise<void> {
-    const id = String(unsafeId);
+  async delete(unsafeId: string): Promise<boolean> {
+      try {
+    const id = String(unsafeId || '');
     const deleted = await PokemonSchema.findByIdAndRemove(id, {lean: true});
 
+    // verifica se o pokémon foi deletado
     if (!deleted) {
       throw new PokemonNotFound();
     }
+
+    return Boolean(deleted);
+} catch (error) {
+    if (error instanceof PokemonNotFound) {
+        throw error;
+    } // else
+    throw new InternalServerError();
+  }
   }
 }
 

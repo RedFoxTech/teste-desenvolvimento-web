@@ -109,7 +109,7 @@ const pokemonSchema = new Schema({
         type: Boolean,
         required: true,
     },
-    isNew: {
+    isNewPokemon: {
         type: Boolean,
         required: true,
     },

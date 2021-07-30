@@ -35,7 +35,7 @@ interface Pokemon {
     raidable: number,
     shiny: boolean,
     nest: boolean,
-    isNew: boolean,
+    isNewPokemon: boolean,
     notGettable: boolean,
     futureEvolve: boolean,
     fullCPLevel40: number,

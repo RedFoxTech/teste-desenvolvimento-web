@@ -14,11 +14,11 @@ import Pokemon from '../declarations/interfaces/Pokemon';
  * @module packages/backend/validatedDTOs/PokemonPartialDTO
  */
 
-class PokemonDTO implements Pokemon {
+class PokemonPartialDTO implements Pokemon {
 
     @IsOptional()
     @IsString()
-    _id: string;
+    _id!: string;
     
     @IsOptional()
     @IsNumber()
@@ -112,7 +112,7 @@ class PokemonDTO implements Pokemon {
     
     @IsOptional()
     @IsBoolean()
-    isNew!: boolean;
+    isNewPokemon!: boolean;
     
     @IsOptional()
     @IsBoolean()
@@ -131,4 +131,4 @@ class PokemonDTO implements Pokemon {
     fullCPLevel39!: number;
 }
 
-export default PokemonDTO;
+export default PokemonPartialDTO;

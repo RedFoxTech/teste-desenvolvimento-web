@@ -17,7 +17,7 @@ class PokemonDTO implements Pokemon {
 
     @IsOptional()
     @IsString()
-    _id: string;
+    _id?: string;
     
     @IsNumber()
     row!: number;
@@ -91,7 +91,7 @@ class PokemonDTO implements Pokemon {
     nest!: boolean;
     
     @IsBoolean()
-    isNew!: boolean;
+    isNewPokemon!: boolean;
     
     @IsBoolean()
     notGettable!: boolean;
