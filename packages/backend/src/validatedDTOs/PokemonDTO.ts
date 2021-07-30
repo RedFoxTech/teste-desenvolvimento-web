@@ -14,94 +14,93 @@ import Pokemon from '../declarations/interfaces/Pokemon';
  */
 
 class PokemonDTO implements Pokemon {
-
     @IsOptional()
     @IsString()
     _id?: string;
-    
+
     @IsNumber()
     row!: number;
-    
+
     @IsString()
     name!: string;
-    
+
     @IsNumber()
     pokedexId!: number;
-    
+
     @IsString()
     imageName!: string;
-    
+
     @IsString()
     generation!: string;
-    
+
     @IsString()
     evolutionState!: string;
     evolved!: boolean;
-    
+
     @IsOptional()
     @IsNumber()
     familyId!: number;
     crossGeneration!: boolean;
-    
+
     @IsString()
     type1!: PokemonType;
-    
+
     @IsOptional()
     @IsString()
     type2!: PokemonType;
-    
+
     @IsString()
     weather1!: PokemonWeather;
-    
+
     @IsOptional()
     @IsString()
     weather2!: PokemonWeather;
-    
+
     @IsNumber()
     statsSum!: number;
-    
+
     @IsNumber()
     attack!: number;
-    
+
     @IsNumber()
     defense!: number;
-    
+
     @IsNumber()
     staminaHP!: number;
-    
+
     @IsBoolean()
     legendary!: boolean;
-    
+
     @IsBoolean()
     acquirable!: boolean;
-    
+
     @IsBoolean()
     spawns!: boolean;
-    
+
     @IsBoolean()
     regional!: boolean;
-    
+
     @IsNumber()
     raidable!: number;
-    
+
     @IsBoolean()
     shiny!: boolean;
-    
+
     @IsBoolean()
     nest!: boolean;
-    
+
     @IsBoolean()
     isNewPokemon!: boolean;
-    
+
     @IsBoolean()
     notGettable!: boolean;
-    
+
     @IsBoolean()
     futureEvolve!: boolean;
-    
+
     @IsNumber()
     fullCPLevel40!: number;
-    
+
     @IsNumber()
     fullCPLevel39!: number;
 }

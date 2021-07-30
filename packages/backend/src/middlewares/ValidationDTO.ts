@@ -1,15 +1,15 @@
-import { plainToClass, ClassConstructor } from 'class-transformer';
-import { validate, ValidationError } from 'class-validator';
-import { RequestHandler } from 'express';
+import {plainToClass, ClassConstructor} from 'class-transformer';
+import {validate, ValidationError} from 'class-validator';
+import {RequestHandler} from 'express';
 import HttpException from '../exceptions/HttpException';
 
 function validationMiddleware<T>(
     type: ClassConstructor<object | string>,
-    skipMissingProperties = false
+    skipMissingProperties = false,
 ): RequestHandler {
   return async (req, res, next) => {
     const errors: ValidationError[] = await validate(
-        plainToClass(<ClassConstructor<any>>type, req.body), { skipMissingProperties }
+        plainToClass(<ClassConstructor<any>>type, req.body), {skipMissingProperties},
     );
 
     if (errors.length > 0) {

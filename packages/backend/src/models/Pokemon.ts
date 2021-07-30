@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
-import PokemonType from "../declarations/enums/PokemonType";
-import PokemonWeather from "../declarations/enums/Weather";
-import Pokemon from "../declarations/interfaces/Pokemon";
+import PokemonType from '../declarations/enums/PokemonType';
+import PokemonWeather from '../declarations/enums/Weather';
+import Pokemon from '../declarations/interfaces/Pokemon';
 
 /**
  * @filedescription Traz a Model que reflete a Pokedex na planilha de pokémon.
@@ -53,65 +53,65 @@ class PokemonModel {
      */
 
     constructor({
-        row,
-        name,
-        pokedexId,
-        imageName,
-        generation,
-        evolutionState,
-        evolved,
-        familyId,
-        crossGeneration,
-        type1,
-        type2,
-        weather1,
-        weather2,
-        statsSum,
-        attack,
-        defense,
-        staminaHP,
-        legendary,
-        acquirable,
-        spawns,
-        regional,
-        raidable,
-        shiny,
-        nest,
-        isNewPokemon,
-        notGettable,
-        futureEvolve,
-        fullCPLevel40,
-        fullCPLevel39,
+      row,
+      name,
+      pokedexId,
+      imageName,
+      generation,
+      evolutionState,
+      evolved,
+      familyId,
+      crossGeneration,
+      type1,
+      type2,
+      weather1,
+      weather2,
+      statsSum,
+      attack,
+      defense,
+      staminaHP,
+      legendary,
+      acquirable,
+      spawns,
+      regional,
+      raidable,
+      shiny,
+      nest,
+      isNewPokemon,
+      notGettable,
+      futureEvolve,
+      fullCPLevel40,
+      fullCPLevel39,
     }: Pokemon): PokemonModel {
-        this.row = row;
-        this.name = name;
-        this.pokedexId = pokedexId;
-        this.imageName = imageName;
-        this.generation = generation;
-        this.evolutionState = evolutionState;
-        this.evolved = evolved;
-        this.familyId = familyId;
-        this.crossGeneration = crossGeneration;
-        this.type1 = type1;
-        this.type2 = type2;
-        this.weather1 = weather1;
-        this.weather2 = weather2;
-        this.statsSum = statsSum;
-        this.attack = attack;
-        this.defense = defense;
-        this.staminaHP = staminaHP;
-        this.legendary = legendary;
-        this.acquirable = acquirable;
-        this.spawns = spawns;
-        this.regional = regional;
-        this.raidable = raidable;
-        this.shiny = shiny;
-        this.nest = nest;
-        this.isNewPokemon = isNewPokemon;
-        this.notGettable = notGettable;
-        this.futureEvolve = futureEvolve;
-        this.fullCPLevel40 = fullCPLevel40;
-        this.fullCPLevel39 = fullCPLevel39;
+      this.row = row;
+      this.name = name;
+      this.pokedexId = pokedexId;
+      this.imageName = imageName;
+      this.generation = generation;
+      this.evolutionState = evolutionState;
+      this.evolved = evolved;
+      this.familyId = familyId;
+      this.crossGeneration = crossGeneration;
+      this.type1 = type1;
+      this.type2 = type2;
+      this.weather1 = weather1;
+      this.weather2 = weather2;
+      this.statsSum = statsSum;
+      this.attack = attack;
+      this.defense = defense;
+      this.staminaHP = staminaHP;
+      this.legendary = legendary;
+      this.acquirable = acquirable;
+      this.spawns = spawns;
+      this.regional = regional;
+      this.raidable = raidable;
+      this.shiny = shiny;
+      this.nest = nest;
+      this.isNewPokemon = isNewPokemon;
+      this.notGettable = notGettable;
+      this.futureEvolve = futureEvolve;
+      this.fullCPLevel40 = fullCPLevel40;
+      this.fullCPLevel39 = fullCPLevel39;
     }
 }
 
