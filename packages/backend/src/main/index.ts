@@ -17,23 +17,23 @@ import {config} from 'dotenv';
  */
 
 
-(function () {
+(function() {
 /** Carrega .env em process.env */
-config();
+  config();
 
-/** Carrega PORT do .env ou 8888 */
+  /** Carrega PORT do .env ou 8888 */
 
-const {PORT = 31337} = process.env;
-const port = (typeof PORT === 'number')? PORT: parseInt(PORT, 10);
+  const {PORT = 31337} = process.env;
+  const port = (typeof PORT === 'number')? PORT: parseInt(PORT, 10);
 
-const app = new App().app;
+  const app = new App().app;
 
-if (!app) {
-  throw new Error('Erro: Falhou ao inicializar o backend, tente rodar um `yarn install`');
-}
+  if (!app) {
+    throw new Error('Erro: Falhou ao inicializar o backend, tente rodar um `yarn install`');
+  }
 
-app.listen(port, () => {
-  console.log('Servidor iniciado na porta ' + String(PORT));
-});
+  app.listen(port, () => {
+    console.log('Servidor iniciado na porta ' + String(PORT));
+  });
 })();
 

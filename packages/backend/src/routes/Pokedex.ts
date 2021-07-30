@@ -1,5 +1,5 @@
-import {Request, Response, Application, NextFunction} from "express";
-import RouteAbstract from "../declarations/abstracts/Route";
+import {Request, Response, Application, NextFunction} from 'express';
+import RouteAbstract from '../declarations/abstracts/Route';
 
 
 /**
@@ -14,29 +14,29 @@ class PokedexRoute extends RouteAbstract {
     basePath = '/';
 
     constructor() {
-        super();
-        this._router.get('/', this.getRoute.bind(this));
+      super();
+      this._router.get('/', this.getRoute.bind(this));
     }
 
     protected getRoute(req: Request, res: Response, next: NextFunction): void {
-        res.status(200).send('Get works!')
-        next();
+      res.status(200).send('Get works!');
+      next();
     }
 
     protected postRoute(req: Request, res: Response, next: NextFunction): void {
-        return
+      return;
     }
 
     protected putRoute(req: Request, res: Response, next: NextFunction): void {
-        return
+      return;
     }
 
     protected patchRoute(req: Request, res: Response, next: NextFunction): void {
-        return
+      return;
     }
 
     protected deleteRoute(req: Request, res: Response, next: NextFunction): void {
-        return
+      return;
     }
 }
 

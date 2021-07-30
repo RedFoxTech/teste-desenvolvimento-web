@@ -1,4 +1,4 @@
-import {Request, Response, NextFunction, Router} from "express";
+import {Request, Response, NextFunction, Router} from 'express';
 
 /**
  * @filedescription Implementa a classe pai de todas as rotas do sistema.
@@ -22,8 +22,8 @@ export default abstract class RouteAbstract {
     protected abstract deleteRoute(req: Request, res: Response, next: NextFunction): void
     // protected abstract optionsRoute(req: Request, res: Response, next: NextFunction): void
     // protected abstract headRoute(req: Request, res: Response, next: NextFunction): void
-    
+
     public get router(): Router {
-        return this._router;
+      return this._router;
     }
 }

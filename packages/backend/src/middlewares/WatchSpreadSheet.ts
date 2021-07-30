@@ -23,7 +23,7 @@ const getHash = (file: string): string => crypto.createHash('sha1').update(file)
  * @description Essa função lê o arquivo de forma assíncrona e retorna o
  * hash dele.
  * @param {string} file - Arquivo para ser lido
- * @returns {Promise<string>} - O hash do arquivo
+ * @return {Promise<string>} - O hash do arquivo
  */
 const readFileAsync = (file: string): Promise<string> => new Promise((resolve, reject) => {
   fs.readFile(file, (err, data) => {
@@ -40,7 +40,7 @@ const readFileAsync = (file: string): Promise<string> => new Promise((resolve, r
  * arquivo em outro arquivo de forma assíncrona.
  * @param {string} fileToHash - Arquivo para ser hasheado
  * @param {string} hashFileName - Nome do arquivo em que o hash será salvo.
- * @returns {Promise<void>} - Nada
+ * @return {Promise<void>} - Nada
  */
 const writeHashAsync = (fileToHash: string, hashFileName: string): Promise<void> => new Promise((resolve, reject) => {
   fs.writeFile(hashFileName, getHash(fileToHash), (err) => {
@@ -62,7 +62,7 @@ const writeHashAsync = (fileToHash: string, hashFileName: string): Promise<void>
  * @param {object} req - Objeto de requisição
  * @param {object} res - Objeto de resposta
  * @param {function} next - Próximo middleware
- * @returns {Promise<void>} - Nada
+ * @return {Promise<void>} - Nada
  */
 export default async (req: Express.Request, res: Express.Response, next: Function): Promise<void> => {
   const fileName = '../../../Pokemon\ Go.xlsx';

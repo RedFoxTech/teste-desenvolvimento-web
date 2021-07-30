@@ -1,7 +1,7 @@
-import {Request, Response, Application, Router} from "express";
-import PokedexRoute from "./Pokedex";
-import RouteAbstract from "../declarations/abstracts/Route";
-import WatchSpreadSheet from "../middlewares/WatchSpreadSheet";
+import {Request, Response, Application, Router} from 'express';
+import PokedexRoute from './Pokedex';
+import RouteAbstract from '../declarations/abstracts/Route';
+import WatchSpreadSheet from '../middlewares/WatchSpreadSheet';
 
 /**
  * @fileoverview Esse arquivo contém as rotas do ponto de entrada do backend,
@@ -13,17 +13,17 @@ import WatchSpreadSheet from "../middlewares/WatchSpreadSheet";
  */
 
 const getRouter = (): Router => {
-const routes: Array<RouteAbstract> = [
+  const routes: Array<RouteAbstract> = [
     PokedexRoute,
-];
+  ];
 
-const router = Router();
-routes.forEach(route => {
+  const router = Router();
+  routes.forEach((route) => {
     router.use(route.basePath, route.router, WatchSpreadSheet);
-});
+  });
 
-return router;
-}
+  return router;
+};
 
 
 export default getRouter;

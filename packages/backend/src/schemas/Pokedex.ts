@@ -1,4 +1,4 @@
-import { Schema } from 'mongoose';
+import {Schema} from 'mongoose';
 
 /**
  * @filedescription Traz o schema da pokedex que idealmente refletirá a
