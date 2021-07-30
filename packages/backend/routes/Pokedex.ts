@@ -7,7 +7,7 @@ import RouteAbstract from "../declarations/abstracts/Route";
  * @see {@link packages/backend/routes/index}
  * @requires express
  * @since 29/07/2021
- * @version 0.0.1
+ * @version 0.0.2
  */
 
 class PokedexRoute extends RouteAbstract {

@@ -13,7 +13,7 @@ import getRouter from '../routes';
  * @requires cors
  * @requires packages/backend/routes/index
  * @since 29/07/2021
- * @version 0.0.1
+ * @version 0.0.2
  */
 
 const appTsErro = (e : string) => {
