@@ -20,7 +20,7 @@ import {connect} from 'mongoose';
 
 /* global process, console */
 
-(function() {
+(async function() {
 /** Carrega .env em process.env */
   config();
 
@@ -29,11 +29,13 @@ import {connect} from 'mongoose';
   const {PORT = 31337} = process.env;
   const port = (typeof PORT === 'number')? PORT: parseInt(PORT, 10);
   const {DB_URI = 'mongodb://localhost/teste-pokemon-excel'} = process.env;
+  console.log(DB_URI);
 
-  connect(DB_URI, {
+  const mongoConnection = await connect(DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
+  console.log(mongoConnection);
 
   const app = new App().app;
 

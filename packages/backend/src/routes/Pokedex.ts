@@ -57,7 +57,16 @@ class PokedexRoute extends RouteAbstract {
       res: Response,
       next: NextFunction,
   ) {
-    return;
+    try {
+      const data = req.body || {};
+      const pokemon = await this.pokemonRepository.create(data);
+      res.status(201).json(pokemon);
+    } catch (httpException) {
+      res.status(httpException.status || 500).json(
+        {error: httpException.message}
+      );
+    }
+    next();
   }
 
     protected async getRoute(
@@ -66,7 +75,7 @@ class PokedexRoute extends RouteAbstract {
         next: NextFunction,
     ) {
       try {
-        const {id} = req.params;
+        const {id = ''} = req.params;
         const pokemon = await this.pokemonRepository.read(id);
         res.status(200).json(pokemon);
       } catch (httpException) {
@@ -99,7 +108,7 @@ class PokedexRoute extends RouteAbstract {
         next: NextFunction,
     ) {
       try {
-        const {data} = req.body;
+        const data = req.body || {};
         const pokemon = await this.pokemonRepository.updateAll(data);
         res.status(200).json(pokemon);
       } catch (httpException) {
@@ -116,7 +125,7 @@ class PokedexRoute extends RouteAbstract {
         next: NextFunction,
     ) {
       try {
-        const {data} = req.body;
+        const data = req.body || {};
         const pokemon = await this.pokemonRepository.updatePartial(data);
         res.status(200).json(pokemon);
       } catch (httpException) {
@@ -133,7 +142,7 @@ class PokedexRoute extends RouteAbstract {
         next: NextFunction,
     ) {
       try {
-        const {id} = req.params;
+        const {id = ''} = req.params;
         const success = await this.pokemonRepository.delete(id);
 
         res.status(200).json({success});
