@@ -1,0 +1,44 @@
+import PokemonType from "../enums/PokemonType";
+import PokemonWeather from "../enums/Weather";
+
+/**
+ * @description Interface para o contrato de tipos do modelo de pokémons
+ * @interface Pokemon
+ * @see {@link packages/backend/models/Pokemon}
+ * @since 30/07/2021
+ * @version 0.0.1
+ */
+
+interface Pokemon {
+    row: number,
+    name: string,
+    pokedexId: number,
+    imageName: string,
+    generation: string,
+    evolutionState: string,
+    evolved: boolean,
+    familyId?: number,
+    crossGeneration: boolean,
+    type1: PokemonType,
+    type2?: PokemonType,
+    weather1: PokemonWeather,
+    weather2?: PokemonWeather,
+    statsSum: number,
+    attack: number,
+    defense: number,
+    staminaHP: number,
+    legendary: boolean,
+    acquirable: boolean,
+    spawns: boolean,
+    regional: boolean,
+    raidable: number,
+    shiny: boolean,
+    nest: boolean,
+    new: boolean,
+    notGettable: boolean,
+    futureEvolve: boolean,
+    fullCPLevel40: number,
+    fullCPLevel39: number
+}
+
+export default Pokemon;

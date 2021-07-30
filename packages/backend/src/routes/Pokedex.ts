@@ -27,7 +27,8 @@ class PokedexRoute extends RouteAbstract {
       this._router.get('/', this.getRoute.bind(this));
     }
 
-    protected getRoute(req: Request,
+    protected getRoute(
+        req: Request,
         res: Response,
         next: NextFunction,
     ) {
