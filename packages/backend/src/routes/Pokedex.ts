@@ -35,39 +35,39 @@ class PokedexRoute extends RouteAbstract {
     constructor() {
       super();
       this._router.post('/',
-      validationMiddleware(PokemonDTO),
-      this.postRoute.bind(this)
+          validationMiddleware(PokemonDTO),
+          this.postRoute.bind(this),
       );
       this._router.get('/:id', this.getRoute.bind(this));
       this._router.get('/all', this.getAllRoute.bind(this));
       this._router.put('/',
-      validationMiddleware(PokemonDTO),
-      this.putRoute.bind(this)
+          validationMiddleware(PokemonDTO),
+          this.putRoute.bind(this),
       );
       this._router.patch('/',
-      validationMiddleware(PokemonPartialDTO),
-      this.patchRoute.bind(this)
+          validationMiddleware(PokemonPartialDTO),
+          this.patchRoute.bind(this),
       );
       this._router.delete('/:id', this.deleteRoute.bind(this));
 
     }
 
     protected async postRoute(
-      req: Request,
-      res: Response,
-      next: NextFunction,
-  ) {
-    try {
-      const data = req.body || {};
-      const pokemon = await this.pokemonRepository.create(data);
-      res.status(201).json(pokemon);
-    } catch (httpException) {
-      res.status(httpException.status || 500).json(
-        {error: httpException.message}
-      );
+        req: Request,
+        res: Response,
+        next: NextFunction,
+    ) {
+      try {
+        const data = req.body || {};
+        const pokemon = await this.pokemonRepository.create(data);
+        res.status(201).json(pokemon);
+      } catch (httpException) {
+        res.status(httpException.status || 500).json(
+            {error: httpException.message},
+        );
+      }
+      next();
     }
-    next();
-  }
 
     protected async getRoute(
         req: Request,
@@ -80,7 +80,7 @@ class PokedexRoute extends RouteAbstract {
         res.status(200).json(pokemon);
       } catch (httpException) {
         res.status(httpException.status || 500).json(
-          {error: httpException.message}
+            {error: httpException.message},
         );
       }
       next();
@@ -96,7 +96,7 @@ class PokedexRoute extends RouteAbstract {
         res.status(200).json(pokemon);
       } catch (httpException) {
         res.status(httpException.status || 500).json(
-          {error: httpException.message}
+            {error: httpException.message},
         );
       }
       next();
@@ -113,7 +113,7 @@ class PokedexRoute extends RouteAbstract {
         res.status(200).json(pokemon);
       } catch (httpException) {
         res.status(httpException.status || 500).json(
-          {error: httpException.message}
+            {error: httpException.message},
         );
       }
       next();
@@ -130,7 +130,7 @@ class PokedexRoute extends RouteAbstract {
         res.status(200).json(pokemon);
       } catch (httpException) {
         res.status(httpException.status || 500).json(
-          {error: httpException.message}
+            {error: httpException.message},
         );
       }
       next();
@@ -148,7 +148,7 @@ class PokedexRoute extends RouteAbstract {
         res.status(200).json({success});
       } catch (httpException) {
         res.status(httpException.status || 500).json(
-          {error: httpException.message}
+            {error: httpException.message},
         );
       }
       next();

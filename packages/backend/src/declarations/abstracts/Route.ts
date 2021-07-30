@@ -1,9 +1,9 @@
 import {
-    Request,
-    Response,
-    NextFunction,
-    Router,
-    RequestHandler
+  Request,
+  Response,
+  NextFunction,
+  Router,
+  RequestHandler,
 } from 'express';
 
 /* eslint-disable require-jsdoc */

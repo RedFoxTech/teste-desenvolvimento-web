@@ -1,5 +1,5 @@
-import PokemonType from "../enums/PokemonType";
-import PokemonWeather from "../enums/Weather";
+import PokemonType from '../enums/PokemonType';
+import PokemonWeather from '../enums/Weather';
 
 /**
  * @description Interface para o contrato de tipos do modelo de pokémons
