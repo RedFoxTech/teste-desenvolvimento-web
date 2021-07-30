@@ -34,11 +34,11 @@ interface Pokemon {
     raidable: number,
     shiny: boolean,
     nest: boolean,
-    new: boolean,
+    isNew: boolean,
     notGettable: boolean,
     futureEvolve: boolean,
     fullCPLevel40: number,
-    fullCPLevel39: number
+    fullCPLevel39: number,
 }
 
 export default Pokemon;

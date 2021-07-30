@@ -35,7 +35,7 @@ class PokemonModel {
     raidable: number;
     shiny: boolean;
     nest: boolean;
-    new: boolean;
+    isNew: boolean;
     notGettable: boolean;
     futureEvolve: boolean;
     fullCPLevel40: number;
@@ -66,7 +66,7 @@ class PokemonModel {
         raidable,
         shiny,
         nest,
-        new,
+        isNew,
         notGettable,
         futureEvolve,
         fullCPLevel40,
@@ -96,7 +96,7 @@ class PokemonModel {
         this.raidable = raidable;
         this.shiny = shiny;
         this.nest = nest;
-        this.new = new;
+        this.isNew = isNew;
         this.notGettable = notGettable;
         this.futureEvolve = futureEvolve;
         this.fullCPLevel40 = fullCPLevel40;

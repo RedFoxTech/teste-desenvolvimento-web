@@ -10,7 +10,8 @@
   "browser": false,
   "scripts": {
     "start": "ts-node ./src/main/index.ts",
-    "lint": "eslint --fix --ext '.ts' './src/**'"
+    "lint": "eslint --fix --ext '.ts' './src/**'",
+    "lint:passive": "eslint --ext '.ts' './src/**'"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
@@ -29,6 +30,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "class-validator": "^0.13.1",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "excel": "^1.0.1",
