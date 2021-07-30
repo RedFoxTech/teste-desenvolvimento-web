@@ -10,6 +10,7 @@ import PokemonWeather from "../enums/Weather";
  */
 
 interface Pokemon {
+    _id?: string;
     row: number,
     name: string,
     pokedexId: number,

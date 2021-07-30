@@ -1,5 +1,8 @@
 import {Request, Response, Application, NextFunction} from 'express';
 import RouteAbstract from '../declarations/abstracts/Route';
+import validationMiddleware from '../middlewares/ValidationDTO';
+import WatchSpreadSheet from '../middlewares/WatchSpreadSheet';
+import PokemonDTO from '../validatedDTOs/PokemonDTO';
 
 
 /**
@@ -20,11 +23,14 @@ import RouteAbstract from '../declarations/abstracts/Route';
  */
 
 class PokedexRoute extends RouteAbstract {
+    middlewares = [
+      WatchSpreadSheet,
+    ];
     basePath = '/';
 
     constructor() {
       super();
-      this._router.get('/', this.getRoute.bind(this));
+      this._router.get('/', validationMiddleware(PokemonDTO), this.getRoute.bind(this));
     }
 
     protected getRoute(

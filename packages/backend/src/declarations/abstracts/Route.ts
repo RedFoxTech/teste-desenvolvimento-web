@@ -1,4 +1,10 @@
-import {Request, Response, NextFunction, Router} from 'express';
+import {
+    Request,
+    Response,
+    NextFunction,
+    Router,
+    RequestHandler
+} from 'express';
 
 /* eslint-disable require-jsdoc */
 
@@ -9,7 +15,7 @@ import {Request, Response, NextFunction, Router} from 'express';
  * @requires express
  * @see {@link packages/backend/routes/index}
  * @see {@link packages/backend/express/app}
- * @version 0.0.1
+ * @version 0.0.2
  * @since 29/07/2021
  */
 
@@ -24,7 +30,9 @@ import {Request, Response, NextFunction, Router} from 'express';
  */
 
 abstract class RouteAbstract {
-    /** Caminho base onde todas as rotas definidas na classe filha serão
+    public middlewares: Array<RequestHandler> = [];
+    /**
+     * Caminho base onde todas as rotas definidas na classe filha serão
      * servidas
      */
     public basePath: string = '/';
