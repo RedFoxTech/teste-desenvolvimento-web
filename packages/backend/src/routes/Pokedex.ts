@@ -38,7 +38,7 @@ class PokedexRoute extends RouteAbstract {
       validationMiddleware(PokemonDTO),
       this.postRoute.bind(this)
       );
-      this._router.get('/', this.getRoute.bind(this));
+      this._router.get('/:id', this.getRoute.bind(this));
       this._router.get('/all', this.getAllRoute.bind(this));
       this._router.put('/',
       validationMiddleware(PokemonDTO),
@@ -48,7 +48,7 @@ class PokedexRoute extends RouteAbstract {
       validationMiddleware(PokemonPartialDTO),
       this.patchRoute.bind(this)
       );
-      this._router.delete('/', this.deleteRoute.bind(this));
+      this._router.delete('/:id', this.deleteRoute.bind(this));
 
     }
 

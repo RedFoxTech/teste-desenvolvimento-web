@@ -22,7 +22,7 @@ class PokemonRepository extends CRUDAbstract {
    */
   async create(data: Pokemon): Promise<PokemonModel> {
     const {name} = data;
-    const exists = await PokemonSchema.findOne({name}, {lean: true});
+    const exists = await PokemonSchema.findOne({name}, {lean: true}).lean();
 
     if (exists) {
       throw new PokemonAlreadyExists(name);
@@ -39,7 +39,8 @@ class PokemonRepository extends CRUDAbstract {
   async read(unsafeId: string): Promise<PokemonModel> {
     try {
     const id = String(unsafeId || '');
-    const pokemon = await PokemonSchema.findOne({_id: id}, {lean: true});
+    // Retorna o modelo de Pokemon com todas as propriedades
+    const pokemon = await PokemonSchema.findOne({_id: id}).lean();
 
     if (!pokemon) {
       throw new PokemonNotFound();
@@ -156,6 +157,7 @@ class PokemonRepository extends CRUDAbstract {
 
     return Boolean(deleted);
 } catch (error) {
+    console.log(error.message);
     if (error instanceof PokemonNotFound) {
         throw error;
     } // else
