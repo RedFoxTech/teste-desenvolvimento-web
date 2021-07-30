@@ -2,7 +2,7 @@ import {Schema} from 'mongoose';
 
 /**
  * @filedescription Traz o schema da pokedex que idealmente refletirá a
- * planilha de pokemons.
+ * planilha de pokémons.
  * @requires mongoose
  * @see {@link https://mongoosejs.com/docs/guide.html}
  * @see {@link packages/backend/models/Pokedex}

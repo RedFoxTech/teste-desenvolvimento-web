@@ -25,5 +25,4 @@ const getRouter = (): Router => {
   return router;
 };
 
-
 export default getRouter;
