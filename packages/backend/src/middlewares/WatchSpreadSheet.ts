@@ -1,8 +1,10 @@
 import crypto from 'crypto';
 import fs from 'fs';
+import {Request, Response, NextFunction} from 'express';
 
 /**
- * @filedescription middleware para assistir mudanças ao arquivo de planilha do Pokémon Go
+ * @filedescription middleware para assistir mudanças ao arquivo de
+ * planilha do Pokémon Go
  * @module packages/backend/middlewares/WatchSpreadSheet
  * @author wh1t3h47 <tom.mharres@gmail.com>
  * @since  29/07/2021
@@ -17,7 +19,9 @@ import fs from 'fs';
  * @returns {string} - O hash do arquivo
  */
 // deepcode ignore InsecureHash: <não usamos o hash pra dados sensíveis>
-const getHash = (file: string): string => crypto.createHash('sha1').update(file).digest('hex');
+const getHash = (file: string): string => (
+  crypto.createHash('sha1').update(file).digest('hex')
+);
 
 /**
  * @description Essa função lê o arquivo de forma assíncrona e retorna o
@@ -25,15 +29,16 @@ const getHash = (file: string): string => crypto.createHash('sha1').update(file)
  * @param {string} file - Arquivo para ser lido
  * @return {Promise<string>} - O hash do arquivo
  */
-const readFileAsync = (file: string): Promise<string> => new Promise((resolve, reject) => {
-  fs.readFile(file, (err, data) => {
-    if (err) {
-      reject(err);
-    } else {
-      resolve(getHash(data.toString()));
-    }
-  });
-});
+const readFileAsync = (file: string): Promise<string> => (
+  new Promise((resolve, reject) => {
+    fs.readFile(file, (err, data) => {
+      if (err) {
+        reject(err);
+      } else {
+        resolve(getHash(data.toString()));
+      }
+    });
+  }));
 
 /**
  * @description Essa função recebe o nome de um arquivo e salva o hash desse
@@ -42,7 +47,9 @@ const readFileAsync = (file: string): Promise<string> => new Promise((resolve, r
  * @param {string} hashFileName - Nome do arquivo em que o hash será salvo.
  * @return {Promise<void>} - Nada
  */
-const writeHashAsync = (fileToHash: string, hashFileName: string): Promise<void> => new Promise((resolve, reject) => {
+const writeHashAsync = (
+    fileToHash: string, hashFileName: string,
+): Promise<void> => new Promise((resolve, reject) => {
   fs.writeFile(hashFileName, getHash(fileToHash), (err) => {
     if (err) {
       reject(err);
@@ -64,9 +71,11 @@ const writeHashAsync = (fileToHash: string, hashFileName: string): Promise<void>
  * @param {function} next - Próximo middleware
  * @return {Promise<void>} - Nada
  */
-export default async (req: Express.Request, res: Express.Response, next: Function): Promise<void> => {
-  const fileName = '../../../Pokemon\ Go.xlsx';
-  const hashFileName = '../../../Pokemon\ Go.xlsx.hash';
+export default async (
+    req: Request, res: Response, next: NextFunction,
+): Promise<void> => {
+  const fileName = '../../../Pokemon Go.xlsx';
+  const hashFileName = '../../../Pokemon Go.xlsx.hash';
 
   try {
     const hash = await readFileAsync(hashFileName);

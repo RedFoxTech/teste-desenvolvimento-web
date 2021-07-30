@@ -3,7 +3,8 @@ import cors from 'cors';
 import getRouter from '../routes';
 
 /**
- * @fileoverview implementa a classe App, inicializa as rotas e middlewares do express
+ * @fileoverview implementa a classe App, inicializa as rotas e middlewares
+ * do Express
  * @see App
  * @see {@link packages/backend}
  * @see {@link packages/backend/routes/index}
@@ -13,11 +14,17 @@ import getRouter from '../routes';
  * @requires cors
  * @requires packages/backend/routes/index
  * @since 29/07/2021
- * @version 0.0.2
+ * @version 0.0.3
  */
 
-const appTsErro = (e : string) => {
-  console.log(`App.ts erro: ${e}`);
+/* global console */
+
+/**
+ * @description Lida com erros ao inicializar express
+ * @param {string} message - Mensagem de erro
+ */
+const appTsErro = (message : string) => {
+  console.log(`App.ts erro: ${message}`);
 };
 
 /**

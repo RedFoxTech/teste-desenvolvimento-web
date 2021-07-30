@@ -16,6 +16,7 @@ import {config} from 'dotenv';
  * @version 1.0.0
  */
 
+/* global process, console */
 
 (function() {
 /** Carrega .env em process.env */
@@ -29,7 +30,9 @@ import {config} from 'dotenv';
   const app = new App().app;
 
   if (!app) {
-    throw new Error('Erro: Falhou ao inicializar o backend, tente rodar um `yarn install`');
+    throw new Error(
+        'Erro: Falhou ao inicializar o backend, tente rodar um `yarn install`',
+    );
   }
 
   app.listen(port, () => {

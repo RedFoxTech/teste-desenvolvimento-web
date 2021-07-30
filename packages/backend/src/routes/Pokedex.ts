@@ -10,6 +10,15 @@ import RouteAbstract from '../declarations/abstracts/Route';
  * @version 0.0.2
  */
 
+// A documentação tá na classe RouteAbstract
+/* eslint-disable require-jsdoc */
+
+/**
+ * @class
+ * @extends RouteAbstract
+ * @description Implementa a rota para acessar os Pokemons.
+ */
+
 class PokedexRoute extends RouteAbstract {
     basePath = '/';
 
@@ -18,24 +27,43 @@ class PokedexRoute extends RouteAbstract {
       this._router.get('/', this.getRoute.bind(this));
     }
 
-    protected getRoute(req: Request, res: Response, next: NextFunction): void {
+    protected getRoute(req: Request,
+        res: Response,
+        next: NextFunction,
+    ) {
       res.status(200).send('Get works!');
       next();
     }
 
-    protected postRoute(req: Request, res: Response, next: NextFunction): void {
+    protected postRoute(
+        req: Request,
+    res: Response,
+        next: NextFunction,
+    ) {
       return;
     }
 
-    protected putRoute(req: Request, res: Response, next: NextFunction): void {
+    protected putRoute(
+        req: Request,
+        res: Response,
+        next: NextFunction,
+    ) {
       return;
     }
 
-    protected patchRoute(req: Request, res: Response, next: NextFunction): void {
+    protected patchRoute(
+        req: Request,
+        res: Response,
+        next: NextFunction,
+    ) {
       return;
     }
 
-    protected deleteRoute(req: Request, res: Response, next: NextFunction): void {
+    protected deleteRoute(
+        req: Request,
+        res: Response,
+        next: NextFunction,
+    ) {
       return;
     }
 }

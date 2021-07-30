@@ -1,3 +1,5 @@
+/* global module */
+
 module.exports = {
   'env': {
     'browser': false,
@@ -16,5 +18,8 @@ module.exports = {
     '@typescript-eslint',
   ],
   'rules': {
+    'no-unused-vars': 'warn',
+    // As funções do express começam com uma letra maiúscula
+    'new-cap': 0,
   },
 };
