@@ -34,4 +34,3 @@ jobs:
           eslint: true
           prettier: false
           auto_fix: true
-          git_name: "Fazer o linting do código ^-^"
