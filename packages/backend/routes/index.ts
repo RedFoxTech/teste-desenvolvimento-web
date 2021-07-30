@@ -1,4 +1,7 @@
-import {Request, Response, Application} from "express";
+import {Request, Response, Application, Router} from "express";
+import PokedexRoute from "./Pokedex";
+import RouteAbstract from "../declarations/abstracts/Route";
+import WatchSpreadSheet from "../middlewares/WatchSpreadSheet";
 
 /**
  * @fileoverview Esse arquivo contém as rotas do ponto de entrada do backend,
@@ -6,14 +9,21 @@ import {Request, Response, Application} from "express";
  * @see {@link packages/backend/express/App}
  * @module packages/backend/routes/index
  * @requires express
+ * @version 0.0.2
  */
 
-export default class PostRoutes {
+const getRouter = (): Router => {
+const routes: Array<RouteAbstract> = [
+    PokedexRoute,
+];
 
-  public setRoutes(app: Application): void {
+const router = Router();
+routes.forEach(route => {
+    router.use(route.basePath, route.router, WatchSpreadSheet);
+});
 
-    app.get('/', (req: Request, res: Response) => {
-      res.status(200).send('It works!')
-    })
-  }
+return router;
 }
+
+
+export default getRouter;

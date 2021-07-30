@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import routes from '../routes';
+import getRouter from '../routes';
 
 /**
  * @fileoverview implementa a classe App, inicializa as rotas e middlewares do express
@@ -60,9 +60,7 @@ class App {
    * de rotas do arquivo routes/index
    */
   private loadRoutes() : void {
-    routes.forEach((route) => {
-      route.setRoutes(<express.Application> (this.app));
-    });
+    this.app?.use(getRouter());
   }
 
   /**

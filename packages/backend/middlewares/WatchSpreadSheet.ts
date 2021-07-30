@@ -3,10 +3,8 @@ import fs from 'fs';
 
 /**
  * @filedescription middleware para assistir mudanças ao arquivo de planilha do Pokémon Go
- * @module backend/middlewares/WatchSpreadSheet
- * @author  Daniel de Oliveira
- * @author  Matheus Alves
- * @author Settings
+ * @module packages/backend/middlewares/WatchSpreadSheet
+ * @author wh1t3h47 <tom.mharres@gmail.com>
  * @since  29/07/2021
  * @version 0.0.1
  */
@@ -18,6 +16,7 @@ import fs from 'fs';
  * @param {string} file - Arquivo para ser hasheado
  * @returns {string} - O hash do arquivo
  */
+// deepcode ignore InsecureHash: <não usamos o hash pra dados sensíveis>
 const getHash = (file: string): string => crypto.createHash('sha1').update(file).digest('hex');
 
 /**
