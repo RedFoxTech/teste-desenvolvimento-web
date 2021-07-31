@@ -18,8 +18,9 @@ import {Request, Response, NextFunction} from 'express';
  * @param {string} file - Arquivo para ser hasheado
  * @returns {string} - O hash do arquivo
  */
-// deepcode ignore InsecureHash: <não usamos o hash pra dados sensíveis>
+
 const getHash = (file: string): string => (
+  // file deepcode ignore InsecureHash: <não usamos o hash pra dados sensíveis>
   crypto.createHash('sha1').update(file).digest('hex')
 );
 

@@ -1,5 +1,5 @@
 /* eslint-disable require-jsdoc */
-import CRUDAbstract from '../declarations/abstracts/CRUD';
+import CRUDWithAllAbstract from '../declarations/abstracts/CRUDWithAll';
 import Pokemon from '../declarations/interfaces/Pokemon';
 import InternalServerError from '../exceptions/InternalServerError';
 import NoPokemonsRegistered from '../exceptions/NoPokemonsRegistered';
@@ -8,19 +8,22 @@ import PokemonNotFound from '../exceptions/PokemonNotFound';
 import PokemonModel from '../models/Pokemon';
 import PokemonSchema from '../schemas/Pokemon';
 
+/* global console */
+
 /**
  * @module packages/backend/repositories/pokemon
  * @extends packages/backend/src/repositories/CRUD
  * @since 30/07/2021
- * @version 0.0.1
+ * @version 0.0.2
  */
 
-class PokemonRepository extends CRUDAbstract {
+class PokemonRepository extends CRUDWithAllAbstract {
   /**
    * @description POST, deve retornar 201 em sucesso
    * @param {Pokemon} data
    */
   async create(data: Pokemon): Promise<PokemonModel> {
+    try {
     const {name} = data;
     const exists = await PokemonSchema.findOne({name}, {lean: true}).lean();
 
@@ -30,6 +33,13 @@ class PokemonRepository extends CRUDAbstract {
 
     const newPokemon = await PokemonSchema.create(data);
     return newPokemon;
+  } catch (error) {
+    if (error instanceof PokemonAlreadyExists) {
+      throw error;
+    } // else
+      console.error(error.message);
+      throw new InternalServerError();
+    }
   }
 
   /**
@@ -48,6 +58,10 @@ class PokemonRepository extends CRUDAbstract {
 
       return pokemon;
     } catch (error) {
+      if (error instanceof PokemonNotFound) {
+        throw error;
+      } // else
+      console.error(error.message);
       throw new InternalServerError();
     }
   }
@@ -66,6 +80,7 @@ class PokemonRepository extends CRUDAbstract {
       if (error instanceof NoPokemonsRegistered) {
         throw error;
       } // else
+      console.error(error.message);
       throw new InternalServerError();
     }
   }
@@ -75,12 +90,15 @@ class PokemonRepository extends CRUDAbstract {
    * propriedades
    * @param {Pokemon} data
    */
-  async updateAll(data: Pokemon): Promise<PokemonModel> {
+  async updateAllProperties(
+    unsafeId: string,
+    data: Pokemon
+    ): Promise<PokemonModel> {
     try {
-      const {_id} = data;
+      const id = String(unsafeId || '');
 
       const updatedPokemon = await PokemonSchema.findByIdAndUpdate(
-          _id,
+          id,
           data,
           {new: true, lean: true},
       );
@@ -95,6 +113,7 @@ class PokemonRepository extends CRUDAbstract {
       if (error instanceof PokemonNotFound) {
         throw error;
       } // else
+      console.error(error.message);
       throw new InternalServerError();
     }
   }
@@ -106,10 +125,10 @@ class PokemonRepository extends CRUDAbstract {
    * @see {@link module:packages/backend/validatedDTOs/PokemonPartialDTO}
    * @param {Pokemon} data
    */
-  async updatePartial(data: Pokemon): Promise<PokemonModel> {
+  async updatePartialProperties(unsafeId: string, data: Pokemon): Promise<PokemonModel> {
     try {
-      const {_id} = data;
-      const pokemon = await PokemonSchema.findOne({_id}, {lean: true});
+      const id = String(unsafeId || '');
+      const pokemon = await PokemonSchema.findOne({_id: id}, {lean: true});
 
       // remove todas as propriedades presentes em data de pokemon
       const remainingData = Object.assign({}, pokemon, data);
@@ -121,8 +140,8 @@ class PokemonRepository extends CRUDAbstract {
       }
 
       const updatedPokemon = await PokemonSchema.findByIdAndUpdate(
-          _id,
-          data,
+          id,
+          updatedPokemonData,
           {new: true, lean: true},
       );
 
@@ -136,6 +155,7 @@ class PokemonRepository extends CRUDAbstract {
       if (error instanceof PokemonNotFound) {
         throw error;
       } // else
+      console.error(error.message);
       throw new InternalServerError();
     }
   }
@@ -161,6 +181,30 @@ class PokemonRepository extends CRUDAbstract {
     if (error instanceof PokemonNotFound) {
         throw error;
       } // else
+      console.error(error.message);
+      throw new InternalServerError();
+    }
+  }
+
+  /**
+   * @description DELETE, executa uma lean query, deve retornar 200 em
+   * sucesso e remove todos os Pokémons do sistema
+   */
+  async deleteAll(): Promise<boolean> {
+    try {
+      const deleted = await PokemonSchema.deleteMany({}, {lean: true}).lean();
+
+      // verifica se todos os pokémons foram deletados
+      if (!deleted) {
+        throw new NoPokemonsRegistered();
+      }
+
+    return Boolean(deleted);
+  } catch (error) {
+    if (error instanceof NoPokemonsRegistered) {
+        throw error;
+      } // else
+      console.error(error.message);
       throw new InternalServerError();
     }
   }
