@@ -22,7 +22,7 @@ import {
 
 /**
  * @description Classe abstrata que deve ser extendida por todas as rotas
- * do sistema. Todos os métodos devem ser implementados, mas podem estar 
+ * do sistema. Todos os métodos devem ser implementados, mas podem estar
  * vazios, pois a única forma que encontrei de fazer eles seram opcionais
  * é utilizando uma interface, que forçaria os contratos a serem públicos.
  * @abstract

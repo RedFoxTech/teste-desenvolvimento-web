@@ -49,7 +49,6 @@ class PokedexRoute extends RouteWithAllAbstract {
           this.patchRoute.bind(this),
       );
       this._router.delete(':id', this.deleteRoute.bind(this));
-
     }
 
     protected async postRoute(
@@ -108,7 +107,7 @@ class PokedexRoute extends RouteWithAllAbstract {
         next: NextFunction,
     ) {
       try {
-        const {id} = req.params; 
+        const {id} = req.params;
         const data = req.body || {};
         const pokemon = await this.pokemonRepository.updateAllProperties(id, data);
         res.status(200).json(pokemon);
@@ -129,8 +128,8 @@ class PokedexRoute extends RouteWithAllAbstract {
         const {id} = req.params;
         const data = req.body || {};
         const pokemon = await this.pokemonRepository.updatePartialProperties(
-          id,
-          data
+            id,
+            data,
         );
         res.status(200).json(pokemon);
       } catch (httpException) {

@@ -17,7 +17,7 @@ import CRUDAbstract from './CRUD';
  * @extends CRUDAbstract
  */
 
- abstract class CRUDWithAllAbstract extends CRUDAbstract {
+abstract class CRUDWithAllAbstract extends CRUDAbstract {
     abstract create(data: unknown): Promise<unknown>;
     abstract read(unsafeId: string): Promise<unknown>;
     abstract readAll(): Promise<Array<unknown>>;

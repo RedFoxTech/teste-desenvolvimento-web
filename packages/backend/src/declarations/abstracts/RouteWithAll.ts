@@ -1,15 +1,15 @@
 import {
-    Request,
-    Response,
-    NextFunction,
-    Router,
-    RequestHandler,
-  } from 'express';
-  import RouteAbstract from './Route';
-  
-  /* eslint-disable require-jsdoc */
-  
-  /**
+  Request,
+  Response,
+  NextFunction,
+  Router,
+  RequestHandler,
+} from 'express';
+import RouteAbstract from './Route';
+
+/* eslint-disable require-jsdoc */
+
+/**
    * @filedescription Implementa a classe pai das rotas do sistema que
    * também possuem funções para interagir com todos os ítens.
    * @module packages/backend/routes/routesWithAll
@@ -19,16 +19,16 @@ import {
    * @version 0.0.2
    * @since 29/07/2021
    */
-  
-  /**
+
+/**
    * @description Classe abstrata que implementa as rotas básicas e também
    * as rotas para interagir com todos os ítens.
    * @abstract
    * @class
    * @name AbstractRoute
    */
-  
-  abstract class RouteWithAllAbstract extends RouteAbstract {
+
+abstract class RouteWithAllAbstract extends RouteAbstract {
       public middlewares: Array<RequestHandler> = [];
       /**
        * Caminho base onde todas as rotas definidas na classe filha serão
@@ -37,7 +37,7 @@ import {
       public basePath: string = '/';
       /** roteador do Express, esse nunca será subscrito pela classe filha */
       protected readonly _router = Router();
-  
+
       /**
        * @name getRoute
        * @memberOf AbstractRoute
@@ -63,7 +63,7 @@ import {
        */
            protected abstract getAllRoute(
             req: Request, res: Response, next: NextFunction): void
-  
+
       /**
        * @name postRoute
        * @memberOf AbstractRoute
@@ -77,7 +77,7 @@ import {
        */
       protected abstract postRoute(
           req: Request, res: Response, next: NextFunction): void
-  
+
       /**
        * @name putRoute
        * @memberOf AbstractRoute
@@ -90,7 +90,7 @@ import {
        */
       protected abstract putRoute(
           req: Request, res: Response, next: NextFunction): void
-  
+
       /**
        * @name patchRoute
        * @memberOf AbstractRoute
@@ -103,7 +103,7 @@ import {
        */
       protected abstract patchRoute(
           req: Request, res: Response, next: NextFunction): void
-  
+
       /**
        * @name deleteRoute
        * @memberOf AbstractRoute
@@ -116,7 +116,7 @@ import {
        */
       protected abstract deleteRoute(
           req: Request, res: Response, next: NextFunction): void
-  
+
       // protected abstract optionsRoute(
       //    req: Request, res: Response, next: NextFunction): void
       // protected abstract headRoute(
@@ -134,18 +134,17 @@ import {
        */
              protected abstract deleteRoute(
                 req: Request, res: Response, next: NextFunction): void
-  
-      /**
+
+             /**
        * @name getRoute
        * @memberOf AbstractRoute
        * @public
        * @return {Router} retorna o roteador para ser consumido pelo index
        * @see {@link packages/backend/routes/index}
        */
-      public get router(): Router {
-        return this._router;
-      }
-  }
-  
-  export default RouteWithAllAbstract;
-  
+             public get router(): Router {
+               return this._router;
+             }
+}
+
+export default RouteWithAllAbstract;

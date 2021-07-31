@@ -24,19 +24,19 @@ class PokemonRepository extends CRUDWithAllAbstract {
    */
   async create(data: Pokemon): Promise<PokemonModel> {
     try {
-    const {name} = data;
-    const exists = await PokemonSchema.findOne({name}, {lean: true}).lean();
+      const {name} = data;
+      const exists = await PokemonSchema.findOne({name}, {lean: true}).lean();
 
-    if (exists) {
-      throw new PokemonAlreadyExists(name);
-    }
+      if (exists) {
+        throw new PokemonAlreadyExists(name);
+      }
 
-    const newPokemon = await PokemonSchema.create(data);
-    return newPokemon;
-  } catch (error) {
-    if (error instanceof PokemonAlreadyExists) {
-      throw error;
-    } // else
+      const newPokemon = await PokemonSchema.create(data);
+      return newPokemon;
+    } catch (error) {
+      if (error instanceof PokemonAlreadyExists) {
+        throw error;
+      } // else
       console.error(error.message);
       throw new InternalServerError();
     }
@@ -48,9 +48,9 @@ class PokemonRepository extends CRUDWithAllAbstract {
    */
   async read(unsafeId: string): Promise<PokemonModel> {
     try {
-    const id = String(unsafeId || '');
-    // Retorna o modelo de Pokemon com todas as propriedades
-    const pokemon = await PokemonSchema.findOne({_id: id}).lean();
+      const id = String(unsafeId || '');
+      // Retorna o modelo de Pokemon com todas as propriedades
+      const pokemon = await PokemonSchema.findOne({_id: id}).lean();
 
       if (!pokemon) {
         throw new PokemonNotFound();
@@ -91,9 +91,9 @@ class PokemonRepository extends CRUDWithAllAbstract {
    * @param {Pokemon} data
    */
   async updateAllProperties(
-    unsafeId: string,
-    data: Pokemon
-    ): Promise<PokemonModel> {
+      unsafeId: string,
+      data: Pokemon,
+  ): Promise<PokemonModel> {
     try {
       const id = String(unsafeId || '');
 
@@ -175,10 +175,10 @@ class PokemonRepository extends CRUDWithAllAbstract {
         throw new PokemonNotFound();
       }
 
-    return Boolean(deleted);
-} catch (error) {
-    console.log(error.message);
-    if (error instanceof PokemonNotFound) {
+      return Boolean(deleted);
+    } catch (error) {
+      console.log(error.message);
+      if (error instanceof PokemonNotFound) {
         throw error;
       } // else
       console.error(error.message);
@@ -199,9 +199,9 @@ class PokemonRepository extends CRUDWithAllAbstract {
         throw new NoPokemonsRegistered();
       }
 
-    return Boolean(deleted);
-  } catch (error) {
-    if (error instanceof NoPokemonsRegistered) {
+      return Boolean(deleted);
+    } catch (error) {
+      if (error instanceof NoPokemonsRegistered) {
         throw error;
       } // else
       console.error(error.message);
