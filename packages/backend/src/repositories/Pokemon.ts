@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import CRUDWithAllAbstract from '../declarations/abstracts/CRUDWithAll';
 import Pokemon from '../declarations/interfaces/Pokemon';
 import InternalServerError from '../exceptions/InternalServerError';
@@ -17,8 +16,8 @@ import PokemonSchema from '../schemas/Pokemon';
  * as rotas. Os métodos estão ordenados da seguinte forma: CRUD
  * (create, read, update, delete), sendo que All sempre vem depois
  * da operação com um ítem.
- * @module packages/backend/repositories/pokemon
- * @extends packages/backend/src/repositories/CRUD
+ * @module packages/backend/repositories/Pokemon
+ * @extends packages/backend/repositories/CRUD
  * @since 30/07/2021
  * @version 0.0.3
  */

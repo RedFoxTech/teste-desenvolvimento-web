@@ -10,7 +10,7 @@ import Pokemon from '../declarations/interfaces/Pokemon';
  * Isso mitiga o problema de confusão de tipos/ injeção de NoSQL.
  * @see {@link https://www.linkedin.com/pulse/injeção-de-sql-onde-não-tem-antônio-martos-harres/}
  * @since 30/07/2021
- * @version 0.0.1
+ * @version 0.0.2
  */
 
 class PokemonDTO implements Pokemon {
@@ -82,6 +82,9 @@ class PokemonDTO implements Pokemon {
 
     @IsNumber()
     raidable!: number;
+
+    @IsNumber()
+    hatchable!: number;
 
     @IsBoolean()
     shiny!: boolean;

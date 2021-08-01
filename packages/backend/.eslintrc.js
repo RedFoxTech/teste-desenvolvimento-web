@@ -21,5 +21,7 @@ module.exports = {
     'no-unused-vars': 'warn',
     // As funções do express começam com uma letra maiúscula
     'new-cap': 0,
+    // Precisamos habilitar essa regra mais tarde para documentar
+    'require-jsdoc': 0,
   },
 };

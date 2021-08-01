@@ -8,7 +8,7 @@ import PokemonModel from '../models/Pokemon';
  * @see {@link https://mongoosejs.com/docs/guide.html}
  * @see {@link packages/backend/models/Pokemon}
  * @module packages/backend/schemas/PokemonSchema
- * @version 0.0.1
+ * @version 0.0.2
  * @since 29/07/2021
  */
 
@@ -98,6 +98,10 @@ const pokemonSchema = new Schema({
     required: true,
   },
   raidable: {
+    type: Number,
+    required: true,
+  },
+  hatchable: {
     type: Number,
     required: true,
   },

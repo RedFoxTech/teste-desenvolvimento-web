@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import PokemonType from '../declarations/enums/PokemonType';
 import PokemonWeather from '../declarations/enums/Weather';
 import Pokemon from '../declarations/interfaces/Pokemon';
@@ -7,7 +6,7 @@ import Pokemon from '../declarations/interfaces/Pokemon';
  * @filedescription Traz a Model que reflete a Pokedex na planilha de pokémon.
  * @module packages/backend/models/Pokemon
  * @see {@link packages/backend/schemas/PokemonSchema}
- * @version 0.0.1
+ * @version 0.0.2
  * @since 29/07/2021
  */
 
@@ -34,6 +33,7 @@ class PokemonModel {
     spawns: boolean;
     regional: boolean;
     raidable: number;
+    hatchable: number;
     shiny: boolean;
     nest: boolean;
     isNewPokemon: boolean;
@@ -49,7 +49,7 @@ class PokemonModel {
      * @since 0.0.1
      * @version 0.0.1
      * @public
-     * @alias module:packages/backend/src/models/Pokemon
+     * @alias module:packages/backend/models/Pokemon
      */
 
     constructor({
@@ -75,6 +75,7 @@ class PokemonModel {
       spawns,
       regional,
       raidable,
+      hatchable,
       shiny,
       nest,
       isNewPokemon,
@@ -82,7 +83,7 @@ class PokemonModel {
       futureEvolve,
       fullCPLevel40,
       fullCPLevel39,
-    }: Pokemon): PokemonModel {
+    }: Pokemon) {
       this.row = row;
       this.name = name;
       this.pokedexId = pokedexId;
@@ -105,6 +106,7 @@ class PokemonModel {
       this.spawns = spawns;
       this.regional = regional;
       this.raidable = raidable;
+      this.hatchable = hatchable;
       this.shiny = shiny;
       this.nest = nest;
       this.isNewPokemon = isNewPokemon;

@@ -6,8 +6,6 @@ import {
   RequestHandler,
 } from 'express';
 
-/* eslint-disable require-jsdoc */
-
 /**
  * @filedescription Implementa a classe pai de todas as rotas do sistema.
  * todas as rotas devem ser filhas dessa classe e o contrato dela é
@@ -111,7 +109,8 @@ abstract class RouteAbstract {
     //    req: Request, res: Response, next: NextFunction): void
 
     /**
-     * @name getRoute
+     * @name router
+     * @getter
      * @memberOf AbstractRoute
      * @public
      * @return {Router} retorna o roteador para ser consumido pelo index

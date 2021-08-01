@@ -1,6 +1,7 @@
 import App from './App';
 import {config} from 'dotenv';
 import {connect, set} from 'mongoose';
+import ImportSpreadsheet from '../services/ImportSpreadsheet';
 
 /**
  * @fileoverview ponto de entrada pra executar o backend do teste-pokémon-excel
