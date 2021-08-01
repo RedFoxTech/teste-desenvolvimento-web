@@ -1,5 +1,5 @@
 /* eslint-disable require-jsdoc */
-import CRUDAbstract from '../declarations/abstracts/CRUD';
+import CRUDWithAllAbstract from '../declarations/abstracts/CRUDWithAll';
 import Pokemon from '../declarations/interfaces/Pokemon';
 import InternalServerError from '../exceptions/InternalServerError';
 import NoPokemonsRegistered from '../exceptions/NoPokemonsRegistered';
@@ -8,38 +8,59 @@ import PokemonNotFound from '../exceptions/PokemonNotFound';
 import PokemonModel from '../models/Pokemon';
 import PokemonSchema from '../schemas/Pokemon';
 
+
+/* global console */
+
 /**
+ * @description Coração de todas as interações CRUD, os repositórios
+ * são responsáveis por interagir com o banco de dados de acordo com
+ * as rotas. Os métodos estão ordenados da seguinte forma: CRUD
+ * (create, read, update, delete), sendo que All sempre vem depois
+ * da operação com um ítem.
  * @module packages/backend/repositories/pokemon
  * @extends packages/backend/src/repositories/CRUD
  * @since 30/07/2021
- * @version 0.0.1
+ * @version 0.0.3
  */
 
-class PokemonRepository extends CRUDAbstract {
+class PokemonRepository extends CRUDWithAllAbstract {
   /**
    * @description POST, deve retornar 201 em sucesso
    * @param {Pokemon} data
    */
   async create(data: Pokemon): Promise<PokemonModel> {
-    const {name} = data;
-    const exists = await PokemonSchema.findOne({name}, {lean: true});
+    try {
+      const {name} = data;
+      const exists = await PokemonSchema.findOne({name}, {lean: true}).lean();
 
-    if (exists) {
-      throw new PokemonAlreadyExists(name);
+      if (exists) {
+        throw new PokemonAlreadyExists(name);
+      }
+
+      const newPokemon = await PokemonSchema.create(data);
+      return newPokemon;
+    } catch (error) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponse) {
+        throw error;
+      } // else
+      console.error(error.message);
+      throw new InternalServerError();
     }
-
-    const newPokemon = await PokemonSchema.create(data);
-    return newPokemon;
   }
 
   /**
    * @description GET, deve retornar 200 em sucesso
-   * @param {string|any} unsafeId
+   * @param {string|unknown} unsafeId
    */
   async read(unsafeId: string): Promise<PokemonModel> {
     try {
       const id = String(unsafeId || '');
-      const pokemon = await PokemonSchema.findOne({_id: id}, {lean: true});
+      // Retorna o modelo de Pokemon com todas as propriedades
+      const pokemon = await PokemonSchema.findOne(
+          {_id: id},
+      ).setOptions({lean: true}).lean();
 
       if (!pokemon) {
         throw new PokemonNotFound();
@@ -47,6 +68,12 @@ class PokemonRepository extends CRUDAbstract {
 
       return pokemon;
     } catch (error) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponse) {
+        throw error;
+      } // else
+      console.error(error.message);
       throw new InternalServerError();
     }
   }
@@ -54,7 +81,7 @@ class PokemonRepository extends CRUDAbstract {
   /** GET, deve retornar 200 em sucesso */
   async readAll(): Promise<Array<PokemonModel>> {
     try {
-      const pokemon = await PokemonSchema.find();
+      const pokemon = await PokemonSchema.find().lean();
 
       if (!pokemon || pokemon.length === 0) {
         throw new NoPokemonsRegistered();
@@ -62,9 +89,55 @@ class PokemonRepository extends CRUDAbstract {
 
       return pokemon;
     } catch (error) {
-      if (error instanceof NoPokemonsRegistered) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponse) {
         throw error;
       } // else
+      console.error(error.message);
+      throw new InternalServerError();
+    }
+  }
+
+
+  /**
+   * @description PATCH, deve retornar 200 em sucesso e pode não ter todas
+   * as propriedades
+   * @see {@link module:packages/backend/validatedDTOs/PokemonPartialDTO}
+   * @param {string|unknown} unsafeId
+   * @param {Pokemon} data
+   */
+  async updatePartialProperties(
+      unsafeId: string,
+      data: Pokemon,
+  ): Promise<PokemonModel> {
+    try {
+      const id = String(unsafeId || '');
+      const pokemon = await PokemonSchema.findOne({_id: id}, {lean: true}).lean();
+
+      if (!pokemon) {
+        throw new PokemonNotFound();
+      }
+
+      const updatedPokemon = await PokemonSchema.findByIdAndUpdate(
+          id,
+          data,
+          {new: true, lean: true},
+      );
+
+      // verifica se o pokémon foi atualizado
+      if (!updatedPokemon) {
+        throw new PokemonNotFound();
+      }
+
+      return updatedPokemon;
+    } catch (error) {
+    // Caso seja seguro retornar o erro na API (não possui informações
+    // sensíveis)
+      if (error.returnErrorResponse) {
+        throw error;
+      } // else
+      console.error(error.message);
       throw new InternalServerError();
     }
   }
@@ -72,69 +145,47 @@ class PokemonRepository extends CRUDAbstract {
   /**
    * @description PUT, deve retornar 200 em sucesso e ter todas as
    * propriedades
+   * @param {string|unknown} unsafeId
    * @param {Pokemon} data
    */
-  async updateAll(data: Pokemon): Promise<PokemonModel> {
-    try {
-      const {_id} = data;
+  async updateAllProperties(
+      unsafeId: string,
+      data: Pokemon,
+  ): Promise<PokemonModel> {
+    const id = String(unsafeId || '');
 
-      const updatedPokemon = await PokemonSchema.findByIdAndUpdate(
-          _id,
+    try {
+      const updatedPokemon = await PokemonSchema.replaceOne(
+          id? {_id: id}: {name: data.name},
           data,
-          {new: true, lean: true},
-      );
+      ).setOptions({
+        new: true,
+        // cria objeto caso não exista (comum no PUT)
+        upsert: true,
+        lean: true,
+      }).lean();
 
       // verifica se o pokémon foi atualizado
-      if (!updatedPokemon) {
+      if (!updatedPokemon.n) {
         throw new PokemonNotFound();
       }
 
-      return updatedPokemon;
+      const resultId = updatedPokemon.upserted?.[0]?._id || id;
+      const modifiedPokemon = await PokemonSchema.findById(resultId).lean();
+
+      if (!modifiedPokemon) {
+        throw new InternalServerError(
+            'Pokémon não encontrado após atualização!',
+        );
+      }
+      return modifiedPokemon;
     } catch (error) {
-      if (error instanceof PokemonNotFound) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponse) {
         throw error;
       } // else
-      throw new InternalServerError();
-    }
-  }
-
-
-  /**
-   * @description PATCH, deve retornar 200 em sucesso e ter todas as
-   * propriedades
-   * @see {@link module:packages/backend/validatedDTOs/PokemonPartialDTO}
-   * @param {Pokemon} data
-   */
-  async updatePartial(data: Pokemon): Promise<PokemonModel> {
-    try {
-      const {_id} = data;
-      const pokemon = await PokemonSchema.findOne({_id}, {lean: true});
-
-      // remove todas as propriedades presentes em data de pokemon
-      const remainingData = Object.assign({}, pokemon, data);
-      // preenche data com as propriedades de pokemon
-      const updatedPokemonData = Object.assign({}, remainingData, data);
-
-      if (!pokemon) {
-        throw new PokemonNotFound();
-      }
-
-      const updatedPokemon = await PokemonSchema.findByIdAndUpdate(
-          _id,
-          data,
-          {new: true, lean: true},
-      );
-
-      // verifica se o pokémon foi atualizado
-      if (!updatedPokemon) {
-        throw new PokemonNotFound();
-      }
-
-      return updatedPokemon;
-    } catch (error) {
-      if (error instanceof PokemonNotFound) {
-        throw error;
-      } // else
+      console.error(error.message);
       throw new InternalServerError();
     }
   }
@@ -142,12 +193,15 @@ class PokemonRepository extends CRUDAbstract {
   /**
    * @description DELETE, executa uma lean query e deve retornar 200 em
    * sucesso
-   * @param {string|any} unsafeId
+   * @param {string|unknown} unsafeId
    */
   async delete(unsafeId: string): Promise<boolean> {
     try {
       const id = String(unsafeId || '');
-      const deleted = await PokemonSchema.findByIdAndRemove(id, {lean: true});
+      const deleted = await PokemonSchema.findByIdAndRemove(
+          id,
+          {lean: true},
+      ).lean();
 
       // verifica se o pokémon foi deletado
       if (!deleted) {
@@ -156,9 +210,37 @@ class PokemonRepository extends CRUDAbstract {
 
       return Boolean(deleted);
     } catch (error) {
-      if (error instanceof PokemonNotFound) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponse) {
         throw error;
       } // else
+      console.error(error.message);
+      throw new InternalServerError();
+    }
+  }
+
+  /**
+   * @description DELETE, executa uma lean query, deve retornar 200 em
+   * sucesso e remove todos os Pokémons do sistema
+   */
+  async deleteAll(): Promise<boolean> {
+    try {
+      const deleted = await PokemonSchema.deleteMany({}, {lean: true}).lean();
+
+      // verifica se todos os pokémons foram deletados
+      if (!deleted) {
+        throw new NoPokemonsRegistered();
+      }
+
+      return Boolean(deleted);
+    } catch (error) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponsetered) {
+        throw error;
+      } // else
+      console.error(error.message);
       throw new InternalServerError();
     }
   }

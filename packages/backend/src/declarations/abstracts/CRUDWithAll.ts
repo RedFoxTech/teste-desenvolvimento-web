@@ -1,9 +1,11 @@
+import CRUDAbstract from './CRUD';
+
 /**
  * @filedescription Implementa a classe pai de todas os repositórios que
- * possuem uma CRUD completa
- * @version 0.0.2
- * @since 30/07/2021
- * @module packages/backend/repositories
+ * possuem uma CRUD completa com métodos que interagem com todos os ítens
+ * @version 0.0.1
+ * @since 31/07/2021
+ * @module packages/backend/repositories/repositoriesWithAll
  */
 
 /**
@@ -11,12 +13,14 @@
  * uma CRUD básica completa.
  * @abstract
  * @class
- * @name CRUDAbstract
+ * @name CRUDWithAllAbstract
+ * @extends CRUDAbstract
  */
 
-abstract class CRUDAbstract {
+abstract class CRUDWithAllAbstract extends CRUDAbstract {
     abstract create(data: unknown): Promise<unknown>;
     abstract read(unsafeId: string): Promise<unknown>;
+    abstract readAll(): Promise<Array<unknown>>;
     abstract updatePartialProperties(
         unsafeId: string,
         data: unknown
@@ -26,6 +30,7 @@ abstract class CRUDAbstract {
         data: unknown
     ): Promise<unknown>;
     abstract delete(unsafeId: string): Promise<unknown>;
+    abstract deleteAll(): Promise<unknown>;
 }
 
-export default CRUDAbstract;
+export default CRUDWithAllAbstract;

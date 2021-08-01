@@ -1,6 +1,6 @@
 import App from './App';
 import {config} from 'dotenv';
-import {connect} from 'mongoose';
+import {connect, set} from 'mongoose';
 
 /**
  * @fileoverview ponto de entrada pra executar o backend do teste-pokémon-excel
@@ -29,13 +29,18 @@ import {connect} from 'mongoose';
   const {PORT = 31337} = process.env;
   const port = (typeof PORT === 'number')? PORT: parseInt(PORT, 10);
   const {DB_URI = 'mongodb://localhost/teste-pokemon-excel'} = process.env;
-  console.log(DB_URI);
+  // console.log(DB_URI);
 
-  const mongoConnection = await connect(DB_URI, {
+  // eslint-disable-next-line no-unused-vars
+  const _mongoConnection = await connect(DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
-  console.log(mongoConnection);
+  // console.log(_mongoConnection);
+
+  // Make Mongoose use `findOneAndUpdate()`. Note that this option is `true`
+  // by default, you need to set it to false.
+  set('useFindAndModify', false);
 
   const app = new App().app;
 

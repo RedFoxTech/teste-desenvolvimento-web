@@ -1,5 +1,5 @@
-import {Request, Response, Application, NextFunction} from 'express';
-import RouteAbstract from '../declarations/abstracts/Route';
+import {Request, Response, NextFunction} from 'express';
+import RouteWithAllAbstract from '../declarations/abstracts/RouteWithAll';
 import validationMiddleware from '../middlewares/ValidationDTO';
 import WatchSpreadSheet from '../middlewares/WatchSpreadSheet';
 import PokemonDTO from '../validatedDTOs/PokemonDTO';
@@ -13,7 +13,7 @@ import PokemonPartialDTO from '../validatedDTOs/PokemonPartialDTO';
  * @see {@link packages/backend/repositories/pokemon}
  * @requires express
  * @since 29/07/2021
- * @version 0.0.3
+ * @version 0.0.5
  */
 
 // A documentação tá na classe RouteAbstract
@@ -21,15 +21,15 @@ import PokemonPartialDTO from '../validatedDTOs/PokemonPartialDTO';
 
 /**
  * @class
- * @extends RouteAbstract
+ * @extends RouteWithAllAbstract
  * @description Implementa a rota para acessar os Pokemons.
  */
 
-class PokedexRoute extends RouteAbstract {
+class PokedexRoute extends RouteWithAllAbstract {
     middlewares = [
       WatchSpreadSheet,
     ];
-    basePath = '/';
+    basePath = '/Pokemon';
     private pokemonRepository = new PokemonRepository();
 
     constructor() {
@@ -38,17 +38,18 @@ class PokedexRoute extends RouteAbstract {
           validationMiddleware(PokemonDTO),
           this.postRoute.bind(this),
       );
-      this._router.get('/', this.getRoute.bind(this));
-      this._router.get('/all', this.getAllRoute.bind(this));
-      this._router.put('/',
+      this._router.get('/getOne/:id', this.getRoute.bind(this));
+      this._router.get('/getAll', this.getAllRoute.bind(this));
+      this._router.put('/update(/:id)?',
           validationMiddleware(PokemonDTO),
           this.putRoute.bind(this),
       );
-      this._router.patch('/',
-          validationMiddleware(PokemonPartialDTO),
+      this._router.patch('/update/:id',
+          validationMiddleware(PokemonPartialDTO, true),
           this.patchRoute.bind(this),
       );
-      this._router.delete('/', this.deleteRoute.bind(this));
+      this._router.delete('/delete/:id', this.deleteRoute.bind(this));
+      this._router.delete('/deleteAll', this.deleteAllRoute.bind(this));
     }
 
     protected async postRoute(
@@ -101,14 +102,18 @@ class PokedexRoute extends RouteAbstract {
       next();
     }
 
-    protected async putRoute(
+    protected async patchRoute(
         req: Request,
         res: Response,
         next: NextFunction,
     ) {
       try {
+        const {id} = req.params;
         const data = req.body || {};
-        const pokemon = await this.pokemonRepository.updateAll(data);
+        const pokemon = await this.pokemonRepository.updatePartialProperties(
+            id,
+            data,
+        );
         res.status(200).json(pokemon);
       } catch (httpException) {
         res.status(httpException.status || 500).json(
@@ -118,14 +123,25 @@ class PokedexRoute extends RouteAbstract {
       next();
     }
 
-    protected async patchRoute(
+    protected async putRoute(
         req: Request,
         res: Response,
         next: NextFunction,
     ) {
       try {
+        const {id} = req.params;
+
+        if (!id) {
+          // cria um novo pokemon
+          this.postRoute(req, res, next);
+          return;
+        }
+
         const data = req.body || {};
-        const pokemon = await this.pokemonRepository.updatePartial(data);
+        const pokemon = await this.pokemonRepository.updateAllProperties(
+            id,
+            data,
+        );
         res.status(200).json(pokemon);
       } catch (httpException) {
         res.status(httpException.status || 500).json(
@@ -143,6 +159,23 @@ class PokedexRoute extends RouteAbstract {
       try {
         const {id = ''} = req.params;
         const success = await this.pokemonRepository.delete(id);
+
+        res.status(200).json({success});
+      } catch (httpException) {
+        res.status(httpException.status || 500).json(
+            {error: httpException.message},
+        );
+      }
+      next();
+    }
+
+    protected async deleteAllRoute(
+        req: Request,
+        res: Response,
+        next: NextFunction,
+    ) {
+      try {
+        const success = await this.pokemonRepository.deleteAll();
 
         res.status(200).json({success});
       } catch (httpException) {

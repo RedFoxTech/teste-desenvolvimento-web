@@ -12,6 +12,7 @@ import {
  * @filedescription Implementa a classe pai de todas as rotas do sistema.
  * todas as rotas devem ser filhas dessa classe e o contrato dela é
  * indispensável para ser consumida pelo App
+ * @module packages/backend/routes
  * @requires express
  * @see {@link packages/backend/routes/index}
  * @see {@link packages/backend/express/app}
@@ -21,9 +22,9 @@ import {
 
 /**
  * @description Classe abstrata que deve ser extendida por todas as rotas
- * do sistema. Todos os métodos devem ser implementados, pois a única forma
- * que encontrei de fazer eles seram opcionais é utilizando uma interface,
- * que forçaria os contratos a serem públicos.
+ * do sistema. Todos os métodos devem ser implementados, mas podem estar
+ * vazios, pois a única forma que encontrei de fazer eles seram opcionais
+ * é utilizando uma interface, que forçaria os contratos a serem públicos.
  * @abstract
  * @class
  * @name AbstractRoute
