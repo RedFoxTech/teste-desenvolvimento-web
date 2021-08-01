@@ -10,14 +10,13 @@ import PokemonPartialDTO from '../validatedDTOs/PokemonPartialDTO';
 /**
  * @fileoverview Esse arquivo irá conter as rotas para a CRUD do Pokedex.
  * @see {@link packages/backend/routes/index}
- * @see {@link packages/backend/repositories/pokemon}
+ * @see {@link packages/backend/repositories/Pokemon}
  * @requires express
  * @since 29/07/2021
  * @version 0.0.5
  */
 
 // A documentação tá na classe RouteAbstract
-/* eslint-disable require-jsdoc */
 
 /**
  * @class

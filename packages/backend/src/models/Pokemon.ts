@@ -1,4 +1,3 @@
-/* eslint-disable require-jsdoc */
 import PokemonType from '../declarations/enums/PokemonType';
 import PokemonWeather from '../declarations/enums/Weather';
 import Pokemon from '../declarations/interfaces/Pokemon';
@@ -49,7 +48,7 @@ class PokemonModel {
      * @since 0.0.1
      * @version 0.0.1
      * @public
-     * @alias module:packages/backend/src/models/Pokemon
+     * @alias module:packages/backend/models/Pokemon
      */
 
     constructor({
@@ -82,7 +81,7 @@ class PokemonModel {
       futureEvolve,
       fullCPLevel40,
       fullCPLevel39,
-    }: Pokemon): PokemonModel {
+    }: Pokemon) {
       this.row = row;
       this.name = name;
       this.pokedexId = pokedexId;
