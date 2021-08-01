@@ -132,25 +132,25 @@ class PokedexRoute extends RouteWithAllAbstract {
     }
 
     protected async patchRoute(
-      req: Request,
-      res: Response,
-      next: NextFunction,
-  ) {
-    try {
-      const {id} = req.params;
-      const data = req.body || {};
-      const pokemon = await this.pokemonRepository.updatePartialProperties(
-          id,
-          data,
-      );
-      res.status(200).json(pokemon);
-    } catch (httpException) {
-      res.status(httpException.status || 500).json(
-          {error: httpException.message},
-      );
+        req: Request,
+        res: Response,
+        next: NextFunction,
+    ) {
+      try {
+        const {id} = req.params;
+        const data = req.body || {};
+        const pokemon = await this.pokemonRepository.updatePartialProperties(
+            id,
+            data,
+        );
+        res.status(200).json(pokemon);
+      } catch (httpException) {
+        res.status(httpException.status || 500).json(
+            {error: httpException.message},
+        );
+      }
+      next();
     }
-    next();
-  }
 
     protected async putRoute(
         req: Request,
