@@ -138,16 +138,16 @@ abstract class RouteWithAllAbstract extends RouteAbstract {
           next: NextFunction
         ): void
 
-      /**
+        /**
        * @name getRoute
        * @memberOf AbstractRoute
        * @public
        * @return {Router} retorna o roteador para ser consumido pelo index
        * @see {@link packages/backend/routes/index}
        */
-       public get router(): Router {
-         return this._router;
-       }
+        public get router(): Router {
+          return this._router;
+        }
 }
 
 export default RouteWithAllAbstract;

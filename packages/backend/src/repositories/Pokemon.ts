@@ -59,7 +59,7 @@ class PokemonRepository extends CRUDWithAllAbstract {
       const id = String(unsafeId || '');
       // Retorna o modelo de Pokemon com todas as propriedades
       const pokemon = await PokemonSchema.findOne(
-        {_id: id},
+          {_id: id},
       ).setOptions({lean: true}).lean();
 
       if (!pokemon) {
@@ -107,40 +107,40 @@ class PokemonRepository extends CRUDWithAllAbstract {
    * @param {string|unknown} unsafeId
    * @param {Pokemon} data
    */
-   async updatePartialProperties(
-    unsafeId: string,
-  data: Pokemon,
-): Promise<PokemonModel> {
-  try {
-    const id = String(unsafeId || '');
-    const pokemon = await PokemonSchema.findOne({_id: id}, {lean: true}).lean();
+  async updatePartialProperties(
+      unsafeId: string,
+      data: Pokemon,
+  ): Promise<PokemonModel> {
+    try {
+      const id = String(unsafeId || '');
+      const pokemon = await PokemonSchema.findOne({_id: id}, {lean: true}).lean();
 
-    if (!pokemon) {
-      throw new PokemonNotFound();
-    }
+      if (!pokemon) {
+        throw new PokemonNotFound();
+      }
 
-    const updatedPokemon = await PokemonSchema.findByIdAndUpdate(
-        id,
-        data,
-        {new: true, lean: true},
-    );
+      const updatedPokemon = await PokemonSchema.findByIdAndUpdate(
+          id,
+          data,
+          {new: true, lean: true},
+      );
 
-    // verifica se o pokémon foi atualizado
-    if (!updatedPokemon) {
-      throw new PokemonNotFound();
-    }
+      // verifica se o pokémon foi atualizado
+      if (!updatedPokemon) {
+        throw new PokemonNotFound();
+      }
 
-    return updatedPokemon;
-  } catch (error) {
+      return updatedPokemon;
+    } catch (error) {
     // Caso seja seguro retornar o erro na API (não possui informações
     // sensíveis)
-    if (error.returnErrorResponse) {
-      throw error;
-    } // else
-    console.error(error.message);
-    throw new InternalServerError();
+      if (error.returnErrorResponse) {
+        throw error;
+      } // else
+      console.error(error.message);
+      throw new InternalServerError();
+    }
   }
-}
 
   /**
    * @description PUT, deve retornar 200 em sucesso e ter todas as
@@ -175,7 +175,7 @@ class PokemonRepository extends CRUDWithAllAbstract {
 
       if (!modifiedPokemon) {
         throw new InternalServerError(
-          "Pokémon não encontrado após atualização!",
+            'Pokémon não encontrado após atualização!',
         );
       }
       return modifiedPokemon;
@@ -199,8 +199,8 @@ class PokemonRepository extends CRUDWithAllAbstract {
     try {
       const id = String(unsafeId || '');
       const deleted = await PokemonSchema.findByIdAndRemove(
-        id, 
-        {lean: true}
+          id,
+          {lean: true},
       ).lean();
 
       // verifica se o pokémon foi deletado

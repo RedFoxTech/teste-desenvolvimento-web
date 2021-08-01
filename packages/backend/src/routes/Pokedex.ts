@@ -117,8 +117,8 @@ class PokedexRoute extends RouteWithAllAbstract {
 
         const data = req.body || {};
         const pokemon = await this.pokemonRepository.updateAllProperties(
-          id,
-          data,
+            id,
+            data,
         );
         res.status(200).json(pokemon);
       } catch (httpException) {
