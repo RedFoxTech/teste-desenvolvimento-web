@@ -1,9 +1,9 @@
 /**
  * @fileoverview Idealmente esse arquivo exportaria os dados da base do
- * MongoDB para o arquivo da Sheet para caso quisessemos ou ainda 
+ * MongoDB para o arquivo da Sheet para caso quisessemos ou ainda
  * tivessemos um serviço legato que dependesse da spreadsheet, no caso
  * o importspreadsheet utilizaria o middleware de spreadsheet Watcher
- * para assistir por essas mudanças e importar automaticamente a 
+ * para assistir por essas mudanças e importar automaticamente a
  * spreadsheet caso houvesse uma mudança.
  * Como estou ficando sem tempo, não implementarei agora a função,
  * Mesmo que já tenha investido um pouquinho de esforço nisso.

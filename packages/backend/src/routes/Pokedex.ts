@@ -82,21 +82,21 @@ class PokedexRoute extends RouteWithAllAbstract {
     * banco de dados.
     */
     protected async importAllRoute(
-      req: Request,
-      res: Response,
-      next: NextFunction,
-  ) {
-    try {
-      const success = await ImportSpreadsheet();
+        req: Request,
+        res: Response,
+        next: NextFunction,
+    ) {
+      try {
+        const success = await ImportSpreadsheet();
 
-      res.status(201).json({success});
-    } catch (httpException) {
-      res.status(httpException.status || 500).json(
-          {error: httpException.message},
-      );
+        res.status(201).json({success});
+      } catch (httpException) {
+        res.status(httpException.status || 500).json(
+            {error: httpException.message},
+        );
+      }
+      next();
     }
-    next();
-  }
 
     protected async getRoute(
         req: Request,

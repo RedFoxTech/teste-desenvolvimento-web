@@ -1,6 +1,6 @@
 import crypto from 'crypto';
 import fs from 'fs';
-import { BinaryLike } from 'crypto';
+import {BinaryLike} from 'crypto';
 import {Request, Response, NextFunction} from 'express';
 import checkFileExistsAsync from '../services/CheckFileExistsAsync';
 

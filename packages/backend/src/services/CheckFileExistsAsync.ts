@@ -16,7 +16,7 @@ import fs from 'fs';
  */
 function checkFileExistsAsync(
     filePath: fs.PathLike,
-  ): Promise<boolean> {
+): Promise<boolean> {
   return new Promise((resolve, reject) => {
     fs.access(filePath, fs.constants.F_OK, (err) => {
       if (err) {
