@@ -13,8 +13,8 @@
     "start:static": "ts-node ./src/main/index.ts",
     "lint": "eslint --fix --ext '.ts' './src/**'",
     "lint:passive": "eslint --ext '.ts' './src/**'",
-    "build": "tsc -p ./src/ --target es5 --module commonjs --outDir ./dist",
-    "build:watch": "tsc -p ./src/ --target es5 --module commonjs --outDir ./dist --watch"
+    "build": "tsc -p ./ --target es5 --module commonjs --outDir ./dist",
+    "build:watch": "tsc -p ./ --target es5 --module commonjs --outDir ./dist --watch"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
