@@ -83,24 +83,23 @@ const WatchSpreadSheet = async (
 
   // check if filename exists in the disk
   if (fs.existsSync(fileName)) {
-
     if (!fs.existsSync(hashFileName)) {
       // create the hash file
       await writeHashAsync(fileName, hashFileName);
     }
-  try {
-    const hash = await readFileAsync(hashFileName);
-    const fileHash = await readFileAsync(fileName);
+    try {
+      const hash = await readFileAsync(hashFileName);
+      const fileHash = await readFileAsync(fileName);
 
-    if (hash !== fileHash) {
-      await writeHashAsync(fileName, hashFileName);
+      if (hash !== fileHash) {
+        await writeHashAsync(fileName, hashFileName);
+      }
+    } catch (e) {
+      next(e);
     }
-  } catch (e) {
-    next(e);
-  }
   } else {
     console.error('Arquivo de spreadsheet não existe.');
-  } 
+  }
 };
 
 export default WatchSpreadSheet;
