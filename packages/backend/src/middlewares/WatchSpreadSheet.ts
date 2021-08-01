@@ -19,6 +19,8 @@ import {Request, Response, NextFunction} from 'express';
  * @returns {string} - O hash do arquivo
  */
 
+/* globals console __dirname */
+
 const getHash = (file: string): string => (
   // file deepcode ignore InsecureHash: <não usamos o hash pra dados sensíveis>
   crypto.createHash('sha1').update(file).digest('hex')
@@ -75,9 +77,17 @@ const writeHashAsync = (
 const WatchSpreadSheet = async (
     req: Request, res: Response, next: NextFunction,
 ): Promise<void> => {
-  const fileName = '../../../Pokemon Go.xlsx';
-  const hashFileName = '../../../Pokemon Go.xlsx.hash';
+  const fileName = `${__dirname}/../../../../Pokemon Go.xlsx`;
+  const hashFileName = `${__dirname}/../../../../Pokemon Go.xlsx.hash`;
+  console.log(fileName);
 
+  // check if filename exists in the disk
+  if (fs.existsSync(fileName)) {
+
+    if (!fs.existsSync(hashFileName)) {
+      // create the hash file
+      await writeHashAsync(fileName, hashFileName);
+    }
   try {
     const hash = await readFileAsync(hashFileName);
     const fileHash = await readFileAsync(fileName);
@@ -88,6 +98,9 @@ const WatchSpreadSheet = async (
   } catch (e) {
     next(e);
   }
+  } else {
+    console.error('Arquivo de spreadsheet não existe.');
+  } 
 };
 
 export default WatchSpreadSheet;

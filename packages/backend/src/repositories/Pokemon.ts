@@ -52,6 +52,7 @@ class PokemonRepository extends CRUDWithAllAbstract {
     try {
       const id = String(unsafeId || '');
       // Retorna o modelo de Pokemon com todas as propriedades
+      console.log(id);
       const pokemon = await PokemonSchema.findOne({_id: id}).lean();
 
       if (!pokemon) {
