@@ -34,7 +34,9 @@ class PokemonRepository extends CRUDWithAllAbstract {
       const newPokemon = await PokemonSchema.create(data);
       return newPokemon;
     } catch (error) {
-      if (error instanceof PokemonAlreadyExists) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponsexists) {
         throw error;
       } // else
       console.error(error.message);
@@ -58,7 +60,9 @@ class PokemonRepository extends CRUDWithAllAbstract {
 
       return pokemon;
     } catch (error) {
-      if (error instanceof PokemonNotFound) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponse) {
         throw error;
       } // else
       console.error(error.message);
@@ -77,7 +81,9 @@ class PokemonRepository extends CRUDWithAllAbstract {
 
       return pokemon;
     } catch (error) {
-      if (error instanceof NoPokemonsRegistered) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponse) {
         throw error;
       } // else
       console.error(error.message);
@@ -110,7 +116,9 @@ class PokemonRepository extends CRUDWithAllAbstract {
 
       return updatedPokemon;
     } catch (error) {
-      if (error instanceof PokemonNotFound) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponse) {
         throw error;
       } // else
       console.error(error.message);
@@ -125,7 +133,10 @@ class PokemonRepository extends CRUDWithAllAbstract {
    * @see {@link module:packages/backend/validatedDTOs/PokemonPartialDTO}
    * @param {Pokemon} data
    */
-  async updatePartialProperties(unsafeId: string, data: Pokemon): Promise<PokemonModel> {
+  async updatePartialProperties(
+    unsafeId:
+    string, data: Pokemon
+  ): Promise<PokemonModel> {
     try {
       const id = String(unsafeId || '');
       const pokemon = await PokemonSchema.findOne({_id: id}, {lean: true});
@@ -152,7 +163,9 @@ class PokemonRepository extends CRUDWithAllAbstract {
 
       return updatedPokemon;
     } catch (error) {
-      if (error instanceof PokemonNotFound) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponse) {
         throw error;
       } // else
       console.error(error.message);
@@ -178,7 +191,9 @@ class PokemonRepository extends CRUDWithAllAbstract {
       return Boolean(deleted);
     } catch (error) {
       console.log(error.message);
-      if (error instanceof PokemonNotFound) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponse) {
         throw error;
       } // else
       console.error(error.message);
@@ -201,7 +216,9 @@ class PokemonRepository extends CRUDWithAllAbstract {
 
       return Boolean(deleted);
     } catch (error) {
-      if (error instanceof NoPokemonsRegistered) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponsetered) {
         throw error;
       } // else
       console.error(error.message);
