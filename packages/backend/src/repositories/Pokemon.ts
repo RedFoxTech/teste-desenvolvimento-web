@@ -134,8 +134,8 @@ class PokemonRepository extends CRUDWithAllAbstract {
    * @param {Pokemon} data
    */
   async updatePartialProperties(
-    unsafeId:
-    string, data: Pokemon
+      unsafeId:
+    string, data: Pokemon,
   ): Promise<PokemonModel> {
     try {
       const id = String(unsafeId || '');
