@@ -6,7 +6,7 @@ import Pokemon from '../declarations/interfaces/Pokemon';
  * @filedescription Traz a Model que reflete a Pokedex na planilha de pokémon.
  * @module packages/backend/models/Pokemon
  * @see {@link packages/backend/schemas/PokemonSchema}
- * @version 0.0.1
+ * @version 0.0.2
  * @since 29/07/2021
  */
 
@@ -33,6 +33,7 @@ class PokemonModel {
     spawns: boolean;
     regional: boolean;
     raidable: number;
+    hatchable: number;
     shiny: boolean;
     nest: boolean;
     isNewPokemon: boolean;
@@ -74,6 +75,7 @@ class PokemonModel {
       spawns,
       regional,
       raidable,
+      hatchable,
       shiny,
       nest,
       isNewPokemon,
@@ -104,6 +106,7 @@ class PokemonModel {
       this.spawns = spawns;
       this.regional = regional;
       this.raidable = raidable;
+      this.hatchable = hatchable;
       this.shiny = shiny;
       this.nest = nest;
       this.isNewPokemon = isNewPokemon;

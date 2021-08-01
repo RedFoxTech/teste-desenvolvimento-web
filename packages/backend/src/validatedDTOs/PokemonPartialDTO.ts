@@ -102,6 +102,10 @@ class PokemonPartialDTO implements Pokemon {
     raidable!: number;
 
     @IsOptional()
+    @IsNumber()
+    hatchable!: number;
+
+    @IsOptional()
     @IsBoolean()
     shiny!: boolean;
 

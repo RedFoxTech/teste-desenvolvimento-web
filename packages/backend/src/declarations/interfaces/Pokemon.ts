@@ -6,7 +6,7 @@ import PokemonWeather from '../enums/Weather';
  * @interface Pokemon
  * @see {@link packages/backend/models/Pokemon}
  * @since 30/07/2021
- * @version 0.0.1
+ * @version 0.0.2
  */
 
 interface Pokemon {
@@ -33,6 +33,7 @@ interface Pokemon {
     spawns: boolean,
     regional: boolean,
     raidable: number,
+    hatchable: number,
     shiny: boolean,
     nest: boolean,
     isNewPokemon: boolean,

@@ -5,6 +5,7 @@ import WatchSpreadSheet from '../middlewares/WatchSpreadSheet';
 import PokemonDTO from '../validatedDTOs/PokemonDTO';
 import PokemonRepository from '../repositories/Pokemon';
 import PokemonPartialDTO from '../validatedDTOs/PokemonPartialDTO';
+import ImportSpreadsheet from '../services/ImportSpreadsheet';
 
 
 /**
@@ -13,7 +14,7 @@ import PokemonPartialDTO from '../validatedDTOs/PokemonPartialDTO';
  * @see {@link packages/backend/repositories/Pokemon}
  * @requires express
  * @since 29/07/2021
- * @version 0.0.5
+ * @version 0.0.6
  */
 
 // A documentação tá na classe RouteAbstract
@@ -33,21 +34,22 @@ class PokedexRoute extends RouteWithAllAbstract {
 
     constructor() {
       super();
-      this._router.post('/',
+      this._router.post('/createOne',
           validationMiddleware(PokemonDTO),
           this.postRoute.bind(this),
       );
+      this.router.post('/importAll', this.importAllRoute.bind(this));
       this._router.get('/getOne/:id', this.getRoute.bind(this));
       this._router.get('/getAll', this.getAllRoute.bind(this));
-      this._router.put('/update(/:id)?',
+      this._router.put('/updateOne(/:id)?',
           validationMiddleware(PokemonDTO),
           this.putRoute.bind(this),
       );
-      this._router.patch('/update/:id',
+      this._router.patch('/updateOne/:id',
           validationMiddleware(PokemonPartialDTO, true),
           this.patchRoute.bind(this),
       );
-      this._router.delete('/delete/:id', this.deleteRoute.bind(this));
+      this._router.delete('/deleteOne/:id', this.deleteRoute.bind(this));
       this._router.delete('/deleteAll', this.deleteAllRoute.bind(this));
     }
 
@@ -67,6 +69,34 @@ class PokedexRoute extends RouteWithAllAbstract {
       }
       next();
     }
+
+
+    /**
+    * @async
+    * @protected
+    * @param {Request} req
+    * @param {Response} res
+    * @param {NextFunction} next
+    * @description Este método é responsável por importar todos os Pokemons
+    * da spreadsheet, essa ação não destrói os  Pokémons que já existem no
+    * banco de dados.
+    */
+    protected async importAllRoute(
+      req: Request,
+      res: Response,
+      next: NextFunction,
+  ) {
+    try {
+      const success = await ImportSpreadsheet();
+
+      res.status(201).json({success});
+    } catch (httpException) {
+      res.status(httpException.status || 500).json(
+          {error: httpException.message},
+      );
+    }
+    next();
+  }
 
     protected async getRoute(
         req: Request,
