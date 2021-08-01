@@ -1,6 +1,6 @@
 import App from './App';
 import {config} from 'dotenv';
-import {connect} from 'mongoose';
+import {connect, set} from 'mongoose';
 
 /**
  * @fileoverview ponto de entrada pra executar o backend do teste-pokémon-excel
@@ -37,6 +37,10 @@ import {connect} from 'mongoose';
     useUnifiedTopology: true,
   });
   // console.log(_mongoConnection);
+
+  // Make Mongoose use `findOneAndUpdate()`. Note that this option is `true`
+  // by default, you need to set it to false.
+  set('useFindAndModify', false);
 
   const app = new App().app;
 

@@ -8,7 +8,7 @@ import {Request, Response, NextFunction} from 'express';
  * @module packages/backend/middlewares/WatchSpreadSheet
  * @author wh1t3h47 <tom.mharres@gmail.com>
  * @since  29/07/2021
- * @version 0.0.1
+ * @version 0.0.2
  */
 
 /**
@@ -79,7 +79,6 @@ const WatchSpreadSheet = async (
 ): Promise<void> => {
   const fileName = `${__dirname}/../../../../Pokemon Go.xlsx`;
   const hashFileName = `${__dirname}/../../../../Pokemon Go.xlsx.hash`;
-  console.log(fileName);
 
   // check if filename exists in the disk
   if (fs.existsSync(fileName)) {

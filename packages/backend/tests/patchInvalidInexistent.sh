@@ -3,4 +3,4 @@
 parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 cd "$parent_path"
 
-. ./testPost.sh
+echo "6105e6505ffe5a237fcd7ae9" | . ./patch.sh

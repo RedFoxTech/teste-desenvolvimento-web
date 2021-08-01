@@ -13,7 +13,7 @@ import PokemonPartialDTO from '../validatedDTOs/PokemonPartialDTO';
  * @see {@link packages/backend/repositories/pokemon}
  * @requires express
  * @since 29/07/2021
- * @version 0.0.4
+ * @version 0.0.5
  */
 
 // A documentação tá na classe RouteAbstract
@@ -38,17 +38,17 @@ class PokedexRoute extends RouteWithAllAbstract {
           validationMiddleware(PokemonDTO),
           this.postRoute.bind(this),
       );
-      this._router.get(':id', this.getRoute.bind(this));
-      this._router.get('/all', this.getAllRoute.bind(this));
-      this._router.put(':id',
+      this._router.get('/getOne/:id', this.getRoute.bind(this));
+      this._router.get('/getAll', this.getAllRoute.bind(this));
+      this._router.put('/update(/:id)?',
           validationMiddleware(PokemonDTO),
           this.putRoute.bind(this),
       );
-      this._router.patch(':id',
+      this._router.patch('/update/:id',
           validationMiddleware(PokemonPartialDTO, true),
           this.patchRoute.bind(this),
       );
-      this._router.delete(':id', this.deleteRoute.bind(this));
+      this._router.delete('/delete/:id', this.deleteRoute.bind(this));
     }
 
     protected async postRoute(
@@ -108,8 +108,18 @@ class PokedexRoute extends RouteWithAllAbstract {
     ) {
       try {
         const {id} = req.params;
+
+        if (!id) {
+          // cria um novo pokemon
+          this.postRoute(req, res, next);
+          return;
+        }
+
         const data = req.body || {};
-        const pokemon = await this.pokemonRepository.updateAllProperties(id, data);
+        const pokemon = await this.pokemonRepository.updateAllProperties(
+          id,
+          data,
+        );
         res.status(200).json(pokemon);
       } catch (httpException) {
         res.status(httpException.status || 500).json(

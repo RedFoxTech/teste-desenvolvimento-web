@@ -24,7 +24,7 @@ import getRouter from '../routes';
  * @param {string} message - Mensagem de erro
  */
 const appTsErro = (message : string) => {
-  console.log(`App.ts erro: ${message}`);
+  console.error(`App.ts erro: ${message}`);
 };
 
 /**

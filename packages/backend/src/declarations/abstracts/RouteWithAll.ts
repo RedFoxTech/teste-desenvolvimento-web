@@ -132,19 +132,22 @@ abstract class RouteWithAllAbstract extends RouteAbstract {
        * @param {NextFunction} next
        * @return {void}
        */
-             protected abstract deleteRoute(
-                req: Request, res: Response, next: NextFunction): void
+        protected abstract deleteRoute(
+          req: Request,
+          res: Response,
+          next: NextFunction
+        ): void
 
-             /**
+      /**
        * @name getRoute
        * @memberOf AbstractRoute
        * @public
        * @return {Router} retorna o roteador para ser consumido pelo index
        * @see {@link packages/backend/routes/index}
        */
-             public get router(): Router {
-               return this._router;
-             }
+       public get router(): Router {
+         return this._router;
+       }
 }
 
 export default RouteWithAllAbstract;

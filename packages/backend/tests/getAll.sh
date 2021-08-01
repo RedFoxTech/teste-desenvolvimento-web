@@ -1,9 +1,6 @@
-#!/bin/bash
+#!/bin/env bash
 
-echo "Entre o ID do Pokémon para deletar do servidor:"
-read id
-
-curl "http://localhost:31337/Pokemon/${id}" -X DELETE \
+curl 'http://localhost:31337/Pokemon/getAll' \
     -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0' \
     -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' \
     -H 'Accept-Language: en-US,en;q=0.5' --compressed \
