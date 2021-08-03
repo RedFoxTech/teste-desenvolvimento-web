@@ -1,11 +1,12 @@
-import pathRewrite from '../Utilities/Helpers';
-
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {pathRewrite} = require('../Utilities/Helpers');
 /**
  * @see {@link https://webpack.js.org/configuration/dev-server/#devserverproxy}
  * @see {@link https://sdk.gooddata.com/gooddata-ui/docs/4.1.1/ht_configure_webpack_proxy.html}
  * @fileoverview Implementa um proxy para o servidor de desenvolvimento
  * para que o servidor de desenvolvimento possa acessar o servidor de produção
- * sem restrições.
+ * sem restrições. Essa opção não está sendo utiizada, mas será útil no deploy
  * @module packages/frontend/Webpack5/Configuration/DevServerProxy.js
  */
 
@@ -29,4 +30,4 @@ const devServerProxyConfig = {
     },
 };
  
-export default devServerProxyConfig;
+module.exports = devServerProxyConfig;

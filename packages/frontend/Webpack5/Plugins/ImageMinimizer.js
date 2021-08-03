@@ -1,4 +1,6 @@
-import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
 /**
  * @filedescription Plugin responsável por minificar as imagens para SEO
@@ -6,7 +8,7 @@ import ImageMinimizerPlugin from 'image-minimizer-webpack-plugin';
  * @module packages/frontend/Webpack5/Plugins/ImageMinimizer.js
  */
 
-const imageMinimizerPlugin = new ImageMinimizerPlugin({
+const ImageMinimizer = new ImageMinimizerPlugin({
     minimizerOptions: {
         // Lossless optimization with custom option
         // Feel free to experiment with options for better result for you
@@ -47,6 +49,6 @@ const imageMinimizerPlugin = new ImageMinimizerPlugin({
     },
 });
 
-export default {
-    imageMinimizerPlugin,
+module.exports = {
+    ImageMinimizer,
 };

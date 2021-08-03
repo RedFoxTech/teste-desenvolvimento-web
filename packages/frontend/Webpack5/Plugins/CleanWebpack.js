@@ -1,4 +1,6 @@
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 /**
  * @fileoverview Implementa o plugin de limpeza do webpack, responsável por
@@ -15,7 +17,5 @@ const config = {
     ],
 };
 
-const cleanWebpackPlugin = new CleanWebpackPlugin(config);
-export default {
-    cleanWebpackPlugin,
-};
+const CleanWebpack = new CleanWebpackPlugin(config);
+module.exports = {CleanWebpack};

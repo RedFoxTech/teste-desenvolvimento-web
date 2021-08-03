@@ -1,21 +1,29 @@
-import {join} from 'path';
-import rootDir from './Utilities/Environment';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module, __dirname */
+const {join} = require('path');
+const {rootDir} = require('./Utilities/Environment');
 
 /**
  * @fileoverview Ponto de entrada para os arquivos de configuração do Webpack.
  * @module packages/frontend/Webpack5/index
  */
 
-export default {
-    index: {
-        import: join(rootDir, '/src/index.tsx'),
-        dependOn: 'shared',
-    },
-    cleanConsoleOnHMR: {
-        import: join(__dirname, './Utilities/ClearConsoleOnHotModuleReplacement.js'),
-        dependOn: 'shared',
-    },
-    shared: {
-        import: 'react',
-    },
+const index = {
+    import: join(rootDir, '/src/index.tsx'),
+    dependOn: 'shared',
+};
+
+const cleanConsoleOnHMR = {
+    import: join(__dirname, './Utilities/ClearConsoleOnHotModuleReplacement.js'),
+    dependOn: 'shared',
+};
+
+const shared = {
+    import: 'react',
+};
+
+module.exports = {
+    index,
+    cleanConsoleOnHMR,
+    shared,
 };

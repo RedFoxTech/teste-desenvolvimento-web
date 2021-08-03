@@ -1,7 +1,8 @@
-
-import { join } from 'path';
-import CopyPlugin from 'copy-webpack-plugin';
-import { rootDir } from '../Utilities/Environment';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {join} = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
+const { rootDir } = require('../Utilities/Environment');
 
 /**
  * @fileoverview Plugin responsável por copiar os assets do frontend para a
@@ -14,8 +15,8 @@ const config = {
     patterns: [{from: join(rootDir, './src/assets'), to: 'assets'}],
 };
 
-const copyPlugin = new CopyPlugin(config);
+const Copy = new CopyPlugin(config);
 
-export default {
-    copyPlugin,
+module.exports = {
+    Copy,
 };

@@ -1,6 +1,8 @@
-
-import { join } from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {join} = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { rootDir } = require('../Utilities/Environment');
 
 /**
  * @fileoverview Plugin responsável por gerar o index.html, pode ser
@@ -9,16 +11,12 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
  * @module packages/frontend/Webpack5/Plugins/Html
  */
 
-import { rootDir } from '../utils/env';
-
 const config = {
     filename: 'index.html',
     inject: true,
     template: join(rootDir, './src/index.html'),
 };
 
-const htmlWebpackPlugin = new HtmlWebpackPlugin(config);
+const Html = new HtmlWebpackPlugin(config);
 
-export default {
-    htmlWebpackPlugin,
-};
+module.exports = { Html };

@@ -1,4 +1,6 @@
-import { ProvidePlugin } from 'webpack';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {ProvidePlugin} = require('webpack');
 
 /**
  * Plugin responsável por prover variáveis globais para consumir no front
@@ -11,8 +13,8 @@ import { ProvidePlugin } from 'webpack';
  */
 
 const config = {};
-const providePlugin = new ProvidePlugin(config);
+const Provide = new ProvidePlugin(config);
  
-export default {
-    providePlugin,
+module.exports = {
+    Provide,
 };

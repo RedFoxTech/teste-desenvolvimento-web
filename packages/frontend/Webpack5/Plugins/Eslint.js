@@ -1,6 +1,8 @@
-import { join } from 'path';
-import ESLintPlugin from 'eslint-webpack-plugin';
-import { rootDir } from '../Utilities/Environment';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {join} = require('path');
+const EslintPlugin = require('eslint-webpack-plugin');
+const { rootDir } = require('../Utilities/Environment');
 
 /**
  * @fileoverview Plugin responsável por mostrar erros de linting no console
@@ -12,8 +14,9 @@ const config = {
     extensions: ['js', 'jsx', 'ts', 'tsx'],
 };
 
-const esLintPlugin = new ESLintPlugin(config);
+const Eslint = new EslintPlugin(config);
 
-export default {
-    esLintPlugin,
+module.exports = {
+    Eslint,
 };
+

@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+
 /**
  * @see {@link https://github.com/shakacode/sass-resources-loader}
  * @example
@@ -9,8 +12,8 @@
  * @module packages/frontend/Webpack5/Configuration/Sass
  */
 
-const sassResourceItems = [
+const sassGlobalSheets = [
     // Adicione aqui os arquivos que você deseja carregar globalmente.
 ];
 
-export default sassResourceItems;
+module.exports = sassGlobalSheets;

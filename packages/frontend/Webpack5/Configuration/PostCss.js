@@ -1,5 +1,8 @@
-import isProd from '../Utilities/Env';
-import arrayFilterEmpty from '../Utilities/Helpers';
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {isProd} = require('../Utilities/Environment');
+const {arrayFilterEmpty} = require('../Utilities/Helpers');
 
 /**
  * @see {@link https://github.com/postcss/postcss}
@@ -8,7 +11,7 @@ import arrayFilterEmpty from '../Utilities/Helpers';
  * @module packages/frontend/Webpack5/Configuration/PostCss.js
  */
 
-export default () => {
+const postCss = () => {
     const plugins = arrayFilterEmpty([
         'autoprefixer',
         isProd ? 'cssnano' : null,
@@ -17,3 +20,5 @@ export default () => {
         plugins,
     };
 };
+
+module.exports = postCss;

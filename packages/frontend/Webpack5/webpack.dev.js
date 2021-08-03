@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
 
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
-import { devServerConfig } from './config';
-import { watchIgnorePlugin } from './plugins';
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const { devServerConfig } = require('./Configuration');
+const {WatchIgnore} = require('./Plugins');
 
 /**
  * @fileoverview Configuração do webpack apenas para o desenvolvimento.
@@ -13,9 +15,13 @@ const devtool = 'cheap-module-source-map';
 const plugins = [
     /** Hot reloading of devServer */
     new ReactRefreshWebpackPlugin(),
-    watchIgnorePlugin,
+    WatchIgnore,
 ];
 
 const devServer = devServerConfig;
 
-export default {devtool, plugins, devServ};
+module.exports = {
+    devtool,
+    plugins,
+    devServer,
+};

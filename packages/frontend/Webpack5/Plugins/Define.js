@@ -1,4 +1,12 @@
-import { DefinePlugin } from 'webpack';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {DefinePlugin} = require('webpack');
+const {
+    isDev,
+    isDevServer,
+    isProd,
+    mode
+} = require('../Utilities/Environment');
 
 /**
  * @fileoverview Plugin que define se o ambiente é produção ou desenvolvimento
@@ -10,8 +18,6 @@ import { DefinePlugin } from 'webpack';
  * };
  */
 
-import { isDev, isDevServer, isProd, mode } from '../utils/env';
-
 const config = {
     'process.env': {
         NODE_ENV: JSON.stringify(mode),
@@ -21,8 +27,8 @@ const config = {
     IS_DEV_SERVER: isDevServer,
 };
 
-const definePlugin = new DefinePlugin(config);
+const Define = new DefinePlugin(config);
 
-export default {
-    definePlugin,
-};
+module.exports = {
+    Define,
+}

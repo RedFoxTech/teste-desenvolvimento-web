@@ -1,4 +1,6 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /**
  * @fileoverview Plugin responsável por extrair os arquivos CSS e criar
@@ -13,8 +15,6 @@ const config = {
     chunkFilename: '[id].[contenthash].css',
 };
 
-const miniCssExtractPlugin = new MiniCssExtractPlugin(config);
+const MiniCssExtract = new MiniCssExtractPlugin(config);
 
-export default {
-    miniCssExtractPlugin,
-};
+module.exports = {MiniCssExtract};

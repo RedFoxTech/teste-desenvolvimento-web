@@ -1,5 +1,7 @@
-import join from 'path';
-import rootDir from '../Utilities/Environment';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {join} = require('path');
+const {rootDir} = require('../Utilities/Environment');
 
 /**
  * @fileoverview Implementa namespaces para importarmos nossos pacotes
@@ -15,4 +17,4 @@ const aliasItems = {
     '@components': join(rootDir, '/src/Components'),
 };
 
-export default aliasItems;
+module.exports = {aliasItems};

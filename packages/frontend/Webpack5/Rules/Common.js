@@ -1,4 +1,6 @@
-import { babelLoader } from './LoaderRules';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {babelLoader} = require('./LoaderRules');
 
 /**
  * @see {@link https://webpack.js.org/guides/typescript/#loader}
@@ -48,7 +50,7 @@ const fontsRule = {
     type: 'asset/inline',
 };
 
-export default {
+module.exports = {
     typescriptRule,
     javascriptRule,
     htmlRule,

@@ -1,4 +1,6 @@
-import webpack from 'webpack';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {WatchIgnorePlugin} = require('webpack');
 
 /**
  * @fileoverview Implementa o plugin de ignorar arquivos e pastas de acordo
@@ -10,15 +12,14 @@ import webpack from 'webpack';
  * the box. Simply add this to your webpack plugins`
  * @module packages/frontend/Webpack5/Plugins/WatchIgnore
  */
-import { WatchIgnorePlugin } from 'webpack';
 
 const typescriptStylesheetDeclarations = {
-    paths: [/css\.d\.ts$/, /less\.d\.ts$/, /sass\.d\.ts$/],
+    paths: [/css\.d\.ts$/, /less\.d\.ts$/, /s[ca]ss\.d\.ts$/],
 };
-const watchIgnorePlugin = new WatchIgnorePlugin(
+const WatchIgnore = new WatchIgnorePlugin(
     typescriptStylesheetDeclarations,
 );
 
-export default {
-    watchIgnorePlugin,
-};
+module.exports = {
+    WatchIgnore,
+}

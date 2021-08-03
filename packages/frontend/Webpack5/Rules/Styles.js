@@ -1,5 +1,7 @@
-import { arrayFilterEmpty } from '../Utilities/Helpers';
-import {
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const { arrayFilterEmpty } = require('../Utilities/Helpers');
+const {
     cssLoader,
     cssLoaderItems,
     cssModulesSupportLoaderItems,
@@ -7,14 +9,21 @@ import {
     miniCssExtractLoader,
     postCssLoader,
     resolveUrlLoader,
-    sassLoaderItems, typingsCssModulesLoader
-} from './LoaderRules';
+    sassLoaderItems,
+    typingsCssModulesLoader
+} = require('./LoaderRules');
 
 /**
  * @filedescription Regras utilizadas para carregar CSS em vários formatos
  * e sintaxes diferentes.
  * @module packages/frontend/Webpack5/Rules/Styles
  */
+
+
+// console.log(
+//     Array.isArray(...cssLoaderItems),
+//     Array.isArray(postCssLoader)
+// );
 
 /** css */
 const cssRule = {
@@ -72,7 +81,7 @@ const sassRule = {
 
 const sassRules = [sassModulesRule, sassRule];
 
-export default {
+module.exports = {
     cssRule,
     lessRules,
     sassModulesRule,

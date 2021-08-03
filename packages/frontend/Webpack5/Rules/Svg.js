@@ -1,4 +1,6 @@
-import { babelLoader } from './LoaderRules';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const { babelLoader } = require('./LoaderRules');
 
 /**
  * @fileoverview Provem regras para lidar com arquivos SVG.
@@ -36,7 +38,7 @@ const svgRule = {
 
 const svgRules = [svgReactComponentRule, svgRule];
 
-export default {
+module.exports = {
     svgReactComponentRule,
     svgRule,
     svgRules,

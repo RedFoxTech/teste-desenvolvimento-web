@@ -1,8 +1,11 @@
-
-import { join } from 'path';
-import { loader as _loader } from 'mini-css-extract-plugin';
-import sassResourceItems, { length } from '../Config';
-import { isProd, rootDir, webpackDir } from '../Utilities/Environment';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {join} = require('path');
+const _loader = require('mini-css-extract-plugin');
+const sassResourceItems = require('../Configuration');
+const { isProd, rootDir, webpackDir } = require('../Utilities/Environment');
+const sass = require('sass');
+const { length } = sassResourceItems;
 
 /**
  * @fileoverview Provem regras para os loaders de CSS
@@ -22,7 +25,7 @@ const sassLoaderItems = [
         options: {
             sourceMap: true,
             // Prefira `dart-sassRules`
-            implementation: require('sass'),
+            implementation: sass,
         },
     },
     length
@@ -53,7 +56,7 @@ const postCssLoader = {
  */
 const miniCssExtractLoader = isProd
     ? {
-          loader: _loader,
+          loader: _loader.loader,
           options: {
               esModule: false,
           },
@@ -126,7 +129,7 @@ const cssModulesSupportLoaderItems = [
 
 const cssLoaderItems = [miniCssExtractLoader, cssLoader];
 
-export default {
+module.exports = {
     cssLoader,
     sassLoaderItems,
     postCssLoader,

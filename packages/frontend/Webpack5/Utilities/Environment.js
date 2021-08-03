@@ -1,4 +1,6 @@
-import join from 'path';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module, process, __dirname */
+const {join} = require('path');
 
 /**
  * @fileoverview Carrega e disponibiliza as variáveis de ambiente para o
@@ -13,7 +15,7 @@ const isDev = !isProd;
 const rootDir = join(__dirname, '../../');
 const webpackDir = join(__dirname, '../');
 
-export default {
+module.exports = {
     mode,
     isDevServer,
     isProd,

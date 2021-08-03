@@ -1,14 +1,23 @@
-import alias from './Alias'
-import devServer from './devServer';
-import sassResources from './sassResources';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const alias = require('./Alias');
+const devServer = require('./DevServer');
+const sass = require('./Sass');
 
 /**
  * @fileoverview Indexa e centraliza as opções do webpack em um único arquivo.
  * @module packages/frontend/Webpack5/Configuration/index
  */
 
-export default {
+
+// console.log({
+//     ...alias,
+//     ...devServer,
+//     sass,
+// })
+
+module.exports = {
     ...alias,
     ...devServer,
-    ...sassResources,
+    ...sass,
 };

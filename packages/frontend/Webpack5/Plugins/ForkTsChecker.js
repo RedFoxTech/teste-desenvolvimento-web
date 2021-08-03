@@ -1,6 +1,8 @@
-import { join } from 'path';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import { isDev, rootDir } from '../Utilities/Environment';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {join} = require('path');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const { isDev, rootDir } = require('../Utilities/Environment');
 
 /**
  * @fileoverview Plugin responável por rodar o compilador do TypeScript
@@ -17,8 +19,8 @@ const config = {
     eslint: {enabled: true, files: '../src/**/*.{ts,tsx,js,jsx}'},
 };
 
-const forkTsCheckerWebpackPlugin = new ForkTsCheckerWebpackPlugin(config);
+const ForkTsCheckerWebpack = new ForkTsCheckerWebpackPlugin(config);
 
-export default {
-    forkTsCheckerWebpackPlugin,
+module.exports = {
+    ForkTsCheckerWebpack,
 };

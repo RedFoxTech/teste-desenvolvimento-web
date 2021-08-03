@@ -1,5 +1,7 @@
-import { constants } from 'zlib';
-import CompressionPlugin from 'compression-webpack-plugin';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const {constants} = require('zlib');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 /**
  * @fileoverview Plugin do Webpack responsável pela compressão de arquivos
@@ -8,7 +10,7 @@ import CompressionPlugin from 'compression-webpack-plugin';
  * @see {@link https://webpack.js.org/plugins/compression-webpack-plugin/}
  */
 
-const compressionPlugin = new CompressionPlugin({
+const Compression = new CompressionPlugin({
     filename: '[path][base].br',
     algorithm: 'brotliCompress',
     test: /\.(js|css|html|svg|woff)$/,
@@ -22,6 +24,6 @@ const compressionPlugin = new CompressionPlugin({
     deleteOriginalAssets: true,
 });
 
-export default {
-    compressionPlugin,
+module.exports = {
+    Compression,
 };

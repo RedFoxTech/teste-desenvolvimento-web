@@ -1,5 +1,7 @@
-import isWindows from 'is-windows';
-import devServerProxyConfig from './DevServierProxy';
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* global require, module */
+const isWindows = require('is-windows');
+const {devServerProxyConfig} = require('./DevServerProxy');
 
 /**
  * @see {@link https://webpack.js.org/configuration/dev-server/}
@@ -24,7 +26,7 @@ const devServerConfig = {
     host: devServerHost,
 };
  
-export default {
+module.exports = {
     devServerUrl,
     devServerConfig,
 };
