@@ -35,7 +35,7 @@ jobs:
         run: yarn install
         
       - name: Restore yarn.lock backup
-        run: mv -f ../../yarn.lock.bak ../../yarn.lock
+        run: mv -f yarn.lock.bak yarn.lock
 
       - name: Run linters
         uses: wearerequired/lint-action@v1
