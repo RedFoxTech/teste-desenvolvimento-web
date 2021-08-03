@@ -15,6 +15,7 @@ const aliasItems = {
     '@images': join(rootDir, '/src/Images'),
     '@styles': join(rootDir, '/src/Styles'),
     '@components': join(rootDir, '/src/Components'),
+    '@declarations': join(rootDir, '/src/Declarations'),
 };
 
 module.exports = {aliasItems};

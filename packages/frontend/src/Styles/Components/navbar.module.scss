@@ -1,0 +1,9 @@
+// Navbar fake que carrega direto no HTML
+.navbar-fake {
+    // Esconde a navbar quando a stylesheet é carregada
+    @include hide();
+
+    * {
+        @include hide();
+    }
+}

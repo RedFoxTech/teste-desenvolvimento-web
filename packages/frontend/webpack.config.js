@@ -20,16 +20,16 @@ function getWebpackConfig() {
             webpackCommonConfig,
             webpackProductionConfig
         );
-        console.log(prodConfig);
-        console.log(prodConfig.module.rules);
+        // console.log(prodConfig);
+        // console.log(prodConfig.module.rules);
         return prodConfig;
     } // else
     const devConfig = merge(
         webpackCommonConfig,
         webpackDevelopmentConfig
     );
-    console.log(devConfig);
-    console.log(devConfig.module.rules);
+    // console.log(devConfig);
+    // console.log(devConfig.module.rules);
     return devConfig;
 }
 

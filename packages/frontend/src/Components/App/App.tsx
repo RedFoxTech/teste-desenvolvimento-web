@@ -4,7 +4,7 @@ import React from 'react';
 /**
  * @fileoverview Implementa o componente principal que vai trazer todos os
  * outros dentro da página home.
- * @module packages/frontend/src/Components/App
+ * @module packages/frontend/Components/App
  */
 
 export const App = (): React.ReactElement => (

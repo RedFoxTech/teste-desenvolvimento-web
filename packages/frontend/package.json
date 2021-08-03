@@ -109,6 +109,7 @@
     "resolve-url-loader": "^4.0.0",
     "sass": "^1.37.0",
     "sass-loader": "^12.1.0",
+    "sass-resources-loader": "^2.2.3",
     "style-loader": "^3.2.1",
     "svg-url-loader": "^7.1.1",
     "terser-webpack-plugin": "^5.1.4",

@@ -5,7 +5,7 @@ const _loader = require('mini-css-extract-plugin');
 const sassResourceItems = require('../Configuration');
 const { isProd, rootDir, webpackDir } = require('../Utilities/Environment');
 const sass = require('sass');
-const { length } = sassResourceItems;
+const sassResources = require('../Configuration/Sass');
 
 /**
  * @fileoverview Provem regras para os loaders de CSS
@@ -35,11 +35,11 @@ const sassLoaderItems = [
             implementation: sass,
         },
     },
-    length
+    sassResources.length
         ? {
               loader: 'sass-resources-loader',
               options: {
-                  resources: sassResourceItems,
+                  resources: sassResources,
               },
           }
         : null,
