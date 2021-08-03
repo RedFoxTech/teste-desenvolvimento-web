@@ -11,5 +11,8 @@
     "packages": [
       "packages/*"
     ]
+  },
+  "scripts": {
+    "start:all": "bash ./packages/shared/scripts/startFullstack.sh"
   }
 }
