@@ -19,15 +19,133 @@
              assim provendo uma sensação de carregamento instantâneo para
              o usuário.
           */
+          .inherit-display {
+              display: inherit !important;
+          }
+
+          /* Os estilos fake vão ser escondidos depois que a página
+             carregar, pois aparecem antes de todos os outros estilos.
+          */
+
+          .fake-pic {
+              display: inline-block;
+              vertical-align: middle;
+              background: black;
+              opacity: 0.10;
+              width: 40px;
+              height: 40px;
+              margin: 0 12px 0 12px;
+          }
+
+          .fake-search {
+              vertical-align: middle;
+              max-width: 385px;
+              width: 100%;
+              height: 38px;
+          }
+
+          .fake-button {
+              padding: 0;
+              vertical-align: middle;
+              width: 75px;
+              height: 38px;
+          }
+
+          .fake-navbar {
+              background-color: #e3f2fd;
+          }
+
+          .fake-container {
+              margin-top: 8px;
+              width: 100vh;
+              min-height: 100vh;
+              padding: 0 !important;
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(275px, 5fr));
+              grid-template-rows: repeat(auto-fit, minmax(275px, 5fr));
+              justify-items: center;
+              align-items: center;
+              place-content: center;
+          }
+
+          .fake-card {
+              margin-top: 13px !important;
+              margin-bottom: 13px !important;
+              border-radius: 10px !important;
+              background-color: #e3f2fd;
+              margin: 0;
+              padding: 0;
+          }
+
+          .fake-card-image {
+              width: 100%;
+              height: 300px;
+              background-color: black;
+              opacity: 0.1;
+          }
         </style>
     </head>
     <body>
-        <nav class="navbar navbar-fake bg-light">
+        <nav class="navbar fake-navbar">
             <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <span class="navbar-brand">
+                    <div class="fake-pic"></div>
+                    <input class="fake-search form-control mr-sm-2 inherit-display" type="search" placeholder="Search" aria-label="Search">
+                    <button class="fake-button btn btn-outline-success my-2 my-sm-0" type="submit" disabled="">Search</button>
+                </span>
             </form>
         </nav>
+        <div class="container fake-container bg-light">
+            <!-- Cards -->
+            <div class="card fake-card" style="width: 18rem;">
+                <div class="card-img-top fake-card-image"> </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+            <div class="card fake-card" style="width: 18rem;">
+                <div class="card-img-top fake-card-image"> </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+            <div class="card fake-card" style="width: 18rem;">
+                <div class="card-img-top fake-card-image"> </div>
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>            
         <div id="root">
             <noscript>
                 </h1>CRUD completa Pokédex feita no desafio Redfox</h1>
