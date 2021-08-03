@@ -14,6 +14,13 @@ const { length } = sassResourceItems;
 
 const cssLoader = {
     loader: 'css-loader',
+    options: {
+        importLoaders: 1,
+        // sourceMap: true,
+        // modules: true,
+        // localIdentName: '[name]__[local]___[hash:base64:5]',
+        // camelCase: true
+    }
 };
 
 /**
@@ -42,7 +49,7 @@ const postCssLoader = {
     loader: 'postcss-loader',
     options: {
         postcssOptions: {
-            config: join(webpackDir, './config/postcss.js'),
+            config: join(webpackDir, './Configuration/PostCss.js'),
         },
         sourceMap: true,
     },

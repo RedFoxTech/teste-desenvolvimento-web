@@ -12,7 +12,7 @@ const { rootDir } = require('../Utilities/Environment');
  */
 
 const config = {
-    patterns: [{from: join(rootDir, './src/assets'), to: 'assets'}],
+    patterns: [{from: join(rootDir, './src/Assets'), to: 'Assets'}],
 };
 
 const Copy = new CopyPlugin(config);

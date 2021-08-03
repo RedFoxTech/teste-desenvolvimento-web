@@ -28,8 +28,8 @@ const {
 /** css */
 const cssRule = {
     test: /\.css$/,
-    use: [typingsCssModulesLoader, miniCssExtractLoader, postCssLoader, resolveUrlLoader, cssLoader],
-    // use: [miniCssExtractLoader, cssLoader],
+    // use: [typingsCssModulesLoader, miniCssExtractLoader, postCssLoader, resolveUrlLoader, cssLoader],
+    use: [miniCssExtractLoader, cssLoader],
 };
 
 /** less */
