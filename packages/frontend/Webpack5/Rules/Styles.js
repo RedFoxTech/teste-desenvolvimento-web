@@ -29,7 +29,7 @@ const {
 const cssRule = {
     test: /\.css$/,
     // use: [typingsCssModulesLoader, miniCssExtractLoader, postCssLoader, resolveUrlLoader, cssLoader],
-    use: [miniCssExtractLoader, cssLoader],
+    use: [typingsCssModulesLoader, miniCssExtractLoader, cssLoader, resolveUrlLoader, postCssLoader],
 };
 
 /** less */
