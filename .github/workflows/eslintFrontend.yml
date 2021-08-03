@@ -23,9 +23,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-          
-      - name: Backup Yarn.lock to avoid changing it
-        run: cp yarn.lock yarn.lock.bak
         
       - name: Change directory to frontend package
         run: cd packages/frontend
@@ -34,8 +31,8 @@ jobs:
       - name: Install Node.js dependencies
         run: yarn install
         
-      - name: Restore yarn.lock backup
-        run: mv -f yarn.lock.bak yarn.lock
+      - name: Reset yarn.lock to its original state
+        run:  git checkout -- yarn.lock
 
       - name: Run linters
         uses: wearerequired/lint-action@v1
