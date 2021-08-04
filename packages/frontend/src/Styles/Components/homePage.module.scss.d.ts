@@ -2,8 +2,6 @@
 // Favor manter do jeito que está!
 declare namespace HomePageModuleScssNamespace {
   export interface IHomePageModuleScss {
-    'pokemonCard': string;
-    'pokemonCardImage': string;
     'pokemonContainer': string;
   }
 }

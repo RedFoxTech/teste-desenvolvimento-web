@@ -3,6 +3,7 @@ import RenderPropHistoryHook from '@src/Hooks/RenderPropHistoryHook';
 import React from 'react';
 import Router from '@src/Router';
 import { BrowserRouter } from "react-router-dom";
+import 'font-awesome/css/font-awesome.min.css';
 
 // Esconder os estilos de pré-renderização (sem pressa pra carregar o CSS)
 import('@styles/index.module.scss');

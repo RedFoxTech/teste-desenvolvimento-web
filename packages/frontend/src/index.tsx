@@ -2,6 +2,7 @@ import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@styles/Components/navbar.module.scss';
 
+
 import React from 'react';
 import ReactDom from 'react-dom';
 
