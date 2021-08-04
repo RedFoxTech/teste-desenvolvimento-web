@@ -1,7 +1,7 @@
 import {IsString, IsNumber, IsBoolean, IsOptional} from 'class-validator';
-import PokemonType from '../declarations/enums/PokemonType';
-import PokemonWeather from '../declarations/enums/Weather';
-import Pokemon from '../declarations/interfaces/Pokemon';
+import PokemonType from '../../../shared/declarations/enums/PokemonType';
+import PokemonWeather from '../../../shared/declarations/enums/Weather';
+import Pokemon from '../../../shared/declarations/interfaces/Pokemon';
 
 /* eslint-disable-next */
 /**

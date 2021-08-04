@@ -1,5 +1,5 @@
 import CRUDWithAllAbstract from '../declarations/abstracts/CRUDWithAll';
-import Pokemon from '../declarations/interfaces/Pokemon';
+import Pokemon from '../../../shared/declarations/interfaces/Pokemon';
 import InternalServerError from '../exceptions/InternalServerError';
 import NoPokemonsRegistered from '../exceptions/NoPokemonsRegistered';
 import PokemonAlreadyExists from '../exceptions/PokemonAlreadyExists';

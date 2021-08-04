@@ -1,9 +1,9 @@
 // @ts-ignore A lib excel não tem suporte para o typescript
 import parseXlsx from 'excel';
 import PokemonRepository from '../repositories/Pokemon';
-import Pokemon from '../declarations/interfaces/Pokemon';
-import PokemonType from '../declarations/enums/PokemonType';
-import PokemonWeather from '../declarations/enums/Weather';
+import Pokemon from '../../../shared//declarations/interfaces/Pokemon';
+import PokemonType from '../../../shared/declarations/enums/PokemonType';
+import PokemonWeather from '../../../shared/declarations/enums/Weather';
 import checkFileExistsAsync from './CheckFileExistsAsync';
 import fileNotFound from '../exceptions/FileNotFound';
 
