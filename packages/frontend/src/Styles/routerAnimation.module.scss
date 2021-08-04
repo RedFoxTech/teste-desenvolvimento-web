@@ -1,0 +1,81 @@
+$-animation-time: 350ms;
+$-opacity-start: 0;
+$-opacity-end: 1;
+
+// .page {
+//   &:first-of-type {
+//     position: relative !important;
+//     // display: block !important;
+//   }
+// 
+//   &:nth-child(2) {
+//     position: absolute !important;
+//     display: contents !important;
+//   }
+// }
+
+#main-wrapper {
+  height: auto;
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100%;
+  height: auto !important;
+}
+
+.page-enter {
+  // position: relative !important;
+  // display: contents !important;
+  position: relative !important;
+  display: block !important;
+  // top: 0;
+  width: 100%;
+  height: 100%;
+
+  &>.content-body>* {
+    opacity: $-opacity-start;
+  }
+
+  &-done {
+    position: relative !important;
+    display: block !important;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.page-enter-active>.content-body>* {
+  opacity: $-opacity-end;
+  transition: opacity $-animation-time linear;
+  // display: none;
+}
+
+.page-exit {
+  // position: relative !important;
+  // display: block;
+  position: absolute !important;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+
+  // Small gambiarra para que o elemento não seja exibido na animação porque buga e caga muito
+  .price-widget.bg-btc {
+    opacity: 0.08;
+  }
+  
+  .refresh-button-right {
+    opacity: 0.08;
+  }
+
+  &>.content-body>* {
+    opacity: $-opacity-end;
+  }
+}
+
+.page-exit-active>.content-body>* {
+  opacity: $-opacity-start;
+  transition: opacity $-animation-time linear;
+}

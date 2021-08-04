@@ -28,7 +28,7 @@ function getWebpackConfig() {
         webpackCommonConfig,
         webpackDevelopmentConfig
     );
-    // console.log(devConfig);
+    console.log(devConfig);
     // console.log(devConfig.module.rules);
     return devConfig;
 }

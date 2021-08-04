@@ -4,7 +4,7 @@ import {
     ConfirmActionModalProps,
     ConfirmActionModalState,
     ConfirmationCallback,
-} from '@declarations/Types/confirmActionModal';
+} from '@declarations/Types/ConfirmActionModal';
 
 /**
  * @fileoverview Arquivo que implementa um modal para confirmar uma ação.
