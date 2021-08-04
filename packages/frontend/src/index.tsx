@@ -13,4 +13,9 @@ import {App} from '@components/App/App';
  * @module packages/frontend/src/index
  */
 
-ReactDom.render(<App />, document.getElementById('root'));
+ReactDom.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root'),
+);

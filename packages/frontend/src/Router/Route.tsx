@@ -1,9 +1,9 @@
 import RouteType from '@src/Declarations/Interfaces/Route';
-import React from 'react';
+import React, { ComponentState } from 'react';
 import { Route as ReactDomRoute, Redirect } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 
-import './routeTransition.scss.css';
+import '@styles/routerAnimation.module.scss';
 
 const Route = ({
     component: Component,
@@ -12,7 +12,8 @@ const Route = ({
     // strict,
     // children,
     ...rest
-}: RouteType): React.ReactNode => {
+}: RouteType): React.ComponentElement<null,
+ComponentState> => {
 
   /* <Route {..rest}>
               {({ match }) => (

@@ -1,14 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react/destructuring-assignment */
-/* eslint-disable no-restricted-globals */
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
-import { BrowserRouter, Switch } from 'react-router-dom';
-import {
-  TransitionGroup,
-  CSSTransition,
-} from 'react-transition-group';
-import Route from './route';
+import { Router, Switch } from 'react-router-dom';
+import Route from './Route';
 import RouteType from '@declarations/Interfaces/Route'
 import routes from './Routes';
 import RenderPropLocationHook from '../Hooks/RenderPropLocationHook';
@@ -16,12 +10,13 @@ import { RouterProps, RouterState } from '@declarations/Types/RouterComponent';
 // A router that uses has fade in out animation
 
 import '@styles/routerAnimation.module.scss';
+import RenderPropHistoryHook from '@src/Hooks/RenderPropHistoryHook';
 
-class Router extends React.PureComponent<
+class AnimatedRouter extends React.PureComponent<
   RouterProps,
   RouterState
 > {
-  constructor(props: Record<string, void|undefined|null>) {
+  constructor(props: RouterProps) {
     super(props);
     this.state = {
       routes: [],
@@ -36,12 +31,15 @@ class Router extends React.PureComponent<
     const _routes = this.state.routes;
     return (
 
-      <BrowserRouter basename="/">
-        { RenderPropLocationHook && 
-          <RenderPropLocationHook RenderWithLocation={(
-          { __location }:
-          {__location: Location}) => (
-          <Switch location={__location as never}>
+      <RenderPropHistoryHook RenderWithHistoryHook={(
+        { _history }:
+        { _history: History }) => (
+        <Router history={_history as never}>
+      
+          <RenderPropLocationHook RenderWithLocationHook={(
+          { _location }:
+          {_location: Location}) => (
+          <Switch location={_location as never}>
             <div id="main-wrapper">
 
               {/*
@@ -68,11 +66,12 @@ class Router extends React.PureComponent<
             </div>
           </Switch>
         )}
-        /> }
-      </BrowserRouter>
+        />
+      </Router>
+        )} />
 
     );
   }
 }
 
-export default Router;
+export default AnimatedRouter;
