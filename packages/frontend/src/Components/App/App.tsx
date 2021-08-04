@@ -13,7 +13,9 @@ export const App = (): React.ReactElement => (
     <>
         <RenderPropHistoryHook RenderWithHistoryHook={
             ({_history }:
-                {_history: History}) => <Router history={_history as never}/>
+                {_history: History}) => _history?
+                  <Router history={_history as never}/>:
+                  null
         }/>
         
     </>
