@@ -7,6 +7,7 @@ import RouteType from '@declarations/Interfaces/Route'
 import routes from './Routes';
 import RenderPropLocationHook from '../Hooks/RenderPropLocationHook';
 import { RouterProps, RouterState } from '@declarations/Types/RouterComponent';
+
 // A router that uses has fade in out animation
 
 import '@styles/routerAnimation.module.scss';

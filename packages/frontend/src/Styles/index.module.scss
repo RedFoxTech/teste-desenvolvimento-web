@@ -1,0 +1,10 @@
+// As propriedades fake servem a página antes de as stylesheets carregarem
+// e do React renderizar. Depois que tudo carrega, elas são removidas
+// usamos global para
+// evitar que o webpack mude o nome das classes que estão no html
+
+:global {
+    .fake-container,.fake-card,.fake-card-image,.fake-card {
+        @include hide();
+    }
+}

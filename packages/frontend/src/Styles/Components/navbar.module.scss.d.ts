@@ -2,7 +2,10 @@
 // Favor manter do jeito que está!
 declare namespace NavbarModuleScssNamespace {
   export interface INavbarModuleScss {
-    'navbarFake': string;
+    'pokedexNavbar': string;
+    'pokemonPic': string;
+    'pokemonSearch': string;
+    'pokemonSearchButton': string;
   }
 }
 
