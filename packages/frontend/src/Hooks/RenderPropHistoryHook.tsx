@@ -12,6 +12,10 @@ const RenderPropHistoryHook = ({
   RenderWithHistoryHook,
 }: RenderProp): React.ReactElement => {
   const _history = useHistory();
+  
+  if (!RenderWithHistoryHook) {
+    return <></>;
+  } // else
 
   return <RenderWithHistoryHook _history={_history} />;
 };

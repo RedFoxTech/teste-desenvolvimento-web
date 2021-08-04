@@ -1,22 +1,17 @@
 
 import RenderPropHistoryHook from '@src/Hooks/RenderPropHistoryHook';
 import React from 'react';
-import { Router } from 'react-router-dom';
+import Router from '@src/Router';
+import { BrowserRouter } from "react-router-dom";
 
 /**
- * @fileoverview Implementa o componente principal que vai trazer todos os
+ * @fileoverview Implementa o rotador principal que vai trazer todos os
  * outros dentro da página home.
  * @module packages/frontend/Components/App
  */
 
 export const App = (): React.ReactElement => (
-    <>
-        <RenderPropHistoryHook RenderWithHistoryHook={
-            ({_history }:
-                {_history: History}) => _history?
-                  <Router history={_history as never}/>:
-                  null
-        }/>
-        
-    </>
+    <BrowserRouter basename="/">
+        <Router />
+    </BrowserRouter>
 );
