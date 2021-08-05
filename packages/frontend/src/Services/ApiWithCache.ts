@@ -18,7 +18,7 @@ import isEmpty from 'lodash/isEmpty';
 
 const baseConfig = {
     baseURL: 'http://localhost:31337',
-    withCredentials: true,
+    withCredentials: false,
 };
 
 const CACHE_MAX_AGE = 5 * 60 * 60 * 1000;

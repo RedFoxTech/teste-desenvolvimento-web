@@ -147,7 +147,7 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
                               variant="secondary"
                               size="lg"
                               type="button"
-                              aria-aria-controls="pokemonInfo"
+                              aria-controls="pokemonInfo"
                               aria-expanded={!collapsed}
                               // eslint-disable-next-line @typescript-eslint/no-unused-vars
                               onClick={(_evy) => this.setState({collapsed: !collapsed})}
