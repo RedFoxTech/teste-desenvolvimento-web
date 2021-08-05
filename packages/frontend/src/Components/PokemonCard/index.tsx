@@ -23,12 +23,16 @@ import Pokemon from "../../../../shared/declarations/interfaces/Pokemon";
 
 /** Pequena função utilizada para manter o princípio DRY */
 const dataPresentation = (dataKey: string, dataValue: unknown) => (
-    <ListGroupItem className={pokemonAttribute}>
-        <span className={pokemonStat}>
-            <b>{dataKey}</b>
-            <p>{typeof dataValue === 'string'? dataValue: String(dataValue)}</p>
-        </span>
-    </ListGroupItem>
+    // dataValue pode ser mostrado se for 0, mas qualquer outro valor
+    // falseável não será mostrado
+    dataValue || (dataValue === 0)
+        ? <ListGroupItem className={pokemonAttribute}>
+          <span className={pokemonStat}>
+              <b>{dataKey}</b>
+              <p>{typeof dataValue === 'string'? dataValue: String(dataValue)}</p>
+          </span>
+        </ListGroupItem>
+        : null
 );
 /** Pequena função utilizada para manter o princípio DRY */
 const question = (_question: string, answer: boolean) => (
@@ -48,7 +52,18 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
         const {collapsed} = this.state;
 
         return (
-                <Card className={pokemonCard}>
+                <Card
+                  className={pokemonCard}
+                  style={
+                      // Fazemos isso para não empurrar a linha toda
+                      // embaixo do card expandido, mas apenas empurrar
+                      // o card abaixo do expandido. Isso fica sujeito
+                      // a mudança dependendo do tamanho final do card,
+                      // por enquanto o card expandido é aproximadamente
+                      // 3 vezes maior que o collapsed
+                      collapsed? {gridRow: 'span 1'}: {gridRow: 'span 3'}
+                  }
+                >
                     <Card.Title className={pokemonCardTitle}>
                         <img src="/Assets/fa-pokeball.svg" height={20} width={20} style={{verticalAlign: 'sub'}} />
                         {pokemon.name || 'Pokémon Desconhecido'}

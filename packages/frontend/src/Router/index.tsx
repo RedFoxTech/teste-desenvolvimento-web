@@ -43,12 +43,11 @@ class AnimatedRouter extends React.PureComponent<
           <Switch location={_location as never}>
             <div id="main-wrapper">
 
-              {/*
-            This is no different than other usage of
-            <CSSTransition>, just make sure to pass
-            `location` to `Switch` so it can match
-            the old location as it animates out.
-          */}
+              {/* This is no different than other usage of
+                  <CSSTransition>, just make sure to pass
+                 `location` to `Switch` so it can match
+                  the old location as it animates out.
+              */}
 
               {_routes.map((route: RouteType, key: number) => (
                 <Route

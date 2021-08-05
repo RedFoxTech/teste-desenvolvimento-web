@@ -1,6 +1,9 @@
 .pokemon-card {
-    margin-top: 13px !important;
-    margin-bottom: 13px !important;
+    margin-top: 26px !important;
+    // quando expandimos um cartão, evita que os cartões na mesma linha
+    // troquem de posição, para compensar o espaço entre cartões no
+    // final do <main>, definimos um padding-bottom na homePage.module.scss
+    margin-bottom: auto !important;
     border-radius: 10px !important;
     background-color: #e3f2fd;
     margin: 0;
@@ -8,6 +11,15 @@
     width: 100%;
     max-width: 400px;
     background-color: lighten($danger, 2%);
+    // Como mansonry ainda não é suportado como display de grid (o Firefox
+    // adicionou mansonry em 2021), usamos grid-row e injetamos o estilo
+    // manualmente no React quando expandimos um cartão, isso faz com que
+    // os cartões não empurrem a linha inteira de baixo, mas apenas um
+    // elemento dessa linha. Por padrão ocupa o espaço de 1 linha, mas
+    // quando expandimos o cartão, ocupamos todo o espaço de 3 linhas.
+    // infelizmente isso fica sujeito a mudança dependendo da altura do
+    // cartão expandido.
+    grid-row: span 1;
 }
 
 .pokemon-card-title {
@@ -16,6 +28,7 @@
     margin: auto;
 }
 
+// Placeholder para imagem
 .pokemon-card-image {
     width: 100%;
     height: 300px;
