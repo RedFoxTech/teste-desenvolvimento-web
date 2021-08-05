@@ -5,7 +5,8 @@
     background-color: #e3f2fd;
     margin: 0;
     padding: 0;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     background-color: lighten($danger, 2%);
 }
 
@@ -40,5 +41,64 @@
 
 .pokemon-stat {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    $margin-from-side: 35px;
+    $margin-from-side-mobile: 10px;
+
+    // first direct child of pokemon-stat
+    &>*:first-child {
+        padding-left: $margin-from-side;
+        /** Não é possível mudar a variável do sass em uma media query
+         *  porque media queries são carregadas no navegador do cliente
+         */
+
+         @include media("<minWidth") {
+            padding-left: $margin-from-side-mobile !important;
+        }
+    }
+
+    // last direct child of pokemon-stat
+    &>*:last-child {
+        padding-right: $margin-from-side;
+
+        @include media("<minWidth") {
+            padding-right: $margin-from-side-mobile !important;
+        }
+    }
+
+    & * {
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    & p {
+        max-width: 150px !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+}
+
+.pokemon-info-title {
+    text-align: center;
+    border-bottom: darken($danger, 15%) solid 1px;
+    padding-top: 7px;
+    padding-bottom: 13px;
+}
+
+.pokemon-stats-table {
+    border-bottom: darken($danger, 15%) solid 1px;
+    text-align: center;
+    margin: 0 !important;
+}
+
+.attack-text {
+    color: darken($color: $green, $amount: 10%) !important;
+}
+
+.defense-text {
+    color: darken($color: $blue, $amount: 20%) !important;
+}
+
+.hp-text {
+    color: darken($color: $red, $amount: 35%) !important;
 }

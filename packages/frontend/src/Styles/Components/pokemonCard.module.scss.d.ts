@@ -2,12 +2,17 @@
 // Favor manter do jeito que está!
 declare namespace PokemonCardModuleScssNamespace {
   export interface IPokemonCardModuleScss {
+    'attackText': string;
+    'defenseText': string;
+    'hpText': string;
     'pokemonAttribute': string;
     'pokemonAttributesList': string;
     'pokemonCard': string;
     'pokemonCardImage': string;
     'pokemonCardTitle': string;
+    'pokemonInfoTitle': string;
     'pokemonStat': string;
+    'pokemonStatsTable': string;
   }
 }
 

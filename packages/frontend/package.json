@@ -36,6 +36,7 @@
     "classnames": "^2.3.1",
     "font-awesome": "^4.7.0",
     "normalize.css": "^8.0.1",
+    "pokemon-sprites": "github:PokeAPI/sprites",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
     "react-dom": "^17.0.2",
