@@ -12,6 +12,9 @@
       "packages/*"
     ]
   },
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start:all": "bash ./packages/shared/scripts/startFullstack.sh"
   }
