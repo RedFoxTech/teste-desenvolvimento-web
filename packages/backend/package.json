@@ -9,13 +9,13 @@
   "private": false,
   "browser": false,
   "scripts": {
-    "start": "ts-node-dev ./src/main/index.ts",
+    "start": "node ../../dist/backend/src/main/index.js",
+    "serve":"ts-node-dev ./src/main/index.ts",
     "start:static": "ts-node ./src/main/index.ts",
     "lint": "eslint --fix --ext '.ts' './src/**'",
     "lint:passive": "eslint --ext '.ts' './src/**'",
     "build": "tsc -p ./ --target es5 --module commonjs --outDir ../../dist",
-    "build:watch": "tsc -p ./ --target es5 --module commonjs --outDir ../../dist --watch",
-    "build:start": "node ../../dist/backend/src/main/index.js"
+    "build:watch": "tsc -p ./ --target es5 --module commonjs --outDir ../../dist --watch"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
