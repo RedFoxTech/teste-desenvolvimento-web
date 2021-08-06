@@ -8,6 +8,9 @@
   "license": "MIT",
   "private": false,
   "browser": false,
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
     "start": "ts-node-dev ./src/main/index.ts",
     "start:static": "ts-node ./src/main/index.ts",
