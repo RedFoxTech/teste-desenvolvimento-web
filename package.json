@@ -13,6 +13,8 @@
     ]
   },
   "scripts": {
-    "start:all": "bash ./packages/shared/scripts/startFullstack.sh"
+    "start:all": "bash ./packages/shared/scripts/startFullstack.sh",
+    "start": "cd ./packages/backend && yarn build:start",
+    "build": "cd ./packages/backend && yarn build"
   }
 }
