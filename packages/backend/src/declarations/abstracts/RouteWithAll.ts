@@ -7,8 +7,6 @@ import {
 } from 'express';
 import RouteAbstract from './Route';
 
-/* eslint-disable require-jsdoc */
-
 /**
    * @filedescription Implementa a classe pai das rotas do sistema que
    * também possuem funções para interagir com todos os ítens.
@@ -29,6 +27,7 @@ import RouteAbstract from './Route';
    */
 
 abstract class RouteWithAllAbstract extends RouteAbstract {
+      /** Middlewares para todas as rotas da classe */
       public middlewares: Array<RequestHandler> = [];
       /**
        * Caminho base onde todas as rotas definidas na classe filha serão

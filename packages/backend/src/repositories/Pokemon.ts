@@ -1,4 +1,5 @@
-import CRUDWithAllAbstract from '../declarations/abstracts/CRUDWithAll';
+import CRUDWithAllPaginationAbstract
+  from '../declarations/abstracts/CRUDWithAllPagination';
 import Pokemon from '../../../shared/declarations/interfaces/Pokemon';
 import InternalServerError from '../exceptions/InternalServerError';
 import NoPokemonsRegistered from '../exceptions/NoPokemonsRegistered';
@@ -6,6 +7,7 @@ import PokemonAlreadyExists from '../exceptions/PokemonAlreadyExists';
 import PokemonNotFound from '../exceptions/PokemonNotFound';
 import PokemonModel from '../models/Pokemon';
 import PokemonSchema from '../schemas/Pokemon';
+import {FilterQuery, Document} from 'mongoose';
 
 
 /* global console */
@@ -19,10 +21,10 @@ import PokemonSchema from '../schemas/Pokemon';
  * @module packages/backend/repositories/Pokemon
  * @extends packages/backend/repositories/CRUD
  * @since 30/07/2021
- * @version 0.0.3
+ * @version 0.0.4
  */
 
-class PokemonRepository extends CRUDWithAllAbstract {
+class PokemonRepository extends CRUDWithAllPaginationAbstract {
   /**
    * @description POST, deve retornar 201 em sucesso
    * @param {Pokemon} data
@@ -98,6 +100,46 @@ class PokemonRepository extends CRUDWithAllAbstract {
     }
   }
 
+  /**
+   * @description GET All com paginação, deve retornar 200 em sucesso e também
+   * o último ID da página
+   * Nota: Devemos tomar cuidado com Off-By-One
+   * @param {string|unknown} unsafeId - Vamos retornar uma página inteira que
+   * vem depois desse ID
+   */
+  async readPages(unsafeId: string): Promise<Array<PokemonModel>> {
+    try {
+      const id = String(unsafeId || '');
+      let criteria: FilterQuery<PokemonModel &
+                     Document<unknown, unknown, unknown>> | undefined;
+      if (id) {
+        criteria = {_id: {$gt: id}};
+      } else {
+        // Se não o TypeScript chora
+        criteria = undefined;
+      }
+
+      // Retorna o modelo de Pokemon com todas as propriedades
+      const pokemon = await PokemonSchema.find(
+          criteria || {},
+      ).setOptions({lean: true}).limit(15).lean();
+
+      if (!pokemon) {
+        throw new PokemonNotFound();
+      }
+
+      return pokemon;
+    } catch (error) {
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
+      if (error.returnErrorResponse) {
+        throw error;
+      } // else
+      console.error(error.message);
+      throw new InternalServerError();
+    }
+  }
+
 
   /**
    * @description PATCH, deve retornar 200 em sucesso e pode não ter todas
@@ -134,8 +176,8 @@ class PokemonRepository extends CRUDWithAllAbstract {
 
       return updatedPokemon;
     } catch (error) {
-    // Caso seja seguro retornar o erro na API (não possui informações
-    // sensíveis)
+      // Caso seja seguro retornar o erro na API (não possui informações
+      // sensíveis)
       if (error.returnErrorResponse) {
         throw error;
       } // else
@@ -158,8 +200,8 @@ class PokemonRepository extends CRUDWithAllAbstract {
 
     try {
       const updatedPokemon = await PokemonSchema.replaceOne(
-          id? {_id: id}: {name: data.name},
-          data,
+        id ? {_id: id} : {name: data.name},
+        data,
       ).setOptions({
         new: true,
         // cria objeto caso não exista (comum no PUT)

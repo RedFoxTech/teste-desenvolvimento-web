@@ -2,6 +2,8 @@ import {Router} from 'express';
 import PokedexRoute from './Pokedex';
 import RouteAbstract from '../declarations/abstracts/Route';
 import RouteWithAllAbstract from '../declarations/abstracts/RouteWithAll';
+import RouteWithAllPaginationAbstract
+  from '../declarations/abstracts/RouteWithAllPagination';
 
 /**
  * @fileoverview Esse arquivo contém as rotas do ponto de entrada do backend,
@@ -9,12 +11,16 @@ import RouteWithAllAbstract from '../declarations/abstracts/RouteWithAll';
  * @see {@link module:packages/backend/express/App}
  * @module packages/backend/routes/index
  * @requires express
- * @version 0.0.3
+ * @version 0.0.4
  */
 
 const mainRouter = (): Router => {
   /** Para atualizar rotas, apenas insira uma rota nessa Array */
-  const routes: Array<RouteAbstract|RouteWithAllAbstract> = [
+  const routes: Array<
+    RouteAbstract
+    | RouteWithAllAbstract
+    | RouteWithAllPaginationAbstract
+  > = [
     PokedexRoute,
   ];
 

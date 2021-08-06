@@ -22,7 +22,6 @@ class HomePage extends React.PureComponent<null, { pokemons: Pokemon[] }> {
         /** API com chave de cache */
         const { api } = ApiFactory("/Pokemon/getAll");
         const response = await api.get("/Pokemon/getAll");
-        console.log(response);
         return response.data;
     }
 

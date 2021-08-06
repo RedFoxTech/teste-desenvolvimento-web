@@ -1,11 +1,13 @@
 import {Request, Response, NextFunction} from 'express';
-import RouteWithAllAbstract from '../declarations/abstracts/RouteWithAll';
+import RouteWithAllPaginationAbstract
+  from '../declarations/abstracts/RouteWithAllPagination';
 import validationMiddleware from '../middlewares/ValidationDTO';
 import WatchSpreadSheet from '../middlewares/WatchSpreadSheet';
 import PokemonDTO from '../validatedDTOs/PokemonDTO';
 import PokemonRepository from '../repositories/Pokemon';
 import PokemonPartialDTO from '../validatedDTOs/PokemonPartialDTO';
 import ImportSpreadsheet from '../services/ImportSpreadsheet';
+import RouteWithAllAbstract from '../declarations/abstracts/RouteWithAll';
 
 
 /**
@@ -14,14 +16,14 @@ import ImportSpreadsheet from '../services/ImportSpreadsheet';
  * @see {@link module:packages/backend/repositories/Pokemon}
  * @requires express
  * @since 29/07/2021
- * @version 0.0.6
+ * @version 0.0.7
  */
 
 // A documentação tá na classe RouteAbstract
 
 /**
  * @class
- * @extends RouteWithAllAbstract
+ * @extends RouteWithAllPaginationAbstract
  * @description Implementa a rota para acessar os Pokemons.
  */
 
@@ -38,9 +40,10 @@ class PokedexRoute extends RouteWithAllAbstract {
           validationMiddleware(PokemonDTO),
           this.postRoute.bind(this),
       );
-      this.router.post('/importAll', this.importAllRoute.bind(this));
+      this._router.post('/importAll', this.importAllRoute.bind(this));
       this._router.get('/getOne/:id', this.getRoute.bind(this));
       this._router.get('/getAll', this.getAllRoute.bind(this));
+      this._router.get('/getPage(/:id)?', this.getPagesRoute.bind(this));
       this._router.put('/updateOne(/:id)?',
           validationMiddleware(PokemonDTO),
           this.putRoute.bind(this),
@@ -123,6 +126,23 @@ class PokedexRoute extends RouteWithAllAbstract {
       try {
         const pokemon = await this.pokemonRepository.readAll();
         res.status(200).json(pokemon);
+      } catch (httpException) {
+        res.status(httpException.status || 500).json(
+            {error: httpException.message},
+        );
+      }
+      next();
+    }
+
+    protected async getPagesRoute(
+        req: Request,
+        res: Response,
+        next: NextFunction,
+    ) {
+      try {
+        const {id} = req.params;
+        const pokemons = await this.pokemonRepository.readPages(id);
+        res.status(200).json(pokemons);
       } catch (httpException) {
         res.status(httpException.status || 500).json(
             {error: httpException.message},
