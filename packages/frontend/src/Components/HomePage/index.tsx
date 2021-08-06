@@ -55,8 +55,15 @@ class HomePage extends React.PureComponent<null, { pokemons: Pokemon[] }> {
 
         return (
             <main className={classNames(["container", "bg-light", pokemonContainer])} >
-                    {pokemons
-                        ? pokemons.map((pokemon) => <PokemonCard pokemon={pokemon} key={pokemon._id} />)
+                    {pokemons?.length
+                        ? pokemons.map((pokemon) => (
+                            <PokemonCard
+                                pokemon={pokemon}
+                                key={pokemon._id}
+                                imgSrc={`./${pokemon.imageName}.png`}
+                                imgImport
+                            />
+                        ))
                         : this.suspensePokemons()
                     }
 

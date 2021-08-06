@@ -47,9 +47,34 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
         }
     }
 
+    componentDidMount(): void {
+        const {imgImport = false, imgSrc = ''} = this.props;
+
+        if (imgImport) {
+            if (this.props.imgSrc && typeof this.props.imgSrc === 'string') {
+                // Enquanto a promise não resolve, mantém a imagem de suspensão
+                this.setState({imgSrc: ''});
+
+                // Importa a imagem de maneira assíncrona
+                import("@src/Services/ImportAllPokemonSprites").then((imageSrcMapping) => {
+                    const _imgSrc = imageSrcMapping.default[imgSrc];
+                    this.setState({imgSrc: _imgSrc});
+                    console.log('imagem importada', _imgSrc, Object.keys(imageSrcMapping.default)[0], imgSrc);
+                }).catch((error) => {
+                    console.error(error);
+                });
+            }
+        }
+    }
+
     render(): React.ReactNode {
-        const {pokemon, imgSrc, description} = this.props;
+        const {pokemon, imgImport, description} = this.props;
         const {collapsed} = this.state;
+        /** Caso imgImport tenha sido passado para o componente, pega a
+         * propriedade do state, que vai ser setada assim que a imagem
+         * for carregada, ou então pega apenas a URL passada aqui
+         */
+        const {imgSrc = ''} = imgImport ? this.state : this.props;
 
         return (
                 <Card
@@ -65,10 +90,24 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
                   }
                 >
                     <Card.Title className={pokemonCardTitle}>
-                        <img src="/Assets/fa-pokeball.svg" height={20} width={20} style={{verticalAlign: 'sub'}} />
+                        <img src="/Assets/fa-pokeball.svg" height={20} width={20} style={{verticalAlign: 'sub'}} alt="Pokéball" />
                         {pokemon.name || 'Pokémon Desconhecido'}
                     </Card.Title>
-                    <Card.Img className={pokemonCardImage} variant="top" src={imgSrc} />
+                    <div className={pokemonCardImage}>
+                        {/* <img src="imagenotfound.gif" alt="Image not found" onerror="this.onerror=null;this.src='imagefound.gif';" /> */}
+                        <Card.Img
+                            style={{width: '95%', height: '95%'}}
+                            variant="top"
+                            src={imgSrc || 'Assets/fa-pokemon-arena.svg'}
+                            alt="Pokémon"
+                            onError={(_evt) => {
+                                // Remove a propriedade onError da imagem para previnir recursão caso
+                                // a imagem de fallback dê erro ao carregar
+                                _evt.target.removeAttribute('onerror');
+                                _evt.target.src = 'Assets/fa-pokemon-arena.svg';
+                            }}
+                        />
+                    </div>
                     <Card.Body>
                         <ListGroup className={classNames(["list-group-flush"])} id="pokemonInfo">
                             <ListGroupItem className={pokemonAttribute} style={{padding: '0'}}>
@@ -89,9 +128,24 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td colSpan={1}> {pokemon.attack} </td>
-                                            <td colSpan={2}> {pokemon.defense} </td>
-                                            <td colSpan={3}> {pokemon.staminaHP} </td>
+                                            <td colSpan={1}>
+                                                {pokemon.attack > 0
+                                                ? pokemon.attack
+                                                : 'Carregando...'
+                                            }
+                                            </td>
+                                            <td colSpan={2}>
+                                                {pokemon.defense > 0
+                                                ? pokemon.defense
+                                                : 'Carregando...'
+                                            }
+                                            </td>
+                                            <td colSpan={3}>
+                                                {pokemon.staminaHP > 0
+                                                ? pokemon.staminaHP
+                                                : 'Carregando...'
+                                            }
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -150,7 +204,7 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
                               aria-controls="pokemonInfo"
                               aria-expanded={!collapsed}
                               // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                              onClick={(_evy) => this.setState({collapsed: !collapsed})}
+                              onClick={(_evt) => this.setState({collapsed: !collapsed})}
                             >
                                 {collapsed? 'Mais': 'Menos'} informações...
                             </Button>
