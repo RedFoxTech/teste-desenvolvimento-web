@@ -10,7 +10,7 @@ import ImportSpreadsheet from '../services/ImportSpreadsheet';
  * @throws {Error} Nesse caso a aplicação nem inicia
  * @author wh1t3h47 <tom.mharres@gmail.com>
  * @see {@link mailto:tom.mharres@gmail.com}
- * @see {@link packages/backend/express/App}
+ * @see {@link module:packages/backend/express/App}
  * @see {@link https://www.npmjs.com/package/dotenv}
  * @requires App
  * @requires dotenv

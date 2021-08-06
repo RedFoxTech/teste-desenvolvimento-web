@@ -7,15 +7,13 @@ import {
 } from 'express';
 import RouteAbstract from './Route';
 
-/* eslint-disable require-jsdoc */
-
 /**
    * @filedescription Implementa a classe pai das rotas do sistema que
    * também possuem funções para interagir com todos os ítens.
    * @module packages/backend/routes/routesWithAll
    * @requires express
-   * @see {@link packages/backend/routes/index}
-   * @see {@link packages/backend/express/app}
+   * @see {@link module:packages/backend/routes/index}
+   * @see {@link module:packages/backend/express/app}
    * @version 0.0.2
    * @since 29/07/2021
    */
@@ -29,6 +27,7 @@ import RouteAbstract from './Route';
    */
 
 abstract class RouteWithAllAbstract extends RouteAbstract {
+      /** Middlewares para todas as rotas da classe */
       public middlewares: Array<RequestHandler> = [];
       /**
        * Caminho base onde todas as rotas definidas na classe filha serão

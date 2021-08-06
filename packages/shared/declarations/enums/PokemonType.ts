@@ -5,6 +5,7 @@
  * @since 30/07/2021
  * @version 0.0.1
  * @see {@link https://pokemon.fandom.com/wiki/Types}
+ * @module shared/declarations/enums/PokemonType
  */
 
 /* eslint-disable no-unused-vars */

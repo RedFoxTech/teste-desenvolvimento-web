@@ -1,9 +1,9 @@
 // @ts-ignore A lib excel não tem suporte para o typescript
 import parseXlsx from 'excel';
 import PokemonRepository from '../repositories/Pokemon';
-import Pokemon from '../declarations/interfaces/Pokemon';
-import PokemonType from '../declarations/enums/PokemonType';
-import PokemonWeather from '../declarations/enums/Weather';
+import Pokemon from '../../../shared//declarations/interfaces/Pokemon';
+import PokemonType from '../../../shared/declarations/enums/PokemonType';
+import PokemonWeather from '../../../shared/declarations/enums/Weather';
 import checkFileExistsAsync from './CheckFileExistsAsync';
 import fileNotFound from '../exceptions/FileNotFound';
 
@@ -41,15 +41,23 @@ class ImportSpreadsheet {
       }
       try {
         /** @type {Array<Array<string>>}  */
-        const spreadsheetRange: Array<Array<string>> = await parseXlsx(filePath);
+        const spreadsheetRange: Array<Array<string>> = await parseXlsx(
+            filePath,
+        );
         const pokemons = spreadsheetRange.map((spreadsheetLine) => {
           const pokemon: Pokemon = {
             row: parseInt(spreadsheetLine[0], 10),
             name: spreadsheetLine[1],
             pokedexId: parseInt(spreadsheetLine[2], 10),
-            imageName: spreadsheetLine[3],
-            generation: spreadsheetLine[4],
-            evolutionState: spreadsheetLine[5],
+            imageName: spreadsheetLine[3].endsWith('.0') ?
+              `${parseInt(spreadsheetLine[3], 10)}` :
+              spreadsheetLine[3],
+            generation: spreadsheetLine[4].endsWith('.0') ?
+            `${parseInt(spreadsheetLine[4], 10)}` :
+            spreadsheetLine[4],
+            evolutionState: spreadsheetLine[5].endsWith('.0') ?
+            `${parseInt(spreadsheetLine[5], 10)}` :
+            spreadsheetLine[5],
             evolved: spreadsheetLine[6] == '0' ? false : true,
             familyId: parseInt(spreadsheetLine[7], 10),
             crossGeneration: spreadsheetLine[8] == '0' ? false : true,

@@ -17,6 +17,7 @@ const sassGlobalSheets = [
     // Adicione aqui os arquivos que você deseja carregar globalmente.
     resolve(__dirname, "../../src/Styles/Global/bootstrapDefinitions.sass"),
     resolve(__dirname, "../../src/Styles/Global/mixins.scss"),
+    resolve(__dirname, "../../src/Styles/Global/betterMediaQueries.scss"),
 ];
 
 module.exports = sassGlobalSheets;
