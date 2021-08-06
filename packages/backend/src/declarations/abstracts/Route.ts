@@ -12,8 +12,8 @@ import {
  * indispensável para ser consumida pelo App
  * @module packages/backend/routes
  * @requires express
- * @see {@link packages/backend/routes/index}
- * @see {@link packages/backend/express/app}
+ * @see {@link module:packages/backend/routes/index}
+ * @see {@link module:packages/backend/express/app}
  * @version 0.0.2
  * @since 29/07/2021
  */
@@ -114,7 +114,7 @@ abstract class RouteAbstract {
      * @memberOf AbstractRoute
      * @public
      * @return {Router} retorna o roteador para ser consumido pelo index
-     * @see {@link packages/backend/routes/index}
+     * @see {@link module:packages/backend/routes/index}
      */
     public get router(): Router {
       return this._router;

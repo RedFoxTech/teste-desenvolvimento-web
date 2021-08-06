@@ -6,7 +6,7 @@ import RouteWithAllAbstract from '../declarations/abstracts/RouteWithAll';
 /**
  * @fileoverview Esse arquivo contém as rotas do ponto de entrada do backend,
  * que vão ser consumidas pela classe App.
- * @see {@link packages/backend/express/App}
+ * @see {@link module:packages/backend/express/App}
  * @module packages/backend/routes/index
  * @requires express
  * @version 0.0.3

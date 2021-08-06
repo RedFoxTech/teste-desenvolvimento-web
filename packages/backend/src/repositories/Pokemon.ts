@@ -112,7 +112,10 @@ class PokemonRepository extends CRUDWithAllAbstract {
   ): Promise<PokemonModel> {
     try {
       const id = String(unsafeId || '');
-      const pokemon = await PokemonSchema.findOne({_id: id}, {lean: true}).lean();
+      const pokemon = await PokemonSchema.findOne(
+          {_id: id},
+          {lean: true},
+      ).lean();
 
       if (!pokemon) {
         throw new PokemonNotFound();

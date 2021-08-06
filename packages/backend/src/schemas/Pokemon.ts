@@ -6,7 +6,7 @@ import PokemonModel from '../models/Pokemon';
  * planilha de pokémons.
  * @requires mongoose
  * @see {@link https://mongoosejs.com/docs/guide.html}
- * @see {@link packages/backend/models/Pokemon}
+ * @see {@link module:packages/backend/models/Pokemon}
  * @module packages/backend/schemas/PokemonSchema
  * @version 0.0.2
  * @since 29/07/2021

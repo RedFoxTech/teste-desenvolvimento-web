@@ -3,6 +3,7 @@
  * @type {string}
  * @description Padroniza os climas de cada pokémon para validação e inserção
  * @see {@link https://bulbapedia.bulbagarden.net/wiki/Weather}
+ * @module packages/shared/declarations/enums/Weather
  * @since 30/07/2021
  * @version 0.0.1
  */

@@ -1,11 +1,11 @@
-import PokemonType from '../declarations/enums/PokemonType';
-import PokemonWeather from '../declarations/enums/Weather';
-import Pokemon from '../declarations/interfaces/Pokemon';
+import PokemonType from '../../../shared/declarations/enums/PokemonType';
+import PokemonWeather from '../../../shared/declarations/enums/Weather';
+import Pokemon from '../../../shared/declarations/interfaces/Pokemon';
 
 /**
  * @filedescription Traz a Model que reflete a Pokedex na planilha de pokémon.
  * @module packages/backend/models/Pokemon
- * @see {@link packages/backend/schemas/PokemonSchema}
+ * @see {@link module:packages/backend/schemas/PokemonSchema}
  * @version 0.0.2
  * @since 29/07/2021
  */

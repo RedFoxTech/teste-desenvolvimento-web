@@ -6,8 +6,8 @@ import getRouter from '../routes';
  * @fileoverview implementa a classe App, inicializa as rotas e middlewares
  * do Express
  * @see App
- * @see {@link packages/backend}
- * @see {@link packages/backend/routes/index}
+ * @see {@link module:packages/backend}
+ * @see {@link module:packages/backend/routes/index}
  * @see {@link http://expressjs.com/en/5x/api.html}
  * @module packages/backend/express/App
  * @requires express

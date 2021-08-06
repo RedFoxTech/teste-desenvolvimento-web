@@ -9,11 +9,14 @@ function validationMiddleware<T>(
 ): RequestHandler {
   return async (req, res, next) => {
     const errors: ValidationError[] = await validate(
-        plainToClass(<ClassConstructor<any>>type, req.body), {skipMissingProperties},
+        plainToClass(<ClassConstructor<any>>type, req.body),
+        {skipMissingProperties},
     );
 
     if (errors.length > 0) {
-      const message = errors.map((error: ValidationError) => Object.values(error.constraints || {})).join(', ');
+      const message = errors.map((error: ValidationError) => (
+        Object.values(error.constraints || {})).join(', '),
+      );
       next(new HttpException(400, message));
     } else {
       next();

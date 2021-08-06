@@ -10,8 +10,8 @@ import ImportSpreadsheet from '../services/ImportSpreadsheet';
 
 /**
  * @fileoverview Esse arquivo irá conter as rotas para a CRUD do Pokedex.
- * @see {@link packages/backend/routes/index}
- * @see {@link packages/backend/repositories/Pokemon}
+ * @see {@link module:packages/backend/routes/index}
+ * @see {@link module:packages/backend/repositories/Pokemon}
  * @requires express
  * @since 29/07/2021
  * @version 0.0.6

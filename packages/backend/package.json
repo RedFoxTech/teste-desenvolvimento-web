@@ -14,7 +14,8 @@
     "lint": "eslint --fix --ext '.ts' './src/**'",
     "lint:passive": "eslint --ext '.ts' './src/**'",
     "build": "tsc -p ./ --target es5 --module commonjs --outDir ./dist",
-    "build:watch": "tsc -p ./ --target es5 --module commonjs --outDir ./dist --watch"
+    "build:watch": "tsc -p ./ --target es5 --module commonjs --outDir ./dist --watch",
+    "build:start": "node ./dist/main/index.js"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",

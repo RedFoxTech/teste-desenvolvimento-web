@@ -4,7 +4,8 @@ import PokemonWeather from '../enums/Weather';
 /**
  * @description Interface para o contrato de tipos do modelo de pokémons
  * @interface Pokemon
- * @see {@link packages/backend/models/Pokemon}
+ * @see {@link module:packages/backend/models/Pokemon}
+ * @module packages/shared/declarations/interfaces/Pokemon
  * @since 30/07/2021
  * @version 0.0.2
  */

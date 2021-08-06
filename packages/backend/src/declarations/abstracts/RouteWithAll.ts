@@ -14,8 +14,8 @@ import RouteAbstract from './Route';
    * também possuem funções para interagir com todos os ítens.
    * @module packages/backend/routes/routesWithAll
    * @requires express
-   * @see {@link packages/backend/routes/index}
-   * @see {@link packages/backend/express/app}
+   * @see {@link module:packages/backend/routes/index}
+   * @see {@link module:packages/backend/express/app}
    * @version 0.0.2
    * @since 29/07/2021
    */
