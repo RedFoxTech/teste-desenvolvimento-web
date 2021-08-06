@@ -4,7 +4,7 @@
 // evitar que o webpack mude o nome das classes que estão no html
 
 :global {
-    .fake-container,.fake-card,.fake-card-image,.fake-card {
+    .fake-container, .fake-card, .fake-card-image, .fake-card, .loading {
         @include hide();
     }
 }

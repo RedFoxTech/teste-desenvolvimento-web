@@ -52,6 +52,7 @@ class HomePage extends React.PureComponent<null, { pokemons: Pokemon[] }> {
         console.log("HomePage render");
 
         const { pokemons = null } = this.state;
+        const importSpritesPromise = import("@src/Services/ImportAllPokemonSprites");
 
         return (
             <main className={classNames(["container", "bg-light", pokemonContainer])} >
@@ -62,6 +63,7 @@ class HomePage extends React.PureComponent<null, { pokemons: Pokemon[] }> {
                                 key={pokemon._id}
                                 imgSrc={`./${pokemon.imageName}.png`}
                                 imgImport
+                                importSpritesPromise={(async () => (importSpritesPromise))()}
                             />
                         ))
                         : this.suspensePokemons()
