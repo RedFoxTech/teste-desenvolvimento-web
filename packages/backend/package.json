@@ -12,13 +12,14 @@
     "node": "16.x"
   },
   "scripts": {
-    "start": "node ../../dist/backend/src/main/index.js",
+    "start": "node ../../../app/dist/backend/src/main/index.js",
     "serve":"ts-node-dev ./src/main/index.ts",
     "start:static": "ts-node ./src/main/index.ts",
     "lint": "eslint --fix --ext '.ts' './src/**'",
     "lint:passive": "eslint --ext '.ts' './src/**'",
     "build": "tsc -p ./ --target es5 --module commonjs --outDir ../../dist",
-    "build:watch": "tsc -p ./ --target es5 --module commonjs --outDir ../../dist --watch"
+    "build:watch": "tsc -p ./ --target es5 --module commonjs --outDir ../../dist --watch",
+    "postinstall": "yarn build"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
