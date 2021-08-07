@@ -17,7 +17,7 @@ import isEmpty from 'lodash/isEmpty';
  */
 
 const baseConfig = {
-    baseURL: 'http://localhost:31337',
+    baseURL: 'https://pokedex-redfox.herokuapp.com/',
     withCredentials: false,
 };
 
@@ -171,7 +171,7 @@ const myAdapter = (adapter: AxiosRequestConfig["adapter"]) => (
         return res;
     });
 
-const ApiFactory = (_key: string): {api: AxiosInstance} => ({
+const CachedApiFactory = (_key: string): {api: AxiosInstance} => ({
     api: Axios.create({
         ...baseConfig,
 
@@ -215,7 +215,7 @@ const purgeCache = async (): Promise<void> => {
 };
 
 export {
-    ApiFactory,
+    CachedApiFactory,
     clearCacheByKey,
     clearCacheByGroup,
     clearCacheByGroups,

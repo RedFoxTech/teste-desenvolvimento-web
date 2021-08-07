@@ -41,7 +41,8 @@ class AnimatedRouter extends React.PureComponent<
           { _location }:
           {_location: Location}) => (
           <Switch location={_location as never}>
-            <div id="main-wrapper">
+            {/* Essa div ta dando problema porque switch não pode ter ela como child direta */}
+            {/* <div id="main-wrapper"> */}
 
               {/* This is no different than other usage of
                   <CSSTransition>, just make sure to pass
@@ -63,7 +64,7 @@ class AnimatedRouter extends React.PureComponent<
                 />
               ))}
 
-            </div>
+            {/*</div>*/}
           </Switch>
         )}
         />
