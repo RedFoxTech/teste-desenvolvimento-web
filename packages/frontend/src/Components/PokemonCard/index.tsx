@@ -63,7 +63,7 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
                 importSpritesPromise?.then((imageSrcMapping) => {
                     const _imgSrc = imageSrcMapping.default[imgSrc];
                     this.setState({imgSrc: _imgSrc});
-                    console.log('imagem importada', _imgSrc, Object.keys(imageSrcMapping.default)[0], imgSrc);
+                    // console.log('imagem importada', _imgSrc, Object.keys(imageSrcMapping.default)[0], imgSrc);
                 }).catch((error) => {
                     console.error(error);
                 });
