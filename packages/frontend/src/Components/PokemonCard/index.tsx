@@ -98,7 +98,7 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
                     }
                 >
                     <Card.Title className={pokemonCardTitle}>
-                        <img src="/Assets/fa-pokeball.svg" height={20} width={20} style={{ verticalAlign: 'sub' }} alt="Pokéball" />
+                        <img src="./Assets/fa-pokeball.svg" height={20} width={20} style={{ verticalAlign: 'sub' }} alt="Pokéball" />
                         {pokemon.name || 'Pokémon Desconhecido'}
                     </Card.Title>
                     <div className={pokemonCardImage}>

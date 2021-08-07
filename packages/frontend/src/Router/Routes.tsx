@@ -4,7 +4,7 @@ import HomePage from "@components/HomePage";
 
 const Routes: Array<Route> = [
     {
-        path: "/",
+        path: "/teste-desenvolvimento-web/",
         component: HomePage,
         exact: true,
     },
