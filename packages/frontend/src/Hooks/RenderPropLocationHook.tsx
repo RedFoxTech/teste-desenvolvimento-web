@@ -12,7 +12,7 @@ const RenderPropLocationHook = ({
   RenderWithLocationHook,
 }: RenderProp): React.ReactElement => {
   const _location = useLocation();
-  console.log(RenderWithLocationHook, _location);
+  // console.log(RenderWithLocationHook, _location);
 
   if (!RenderWithLocationHook) {
     return <></>;

@@ -39,7 +39,7 @@ const importAllPokemonSprites = (): Record<string, string> => {
     true,
     /\.(png|gif|ico|jpg|jpeg)$/i
   ));
-  console.log(allImages);
+  // console.log(allImages);
   return allImages
 }
 
