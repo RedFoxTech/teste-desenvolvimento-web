@@ -8,12 +8,13 @@ import PokemonWeather from "../../../../shared/declarations/enums/Weather";
 import Pokemon from "../../../../shared/declarations/interfaces/Pokemon";
 import { CachedApiFactory /* ,clearCacheByKey */ } from "@services/ApiWithCache";
 import ApiFactory from "@services/Api";
+import toast, { Toaster } from "react-hot-toast";
 
 class HomePage extends React.PureComponent<null, { pokemons: Pokemon[] }>{
     private paginationId = "";
     private isFetching = false;
     private scrollObserverAttached = false;
-    private scrollObserver: {callback: () => void};
+    private scrollObserver: { callback: () => void };
     private readonly apiFactory = ApiFactory();
 
     constructor(props: null) {
@@ -48,32 +49,33 @@ class HomePage extends React.PureComponent<null, { pokemons: Pokemon[] }>{
 
     private async fetchPokemonsPage(
         useCache = true,
-    ): Promise<{data: Pokemon[], fromCache: boolean} | void> {
+    ): Promise<{ data: Pokemon[], fromCache: boolean } | void> {
         if (this.isFetching) {
             return;
         }
 
         this.isFetching = true;
         try {
-        const { paginationId } = this;
+            const { paginationId } = this;
 
-        /** API com chave de cache */
-        const { api } = useCache ?
-          CachedApiFactory(`/Pokemon/getPage/${paginationId}`) :
-          this.apiFactory;
-          
+            /** API com chave de cache */
+            const { api } = useCache ?
+                CachedApiFactory(`/Pokemon/getPage/${paginationId}`) :
+                this.apiFactory;
 
-        const response = await api.get(`/Pokemon/getPage/${paginationId}`);
-        this.isFetching = false;
-        // console.log(response);
-        const {fromCache} = response.request;
 
-        const {data} = response;
+            const response = await api.get(`/Pokemon/getPage/${paginationId}`);
+            this.isFetching = false;
+            // console.log(response);
+            const { fromCache } = response.request;
 
-        return {data, fromCache};
+            const { data } = response;
+
+            return { data, fromCache };
 
         } catch (error) {
             console.log(error);
+            toast.error(error.message);
             this.isFetching = false;
         }
     }
@@ -107,13 +109,14 @@ class HomePage extends React.PureComponent<null, { pokemons: Pokemon[] }>{
                 // os dados e evitar a "viagem no tempo" (conteúdo antigo)
                 // clearCacheByKey(`/Pokemon/getPage/${this.paginationId}`);
                 this.isFetching = false; // Se não a funçaão de fetch não roda
-                const {data} = await this.fetchPokemonsPage(false) || {data: []};
-                this.setState({pokemons: [...originalState, ...data]});
+                const { data } = await this.fetchPokemonsPage(false) || { data: [] };
+                this.setState({ pokemons: [...originalState, ...data] });
                 // Avança para a próxima página
                 const _lastPokemon = data[data.length - 1];
                 this.paginationId = _lastPokemon._id || '';
             }
         }).catch(error => {
+            toast.error(error.message);
             console.log(error);
             this.isFetching = false;
         });
@@ -149,7 +152,8 @@ class HomePage extends React.PureComponent<null, { pokemons: Pokemon[] }>{
         const { pokemons = null } = this.state;
         const importSpritesPromise = import("@src/Services/ImportAllPokemonSprites");
 
-        return (
+        return (<>
+            <Toaster />
             <main className={classNames(["container", "bg-light", pokemonContainer])} >
                 {pokemons?.length
                     ? pokemons.map((pokemon) => (
@@ -165,7 +169,7 @@ class HomePage extends React.PureComponent<null, { pokemons: Pokemon[] }>{
                 }
 
             </main>
-        );
+        </>);
     }
 }
 

@@ -20,6 +20,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShieldAlt, faSkull } from "@fortawesome/free-solid-svg-icons";
 import { faLifeRing } from "@fortawesome/free-regular-svg-icons";
 import Pokemon from "../../../../shared/declarations/interfaces/Pokemon";
+import toast, { Toaster } from "react-hot-toast";
 
 /** Pequena função utilizada para manter o princípio DRY */
 const dataPresentation = (dataKey: string, dataValue: unknown) => (
@@ -27,10 +28,10 @@ const dataPresentation = (dataKey: string, dataValue: unknown) => (
     // falseável não será mostrado
     dataValue || (dataValue === 0)
         ? <ListGroupItem className={pokemonAttribute}>
-          <span className={pokemonStat}>
-              <b>{dataKey}</b>
-              <p>{typeof dataValue === 'string'? dataValue: String(dataValue)}</p>
-          </span>
+            <span className={pokemonStat}>
+                <b>{dataKey}</b>
+                <p>{typeof dataValue === 'string' ? dataValue : String(dataValue)}</p>
+            </span>
         </ListGroupItem>
         : null
 );
@@ -57,14 +58,15 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
         if (imgImport) {
             if (this.props.imgSrc && typeof this.props.imgSrc === 'string') {
                 // Enquanto a promise não resolve, mantém a imagem de suspensão
-                this.setState({imgSrc: ''});
+                this.setState({ imgSrc: '' });
 
                 // Importa a imagem de maneira assíncrona
                 importSpritesPromise?.then((imageSrcMapping) => {
                     const _imgSrc = imageSrcMapping.default[imgSrc];
-                    this.setState({imgSrc: _imgSrc});
+                    this.setState({ imgSrc: _imgSrc });
                     // console.log('imagem importada', _imgSrc, Object.keys(imageSrcMapping.default)[0], imgSrc);
                 }).catch((error) => {
+                    toast.error(error.message);
                     console.error(error);
                 });
             }
@@ -72,35 +74,37 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
     }
 
     render(): React.ReactNode {
-        const {pokemon, imgImport, description} = this.props;
-        const {collapsed} = this.state;
+        const { pokemon, imgImport, description } = this.props;
+        const { collapsed } = this.state;
         /** Caso imgImport tenha sido passado para o componente, pega a
          * propriedade do state, que vai ser setada assim que a imagem
          * for carregada, ou então pega apenas a URL passada aqui
          */
-        const {imgSrc = ''} = imgImport ? this.state : this.props;
+        const { imgSrc = '' } = imgImport ? this.state : this.props;
 
         return (
+            <>
+                <Toaster />
                 <Card
-                  className={pokemonCard}
-                  style={
-                      // Fazemos isso para não empurrar a linha toda
-                      // embaixo do card expandido, mas apenas empurrar
-                      // o card abaixo do expandido. Isso fica sujeito
-                      // a mudança dependendo do tamanho final do card,
-                      // por enquanto o card expandido é aproximadamente
-                      // 3 vezes maior que o collapsed
-                      collapsed? {gridRow: 'span 1'}: {gridRow: 'span 3'}
-                  }
+                    className={pokemonCard}
+                    style={
+                        // Fazemos isso para não empurrar a linha toda
+                        // embaixo do card expandido, mas apenas empurrar
+                        // o card abaixo do expandido. Isso fica sujeito
+                        // a mudança dependendo do tamanho final do card,
+                        // por enquanto o card expandido é aproximadamente
+                        // 3 vezes maior que o collapsed
+                        collapsed ? { gridRow: 'span 1' } : { gridRow: 'span 3' }
+                    }
                 >
                     <Card.Title className={pokemonCardTitle}>
-                        <img src="/Assets/fa-pokeball.svg" height={20} width={20} style={{verticalAlign: 'sub'}} alt="Pokéball" />
+                        <img src="/Assets/fa-pokeball.svg" height={20} width={20} style={{ verticalAlign: 'sub' }} alt="Pokéball" />
                         {pokemon.name || 'Pokémon Desconhecido'}
                     </Card.Title>
                     <div className={pokemonCardImage}>
                         {/* <img src="imagenotfound.gif" alt="Image not found" onerror="this.onerror=null;this.src='imagefound.gif';" /> */}
                         <Card.Img
-                            style={{width: '95%', height: '95%'}}
+                            style={{ width: '95%', height: '95%' }}
                             variant="top"
                             src={imgSrc || 'Assets/fa-pokemon-arena.svg'}
                             alt="Pokémon"
@@ -114,7 +118,7 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
                     </div>
                     <Card.Body>
                         <ListGroup className={classNames(["list-group-flush"])} id="pokemonInfo">
-                            <ListGroupItem className={pokemonAttribute} style={{padding: '0'}}>
+                            <ListGroupItem className={pokemonAttribute} style={{ padding: '0' }}>
                                 {/* table responsiva do bootstrap */}
                                 <table className={classNames(["table", "table-responsive", pokemonStatsTable])}>
                                     <thead>
@@ -122,10 +126,10 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
                                             <th colSpan={1} className={attackText}>
                                                 <FontAwesomeIcon icon={faSkull} /> {' '} Ataque
                                             </th>
-                                            <th colSpan={2}  className={defenseText}>
-                                                <FontAwesomeIcon icon={faShieldAlt} /> {' '} Defesa 
+                                            <th colSpan={2} className={defenseText}>
+                                                <FontAwesomeIcon icon={faShieldAlt} /> {' '} Defesa
                                             </th>
-                                            <th colSpan={3}  className={hpText}>
+                                            <th colSpan={3} className={hpText}>
                                                 <FontAwesomeIcon icon={faLifeRing} /> {' '} Max HP
                                             </th>
                                         </tr>
@@ -134,21 +138,21 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
                                         <tr>
                                             <td colSpan={1}>
                                                 {pokemon.attack > 0
-                                                ? pokemon.attack
-                                                : 'Carregando...'
-                                            }
+                                                    ? pokemon.attack
+                                                    : 'Carregando...'
+                                                }
                                             </td>
                                             <td colSpan={2}>
                                                 {pokemon.defense > 0
-                                                ? pokemon.defense
-                                                : 'Carregando...'
-                                            }
+                                                    ? pokemon.defense
+                                                    : 'Carregando...'
+                                                }
                                             </td>
                                             <td colSpan={3}>
                                                 {pokemon.staminaHP > 0
-                                                ? pokemon.staminaHP
-                                                : 'Carregando...'
-                                            }
+                                                    ? pokemon.staminaHP
+                                                    : 'Carregando...'
+                                                }
                                             </td>
                                         </tr>
                                     </tbody>
@@ -202,19 +206,20 @@ class PokemonCard extends React.PureComponent<PokemonCardProps, PokemonCardState
                     <Card.Body>
                         <div className="d-grid gap-2">
                             <Button
-                              variant="secondary"
-                              size="lg"
-                              type="button"
-                              aria-controls="pokemonInfo"
-                              aria-expanded={!collapsed}
-                              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                              onClick={(_evt) => this.setState({collapsed: !collapsed})}
+                                variant="secondary"
+                                size="lg"
+                                type="button"
+                                aria-controls="pokemonInfo"
+                                aria-expanded={!collapsed}
+                                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                                onClick={(_evt) => this.setState({ collapsed: !collapsed })}
                             >
-                                {collapsed? 'Mais': 'Menos'} informações...
+                                {collapsed ? 'Mais' : 'Menos'} informações...
                             </Button>
                         </div>
                     </Card.Body>
                 </Card>
+            </>
         );
     }
 }
