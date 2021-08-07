@@ -2,6 +2,8 @@
 
 ## Novo por aqui? Veja a [Wiki que criei](https://github.com/wh1t3h47/teste-desenvolvimento-web/wiki)
 
+![GitHub Contributors Image](https://contrib.rocks/image?repo=wh1t3h47/teste-desenvolvimento-web)
+
 Olá Dev! Tudo bem?
 
 A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
