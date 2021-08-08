@@ -2,7 +2,7 @@
 
 ## Novo por aqui? Veja a [Wiki que criei](https://github.com/wh1t3h47/teste-desenvolvimento-web/wiki)
 
-> :warning: ** Para testar, entre em contato comigo a partir do [Linkedin](https://www.linkedin.com/in/ant%C3%B4nio-martos-harres-5b85a91b4/)**: O Heroku desativa automaticamente o deploy, e a única forma de reativar é colocando informações de cartão de crédito, mesmo colocando o meu, que é internacional, ele falha ao verificar e não me deixa instalar o plugin que mantém o servidor no ar
+> :warning: **Para testar, entre em contato comigo a partir do [Linkedin](https://www.linkedin.com/in/ant%C3%B4nio-martos-harres-5b85a91b4/)** : O Heroku desativa automaticamente o deploy, e a única forma de reativar é colocando informações de cartão de crédito, mesmo colocando o meu, que é internacional, ele falha ao verificar e não me deixa instalar o plugin que mantém o servidor no ar
 
 ![GitHub Contributors Image](https://contrib.rocks/image?repo=wh1t3h47/teste-desenvolvimento-web)
 
