@@ -5,7 +5,7 @@ on:
   - cron: '* */4 * * *' # A cada 4 horas, Veja o site crontab.guru
 
 jobs:
-  stale:
+  keepAliveRequest:
 
     runs-on: ubuntu-latest
 
