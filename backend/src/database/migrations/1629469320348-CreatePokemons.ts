@@ -166,6 +166,16 @@ export class CreatePokemons1629469320348 implements MigrationInterface {
                         name: '100_cp_39',
                         type: 'int',
                         default: 0
+                    },
+                    {
+                        name: 'created_at',
+                        type: 'timestamptz',
+                        default: 'now()'
+                    },
+                    {
+                        name: 'updated_at',
+                        type: 'timestamptz',
+                        default: 'now()'
                     }
                 ]
             })
