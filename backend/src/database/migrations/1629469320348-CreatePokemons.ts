@@ -26,10 +26,6 @@ export class CreatePokemons1629469320348 implements MigrationInterface {
                         type: 'varchar'
                     },
                     {
-                        name: 'img_name',
-                        type: 'varchar'
-                    },
-                    {
                         name: 'generation',
                         type: 'int',
                         default: 0
@@ -45,11 +41,6 @@ export class CreatePokemons1629469320348 implements MigrationInterface {
                     },
                     {
                         name: 'family_id',
-                        type: 'int',
-                        default: 0
-                    },
-                    {
-                        name: 'evolved',
                         type: 'int',
                         default: 0
                     },
@@ -158,12 +149,12 @@ export class CreatePokemons1629469320348 implements MigrationInterface {
                         default: 0
                     },
                     {
-                        name: '100_cp_40',
+                        name: 'cp_100_40',
                         type: 'int',
                         default: 0
                     },
                     {
-                        name: '100_cp_39',
+                        name: 'cp_100_39',
                         type: 'int',
                         default: 0
                     },
