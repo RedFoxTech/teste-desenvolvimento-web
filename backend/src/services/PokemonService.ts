@@ -3,6 +3,39 @@ import { getCustomRepository, Like, Repository } from "typeorm";
 import { PokemonRepository } from '../repositories/PokemonRepository';
 import { getImgPokemon } from '../utils/getImgPokemon';
 
+interface IPokemonList{
+  search: string | any, 
+  page: string | any, 
+  name: string | any, 
+  pokedex_number: string | any, 
+  generation: string | any, 
+  evolution_stage: string | any, 
+  evolved: string | any, 
+  family_id: string | any, 
+  cross_gen: string | any, 
+  type_one: string | any, 
+  type_two: string | any, 
+  weather_one: string | any, 
+  weather_two: string | any, 
+  stat_total: string | any, 
+  atk: string | any, 
+  def: string | any, 
+  sta: string | any, 
+  legendary: string | any, 
+  aquireable: string | any, 
+  spawns: string | any, 
+  regional: string | any, 
+  raidable: string | any, 
+  hatchable: string | any, 
+  shiny: string | any, 
+  nest: string | any, 
+  is_new: string | any, 
+  not_gettable: string | any, 
+  future_evolve: string | any, 
+  cp_100_40: string | any, 
+  cp_100_39: string | any
+}
+
 interface IPokemonStore{
   name: string, 
   pokedex_number: number,
@@ -75,7 +108,7 @@ class PokemonService {
     this.pokemonRepository = getCustomRepository(PokemonRepository);
   }
 
-  async index(search, page, name, pokedex_number, generation, evolution_stage, evolved, family_id, cross_gen, type_one, type_two, weather_one, weather_two, stat_total, atk, def, sta, legendary, aquireable, spawns, regional, raidable, hatchable, shiny, nest, is_new, not_gettable, future_evolve, cp_100_40, cp_100_39){
+  async index({search, page, name, pokedex_number, generation, evolution_stage, evolved, family_id, cross_gen, type_one, type_two, weather_one, weather_two, stat_total, atk, def, sta, legendary, aquireable, spawns, regional, raidable, hatchable, shiny, nest, is_new, not_gettable, future_evolve, cp_100_40, cp_100_39}: IPokemonList){
     let options ={}
     if(search){
       options = {

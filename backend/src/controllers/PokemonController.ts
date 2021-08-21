@@ -40,7 +40,7 @@ class PokemonController {
     } = request.query;
 
     try{
-      const pokemon = await pokemonService.index(
+      const pokemon = await pokemonService.index({
         search, 
         page, 
         name, 
@@ -71,7 +71,7 @@ class PokemonController {
         future_evolve, 
         cp_100_40, 
         cp_100_39
-      );
+      });
       
       return response.status(200).json(pokemon)
     }catch(err){
