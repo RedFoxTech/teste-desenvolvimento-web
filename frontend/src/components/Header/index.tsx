@@ -30,7 +30,7 @@ function Header(){
                 to="/"
                 img={icon_pokebola}
                 title="pokédex"
-                isPage={location.pathname == '/' ? true : false}
+                isPage={location.pathname == '/' || location.pathname.includes('single') ? true : false}
               />
               <CardNav
                 to="/"

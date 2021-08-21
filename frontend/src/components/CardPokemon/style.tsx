@@ -1,8 +1,7 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
 import { theme } from '../../global/theme';
 
-export const Card = styled(Link)`
+export const Card = styled.a`
   display: block;
   background-color: ${theme.colors.white};
   text-align: center;

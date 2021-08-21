@@ -11,6 +11,7 @@ import {
 }from './style';
 
 interface ICardPokemon{
+  id: string,
   url_img_pokemon: string,
   name: string,
   pokedex_number:string,
@@ -20,10 +21,10 @@ interface ICardPokemon{
   type_two: string
 }
 
-function  CardPokemon({url_img_pokemon, name, pokedex_number, atk, def, type_one, type_two}:ICardPokemon){
+function  CardPokemon({id, url_img_pokemon, name, pokedex_number, atk, def, type_one, type_two}:ICardPokemon){
   return (
     <Card 
-      to="/"
+      href={`/single/${id}`}
     >
       <Img
         url_img_pokemon={url_img_pokemon}

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
 import { theme } from '../../global/theme';
 
 export const Main = styled.main`
@@ -65,17 +64,3 @@ export const SearchInput = styled.input`
   font-weight: 500;
   font-size: 15px;
 `
-
-export const SearchSelect = styled.select`
-  width: 100%;
-  padding: 10px;
-  margin-right: 5px;
-  border: solid 2px ${theme.colors.card_one};
-  border-radius: 5px;
-  font-family: ${theme.fonts.text1};
-  color: ${theme.colors.card_one};
-  font-weight: 500;
-  font-size: 15px;
-`
-
-export const SearchOption = styled.option``

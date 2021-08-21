@@ -15,9 +15,7 @@ import {
   ColumnPokemon,
   CenterPokemon,
   ButtonLoadMorePokemons,
-  SearchInput,
-  SearchSelect,
-  SearchOption
+  SearchInput
 }from './style';
 
 import {
@@ -56,7 +54,6 @@ function Dashboard(){
   function load_pokemons(page: number, event: string, pokemons: any[]){
     setLoading(true);
     api.get(`/pokemons?page=${page}&search=${event}`).then(response => {
-      console.log(response.data)
       const row = [...Array( Math.ceil((pokemons.length + response.data.length) / 4) )];
       const all_pokemons = [...pokemons, ...response.data ]
       const pokemonsRows = row.map( (row, id) => all_pokemons.slice(id * 4, id * 4 + 4));
@@ -65,6 +62,7 @@ function Dashboard(){
           { row.map( (pokemon:any) => 
             <ColumnPokemon>
               <CardPokemon
+                id={pokemon.id}
                 url_img_pokemon={pokemon.url_img_pokemon}
                 name={pokemon.name}
                 pokedex_number={pokemon.pokedex_number}
@@ -107,12 +105,6 @@ function Dashboard(){
                     search_pokemon(event.target.value);
                   }}
                 />
-              </ColumnPokemon>
-              <ColumnPokemon>
-                <SearchSelect>
-                  <SearchOption value="">Filter</SearchOption>
-                  <SearchOption value="family">Family</SearchOption>
-                </SearchSelect>
               </ColumnPokemon>
             </Row>
             {
