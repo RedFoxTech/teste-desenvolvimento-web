@@ -17,6 +17,10 @@ export class CreatePokemons1629469320348 implements MigrationInterface {
                         type: 'varchar'
                     },
                     {
+                        name: 'url_img_pokemon',
+                        type: 'varchar'
+                    },
+                    {
                         name: 'pokedex_number',
                         type: 'int',
                         default: 0
@@ -51,27 +55,19 @@ export class CreatePokemons1629469320348 implements MigrationInterface {
                     },
                     {
                         name: 'type_one',
-                        type: 'enum',
-                        enum: ['', 'grass', 'fire', 'water', 'bug', 'normal', 'poison', 'electric', 'ground', 'fairy', 'fighting', 'psychic', 'rock', 'ghost', 'ice', 'dragon', 'dark', 'steel'],
-                        default: `''`,
+                        type: 'varchar',
                     },
                     {
                         name: 'type_two',
-                        type: 'enum',
-                        enum: ['', 'grass', 'fire', 'water', 'bug', 'normal', 'poison', 'electric', 'ground', 'fairy', 'fighting', 'psychic', 'rock', 'ghost', 'ice', 'dragon', 'dark', 'steel'],
-                        default: `''`,
+                        type: 'varchar',
                     },
                     {
                         name: 'weather_one',
-                        type: 'enum',
-                        enum: ['Sunny/clear', 'Rainy', 'Partly cloudy', 'Cloudy', 'Windy', 'Fog', 'Snow'],
-                        default: `'Sunny/clear'`,
+                        type: 'varchar',
                     },
                     {
                         name: 'weather_two',
-                        type: 'enum',
-                        enum: ['Sunny/clear', 'Rainy', 'Partly cloudy', 'Cloudy', 'Windy', 'Fog', 'Snow'],
-                        default: `'Sunny/clear'`,
+                        type: 'varchar',
                     },
                     {
                         name: 'stat_total',
@@ -134,7 +130,7 @@ export class CreatePokemons1629469320348 implements MigrationInterface {
                         default: 0
                     },
                     {
-                        name: 'new',
+                        name: 'is_new',
                         type: 'int',
                         default: 0
                     },

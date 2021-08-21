@@ -7,19 +7,18 @@ import {
 } from 'typeorm'
 
 import { v4 as uuid} from 'uuid';
-export type Type_one = '' | 'grass' | 'fire' | 'water' | 'bug' | 'normal' | 'poison' | 'electric' | 'ground' | 'fairy' | 'fighting' | 'psychic' | 'rock' | 'ghost' | 'ice' | 'dragon' | 'dark' | 'steel';
-export type Type_two = '' | 'grass' | 'fire' | 'water' | 'bug' | 'normal' | 'poison' | 'electric' | 'ground' | 'fairy' | 'fighting' | 'psychic' | 'rock' | 'ghost' | 'ice' | 'dragon' | 'dark' | 'steel';
-export type Weather_one = 'Sunny/clear' | 'Rainy' | 'Partly cloudy' | 'Cloudy' | 'Windy' | 'Fog' | 'Snow';
-export type Weather_two = 'Sunny/clear' | 'Rainy' | 'Partly cloudy' | 'Cloudy' | 'Windy' | 'Fog' | 'Snow';
 
 @Entity('pokemons')
-class Pokemom {
+class Pokemon {
 
   @PrimaryColumn('uuid')
   id: string;
 
   @Column()
   name:string;
+
+  @Column()
+  url_img_pokemon: string;
 
   @Column()
   pokedex_number:number;
@@ -43,16 +42,16 @@ class Pokemom {
   cross_gen:number;  
 
   @Column()
-  type_one:Type_one; 
+  type_one: string; 
   
   @Column()
-  type_two: Type_two;
+  type_two: string;
   
   @Column()
-  weather_one: Weather_one;
+  weather_one: string;
 
   @Column()
-  weather_two: Weather_two;
+  weather_two: string;
 
   @Column()
   stat_total:number;
@@ -91,7 +90,7 @@ class Pokemom {
   nest:number;
 
   @Column()
-  new:number;
+  is_new:number;
 
   @Column()
   not_gettable:number;
@@ -118,4 +117,4 @@ class Pokemom {
   }
 }
 
-export { Pokemom };
+export { Pokemon };
