@@ -9,10 +9,10 @@ interface ICard{
 export const Card = styled(Link)<ICard>`
   background-color: ${props => props.isPage ? theme.colors.secondary : theme.colors.primary};
   text-align: center;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 5px;
-  padding: 15px;
+  padding: 15px 10px;
   margin-right: 10px;
   transition: all 0.2s;
   &:hover{
@@ -20,13 +20,13 @@ export const Card = styled(Link)<ICard>`
   }
 `
 export const Img = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 `
 
 export const Title = styled.h1`
   font-family: ${theme.fonts.text1};
   color: ${theme.colors.white};
   font-weight: 500;
-  font-size: 15px;
+  font-size: 12px;
 `

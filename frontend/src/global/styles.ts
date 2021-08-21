@@ -66,4 +66,5 @@ export const Column =  styled.div`
   flex: 1;
   align-self: center;
   width: 100%;
+  padding: 0 20px;
 `

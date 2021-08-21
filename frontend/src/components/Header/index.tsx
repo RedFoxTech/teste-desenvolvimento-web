@@ -9,17 +9,12 @@ import {
   HeaderDiv,
   LogoDiv,
   LogoImg,
-  Nav,
-  SearchForm,
-  SearchInput,
-  SearchButton,
-  SearchIcon
+  Nav
 } from './style';
 
 import { CardNav } from '../CardNav';
 
 import logo from '../../assets/logo.png';
-import icon_button_search from '../../assets/icon-button-search.png';
 import icon_pokebola from '../../assets/icon-pokebola.png';
 import icon_pikachu from '../../assets/icon-pikachu.png';
 
@@ -40,7 +35,7 @@ function Header(){
               <CardNav
                 to="/"
                 img={icon_pikachu}
-                title="adicionar"
+                title="add"
                 isPage={location.pathname == '/add-pokemon' ? true : false}
               />
             </Nav>
@@ -55,17 +50,7 @@ function Header(){
             </LogoDiv>
           </Column>
           <Column>
-            <SearchForm>
-              <SearchInput
-                placeholder="Pesquisar..."
-              />
-              <SearchButton>
-                <SearchIcon
-                  src={icon_button_search}
-                  alt="button-search"
-                />
-              </SearchButton>
-            </SearchForm>
+            
           </Column>
         </Row>
       </Container>

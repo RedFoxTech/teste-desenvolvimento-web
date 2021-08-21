@@ -4,7 +4,9 @@ export const theme = {
     secondary: '#E3350D',
     card_one: '#C4C4C4',
     card_two: '#e6bc2f',
-    white: '#fff'
+    white: '#fff',
+    grass: "#9bcc50",
+    fire: "#fd7d24"
   },
 
   fonts: {

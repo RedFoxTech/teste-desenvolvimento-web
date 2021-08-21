@@ -14,40 +14,10 @@ export const LogoDiv = styled(Link)`
 `
 
 export const LogoImg = styled.img`
-  width: 150px;
+  width: 120px;
   height: auto;
 `
 
 export const Nav = styled.nav`
   display: flex;
-`
-
-export const SearchForm = styled.form`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-`
-
-export const SearchInput = styled.input`
-  padding: 15px 20px;
-  margin-right: 5px;
-  border: solid 2px ${theme.colors.card_one};
-  border-radius: 5px;
-  font-family: ${theme.fonts.text1};
-  color: ${theme.colors.card_one};
-  font-weight: 500;
-  font-size: 15px;
-`
-
-export const SearchButton = styled.button`
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-`
-
-export const SearchIcon = styled.img`
-  width: 40px;
-  height: 40px;
 `

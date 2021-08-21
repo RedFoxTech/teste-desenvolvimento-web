@@ -1,5 +1,5 @@
 import  { Pokemon } from '../entities/Pokemon';
-import { getCustomRepository, Like, Repository } from "typeorm";
+import { getCustomRepository, ILike, Repository } from "typeorm";
 import { PokemonRepository } from '../repositories/PokemonRepository';
 import { getImgPokemon } from '../utils/getImgPokemon';
 
@@ -114,11 +114,11 @@ class PokemonService {
       options = {
         ...options,
         where: [
-          {name: Like(`%${search}%`)},
-          {type_one : Like(`%${search}%`)},
-          {type_two : Like(`%${search}%`)},
-          {weather_one : Like(`%${search}%`)},
-          {weather_two : Like(`%${search}%`)},
+          {name: ILike(`%${search}%`)},
+          {type_one : ILike(`%${search}%`)},
+          {type_two : ILike(`%${search}%`)},
+          {weather_one : ILike(`%${search}%`)},
+          {weather_two : ILike(`%${search}%`)}
         ]
       }
     }
@@ -187,10 +187,11 @@ class PokemonService {
       }
     }
 
+
     const pokemon = await this.pokemonRepository.find({
       ...options,
       skip: (parseInt(page) - 1) * 10,
-      take: 10,
+      take: 10
     });
 
     return pokemon;
@@ -202,14 +203,14 @@ class PokemonService {
   }
 
   async store({name, pokedex_number, img_name, generation, evolution_stage, evolved, family_id, cross_gen, type_one, type_two, weather_one, weather_two, stat_total, atk, def, sta, legendary, aquireable, spawns, regional, raidable, hatchable, shiny, nest, is_new, not_gettable, future_evolve, cp_100_40, cp_100_39}:IPokemonStore){
-    const pokemonExists = await this.pokemonRepository.findOne({
-      where:{
-        name
-      }
-    })
+    // const pokemonExists = await this.pokemonRepository.findOne({
+    //   where:{
+    //     name
+    //   }
+    // })
 
-    if(pokemonExists)
-      throw new Error("Esse pokemon já foi cadastrado");
+    // if(pokemonExists)
+    //   throw new Error("Esse pokemon já foi cadastrado");
 
     const url_img_pokemon = await getImgPokemon(name);
     
