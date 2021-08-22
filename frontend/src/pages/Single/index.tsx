@@ -14,6 +14,8 @@ import {
   Column
 } from '../../global/styles';
 
+import swal from 'sweetalert';
+
 import {
   Main,
   SectionPokemons,
@@ -25,7 +27,9 @@ import {
   LiPokemon,
   ColumnPokemon,
   Family,
-  ButtonGoBack
+  ButtonGoBack,
+  ButtonDelete,
+  ButtonEdit
 }from './style';
 
 import {
@@ -75,8 +79,25 @@ function Single(){
           </Row>))
         );
       })
+    }, error => {
+      swal ( "Ops!" ,  error.response.data.error ,  "error").then(()=>{
+        history.goBack();
+      })
     })
   }, [])
+
+  function deletePokemon(){
+    api.delete(`/pokemons/${id}`).then(response => {
+      swal(`Prontinho! ${response.data.success}`, {
+        icon: "success",
+      }).then(()=>{
+        history.push('/');
+      })
+    }, error => {
+      swal ( "Ops!" ,  error.response.data.error ,  "error");
+    })
+  }
+
   return (
     <>
       <Header/>
@@ -87,6 +108,12 @@ function Single(){
               <Column>
                 <ButtonGoBack
                   onClick={()=>history.goBack()}
+                />
+                <ButtonDelete
+                  onClick={deletePokemon}
+                />
+                <ButtonEdit
+                  onClick={()=>history.push(`/edit-pokemon/${id}`)}
                 />
               </Column>
             </Row>

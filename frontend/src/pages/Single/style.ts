@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 import { theme } from '../../global/theme';
 import { 
-  FaArrowLeft 
+  FaArrowLeft,
+  FaTrash,
+  FaEdit 
 } from 'react-icons/fa';
 
 export const Main = styled.main`
@@ -100,4 +102,18 @@ export const ButtonGoBack = styled(FaArrowLeft)`
   font-size: 30px;
   color: ${theme.colors.white};
   cursor: pointer;
+`
+
+export const ButtonDelete = styled(FaTrash)`
+  font-size: 30px;
+  color: ${theme.colors.white};
+  cursor: pointer;
+  margin-left: 20px;
+`
+
+export const ButtonEdit = styled(FaEdit)`
+  font-size: 30px;
+  color: ${theme.colors.white};
+  cursor: pointer;
+  margin-left: 20px;
 `
