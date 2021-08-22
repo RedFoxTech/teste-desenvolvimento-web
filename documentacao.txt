@@ -1,0 +1,22 @@
+Backend
+- Feito em NodeJS, Express, TypeScript e usado como banco de dados o Postgres.
+
+1 - Para iniciar deve-se rodar o docker-compose up -D para que suba uma instância
+Do postgres e instalar os pacotes necessários com o comando yarn install ou npm install.
+
+2 - Criar a base de dados com o seguinte nome : pokemongodb.
+
+3 - Startar o backend que roda na porta 3333 com o comando yarn start.
+
+4 - endpointes: /pokemons com os seguintes metódos GET, POST, PUT, DELETE.
+
+Frontend
+- Tecnologias utilizadas ReactJS, Styled-Components, Axios e etc.
+
+1 - Para iniciar deve-se instalar todos os pacotes necessários utilizando o comando yarn install ou npm install após isso yarn start para rodar o projeto.
+
+2 - A integração com api rest feita em node fica na pasta service.
+
+Qualquer dúvida entrar em contato no whasapp: (85) 98932-3895. Hallex Abreu.
+
+Espero ter atendido a todas as expectativas do projeto e caso tenha ficado alguma coisa faltando ou possa ser melhorado gostaria desse feedback.
