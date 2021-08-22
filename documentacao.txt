@@ -1,6 +1,8 @@
 Backend
 - Feito em NodeJS, Express, TypeScript e usado como banco de dados o Postgres.
 
+- Novidade: O backend se comunica com a api do pokémon quando é feito um novo cadastro, dessa forma ele pega a url da imagem do pokémon pelo nome e adiciona na tabela, fazendo assim com que possamos mostrar a imagem do mesmo.
+
 1 - Para iniciar deve-se rodar o docker-compose up -D para que suba uma instância
 Do postgres e instalar os pacotes necessários com o comando yarn install ou npm install.
 
