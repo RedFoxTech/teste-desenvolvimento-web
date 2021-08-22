@@ -334,14 +334,23 @@ function Edit(){
                     onChange={(event) => setType_two(event.target.value)}
                   >
                     <Option value="">Select Type</Option>
-                    <Option value="weather_one">weather_one</Option>
-                    <Option value="Sunny/clear">Sunny/clear</Option>
-                    <Option value="Rainy">Rainy</Option>
-                    <Option value="Partly cloudy">Partly cloudy</Option>
-                    <Option value="Cloudy">Cloudy</Option>
-                    <Option value="Windy">Windy</Option>
-                    <Option value="Fog">Fog</Option>
-                    <Option value="Snow">Snow</Option>
+                    <Option value="grass">grass</Option>
+                    <Option value="fire">fire</Option>
+                    <Option value="water">water</Option>
+                    <Option value="bug">bug</Option>
+                    <Option value="normal">normal</Option>
+                    <Option value="poison">poison</Option>
+                    <Option value="electric">electric</Option>
+                    <Option value="ground">ground</Option>
+                    <Option value="fairy">fairy</Option>
+                    <Option value="fighting">fighting</Option>
+                    <Option value="psychic">psychic</Option>
+                    <Option value="rock">rock</Option>
+                    <Option value="ghost">ghost</Option>
+                    <Option value="ice">ice</Option>
+                    <Option value="dragon">dragon</Option>
+                    <Option value="dark">dark</Option>
+                    <Option value="steel">steel</Option>
                   </Select>
                 </ColumnPokemon>
                 <ColumnPokemon>

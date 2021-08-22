@@ -203,14 +203,14 @@ class PokemonService {
   }
 
   async store({name, pokedex_number, img_name, generation, evolution_stage, evolved, family_id, cross_gen, type_one, type_two, weather_one, weather_two, stat_total, atk, def, sta, legendary, aquireable, spawns, regional, raidable, hatchable, shiny, nest, is_new, not_gettable, future_evolve, cp_100_40, cp_100_39}:IPokemonStore){
-    // const pokemonExists = await this.pokemonRepository.findOne({
-    //   where:{
-    //     name
-    //   }
-    // })
+    const pokemonExists = await this.pokemonRepository.findOne({
+      where:{
+        name
+      }
+    })
 
-    // if(pokemonExists)
-    //   throw new Error("Esse pokemon já foi cadastrado");
+    if(pokemonExists)
+      throw new Error("Esse pokemon já foi cadastrado");
 
     const url_img_pokemon = await getImgPokemon(name);
     

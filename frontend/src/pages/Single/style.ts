@@ -34,11 +34,30 @@ interface IImg {
 
 export const Img = styled.div<IImg>`
   background-image: url(${props => props.url_img_pokemon ? props.url_img_pokemon : 'https://extra.globo.com/incoming/19847910-7b9-f63/w488h275-PROP/pokemon.jpg'});
-  height: 500px;
   background-size: cover;
   background-position: center;
   background-color: ${theme.colors.white};
   border-radius: 5px;
+  // Small devices (landscape phones, 320px and up)
+  @media (min-width: 320px) {
+    height: 300px;
+  }
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) { 
+    height: 300px;
+  }
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) { 
+    height: 500px;
+  }
+  // X-Large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) { 
+    height: 500px;
+  }
+  // XX-Large devices (larger desktops, 1400px and up)
+  @media (min-width: 1400px) { 
+    height: 500px;
+  }
 `
 
 export const Name = styled.h1`

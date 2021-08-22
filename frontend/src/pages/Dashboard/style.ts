@@ -64,3 +64,10 @@ export const SearchInput = styled.input`
   font-weight: 500;
   font-size: 15px;
 `
+
+export const Title = styled.h1`
+  font-family: ${theme.fonts.text1};
+  color: ${theme.colors.primary};
+  font-weight: 500;
+  font-size: 15px;
+`

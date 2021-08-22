@@ -15,7 +15,8 @@ import {
   ColumnPokemon,
   CenterPokemon,
   ButtonLoadMorePokemons,
-  SearchInput
+  SearchInput,
+  Title
 }from './style';
 
 import {
@@ -45,7 +46,6 @@ function Dashboard(){
   const [loading, setLoading] = useState(false);
   const [hasMorePokemons, setHasMorePokemons] = useState(true);
   const [search, setSearch] = useState('');
-  const [type, setType] = useState('');
 
   useEffect(()=>{ 
     load_pokemons(page, search, pokemons);
@@ -95,6 +95,13 @@ function Dashboard(){
       <Main>
         <SectionPokemons>
           <Container>
+            <Row>
+              <ColumnPokemon>
+                <Title>
+                  Search for Name, Type and Weather
+                </Title>
+              </ColumnPokemon>
+            </Row>
             <Row>
               <ColumnPokemon>
                 <SearchInput
