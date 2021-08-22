@@ -210,10 +210,10 @@ function Single(){
                 </UlPokemon>
                 <UlPokemon>
                   <LiPokemon>
-                    100 CP 40: <span>{pokemon.cp_100_40}</span>
+                    100% CP @ 40: <span>{pokemon.cp_100_40}</span>
                   </LiPokemon>
                   <LiPokemon>
-                    100 CP 39: <span>{pokemon.cp_100_39}</span>
+                    100% CP @ 39: <span>{pokemon.cp_100_39}</span>
                   </LiPokemon>
                 </UlPokemon>
               </ColumnSingleTwo>

@@ -33,7 +33,7 @@ function Header(){
                 isPage={location.pathname == '/' || location.pathname.includes('single') ? true : false}
               />
               <CardNav
-                to="/"
+                to="/add-pokemon"
                 img={icon_pikachu}
                 title="add"
                 isPage={location.pathname == '/add-pokemon' ? true : false}
