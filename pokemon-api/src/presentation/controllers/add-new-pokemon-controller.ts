@@ -5,6 +5,7 @@ import {
   Validation,
   badRequest,
   success,
+  serverError,
 } from 'shared/interfaces';
 import { AddPokemon } from 'domain/usecases/';
 
@@ -23,7 +24,7 @@ export class AddNewPokemon implements Controller {
 
       return success(newPokemon);
     } catch (error) {
-      return error;
+      return serverError(error);
     }
   }
 }
