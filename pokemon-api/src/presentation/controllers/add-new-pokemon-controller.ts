@@ -18,9 +18,7 @@ export class AddNewPokemon implements Controller {
     try {
       const { body } = req;
       const error = this.validation.validate(body);
-
       if (error) badRequest(error);
-
       const newPokemon = await this.addPokemon.add(body);
 
       return success(newPokemon);
