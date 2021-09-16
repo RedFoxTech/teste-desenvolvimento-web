@@ -1,12 +1,16 @@
 import {
   AddPokemonRepository,
   ListAllPokemonsRepository,
+  GetPokemonRepository,
 } from 'data/protocols/';
 import { getRepository, Repository } from 'typeorm';
 import { Pokemon } from '../entities/Pokemon';
 
 export class PokemonRepository
-  implements AddPokemonRepository, ListAllPokemonsRepository {
+  implements
+    AddPokemonRepository,
+    ListAllPokemonsRepository,
+    GetPokemonRepository {
   private readonly repostiory: Repository<Pokemon>;
   constructor() {
     this.repostiory = getRepository(Pokemon);
@@ -21,5 +25,15 @@ export class PokemonRepository
   public async list(): Promise<Pokemon[]> {
     const pokemons = this.repostiory.find();
     return pokemons;
+  }
+
+  public async get(id: string): Promise<Pokemon | null> {
+    const pokemon = await this.repostiory.findOne({
+      where: {
+        id: id,
+      },
+    });
+
+    return pokemon;
   }
 }
