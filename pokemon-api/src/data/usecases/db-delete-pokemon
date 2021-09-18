@@ -1,4 +1,4 @@
-import { DeletePokemonRepository } from '../protocols/';
+import { DeletePokemonRepository } from '../protocols';
 import { DeletePokemon } from '../../domain/usecases';
 import { Pokemon } from '../../domain/models';
 
