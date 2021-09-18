@@ -1,10 +1,12 @@
 import { GetPokemon } from 'domain/usecases/get-pokemon';
+import { InvalidParamError } from 'shared/errors';
 import {
   Controller,
   HttpRequest,
   HttpResponse,
   serverError,
   success,
+  forbidden,
 } from 'shared/interfaces';
 
 export class GetPokemonController implements Controller {
@@ -14,6 +16,11 @@ export class GetPokemonController implements Controller {
     try {
       const { id } = httpRequest.params;
       const pokemon = await this.getPokemon.get(id);
+      if (!pokemon) {
+        return forbidden(
+          new InvalidParamError(`Not found content with ${id} id`),
+        );
+      }
 
       return success(pokemon);
     } catch (error) {
