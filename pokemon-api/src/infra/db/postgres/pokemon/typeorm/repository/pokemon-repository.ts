@@ -2,6 +2,7 @@ import {
   AddPokemonRepository,
   ListAllPokemonsRepository,
   GetPokemonRepository,
+  DeletePokemonRepository,
 } from 'data/protocols/';
 import { getRepository, Repository } from 'typeorm';
 import { Pokemon } from '../entities/Pokemon';
@@ -10,7 +11,8 @@ export class PokemonRepository
   implements
     AddPokemonRepository,
     ListAllPokemonsRepository,
-    GetPokemonRepository {
+    GetPokemonRepository,
+    DeletePokemonRepository {
   private readonly repostiory: Repository<Pokemon>;
   constructor() {
     this.repostiory = getRepository(Pokemon);
@@ -33,6 +35,13 @@ export class PokemonRepository
         id: id,
       },
     });
+
+    return pokemon;
+  }
+
+  public async delete(pokemon: Pokemon): Promise<Pokemon | null> {
+    const { id } = pokemon;
+    this.repostiory.delete({ id });
 
     return pokemon;
   }
