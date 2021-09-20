@@ -3,6 +3,9 @@ import { CgPokemon } from 'react-icons/cg'
 import { Step, Steps, useSteps } from 'chakra-ui-steps'
 import { useFormik } from 'formik'
 import { PokemonData, PhysicalAttributes, CombatPowerForm } from './forms'
+import { FiArrowLeft } from 'react-icons/fi'
+import Link from 'next/link'
+import Head from 'next/head'
 
 export const NewPokemonForm = () => {
   const formik = useFormik({
@@ -79,8 +82,24 @@ export const NewPokemonForm = () => {
       mx="auto"
       p={4}
       borderRadius={10}
-      minHeight="600px"
+      minHeight="680px"
     >
+      <Head>
+        <title>PoKRUD | Novo Pokemon</title>
+      </Head>
+      <Link href="/" passHref>
+        <C.Button
+          variant="unstyled"
+          as="a"
+          type="button"
+          maxW={2}
+          display="flex"
+          alignItems="center"
+        >
+          <FiArrowLeft />
+        </C.Button>
+      </Link>
+
       <form onSubmit={formik.handleSubmit}>
         <Steps
           activeStep={activeStep}
