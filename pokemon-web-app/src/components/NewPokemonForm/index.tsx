@@ -71,7 +71,16 @@ export const NewPokemonForm = () => {
   })
 
   return (
-    <C.Stack spacing={1} w="100%" maxWidth={720} mx="auto" p={2}>
+    <C.Stack
+      spacing={1}
+      position="relative"
+      w="100%"
+      maxWidth={720}
+      mx="auto"
+      p={4}
+      borderRadius={10}
+      minHeight="600px"
+    >
       <form onSubmit={formik.handleSubmit}>
         <Steps
           activeStep={activeStep}
@@ -87,11 +96,14 @@ export const NewPokemonForm = () => {
         </Steps>
 
         <C.Stack
+          position="absolute"
           mt={4}
           alignItems="center"
           direction="row"
           justifyContent="flex-end"
           spacing={2}
+          right={0}
+          bottom={4}
         >
           <C.Button
             type="button"

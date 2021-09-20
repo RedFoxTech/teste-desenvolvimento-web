@@ -45,15 +45,6 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
       </C.Flex>
 
       <Input
-        name="evolved"
-        label="Evoluído"
-        type="number"
-        onChange={handleChange}
-        placeholder="Evolução"
-        value={values.evolved}
-      />
-
-      <Input
         name="crossGen"
         label="Geração Cruzada"
         type="number"

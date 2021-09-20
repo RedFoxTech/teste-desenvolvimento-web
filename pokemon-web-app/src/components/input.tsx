@@ -30,6 +30,7 @@ export const Input = ({
         {label}
       </FormLabel>
       <ChakraInput
+        variant="flushed"
         value={value}
         type={type || 'text'}
         onChange={onChange}
