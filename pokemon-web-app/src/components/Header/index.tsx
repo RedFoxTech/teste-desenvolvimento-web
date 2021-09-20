@@ -1,4 +1,6 @@
 import * as C from '@chakra-ui/react'
+import Link from 'next/link'
+
 import { FiPlus, FiSearch } from 'react-icons/fi'
 
 export const Header = () => {
@@ -42,9 +44,17 @@ export const Header = () => {
         </button>
       </C.Flex>
 
-      <C.Button colorScheme="yellow" bg="yellow.400" rightIcon={<FiPlus />}>
-        Novo Pokemon
-      </C.Button>
+      <Link href="/pokemon-new" passHref>
+        <C.Button
+          as="a"
+          href="newPokemon"
+          colorScheme="yellow"
+          bg="yellow.400"
+          rightIcon={<FiPlus />}
+        >
+          Novo Pokemon
+        </C.Button>
+      </Link>
     </C.Stack>
   )
 }

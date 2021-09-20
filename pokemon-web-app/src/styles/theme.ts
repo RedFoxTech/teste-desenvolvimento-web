@@ -1,4 +1,5 @@
 import { extendTheme } from '@chakra-ui/react'
+import { StepsStyleConfig as Steps } from 'chakra-ui-steps'
 
 export const theme = extendTheme({
   colors: {
@@ -17,5 +18,8 @@ export const theme = extendTheme({
         color: 'blue.50'
       }
     }
+  },
+  components: {
+    Steps
   }
 })
