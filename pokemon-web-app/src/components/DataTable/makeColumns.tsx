@@ -1,30 +1,30 @@
 export const columns = [
   {
     Header: 'Nome',
-    accessor: 'Name'
+    accessor: 'name'
   },
   {
     Header: 'Geração',
-    accessor: 'Generation'
+    accessor: 'generation'
   },
   {
     Header: 'Est. Evolução',
-    accessor: 'EvolutionStage'
+    accessor: 'evolutionStage'
   },
   {
     Header: 'Tipo 01',
-    accessor: 'Type1'
+    accessor: 'type1'
   },
   {
     Header: 'Ataque',
-    accessor: 'ATK'
+    accessor: 'atk'
   },
   {
     Header: 'Defesa',
-    accessor: 'DEF'
+    accessor: 'def'
   },
   {
     Header: 'Stamina',
-    accessor: 'STA'
+    accessor: 'sta'
   }
 ]
