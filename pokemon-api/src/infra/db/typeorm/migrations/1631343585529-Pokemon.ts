@@ -68,7 +68,7 @@ export class Pokemon1631343585529 implements MigrationInterface {
           },
           {
             name: 'statTotal',
-            type: 'int',
+            type: 'decimal',
           },
           {
             name: 'atk',
