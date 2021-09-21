@@ -6,12 +6,12 @@ export type Pokemon = {
   generation: number;
   evolutionStage: number;
   evolved: boolean;
-  familyID: number;
+  familyID?: number;
   crossGen: number;
   type1: string;
-  type2: string;
+  type2?: string;
   weather1: string;
-  weather2: string;
+  weather2?: string;
   statTotal: number;
   atk: number;
   def: number;

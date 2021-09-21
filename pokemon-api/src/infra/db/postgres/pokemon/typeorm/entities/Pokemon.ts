@@ -12,91 +12,91 @@ export class Pokemon {
   id: string;
 
   @Column()
-  Name: string;
+  name: string;
 
   @Column()
-  PokedexNumber: number;
+  pokedexNumber: number;
 
   @Column()
-  ImgName: number;
+  imgName: number;
 
   @Column()
-  Generation: number;
+  generation: number;
 
   @Column()
-  EvolutionStage: number;
+  evolutionStage: number;
 
   @Column()
-  Evolved: number;
+  evolved: boolean;
 
   @Column()
-  FamilyID: number;
+  familyID: number;
 
   @Column()
-  CrossGen: number;
+  crossGen: number;
 
   @Column()
-  Type1: string;
+  type1: string;
 
   @Column()
-  Type2: string;
+  type2: string;
 
   @Column()
-  Weather1: string;
+  weather1: string;
 
   @Column()
-  Weather2: string;
+  weather2: string;
 
   @Column()
-  STATTOTAL: number;
+  statTotal: number;
 
   @Column()
-  ATK: number;
+  atk: number;
 
   @Column()
-  DEF: number;
+  def: number;
 
   @Column()
-  STA: number;
+  sta: number;
 
   @Column()
-  Legendary: number;
+  legendary: boolean;
 
   @Column()
-  Aquireable: number;
+  aquireable: number;
 
   @Column()
-  Spawns: number;
+  spawns: boolean;
 
   @Column()
-  Regional: number;
+  regional: boolean;
 
   @Column()
-  Raidable: number;
+  raidable: number;
 
   @Column()
-  Hatchable: number;
+  hatchable: number;
 
   @Column()
-  Shiny: number;
+  shiny: boolean;
 
   @Column()
-  Nest: number;
+  nest: boolean;
 
   @Column()
-  New: number;
+  new: boolean;
 
   @Column()
-  NotGettable: number;
+  notGettable: boolean;
 
   @Column()
-  FutureEvolve: number;
+  futureEvolve: boolean;
 
   @Column()
-  CP40: number;
+  cp40: number;
 
   @Column()
-  CP39: number;
+  cp39: number;
 
   @CreateDateColumn()
   created_at: Date;

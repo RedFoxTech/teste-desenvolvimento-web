@@ -16,119 +16,122 @@ export class Pokemon1631343585529 implements MigrationInterface {
             default: 'uuid_generate_v4()',
           },
           {
-            name: 'Name',
+            name: 'name',
             type: 'varchar',
           },
           {
-            name: 'PokedexNumber',
+            name: 'pokedexNumber',
             type: 'int',
           },
           {
-            name: 'ImgName',
+            name: 'imgName',
             type: 'int',
           },
           {
-            name: 'Generation',
+            name: 'generation',
             type: 'int',
           },
           {
-            name: 'EvolutionStage',
+            name: 'evolutionStage',
             type: 'int',
           },
           {
-            name: 'Evolved',
+            name: 'evolved',
+            type: 'boolean',
+          },
+          {
+            name: 'familyID',
+            type: 'int',
+            isNullable: true,
+          },
+          {
+            name: 'crossGen',
             type: 'int',
           },
           {
-            name: 'FamilyID',
-            type: 'int',
+            name: 'type1',
+            type: 'varchar',
+            isNullable: true,
           },
           {
-            name: 'CrossGen',
-            type: 'int',
-          },
-          {
-            name: 'Type1',
+            name: 'type2',
             type: 'varchar',
           },
           {
-            name: 'Type2',
+            name: 'weather1',
             type: 'varchar',
           },
           {
-            name: 'Weather1',
+            name: 'weather2',
             type: 'varchar',
+            isNullable: true,
           },
           {
-            name: 'Weather2',
-            type: 'varchar',
-          },
-          {
-            name: 'STATTOTAL',
+            name: 'statTotal',
             type: 'int',
           },
           {
-            name: 'ATK',
+            name: 'atk',
             type: 'int',
           },
           {
-            name: 'DEF',
+            name: 'def',
             type: 'int',
           },
           {
-            name: 'STA',
+            name: 'sta',
             type: 'int',
           },
           {
-            name: 'Legendary',
+            name: 'legendary',
+            type: 'boolean',
+          },
+          {
+            name: 'aquireable',
             type: 'int',
           },
           {
-            name: 'Aquireable',
+            name: 'spawns',
+            type: 'boolean',
+          },
+          {
+            name: 'regional',
+            type: 'boolean',
+          },
+          {
+            name: 'raidable',
             type: 'int',
           },
           {
-            name: 'Spawns',
+            name: 'hatchable',
             type: 'int',
           },
           {
-            name: 'Regional',
+            name: 'shiny',
+            type: 'boolean',
+          },
+          {
+            name: 'nest',
+            type: 'boolean',
+          },
+          {
+            name: 'new',
+            type: 'boolean',
+          },
+          {
+            name: 'notGettable',
+            type: 'boolean',
+          },
+          {
+            name: 'futureEvolve',
+            type: 'boolean',
+          },
+          {
+            name: 'cp40',
             type: 'int',
           },
           {
-            name: 'Raidable',
-            type: 'int',
-          },
-          {
-            name: 'Hatchable',
-            type: 'int',
-          },
-          {
-            name: 'Shiny',
-            type: 'int',
-          },
-          {
-            name: 'Nest',
-            type: 'int',
-          },
-          {
-            name: 'New',
-            type: 'int',
-          },
-          {
-            name: 'NotGettable',
-            type: 'int',
-          },
-          {
-            name: 'FutureEvolve',
-            type: 'int',
-          },
-          {
-            name: 'CP40',
-            type: 'int',
-          },
-          {
-            name: 'CP39',
+            name: 'cp39',
             type: 'int',
           },
           {
