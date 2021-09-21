@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/hooks/usePokemon.txs"  ],
   "exclude": [
     "node_modules"
   ]

@@ -1,22 +1,14 @@
 import * as C from '@chakra-ui/react'
 import { useTable, useSortBy } from 'react-table'
+import { Pokemon } from '../../interfaces'
 
 import { columns } from './makeColumns'
 
-export const DataTable = () => {
-  const data = [
-    {
-      id: 'anyid',
-      Name: 'Pokemon',
-      Generation: 2,
-      EvolutionStage: 2,
-      Type1: 'Fire',
-      ATK: 100,
-      DEF: 60,
-      STA: 90
-    }
-  ]
+interface Props {
+  data: Pokemon[]
+}
 
+export const DataTable = ({ data }: Props) => {
   const {
     getTableProps,
     getTableBodyProps,
