@@ -13,6 +13,7 @@ export const PhysicalAttributes = ({
   return (
     <C.Flex>
       <Input
+        type="number"
         name="atk"
         label="ataque"
         onChange={handleChange}
@@ -21,6 +22,7 @@ export const PhysicalAttributes = ({
       />
 
       <Input
+        type="number"
         name="def"
         label="Defesa"
         onChange={handleChange}
@@ -29,6 +31,7 @@ export const PhysicalAttributes = ({
       />
 
       <Input
+        type="number"
         name="sta"
         label="Stamina"
         onChange={handleChange}

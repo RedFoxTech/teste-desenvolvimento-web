@@ -10,6 +10,7 @@ export const CombatPowerForm = ({ handleChange, values }: RequestFormProps) => {
   return (
     <C.Flex>
       <Input
+        type="number"
         name="cp40"
         label="Combat Power 40"
         onChange={handleChange}
@@ -18,6 +19,7 @@ export const CombatPowerForm = ({ handleChange, values }: RequestFormProps) => {
       />
 
       <Input
+        type="number"
         name="cp39"
         label="Combat Power 39"
         onChange={handleChange}

@@ -28,6 +28,7 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
         />
 
         <Input
+          type="number"
           name="evolutionStage"
           label="Estag. Evolução"
           onChange={handleChange}
@@ -36,12 +37,12 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
         />
 
         <Input
-          name="evolved"
+          name="raidable"
           label="Evoluído"
           type="number"
           onChange={handleChange}
-          placeholder="Evolução"
-          value={values.evolved}
+          placeholder="Invasão"
+          value={values.raidable}
         />
       </C.Flex>
 
@@ -143,14 +144,14 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
 
         <C.Checkbox
           size="md"
-          name="raidable"
-          value={values.raidable}
-          isChecked={values.raidable}
-          checked={values.raidable}
+          name="evolved"
+          value={values.evolved}
+          isChecked={values.evolved}
+          checked={values.evolved}
           colorScheme="yellow"
           onChange={handleChange}
         >
-          Atacável
+          Evoluiu
         </C.Checkbox>
 
         <C.Checkbox

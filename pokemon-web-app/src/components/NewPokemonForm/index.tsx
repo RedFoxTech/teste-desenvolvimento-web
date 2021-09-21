@@ -6,14 +6,16 @@ import { PokemonData, PhysicalAttributes, CombatPowerForm } from './forms'
 import { FiArrowLeft } from 'react-icons/fi'
 import Link from 'next/link'
 import Head from 'next/head'
+import { usePokemonContext } from '../../hooks/pokemon'
 
 export const NewPokemonForm = () => {
+  const { addNewPokemon } = usePokemonContext()
+
   const formik = useFormik({
     initialValues: {
       name: undefined,
       generation: undefined,
       evolutionStage: undefined,
-      evolved: undefined,
       crossGen: undefined,
       type1: undefined,
       type2: undefined,
@@ -22,11 +24,12 @@ export const NewPokemonForm = () => {
       atk: undefined,
       def: undefined,
       sta: undefined,
+      evolved: true,
       legendary: false,
       aquireable: false,
       spawns: false,
       regional: false,
-      raidable: false,
+      raidable: 0,
       shiny: false,
       nest: false,
       new: false,
@@ -36,7 +39,7 @@ export const NewPokemonForm = () => {
       cp40: undefined,
       cp39: undefined
     },
-    onSubmit: (values) => console.log(values)
+    onSubmit: (values) => addNewPokemon(values)
   })
 
   const steps = [
