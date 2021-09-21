@@ -1,15 +1,19 @@
-![Cap Spock](https://kanto.legiaodosherois.com.br/w760-h398-cfill/wp-content/uploads/2016/06/JUsGQP9X1njORpLryfKg_zTbmk6F7wDoxA4258hZtV.jpg.jpeg)
-# Ambiente de desenvolvimento Node/Typescript pré configurado
+## Guia para uso local:
+Para uso de banco de dados local é aconselhado utilizar um banco com as seguintes credenciais utilizadas no file ormconfig.json:
 
-## Guia:
-O propósito desse ambiente é garantir um bom desenvolvimento entre mais desenvolvedores, tendo como foco maior
-tratar tests e formatação de código, rodando tests e verificação de lint antes de cada commit, assim não permitindo que códigos defeituosos subam para o repositório.
+**db**: postgres \
+**username**: postgres \
+**password**: 123
 
-## npm-check:
-Configurado npm-check no package.json, instale-o de forma global para verificação de atualização de dependências.
-**npm i -g npm-check**
+Intruções para uso do **docker**: \
+*docker run --name postgres -e POSTGRES_PASSWORD=123 -p 5432:5432 -d postgres*
 
-### Verifique a Wiki de utilização de Git
-### Verifique as dependencias no package.json
+Com uma instância do POSTGRES, criei a database ***pokemon_go_db***
 
-#### good job and don't make code smell
+Accesse o projeto e rode: \
+***npm intall*** ou ***yarn***
+
+Com as pendências instaladas, rode o seguinte comando:\
+***npx run typeorm migration:run*** ou ***yarn typeorm migration:run***
+
+Após a criação das migrations, rode: ***npm run dev*** para subir o projeto local
