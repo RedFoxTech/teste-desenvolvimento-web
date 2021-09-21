@@ -21,8 +21,9 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
         <Input
           name="generation"
           label="Geração"
+          type="number"
           onChange={handleChange}
-          placeholder="Geração do Pokemon"
+          placeholder="Número da Geração"
           value={values.generation}
         />
 
@@ -55,7 +56,7 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
 
       <C.Flex spacing={2}>
         <Input
-          name="Type1"
+          name="type1"
           label="Tipo 1"
           onChange={handleChange}
           placeholder="Defina um tipo"
@@ -66,7 +67,7 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
           name="type2"
           label="Tipo 2"
           onChange={handleChange}
-          placeholder="Defina um tipo"
+          placeholder="Defina um segundo tipo"
           value={values.type2}
         />
       </C.Flex>
@@ -81,7 +82,7 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
         />
 
         <Input
-          name="weather12"
+          name="weather2"
           label="Tipo 2"
           onChange={handleChange}
           placeholder="Clima 2"
@@ -94,6 +95,7 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
           size="md"
           name="legendary"
           value={values.legendary}
+          isChecked={values.legendary}
           checked={values.legendary}
           colorScheme="yellow"
           onChange={handleChange}
@@ -103,8 +105,9 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
 
         <C.Checkbox
           size="md"
-          name="legendary"
+          name="aquireable"
           value={values.aquireable}
+          isChecked={values.aquireable}
           checked={values.aquireable}
           colorScheme="yellow"
           onChange={handleChange}
@@ -116,6 +119,7 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
           size="md"
           name="spawns"
           value={values.spawns}
+          isChecked={values.spawns}
           checked={values.spawns}
           colorScheme="yellow"
           onChange={handleChange}
@@ -129,6 +133,7 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
           size="md"
           name="regional"
           value={values.regional}
+          isChecked={values.regional}
           checked={values.regional}
           colorScheme="yellow"
           onChange={handleChange}
@@ -140,6 +145,7 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
           size="md"
           name="raidable"
           value={values.raidable}
+          isChecked={values.raidable}
           checked={values.raidable}
           colorScheme="yellow"
           onChange={handleChange}
@@ -151,16 +157,13 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
           size="md"
           name="shiny"
           value={values.shiny}
+          isChecked={values.shiny}
           checked={values.shiny}
           colorScheme="yellow"
           onChange={handleChange}
         >
           Brilhante
         </C.Checkbox>
-        {/*
-      new: false,
-      notGettable: false,
-      futureEvolve: false,  */}
       </C.Flex>
 
       <C.Flex justify="space-between">
@@ -168,6 +171,7 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
           size="md"
           name="new"
           value={values.new}
+          isChecked={values.new}
           checked={values.new}
           colorScheme="yellow"
           onChange={handleChange}
@@ -179,6 +183,7 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
           size="md"
           name="notGettable"
           value={values.notGettable}
+          isChecked={values.notGettable}
           checked={values.notGettable}
           colorScheme="yellow"
           onChange={handleChange}
@@ -190,6 +195,7 @@ export const PokemonData = ({ handleChange, values }: RequestFormProps) => {
           size="md"
           name="futureEvolve"
           value={values.futureEvolve}
+          isChecked={values.futureEvolve}
           checked={values.futureEvolve}
           colorScheme="yellow"
           onChange={handleChange}
