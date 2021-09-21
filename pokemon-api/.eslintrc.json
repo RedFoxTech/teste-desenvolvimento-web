@@ -1,0 +1,26 @@
+{
+  "extends": [
+    "standard-with-typescript",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "prettier",
+    "@typescript-eslint"
+  ],
+  "parserOptions": {
+    "project": "pokemon-api/tsconfig.json"
+  },
+  "rules": {
+    "no-extra-boolean-cast": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/return-await": "off",
+    "@typescript-eslint/comma-spacing": "off",
+    "no-useless-escape": "off"
+  }
+}
