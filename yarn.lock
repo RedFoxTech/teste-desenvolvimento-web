@@ -7315,7 +7315,8 @@ pngquant-bin@^6.0.0:
 
 "pokemon-sprites@github:PokeAPI/sprites":
   version "1.0.0"
-  resolved "https://codeload.github.com/PokeAPI/sprites/tar.gz/620b6da2dbf05241d1c93ceffac5e6bc6da05e74"
+  uid "65a610e336f749665c6206f9b733363ca438e54c"
+  resolved "https://codeload.github.com/PokeAPI/sprites/tar.gz/65a610e336f749665c6206f9b733363ca438e54c"
 
 portfinder@^1.0.28:
   version "1.0.28"
