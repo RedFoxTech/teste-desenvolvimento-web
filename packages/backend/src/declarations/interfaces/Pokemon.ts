@@ -1,0 +1,1 @@
+../shared/Declarations/Interfaces/Pokemon.ts

@@ -1,0 +1,17 @@
+name: KeepAlive para o Heroku sem precisar pagar
+
+on:
+  schedule:
+  - cron: '* */4 * * *' # A cada 4 horas, Veja o site crontab.guru
+
+jobs:
+  keepAliveRequest:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: KeepAlive para o Heroku sem precisar pagar
+      uses: fjogeleit/http-request-action@master
+      with:
+        url: 'https://pokedex-redfox.herokuapp.com/Pokemon/getPage/'
+        method: 'GET'

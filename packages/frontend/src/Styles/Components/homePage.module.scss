@@ -1,0 +1,24 @@
+.pokemon-container {
+    width: 100% !important;
+    margin-top: 8px;
+    min-height: 100vh;
+    /** Aqui poderia ser uma variável do Sass. O margin-top do card é 26px,
+     * mas a margin-bottom é auto. O padding aqui compensa a diferença entre
+     * os espaçamento em cima e em baixo.
+     */
+    padding-bottom: 26px !important;
+    display: grid;
+    /** o min representa o tamanho mínimo que um card dentro da grid pode ter,
+     *  o max representa o tamanho máximo que o card e os espaços entre eles
+     * vai somar.
+     * @todo Idealmente deveriamos utilizar variáveis do Sass para
+     * integrar o tamanho do card com o tamanho da grid, assim qualquer
+     * mudança no tamanho do card não vai afetar o tamanho da grid.
+     */
+    grid-template-columns: repeat(auto-fit, minmax(330px, 430px));
+    // Como os ítens expandem, não sabemos o tamanho exato.
+    // grid-template-rows: repeat(auto-fit, minmax(450px, 1fr));
+    justify-items: center;
+    align-items: center;
+    place-content: center;
+}

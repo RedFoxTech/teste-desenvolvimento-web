@@ -1,0 +1,1 @@
+../shared/Declarations/Enums/Weather.ts
