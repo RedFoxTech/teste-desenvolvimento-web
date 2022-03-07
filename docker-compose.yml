@@ -1,0 +1,40 @@
+version: "3.7"
+
+services:
+  data-base:
+    # NOME DO CONTAINER
+    image: postgres:${POSTGRES_VERSION} # IMAGEM A SER BAIXADA
+    ports:
+      - "5433:${POSTGRES_PORT}" # PORTA DISPONÍVEL PARA O CONTAINER
+    environment:
+      # VARIÁVEIS DE AMBIENTE
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      # VOLUMES DE SAÍDA / ESPAÇO DE DISCO
+      - ${POSTGRES_DATA_DIR}:/var/lib/postgresql
+
+  server:
+    # ✔
+    image: node:${NODE_VERSION}
+    ports:
+      - 3000:${NODE_PORT}
+    command: "yarn start"
+    working_dir: /app
+    volumes:
+      - ./server:/app
+    depends_on:
+      - data-base
+    env_file:
+      - ./server/.env
+
+  php-my-admin:
+    # ✔
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - data-base
+    ports:
+      - 8181:80
+    environment:
+      PMA_HOST: data-base
