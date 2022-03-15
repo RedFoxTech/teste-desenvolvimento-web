@@ -5,43 +5,35 @@ import {useEffect, useState} from 'react'
 
 export function App() { 
   const [Dados, setDados] = useState<any>([])
-  const [Mpoke, setMpoke] = useState<any>([])
-  const [ValorDesejado, setValorDesejado] = useState<number>(0)
-  const url = "https://pokeapi.co/api/v2/pokemon/?offset="+ {ValorDesejado} +"&limit=10"
+  const [ValorDesejado, setValorDesejado] = useState<number>(10)
 
-
-  /*function naoNulo(): String{
-    if(ValorDesejado > 0){
-      return "https://pokeapi.co/api/v2/pokemon/?offset="+ {ValorDesejado} +"&limit=10"
+  function naoNulo(): string{
+    if(ValorDesejado > 10){
+      return `https://pokeapi.co/api/v2/pokemon?limit=${ValorDesejado}&offset=200`
     }
-    "https://pokeapi.co/api/v2/pokemon/?offset=&limit=10"
-  }*/
+    return `https://pokeapi.co/api/v2/pokemon?limit=10&offset=200`
+  }
   useEffect(()=>{
-    const urlLocal = "https://pokeapi.co/api/v2/pokemon/?offset=&limit=10"
 
-
-    axios.get(urlLocal).then(res =>{
+    axios.get(naoNulo()).then(res =>{
       const dados = res.data.results
       setDados(dados)
     })
 
-    /*Dados.map(function(item: any){
-      console.log(item.url)
-      axios.get(item.url).then(res =>{
-        const dados = res.data.results
-        setMpoke(dados)
-      })
-    })*/
-
-    //console.log(Mpoke)
-  },[])
+  },[ValorDesejado])
 
   return (  
-    <ul>
-      {Dados.map(function(item: any){
-        return <li> {item.name}</li>
-      })}
-    </ul>
+    <div>
+      <h3>
+          Lista de Pokemons Abaixo
+      </h3>
+      <button onClick={()=>{setValorDesejado((state)=>state +10)}}>Gerar mais 10 pokemons</button>
+      <ul>
+        {Dados.map(function(item: any){
+          return <li> {item.name}</li>
+        })}
+      </ul>
+    </div>
     
   )
 }
