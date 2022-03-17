@@ -8,8 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@mui/material": "^5.5.1",
+    "@mui/styled-engine-sc": "^5.4.2",
     "axios": "^0.26.1",
-    "preact": "^10.5.15"
+    "preact": "^10.5.15",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.1.5",
