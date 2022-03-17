@@ -1,18 +1,18 @@
 import { useQuery } from "../services/hook"
 
+
+
 interface GetPokemons {
-    count: number
-    next: string;
-    previous: string;
-  
-    results: {
-      name: string;
-      url: string;
-    }[]
+    data : [
+      {
+        Name: string,
+        PokedexNUmber: Number
+      }
+    ]
   }
 
-export function BuscaApi() {
-  const { data, loading, refetch } = useQuery<GetPokemons>({ query: "pokemon?limit=100&offset=200" })
+export function BuscarAPI() {
+  const { data, loading, refetch } = useQuery<GetPokemons>({ query: "pokemons" })
   console.log(data)
   return (
     <div>
@@ -21,7 +21,7 @@ export function BuscaApi() {
       </h3>
       <ul>
         {
-        data && data.results.map((item) => (<li> {item.name}</li>))
+          data && data.map((item) => (<li> {item.Name}</li>))
         }
       </ul>
     </div>
