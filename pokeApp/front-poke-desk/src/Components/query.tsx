@@ -21,7 +21,7 @@ export function BuscaApi() {
       </h3>
       <ul>
         {
-          data && data.results.map((item) => (<li> {item.name}</li>))
+        data && data.results.map((item) => (<li> {item.name}</li>))
         }
       </ul>
     </div>
