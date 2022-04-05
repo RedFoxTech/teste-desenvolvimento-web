@@ -1,0 +1,3 @@
+[submodule "pokeApp/PokedexApi"]
+	path = pokeApp/PokedexApi
+	url = https://github.com/FLK-byte/PokedexApi.git
