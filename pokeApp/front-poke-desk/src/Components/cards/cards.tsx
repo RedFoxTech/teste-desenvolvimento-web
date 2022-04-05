@@ -49,7 +49,6 @@ const UrlNumberPath = (PokedexNumber: number): string => {
 
 }
 export default function Cards(props: Pokemon) {
-  //console.log(props)
   const [expanded, setExpanded] = React.useState(false);
   const [pokemon, setPokemon] = React.useState<any>()
 
@@ -90,6 +89,13 @@ export default function Cards(props: Pokemon) {
           <Typography paragraph={true}>{`Total Stats: ${props.pokemon.STAT_TOTAL} `}</Typography>
           <Typography>
             {`Attack: ${props.pokemon.ATK} Deffense: ${props.pokemon.DEF} Stamina: ${props.pokemon.STA} `}
+          </Typography>
+          <Typography paragraph={true}>{`Tipos: `}</Typography>
+          <Typography>
+            {`Tipo Primário: ${props.pokemon.Type_1}`}
+          </Typography>
+          <Typography>
+            {`Tipo Secundário: ${props.pokemon.Type_2}`}
           </Typography>
         </CardContent>
       </Collapse>

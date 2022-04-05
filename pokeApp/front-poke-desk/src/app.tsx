@@ -1,5 +1,5 @@
 import { BuscarAPI } from "./Components/query/query";
-import {InputSearch} from "./Components/InputSection";
+import {PokemonSearch} from "./Components/InputSection";
 import { Home } from "./Pages/Home/home";
 
 

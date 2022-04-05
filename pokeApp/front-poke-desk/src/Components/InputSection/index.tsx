@@ -3,10 +3,11 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import CircularProgress from '@mui/material/CircularProgress';
 import axios from 'axios'
-import Cards from '../cards/cards';
+import PokemonsDisplay from "../../Components/pokemons/pokemons"
+import { POKEMONS_PER_PAGE } from "../../utils/constants";
+import DeletePokemonModal from "../deletePokemonModal/index"
+import CreatePokemonModal from "../createPokemonModal/index"
 import { Content } from '../../Pages/Home/style'
-
-const { data } = await axios.post("http://localhost:1337/pokemons", { amount: 4 })
 
 interface Pokemon {
   Name: string,
@@ -26,11 +27,28 @@ function sleep(delay = 0) {
 }
 
 export function PokemonSearch() {
-  const [PokemonsFiltrados, setPokemonsFiltrado] = React.useState<Pokemon[]>([])
+  const [PokemonsFiltrados, setPokemonsFiltrados] = React.useState<Pokemon[]>([])
   const [open, setOpen] = React.useState(false);
   const [options, setOptions] = React.useState<Pokemon[]>([]);
+
+  const [data, setData] = React.useState([])
+  const [totalPages, setTotalPages] = React.useState(0);
+  const [page, setPage] = React.useState(1);
   const loading = open && options.length === 0;
 
+  const handleClick = (num: any) => {
+    setPage(num);
+  }
+
+  const dados = async () => {
+    const res = await axios.post("http://localhost:1337/pokemon")
+    setData(res.data)
+    setTotalPages(Math.ceil(res.data.length / POKEMONS_PER_PAGE));
+  }
+
+  React.useEffect(() => {
+    dados()
+  }, [])
 
   React.useEffect(() => {
     let active = true;
@@ -43,7 +61,7 @@ export function PokemonSearch() {
       await sleep(1e3); // For demo purposes.
 
       if (active) {
-        setOptions([...pokemons]);
+        setOptions([...data]);
       }
     })();
 
@@ -55,26 +73,28 @@ export function PokemonSearch() {
   React.useEffect(() => {
     if (!open) {
       setOptions([]);
+      handleClick(1)
     }
   }, [open]);
 
   function filtro(option: Pokemon) {
     if (PokemonsFiltrados.indexOf(option) == -1) {
       PokemonsFiltrados.push(option)
-      console.log(PokemonsFiltrados)
       return "Pokemons exibidos: "
     } else {
-      while (PokemonsFiltrados.length > 0) {
-        PokemonsFiltrados.pop()
-      }
+      setPokemonsFiltrados([])
       PokemonsFiltrados.push(option)
-      console.log(PokemonsFiltrados)
       return "Pokemons exibidos: "
     }
+
   }
 
   return (
     <>
+      <Content>
+        <DeletePokemonModal />
+        <CreatePokemonModal />
+      </Content>
       <Autocomplete
         id="asynchronous-demo"
         groupBy={(option: Pokemon) => filtro(option)}
@@ -107,32 +127,10 @@ export function PokemonSearch() {
           />
         )}
       />
-      <Content>
-        {PokemonsFiltrados.length > 0 ? PokemonsFiltrados.map((item: Pokemon) => <Cards pokemon={item} />) : data.map((item: Pokemon) => <Cards pokemon={item} />)}
-      </Content>
-      {/* <RENDERIZAPORRA pokemons={PokemonsFiltrados.length > 0 ? PokemonsFiltrados : data} /> */}
+      {PokemonsFiltrados.length > 0 ? <PokemonsDisplay pokemons={PokemonsFiltrados} page={page} totalPages={totalPages} handleClick={handleClick} /> : <PokemonsDisplay pokemons={data} page={page} totalPages={totalPages} handleClick={handleClick} />}
     </>
   );
 
-
-
-  /* function RENDERIZAPORRA(props: any) {
-    const [filteredPokemons, setfilteredPokemons] = React.useState<any>(props.pokemons ? props.pokemons : []);
-    React.useEffect(() => {
-      setfilteredPokemons(props.pokemons)
-    }, [props])
-    return (
-      <Content>
-        {filteredPokemons.map((item: Pokemon) => <Cards pokemon={item} />)}
-      </Content>
-  
-    )
-  }  */
-
-
 }
-const pokemons = [
-  ...data
-];
 
 
