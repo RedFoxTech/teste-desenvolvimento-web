@@ -1,6 +1,7 @@
 import React from 'react';
-import './dashboard.css';
 import { Paper, Container, Button, Drawer, Table, TableBody, TableCell, TableFooter, TablePagination, TableRow, Typography, Avatar, Chip, Checkbox, TableHead } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import './dashboard.css';
 
 interface ITableHeadRow {
   // id: string;
@@ -76,6 +77,8 @@ const headRows: ITableHeadRow[] = [
 ];
 
 export default function PokemonList() {
+  const navigate = useNavigate();
+
   return (
     <div className='pokedex-page-container'>
       <h1>PokemonList Page</h1>
@@ -93,56 +96,58 @@ export default function PokemonList() {
                   </td>
                 </tr>
               </tbody>
-            <TableHead style={{backgroundColor: '#EBEBE5'}}>
-              <TableRow>
-                {headRows.map(col => <TableCell key={col.label} align="right">{col.label}</TableCell>
-                )}
-              </TableRow>
-            </TableHead>
+              <TableHead className='table-head'>
+                <TableRow>
+                  {headRows.map(col => <TableCell key={col.label} align="right">{col.label}</TableCell>
+                  )}
+                </TableRow>
+              </TableHead>
 
-            <TableBody>
-            {pokemons.map((row) => (
-              <TableRow
-                key={row.name}
-                // sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-              >
-                {/* <TableCell align="right">
-                {row.imageUrl ?
-                  <Avatar
-                    src={row.imageUrl}
-                    style={{
-                      fontSize: '0.8rem',
-                      width: '2.75rem',
-                      height: '2.75rem',
-                      border: `2px solid black`,
-                    }}
-                  />
-                  :
-                  <Avatar
-                    style={{
-                    fontSize: '0.8rem',
-                    width: '2.75rem',
-                    height: '2.75rem',
-                    border: `2px solid black`,
-                    display: 'flex',
-                    // marginLeft: '2rem',
-                    }}
-                      className='avatarSmallText'
-                    >
-                    FOTO
-                  </Avatar>}
-                </TableCell> */}
-                <TableCell align="right">{row.name}</TableCell>
-                <TableCell align="right">{row.pokedexNumber ? row.pokedexNumber : '-'}</TableCell>
-                <TableCell align="right">{row.type1 ? row.type1 : '-'}</TableCell>
-                <TableCell align="right">{row.type2 ? row.type2 : '-'}</TableCell>
-                <TableCell align="right">{row.weather1 ? row.weather1 : '-'}</TableCell>
-                <TableCell align="right">{row.weather2 ? row.weather2 : '-'}</TableCell>
-                <TableCell align="right">{row.atk ? row.atk : '-'}</TableCell>
-                <TableCell align="right">{row.def ? row.def : '-'}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
+              <TableBody>
+                {pokemons.map((row) => (
+                  <TableRow
+                    className='table-row'
+                  // sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    key={row.name}
+                    onClick={() => navigate(`/pokemon/${row.pokedexNumber}`)}
+                  >
+                    {/* <TableCell align="right">
+                    {row.imageUrl ?
+                      <Avatar
+                        src={row.imageUrl}
+                        style={{
+                          fontSize: '0.8rem',
+                          width: '2.75rem',
+                          height: '2.75rem',
+                          border: `2px solid black`,
+                        }}
+                      />
+                      :
+                      <Avatar
+                        style={{
+                        fontSize: '0.8rem',
+                        width: '2.75rem',
+                        height: '2.75rem',
+                        border: `2px solid black`,
+                        display: 'flex',
+                        // marginLeft: '2rem',
+                        }}
+                          className='avatarSmallText'
+                        >
+                        FOTO
+                      </Avatar>}
+                    </TableCell> */}
+                    <TableCell align="right">{row.name}</TableCell>
+                    <TableCell align="right" style={{paddingRight: '3rem'}}>{row.pokedexNumber ? row.pokedexNumber : '-'}</TableCell>
+                    <TableCell align="right">{row.type1 ? row.type1 : '-'}</TableCell>
+                    <TableCell align="right">{row.type2 ? row.type2 : '-'}</TableCell>
+                    <TableCell align="right">{row.weather1 ? row.weather1 : '-'}</TableCell>
+                    <TableCell align="right">{row.weather2 ? row.weather2 : '-'}</TableCell>
+                    <TableCell align="right">{row.atk ? row.atk : '-'}</TableCell>
+                    <TableCell align="right">{row.def ? row.def : '-'}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
 
             </Table>
         </Paper>

@@ -32,6 +32,11 @@
   height: 40%;
 }
 
+.register-title {
+  font-size: xx-large;
+  font-weight: bolder;
+}
+
 .register-input {
   background-color: white;
   border-radius: 8px;
@@ -51,4 +56,11 @@
   width: 'fit-content';
   text-decoration: none;
   color: inherit;
+}
+
+@media screen and (max-width: 680px) {
+  .register-title {
+    font-size: large;
+    font-weight: bolder;
+  }
 }

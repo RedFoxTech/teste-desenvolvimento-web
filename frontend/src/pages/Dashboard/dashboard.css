@@ -7,10 +7,27 @@
   background-color: #5BB8FB;
 }
 
+.pokedex-title {
+  text-align: center;
+}
+
+.pokedex-table-box {
+  border: 2px solid black;
+}
+
 .avatarSmallText {
   width: '2.75rem';
   height: '2.75rem';
   border: 2px solid black;
+}
+
+.table-head {
+  background-color: #EBEBE5;
+}
+
+.table-row:hover {
+  cursor: pointer;
+  background-color: #FFF9E0;
 }
 
 .pokemon-name-column {
