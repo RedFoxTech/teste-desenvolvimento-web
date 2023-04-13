@@ -2,7 +2,7 @@ export interface ICreatePokemon {
   name: string;
   pokedexNumber: number;
   imgName: string;
-  generation: string;
+  generation: number;
   evolutionStage?: string;
   evolved: number;
   familyID?: number;
