@@ -57,10 +57,13 @@
   justify-content: center;
   margin: 0 auto;
   gap: 1rem;
+  align-items: center;
 }
 
 .login-form-buttons {
   width: 'fit-content';
+  text-decoration: none;
+  color: inherit;
 }
 
 @media screen and (max-width: 425px) {

@@ -1,0 +1,22 @@
+.pokedex-page-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #5BB8FB;
+}
+
+.avatarSmallText {
+  width: '2.75rem';
+  height: '2.75rem';
+  border: 2px solid black;
+}
+
+.pokemon-name-column {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid red;
+}

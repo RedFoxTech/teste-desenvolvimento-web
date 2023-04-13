@@ -14,9 +14,11 @@ export default function Login() {
           <TextField className="login-input" label="Password" variant="standard" type="password" />
         
           <div className="login-buttons-container">
-            <Button className="login-form-buttons" color='success' variant="contained">LOGIN</Button>
+            <Link className="login-form-buttons" to='/pokemonlist'>
+              <Button className="login-form-buttons" color='success' variant="contained">LOGIN</Button>
+            </Link>
             
-            <Link className="register-form-buttons" to='/register'>
+            <Link className="login-form-buttons" to='/register'>
               <Button className="login-form-buttons" color='info' variant="contained">CRIAR UMA CONTA</Button>
             </Link>
           </div>

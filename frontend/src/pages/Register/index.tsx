@@ -6,7 +6,6 @@ import './register.css';
 export default function Register() {
   return (
     <div className='register-form-container'>
-        
         <form className='register-form center-form'>
           <div><h1>PREENCHA SEUS DADOS</h1></div>
           <TextField className="register-input" label="Nome" variant="standard" />
@@ -20,7 +19,6 @@ export default function Register() {
               <Button color='info' variant="contained">VOLTAR</Button>
             </Link>
           </div>
-
         </form>
     </div>
   )
