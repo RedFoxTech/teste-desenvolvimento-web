@@ -3,22 +3,35 @@
   padding: 0;
 }
 
-.App {
+.login-container {
   height: 35vh;
   background-color: red;
 }
 
-.logo-container {
+.login-logo-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.logo-container img{
+.login-logo-container img{
   margin-top: 25vh;
+  animation: balanca 2.5s ease-in-out infinite;
 }
 
-form {
+@keyframes balanca {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.login-form {
   background-color: #024C91;
   border-radius: 10px;
   padding: 1.5rem;
@@ -26,18 +39,19 @@ form {
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  width: 50%;
+  width: 40%;
   margin: 0 auto;
   align-items: center;
+  border: 2px solid black;
 }
 
-.input {
+.login-input {
   background-color: white;
-  border-radius: 8px;
+  border-radius: 8px 8px;
   width: 80%;
 }
 
-.buttons-container {
+.login-buttons-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -45,12 +59,12 @@ form {
   gap: 1rem;
 }
 
-.form-buttons {
+.login-form-buttons {
   width: 'fit-content';
 }
 
 @media screen and (max-width: 425px) {
-  .logo-container img{
+  .login-logo-container img{
     height: 8rem;
     width: 20rem;
   }
