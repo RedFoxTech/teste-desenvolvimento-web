@@ -19,9 +19,13 @@ export class PokemonController {
     }
   }
 
-  async findAllPokemons(req: Request, res: Response) {
+  async findAllPokemons({ query }: Request, res: Response) {
     try {
-      const pokemonsList = await this.pokemonService.findAllPokemons();
+      const pokemonsList = await this.pokemonService.findAllPokemons({
+        name: query.name ? String(query.name) : undefined,
+        offset: Number(query?.offset || 0),
+        limit: Number(query?.limit || 10),
+      });
       res.json(pokemonsList);
     } catch (error) {
       if (error instanceof HttpError) {

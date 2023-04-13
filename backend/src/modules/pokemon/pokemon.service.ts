@@ -1,3 +1,4 @@
+import { QueryParams } from "@/types/QueryParams";
 import { iPokemonRepository } from "./repositories/iPokemonRepository";
 
 export class PokemonService {
@@ -7,8 +8,8 @@ export class PokemonService {
     return this.iPokemonRepository.createAll();
   }
 
-  async findAllPokemons() {
-    return this.iPokemonRepository.findAll();
+  async findAllPokemons(queries: QueryParams) {
+    return this.iPokemonRepository.findAll(queries);
   }
 
   async findOnePokemon(pokemonId: number) {

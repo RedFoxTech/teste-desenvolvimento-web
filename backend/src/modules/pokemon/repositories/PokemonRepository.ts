@@ -3,6 +3,7 @@ import { POKEMON_DATA } from "@/static/POKEMON_DATA";
 import { iPokemonRepository } from "./iPokemonRepository";
 import { HttpError } from "@/helpers/HttpError";
 import { getPokemonsWithImages } from "@/helpers/api/getPokemonsWithImages";
+import { QueryParams } from "@/types/QueryParams";
 
 export class PokemonRepository implements iPokemonRepository {
   constructor(private prisma: PrismaClient) {}
@@ -28,9 +29,31 @@ export class PokemonRepository implements iPokemonRepository {
     });
   }
 
-  async findAll() {
-    const pokemonList = await this.prisma.pokemon.findMany();
-    return pokemonList;
+  async findAll({ offset, limit, name }: QueryParams) {
+    const count = await this.prisma.pokemon.count();
+    const next = offset + limit;
+    const previous = offset - count < 0 ? null : offset - limit;
+    const nextUrl = next < count ? `?limit=${limit}&offset=${next}` : null;
+    const previousUrl =
+      previous != null ? `?limit=${limit}&offset=${previous}` : null;
+
+    const filteredPokemonList = await this.prisma.pokemon.findMany({
+      skip: offset,
+      take: limit,
+      where: {
+        name: {
+          contains: name,
+          mode: "insensitive",
+        },
+      },
+    });
+
+    return {
+      count,
+      previous: previousUrl,
+      next: nextUrl,
+      results: filteredPokemonList,
+    };
   }
 
   async findOne(pokemonId: number) {
