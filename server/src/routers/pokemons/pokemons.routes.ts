@@ -1,8 +1,13 @@
 import { Router } from "express";
-import { createPokemonController } from "../../controllers";
+import {
+  createPokemonController,
+  listPokemonsController,
+} from "../../controllers";
 
 const pokemonsRoute = Router();
 
-pokemonsRoute.get("/", createPokemonController);
+pokemonsRoute.get("/", listPokemonsController);
+
+pokemonsRoute.post("/", createPokemonController);
 
 export default pokemonsRoute;
