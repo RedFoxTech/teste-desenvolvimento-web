@@ -2,26 +2,29 @@ import { PrismaClient } from "@prisma/client";
 import { POKEMON_DATA } from "@/static/POKEMON_DATA";
 import { iPokemonRepository } from "./iPokemonRepository";
 import { HttpError } from "@/helpers/HttpError";
+import { getPokemonsWithImages } from "@/helpers/api/getPokemonsWithImages";
 
 export class PokemonRepository implements iPokemonRepository {
   constructor(private prisma: PrismaClient) {}
 
   async createAll() {
-    const thereIsDataAlready = !!(await this.prisma.pokemon.findFirst({
+    const isThereDataAlready = !!(await this.prisma.pokemon.findFirst({
       where: {
         id: POKEMON_DATA[0].id,
       },
     }));
 
-    if (thereIsDataAlready)
+    if (isThereDataAlready)
       throw new HttpError({
-        name: "Pokemon data already exists",
+        name: "Pokemon data has already be set",
         statusCode: 400,
         message: "all pokemon data already exists in the database",
       });
 
+    const pokemonsWithImage = await getPokemonsWithImages();
+
     return await this.prisma.pokemon.createMany({
-      data: POKEMON_DATA,
+      data: pokemonsWithImage,
     });
   }
 

@@ -10,6 +10,7 @@ datasource db {
 model Pokemon {
   id             Int           @id
   name           String
+  image          String
   evolutionStage Int
   type1          PokemonTypes
   type2          PokemonTypes?
