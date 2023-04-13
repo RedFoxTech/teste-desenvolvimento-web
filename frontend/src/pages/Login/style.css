@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  height: 35vh;
+  background-color: red;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.logo-container img{
+  margin-top: 25vh;
+}
+
+form {
+  background-color: #024C91;
+  border-radius: 10px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  width: 50%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.input {
+  background-color: white;
+  border-radius: 8px;
+  width: 80%;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.form-buttons {
+  width: 'fit-content';
+}
+
+@media screen and (max-width: 425px) {
+  .logo-container img{
+    height: 8rem;
+    width: 20rem;
+  }
+}
