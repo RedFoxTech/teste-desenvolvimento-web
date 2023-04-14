@@ -3,11 +3,9 @@ import { useQueryGet } from "@/hooks/useQueryGet";
 import { pokemonTypeColors } from "@/styles/pokemonTypeColors";
 import { Pokemon } from "@/types";
 import { ArrowLeftLine, ArrowRightLine } from "@rsuite/icons";
-import { useQueryClient } from "@tanstack/react-query";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import pokeSilhouet from "@/assets/poke-silhouet.png";
 
 export default function PokemonSlug() {
   const { query, back, push } = useRouter();
@@ -25,8 +23,6 @@ export default function PokemonSlug() {
       refetchOnWindowFocus: false,
     },
   });
-
-  console.log("isLoading", isLoading);
 
   return (
     <>
@@ -59,7 +55,7 @@ export default function PokemonSlug() {
               <ArrowLeftLine height={32} width={32} color="#FFFFFF" />
             </button>
 
-            <div className="flex w-full h-full">
+            <div className="flex w-full h-full justify-between">
               <div className="flex flex-col gap-3">
                 <h1 className="text-4xl text-left font-bold text-white">
                   {pokemonData?.name}
@@ -95,7 +91,7 @@ export default function PokemonSlug() {
             <div className="w-48 h-48 self-center flex align-sub">
               {isSuccess && (
                 <Image
-                  src={isLoading ? pokeSilhouet : pokemonData?.image}
+                  src={pokemonData?.image}
                   alt={pokemonData?.name}
                   width={672}
                   height={672}
