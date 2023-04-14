@@ -7,21 +7,22 @@ import { Box } from '@mui/material';
 interface PokeCardProps {
   name: string;
   imageUrl: string;
-  types: any[];
+  types: any[] | string;
 }
 
 export function PokeCard(props: PokeCardProps) {
-  const typeHandler = () => {
-    if(props.types[1]) {
-      return props.types[0].type.name + " | " + props.types[1].type.name
-    }
-    else {
-      return props.types[0].type.name
-    }
-  }
+
+  // const typeHandler = () => {
+  //   if (props.types.length > 1) {
+  //     return props.types[0].type?.name + " | " + props.types[1].type?.name
+  //   }
+  //   else {
+  //     return `${props.types[0].type?.name}`
+  //   }
+  // }
 
   return (
-    <Card sx={{ maxWidth: 345, margin:"1rem", backgroundColor: "#29292E", color: "#fff" }}>
+    <Card sx={{ maxWidth: 345, margin: "1rem", backgroundColor: "#29292E", color: "#fff" }}>
       <CardMedia
         sx={{ height: 215 }}
         image={props.imageUrl}
@@ -32,9 +33,9 @@ export function PokeCard(props: PokeCardProps) {
           <Typography gutterBottom variant="h5" component="div">
             {props.name}
           </Typography>
-          <Typography gutterBottom variant="caption" component="div">
+          {/* <Typography gutterBottom variant="caption" component="div">
             {typeHandler()}
-          </Typography>
+          </Typography> */}
         </Box>
       </CardContent>
     </Card>

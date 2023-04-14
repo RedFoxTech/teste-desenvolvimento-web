@@ -12,50 +12,51 @@ export function Home() {
     name: string;
     imageUrl: string;
   }
-  
+
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
 
   useEffect(() => {
     getPokemons()
   }, [])
 
-  const getPokemons = () => {
-    var endpoints = []
-    for(var i = 1; i <= 801; i++) {
-      endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`)
-    }
-    axios.all(endpoints.map((endpoint) => axios.get(endpoint)))
-    .then((responses) => {
-      const pokemonsData = responses.map((response) => {
-        return {
-          name: response.data.name,
-          imageUrl: response.data.sprites.front_default,
-          data: response.data,
-        }
-      })
-      setPokemons(pokemonsData)
+  const getPokemons = async () => {
+    const result = await axios.get('http://localhost:8090/pokemon');
+    let pokemons = result.data;
+
+    pokemons = pokemons.map((pokemon: any) => {
+      const { Name, ImgName, ...otherInfo } = pokemon;
+      const pokemonParsed = {
+        data: otherInfo,
+        name: Name,
+        imageUrl: ImgName,
+      }
+      console.log('i', pokemonParsed);
+      return pokemonParsed;
     })
-    .catch((error: AxiosError) => console.log(error));
+
+    console.log(pokemons);
+    setPokemons(pokemons);
   }
+
 
   const pokeFilter = (name: string) => {
     var filteredPokemons = []
 
-    if(name===""){
+    if (name === "") {
       getPokemons()
     }
 
-    for(var i in pokemons) {
-      if(pokemons[i].data.name.includes(name)) {
+    for (var i in pokemons) {
+      if (pokemons[i].data.name.includes(name)) {
         filteredPokemons.push(pokemons[i])
       }
-      else if(pokemons[i].data.types[0].type.name.includes(name)) {
+      else if (pokemons[i].data.types[0].type.name.includes(name)) {
         filteredPokemons.push(pokemons[i])
       }
-      else if(pokemons[i].data.types[1] && pokemons[i].data.types[1].type.name.includes(name)) {
+      else if (pokemons[i].data.types[1] && pokemons[i].data.types[1].type.name.includes(name)) {
         filteredPokemons.push(pokemons[i])
       }
-      else if(pokemons[i].data.id.toString().includes(name)) {
+      else if (pokemons[i].data.id.toString().includes(name)) {
         filteredPokemons.push(pokemons[i])
       }
     }
@@ -64,18 +65,19 @@ export function Home() {
 
   return (
     <div>
-      <Header pokeFilter={pokeFilter}/>
+      <Header pokeFilter={pokeFilter} />
       <Container >
         <Grid container>
-          {pokemons.map((pokemon, key) => (
-            <Grid  item xs={12} sm={6} md={4} lg={3} key={key}>
-              <PokeCard name={pokemon.data.name} imageUrl={pokemon.data.sprites.front_default} types={pokemon.data.types}/>
+          {pokemons && pokemons.map((pokemon, key) => (
+
+            <Grid item xs={12} sm={6} md={4} lg={3} key={key}>
+              <PokeCard name={pokemon?.name} imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon?.imageUrl}.png`} types={[pokemon.data.Type1, pokemon.data.Type2]} />
             </Grid>
           ))}
         </Grid>
       </Container>
 
       <Outlet />
-    </div>
+    </div >
   )
 }
