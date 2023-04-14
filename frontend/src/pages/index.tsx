@@ -7,6 +7,7 @@ import { Pokemon } from "@/types";
 import { useQueryPagination } from "@/hooks/useQueryPagination";
 import { useDebounce } from "@/hooks/helpers/useDebounce";
 import { Skeleton, Spinner } from "@/components/feedback";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -54,7 +55,7 @@ export default function Home() {
         <title>Pokedex</title>
       </Head>
 
-      <main className="flex gap-3 w-[494px] h-full flex-col p-7 pr-2 bg-white rounded-3xl overflow-hidden">
+      <main className="flex gap-3 w-[494px] h-full flex-col p-7 pb-5 pr-2 bg-white rounded-3xl overflow-hidden">
         <div className="h-20 pr-5 flex items-center justify-between">
           <h1 className="text-4xl text-left font-bold">Pokedex</h1>
 
@@ -79,14 +80,15 @@ export default function Home() {
           {pokemonData?.pages.map((group, i) => (
             <Fragment key={i}>
               {group?.results.map(({ id, name, image, type1, type2 }) => (
-                <PokemonCard
-                  key={id}
-                  id={id}
-                  name={name}
-                  image={image}
-                  type1={type1}
-                  type2={type2}
-                />
+                <Link href={`/${id}`} key={id}>
+                  <PokemonCard
+                    id={id}
+                    name={name}
+                    image={image}
+                    type1={type1}
+                    type2={type2}
+                  />
+                </Link>
               ))}
             </Fragment>
           ))}

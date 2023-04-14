@@ -2,7 +2,6 @@ import { pokemonTypeColors } from "@/styles/pokemonTypeColors";
 import { Pokemon } from "@/types";
 import Image from "next/image";
 import { PokemonTypeTag } from "../PokemonTypeTag/PokemonTypeTag";
-import Link from "next/link";
 
 type PokemonCardProps = Pick<
   Pokemon,
@@ -17,7 +16,6 @@ export const PokemonCard = ({
   type2,
 }: PokemonCardProps) => {
   return (
-    // <Link href={"/pokemon/2"}>
     <div
       className={`flex justify-center flex-col h-fit min-w-[144px] max-w-full rounded-3xl px-4 pt-1 py-2 hover:shadow-lg transition duration-200 select-none`}
       style={{ backgroundColor: `${pokemonTypeColors[type1]}` }}
@@ -38,6 +36,5 @@ export const PokemonCard = ({
         </div>
       </div>
     </div>
-    // </Link>
   );
 };
