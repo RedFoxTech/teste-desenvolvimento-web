@@ -7,13 +7,17 @@ import { useQueryClient } from "@tanstack/react-query";
 import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import pokeSilhouet from "@/assets/poke-silhouet.png";
 
 export default function PokemonSlug() {
   const { query, back, push } = useRouter();
   const pokemonId = String(query["pokemon-id"]);
-  const queryClient = useQueryClient();
 
-  const { data: pokemonData, isSuccess } = useQueryGet<Pokemon>({
+  const {
+    data: pokemonData,
+    isSuccess,
+    isLoading,
+  } = useQueryGet<Pokemon>({
     queryKeys: ["pokemon", pokemonId],
     url: `pokemons/${pokemonId}`,
     queryConfigs: {
@@ -22,6 +26,8 @@ export default function PokemonSlug() {
     },
   });
 
+  console.log("isLoading", isLoading);
+
   return (
     <>
       <Head>
@@ -29,7 +35,7 @@ export default function PokemonSlug() {
       </Head>
 
       <main
-        className="flex gap-3 w-[494px] h-full flex-col rounded-3xl overflow-auto select-none"
+        className="flex gap-3 w-[494px] min-h-fit h-full max-h-[764px] flex-col rounded-3xl overflow-auto select-none"
         style={{
           backgroundColor: pokemonData
             ? pokemonTypeColors[pokemonData?.type1]
@@ -37,7 +43,7 @@ export default function PokemonSlug() {
         }}
       >
         <div
-          className="flex flex-1 flex-col justify-between p-7 pt-5"
+          className="flex flex-1 flex-col p-7 pt-5 gap-6"
           style={{
             backgroundColor: pokemonData
               ? pokemonTypeColors[pokemonData?.type1]
@@ -53,7 +59,7 @@ export default function PokemonSlug() {
               <ArrowLeftLine height={32} width={32} color="#FFFFFF" />
             </button>
 
-            <div className="flex justify-between">
+            <div className="flex w-full h-full">
               <div className="flex flex-col gap-3">
                 <h1 className="text-4xl text-left font-bold text-white">
                   {pokemonData?.name}
@@ -74,7 +80,7 @@ export default function PokemonSlug() {
             </div>
           </div>
 
-          <div className="w-full flex items-center justify-between">
+          <div className="w-full flex items-center justify-between m-auto">
             <button
               onClick={() => push(`${pokemonData && pokemonData?.id - 1}`)}
               disabled={pokemonData?.id === 1}
@@ -89,7 +95,7 @@ export default function PokemonSlug() {
             <div className="w-48 h-48 self-center flex align-sub">
               {isSuccess && (
                 <Image
-                  src={pokemonData?.image}
+                  src={isLoading ? pokeSilhouet : pokemonData?.image}
                   alt={pokemonData?.name}
                   width={672}
                   height={672}

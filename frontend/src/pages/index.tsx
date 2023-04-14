@@ -55,7 +55,7 @@ export default function Home() {
         <title>Pokedex</title>
       </Head>
 
-      <main className="flex gap-3 w-[494px] h-full flex-col p-7 pb-5 pr-2 bg-white rounded-3xl overflow-hidden">
+      <main className="flex gap-3 w-[494px] min-h-fit h-full max-h-[700px] flex-col p-7 pb-5 pr-2 bg-white rounded-3xl overflow-hidden">
         <div className="h-20 pr-5 flex items-center justify-between">
           <h1 className="text-4xl text-left font-bold">Pokedex</h1>
 
