@@ -6,7 +6,7 @@ export const updatePokemonService = async (pokemonID: string, data: IUpdatePokem
   const foundPokemon: IUpdatePokemon | null = await PokemonsModel.findOne({ _id: pokemonID });
 
   if (!foundPokemon) {
-    throw new AppError(401, "Pokemon not found");
+    throw new AppError(404, "Pokemon not found");
   } else if (data._id) {
     throw new AppError(403, "Pokemon id cannot be updated");
   } else if (data.name) {
