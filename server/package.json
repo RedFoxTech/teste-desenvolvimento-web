@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "dev": "ts-node-dev --ignore-watch node_modules src/app.ts"
+    "dev": "ts-node-dev --ignore-watch node_modules src/server.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",
