@@ -16,5 +16,23 @@ model User {
   email    String @unique
   password String
 
+  pokemon Pokemon[]
+
   @@map("users")
+}
+
+model Pokemon {
+  id            String  @id @default(uuid())
+  name          String
+  pokedexNumber Int
+  type1         String
+  type2         String?
+  weather1      String
+  weather2      String?
+  atk           Int
+  def           Int
+  User          User?   @relation(fields: [userId], references: [id])
+  userId        String?
+
+  @@map("pokemons")
 }
