@@ -31,6 +31,7 @@ export interface ICreatePokemon {
 }
 
 export interface IUpdatePokemon {
+  _id?: string;
   name?: string;
   pokedexNumber?: number;
   imgName?: string;
