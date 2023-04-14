@@ -47,10 +47,7 @@ export function Home() {
     }
 
     for (var i in pokemons) {
-      if (pokemons[i].data.name.includes(name)) {
-        filteredPokemons.push(pokemons[i])
-      }
-      else if (pokemons[i].data.id.toString().includes(name)) {
+      if (pokemons[i].name.toLocaleLowerCase().includes(name.toLocaleLowerCase())) {
         filteredPokemons.push(pokemons[i])
       }
     }
