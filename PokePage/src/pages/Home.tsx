@@ -8,12 +8,14 @@ import { useEffect, useState } from 'react'
 
 export function Home() {
   interface Pokemon {
-    data: any
+    PokedexNumber: number;
+    data: any;
     name: string;
     imageUrl: string;
   }
 
   const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+  const [filteredPokemons, setFilteredPokemons] = useState<Pokemon[]>([]);
 
   useEffect(() => {
     getPokemons()
@@ -36,22 +38,31 @@ export function Home() {
 
     console.log(pokemons);
     setPokemons(pokemons);
+    setFilteredPokemons(pokemons);
   }
-
 
   const pokeFilter = (name: string) => {
     var filteredPokemons = []
 
     if (name === "") {
-      getPokemons()
-    }
-
-    for (var i in pokemons) {
-      if (pokemons[i].name.toLocaleLowerCase().includes(name.toLocaleLowerCase())) {
-        filteredPokemons.push(pokemons[i])
+      setFilteredPokemons(pokemons);
+    } else {
+      for (var i in pokemons) {
+        if (pokemons[i].name.toLocaleLowerCase().includes(name.toLocaleLowerCase())) {
+          filteredPokemons.push(pokemons[i])
+        }
+        else if(pokemons[i].data.PokedexNumber.toString().includes(name)){
+          filteredPokemons.push(pokemons[i])
+        }
+        else if(pokemons[i].data.Type1.toLocaleLowerCase().includes(name.toLocaleLowerCase())){
+          filteredPokemons.push(pokemons[i])
+        }
+        else if(pokemons[i].data.Type2.toLocaleLowerCase().includes(name.toLocaleLowerCase())){
+          filteredPokemons.push(pokemons[i])
+        }
       }
+      setFilteredPokemons(filteredPokemons);
     }
-    setPokemons(filteredPokemons)
   }
 
   return (
@@ -59,9 +70,9 @@ export function Home() {
       <Header pokeFilter={pokeFilter} />
       <Container >
         <Grid container>
-          {pokemons && pokemons.map((pokemon, key) => (
+          {filteredPokemons && filteredPokemons.map((pokemon, key) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={key}>
-              <PokeCard name={pokemon?.name} imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon?.imageUrl}.png`} />
+              <PokeCard name={pokemon?.name} imageUrl={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon?.imageUrl}.png`} pokeNumber={pokemon?.data.PokedexNumber}/>
             </Grid>
           ))}
         </Grid>
