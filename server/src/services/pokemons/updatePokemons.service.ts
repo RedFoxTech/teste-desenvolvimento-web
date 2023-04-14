@@ -13,12 +13,12 @@ export const updatePokemonService = async (pokemonID: string, data: IUpdatePokem
     throw new AppError(400, "Pokedex number cannot be updated");
   }
 
-  const pokemonsArr: Array<any> = [];
-  pokemonsArr.push(foundPokemon);
+  const toFoundErrors: Array<any> = [];
+  toFoundErrors.push(foundPokemon);
 
-  pokemonsArr.map((item: any) => {
+  toFoundErrors.map((item: any) => {
     for (const [key, value] of Object.entries(data)) {
-      if (item[`${key}`] == `${value}`) {
+      if (item[key] == value) {
         throw new AppError(400, `${key} cannot be updated with the same value`);
       }
     }
