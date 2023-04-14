@@ -1,58 +1,66 @@
-# Teste de Desenvolvimento Web
+# Pokedex
 
-Olá Dev! Tudo bem?
+This is a technical test involving front-end and back-end development. The mission is to create a system to replace an Excel file, adding new functionalities while maintaining the core features. The goal is to create a practical and enjoyable way to search for data, including listing, filtering, pagination, and displaying details about each Pokémon.
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+## Technologies Used
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+- [React](https://react.dev/): Front-end library for building user interfaces.
+- [Node.js](https://nodejs.org/en): JavaScript runtime environment for server-side development.
+- [Express.js](https://expressjs.com/): Web application framework for Node.js.
+- [MongoDB](https://www.mongodb.com/): NoSQL database for storing data.
+- [Mongoose](https://mongoosejs.com/): MongoDB object modeling tool for Node.js.
+- [Docker](https://www.docker.com/): Containerization platform for packaging applications into containers.
 
-Agora vamos ao teste!
+## Getting Started
 
+This project is designed to run the front-end and back-end with Docker, with easy-to-follow configuration steps, anyone should be able to run it locally. Follow the steps below to get the project up and running on your local machine:
 
-## Desafio Pokémon
+Prerequisites
 
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
+- [Node.js](https://nodejs.org/en) and [Yarn](https://yarnpkg.com/) (Node Package Manager) installed on your machine.
+- [Docker](https://www.docker.com/) installed on your machine.
 
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
+### Installation
 
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
+1 - Clone the repository to your local machine:
 
+```clipboard
+git@github.com:kennedybm/teste-desenvolvimento-web.git
+```
 
-## Consigo fazer tudo isso?
+2 - At the root of the project, you will find a docker-compose.yml file. Open the docker-compose.yml file and modify the environment as shown in the following image:
 
-Consegue sim!
+![environment example](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dba20801-1756-4bfb-9f7d-0fceb649cf47/pokedex-docker-config.png)
 
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
+Make the necessary changes according to the image to configure the docker-compose file.
 
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
+3 - Navigate to the **`server`** folder, and then open the **`src`** directory. Create a new **`.env`** file and copy and paste the variables from the
+**`.env.example`**, which is in the same directory. Replace the **`user`** and **`password`** fields in the **`.env`** file with the same variables that you set in the previous step. Your **`.env`** file should look like this:
 
+![.env example](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/378923f0-3297-4bc8-bc5a-b111263a0103/pokedex-env.png)
 
-## Por onde começo?
+4 - Open the project terminal and run this command:
 
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
+```clipboard
+docker compose up
+```
 
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
+5 - After completing all the necessary setup, you can access the front-end at:
 
+```clipboard
+http://localhost:3000/
+```
 
-## E o Layout??
+and the back-end at:
 
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
+```clipboard
+http://localhost:5500/pokemons
+```
 
+## Usage
 
-## Regras
+This project is developed with a script that populates the back-end with a collection of Pokémon data to be displayed in the front-end for initial use. The script sets up the necessary data in the back-end database, allowing the application to showcase a list of Pokémon with their details on the front-end. This feature provides a ready-to-use dataset for users to explore and interact with the application without the need for manual data entry.
 
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
+## License
 
-
-## Só isso?
-
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
-
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
-
-
-Boa sorte! (^_^)
+[MIT]()
