@@ -1,4 +1,11 @@
 import { createPokemonController } from "./pokemons/createPokemons.controller";
 import { listPokemonsController } from "./pokemons/listPokemons.controller";
+import { retrievePokemonController } from "./pokemons/retrievePokemons.controller";
+import { updatePokemonController } from "./pokemons/updatePokemons.controller";
 
-export { createPokemonController, listPokemonsController };
+export {
+  createPokemonController,
+  listPokemonsController,
+  retrievePokemonController,
+  updatePokemonController,
+};
