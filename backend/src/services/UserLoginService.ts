@@ -1,5 +1,6 @@
 import { prisma } from "../prisma";
 import bcrypt from "bcrypt";
+import jwt from 'jsonwebtoken';
 
 interface IUserLoginService {
   email: string;
@@ -31,6 +32,8 @@ export class UserLoginService {
       throw new Error('Email ou senha incorretos!');
     }
 
+    const token = jwt.sign(user.id, process.env.JWT_SECRET_KEY as string);
+
     const userResponse = {
       id: user.id,
       name: user.name,
@@ -39,7 +42,7 @@ export class UserLoginService {
 
     return {
       user: userResponse,
-      token: 'ahyuiwrghuahrwrqweuwh'
+      token,
     };
   }
 }

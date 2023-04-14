@@ -11,3 +11,7 @@ userRoutes.post("/", async (req, res) => {
 userRoutes.post("/login", async (req, res) => {
   await userController.login(req, res)
 })
+
+userRoutes.get("/:id", async (req, res) => {
+  await userController.getUserById(req, res)
+})

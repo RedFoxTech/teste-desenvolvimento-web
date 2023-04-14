@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { UserRegisterService } from "../services/UserRegisterService";
 import { UserLoginService } from "../services/UserLoginService";
+import { GetUserByIdService } from "../services/GetUserByIdService";
 
 export class UserController {
   async register(req:Request, res: Response) {
@@ -31,7 +32,24 @@ export class UserController {
         password
       });
 
-      return res.status(201).json(login);
+      return res.status(200).json(login);
+
+    } catch (error) {
+      return res.status(500).json({message: error.message})
+    }
+  }
+
+  async getUserById(req:Request, res: Response) {
+    try {
+      const { id } = req.params;
+
+      const getUserByIdService = new GetUserByIdService();
+
+      const user = await getUserByIdService.execute({
+        id
+      });
+
+      return res.status(200).json(user);
 
     } catch (error) {
       return res.status(500).json({message: error.message})
