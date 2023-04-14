@@ -1,0 +1,44 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url = "file:../database/PokeDataBase.db"
+}
+
+model PokemonGo {
+  Row             Int        @id @default(autoincrement())
+  Name            String?
+  PokedexNumber   Int?
+  ImgName         String?
+  Generation      Int?
+  EvolutionStage  String?
+  Evolved         Int?
+  FamilyID        Int?
+  CrossGen        Boolean?
+  Type1           String?
+  Type2           String?
+  Weather1        String?
+  Weather2        String?
+  ATK             Int?
+  DEF             Int?
+  STA             Int?
+  Legendary       Int?
+  Aquireable      Int?
+  Spawns          Boolean?
+  Regional        Boolean?
+  Raidable        Int?
+  Hatchable       Int?
+  Shiny           Boolean?
+  Nest            Boolean?
+  New             Boolean?
+  FutureEvolve    Boolean?
+  StatsTotal      Int?
+  NotGettable     Boolean?
+  CP40            Int?
+  CP39            Int?
+}
