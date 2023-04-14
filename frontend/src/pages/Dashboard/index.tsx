@@ -2,6 +2,7 @@ import React from 'react';
 import { Paper, Container, Button, Drawer, Table, TableBody, TableCell, TableFooter, TablePagination, TableRow, Typography, Avatar, Chip, Checkbox, TableHead } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import './dashboard.css';
+import { Datatable } from '../../components/Table';
 
 interface ITableHeadRow {
   // id: string;
@@ -81,11 +82,15 @@ export default function PokemonList() {
 
   return (
     <div className='pokedex-page-container'>
-      <h1>PokemonList Page</h1>
+      <Typography variant='h3' className='pokedex-title'>Pokemon List</Typography>
+      <div className="pokedex-table-container">
+        <Datatable />
+      </div>
+      {/* 
 
-      <Container>
+      <Container >
         <Paper>
-            <Table>
+            <Table className='pokedex-table'>
               <tbody>
                 <tr>
                   <td>
@@ -110,7 +115,7 @@ export default function PokemonList() {
                   // sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     key={row.name}
                     onClick={() => navigate(`/pokemon/${row.pokedexNumber}`)}
-                  >
+                  > */}
                     {/* <TableCell align="right">
                     {row.imageUrl ?
                       <Avatar
@@ -136,7 +141,7 @@ export default function PokemonList() {
                         >
                         FOTO
                       </Avatar>}
-                    </TableCell> */}
+                    </TableCell>
                     <TableCell align="right">{row.name}</TableCell>
                     <TableCell align="right" style={{paddingRight: '3rem'}}>{row.pokedexNumber ? row.pokedexNumber : '-'}</TableCell>
                     <TableCell align="right">{row.type1 ? row.type1 : '-'}</TableCell>
@@ -149,9 +154,10 @@ export default function PokemonList() {
                 ))}
               </TableBody>
 
+
             </Table>
         </Paper>
-      </Container>
+      </Container> */}
 
       
     </div>
