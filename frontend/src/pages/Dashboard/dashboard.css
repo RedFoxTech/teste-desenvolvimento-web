@@ -19,6 +19,9 @@
 .pokedex-title {
   text-align: center;
   padding: 2rem;
+  font-size: 3rem;
+  font-weight: bolder;
+  font-family: 'Press Start 2P';
 }
 
 .pokedex-table {

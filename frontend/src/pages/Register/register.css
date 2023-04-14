@@ -1,13 +1,67 @@
+.register-form-page {
+  height: 35vh;
+  background-color: red;
+}
+
 .register-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: #5BB8FB;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  /* width: 20%;
+  height: 40%; */
 }
 
-.register-form {
+.register-form-title {
+  padding: 2rem;
+  font-size: xx-large;
+  font-weight: bolder;
+  font-family: 'Press Start 2P'
+}
+
+@keyframes pulsing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.register-form-title {
+  animation-name: pulsing;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@media screen and (max-width: 680px) {
+  .register-form-title {
+    font-size: large;
+    font-weight: bolder;
+  }
+
+/* .center-form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 40%;
+  height: 40%;
+} */
+
+/* .register-form {
   background-color: rgb(255,206,49);
   border-radius: 10px;
   padding: 1.5rem;
@@ -21,16 +75,7 @@
   border: 2px solid black;
 }
 
-.center-form {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  width: 40%;
-  height: 40%;
-}
+
 
 .register-title {
   font-size: xx-large;
@@ -58,9 +103,5 @@
   color: inherit;
 }
 
-@media screen and (max-width: 680px) {
-  .register-title {
-    font-size: large;
-    font-weight: bolder;
-  }
-}
+
+} */
