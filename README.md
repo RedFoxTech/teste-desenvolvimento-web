@@ -13,7 +13,7 @@ This is a technical test involving front-end and back-end development. The missi
 
 ## Getting Started
 
-This project is designed to run the front-end and back-end with Docker, with easy-to-follow configuration steps, anyone should be able to run it locally. Follow the steps below to get the project up and running on your local machine:
+This project is developed  to run the front-end and back-end with Docker, with easy-to-follow configuration steps, anyone should be able to run it locally. Follow the steps below to get the project up and running on your local machine:
 
 Prerequisites
 
@@ -28,16 +28,17 @@ Prerequisites
 git@github.com:kennedybm/teste-desenvolvimento-web.git
 ```
 
-2 - At the root of the project, you will find a docker-compose.yml file. Open the docker-compose.yml file and modify the environment as shown in the following image:
+2 - At the root of the project, you will find a **`docker-compose.yml`** file. Open the docker-compose.yml file and modify the environment (username, password, database) as shown in the following image:
 
-![environment example](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dba20801-1756-4bfb-9f7d-0fceb649cf47/pokedex-docker-config.png)
+![environment example](https://user-images.githubusercontent.com/91641613/232124340-37917f83-2b2f-4436-88ac-c23b8aad869f.png)
+
 
 Make the necessary changes according to the image to configure the docker-compose file.
 
 3 - Navigate to the **`server`** folder, and then open the **`src`** directory. Create a new **`.env`** file and copy and paste the variables from the
 **`.env.example`**, which is in the same directory. Replace the **`user`** and **`password`** fields in the **`.env`** file with the same variables that you set in the previous step. Your **`.env`** file should look like this:
 
-![.env example](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/378923f0-3297-4bc8-bc5a-b111263a0103/pokedex-env.png)
+![pokedex-env](https://user-images.githubusercontent.com/91641613/232124922-3de71272-66b8-4b56-bfc3-5a7e3866ab98.png)
 
 4 - Open the project terminal and run this command:
 
