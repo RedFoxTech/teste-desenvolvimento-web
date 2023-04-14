@@ -1,4 +1,5 @@
 import { ICreatePokemon } from "../interfaces/pokemons";
+
 export const predefinedPokemonData: Array<ICreatePokemon> = [
   {
     name: "Bulbasaur",
