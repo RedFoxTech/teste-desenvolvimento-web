@@ -7,13 +7,13 @@ import { Box } from '@mui/material';
 interface PokeCardProps {
   name: string;
   imageUrl: string;
-  types: any;
+  types: any[];
 }
 
 export function PokeCard(props: PokeCardProps) {
   const typeHandler = () => {
     if(props.types[1]) {
-      return props.types[0].type.name + " | " +props.types[1].type.name
+      return props.types[0].type.name + " | " + props.types[1].type.name
     }
     else {
       return props.types[0].type.name
