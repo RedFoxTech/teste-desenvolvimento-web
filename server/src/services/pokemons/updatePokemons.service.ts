@@ -7,10 +7,12 @@ export const updatePokemonService = async (pokemonID: string, data: IUpdatePokem
 
   if (!foundPokemon) {
     throw new AppError(401, "Pokemon not found");
+  } else if (data._id) {
+    throw new AppError(403, "Pokemon id cannot be updated");
   } else if (data.name) {
-    throw new AppError(400, "Pokemon name cannot be updated");
+    throw new AppError(403, "Pokemon name cannot be updated");
   } else if (data.pokedexNumber) {
-    throw new AppError(400, "Pokedex number cannot be updated");
+    throw new AppError(403, "Pokedex number cannot be updated");
   }
 
   const toFoundErrors: Array<IUpdatePokemon> = [];
