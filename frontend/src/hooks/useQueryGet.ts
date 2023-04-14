@@ -25,7 +25,7 @@ export function useQueryGet<ResponseDataType>({
       });
       return data;
     },
-    { retry: false, ...queryConfigs }
+    { retry: false, keepPreviousData: true, ...queryConfigs }
   );
 
   return queryResponse;
