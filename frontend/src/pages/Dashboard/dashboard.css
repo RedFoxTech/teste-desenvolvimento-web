@@ -5,11 +5,10 @@
   min-height: 100%;
   width: 100%;
   background-color: #5BB8FB;
-
+  border: 1px solid black;
 }
 .pokedex-table-container {
   width:70%;
-  /* width: 'fit-content'; */
   margin:0 auto;
   background-color: white;
   border-radius:5px;

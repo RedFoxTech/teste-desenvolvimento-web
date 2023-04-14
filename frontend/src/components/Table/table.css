@@ -1,0 +1,12 @@
+.add-pokemon-box {
+  text-align: left;
+  padding: 0.5rem;
+}
+
+.add-pokemon-icon {
+  color: green;
+}
+
+.add-pokemon-icon:hover {
+  color: rgb(16, 184, 16);
+}

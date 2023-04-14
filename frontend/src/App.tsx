@@ -11,6 +11,7 @@ export default function App() {
         <Route path="/" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="pokemonlist" element={<PokemonList />} />
+        <Route path="pokemonlist/details/:id" element={<h1>Pagina de detalhes</h1>} />
         <Route path="*" Component={() => <h1>Page not found</h1>} />
       </Routes>
     </BrowserRouter>

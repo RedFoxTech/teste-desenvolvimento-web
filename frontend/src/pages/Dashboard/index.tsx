@@ -78,11 +78,11 @@ const headRows: ITableHeadRow[] = [
 ];
 
 export default function PokemonList() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className='pokedex-page-container'>
-      <Typography variant='h3' className='pokedex-title'>Pokemon List</Typography>
+      <p className='pokedex-title'>Pokemon List</p>
       <div className="pokedex-table-container">
         <Datatable />
       </div>
