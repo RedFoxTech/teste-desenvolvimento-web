@@ -10,7 +10,7 @@ interface PokeCardProps {
   types: any;
 }
 
-export default function PokeCard(props: PokeCardProps) {
+export function PokeCard(props: PokeCardProps) {
   const typeHandler = () => {
     if(props.types[1]) {
       return props.types[0].type.name + " | " +props.types[1].type.name
@@ -36,15 +36,7 @@ export default function PokeCard(props: PokeCardProps) {
             {typeHandler()}
           </Typography>
         </Box>
-        {/* <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography> */}
       </CardContent>
-      {/* <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions> */}
     </Card>
   );
 }

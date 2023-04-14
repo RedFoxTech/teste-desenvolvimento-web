@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom'
 import { Container } from '@mui/system'
 import { Grid } from '@mui/material'
 import { Header } from '../components/Header'
-import PokeCard from '../components/PokeCard'
+import { PokeCard } from '../components/PokeCard'
 import axios, { AxiosError } from 'axios'
 import { useEffect, useState } from 'react'
 
@@ -21,7 +21,7 @@ export function Home() {
 
   const getPokemons = () => {
     var endpoints = []
-    for(var i = 1; i <= 9; i++) {
+    for(var i = 1; i <= 801; i++) {
       endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`)
     }
     axios.all(endpoints.map((endpoint) => axios.get(endpoint)))
