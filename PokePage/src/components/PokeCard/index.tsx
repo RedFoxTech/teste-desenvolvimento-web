@@ -1,27 +1,41 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Box } from '@mui/material';
 
 interface PokeCardProps {
   name: string;
+  imageUrl: string;
+  types: any;
 }
 
 export default function PokeCard(props: PokeCardProps) {
+  const typeHandler = () => {
+    if(props.types[1]) {
+      return props.types[0].type.name + " | " +props.types[1].type.name
+    }
+    else {
+      return props.types[0].type.name
+    }
+  }
+
   return (
-    <Card sx={{ maxWidth: 345, margin:"1rem" }}>
+    <Card sx={{ maxWidth: 345, margin:"1rem", backgroundColor: "#29292E", color: "#fff" }}>
       <CardMedia
-        sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="green iguana"
+        sx={{ height: 215 }}
+        image={props.imageUrl}
+        title=""
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {props.name}
-        </Typography>
+        <Box display="flex" justifyContent="space-between" alignItems="center">
+          <Typography gutterBottom variant="h5" component="div">
+            {props.name}
+          </Typography>
+          <Typography gutterBottom variant="caption" component="div">
+            {typeHandler()}
+          </Typography>
+        </Box>
         {/* <Typography variant="body2" color="text.secondary">
           Lizards are a widespread group of squamate reptiles, with over 6,000
           species, ranging across all continents except Antarctica
