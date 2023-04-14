@@ -1,20 +1,19 @@
 -- CreateTable
 CREATE TABLE "PokemonGo" (
-    "id" TEXT NOT NULL PRIMARY KEY,
-    "Row" INTEGER NOT NULL,
+    "Row" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "Name" TEXT,
-    "PokedexNumber" INTEGER NOT NULL,
+    "PokedexNumber" INTEGER,
     "ImgName" TEXT,
-    "Generation" INTEGER NOT NULL,
+    "Generation" INTEGER,
     "EvolutionStage" TEXT,
-    "Evolved" INTEGER NOT NULL,
+    "Evolved" INTEGER,
     "FamilyID" INTEGER,
     "CrossGen" BOOLEAN,
     "Type1" TEXT,
     "Type2" TEXT,
     "Weather1" TEXT,
     "Weather2" TEXT,
-    "ATK" INTEGER NOT NULL,
+    "ATK" INTEGER,
     "DEF" INTEGER,
     "STA" INTEGER,
     "Legendary" INTEGER,
@@ -27,11 +26,8 @@ CREATE TABLE "PokemonGo" (
     "Nest" BOOLEAN,
     "New" BOOLEAN,
     "FutureEvolve" BOOLEAN,
-    "StatsTotal" INTEGER NOT NULL,
+    "StatsTotal" INTEGER,
     "NotGettable" BOOLEAN,
-    "CP40" INTEGER NOT NULL,
+    "CP40" INTEGER,
     "CP39" INTEGER
 );
-
--- CreateIndex
-CREATE UNIQUE INDEX "PokemonGo_Row_key" ON "PokemonGo"("Row");

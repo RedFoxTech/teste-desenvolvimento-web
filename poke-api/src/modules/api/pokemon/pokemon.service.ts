@@ -9,10 +9,10 @@ export class PokemonService {
     return 'Hello';
   }
 
-  findOne(id: string) {
+  findOne(id: number) {
     return this.prisma.pokemonGo.findFirst({
       where: {
-        id,
+        Row: id,
       },
     });
   }
@@ -21,19 +21,19 @@ export class PokemonService {
     return this.prisma.pokemonGo.findMany();
   }
 
-  update(id: string, data: any) {
+  update(id: number, data: any) {
     return this.prisma.pokemonGo.update({
       where: {
-        id,
+        Row: id,
       },
       data,
     });
   }
 
-  delete(id: string) {
+  delete(id: number) {
     return this.prisma.pokemonGo.delete({
       where: {
-        id,
+        Row: id,
       },
     });
   }

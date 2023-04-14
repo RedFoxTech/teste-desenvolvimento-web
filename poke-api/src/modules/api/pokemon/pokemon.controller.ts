@@ -15,19 +15,19 @@ export class PokemonController {
   }
 
   @Get(':id')
-  async findOne(id: string) {
+  async findOne(id: number) {
     const result = await this.pokemonService.findOne(id);
     return result;
   }
 
   @Put(':id')
-  async update(id: string, data: any) {
+  async update(id: number, data: any) {
     const result = await this.pokemonService.update(id, data);
     return result;
   }
 
   @Delete(':id')
-  async delete(id: string) {
+  async delete(id: number) {
     const result = await this.pokemonService.delete(id);
     return result;
   }

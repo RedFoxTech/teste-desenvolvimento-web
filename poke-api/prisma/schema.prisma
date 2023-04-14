@@ -11,8 +11,7 @@ datasource db {
 }
 
 model PokemonGo {
-  id              String     @id @default(uuid())
-  Row             Int        @unique
+  Row             Int        @id @default(autoincrement())
   Name            String?
   PokedexNumber   Int?
   ImgName         String?
