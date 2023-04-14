@@ -4,6 +4,7 @@ import {
   listPokemonsController,
   retrievePokemonController,
   updatePokemonController,
+  deletePokemonController,
 } from "../../controllers";
 import { schemaValidation } from "../../middlewares/schema/schemaValidation.middleware";
 import { updatePokemonSchema } from "../../schemas/updatePokemon.schema";
@@ -17,5 +18,7 @@ pokemonsRoute.post("/", createPokemonController);
 pokemonsRoute.get("/:pokemonID", retrievePokemonController);
 
 pokemonsRoute.patch("/:pokemonID", schemaValidation(updatePokemonSchema), updatePokemonController);
+
+pokemonsRoute.delete("/:pokemonID", deletePokemonController);
 
 export default pokemonsRoute;
