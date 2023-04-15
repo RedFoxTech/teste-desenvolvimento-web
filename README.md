@@ -1,58 +1,69 @@
-# Teste de Desenvolvimento Web
+# Pokedex
 
-Olá Dev! Tudo bem?
+This is a technical test involving front-end and back-end development. The mission is to create a system to replace an Excel file, adding new functionalities while maintaining the core features. The goal is to create a practical and enjoyable way to search for data, including listing, filtering, pagination, and displaying details about each Pokémon.
 
-A RedFox está sempre em busca de profissionais interessantes e interessados, com boa capacidade de aprendizado, adaptação e principalmente motivação!
+## Technologies Used
 
-Este teste tem como objetivo avaliar e desafiar você. Não é obrigatório realizá-lo completamente, queremos apenas conhecer você, seu esforço e potencial para aprender, se adaptar e tomar decisões.
+- [React](https://react.dev/): Front-end library for building user interfaces.
+- [Node.js](https://nodejs.org/en): JavaScript runtime environment for server-side development.
+- [Express.js](https://expressjs.com/): Web application framework for Node.js.
+- [MongoDB](https://www.mongodb.com/): NoSQL database for storing data.
+- [Mongoose](https://mongoosejs.com/): MongoDB object modeling tool for Node.js.
+- [Docker](https://www.docker.com/): Containerization platform for packaging applications into containers.
 
-Agora vamos ao teste!
+## Getting Started
 
+This project is developed  to run the front-end and back-end with Docker, with easy-to-follow configuration steps, anyone should be able to run it locally. Follow the steps below to get the project up and running on your local machine:
 
-## Desafio Pokémon
+Prerequisites
 
-Nós temos um problema, atualmente nosso sistema é só um excel, cheio de informações sobre Pokémon. Nós usamos ele como banco de dados e ao mesmo tempo interface de gerenciamento, inserindo, editando, deletando e filtrando os dados.
+- [Node.js](https://nodejs.org/en) and [Yarn](https://yarnpkg.com/) (Node Package Manager) installed on your machine.
+- [Docker](https://www.docker.com/) installed on your machine.
 
-A missão é criar um sistema para substituir este excel, pois queremos expandir e acrescentar funcionalidades. Queremos manter o básico, mas principalmente queremos uma forma prática e agradável de buscar os dados, com listagem, filtros, paginação e detalhes sobre cada Pokémon.
+### Installation
 
-Fique à vontade com o layout, precisamos de uma interface que consiga entregar as funcionalidades principais e substituir o excel, só isso.
+1 - Clone the repository to your local machine:
 
+```clipboard
+git@github.com:kennedybm/teste-desenvolvimento-web.git
+```
 
-## Consigo fazer tudo isso?
+2 - At the root of the project, you will find a **`docker-compose.yml`** file. Open the docker-compose.yml file and modify the environment (username, password, database) as shown in the following image:
 
-Consegue sim!
-
-O teste é flexível, você pode escolher alguma parte específica dele para fazer, em que se sinta mais confortável e confiante, por exemplo: a interface, as funcionalidades, o banco de dados, etc...O importante é tentar atingir o objetivo de alguma forma.
-
-Aqui na RedFox queremos aproveitar ao máximo suas habilidades e aptidões, mas também desafiar você a adquirir novas, então nossa equipe tem a liberdade de trasitar entre frontend, backend, infraestrutura, etc...Sem se restringir, tudo depende do esforço e vontade de cada um.
-
-
-## Por onde começo?
-
-Primeiramente, você pode fazer um fork desse repositório aqui, para sua conta do Github, depois disso crie uma branch nova com o seu nome, para podermos indentificá-lo.
-
-Após terminar o desafio, você pode solicitar um pull request para a branch master do nosso repositório. Vamos receber e fazer a avaliação de todos.
-
-
-## E o Layout??
-
-Fique a vontade quanto a isso, não vamos avaliar o design da sua interface. Se quiser desenhar algo bacana, diferente, pensar até em UI/UX, etc...é claro que vamos valorizar o seu esforço e considerar como um diferencial, mas não se preocupe. 
+![environment example](https://user-images.githubusercontent.com/91641613/232124340-37917f83-2b2f-4436-88ac-c23b8aad869f.png)
 
 
-## Regras
+Make the necessary changes according to the image to configure the docker-compose file.
 
-Para o desafio ficar mais interessante, decidimos criar algumas regras:
-- No layout, deve utilizar algum framework CSS (ex: Bootstrap, MaterializeCSS, Bulma...)
-- No frontend, deve utilizar algum framework JS (ex: VueJS, ReactJS, Angular...tente não usar jQuery)
-- No backend, deve utilizar NodeJS
-- Documentar um pouco o projeto, o que você fez e de que forma devemos executar-lo
+3 - Navigate to the **`server`** folder, and then open the **`src`** directory. Create a new **`.env`** file and copy and paste the variables from the
+**`.env.example`**, which is in the same directory. Replace the **`user`** and **`password`** fields in the **`.env`** file with the same variables that you set in the previous step. Your **`.env`** file should look like this:
+
+![pokedex-env](https://user-images.githubusercontent.com/91641613/232124922-3de71272-66b8-4b56-bfc3-5a7e3866ab98.png)
+
+4 - Open the project terminal and run this command:
+
+```clipboard
+docker compose up
+```
+
+5 - After completing all the necessary setup, you can access the front-end at:
+
+```clipboard
+http://localhost:3000/
+```
 
 
-## Só isso?
+and the back-end at:
 
-Só!...mas se quiser ir além, tente preparar o projeto para ser executado de maneira simples e prática, se coloque no lugar de alguém com menos conhecimentos, que precisa ver o que você desenvolveu. 
+```clipboard
+http://localhost:5500/pokemons
+```
+When the 'Running on port 5500' message appears in the terminal, simply refresh the front-end page.
 
-ps: Se fizer deploy em algum servidor ou utilizar alguma ferramenta que facilite a execução (ex: docker), será um diferencial.
+## Usage
 
+This project is developed with a script that populates the back-end with a collection of Pokémon data to be displayed in the front-end for initial use. The script sets up the necessary data in the back-end database, allowing the application to showcase a list of Pokémon with their details on the front-end. This feature provides a ready-to-use dataset for users to explore and interact with the application without the need for manual data entry.
 
-Boa sorte! (^_^)
+## License
+
+[MIT](https://github.com/kennedybm/teste-desenvolvimento-web/blob/kennedy-barreto/LICENSE)
