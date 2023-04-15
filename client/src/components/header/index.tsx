@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-const Header = () => {
+export const Header = () => {
   return (
     <>
       <Navbar bg="light" variant="light" sticky="top" expand="md">
@@ -23,4 +23,3 @@ const Header = () => {
     </>
   );
 };
-export default Header;
