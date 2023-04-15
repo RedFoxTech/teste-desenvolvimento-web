@@ -11,14 +11,14 @@ import './Modal/modal.css';
 import { api } from '../../services/api';
 
 const columns: GridColDef[] = [
-  { field: 'name', headerName: 'Nome', width: 250}, // nome no db - nome da coluna
-  { field: 'pokedexNumber', headerName: 'Numero da pokedex', width: 250},
-  { field: 'type1', headerName: 'Tipo', width: 250},
-  // { field: 'type2', headerName: 'Tipo 2', width: 100},
-  // { field: 'weather1', headerName: 'Clima', width: 100},
-  // { field: 'weather2', headerName: 'Clima 2', width: 100},
-  // { field: 'atk', headerName: 'ATK', width: 100},
-  // { field: 'def', headerName: 'DEF', width: 100},
+  { field: 'name', headerName: 'Nome', width: 180},
+  { field: 'pokedexNumber', headerName: 'Numero da pokedex', width: 180},
+  { field: 'type1', headerName: 'Tipo', width: 180},
+  { field: 'type2', headerName: 'Tipo 2', width: 180},
+  { field: 'weather1', headerName: 'Clima', width: 180},
+  { field: 'weather2', headerName: 'Clima 2', width: 180},
+  { field: 'atk', headerName: 'ATK', width: 180},
+  { field: 'def', headerName: 'DEF', width: 180},
 ];
 
 interface IPokemon {

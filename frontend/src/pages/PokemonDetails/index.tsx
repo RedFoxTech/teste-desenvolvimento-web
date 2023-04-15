@@ -64,14 +64,14 @@ export default function PokemonDetails() {
             
             <img src={PokeballImage} height={80} width={80} className='pokemon-image' />
 
-            <Typography>Nome: {pokemon?.name ? pokemon?.name : '-'}</Typography>
-            <Typography>Nº da Pokedéx: {pokemon?.pokedexNumber ? pokemon.pokedexNumber : '-'}</Typography>
-            <Typography>Tipo 1: {pokemon?.type1 ? pokemon.type1 : '-'}</Typography>
-            <Typography>Tipo 2: {pokemon?.type2 ? pokemon?.type2 : <b>não informado</b>}</Typography>
-            <Typography>Clima 1: {pokemon?.weather1 ? pokemon.weather1 : '-'}</Typography>
-            <Typography>Clima 2: {pokemon?.weather2 ? pokemon?.weather2 : <b>não informado</b>}</Typography>
-            <Typography>ATK: {pokemon?.atk ? pokemon?.atk : '-'}</Typography>
-            <Typography>DEF: {pokemon?.def ? pokemon?.def : '-'}</Typography>
+            <Typography><b>Nome:</b> {pokemon?.name ? pokemon?.name : '-'}</Typography>
+            <Typography><b>Nº da Pokedéx:</b> {pokemon?.pokedexNumber ? pokemon.pokedexNumber : '-'}</Typography>
+            <Typography><b>Tipo 1:</b> {pokemon?.type1 ? pokemon.type1 : '-'}</Typography>
+            <Typography><b>Tipo 2:</b> {pokemon?.type2 ? pokemon?.type2 : <b>não informado</b>}</Typography>
+            <Typography><b>Clima 1:</b> {pokemon?.weather1 ? pokemon.weather1 : '-'}</Typography>
+            <Typography><b>Clima 2:</b> {pokemon?.weather2 ? pokemon?.weather2 : <b>não informado</b>}</Typography>
+            <Typography><b>ATK:</b> {pokemon?.atk ? pokemon?.atk : '-'}</Typography>
+            <Typography><b>DEF:</b> {pokemon?.def ? pokemon?.def : '-'}</Typography>
           </main>
         </Paper>
 

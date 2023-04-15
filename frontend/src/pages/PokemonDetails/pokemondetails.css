@@ -39,6 +39,10 @@
   width: 70%;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 @media screen and (max-width: 475px) {
   .pokemon-details-title {
     font-size: 1.4rem;

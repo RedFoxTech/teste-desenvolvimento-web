@@ -16,7 +16,7 @@ export default function Form(props: IFormProps) {
 
   return (
     <form className="login-form" onSubmit={(e) => {props.onSubmit(e)}}>
-      {!isRegisterPage && <Typography variant="h4">Faça seu Login</Typography>}
+      {!isRegisterPage && <Typography className="login-title" variant="h4">Faça seu Login</Typography>}
       {isRegisterPage && <TextField className="login-input" label="Nome" variant="standard" onChange={(e) => {props.onNameChange(e)}} />}
       <TextField className="login-input" label="E-mail" onChange={(e) => {props.onEmailChange(e)}} variant="standard" />
       <TextField className="login-input" label="Password" onChange={(e) => {props.onPasswordChange(e)}} variant="standard" type="password" />

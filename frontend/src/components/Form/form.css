@@ -18,6 +18,10 @@
   width: 80%;
 }
 
+.login-title {
+  color: white
+}
+
 .login-buttons-container {
   display: flex;
   flex-direction: column;
