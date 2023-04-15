@@ -4,7 +4,6 @@ export const Main = styled.main`
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 1px solid black;
   margin-top: 0.9em;
 `;
 
@@ -12,7 +11,6 @@ export const PokemonSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid blue;
   background-color: var(--default);
   width: 100%;
   max-width: 1024px;
@@ -23,13 +21,6 @@ export const PokemonSection = styled.section`
     align-items: center;
     justify-content: space-evenly;
   }
-
-  /* @media (min-width: 1300px) {
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    height: 33em;
-    max-width: 1300px;
-  } */
 `;
 
 export const PaginationSection = styled.section`
