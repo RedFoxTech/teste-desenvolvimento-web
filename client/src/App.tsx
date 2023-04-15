@@ -1,13 +1,14 @@
-import { useState } from "react";
+import Routes from "./routes";
+import GlobalStyle from "./style/global";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
-  const [count, setCount] = useState(0);
-
+const App = () => {
   return (
     <>
-      <h1>Hello World!</h1>
+      <GlobalStyle />
+      <Routes />
     </>
   );
-}
+};
 
 export default App;
