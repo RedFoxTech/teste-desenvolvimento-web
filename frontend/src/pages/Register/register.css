@@ -1,0 +1,50 @@
+.register-form-page {
+  height: 35vh;
+  background-color: red;
+}
+
+.register-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+.register-form-title {
+  padding: 2rem;
+  font-size: xx-large;
+  font-weight: bolder;
+  font-family: 'Press Start 2P'
+}
+
+@keyframes pulsing {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.register-form-title {
+  animation-name: pulsing;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@media screen and (max-width: 680px) {
+  .register-form-title {
+    font-size: large;
+    font-weight: bolder;
+  }
+}

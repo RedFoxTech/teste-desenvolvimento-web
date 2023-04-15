@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  height: 35vh;
+  background-color: red;
+}
+
+.login-logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.login-logo-container img{
+  margin-top: 25vh;
+  animation: balanca 2.5s ease-in-out infinite;
+}
+
+@keyframes balanca {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .login-logo-container img{
+    height: 8rem;
+    width: 20rem;
+  }
+}
