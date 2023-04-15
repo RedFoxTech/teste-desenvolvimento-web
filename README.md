@@ -4,7 +4,8 @@ Olá! Meu nome é Miguel!
 
 # Getting Started:
 ## Back-end 
-Desenvolvido com NodeJS e ExpressJS usando como base arquitetura limpa.
+Desenvolvido com NodeJS e ExpressJS.
+Database postgreSQL com Docker compose
 ### Inicindo e configurando server back-end e database:
 Rode os seguintes comandos:
 ```bash
