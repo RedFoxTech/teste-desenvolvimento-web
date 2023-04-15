@@ -2,11 +2,6 @@ import { useApi } from "../../../providers/api";
 import { IPokemonsProps } from "./interfaces";
 import * as Styled from "./styles";
 import * as BsIcons from "react-icons/bs";
-import Card from "react-bootstrap/Card";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Container from "react-bootstrap/Container";
-import ListGroup from "react-bootstrap/ListGroup";
 
 export const Cards = ({
   id,
