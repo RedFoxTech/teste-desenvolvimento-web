@@ -2,10 +2,22 @@ import React, {useState} from 'react';
 import Form from '../../components/Form';
 import Swal from "sweetalert2"
 import './login.css';
+import { api } from '../../services/api';
+import { useNavigate } from 'react-router-dom';
+
+type TLoginResponse = {
+  token: string;
+  user: {
+    id: string;
+    email: string;
+    name: string;
+  }
+}
 
 export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -16,7 +28,7 @@ export default function Login() {
           onNameChange={() => {}}
           onEmailChange={(e) => setEmail(e.target.value)}
           onPasswordChange={(e) => setPassword(e.target.value)}
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
             if(!email || !password) {
               Swal.fire({
@@ -26,8 +38,27 @@ export default function Login() {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'Voltar'
               })
+
+              return;
             }
-            console.log(e)
+            try {
+              const auth = await api.post<TLoginResponse>("/users/login", {email, password})
+              const userToken = auth.data.token;
+              const userId = auth.data.user.id;
+  
+              localStorage.setItem('pokedex-user-token', userToken);
+              localStorage.setItem('pokedex-user-id', userId);
+  
+              navigate("/pokemonlist")
+            } catch (error) {
+              Swal.fire({
+                title: 'Erro',
+                text: "Certifique-se de que suas credenciais estão corretas!",
+                icon: 'error',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Voltar'
+              })
+            }
           }}
         />
       </main>

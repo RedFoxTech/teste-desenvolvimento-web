@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { Button, TextField } from '@mui/material';
+import React from 'react';
+import { Button, TextField, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './form.css'
 
@@ -16,6 +16,7 @@ export default function Form(props: IFormProps) {
 
   return (
     <form className="login-form" onSubmit={(e) => {props.onSubmit(e)}}>
+      {!isRegisterPage && <Typography variant="h4">Faça seu Login</Typography>}
       {isRegisterPage && <TextField className="login-input" label="Nome" variant="standard" onChange={(e) => {props.onNameChange(e)}} />}
       <TextField className="login-input" label="E-mail" onChange={(e) => {props.onEmailChange(e)}} variant="standard" />
       <TextField className="login-input" label="Password" onChange={(e) => {props.onPasswordChange(e)}} variant="standard" type="password" />
@@ -24,9 +25,9 @@ export default function Form(props: IFormProps) {
         {
           isRegisterPage ?
             <>
-            <Link className="login-form-buttons" to='/'>
-              <Button className="login-form-buttons" color='success' variant="contained">CRIAR CONTA</Button>
-            </Link>
+            
+            <Button type="submit" className="login-form-buttons" color='success' variant="contained">CRIAR CONTA</Button>
+            
             <Link className="login-form-buttons" to='/'>
               <Button className="login-form-buttons" color='info' variant="contained">VOLTAR</Button>
             </Link>
@@ -39,7 +40,6 @@ export default function Form(props: IFormProps) {
               type="submit"
               color='success'
               variant="contained"
-              // onClick={}
             >
               LOGIN
             </Button>

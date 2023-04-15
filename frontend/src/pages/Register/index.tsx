@@ -1,14 +1,22 @@
 import React, {useState} from 'react';
-import { Button, TextField } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Form from '../../components/Form';
 import './register.css';
+import Swal from 'sweetalert2';
+import { api } from '../../services/api';
+
+type TRegisterResponse = {
+  password: string;
+  email: string;
+  name: string;
+}
 
 export default function Register() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigate = useNavigate();
 
   return (
     <div className='register-form-page'>
@@ -21,28 +29,35 @@ export default function Register() {
           onNameChange={(e) => setName(e.target.value)}
           onEmailChange={(e) => setEmail(e.target.value)}
           onPasswordChange={(e) => setPassword(e.target.value)}
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
-            console.log(e)
+            if(!email || !password || !name) {
+              Swal.fire({
+                title: 'Preencha com seu nome, e-mail e senha',
+                text: "Certifique-se de que nenhum campo está em branco!",
+                icon: 'warning',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Voltar'
+              })
+              return;
+            }
+            try {
+              const response = await api.post<TRegisterResponse>("/users/", {name, email, password})
+              if(response.status === 201) {
+                navigate("/")
+              }
+            } catch (error) {
+              Swal.fire({
+                title: 'Erro',
+                text: "Esse e-mail já está cadastrado!",
+                icon: 'error',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'Voltar'
+              })
+            }
           }}
         />
       </div>
-
-
-
-        {/* <form className='register-form center-form'>
-          <p className='register-title'>CADASTRE-SE</p>
-          <TextField className="register-input" label="Nome" variant="standard" />
-          <TextField className="register-input" label="E-mail" variant="standard" />
-          <TextField className="register-input" label="Password" variant="standard" type="password" />
-
-          <div className="register-buttons-container">
-            <Button className="register-form-buttons" color='success' variant="contained">CRIAR CONTA</Button>
-            <Link className="register-form-buttons" to='/'>
-              <Button color='info' variant="contained">VOLTAR</Button>
-            </Link>
-          </div>
-        </form> */}
     </div>
   )
 }

@@ -1,4 +1,4 @@
-.create-modal-container {
+.modal-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +20,7 @@
   font-family: 'Press Start 2P'
 }
 
-.create-modal-form {
+.modal-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
