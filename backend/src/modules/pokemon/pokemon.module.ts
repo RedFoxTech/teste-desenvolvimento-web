@@ -9,10 +9,6 @@ export class PokemonModule {
     const service = new PokemonService(repository);
     const controller = new PokemonController(service);
 
-    router.post("/pokemons", (req, res) =>
-      controller.createAllPokemons(req, res)
-    );
-
     router.get("/pokemons", (req, res) => controller.findAllPokemons(req, res));
 
     router.get("/pokemons/:pokemonId", (req, res) =>

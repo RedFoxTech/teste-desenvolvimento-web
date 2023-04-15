@@ -1,9 +1,25 @@
-import { Pokemon } from "@prisma/client";
+import { Pokemon, PokemonTypes } from "@prisma/client";
 
-export const POKEMON_DATA: Pokemon[] = [
+interface OptionalPokemon {
+  id: number;
+  name: string;
+  image: string;
+  evolutionStage: number;
+  type1: PokemonTypes;
+  type2: PokemonTypes | null;
+  statsTotal: number;
+  atk: number;
+  def: number;
+  sta: number;
+  isEvolved: boolean;
+  isLegendary: boolean;
+}
+
+export const POKEMON_DATA: OptionalPokemon[] = [
   {
     id: 1,
     name: "Bulbasaur",
+    image: "",
     evolutionStage: 1,
     type1: "grass",
     type2: "poison",
@@ -17,6 +33,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 2,
     name: "Ivysaur",
+    image: "",
     evolutionStage: 2,
     type1: "grass",
     type2: "poison",
@@ -30,6 +47,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 3,
     name: "Venusaur",
+    image: "",
     evolutionStage: 3,
     type1: "grass",
     type2: "poison",
@@ -43,6 +61,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 4,
     name: "Charmander",
+    image: "",
     isEvolved: false,
     type1: "fire",
     type2: null,
@@ -56,6 +75,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 5,
     name: "Charmeleon",
+    image: "",
     isEvolved: false,
     type1: "fire",
     type2: null,
@@ -69,6 +89,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 6,
     name: "Charizard",
+    image: "",
     evolutionStage: 3,
     type1: "fire",
     type2: "flying",
@@ -82,6 +103,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 7,
     name: "Squirtle",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -95,6 +117,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 8,
     name: "Wartortle",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -108,6 +131,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 9,
     name: "Blastoise",
+    image: "",
     isEvolved: true,
     type1: "water",
     type2: null,
@@ -121,6 +145,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 10,
     name: "Caterpie",
+    image: "",
     isEvolved: false,
     type1: "bug",
     type2: null,
@@ -134,6 +159,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 11,
     name: "Metapod",
+    image: "",
     isEvolved: false,
     type1: "bug",
     type2: null,
@@ -147,6 +173,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 12,
     name: "Butterfree",
+    image: "",
     evolutionStage: 3,
     type1: "bug",
     type2: "flying",
@@ -160,6 +187,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 13,
     name: "Weedle",
+    image: "",
     evolutionStage: 1,
     type1: "bug",
     type2: "poison",
@@ -173,6 +201,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 14,
     name: "Kakuna",
+    image: "",
     evolutionStage: 2,
     type1: "bug",
     type2: "poison",
@@ -186,6 +215,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 15,
     name: "Beedrill",
+    image: "",
     evolutionStage: 3,
     type1: "bug",
     type2: "poison",
@@ -199,6 +229,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 16,
     name: "Pidgey",
+    image: "",
     evolutionStage: 1,
     type1: "normal",
     type2: "flying",
@@ -212,6 +243,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 17,
     name: "Pidgeotto",
+    image: "",
     evolutionStage: 2,
     type1: "normal",
     type2: "flying",
@@ -225,6 +257,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 18,
     name: "Pidgeot",
+    image: "",
     evolutionStage: 3,
     type1: "normal",
     type2: "flying",
@@ -238,6 +271,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 19,
     name: "Rattata",
+    image: "",
     isEvolved: false,
     type1: "normal",
     type2: null,
@@ -251,6 +285,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 20,
     name: "Raticate",
+    image: "",
     isEvolved: false,
     type1: "normal",
     type2: null,
@@ -264,6 +299,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 21,
     name: "Spearow",
+    image: "",
     evolutionStage: 1,
     type1: "normal",
     type2: "flying",
@@ -277,6 +313,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 22,
     name: "Fearow",
+    image: "",
     evolutionStage: 2,
     type1: "normal",
     type2: "flying",
@@ -290,6 +327,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 23,
     name: "Ekans",
+    image: "",
     isEvolved: false,
     type1: "poison",
     type2: null,
@@ -303,6 +341,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 24,
     name: "Arbok",
+    image: "",
     isEvolved: true,
     type1: "poison",
     type2: null,
@@ -316,6 +355,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 25,
     name: "Pikachu",
+    image: "",
     isEvolved: false,
     type1: "electric",
     type2: null,
@@ -329,6 +369,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 26,
     name: "Raichu",
+    image: "",
     isEvolved: true,
     type1: "electric",
     type2: null,
@@ -342,6 +383,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 27,
     name: "Sandshrew",
+    image: "",
     isEvolved: false,
     type1: "ground",
     type2: null,
@@ -355,6 +397,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 28,
     name: "Sandslash",
+    image: "",
     isEvolved: true,
     type1: "ground",
     type2: null,
@@ -368,6 +411,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 29,
     name: "Nidoran F",
+    image: "",
     isEvolved: false,
     type1: "poison",
     type2: null,
@@ -381,6 +425,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 30,
     name: "Nidorina",
+    image: "",
     isEvolved: false,
     type1: "poison",
     type2: null,
@@ -394,6 +439,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 31,
     name: "Nidoqueen",
+    image: "",
     evolutionStage: 3,
     type1: "poison",
     type2: "ground",
@@ -407,6 +453,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 32,
     name: "Nidoran M",
+    image: "",
     isEvolved: false,
     type1: "poison",
     type2: null,
@@ -420,6 +467,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 33,
     name: "Nidorino",
+    image: "",
     isEvolved: false,
     type1: "poison",
     type2: null,
@@ -433,6 +481,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 34,
     name: "Nidoking",
+    image: "",
     evolutionStage: 3,
     type1: "poison",
     type2: "ground",
@@ -446,6 +495,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 35,
     name: "Clefairy",
+    image: "",
     isEvolved: false,
     type1: "fairy",
     type2: null,
@@ -459,6 +509,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 36,
     name: "Clefable",
+    image: "",
     isEvolved: true,
     type1: "fairy",
     type2: null,
@@ -472,6 +523,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 37,
     name: "Vulpix",
+    image: "",
     isEvolved: false,
     type1: "fire",
     type2: null,
@@ -485,6 +537,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 38,
     name: "Ninetales",
+    image: "",
     isEvolved: true,
     type1: "fire",
     type2: null,
@@ -498,6 +551,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 39,
     name: "Jigglypuff",
+    image: "",
     evolutionStage: 1,
     type1: "normal",
     type2: "fairy",
@@ -511,6 +565,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 40,
     name: "Wigglytuff",
+    image: "",
     evolutionStage: 2,
     type1: "normal",
     type2: "fairy",
@@ -524,6 +579,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 41,
     name: "Zubat",
+    image: "",
     evolutionStage: 1,
     type1: "poison",
     type2: "flying",
@@ -537,6 +593,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 42,
     name: "Golbat",
+    image: "",
     evolutionStage: 2,
     type1: "poison",
     type2: "flying",
@@ -550,6 +607,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 43,
     name: "Oddish",
+    image: "",
     evolutionStage: 1,
     type1: "grass",
     type2: "poison",
@@ -563,6 +621,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 44,
     name: "Gloom",
+    image: "",
     evolutionStage: 2,
     type1: "grass",
     type2: "poison",
@@ -576,6 +635,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 45,
     name: "Vileplume",
+    image: "",
     evolutionStage: 3,
     type1: "grass",
     type2: "poison",
@@ -589,6 +649,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 46,
     name: "Paras",
+    image: "",
     evolutionStage: 1,
     type1: "bug",
     type2: "grass",
@@ -602,6 +663,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 47,
     name: "Parasect",
+    image: "",
     evolutionStage: 2,
     type1: "bug",
     type2: "grass",
@@ -615,6 +677,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 48,
     name: "Venonat",
+    image: "",
     evolutionStage: 1,
     type1: "bug",
     type2: "poison",
@@ -628,6 +691,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 49,
     name: "Venomoth",
+    image: "",
     evolutionStage: 2,
     type1: "bug",
     type2: "poison",
@@ -641,6 +705,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 50,
     name: "Diglett",
+    image: "",
     isEvolved: false,
     type1: "ground",
     type2: null,
@@ -654,6 +719,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 51,
     name: "Dugtrio",
+    image: "",
     isEvolved: true,
     type1: "ground",
     type2: null,
@@ -667,6 +733,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 52,
     name: "Meowth",
+    image: "",
     isEvolved: false,
     type1: "normal",
     type2: null,
@@ -680,6 +747,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 53,
     name: "Persian",
+    image: "",
     isEvolved: true,
     type1: "normal",
     type2: null,
@@ -693,6 +761,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 54,
     name: "Psyduck",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -706,6 +775,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 55,
     name: "Golduck",
+    image: "",
     isEvolved: true,
     type1: "water",
     type2: null,
@@ -719,6 +789,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 56,
     name: "Mankey",
+    image: "",
     isEvolved: false,
     type1: "fighting",
     type2: null,
@@ -732,6 +803,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 57,
     name: "Primeape",
+    image: "",
     isEvolved: true,
     type1: "fighting",
     type2: null,
@@ -745,6 +817,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 58,
     name: "Growlithe",
+    image: "",
     isEvolved: false,
     type1: "fire",
     type2: null,
@@ -758,6 +831,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 59,
     name: "Arcanine",
+    image: "",
     isEvolved: true,
     type1: "fire",
     type2: null,
@@ -771,6 +845,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 60,
     name: "Poliwag",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -784,6 +859,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 61,
     name: "Poliwhirl",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -797,6 +873,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 62,
     name: "Poliwrath",
+    image: "",
     evolutionStage: 3,
     type1: "water",
     type2: "fighting",
@@ -810,6 +887,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 63,
     name: "Abra",
+    image: "",
     isEvolved: false,
     type1: "psychic",
     type2: null,
@@ -823,6 +901,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 64,
     name: "Kadabra",
+    image: "",
     isEvolved: false,
     type1: "psychic",
     type2: null,
@@ -836,6 +915,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 65,
     name: "Alakazam",
+    image: "",
     isEvolved: true,
     type1: "psychic",
     type2: null,
@@ -849,6 +929,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 66,
     name: "Machop",
+    image: "",
     isEvolved: false,
     type1: "fighting",
     type2: null,
@@ -862,6 +943,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 67,
     name: "Machoke",
+    image: "",
     isEvolved: false,
     type1: "fighting",
     type2: null,
@@ -875,6 +957,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 68,
     name: "Machamp",
+    image: "",
     isEvolved: true,
     type1: "fighting",
     type2: null,
@@ -888,6 +971,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 69,
     name: "Bellsprout",
+    image: "",
     evolutionStage: 1,
     type1: "grass",
     type2: "poison",
@@ -901,6 +985,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 70,
     name: "Weepinbell",
+    image: "",
     evolutionStage: 2,
     type1: "grass",
     type2: "poison",
@@ -914,6 +999,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 71,
     name: "Victreebel",
+    image: "",
     evolutionStage: 3,
     type1: "grass",
     type2: "poison",
@@ -927,6 +1013,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 72,
     name: "Tentacool",
+    image: "",
     evolutionStage: 1,
     type1: "water",
     type2: "poison",
@@ -940,6 +1027,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 73,
     name: "Tentacruel",
+    image: "",
     evolutionStage: 2,
     type1: "water",
     type2: "poison",
@@ -953,6 +1041,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 74,
     name: "Geodude",
+    image: "",
     evolutionStage: 1,
     type1: "rock",
     type2: "ground",
@@ -966,6 +1055,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 75,
     name: "Graveler",
+    image: "",
     evolutionStage: 2,
     type1: "rock",
     type2: "ground",
@@ -979,6 +1069,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 76,
     name: "Golem",
+    image: "",
     evolutionStage: 3,
     type1: "rock",
     type2: "ground",
@@ -992,6 +1083,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 77,
     name: "Ponyta",
+    image: "",
     isEvolved: false,
     type1: "fire",
     type2: null,
@@ -1005,6 +1097,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 78,
     name: "Rapidash",
+    image: "",
     isEvolved: true,
     type1: "fire",
     type2: null,
@@ -1018,6 +1111,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 79,
     name: "Slowpoke",
+    image: "",
     evolutionStage: 1,
     type1: "water",
     type2: "psychic",
@@ -1031,6 +1125,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 80,
     name: "Slowbro",
+    image: "",
     evolutionStage: 2,
     type1: "water",
     type2: "psychic",
@@ -1044,6 +1139,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 81,
     name: "Magnemite",
+    image: "",
     evolutionStage: 1,
     type1: "electric",
     type2: "steel",
@@ -1057,6 +1153,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 82,
     name: "Magneton",
+    image: "",
     evolutionStage: 2,
     type1: "electric",
     type2: "steel",
@@ -1070,6 +1167,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 83,
     name: "Farfetchd",
+    image: "",
     evolutionStage: 1,
     type1: "normal",
     type2: "flying",
@@ -1083,6 +1181,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 84,
     name: "Doduo",
+    image: "",
     evolutionStage: 1,
     type1: "normal",
     type2: "flying",
@@ -1096,6 +1195,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 85,
     name: "Dodrio",
+    image: "",
     evolutionStage: 2,
     type1: "normal",
     type2: "flying",
@@ -1109,6 +1209,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 86,
     name: "Seel",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -1122,6 +1223,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 87,
     name: "Dewgong",
+    image: "",
     evolutionStage: 2,
     type1: "water",
     type2: "ice",
@@ -1135,6 +1237,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 88,
     name: "Grimer",
+    image: "",
     isEvolved: false,
     type1: "poison",
     type2: null,
@@ -1148,6 +1251,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 89,
     name: "Muk",
+    image: "",
     isEvolved: true,
     type1: "poison",
     type2: null,
@@ -1161,6 +1265,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 90,
     name: "Shellder",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -1174,6 +1279,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 91,
     name: "Cloyster",
+    image: "",
     evolutionStage: 2,
     type1: "water",
     type2: "ice",
@@ -1187,6 +1293,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 92,
     name: "Gastly",
+    image: "",
     evolutionStage: 1,
     type1: "ghost",
     type2: "poison",
@@ -1200,6 +1307,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 93,
     name: "Haunter",
+    image: "",
     evolutionStage: 2,
     type1: "ghost",
     type2: "poison",
@@ -1213,6 +1321,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 94,
     name: "Gengar",
+    image: "",
     evolutionStage: 3,
     type1: "ghost",
     type2: "poison",
@@ -1226,6 +1335,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 95,
     name: "Onix",
+    image: "",
     evolutionStage: 1,
     type1: "rock",
     type2: "ground",
@@ -1239,6 +1349,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 96,
     name: "Drowzee",
+    image: "",
     isEvolved: false,
     type1: "psychic",
     type2: null,
@@ -1252,6 +1363,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 97,
     name: "Hypno",
+    image: "",
     isEvolved: true,
     type1: "psychic",
     type2: null,
@@ -1265,6 +1377,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 98,
     name: "Krabby",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -1278,6 +1391,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 99,
     name: "Kingler",
+    image: "",
     isEvolved: true,
     type1: "water",
     type2: null,
@@ -1291,6 +1405,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 100,
     name: "Voltorb",
+    image: "",
     isEvolved: false,
     type1: "electric",
     type2: null,
@@ -1304,6 +1419,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 101,
     name: "Electrode",
+    image: "",
     isEvolved: true,
     type1: "electric",
     type2: null,
@@ -1317,6 +1433,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 102,
     name: "Exeggcute",
+    image: "",
     evolutionStage: 1,
     type1: "grass",
     type2: "psychic",
@@ -1330,6 +1447,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 103,
     name: "Exeggutor",
+    image: "",
     evolutionStage: 2,
     type1: "grass",
     type2: "psychic",
@@ -1343,6 +1461,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 104,
     name: "Cubone",
+    image: "",
     isEvolved: false,
     type1: "ground",
     type2: null,
@@ -1356,6 +1475,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 105,
     name: "Marowak",
+    image: "",
     isEvolved: true,
     type1: "ground",
     type2: null,
@@ -1369,6 +1489,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 106,
     name: "Hitmonlee",
+    image: "",
     isEvolved: true,
     type1: "fighting",
     type2: null,
@@ -1382,6 +1503,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 107,
     name: "Hitmonchan",
+    image: "",
     isEvolved: true,
     type1: "fighting",
     type2: null,
@@ -1395,6 +1517,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 108,
     name: "Lickitung",
+    image: "",
     isEvolved: true,
     type1: "normal",
     type2: null,
@@ -1408,6 +1531,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 109,
     name: "Koffing",
+    image: "",
     isEvolved: false,
     type1: "poison",
     type2: null,
@@ -1421,6 +1545,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 110,
     name: "Weezing",
+    image: "",
     isEvolved: true,
     type1: "poison",
     type2: null,
@@ -1434,6 +1559,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 111,
     name: "Rhyhorn",
+    image: "",
     evolutionStage: 1,
     type1: "ground",
     type2: "rock",
@@ -1447,6 +1573,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 112,
     name: "Rhydon",
+    image: "",
     evolutionStage: 2,
     type1: "ground",
     type2: "rock",
@@ -1460,6 +1587,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 113,
     name: "Chansey",
+    image: "",
     isEvolved: false,
     type1: "normal",
     type2: null,
@@ -1473,6 +1601,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 114,
     name: "Tangela",
+    image: "",
     isEvolved: true,
     type1: "grass",
     type2: null,
@@ -1486,6 +1615,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 115,
     name: "Kangaskhan",
+    image: "",
     isEvolved: true,
     type1: "normal",
     type2: null,
@@ -1499,6 +1629,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 116,
     name: "Horsea",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -1512,6 +1643,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 117,
     name: "Seadra",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -1525,6 +1657,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 118,
     name: "Goldeen",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -1538,6 +1671,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 119,
     name: "Seaking",
+    image: "",
     isEvolved: true,
     type1: "water",
     type2: null,
@@ -1551,6 +1685,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 120,
     name: "Staryu",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -1564,6 +1699,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 121,
     name: "Starmie",
+    image: "",
     evolutionStage: 2,
     type1: "water",
     type2: "psychic",
@@ -1577,6 +1713,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 122,
     name: "Mr Mime",
+    image: "",
     evolutionStage: 1,
     type1: "psychic",
     type2: "fairy",
@@ -1590,6 +1727,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 123,
     name: "Scyther",
+    image: "",
     evolutionStage: 1,
     type1: "bug",
     type2: "flying",
@@ -1603,6 +1741,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 124,
     name: "Jynx",
+    image: "",
     evolutionStage: 1,
     type1: "ice",
     type2: "psychic",
@@ -1616,6 +1755,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 125,
     name: "Electabuzz",
+    image: "",
     isEvolved: true,
     type1: "electric",
     type2: null,
@@ -1629,6 +1769,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 126,
     name: "Magmar",
+    image: "",
     isEvolved: true,
     type1: "fire",
     type2: null,
@@ -1642,6 +1783,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 127,
     name: "Pinsir",
+    image: "",
     isEvolved: true,
     type1: "bug",
     type2: null,
@@ -1655,6 +1797,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 128,
     name: "Tauros",
+    image: "",
     isEvolved: true,
     type1: "normal",
     type2: null,
@@ -1668,6 +1811,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 129,
     name: "Magikarp",
+    image: "",
     isEvolved: false,
     type1: "water",
     type2: null,
@@ -1681,6 +1825,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 130,
     name: "Gyarados",
+    image: "",
     evolutionStage: 2,
     type1: "water",
     type2: "flying",
@@ -1694,6 +1839,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 131,
     name: "Lapras",
+    image: "",
     evolutionStage: 1,
     type1: "water",
     type2: "ice",
@@ -1707,6 +1853,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 132,
     name: "Ditto",
+    image: "",
     isEvolved: false,
     type1: "normal",
     type2: null,
@@ -1720,6 +1867,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 133,
     name: "Eevee",
+    image: "",
     isEvolved: false,
     type1: "normal",
     type2: null,
@@ -1733,6 +1881,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 134,
     name: "Vaporeon",
+    image: "",
     isEvolved: true,
     type1: "water",
     type2: null,
@@ -1746,6 +1895,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 135,
     name: "Jolteon",
+    image: "",
     isEvolved: true,
     type1: "electric",
     type2: null,
@@ -1759,6 +1909,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 136,
     name: "Flareon",
+    image: "",
     isEvolved: true,
     type1: "fire",
     type2: null,
@@ -1772,6 +1923,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 137,
     name: "Porygon",
+    image: "",
     isEvolved: false,
     type1: "normal",
     type2: null,
@@ -1785,6 +1937,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 138,
     name: "Omanyte",
+    image: "",
     evolutionStage: 1,
     type1: "rock",
     type2: "water",
@@ -1798,6 +1951,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 139,
     name: "Omastar",
+    image: "",
     evolutionStage: 2,
     type1: "rock",
     type2: "water",
@@ -1811,6 +1965,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 140,
     name: "Kabuto",
+    image: "",
     evolutionStage: 1,
     type1: "rock",
     type2: "water",
@@ -1824,6 +1979,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 141,
     name: "Kabutops",
+    image: "",
     evolutionStage: 2,
     type1: "rock",
     type2: "water",
@@ -1837,6 +1993,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 142,
     name: "Aerodactyl",
+    image: "",
     evolutionStage: 1,
     type1: "rock",
     type2: "flying",
@@ -1850,6 +2007,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 143,
     name: "Snorlax",
+    image: "",
     isEvolved: false,
     type1: "normal",
     type2: null,
@@ -1863,6 +2021,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 144,
     name: "Articuno",
+    image: "",
     evolutionStage: 1,
     type1: "ice",
     type2: "flying",
@@ -1876,6 +2035,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 145,
     name: "Zapdos",
+    image: "",
     evolutionStage: 1,
     type1: "electric",
     type2: "flying",
@@ -1889,6 +2049,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 146,
     name: "Moltres",
+    image: "",
     evolutionStage: 1,
     type1: "fire",
     type2: "flying",
@@ -1902,6 +2063,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 147,
     name: "Dratini",
+    image: "",
     isEvolved: false,
     type1: "dragon",
     type2: null,
@@ -1915,6 +2077,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 148,
     name: "Dragonair",
+    image: "",
     isEvolved: true,
     type1: "dragon",
     type2: null,
@@ -1928,6 +2091,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 149,
     name: "Dragonite",
+    image: "",
     evolutionStage: 3,
     type1: "dragon",
     type2: "flying",
@@ -1941,6 +2105,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 150,
     name: "Mewtwo",
+    image: "",
     isEvolved: false,
     type1: "psychic",
     type2: null,
@@ -1954,6 +2119,7 @@ export const POKEMON_DATA: Pokemon[] = [
   {
     id: 151,
     name: "Mew",
+    image: "",
     isEvolved: true,
     type1: "psychic",
     type2: null,

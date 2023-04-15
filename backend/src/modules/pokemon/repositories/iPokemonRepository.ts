@@ -9,8 +9,6 @@ interface PokemonPaginationResponse {
 }
 
 export interface iPokemonRepository {
-  createAll: () => Promise<any>;
-
   findAll: (arg1: QueryParams) => Promise<PokemonPaginationResponse>;
 
   findOne: (id: number) => Promise<Pokemon | null>;

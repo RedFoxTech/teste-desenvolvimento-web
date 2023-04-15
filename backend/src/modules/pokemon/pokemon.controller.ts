@@ -5,20 +5,6 @@ import { HttpError } from "@/helpers/HttpError";
 export class PokemonController {
   constructor(private pokemonService: PokemonService) {}
 
-  async createAllPokemons(req: Request, res: Response) {
-    try {
-      await this.pokemonService.createAllPokemons();
-      return res.status(200).json({
-        message: "All pokemons created",
-      });
-    } catch (error) {
-      if (error instanceof HttpError) {
-        return res.status(error.statusCode).json(error);
-      }
-      return error;
-    }
-  }
-
   async findAllPokemons({ query }: Request, res: Response) {
     try {
       const pokemonsList = await this.pokemonService.findAllPokemons({

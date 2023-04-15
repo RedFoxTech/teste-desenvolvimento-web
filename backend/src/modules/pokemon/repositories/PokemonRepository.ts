@@ -8,28 +8,21 @@ import { QueryParams } from "@/types/QueryParams";
 export class PokemonRepository implements iPokemonRepository {
   constructor(private prisma: PrismaClient) {}
 
-  async createAll() {
-    const isThereDataAlready = !!(await this.prisma.pokemon.findFirst({
+  async findAll({ offset, limit, name }: QueryParams) {
+    const thereIsData = !!(await this.prisma.pokemon.findFirst({
       where: {
         id: POKEMON_DATA[0].id,
       },
     }));
 
-    if (isThereDataAlready)
-      throw new HttpError({
-        name: "Pokemon data has already be set",
-        statusCode: 400,
-        message: "all pokemon data already exists in the database",
+    if (!thereIsData) {
+      const pokemonsWithImage = await getPokemonsWithImages();
+
+      await this.prisma.pokemon.createMany({
+        data: pokemonsWithImage,
       });
+    }
 
-    const pokemonsWithImage = await getPokemonsWithImages();
-
-    return await this.prisma.pokemon.createMany({
-      data: pokemonsWithImage,
-    });
-  }
-
-  async findAll({ offset, limit, name }: QueryParams) {
     const count = await this.prisma.pokemon.count();
     const next = offset + limit;
     const previous = offset - count < 0 ? null : offset - limit;
