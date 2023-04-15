@@ -52,11 +52,13 @@ docker compose up
 http://localhost:3000/
 ```
 
+
 and the back-end at:
 
 ```clipboard
 http://localhost:5500/pokemons
 ```
+When the 'Running on port 5500' message appears in the terminal, simply refresh the front-end page.
 
 ## Usage
 
@@ -64,4 +66,4 @@ This project is developed with a script that populates the back-end with a colle
 
 ## License
 
-[MIT]()
+[MIT](https://github.com/kennedybm/teste-desenvolvimento-web/blob/kennedy-barreto/LICENSE)
