@@ -9,13 +9,13 @@ export class UserController {
       const { name, email, password } = req.body;
       const userRegisterService = new UserRegisterService();
 
-      const user = await userRegisterService.execute({
+      await userRegisterService.execute({
         name,
         email,
         password
       });
 
-      return res.status(201).json(user);
+      return res.status(201).send();
 
     } catch (error) {
       return res.status(500).json({message: 'Server Error'})
