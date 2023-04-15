@@ -18,9 +18,6 @@ export default createGlobalStyle`
     --gray1: #6f5b61;
     --gray2: #222222;
     --gray3: #e9e9e9;
-
-    --title: 'Montserrat', sans-serif;
-    --content: 'Merriweather', serif;
 }
 body{
     background-color: var(--default);
