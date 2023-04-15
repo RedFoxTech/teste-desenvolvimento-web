@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useApi } from "../../providers/api";
-import Header from "../../components/header";
-import Cards from "../../components/cards";
+import { Header, Pokemons } from "../../components";
 
 const Home = () => {
   const { fetchPokemons } = useApi();
@@ -13,7 +12,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <Cards />
+      <Pokemons />
     </>
   );
 };
