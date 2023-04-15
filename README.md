@@ -5,23 +5,29 @@ Olá! Meu nome é Miguel!
 # Getting Started:
 ## Back-end 
 Desenvolvido com NodeJS e ExpressJS usando como base arquitetura limpa.
-### Iniciar server back-end:
-```bash 
-  yarn dev
+### Inicindo e configurando server back-end e database:
+Rode os seguintes comandos:
+```bash
+cd backend
+yarn
+
+yarn db:dev:up
+npx prisma generate
+npx prisma db push
+
+yarn build
+yarn start
 ```
 URL da API [http://localhost:3001](http://localhost:3001)
 
-## Database 
-Banco de dados PostgreSQL virtualizado usando Docker compose.
-### Iniciar database com docker compose:
-```bash 
-  yarn dev db:dev:up
-```
-
 ## Front-end
 Desenvolvido com NextJS e tecnologias relacionadas.
-### Iniciar server back-end:
-```bash 
-  yarn dev
+### Iniciar server front-end:
+```bash
+cd frontend
+yarn
+
+yarn build
+yarn start
 ```
 Abra pra visualizar o projeto: [http://localhost:3000](http://localhost:3000).
