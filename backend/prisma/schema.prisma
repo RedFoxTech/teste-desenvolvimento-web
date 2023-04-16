@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Pokemon {
+  id             Int           @id
+  name           String
+  image          String
+  evolutionStage Int
+  type1          PokemonTypes
+  type2          PokemonTypes?
+  statsTotal     Int
+  atk            Int
+  def            Int
+  sta            Int
+  isEvolved      Boolean
+  isLegendary    Boolean
+
+  @@map("pokemons")
+}
+
+enum PokemonTypes {
+  normal
+  fire
+  water
+  grass
+  flying
+  fighting
+  poison
+  electric
+  ground
+  rock
+  psychic
+  ice
+  bug
+  ghost
+  steel
+  dragon
+  dark
+  fairy
+}

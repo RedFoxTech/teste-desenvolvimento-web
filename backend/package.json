@@ -1,0 +1,35 @@
+{
+  "name": "pokemon-back",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node -r tsconfig-paths/register src/server.ts",
+    "dev": "ts-node-dev -r tsconfig-paths/register --transpile-only --respawn --ignore-watch node_modules --exit-child src/server.ts",
+    "prisma:dev:deploy": "prisma migrate deploy",
+    "db:dev:up": "docker compose up dev-db -d",
+    "db:dev:rm": "docker compose rm dev-db -s -f -v",
+    "db:dev:restart": "yarn db:dev:rm && yarn db:dev:up && sleep 3 && yarn prisma:dev:deploy"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.12.0",
+    "axios": "^1.3.5",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/multer": "^1.4.7",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.27.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "^4.9.3",
+    "delayed-stream": "~1.0.0"
+  }
+}
